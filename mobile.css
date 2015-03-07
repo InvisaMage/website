@@ -1,0 +1,13 @@
+/* Proudly Coded by Travis Kipp */
+/* Created January 31, 2015 */
+/* InvisaMage's Website Mobile Theme */
+
+@media all and (max-width: 300px) {
+	/* Entire Body */
+	body {
+		font-family: "Ubuntu";
+		background-image: url("./res/bg.jpg");
+		color: #FF0000;
+		text-align: center;
+	}
+}

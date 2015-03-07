@@ -1,0 +1,612 @@
+/* Proudly Coded by Travis Kipp */
+/* Created December 15, 2014 */
+/* InvisaMage's Website Theme */
+
+/* Entire Body */
+body {
+	font-family: "Ubuntu";
+	background-image: url("./res/bg.jpg");
+	color: #3399FF;
+	text-align: center;
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+
+/* Font Information */
+@font-face {
+	font-family: Ubuntu;
+	src: url(./res/ubuntu.ttf);
+}
+
+p {
+	font-size: 115%;
+}
+
+/* Navigation Bar */
+.nav {
+    list-style: none;
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	margin: 0;
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	text-decoration: none;
+	background: rgba(0,0,0,0.3);
+}
+.nav ul {
+	color: #246BB2;
+    list-style: none;
+	border-width: 5px 0;
+	margin: 0;
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	text-decoration: none;
+}
+.nav li {
+	color: #246BB2;
+    position: relative;	/* Set containing block for AP Sub UL */
+    float: left;
+    text-align: center;
+	text-decoration: none;
+	transition: .3s;
+}
+.nav ul, li:hover {
+	background: #4b545f;
+	text-decoration: none;
+}
+.nav a {
+    float: left;
+    width: 170px;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #3399FF;
+	font-size: 150%;
+	cursor: pointer;
+	transition: .3s;
+	color: #246BB2;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+.nav a:hover {
+	color: #00FF00;
+}
+/* Sub UL Drop Down */
+.nav ul {
+    position: absolute;
+    width: 170px;
+    left: 0;
+    top: 100%;
+    margin-left: -999em;	/* Hide the Sub UL */
+	display: inline-block;
+	text-decoration: none;
+	background: rgba(0,0,0,0.3);
+}
+.nav li:hover ul {				
+	text-decoration: none;
+    margin: 0;				/* Reveal the Sub UL on li:hover */
+    padding: 0;
+}
+
+/* Title */
+.title {
+	color: #246BB2;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+	font-size: 400%;
+	font-weight: bold;
+	transition: .4s
+}
+.title:hover {
+	color: #00FF00; /* Green */
+}
+.title:link {
+	text-decoration: none;
+}
+
+/* Clock Properties */
+.clock {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	display: inline-block;
+	padding: 15px;
+	font-size: 200%;
+	color: #00FF00;
+	background: rgba(0,0,0,0.2);
+	cursor: help;
+}
+
+/* Counter Properties */
+.counter {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	display: inline-block;
+	padding: 15px;
+	font-size: 200%;
+	color: #00FF00;
+	background: rgba(0,0,0,0.2);
+	cursor: help;
+}
+
+/* Hide Logic - Used for Clock and Counter*/
+#nav:hover ~ #hide {
+	visibility: hidden;
+}
+
+/* Tool Tip for Clock*/ 
+a.tooltip1 {
+	position: relative;
+	display: inline;
+}
+a.tooltip1 span {
+	position: absolute;
+	width:140px;
+	color: #3399FF;
+	background: rgba(0,0,0,0.5);
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	visibility: hidden;
+	border-radius: 6px;
+}
+a.tooltip1 span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-top: -8px;
+	width: 0; height: 0;
+	border-right: 8px solid rgba(0,0,0,0.5);
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+a:hover.tooltip1 span {
+	visibility: visible;
+	left: 100%;
+	top: 50%;
+	margin-top: -15px;
+	margin-left: 15px;
+	z-index: 999;
+}
+
+/* Tool Tip for Counter*/ 
+a.tooltip2 {
+	position: relative;
+	display: inline;
+}
+a.tooltip2 span {
+	position: absolute;
+	width:140px;
+	color: #3399FF;
+	background: rgba(0,0,0,0.5);
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	visibility: hidden;
+	border-radius: 6px;
+}
+a.tooltip2 span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-top: -8px;
+	width: 0; height: 0;
+	border-right: 8px solid rgba(0,0,0,0.5);
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+a:hover.tooltip2 span {
+	visibility: visible;
+	left: 100%;
+	top: 50%;
+	margin-top: -15px;
+	margin-left: 15px;
+	z-index: 999;
+}
+
+/* All Table Properties */
+table {
+	background: rgba(0,0,0,0.3);
+}
+table, th, td {
+	border: black 4px solid;
+	border-collapse: collapse;
+	font-size: 105%;
+}
+th, td {
+	padding: 5px;
+}
+
+/* All Link colours and properties */
+.a {
+    color: #246BB2;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+.a:link {
+	text-decoration: none;
+	transition: .4s;
+}
+.a:visited {
+	text-decoration: none;
+}
+.a:hover {
+	text-decoration: none;
+	color: #00FF00;
+}
+.a:active {
+	text-decoration: none;
+}
+
+/* Heading 1 Properties */
+h1 {
+	color: #00FF00;
+}
+
+/* Heading 2 Properties */
+h2 {
+	color: #00FF00;
+}
+
+.newsParagraph {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+/* Properties for T&C Links */
+.yes {
+	color: #1A4C80;
+}
+.yes:link {
+	text-decoration: none;
+	transition: .4s;
+}
+.yes:visited {
+	text-decoration: none;
+}
+.yes:hover {
+	text-decoration: none;
+	color: #55FF55;
+}
+.yes:active {
+	text-decoration: none;
+}
+
+.no {
+	color: #1A4C80;
+}
+.no:link {
+	text-decoration: none;
+	transition: .4s;
+}
+.no:visited {
+	text-decoration: none;
+}
+.no:hover {
+	text-decoration: none;
+	color: #FF5555;
+}
+.no:active {
+	text-decoration: none;
+}
+
+/* Home Page Button */
+.button1 {
+   border: 1px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   padding: 9px 18px;
+   border-radius: 5px;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   text-shadow: #7ea4bd 0 1px 0;
+   color: #000000;
+   font-size: 16px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   cursor: pointer;
+   font-family: Ubuntu;
+   font-weight: bold;
+}
+.button1:hover {
+   border: 1px solid #0a3c59;
+   text-shadow: #1e4158 0 1px 0;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   color: #fff;
+}
+.button1:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 1px solid #0a3c59;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   color: #fff;
+}
+.button1:hover span {
+	display: none;
+}
+.button1:hover:before {
+	content: "What is your name?";
+	padding: 6px;
+}
+
+/* Help Button */
+.button2 {
+   border: 1px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   padding: 9px 18px;
+   border-radius: 5px;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   text-shadow: #7ea4bd 0 1px 0;
+   color: #000000;
+   font-size: 32px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   cursor: pointer;
+   font-family: Ubuntu;
+   font-weight: bold;
+}
+.button2:hover {
+   border: 1px solid #0a3c59;
+   text-shadow: #1e4158 0 1px 0;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   color: #fff;
+}
+.button2:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 1px solid #0a3c59;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   color: #fff;
+}
+.button2:hover span {
+	display: none;
+}
+.button2:hover:before {
+	content: "?";
+	padding: 15px;
+}
+
+/* Menu for News */
+#menu1 {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: absolute;
+	top: 255px;
+	right: 60%;
+	margin-right: 280px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+}
+#menu1 li {
+	list-style: none;
+	transition: .3s;
+}
+#menu1 a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #246BB2;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+#menu1 li a:hover {
+	color: #00FF00;
+}
+
+/* Menu for FS */
+#menu2 {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	position: absolute;
+	top: 255px;
+	right: 60%;
+	margin-right: 280px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+}
+#menu2 li {
+	list-style: none;
+	transition: .3s;
+}
+#menu2 a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #246BB2;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+#menu2 li a:hover {
+	color: #00FF00;
+
+}
+
+/* Top of Page button */
+.top {
+	opacity: 0.5;
+	transition: .3s;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+.top:hover {
+	opacity: 1;
+}
+
+/* Border on iOS Web App Images */
+.iosimg {
+	border: 1px solid black;
+	border-width: 5px 5px;
+}
+
+/* Footer Properties */
+footer {
+	border: 1px solid black;
+	border-bottom-style: none;
+	border-width: 5px 0;
+	margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+/* Image Slide Show on FS Page*/
+.jcarousel-wrapper {
+    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+/* Carousel */
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    height: 500px;
+}
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.jcarousel li {
+    float: left;
+}
+
+/* Carousel Controls */
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 200px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    color: #3399FF;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Arial, sans-serif;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.3);
+       -moz-box-shadow: 0 0 2px rgba(0,0,0,0.3);
+			box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.jcarousel-control-prev {
+	transition: .3s;
+	left: 400px;
+	top: 2300px;
+}
+.jcarousel-control-next {
+	transition: .3s;
+    right: 400px;
+	top: 2300px;
+	position: absolute;
+}
+.jcarousel-control-prev:hover span,
+.jcarousel-control-next:hover span {
+    display: block;
+}
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+    opacity: .5;
+    cursor: default;
+}
+
+/* Carousel Pagination */
+.jcarousel-pagination {
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    left: 15px;
+}
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 14px;
+    min-width: 14px;
+    background: rgba(0,0,0,0.3);
+    color: #3399FF;
+    border-radius: 14px;
+    padding: 3px;
+    text-align: center;
+    margin-right: 2px;
+    opacity: .75;
+}
+.jcarousel-pagination a.active {
+    background: rgba(0,0,0,0.3);
+    color: #00FF00;
+    opacity: 1;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+}
