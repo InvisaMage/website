@@ -1,7 +1,5 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
 This is a repository to help me organize my Website.
@@ -16,5 +14,5 @@ To view my website you must have an internet browser with HTML5, CSS3, and JavaS
 
 ### Who do I talk to? ###
 
-Owner: InvisaMage
+Owner: InvisaMage <br />
 Contact: TheMageNetwork@outlook.com
