@@ -14,5 +14,5 @@ To view my website you must have an internet browser with HTML5, CSS3, and JavaS
 
 ### Who do I talk to? ###
 
-Owner: InvisaMage <br />
+Owner: InvisaMage
 Contact: TheMageNetwork@outlook.com
