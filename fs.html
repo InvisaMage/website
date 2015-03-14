@@ -11,14 +11,14 @@
 	<link rel="icon" href="./res/favicon.ico" type="image/.ico"/>
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
+	<script type="text/javascript" src="./scripts/messages.js"></script>
 <!---Scrolling Images--->
 	<script type="text/javascript" src="./scripts/jquery.js"></script>
 	<script type="text/javascript" src="./scripts/jquery.jcarousel.min.js"></script>
 	<script type="text/javascript" src="./scripts/jcarousel.basic.js"></script>
 </head>
 
-<body onload="clock(); date();">
-<a id="top"></a>
+<body onload="clock();" id="top">
 
 <!--Page Title-->
 <a class="title" title="Floating Survival" href="fs.html">Floating Survival</a>
@@ -63,8 +63,8 @@
 	<br>
 </div>
 
-<!--Plannet Minecraft Banner-->
-<a class="a" href='http://www.planetminecraft.com/member/invisamage/' title='InvisaMage on Planet Minecraft'><img src='http://www.planetminecraft.com/files/sigs/invisamage_1336938_sig.jpg' border='0' alt='InvisaMage SigCard'></a><br>
+<!--Planet Minecraft Banner-->
+<a href="http://www.planetminecraft.com/member/invisamage/" title="InvisaMage on Planet Minecraft"><img src="http://www.planetminecraft.com/files/sigs/invisamage_1336938_sig.jpg" border="0" alt="InvisaMage SigCard"></a>
 
 <p>
 Floating Survival, or <abbr title="Floating Survival">FS</abbr> for short, is a Minecraft adventure/survival map.<br>
@@ -72,6 +72,7 @@ I work on it in my free time and when I'm really bored.<br>
 I'd appreciate any feedback that you have on it.
 </p>
 
+<!--Key Features-->
 <a id="keyfeatures"></a>
 <h1>Key Features</h1>
 <p>
@@ -87,10 +88,10 @@ More to be discovered by you!<br>
 Spawn Tutorial
 </p>
 
+<!--Data Table-->
 <a id="table"></a>
-<!--Map Information Table-->
 <h1>Data Table</h1>
-<table style="width:60%" align="center">
+<table class="table-fs" style="width:60%" align="center">
 	<tr>
 		<th>Cycle</th>
 		<th>Version</th>
@@ -100,23 +101,24 @@ Spawn Tutorial
 	<tr>
 		<td>Release</td>
 		<td>v1.6.1.1</td>
-		<td><a class="a" title="Download FS Release" href="http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival"><img src="./res/dl.png" alt="FS Download" height="56" width="188"></a></td>
-		<td><a class="a" title="View Release Change Log" href="http://www.mediafire.com/view/64xj50za2q1lq24/Change%20Log.txt"><img src="./res/txt.png" alt="FS Change Log" height="64" width="64"></a></td>
+		<td><a title="Download FS Release" href="http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival"><img src="./res/dl.png" alt="FS Download" height="45" width="54"></a></td>
+		<td><a title="View Release Change Log" href="http://www.mediafire.com/view/64xj50za2q1lq24/Change%20Log.txt"><img src="./res/txt.png" alt="FS Change Log" height="64" width="64"></a></td>
 	</tr>
 	<tr>
 		<td>Beta</td>
 		<td>v1.6.0b5</td>
-		<td><a class="a" title="Download FS Beta" href="https://www.mediafire.com/folder/ts25ce97m1b12/Betas"><img src="./res/dl.png" alt="FS Download" height="56" width="188"></a></td>
-		<td><a class="a" title="View Beta Change Log" href="http://www.mediafire.com/view/tcbj2jo1bqa08a1/Beta%20Change%20Log.txt"><img src="./res/txt.png" alt="FS Beta Change Log" height="64" width="64"></a></td>
+		<td><a title="Download FS Beta" href="https://www.mediafire.com/folder/ts25ce97m1b12/Betas"><img src="./res/dl.png" alt="FS Download" height="45" width="54"></a></td>
+		<td><a title="View Beta Change Log" href="http://www.mediafire.com/view/tcbj2jo1bqa08a1/Beta%20Change%20Log.txt"><img src="./res/txt.png" alt="FS Beta Change Log" height="64" width="64"></a></td>
 	</tr>
 </table>
 
-<a id="video"></a>
 <!--YouTube-->
+<a id="video"></a>
 <h1>Most Recent Video</h1>
 <iframe width="750" height="500" src="http://www.youtube.com/embed/_pfHf41EkW4" frameborder="0"></iframe>
 <br>
 
+<!--Screenshots-->
 <a id="images"></a>
 <h1>Screenshots</h1>
 
@@ -142,10 +144,25 @@ Spawn Tutorial
 <!--Footer-->
 <footer>
 <a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
-<p>
-Use of this website is subject to the <a class="a" title="View Terms & Conditions" href="terms.html">Terms</a> and <a class="a" title="View Privacy Policy" href="privacy.html">Privacy Policy</a>.<br>
+<table class="table-footer" style="width:60%" align="center">
+	<tr>
+		<td>About:</td>
+		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+	</tr>
+	<tr>
+		<td>Legal:</td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+	</tr>
+	<tr>
+		<td>Settings:</td>
+		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
+	</tr>
+	<tr>
+		<td>Extras:</td>
+		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+	</tr>
+</table>
 &copy; 2014-2015, InvisaMage
-</p>
 <div id="date"></div>
 </footer>
 

@@ -11,9 +11,10 @@
 	<link rel="icon" href="./res/favicon.ico" type="image/.ico"/>
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
+	<script type="text/javascript" src="./scripts/messages.js"></script>
 </head>
 
-<body onload="date();">
+<body>
 
 <!--Page Title-->
 <a class="title" title="Ooo, pretty" href="#">404 Error</a>
@@ -33,10 +34,26 @@
 
 <!--Footer-->
 <footer>
-<p>
-Use of this website is subject to the <a class="a" title="View Terms & Conditions" href="terms.html">Terms</a> and <a class="a" title="View Privacy Policy" href="privacy.html">Privacy Policy</a>.<br>
+<a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+<table class="table-footer" style="width:60%" align="center">
+	<tr>
+		<td>About:</td>
+		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+	</tr>
+	<tr>
+		<td>Legal:</td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+	</tr>
+	<tr>
+		<td>Settings:</td>
+		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
+	</tr>
+	<tr>
+		<td>Extras:</td>
+		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+	</tr>
+</table>
 &copy; 2014-2015, InvisaMage
-</p>
 <div id="date"></div>
 </footer>
 
