@@ -14,8 +14,7 @@
 	<script type="text/javascript" src="./scripts/messages.js"></script>
 </head>
 
-<body onload="clock(); date();">
-<a id="top"></a>
+<body onload="clock();" id="top">
 
 <!--Page Title-->
 <a class="title" title="Privacy Policy" href="privacy.html">Privacy Policy</a>
@@ -84,7 +83,7 @@ This website is currently ad free.
 Cookies may be used to enable the site to function more fluently.<br>
 They are files with information about the website.<br> 
 They are stored locally on your computer for future use.<br>
-If you wish to clear your internet cookies, click <a class="a" title="About Cookies" href="https://en.wikipedia.org/wiki/HTTP_cookie">here</a>.<br>
+If you wish to clear your internet cookies, click <a class="link" title="About Cookies" href="https://en.wikipedia.org/wiki/HTTP_cookie">here</a>.<br>
 Note: This will likely clear all of your internet cookies and not just for this website.
 </p>
 </span>
@@ -121,10 +120,25 @@ Be sure to check back from time to time.
 <!--Footer-->
 <footer>
 <a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
-<p>
-Use of this website is subject to the <a class="a" title="View Terms & Conditions" href="terms.html">Terms</a> and <a class="a" title="View Privacy Policy" href="privacy.html">Privacy Policy</a>.<br>
+<table class="table-footer" style="width:60%" align="center">
+	<tr>
+		<td>About:</td>
+		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+	</tr>
+	<tr>
+		<td>Legal:</td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+	</tr>
+	<tr>
+		<td>Settings:</td>
+		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
+	</tr>
+	<tr>
+		<td>Extras:</td>
+		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+	</tr>
+</table>
 &copy; 2014-2015, InvisaMage
-</p>
 <div id="date"></div>
 </footer>
 

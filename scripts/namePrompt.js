@@ -7,15 +7,19 @@ function namePrompt()
 	if (name != null)
 	{
 		document.getElementById("name").innerHTML =
-		"Hello " + name + " and welcome to <a class=a title=About href=about.html#InvisaMage>InvisaMage</a>'s Website.<br>I hope you enjoy your stay."
+		"Hello " + name + " and welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website.<br>I hope you enjoy your stay."
 		
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis") || (name == "travis"))
 		document.getElementById("name").innerHTML =
-		"Hello creator and welcome back to your website.<br>Is there anything that I can do for you?"
+		"Hello creator and welcome back to your website.<br>Here are some links I thought you might like.<br><br><a class=link title=Repository href=https://bitbucket.org/InvisaMage/website/>BitBucket</a>"
 		
-		if (name == "Kevin" || (name == "kevin") || (name == "Matt") || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Tanner") || (name == "tanner") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
+		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Tanner") || (name == "tanner") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
-		"Hello good friend and welcome back to my Website.<br>Thanks for hosting this website!<br><a class=a title=Host href=http://www.chaoswebs.cf/>http://www.chaoswebs.cf/</a>"
+		"Hello good friend and welcome back to my Website."
+		
+		if (name == "Kevin" || (name == "kevin"))
+		document.getElementById("name").innerHTML =
+		"Hello good friend and welcome back to my Website.<br>Thanks for hosting.<br><br><a class=link title=Host href=http://www.chaoswebs.cf/>http://www.chaoswebs.cf/</a>"
 		
 		if (name == "Dan" || (name == "dan") || (name == "Daniel") || (name == "daniel") || (name == "Dad") || (name == "dad") || (name == "Father") || (name == "father"))
 		document.getElementById("name").innerHTML =
@@ -75,6 +79,6 @@ function namePrompt()
 
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
-		"Your name goes in that box but anyway, welcome to <a class=a title=About href=about.html#InvisaMage>InvisaMage</a>'s Website."
+		"Your name goes in that box but anyway, welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website."
 	}
 }

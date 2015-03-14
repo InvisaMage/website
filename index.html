@@ -6,12 +6,15 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!--Define character encoding-->
+	<meta name="description" content="Information about InvisaMage and his projects.">
+	<meta name="keywords" content="InvisaMage, invisamage, Floating Survival, floating survival, FS, fs, InvisaRant, invisarant, IR, ir">
 	<link rel="stylesheet" type="text/css" href="theme.css">
-	<title>InvisaMage | Home</title>
 	<link rel="icon" href="./res/favicon.ico" type="image/.ico"/>
+	<title>InvisaMage | Home</title>
 <!--External Scripts-->
-	<script type="text/javascript" src="./scripts/namePrompt.js"></script>
 	<script type="text/javascript" src="./scripts/time.js"></script>
+	<script type="text/javascript" src="./scripts/messages.js"></script>
+	<script type="text/javascript" src="./scripts/namePrompt.js"></script>
 <!--iOS Options-->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -23,8 +26,7 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="./res/quasar.jpg">
 </head>
 
-<body class="cursorNormal" onload="clock(); date();">
-<a id="top"></a>
+<body class="cursorNormal" onload="clock();" id="top">
 
 <!--Page Title-->
 <a class="title" title="Home" href="index.html">InvisaMage's Website</a>
@@ -65,7 +67,7 @@
 <!--Button and namePrompt Function-->
 <button class="button1" href="#" onclick="namePrompt();"><span>Personalize Message</span></button>
 <!--Paragraph Changes with namePrompt Input-->
-<p id="name"> Welcome to <a class="a" title="About" href="about.html#InvisaMage">InvisaMage</a>'s Website.</p>
+<p id="name"> Welcome to <a class="link" title="About" href="about.html#InvisaMage">InvisaMage</a>'s Website.</p>
 
 <!--Main Body-->
 <p>
@@ -76,15 +78,15 @@ Ooh look, you even get a lovely clock on every page.<br>
 
 <!--Useful Links Table-->
 <h1>Useful Links</h1>
-<table style="width:75%" align="center">
+<table class="table-home" style="width:75%" align="center">
 	<tr>
-		<td><img src="./res/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"> <a class="a" title="FS on Planet Minecraft" href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft</a></td>
-		<td><img src="./res/ytfavicon.ico" alt="YT Icon" height="16" width="16"> <a class="a" title="InvisaMage's YouTube" href="https://www.youtube.com/user/InvisaMage">YouTube</a></td>
-		<td><img src="./res/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"> <a class="a" title="InvisaMage's Twitch" href="http://www.twitch.tv/invisamage">Twitch</a></td>
-		<td><img src="./res/cwfavicon.ico" alt="CW Icon" height="16" width="16"> <a class="a" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+		<td><img class="favicon" src="./res/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"><a class="link" title="FS on Planet Minecraft" href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft</a></td>
+		<td><img class="favicon" src="./res/ytfavicon.ico" alt="YT Icon" height="16" width="16"><a class="link" title="InvisaMage's YouTube" href="https://www.youtube.com/user/InvisaMage">YouTube</a></td>
+		<td><img class="favicon" src="./res/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"><a class="link" title="InvisaMage's Twitch" href="http://www.twitch.tv/invisamage">Twitch</a></td>
+		<td><img class="favicon" src="./res/cwfavicon.ico" alt="CW Icon" height="16" width="16"><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
 	</tr>
 	<tr>
-		<td>Minecraft community where my <a class="a" title="Floating Survival Page" href="fs.html">Floating Survival</a> Project is hosted.</td>
+		<td>Minecraft community where my <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Project is hosted.</td>
 		<td>Platform for original content creators that I have some videos on.</td>
 		<td>Game streaming service which I have an account on.</td>
 		<td>My amazing friend and host.</td>
@@ -96,10 +98,25 @@ Ooh look, you even get a lovely clock on every page.<br>
 <!--Footer-->
 <footer>
 <a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
-<p>
-Use of this website is subject to the <a class="a" title="View Terms & Conditions" href="terms.html">Terms</a> and <a class="a" title="View Privacy Policy" href="privacy.html">Privacy Policy</a>.<br>
+<table class="table-footer" style="width:60%" align="center">
+	<tr>
+		<td>About:</td>
+		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+	</tr>
+	<tr>
+		<td>Legal:</td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+	</tr>
+	<tr>
+		<td>Settings:</td>
+		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
+	</tr>
+	<tr>
+		<td>Extras:</td>
+		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+	</tr>
+</table>
 &copy; 2014-2015, InvisaMage
-</p>
 <div id="date"></div>
 </footer>
 

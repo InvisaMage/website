@@ -14,8 +14,7 @@
 	<script type="text/javascript" src="./scripts/messages.js"></script>
 </head>
 
-<body onload="clock(); date();">
-<a id="top"></a>
+<body onload="clock();" id="top">
 
 <!--Page Title-->
 <a class="title" title="Terms & Conditions" href="terms.html">Terms & Conditions</a>
@@ -88,7 +87,7 @@ I do not support Internet Explorer.
 This website is brought to you "as is" without any warranty.<br> 
 I am not liable for anything that you may see on this website.<br>
 I am not accountable for any bugs or errors you may encounter.<br>
-If a major problem occurs, please <a class="a" title="Contact InvisaMage" href="contact.html">contact</a> me.<br>
+If a major problem occurs, please <a class="link" title="Contact InvisaMage" href="contact.html">contact</a> me.<br>
 I will do my best to fix the issue as soon as possible.
 </p>
 </span>
@@ -101,11 +100,12 @@ I will do my best to fix the issue as soon as possible.
 <a id="copyright"></a>
 <h1>Copyright</h1>
 <p>
-<a class="a" title="Floating Survival Page" href="fs.html">Floating Survival</a>, <a class="a" title="InvisaRant" href="invisarant.html">InvisaRant</a>, and all of my other projects are licensed under the<br>
-<a class="a" title="View License" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a>, <a class="link" title="InvisaRant" href="invisarant.html">InvisaRant</a>, and all of my other projects are licensed under the<br>
+<a class="link" title="View License" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 <br>
 <br>
-<a class="a" title="View License" href="http://creativecommons.org/licenses/by/4.0/"><img src="./res/cc.png" alt="Creative Commons" height="31" width="88"></a>
+<!--Copyright Image-->
+<a title="View License" href="http://creativecommons.org/licenses/by/4.0/"><img src="./res/cc.png" alt="Creative Commons" height="31" width="88"></a>
 </p>
 </span>
 
@@ -128,10 +128,25 @@ Be sure to check back from time to time.
 <!--Footer-->
 <footer>
 <a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
-<p>
-Use of this website is subject to the <a class="a" title="View Terms & Conditions" href="terms.html">Terms</a> and <a class="a" title="View Privacy Policy" href="privacy.html">Privacy Policy</a>.<br>
+<table class="table-footer" style="width:60%" align="center">
+	<tr>
+		<td>About:</td>
+		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+	</tr>
+	<tr>
+		<td>Legal:</td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+	</tr>
+	<tr>
+		<td>Settings:</td>
+		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
+	</tr>
+	<tr>
+		<td>Extras:</td>
+		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+	</tr>
+</table>
 &copy; 2014-2015, InvisaMage
-</p>
 <div id="date"></div>
 </footer>
 
