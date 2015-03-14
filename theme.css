@@ -213,7 +213,6 @@ p {
     text-shadow: 0px 0px 10px;
 	font-size: 400%;
 	font-weight: bold;
-	transition: .4s
 }
 .title:hover, .title:focus, .title:active {
   	-webkit-animation-name: hvr-buzz-out;
