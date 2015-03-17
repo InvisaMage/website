@@ -20,6 +20,10 @@ p {
 	font-size: 115%;
 }
 
+abbr {
+	cursor: help;
+}
+
 /* Navigation Bar */
 .nav {
     list-style: none;
