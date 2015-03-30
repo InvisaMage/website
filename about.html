@@ -12,17 +12,14 @@
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
 	<script type="text/javascript" src="./scripts/messages.js"></script>
+	<script type="text/javascript" src="./scripts/search.js"></script>
 </head>
 
-<body onload="clock();" id="top">
-
-<!--Page Image-->
-<a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="105" width="283"></a>
-<br>
-<br>
+<body onload="clock();">
 
 <!--Navigation Bar-->
 <ul id="nav" class="nav">
+	<li><a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
 	<li><a title="Home" href="index.html">Home</a></li>
 	<li><a title="News" href="news.html">News</a></li>
 	<li><a title="Projects List" href="#">Projects</a>
@@ -33,34 +30,42 @@
 		</ul>
 	</li>
 	<li><a title="Contact" href="contact.html">Contact</a></li>
-	<li><a title="About" href="about.html">About</a>
+	<li><a title="About" href="about.html">About</a></li>
+	<li><a>Search</a>
 		<ul>
-			<li><a title="InvisaMage" href="about.html#InvisaMage">InvisaMage</a></li>
-			<li><a title="Creation" href="about.html#creation">Creation</a></li>
-			<li><a title="Information" href="about.html#info">Information</a></li>
+			<li id="nav-search"><a><input type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
 		</ul>
 	</li>
 </ul>
 
 <!--Page Title-->
 <br>
-<a id="hide" class="title" title="About" href="about.html">About</a>
+<a class="title" title="About" href="about.html">About</a>
 <br>
 <br>
 
 <!--Clock & formatting-->
-<a id="hide" class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
+<a class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
 <br>
 
+<!--Menu-->
+<div id="menu5">
+	<h1>Contents</h1>
+	<li><a title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></li>
+	<li><a title="About Creation" href="about.html#creation">Creation</a></li>
+	<li><a title="About Functions" href="about.html#functions">Functions</a></li>
+	<li><a title="More Information" href="about.html#info">Information</a></li>
+	<br>
+</div>
+
 <p>
-This page is more detailed information about the developer, creation of this website, and its contents.
+This page is more information about the developer, creation of this website, and its contents.
 </p>
 
 <!--About InvisaMage-->
 <span class="aboutSection">
 <a id="InvisaMage"></a>
 <h1>InvisaMage</h1>
-
 <!--Minecraft Skin-->
 <a title="InvisaMage" href="about.html#InvisaMage"><img src="./res/InvisaMage.png" alt="InvisaMage's Skin" height="200" width="100"></a>
 <p>
@@ -89,6 +94,46 @@ This website is also backed up on <a class="link" title="BitBucket" href="https:
 If I get enough requests to make it public, I will most likely do so.<br>
 I use <a class="link" title="SourceTree" href="http://sourcetreeapp.com/">SourceTree</a> as my <a class="link" title="About Git" href="http://git-scm.com/">Git</a> GUI.
 </p>
+<h2>Logo</h2>
+<p>
+The InvisaMage logo was created using <a class="link" title="Paint.NET" href="http://www.getpaint.net/">Paint.NET</a><br>
+The design doesn't have any meaning, for say.<br>
+It just has an appealing look.
+<!--InvisaMage's Logo-->
+<br>
+<br>
+<img title="InvisaMage's Logo" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
+</p>
+</span>
+
+<br>
+<br>
+
+<span class="aboutSection">
+<a id="functions"></a>
+<h1>Functions</h1>
+<p>
+These functions are codded in <a class="link" title="Learn more" href="http://www.w3schools.com/js/default.asp">JavaScript</a> and are used to make the website interactive.<br>
+Continue reading to learn more about their purpose.
+</p>
+<h2>namePromt</h2>
+<p>
+The namePromt function is located on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
+The purpose of this function is to display a more personal message on the homepage.<br>
+This message welcomes the user to the website.<br>
+There area also a number of easter eggs.<br>
+For example, type the name "Spock" or "Siri" into the message box.<br>
+You can even type "Mirth" and you'll receive a list of fun, comical, websites.
+</p>
+<h2>Search</h2>
+<p>
+The Search function can be accessed at any time on the navigation bar.<br>
+To use this function, type what are you are looking for and click the Go button.<br>
+If the function can identify your term, you will be redirected to the appropriate page.<br>
+For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
+If the page you are looking for cannot be determined, nothing will happen.<br>
+
+</p>
 </span>
 
 <br>
@@ -113,28 +158,32 @@ Host: <a class="link" title="Visit Host Website" href="http://www.chaoswebs.cf/"
 
 <!--Footer-->
 <footer>
-<a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+<a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
 <table class="table-footer" style="width:60%" align="center">
 	<tr>
-		<td>About:</td>
-		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+		<th><a class="link-hidden-blue" title="About Website" href="about.html">About:</a></th>
+		<th>Legal:</th>
+		<th>Settings:</th>		
+		<th>Extras:</th>
 	</tr>
 	<tr>
-		<td>Legal:</td>
-		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+		<td><a class="link" title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a></td>
+		<td><a class="link" onclick="ads();">Hide Ads</a></td>
+		<td><a class="link" title="View old Versions" href="archive.html">Archive</a></td>
 	</tr>
 	<tr>
-		<td>Settings:</td>
-		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
-	</tr>
-	<tr>
-		<td>Extras:</td>
-		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+		<td><a class="link" title="Contact" href="contact.html">Contact</a></td>
+		<td><a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a></td>
+		<td><a class="link" title="View Date" onclick="date();">Date</a></td>
+		<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
 	</tr>
 </table>
+<br>
 &copy; 2014-2015, InvisaMage
 <div id="date"></div>
 </footer>
+<br>
 
 </body>
 </html>
