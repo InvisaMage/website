@@ -77,6 +77,10 @@ function namePrompt()
 		document.getElementById("name").innerHTML =
 		"Live long, and prosper.<br>Leonard Nimoy, 1931-2015"
 
+		if (name == "Mirth" || (name == "mirth"))
+		document.getElementById("name").innerHTML =
+		"<span class='homeSection'><h3>Mirth</h3><a class='link' title='Funny Windows Web Emulator' href='http://www.windows93.net/'>WINDOWS93.net</a><br><a class='link' title='Restart old Operating Systems' href='http://www.therestartpage.com/'>The Restart Page</a><br><a class='link' title='AI' href='http://www.cleverbot.com/'>Cleverbot</a></span>"
+		
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
 		"Your name goes in that box but anyway, welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website."
