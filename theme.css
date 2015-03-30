@@ -27,7 +27,6 @@ abbr {
 /* Navigation Bar */
 .nav {
     list-style: none;
-	border-radius: 15px;
 	border: 1px solid black;
 	border-width: 5px 0;
 	margin: 0;
@@ -37,6 +36,7 @@ abbr {
 	padding: 8px;
 	text-decoration: none;
 	background: rgba(0,0,0,0.3);
+	height: 90px;
 }
 .nav ul {
 	color: #246BB2;
@@ -84,17 +84,29 @@ abbr {
 .nav ul {
     position: absolute;
     width: 170px;
-    left: 0;
+    left: -170px;
     top: 100%;
     margin-left: -999em;	/* Hide the Sub UL */
-	display: inline-block;
+	display: flex;
 	text-decoration: none;
-	background: rgba(0,0,0,0.3);
+	background: none;
 }
 .nav li:hover ul {				
 	text-decoration: none;
     margin: 0;				/* Reveal the Sub UL on li:hover */
     padding: 0;
+}
+#search {
+	left: 150px;
+	width: 125px;
+}
+#nav-search {
+	left: 170px;
+	width: 2500px;
+}
+#nav-search-button {
+	width: 30px;
+	padding: 1px;
 }
 
 /* Title, Effect Buzz Out */
@@ -359,8 +371,8 @@ a:hover.tooltip2 span {
 	font-size: 105%;
 }
 .table-footer, .table-footer th, .table-footer td {
-	padding: 1px;
-} 
+	padding: 2px;
+}
 
 /* Table Properties for InvisaRant */
 .table-ir {
@@ -452,6 +464,88 @@ a:hover.tooltip2 span {
 	right: 0;
 }
 
+/* Hidden Links - Blue */
+.link-hidden-blue {
+	display: inline-block;
+	vertical-align: text-bottom;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+	color: #3399FF;
+	text-decoration: none;
+	transition: .4s;
+	cursor: pointer;
+}
+.link-hidden-blue:hover {
+	text-decoration: none;
+}
+.link-hidden-blue:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	background: #3399FF;
+	height: 2px;
+	-webkit-transition-property: left, right;
+	transition-property: left, right;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.link-hidden-blue:hover:before, .link:focus:before, .link:active:before {
+	left: 0;
+	right: 0;
+}
+
+/* Hidden Links - Green */
+.link-hidden-green {
+	display: inline-block;
+	vertical-align: text-bottom;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+	color: #00FF00;
+	text-decoration: none;
+	transition: .4s;
+	cursor: pointer;
+}
+.link-hidden-green:hover {
+	text-decoration: none;
+}
+.link-hidden-green:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	background: #3399FF;
+	height: 2px;
+	-webkit-transition-property: left, right;
+	transition-property: left, right;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.link-hidden-green:hover:before, .link:focus:before, .link:active:before {
+	left: 0;
+	right: 0;
+}
+
 /* Heading 1 Properties */
 h1 {
 	color: #00FF00;
@@ -460,6 +554,25 @@ h1 {
 /* Heading 2 Properties */
 h2 {
 	color: #00FF00;
+}
+
+/* Heading 3 Properties */
+h3 {
+	color: #00FF00;
+}
+
+/* Home Section */
+.homeSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 25%;
 }
 
 /* News Section */
@@ -516,6 +629,48 @@ h2 {
 	margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+/* Archive Section */
+.newsSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+/* Archive Section */
+.archiveSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+/* SiteMap Section */
+.sitemapSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 /* Properties for T&C Links */
@@ -732,6 +887,38 @@ h2 {
     text-shadow: 0px 0px 10px;
 }
 #menu4 li a:hover {
+	color: #00FF00;
+}
+
+/* Menu for About */
+#menu5 {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	position: absolute;
+	top: 255px;
+	right: 60%;
+	margin-right: 280px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+}
+#menu5 li {
+	list-style: none;
+	transition: .3s;
+}
+#menu5 a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #246BB2;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+#menu5 li a:hover {
 	color: #00FF00;
 }
 
