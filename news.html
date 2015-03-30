@@ -12,17 +12,14 @@
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
 	<script type="text/javascript" src="./scripts/messages.js"></script>
+	<script type="text/javascript" src="./scripts/search.js"></script>
 </head>
 
-<body onload="clock();" id="top">
-
-<!--Page Image-->
-<a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="105" width="283"></a>
-<br>
-<br>
+<body onload="clock();">
 
 <!--Navigation Bar-->
 <ul id="nav" class="nav">
+	<li><a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
 	<li><a title="Home" href="index.html">Home</a></li>
 	<li><a title="News" href="news.html">News</a></li>
 	<li><a title="Projects List" href="#">Projects</a>
@@ -33,27 +30,27 @@
 		</ul>
 	</li>
 	<li><a title="Contact" href="contact.html">Contact</a></li>
-	<li><a title="About" href="about.html">About</a>
+	<li><a title="About" href="about.html">About</a></li>
+	<li><a>Search</a>
 		<ul>
-			<li><a title="InvisaMage" href="about.html#InvisaMage">InvisaMage</a></li>
-			<li><a title="Creation" href="about.html#creation">Creation</a></li>
-			<li><a title="Information" href="about.html#info">Information</a></li>
+			<li id="nav-search"><a><input type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
 		</ul>
 	</li>
 </ul>
 
 <!--Page Title-->
 <br>
-<a id="hide" class="title" id="hide" title="News" href="news.html">News</a>
+<a class="title" title="News" href="news.html">News</a>
 <br>
 <br>
 
 <!--Clock & formatting-->
-<a id="hide" class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
+<a class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
 
 <!--Menu-->
 <div id="menu1">
 	<h1>Date Jump</h1>
+	<li><a title="Go to March 29, 2015" href="news.html#3-29-15">March 29, 2015</a></li>
 	<li><a title="Go to March 16, 2015" href="news.html#3-16-15">March 16, 2015</a></li>
 	<li><a title="Go to March 14, 2015" href="news.html#3-14-15">March 14, 2015</a></li>
 	<li><a title="Go to March 7, 2015" href="news.html#3-7-15">March 7, 2015</a></li>
@@ -77,6 +74,41 @@
 This page is information related to website changes and project updates.<br>
 Most of this is an archive for my reference but some of you might actually be interested.
 </p>
+
+<!--March 29, 2015-->
+<span class="newsSection">
+<a id="3-29-15"></a>
+<h1>March 29, 2015</h1>
+<p>
+Redesigned the navigation bar.<br>
+Added Search function (See <a class="link" title="About Search" href="about.html#functions">About</a> page for more information).<br>
+Moved logo into the navigation bar.<br>
+Removed sub links for the About section.<br>
+No need to hide the page title or the clock anymore!<br>
+Sub links are now displayed horizontally.
+<br>
+<br>
+Created <a class="link" title="View old Versions" href="archive.html">Archive</a> page to view old website versions.
+<br>
+<br>
+Completely recoded footer; again.<br>
+Design is more horizontal now.<br>
+Added an option to hide ads in the footer.<br>
+Added an option to show the date in the footer.<br>
+The date is no longer displayed when the page is loaded.
+<br>
+<br>
+Added "Mirth" to the namePromt function.<br>
+Displays fun and intriguing websites.
+<br>
+<br>
+Top of page button has been tweaked.<br>
+Now refers to "#" instead of an HTML element with an id.
+</p>
+</span>
+
+<br>
+<br>
 
 <!--March 16, 2015-->
 <span class="newsSection">
@@ -467,28 +499,32 @@ Wasn't very professional.
 
 <!--Footer-->
 <footer>
-<a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+<a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
 <table class="table-footer" style="width:60%" align="center">
 	<tr>
-		<td>About:</td>
-		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+		<th><a class="link-hidden-blue" title="About Website" href="about.html">About:</a></th>
+		<th>Legal:</th>
+		<th>Settings:</th>		
+		<th>Extras:</th>
 	</tr>
 	<tr>
-		<td>Legal:</td>
-		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+		<td><a class="link" title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a></td>
+		<td><a class="link" onclick="ads();">Hide Ads</a></td>
+		<td><a class="link" title="View old Versions" href="archive.html">Archive</a></td>
 	</tr>
 	<tr>
-		<td>Settings:</td>
-		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
-	</tr>
-	<tr>
-		<td>Extras:</td>
-		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+		<td><a class="link" title="Contact" href="contact.html">Contact</a></td>
+		<td><a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a></td>
+		<td><a class="link" title="View Date" onclick="date();">Date</a></td>
+		<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
 	</tr>
 </table>
+<br>
 &copy; 2014-2015, InvisaMage
 <div id="date"></div>
 </footer>
+<br>
 
 </body>
 </html>
