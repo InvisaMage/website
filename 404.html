@@ -12,18 +12,30 @@
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
 	<script type="text/javascript" src="./scripts/messages.js"></script>
+	<script type="text/javascript" src="./scripts/search.js"></script>
 </head>
 
 <body>
 
-<!--Page Image-->
-<a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="105" width="283"></a>
-<br>
-<br>
-
 <!--Navigation Bar-->
-<ul class="nav">
+<ul id="nav" class="nav">
+	<li><a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
 	<li><a title="Home" href="index.html">Home</a></li>
+	<li><a title="News" href="news.html">News</a></li>
+	<li><a title="Projects List" href="#">Projects</a>
+		<ul>
+			<li><a title="Floating Survival" href="fs.html">FS</a></li>
+			<li><a title="InvisaRant" href="invisarant.html">InvisaRant</a></li>
+			<li><a title="iOS Web App" href="webapp.html">iOS Web App</a></li>
+		</ul>
+	</li>
+	<li><a title="Contact" href="contact.html">Contact</a></li>
+	<li><a title="About" href="about.html">About</a></li>
+	<li><a>Search</a>
+		<ul>
+			<li id="nav-search"><a><input type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
+		</ul>
+	</li>
 </ul>
 
 <br>
@@ -37,7 +49,7 @@
 <a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
 <table class="table-footer" style="width:60%" align="center">
 	<tr>
-		<th><a class="link-hidden" title="About Website" href="about.html">About:</a></th>
+		<th><a class="link-hidden-blue" title="About Website" href="about.html">About:</a></th>
 		<th>Legal:</th>
 		<th>Settings:</th>		
 		<th>Extras:</th>
@@ -46,7 +58,7 @@
 		<td><a class="link" title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></td>
 		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a></td>
 		<td><a class="link" onclick="ads();">Hide Ads</a></td>
-		<td><a class="link" title="View old Versions" href="">Archive</a></td>
+		<td><a class="link" title="View old Versions" href="archive.html">Archive</a></td>
 	</tr>
 	<tr>
 		<td><a class="link" title="Contact" href="contact.html">Contact</a></td>
@@ -54,10 +66,8 @@
 		<td><a class="link" title="View Date" onclick="date();">Date</a></td>
 		<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
 	</tr>
-	<tr>
-		<td><a class="link" title="List of Useful Places" href="sitemap.html">Site Map</a></td>
-	</tr>
 </table>
+<br>
 &copy; 2014-2015, InvisaMage
 <div id="date"></div>
 </footer>
