@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created December 15, 2014-->
 <!--Home-->
@@ -14,6 +14,7 @@
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
 	<script type="text/javascript" src="./scripts/messages.js"></script>
+	<script type="text/javascript" src="./scripts/search.js"></script>
 	<script type="text/javascript" src="./scripts/namePrompt.js"></script>
 <!--iOS Options-->
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,15 +27,11 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="./res/quasar.jpg">
 </head>
 
-<body class="cursorNormal" onload="clock();" id="top">
-
-<!--Page Image-->
-<a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="105" width="283"></a>
-<br>
-<br>
+<body class="cursorNormal" onload="clock();">
 
 <!--Navigation Bar-->
 <ul id="nav" class="nav">
+	<li><a title="Home" href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
 	<li><a title="Home" href="index.html">Home</a></li>
 	<li><a title="News" href="news.html">News</a></li>
 	<li><a title="Projects List" href="#">Projects</a>
@@ -45,11 +42,10 @@
 		</ul>
 	</li>
 	<li><a title="Contact" href="contact.html">Contact</a></li>
-	<li><a title="About" href="about.html">About</a>
+	<li><a title="About" href="about.html">About</a></li>
+	<li><a>Search</a>
 		<ul>
-			<li><a title="InvisaMage" href="about.html#InvisaMage">InvisaMage</a></li>
-			<li><a title="Creation" href="about.html#creation">Creation</a></li>
-			<li><a title="Information" href="about.html#info">Information</a></li>
+			<li id="nav-search"><a><input type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
 		</ul>
 	</li>
 </ul>
@@ -57,10 +53,10 @@
 <!--Clock, Counter, & formatting-->
 <br>
 <br>
-<a id="hide" class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
+<a class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
 <br>
 <br>
-<a id="hide" class="tooltip2"><div class="counter"><script type="text/javascript" src="./scripts/counter.js"></script></div><span>Your page visits.</span></a>
+<a class="tooltip2"><div class="counter"><script type="text/javascript" src="./scripts/counter.js"></script></div><span>Your page visits.</span></a>
 <br>
 <br>
 
@@ -97,28 +93,32 @@ Ooh look, you even get a lovely clock on every page.<br>
 
 <!--Footer-->
 <footer>
-<a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+<a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
 <table class="table-footer" style="width:60%" align="center">
 	<tr>
-		<td>About:</td>
-		<td><a class="link" title="About Website" href="about.html">About Website</a> | <a class="link" title="About InvisaMage" href="about.html#InvisaMage">About InvisaMage</a> | <a class="link" title="Contact" href="contact.html">Contact</a></td>
+		<th><a class="link-hidden-blue" title="About Website" href="about.html">About:</a></th>
+		<th>Legal:</th>
+		<th>Settings:</th>		
+		<th>Extras:</th>
 	</tr>
 	<tr>
-		<td>Legal:</td>
-		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> | <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a></td>
+		<td><a class="link" title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></td>
+		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a></td>
+		<td><a class="link" onclick="ads();">Hide Ads</a></td>
+		<td><a class="link" title="View old Versions" href="archive.html">Archive</a></td>
 	</tr>
 	<tr>
-		<td>Settings:</td>
-		<td><a class="link" onclick="ads();">Hide Ads</a> | <a class="link" title="View Date" onclick="date();">Date</a></td>
-	</tr>
-	<tr>
-		<td>Extras:</td>
-		<td><a class="link" title="View old Versions" href="">Archive</a> | <a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+		<td><a class="link" title="Contact" href="contact.html">Contact</a></td>
+		<td><a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a></td>
+		<td><a class="link" title="View Date" onclick="date();">Date</a></td>
+		<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
 	</tr>
 </table>
+<br>
 &copy; 2014-2015, InvisaMage
 <div id="date"></div>
 </footer>
+<br>
 
 </body>
 </html>
