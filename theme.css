@@ -103,6 +103,7 @@ abbr {
 #nav-search {
 	left: 170px;
 	width: 2500px;
+	background: #4b545f;
 }
 #nav-search-button {
 	width: 30px;
@@ -364,11 +365,9 @@ a:hover.tooltip2 span {
 } 
 
 /* Table Properties for the Footer */
-.table-footer {
-	text-align: left;
-}
 .table-footer, .table-footer th, .table-footer td {
 	font-size: 105%;
+	text-align: left;
 }
 .table-footer, .table-footer th, .table-footer td {
 	padding: 2px;
