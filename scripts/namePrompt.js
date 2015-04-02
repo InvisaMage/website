@@ -11,7 +11,7 @@ function namePrompt()
 		
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis") || (name == "travis"))
 		document.getElementById("name").innerHTML =
-		"Hello creator and welcome back to your website.<br>Here are some links I thought you might like.<br><br><a class=link title=Repository href=https://bitbucket.org/InvisaMage/website/>BitBucket</a>"
+		"Hello creator and welcome back to your website.<br>Here are some links I thought you might like.<br><br><span class='homeSection'><h3>Links</h3><a class=link title=Repository href=https://bitbucket.org/InvisaMage/website/>BitBucket</a></span>"
 		
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Tanner") || (name == "tanner") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
@@ -76,10 +76,14 @@ function namePrompt()
 		if (name == "Spock" || (name == "spock"))
 		document.getElementById("name").innerHTML =
 		"Live long, and prosper.<br>Leonard Nimoy, 1931-2015"
-
+		
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
 		"<span class='homeSection'><h3>Mirth</h3><a class='link' title='Funny Windows Web Emulator' href='http://www.windows93.net/'>WINDOWS93.net</a><br><a class='link' title='Restart old Operating Systems' href='http://www.therestartpage.com/'>The Restart Page</a><br><a class='link' title='AI' href='http://www.cleverbot.com/'>Cleverbot</a></span>"
+		
+		if (name == "Reset" || (name == "reset"))
+		document.getElementById("name").innerHTML =
+		"Welcome to <a class='link' title='About' href='about.html#InvisaMage'>InvisaMage</a>'s Website."
 		
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
