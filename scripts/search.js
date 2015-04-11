@@ -44,8 +44,16 @@ if (search == "iOS" || (search == "ios") || (search == "App") || (search == "app
 	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages") || (search == "Old pages") || (search == "old Pages"))
 	window.location = "archive.html";
 
-/* Site Map page */
-	if (search == "SiteMap" || (search == "sitemap") || (search == "Map") || (search == "map") || (search == "Layout") || (search == "layout"))
-	window.location = "sitemap.html";
+/* 404 Error page */
+	if (search == "404" || (search == "404 Error") || (search == "404 error") || (search == "Error") || (search == "error"))
+	window.location = "404.html";
+
+/* Google */
+	if (search == "Google" || (search == "google"))
+	window.open("https://www.google.com/");
+
+/* Bing */
+	if (search == "Bing" || (search == "bing"))
+	window.open("https://www.bing.com/");
 }
 
