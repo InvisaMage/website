@@ -8,6 +8,8 @@ body {
 	background-image: url("./res/bg.jpg");
 	color: #3399FF;
 	text-align: center;
+	padding: 0;
+	margin: 0;
 }
 
 /* Font Information */
@@ -26,17 +28,26 @@ abbr {
 
 /* Navigation Bar */
 .nav {
+	left: 0px;
     list-style: none;
 	border: 1px solid black;
+	border-bottom-style: none;
 	border-width: 5px 0;
 	margin: 0;
-	text-align: left;
-	position: relative;
+	text-align: center;
+	position: fixed;
 	display: inline-block;
 	padding: 8px;
 	text-decoration: none;
-	background: rgba(0,0,0,0.3);
-	height: 90px;
+	background: rgba(0,0,0,0.6);
+	height: 95px;
+    width: 100%;
+	top: 0px;
+	z-index: 1;
+	transition: .3s;
+}
+.nav:hover {
+	background: rgba(0,0,0,1);
 }
 .nav ul {
 	color: #246BB2;
@@ -51,15 +62,14 @@ abbr {
 }
 .nav li {
 	color: #246BB2;
-    position: relative;	/* Set containing block for AP Sub UL */
+    position: relative;
     float: left;
     text-align: center;
 	text-decoration: none;
 	transition: .3s;
 }
-.nav ul, li:hover {
+#nav-highlight:hover {
 	background: #4b545f;
-	text-decoration: none;
 }
 .nav a {
     float: left;
@@ -930,7 +940,7 @@ h3 {
 	right: 20px;
 }
 .top:hover {
-	opacity: 1;
+	opacity: .98;
 }
 
 /* Border on iOS Web App Images */
