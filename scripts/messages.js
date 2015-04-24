@@ -1,7 +1,7 @@
 /* Message on start up */
 function msg()
 {
-	alert("This website is still under construction.\nPlease contact me if you experience any major problems.");
+	alert("The mobile version of the site is still being tested and may not work correctly.\nPlease contact me if you experience any major problems.");
 }
 
 /* Thanks the user with a message */
