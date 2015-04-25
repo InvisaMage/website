@@ -26,12 +26,6 @@ abbr {
 	cursor: help;
 }
 
-@media only screen and (min-device-width: 1215px) {
-	.rmm 	{
-		visibility: hidden;
-	}
-}
-
 /* Navigation Bar */
 .nav {
 	left: 0px;
