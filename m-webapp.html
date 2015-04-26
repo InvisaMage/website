@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created April 18, 2015-->
+<!--Mobile - iOS Web Application-->
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="Information about InvisaMage and his projects.">
+	<meta name="keywords" content="InvisaMage, invisamage, Floating Survival, floating survival, FS, fs, InvisaRant, invisarant, IR, ir">
+	<link rel="icon" href="./res/favicon.ico" type="image/.ico"/>
+	<title>InvisaMage | Home</title>
+<!--Style Sheets-->
+    <link rel="stylesheet" type="text/css" media="all" href="hamburger.css"/>
+	<link rel="stylesheet" type="text/css" href="m-styles.css">
+<!--External Scripts-->
+	<script type="text/javascript" src="./scripts/time.js"></script>
+	<script type="text/javascript" src="./scripts/messages.js"></script>
+	<script type="text/javascript" src="./scripts/search.js"></script>
+	<script type="text/javascript" src="./scripts/namePrompt.js"></script>
+		<script type="text/javascript" src="./scripts/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="./scripts/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./scripts/hamburger.js"></script>
+</head>
+
+<body onload="clock();">
+
+<!--This wrapping container is used to get the width of the whole content-->
+<div id="container">
+
+    <!--The Hamburger Button in the Header-->
+    <header>
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+		<a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+    </header>
+
+    <!--The mobile navigation Markup hidden via CSS-->
+    <nav>
+        <ul>
+			<li><img src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></li>
+            <li><a href="m-index.html">Home</a></li>
+            <li><a href="m-news.html">News</a></li>
+            <li><a href="m-fs.html">Floating Survival</a></li>
+            <li><a href="m-invisarant.html">InvisaRant</a></li>
+            <li><a href="m-webapp.html">iOS Web Application</a></li>
+            <li><a href="m-contact.html">Contact</a></li>
+			<li><a href="m-about.html">About</a></li>
+			<!--Clock-->
+			<li><div id="clock"></div></li>
+        </ul>
+    </nav>
+
+    <!--The Layer that will be layed over the content so that the content is unclickable while menu is shown-->
+    <div id="contentLayer"></div>
+
+    <!--The content of the site-->
+    <div id="content">
+
+<!--Page Title-->
+<br>
+<a class="title" title="iOS Web App" href="m-webapp.html">iOS Web Application</a>
+<br>
+<br>
+
+<p>
+This page explains how to Add this website to your Home Screen on iOS.<br>
+Don't worry, the steps are listed below and there are screenshots.<br>
+This project is to help make iOS users experience on my website more enjoyable.
+</p>
+
+<h1>Instructions</h1>
+<p>On Safari, go to <a class="link" title="Homepage" href="http://www.invisamage.cf/">http://www.invisamage.cf/</a> and tap the icon with the arrow pointing away from the box.</p>
+<img class="iosimg" src="./res/ios1.png" alt="Screenshot 1" height="900" width="540">
+<br>
+<br>
+<p>Next, tap "Add to Home Screen".</p>
+<img class="iosimg" src="./res/ios2.png" alt="Screenshot 2" height="900" width="540">
+<br>
+<br>
+<p>Finally, tap "Add".</p>
+<img class="iosimg" src="./res/ios3.png" alt="Screenshot 3" height="400" width="540">
+<p>
+Congratulations, you can now use this website as a web application.<br>
+You can move it around as you would any other application.<br>
+Please note that most things are broken.<br>
+The links open in a separate window in Safari.
+</p>
+
+		<!--Footer-->
+		<footer>
+		<br>
+		<!--About Section-->
+		<span class="footerSection">
+		<table class="table-footer" align="center">
+			<tr>
+				<th><a class="link-hidden-blue" title="About Website" href="m-about.html">About:</a></th>
+			</tr>
+			<tr>
+				<td><a class="link" title="About InvisaMage" href="m-about.html#InvisaMage">InvisaMage</a></td>
+			</tr>
+			<tr>
+				<td><a class="link" title="Contact" href="m-contact.html">Contact</a></td>
+			</tr>
+		</table>
+		</span>
+		
+		<br>
+		<br>
+		
+		<!--Legal Section-->
+		<span class="footerSection">
+		<table class="table-footer" align="center">
+			<tr>
+				<th>Legal:</th>
+			</tr>
+			<tr>
+				<td><a class="link" title="View Terms & Conditions" href="m-terms.html">Terms</a></td>
+			</tr>
+			<tr>
+				<td><a class="link" title="View Privacy Policy" href="m-privacy.html">Privacy</a></td>
+			</tr>
+		</table>
+		</span>
+		
+		<br>
+		<br>
+		
+		<!--Settings Section-->
+		<span class="footerSection">
+		<table class="table-footer" align="center">
+			<tr>
+				<th>Settings:</th>
+			</tr>
+			<tr>
+				<td><a class="link" onclick="ads();">Hide Ads</a></td>
+			</tr>
+			<tr>
+				<td><a class="link-hidden-blue" title="Go to Mobile Version" href="m-index.html">Mobile</a></td>
+			</tr>
+			<tr>
+				<td><a class="link" title="Go to Desktop Version" href="index.html">Desktop</a></td>
+			</tr>
+		</table>
+		</span>
+		
+		<br>
+		<br>
+
+		<!--Extras Section-->
+		<span class="footerSection">
+		<table class="table-footer" align="center">
+			<tr>
+				<th>Extras:</th>
+			</tr>
+			<tr>
+				<td><a class="link" title="View old Versions" href="m-archive.html">Archive</a></td>
+			</tr>
+			<tr>
+				<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+			</tr>
+		</table>
+		</span>
+		<!--Up Button-->
+		<a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+		<br>
+		<br>
+		&copy; 2014-2015, InvisaMage
+		<div id="date"></div>
+		</footer>
+		<br>
+    </div>
+</div>
+
+</body>
+</html>

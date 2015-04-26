@@ -3,7 +3,7 @@
 function search() 
 {
 	var search = document.getElementById("search").value;
-	
+
 // Homepage
 	if (search == "Home" || (search == "home"))
 	window.location = "index.html";
