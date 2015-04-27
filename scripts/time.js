@@ -1,4 +1,5 @@
-/* The current time in 24h clock */
+// The current time in 24h clock
+
 function clock()
 {
 	var today=new Date();
@@ -18,8 +19,8 @@ function checkTime(i)
 }
 
 
+// Displays the date at which the page was loaded
 
-/* Displays the date at which the page was loaded */
 function date()
 {
 	document.getElementById("date").innerHTML = Date();

@@ -1,4 +1,4 @@
-/* If name is listed below, special message is displayed. If not, input is displayed */
+// If name is listed below, special message is displayed. If not, input is displayed
 
 function namePrompt() 
 {
