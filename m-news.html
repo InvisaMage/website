@@ -17,8 +17,8 @@
 <!--External Scripts-->
 	<script type="text/javascript" src="./scripts/time.js"></script>
 	<script type="text/javascript" src="./scripts/messages.js"></script>
-	<script type="text/javascript" src="./scripts/search.js"></script>
-	<script type="text/javascript" src="./scripts/namePrompt.js"></script>
+	<script type="text/javascript" src="./scripts/m-search.js"></script>
+	<script type="text/javascript" src="./scripts/m-namePrompt.js"></script>
 		<script type="text/javascript" src="./scripts/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="./scripts/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./scripts/hamburger.js"></script>
@@ -38,7 +38,7 @@
         </div>
     </header>
 
-    <!--The mobile navigation Markup hidden via css-->
+    <!--The mobile navigation Markup hidden via CSS-->
     <nav>
         <ul>
 			<li><img src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></li>
@@ -49,6 +49,7 @@
             <li><a href="m-webapp.html">iOS Web Application</a></li>
             <li><a href="m-contact.html">Contact</a></li>
 			<li><a href="m-about.html">About</a></li>
+			<li><button class="search-button" href="#" onclick="search();">Search</button></li>
 			<!--Clock-->
 			<li><div id="clock"></div></li>
         </ul>
@@ -71,6 +72,25 @@
 This page is information related to website changes and project updates.<br>
 Most of this is an archive for my reference but some of you might actually be interested.
 </p>
+
+<!--April 26, 2015-->
+<span class="newsSection" id="4-26-15">
+<h1>April 26, 2015</h1>
+<p>
+General file adjustments.<br>
+Changed some comment formatting.<br>
+Added more search key words.
+</p>
+<h2>Mobile</h2>
+<p>
+Added Search capability in the Hamburger menu.<br>
+Separate JavaScript file just for mobile.<br>
+General improvements.
+</p>
+</span>
+
+<br>
+<br>
 
 <!--April 25, 2015-->
 <span class="newsSection" id="4-25-15">
@@ -111,7 +131,8 @@ Added link to mobile optimized version of the site.
 First release.<br>
 Please note, it's not completely stable nor is it reliable.<br>
 Made the footer horizontal.<br>
-The counter has been removed.
+The counter has been removed.<br>
+No menus on any page.
 <br>
 <br>
 Replaced traditional navigation bar with a nifty hamburger menu.<br>
