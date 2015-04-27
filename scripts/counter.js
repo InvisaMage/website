@@ -1,4 +1,5 @@
-/* Displays how many times you have visited the web page */
+// Displays how many times you have visited the web page
+
 var cookiec = document.cookie
 if (cookiec != "") {
 	var eqchr = 0;
