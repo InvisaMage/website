@@ -1,4 +1,4 @@
-/* If Search term is listed below, you will jump to that specific page */
+// If Search term is listed below, you will jump to that specific page
 
 function search() 
 {
@@ -29,7 +29,7 @@ function search()
 	window.location = "contact.html";
 
 // About page
-	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information"))
+	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information") || (search == "Help") || (search == "help") || (search == "?"))
 	window.location = "about.html";
 
 // Terms page
