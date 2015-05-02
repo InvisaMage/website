@@ -47,7 +47,7 @@ function namePrompt()
 		
 		if (name == "Jenny" || (name == "jenny"))
 		document.getElementById("name").innerHTML =
-		"Jenny, I've got your number.<br>867-5309"
+		"Jenny, I've got your number.<br>867-5309<br><br><audio controls autoplay><source src='./res/jenny.mp3' type='audio/mpeg'></audio>"
 		
 		if (name == "8675309" || (name == "867-5309"))
 		document.getElementById("name").innerHTML =
@@ -55,7 +55,7 @@ function namePrompt()
 		
 		if (name == "Stacy" || (name == "stacy"))
 		document.getElementById("name").innerHTML =
-		"Your mom has got it going on."
+		"Stacy, your mom has got it going on.<br><br><audio controls autoplay><source src='./res/stacy.mp3' type='audio/mpeg'></audio>"
 		
 		if (name == "Jessie" || (name == "jessie"))
 		document.getElementById("name").innerHTML =
@@ -80,6 +80,14 @@ function namePrompt()
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
 		"<span class='homeSection'><h3>Mirth</h3><a class='link' title='Funny Windows Web Emulator' href='http://www.windows93.net/'>WINDOWS93.net</a><br><a class='link' title='Restart old Operating Systems' href='http://www.therestartpage.com/'>The Restart Page</a><br><a class='link' title='AI' href='http://www.cleverbot.com/'>Cleverbot</a></span>"
+		
+		if (name == "Software" || (name == "software"))
+		document.getElementById("name").innerHTML =
+		"<span class='homeSection'><h3>Software</h3><a class='link' title='Cross Platform Messaging Application' href='https://telegram.org/'>Telegram</a><br><a class='link' title='Office Suite' href='http://www.libreoffice.org/'>LibreOffice</a><br><a class='link' title='Text Editor' href='http://notepad-plus-plus.org/'>Notepad++</a><br><a class='link' title='Free Antivirus' href='http://www.avast.com/en-us/index'>Avast</a><br><a class='link' title='Password Manager' href='http://keepass.info/'>KeePass</a><br><a class='link' title='Software Downloader' href='https://ninite.com/'>Ninite</a><br><a class='link' title='Virtual Machine Software' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br><a class='link' title='Desktop Customization Tool' href='http://rainmeter.net/'>Rainmeter</a><br><a class='link' title='Portable Applications for USB Device' href='http://portableapps.com/'>PortableApps</a><br><a class='link' title='Image Editor' href='http://www.getpaint.net/'>Paint.NET</a><br><a class='link' title='3D Rendering' href='http://www.blender.org/'>Blender</a><br><a class='link' title='Audio Editor' href='http://audacity.sourceforge.net/'>Audacity</a></span>"
+		
+		if (name == "Fuck" || (name == "fuck") || (name == "Bitch") || (name == "bitch") || (name == "Shit") || (name == "shit") || (name == "Cunt") || (name == "cunt") || (name == "Fucker") || (name == "fucker") || (name == "fuck") || (name == "Damn") || (name == "damn") || (name == "Bastard") || (name == "bastard") || (name == "Cock") || (name == "cock") || (name == "Dick") || (name == "dick") || (name == "Hoe") || (name == "hoe") || (name == "Jackass") || (name == "jackass") || (name == "bastard") || (name == "Nigger") || (name == "nigger") || (name == "Nigga") || (name == "nigga"))
+		document.getElementById("name").innerHTML =
+		"Hey, that's not nice!<br><audio autoplay><source src='./res/beep.mp3' type='audio/mpeg'></audio>"
 		
 		if (name == "Reset" || (name == "reset"))
 		document.getElementById("name").innerHTML =
