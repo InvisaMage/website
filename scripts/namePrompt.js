@@ -87,9 +87,9 @@ function namePrompt()
 		
 		if (name == "Fuck" || (name == "fuck") || (name == "Bitch") || (name == "bitch") || (name == "Shit") || (name == "shit") || (name == "Cunt") || (name == "cunt") || (name == "Fucker") || (name == "fucker") || (name == "fuck") || (name == "Damn") || (name == "damn") || (name == "Bastard") || (name == "bastard") || (name == "Cock") || (name == "cock") || (name == "Dick") || (name == "dick") || (name == "Hoe") || (name == "hoe") || (name == "Jackass") || (name == "jackass") || (name == "bastard") || (name == "Nigger") || (name == "nigger") || (name == "Nigga") || (name == "nigga"))
 		document.getElementById("name").innerHTML =
-		"Hey, that's not nice!<br><audio autoplay><source src='./res/beep.mp3' type='audio/mpeg'></audio>"
+		"Hey, that's not nice!<br><audio autoplay preload='auto'><source src='./res/beep.mp3' type='audio/mpeg'></audio>"
 		
-		if (name == "Reset" || (name == "reset"))
+		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls"))
 		document.getElementById("name").innerHTML =
 		"Welcome to <a class='link' title='About' href='about.html#InvisaMage'>InvisaMage</a>'s Website."
 		
