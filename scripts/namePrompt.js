@@ -65,6 +65,10 @@ function namePrompt()
 		if (name == "Jessie" || (name == "jessie"))
 		document.getElementById("name").innerHTML =
 		"Why can't I find a woman like that?<br><br><span class='homeSection'><h2>Jessie's Girl</h2><audio controls autoplay><source src='./res/jessie.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3RjJaVkoxdzVTTjg' type='audio/mpeg'></audio></span>"
+//Leah - Audio
+		if (name == "Leah" || (name == "leah"))
+		document.getElementById("name").innerHTML =
+		"Oh hey Leah. Look, it's your favourite song.<br><br><span class='homeSection'><h2>Ah Leah</h2><audio controls autoplay><source src='./res/leah.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio></span>"
 //Jesus
 		if (name == "Jesus" || (name == "jesus"))
 		document.getElementById("name").innerHTML =
