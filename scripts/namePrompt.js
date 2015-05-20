@@ -100,6 +100,6 @@ function namePrompt()
 //No name - Audio
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
-		"Your name goes in that box but anyway, welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./res/name.mp3' type='audio/mpeg'></audio></span>"
+		"Your name goes in that box but anyway, welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./res/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
 	}
 }
