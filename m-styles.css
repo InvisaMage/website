@@ -188,15 +188,8 @@ p {
 
 /* Table Properties for Homepage */
 .table-home {
-	background: rgba(0,0,0,0.3);
-}
-.table-home, .table-home th, .table-home td {
-	border: black 4px solid;
-	border-collapse: collapse;
-	font-size: 105%;
-}
-.table-home, .table-home th, .table-home td {
-	padding: 5px;
+	font-size: 18px;
+	font-size: 115%;
 } 
 
 /* Table Properties for the Footer */
@@ -210,42 +203,21 @@ p {
 
 /* Table Properties for InvisaRant */
 .table-ir {
-	background: rgba(0,0,0,0.3);
+	font-size: 18px;
+	font-size: 115%;
 }
-.table-ir, .table-ir th, .table-ir td {
-	border: black 4px solid;
-	border-collapse: collapse;
-	font-size: 105%;
-}
-.table-ir, .table-ir th, .table-ir td {
-	padding: 5px;
-} 
 
 /* Table Properties for FS */
 .table-fs {
-	background: rgba(0,0,0,0.3);
-}
-.table-fs, .table-fs th, .table-fs td {
-	border: black 4px solid;
-	border-collapse: collapse;
-	font-size: 105%;
-}
-.table-fs, .table-fs th, .table-fs td {
-	padding: 5px;
+	font-size: 18px;
+	font-size: 115%;
 }
 
 /* Table Properties for Contact*/
 .table-contact {
-	background: rgba(0,0,0,0.3);
+	font-size: 18px;
+	font-size: 115%;
 }
-.table-contact, .table-contact th, .table-contact td {
-	border: black 4px solid;
-	border-collapse: collapse;
-	font-size: 105%;
-}
-.table-contact, .table-contact th, .table-contact td {
-	padding: 5px;
-} 
 
 /* Website Icons on the Homepage */
 .favicon {
@@ -423,6 +395,48 @@ h3 {
     width: 100%;
 }
 
+/* Floating Survival Section */
+.fsSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+/* InvisaRant Section */
+.irSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+/* Contact Section*/
+.contactSection {
+	border-radius: 15px;
+	border: 1px solid black;
+	border-width: 5px 0;
+	position: relative;
+	display: inline-block;
+	padding: 8px;
+	background: rgba(0,0,0,0.2);
+	margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
 /* About Section */
 .aboutSection {
 	border-radius: 15px;
@@ -493,8 +507,8 @@ h3 {
     width: 60%;
 }
 
-/* SiteMap Section */
-.sitemapSection {
+/* Useful Links Section */
+.usefullinksSection {
 	border-radius: 15px;
 	border: 1px solid black;
 	border-width: 5px 0;
@@ -507,7 +521,7 @@ h3 {
     width: 50%;
 }
 
-/* SiteMap Section */
+/* Footer Section */
 .footerSection {
 	border-radius: 15px;
 	border: 1px solid black;
