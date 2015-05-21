@@ -28,3 +28,15 @@ function ads()
 {
 	alert("You must be seeing things.\nI don't see any ads.");
 }
+
+// Confirm switching to Desktop mode on Mobile
+function desktop() 
+{
+	var yes = confirm("Are you sure you want to go to the desktop version?\nThe desktop version does not render well on mobile devices.")
+	if (yes){
+       window.location = "index.html";
+	}
+	else{
+	//Do Nothing
+	}
+}
