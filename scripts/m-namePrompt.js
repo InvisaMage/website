@@ -41,6 +41,14 @@ function namePrompt()
 		if (name == "Rachel" || (name == "rachel"))
 		document.getElementById("name").innerHTML =
 		"Hello femake and welcome back to my Mobile optimized Website!"
+//Tony
+		if (name == "Tony" || (name == "tony"))
+		document.getElementById("name").innerHTML =
+		"Hello femake lover and welcome back to my Mobile optimized Website!"
+//Joe
+		if (name == "Joe" || (name == "joe") || (name == "Joey") || (name == "joey"))
+		document.getElementById("name").innerHTML =
+		"Hello nerd and welcome back to my Mobile optimized Website!"
 //Brian
 		if (name == "Brian" || (name == "brian"))
 		document.getElementById("name").innerHTML =
