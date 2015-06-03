@@ -40,11 +40,11 @@ function namePrompt()
 //Rachel
 		if (name == "Rachel" || (name == "rachel"))
 		document.getElementById("name").innerHTML =
-		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which is incapable of reproducing.'><a class='link' id='help'>femake</a></span> and welcome back to my Website."
+		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='link' id='help'>femake</a></span> and welcome back to my Website."
 //Tony
 		if (name == "Tony" || (name == "tony"))
 		document.getElementById("name").innerHTML =
-		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which is incapable of reproducing.'><a class='link' id='help'>femake</a></span> lover and welcome back to my Website."
+		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='link' id='help'>femake</a></span> lover and welcome back to my Website."
 //Joe
 		if (name == "Joe" || (name == "joe") || (name == "Joey") || (name == "joey"))
 		document.getElementById("name").innerHTML =
