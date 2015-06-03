@@ -312,78 +312,6 @@ abbr {
 	visibility: hidden;
 }
 
-/* Tool Tip for Clock*/ 
-a.tooltip1 {
-	position: relative;
-	display: inline;
-}
-a.tooltip1 span {
-	position: absolute;
-	width:140px;
-	color: #3399FF;
-	background: rgba(0,0,0,0.5);
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	visibility: hidden;
-	border-radius: 6px;
-}
-a.tooltip1 span:after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	right: 100%;
-	margin-top: -8px;
-	width: 0; height: 0;
-	border-right: 8px solid rgba(0,0,0,0.5);
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-}
-a:hover.tooltip1 span {
-	visibility: visible;
-	left: 100%;
-	top: 50%;
-	margin-top: -15px;
-	margin-left: 15px;
-	z-index: 999;
-}
-
-/* Tool Tip for Counter*/ 
-a.tooltip2 {
-	position: relative;
-	display: inline;
-}
-a.tooltip2 span {
-	position: absolute;
-	width:140px;
-	color: #3399FF;
-	background: rgba(0,0,0,0.5);
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	visibility: hidden;
-	border-radius: 6px;
-}
-a.tooltip2 span:after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	right: 100%;
-	margin-top: -8px;
-	width: 0; height: 0;
-	border-right: 8px solid rgba(0,0,0,0.5);
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-}
-a:hover.tooltip2 span {
-	visibility: visible;
-	left: 100%;
-	top: 50%;
-	margin-top: -15px;
-	margin-left: 15px;
-	z-index: 999;
-}
-
 /* Table Properties for Homepage */
 .table-home {
 	background: rgba(0,0,0,0.3);
@@ -494,6 +422,9 @@ a:hover.tooltip2 span {
 .link:hover:before, .link:focus:before, .link:active:before {
 	left: 0;
 	right: 0;
+}
+#help {
+	cursor: help;
 }
 
 /* Hidden Links - Blue */
