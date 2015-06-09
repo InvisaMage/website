@@ -22,10 +22,6 @@ p {
 	font-size: 115%;
 }
 
-abbr {
-	cursor: help;
-}
-
 /* Navigation Bar */
 .nav {
 	left: 0px;
@@ -129,7 +125,7 @@ abbr {
 }
 #search {
 	left: 150px;
-	width: 125px;
+	width: 115px;
 }
 #nav-search {
 	left: 170px;
@@ -509,6 +505,51 @@ abbr {
 	right: 0;
 }
 
+/* Definition - Underline From Centre - Gray Colour */
+.definition {
+	display: inline-block;
+	vertical-align: text-bottom;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+	color: #7195B8;
+	text-decoration: none;
+	text-decoration-color: -moz-use-text-color;
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	text-shadow: 0px 0px 10px;
+	transition: .4s;
+	cursor: help;
+}
+.definition:hover {
+	text-decoration: none;
+}
+.definition:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	background: #3399FF;
+	height: 2px;
+	-webkit-transition-property: left, right;
+	transition-property: left, right;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.definition:hover:before, .definition:focus:before, .definition:active:before {
+	left: 0;
+	right: 0;
+}
+
 /* Heading 1 Properties */
 h1 {
 	color: #00FF00;
@@ -741,6 +782,9 @@ h3 {
 	list-style: none;
 	transition: .3s;
 }
+#menu1 li:hover {
+	background: #4b545f;
+}
 #menu1 a {
 	display: block;
 	text-decoration: none;
@@ -772,6 +816,9 @@ h3 {
 #menu2 li {
 	list-style: none;
 	transition: .3s;
+}
+#menu2 li:hover {
+	background: #4b545f;
 }
 #menu2 a {
 	display: block;
@@ -805,6 +852,9 @@ h3 {
 	list-style: none;
 	transition: .3s;
 }
+#menu3 li:hover {
+	background: #4b545f;
+}
 #menu3 a {
 	display: block;
 	text-decoration: none;
@@ -837,6 +887,9 @@ h3 {
 	list-style: none;
 	transition: .3s;
 }
+#menu4 li:hover {
+	background: #4b545f;
+}
 #menu4 a {
 	display: block;
 	text-decoration: none;
@@ -868,6 +921,9 @@ h3 {
 #menu5 li {
 	list-style: none;
 	transition: .3s;
+}
+#menu5 li:hover {
+	background: #4b545f;
 }
 #menu5 a {
 	display: block;
