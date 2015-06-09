@@ -21,20 +21,20 @@
 <!--Navigation Bar-->
 <ul id="nav" class="nav">
 	<li><a href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
-	<li id="nav-highlight"><a title="Home" href="index.html">Home</a></li>
-	<li id="nav-highlight"><a title="News" href="news.html">News</a></li>
-	<li id="nav-highlight-strait"><a title="Projects List" href="#">Projects</a>
+	<li id="nav-highlight"><span class="hint--bottom" data-hint="The Homepage; plain and simple."><a href='index.html'>Home</a></span></li>
+	<li id="nav-highlight"><span class="hint--bottom" data-hint="Website changes & Project updates."><a href='news.html'>News</a></span></li>
+	<li id="nav-highlight-strait"><a href="#">Projects</a>
 		<ul>
-			<li id="nav-highlight-left"><a title="Floating Survival" href="fs.html">FS</a></li>
-			<li id="nav-highlight-strait"><a title="InvisaRant" href="invisarant.html">InvisaRant</a></li>
-			<li id="nav-highlight-right"><a title="iOS Web App" href="webapp.html">iOS Web App</a></li>
+			<li id="nav-highlight-left"><span class="hint--bottom" data-hint="Floating Survival - A Minecraft adventure/survival map."><a href="fs.html">FS</a></span></li>
+			<li id="nav-highlight-strait"><span class="hint--bottom" data-hint="A podcast about random things."><a href="invisarant.html">InvisaRant</a></span></li>
+			<li id="nav-highlight-right"><span class="hint--bottom--left" data-hint="Make this Website more accessible on iOS."><a href="webapp.html">iOS Web App</a></span></li>
 		</ul>
 	</li>
-	<li id="nav-highlight"><a title="Contact" href="contact.html">Contact</a></li>
-	<li id="nav-highlight"><a title="About" href="about.html">About</a></li>
+	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
+	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
 	<li id="nav-highlight-strait"><a>Search</a>
 		<ul>
-			<li id="nav-search"><a><input autofocus onkeypress="search()" type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
+			<li id="nav-search"><span class="hint--bottom--left" data-hint="Type the name of a page and go to it."><a><input autofocus onkeypress="search()" type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
 		</ul>
 	</li>
 </ul>
@@ -46,10 +46,11 @@
 <!--Menu-->
 <div id="menu5">
 	<h1>Contents</h1>
-	<li><a title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></li>
-	<li><a title="About Creation" href="about.html#creation">Creation</a></li>
-	<li><a title="About Functions" href="about.html#functions">Functions</a></li>
-	<li><a title="More Information" href="about.html#info">Information</a></li>
+	<li><span class="hint--right" data-hint="Learn more about the Developer."><a href="about.html#InvisaMage">InvisaMage</a></span></li>
+	<li><span class="hint--right" data-hint="Learn about the website's creation."><a href="about.html#creation">Creation</a></span></li>
+	<li><span class="hint--right" data-hint="Learn how to use the functions."><a href="about.html#functions">Functions</a></span></li>
+	<li><span class="hint--right" data-hint="Learn about the website's design."><a href="about.html#design">Design</a></span></li>
+	<li><span class="hint--right" data-hint="More information."><a href="about.html#info">Information</a></span></li>
 	<br>
 </div>
 
@@ -87,7 +88,7 @@ This website was tested on <a class="link" title="Download Firefox Developer Edi
 <p>
 This website is also backed up on <a class="link" title="Visit GitHub" href="https://github.com">GitHub</a>.<br>
 If you are interested in viewing the source code, click <a class="link" title="View Source code" href="https://github.com/InvisaMage/Website">here</a>.<br>
-I use <a class="link" title="GitHub for Windows" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" title="About Git" href="http://git-scm.com/">Git</a> <abbr title="Graphical User Interface">GUI</abbr>.
+I use <a class="link" title="GitHub for Windows" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" title="About Git" href="http://git-scm.com/">Git</a> <span class="hint--bottom" data-hint="Graphical User Interface"><a class="definition">GUI</a></span>.
 </p>
 <h2>Logo</h2>
 <p>
@@ -104,19 +105,20 @@ It just has an appealing look.
 <br>
 <br>
 
+<!--Function Information-->
 <span class="aboutSection">
 <a id="functions"></a>
 <h1>Functions</h1>
 <p>
-These functions are codded in <a class="link" title="Learn more" href="http://www.w3schools.com/js/default.asp">JavaScript</a> and are used to make the website interactive.<br>
+These functions are coded in <a class="link" title="Learn more" href="http://www.w3schools.com/js/default.asp">JavaScript</a> and are used to make the website interactive.<br>
 Continue reading to learn more about their purpose.
 </p>
 <h2>namePromt</h2>
 <p>
 The namePromt function is located on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-The purpose of this function is to display a more personal message on the homepage.<br>
+The purpose of this function is to display a more personal message on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
 This message welcomes the user to the website.<br>
-There area also a number of easter eggs.<br>
+There are also a number of <span class="hint--top--left" data-hint="An intentional inside joke, hidden message, or feature in an interactive work"><a class="definition">Easter eggs</a></span>.<br>
 For example, type the name "Spock" or "Siri" into the message box.<br>
 You can even type "Mirth" and you'll receive a list of fun, comical, websites.
 </p>
@@ -134,16 +136,37 @@ If the page you are looking for cannot be determined, nothing will happen.<br>
 <br>
 <br>
 
+<!--Design-->
+<span class="aboutSection">
+<a id="design"></a>
+<h1>Design</h1>
+<p>
+How to effectively navigate through this website.
+<br>
+<br>
+This is a <a class="link" title="Often times, a link will display a tooltip like this to give you more information.">link</a>.<br>
+Click it to go to its destination.<br>
+The destination could be within this website or it could lead to an external site.<br>
+<br>
+<br>
+This is a <span class="hint--top" data-hint="A statement of the meaning of a word, phrase, or term, as in a dictionary entry."><a class="definition">definition</a></span>.<br>
+Hover over definitions to read the definition.
+</p>
+</span>
+
+<br>
+<br>
+
 <!--Information-->
 <span class="aboutSection">
 <a id="info"></a>
 <h1>Information</h1>
 <p>
-The font used is called "<a class="link" title="Download Font" href="http://font.ubuntu.com/">Ubuntu-R</a>" which is default on the <abbr title="Operating System">OS</abbr> called <a class="link" title="Learn more" href="http://www.ubuntu.com/"/>Ubuntu</a>.<br> 
+The font used is called "<a class="link" title="Download Font" href="http://font.ubuntu.com/">Ubuntu-R</a>" which is default on the <span class="hint--bottom" data-hint="Operating System"><a class="definition">OS</a></span> called <a class="link" title="Learn more" href="http://www.ubuntu.com/"/>Ubuntu</a>.<br> 
 This website was tested on <a class="link" title="Download Firefox" href="https://www.firefox.com/">Mozilla Firefox</a> and may not work correctly on other <a class="link" title="View Common Browsers" href="http://browsehappy.com/">browsers</a>.<br>
-This website has a few "Easter Eggs" embedded into it. Have fun finding them.<br>
-The Clock at the top of every page is in 24 hours.<br>
-The Counter on the Homepage displays how many times you've visited the homepage.<br>
+This website has a few <span class="hint--top" data-hint="An intentional inside joke, hidden message, or feature in an interactive work"><a class="definition">Easter eggs</a></span> embedded into it. The hunt beings!<br>
+The Clock on the <a class="link" title="Homepage" href="index.html">Homepage</a> is in 24 hours.<br>
+The Counter on the <a class="link" title="Homepage" href="index.html">Homepage</a> displays how many times you've visited the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
 Host: <a class="link" title="Visit Host Website" href="http://www.chaoswebs.cf/">Chaos Webs</a>
 </p>
 </span>
