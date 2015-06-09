@@ -8,11 +8,11 @@ function namePrompt()
 	{
 //Default
 		document.getElementById("name").innerHTML =
-		"Hello " + name + " and welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website.<br>I hope you enjoy your stay."
+		"Hello " + name + " and welcome to <span class='hint--bottom' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website.<br>I hope you enjoy your stay."
 //Creator Message
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis") || (name == "travis"))
 		document.getElementById("name").innerHTML =
-		"Hello creator and welcome back to your Website.<br>Here are some links I thought you might like.<br><br><span class='homeSection'><h3>Links</h3><a class=link title='Repository' href=https://github.com/>GitHub</a><br><a class=link title='Online IDE' href=https://ide.c9.io>Cloud9</a><br><a class=link title='Telegram Web Client' href=https://web.telegram.org/>Telegram Web</a></span>"
+		"Hello creator and welcome back to your Website.<br>Here are some links I thought you might like.<br><br><span class='homeSection'><h3>Links</h3><span class='hint--right' data-hint='Repository'><a class='link' href='https://github.com/'>GitHub</a></span><br><span class='hint--right' data-hint='Online IDE'><a class='link' href='https://ide.c9.io'>Cloud9</a></span><br><span class='hint--right' data-hint='Telegram Web Client'><a class='link' href='https://web.telegram.org/'>Telegram Web</a></span>"
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Tanner") || (name == "tanner") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
@@ -40,11 +40,11 @@ function namePrompt()
 //Rachel
 		if (name == "Rachel" || (name == "rachel"))
 		document.getElementById("name").innerHTML =
-		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='link' id='help'>femake</a></span> and welcome back to my Website."
+		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='definition' id='help'>femake</a></span> and welcome back to my Website."
 //Tony
 		if (name == "Tony" || (name == "tony"))
 		document.getElementById("name").innerHTML =
-		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='link' id='help'>femake</a></span> lover and welcome back to my Website."
+		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='definition' id='help'>femake</a></span> lover and welcome back to my Website."
 //Joe
 		if (name == "Joe" || (name == "joe") || (name == "Joey") || (name == "joey"))
 		document.getElementById("name").innerHTML =
@@ -96,7 +96,7 @@ function namePrompt()
 //Mirth
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
-		"<span class='homeSection'><h3>Mirth</h3><a class='link' title='Funny Windows Web Emulator' href='http://www.windows93.net/'>WINDOWS93.net</a><br><a class='link' title='Restart old Operating Systems' href='http://www.therestartpage.com/'>The Restart Page</a><br><a class='link' title='AI' href='http://www.cleverbot.com/'>Cleverbot</a></span>"
+		"<span class='homeSection'><h3>Mirth</h3><span class='hint--right' data-hint='Funny Windows Web Emulator'><a class='link' href='http://www.windows93.net/'>WINDOWS93.net</a></span><br><span class='hint--right' data-hint='Restart old Operating Systems'><a class='link' href='http://www.therestartpage.com/'>The Restart Page</a></span><br><span class='hint--right' data-hint='AI'><a class='link' href='http://www.cleverbot.com/'>Cleverbot</a></span></span>"//Software
 //Software
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
@@ -108,10 +108,10 @@ function namePrompt()
 //Reset
 		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls"))
 		document.getElementById("name").innerHTML =
-		"Welcome to <a class='link' title='About' href='about.html#InvisaMage'>InvisaMage</a>'s Website."
+		"Welcome to <span class='hint--bottom' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website."
 //No name - Audio
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
-		"Your name goes in that box but anyway, welcome to <a class=link title=About href=about.html#InvisaMage>InvisaMage</a>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./res/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
+		"Your name goes in that box but, welcome to <span class='hint--bottom--left' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./res/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
 	}
 }
