@@ -6,6 +6,7 @@
 body {
 	font-family: "Ubuntu";
 	background-image: url("./res/bg.jpg");
+    background-attachment: fixed;
 	color: #3399FF;
 	text-align: center;
 	padding: 0;
@@ -37,14 +38,11 @@ p {
 	display: inline-block;
 	padding: 0px 0px 0px 8px;
 	text-decoration: none;
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,1);
 	height: 95px;
 	top: 0px;
 	z-index: 1;
 	transition: .3s;
-}
-.nav:hover {
-	background: rgba(0,0,0,1);
 }
 .nav ul {
 	color: #246BB2;
@@ -69,25 +67,20 @@ p {
 	background: #4b545f;
 	border-bottom-right-radius: 15px;
 	border-bottom-left-radius: 15px;
-	transition: .3s;
 }
 #nav-highlight-strait:hover {
 	background: #4b545f;
-	transition: .3s;
 }
 #nav-highlight-right:hover {
 	background: #4b545f;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
-	transition: .3s;
 }
 #nav-highlight-left:hover {
 	background: #4b545f;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
-	transition: .3s;
 }
-
 .nav a {
     float: left;
     width: 170px;
@@ -118,14 +111,23 @@ p {
 	text-decoration: none;
 	background: none;
 }
-.nav li:hover ul {				
+.nav li:hover ul {
 	text-decoration: none;
     margin: 0;				/* Reveal the Sub UL on li:hover */
     padding: 0;
 }
+#nav-arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #4b545f;
+	position: absolute;
+	right: 45%;
+}
 #search {
 	left: 150px;
-	width: 115px;
+	width: 127px;
 }
 #nav-search {
 	left: 170px;
@@ -133,10 +135,25 @@ p {
 	background: #4b545f;
 	border-bottom-right-radius: 15px;
 	border-bottom-left-radius: 15px;
+	top: -2px;
 }
 #nav-search-button {
 	width: 30px;
 	padding: 1px;
+}
+
+/* Useful Links in the navigation bar. */
+.favicon {
+	padding: 5px 5px 5px 5px;
+	width: 100px;
+	top: 53px;
+	left: 8.5%;
+	position: absolute;
+}
+.favicon a{
+	width: 20px;
+	height: 10px;
+	position: absolute;
 }
 
 /* Title, Effect Buzz Out */
@@ -319,7 +336,7 @@ p {
 }
 .table-home, .table-home th, .table-home td {
 	padding: 5px;
-} 
+}
 
 /* Table Properties for the Footer */
 .table-footer, .table-footer th, .table-footer td {
@@ -341,7 +358,7 @@ p {
 }
 .table-ir, .table-ir th, .table-ir td {
 	padding: 5px;
-} 
+}
 
 /* Table Properties for FS */
 .table-fs {
@@ -367,11 +384,6 @@ p {
 }
 .table-contact, .table-contact th, .table-contact td {
 	padding: 5px;
-} 
-
-/* Website Icons on the Homepage */
-.favicon {
-	padding: 0px 5px 0px 0px;
 }
 
 /* Default Links, Underline From Centre */
@@ -763,7 +775,7 @@ h3 {
 }
 .button1:hover:before {
 	content: "What is your name?";
-	padding: 6px;
+	padding: 5px;
 }
 
 /* Menu for News */
