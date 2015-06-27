@@ -16,11 +16,20 @@
 	<script type="text/javascript" src="./scripts/search.js"></script>
 </head>
 
-<body onload="clock();">
+<body>
 
 <!--Navigation Bar-->
 <ul id="nav" class="nav">
 	<li><a href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
+	<!--Useful Links-->
+	<table class="favicon">
+		<tr>
+			<td><a href="http://www.planetminecraft.com/project/floating-survival-2378940/"><span class='hint--bottom'  data-hint='Minecraft community where my Floating Survival Project is hosted.'><img src="./res/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"></img></span></a></td>
+			<td><a href="https://www.youtube.com/user/InvisaMage"><span class='hint--bottom' data-hint='Platform for original content creators that I have some videos on.'><img src="./res/ytfavicon.ico" alt="YT Icon" height="16" width="16"></img></span></a></a></td>
+			<td><a href="http://www.twitch.tv/invisamage"><span class='hint--bottom' data-hint='Game streaming service which I have an account on.'><img src="./res/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"></img></span></a></a></td>
+			<td><a href="http://www.chaoswebs.cf/"><span class='hint--bottom' data-hint='My amazing friend and host.'><img src="./res/cwfavicon.ico" alt="CW Icon" height="16" width="16"></img></span></a>
+		</tr>
+	</table>
 	<li id="nav-highlight"><span class="hint--bottom" data-hint="The Homepage; plain and simple."><a href='index.html'>Home</a></span></li>
 	<li id="nav-highlight"><span class="hint--bottom" data-hint="Website changes & Project updates."><a href='news.html'>News</a></span></li>
 	<li id="nav-highlight-strait"><a href="#">Projects</a>
@@ -31,7 +40,7 @@
 		</ul>
 	</li>
 	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
-	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
+	<li id="nav-highlight"><span id="nav-arrow-down"></span><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
 	<li id="nav-highlight-strait"><a>Search</a>
 		<ul>
 			<li id="nav-search"><span class="hint--bottom--left" data-hint="Type the name of a page and go to it."><a><input autofocus onkeypress="search()" type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
@@ -88,7 +97,7 @@ This website was tested on <a class="link" title="Download Firefox Developer Edi
 <p>
 This website is also backed up on <a class="link" title="Visit GitHub" href="https://github.com">GitHub</a>.<br>
 If you are interested in viewing the source code, click <a class="link" title="View Source code" href="https://github.com/InvisaMage/Website">here</a>.<br>
-I use <a class="link" title="GitHub for Windows" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" title="About Git" href="http://git-scm.com/">Git</a> <span class="hint--bottom" data-hint="Graphical User Interface"><a class="definition">GUI</a></span>.
+I use <a class="link" title="GitHub for Windows" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" title="About Git" href="http://git-scm.com/">Git</a> <span class="hint--top--center" data-hint="Graphical User Interface"><a class="definition">GUI</a></span>.
 </p>
 <h2>Logo</h2>
 <p>
@@ -111,14 +120,14 @@ It just has an appealing look.
 <h1>Functions</h1>
 <p>
 These functions are coded in <a class="link" title="Learn more" href="http://www.w3schools.com/js/default.asp">JavaScript</a> and are used to make the website interactive.<br>
-Continue reading to learn more about their purpose.
+Continue reading to learn more about their purpose and how you can use them.
 </p>
 <h2>namePromt</h2>
 <p>
 The namePromt function is located on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
 The purpose of this function is to display a more personal message on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
 This message welcomes the user to the website.<br>
-There are also a number of <span class="hint--top--left" data-hint="An intentional inside joke, hidden message, or feature in an interactive work"><a class="definition">Easter eggs</a></span>.<br>
+There are also a number of <span class="hint--top--center" data-hint="An intentional inside joke, hidden message, or feature in an interactive work."><a class="definition">Easter eggs</a></span>.<br>
 For example, type the name "Spock" or "Siri" into the message box.<br>
 You can even type "Mirth" and you'll receive a list of fun, comical, websites.
 </p>
@@ -149,8 +158,12 @@ Click it to go to its destination.<br>
 The destination could be within this website or it could lead to an external site.<br>
 <br>
 <br>
-This is a <span class="hint--top" data-hint="A statement of the meaning of a word, phrase, or term, as in a dictionary entry."><a class="definition">definition</a></span>.<br>
+This is a <span class="hint--top--center" data-hint="A statement of the meaning of a word, phrase, or term, as in a dictionary entry."><a class="definition">definition</a></span>.<br>
 Hover over definitions to read the definition.
+<br>
+<br>
+In the navigation bar, an arrow will appear over the page you are currently viewing.<br>
+For example, if I'm on the Homepage, an arrow will be over the "Home" link.
 </p>
 </span>
 
@@ -162,9 +175,9 @@ Hover over definitions to read the definition.
 <a id="info"></a>
 <h1>Information</h1>
 <p>
-The font used is called "<a class="link" title="Download Font" href="http://font.ubuntu.com/">Ubuntu-R</a>" which is default on the <span class="hint--bottom" data-hint="Operating System"><a class="definition">OS</a></span> called <a class="link" title="Learn more" href="http://www.ubuntu.com/"/>Ubuntu</a>.<br> 
+The font used is called "<a class="link" title="Download Font" href="http://font.ubuntu.com/">Ubuntu-R</a>" which is default on the <span class="hint--top--center" data-hint="Operating System"><a class="definition">OS</a></span> called <a class="link" title="Learn more" href="http://www.ubuntu.com/"/>Ubuntu</a>.<br>
 This website was tested on <a class="link" title="Download Firefox" href="https://www.firefox.com/">Mozilla Firefox</a> and may not work correctly on other <a class="link" title="View Common Browsers" href="http://browsehappy.com/">browsers</a>.<br>
-This website has a few <span class="hint--top" data-hint="An intentional inside joke, hidden message, or feature in an interactive work"><a class="definition">Easter eggs</a></span> embedded into it. The hunt beings!<br>
+This website has a few <span class="hint--top--center" data-hint="An intentional inside joke, hidden message, or feature in an interactive work."><a class="definition">Easter eggs</a></span> embedded into it. The hunt beings!<br>
 The Clock on the <a class="link" title="Homepage" href="index.html">Homepage</a> is in 24 hours.<br>
 The Counter on the <a class="link" title="Homepage" href="index.html">Homepage</a> displays how many times you've visited the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
 Host: <a class="link" title="Visit Host Website" href="http://www.chaoswebs.cf/">Chaos Webs</a>
@@ -179,27 +192,28 @@ Host: <a class="link" title="Visit Host Website" href="http://www.chaoswebs.cf/"
 <a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
 <table class="table-footer" style="width:60%" align="center">
 	<tr>
-		<th><a class="link-hidden-blue" title="About Website" href="about.html">About:</a></th>
+		<th><span class="hint--top" data-hint="About this Website."><a class="link-hidden-blue" href="about.html">About:</a></span></th>
 		<th>Legal:</th>
-		<th>Settings:</th>		
+		<th>Settings:</th>
 		<th>Extras:</th>
 	</tr>
 	<tr>
-		<td><a class="link" title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></td>
-		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a></td>
-		<td><a class="link" onclick="ads();">Hide Ads</a></td>
-		<td><a class="link" title="View old Versions" href="archive.html">Archive</a></td>
+		<td><span class="hint--top" data-hint="About the developer."><a class="link" href="about.html#InvisaMage">InvisaMage</a></span></td>
+		<td><span class="hint--top" data-hint="View the Terms & Conditions."><a class="link" href="terms.html">Terms</a></span></td>
+		<td><span class="hint--top" data-hint="Hide the ads."><a class="link" onclick="ads();">Hide Ads</a></span></td>
+		<td><span class="hint--top" data-hint="View old Versions of this Website."><a class="link" href="archive.html">Archive</a></span></td>
 	</tr>
 	<tr>
-		<td><a class="link" title="Contact" href="contact.html">Contact</a></td>
-		<td><a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a></td>
-		<td><a class="link" title="Go to Mobile Version" href="m-index.html">Mobile</a></td>
-		<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+		<td><span class="hint--top" data-hint="Contact the developer."><a class="link" href="contact.html">Contact</a></span></td>
+		<td><span class="hint--top" data-hint="View the Privacy Policy."><a class="link" href="privacy.html">Privacy</a></span></td>
+		<td><span class="hint--top" data-hint="Go to the Mobile Version."><a class="link" href="m-index.html">Mobile</a></span></td>
+		<td><span class="hint--top" data-hint="Visit my Host's Website."><a class="link" href="http://www.chaoswebs.cf/">Chaos Webs</a></span></td>
 	</tr>
 	<tr>
 		<td></td>
 		<td></td>
-		<td><a class="link-hidden-blue" title="Go to Desktop Version" href="index.html">Desktop</a></td>
+		<td><span class="hint--top" data-hint="Go to the Desktop Version."><a class="link-hidden-blue" href="index.html">Desktop</a></td>
+		<td><span class="hint--top" data-hint="View Website Repository."><a class="link" href="https://github.com/InvisaMage/Website">Repository</a></span></td>
 	</tr>
 </table>
 <br>
