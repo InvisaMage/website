@@ -16,11 +16,20 @@
 	<script type="text/javascript" src="./scripts/search.js"></script>
 </head>
 
-<body onload="clock();">
+<body>
 
 <!--Navigation Bar-->
 <ul id="nav" class="nav">
 	<li><a href="index.html"><img class="title" src="./res/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
+	<!--Useful Links-->
+	<table class="favicon">
+		<tr>
+			<td><a href="http://www.planetminecraft.com/project/floating-survival-2378940/"><span class='hint--bottom'  data-hint='Minecraft community where my Floating Survival Project is hosted.'><img src="./res/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"></img></span></a></td>
+			<td><a href="https://www.youtube.com/user/InvisaMage"><span class='hint--bottom' data-hint='Platform for original content creators that I have some videos on.'><img src="./res/ytfavicon.ico" alt="YT Icon" height="16" width="16"></img></span></a></a></td>
+			<td><a href="http://www.twitch.tv/invisamage"><span class='hint--bottom' data-hint='Game streaming service which I have an account on.'><img src="./res/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"></img></span></a></a></td>
+			<td><a href="http://www.chaoswebs.cf/"><span class='hint--bottom' data-hint='My amazing friend and host.'><img src="./res/cwfavicon.ico" alt="CW Icon" height="16" width="16"></img></span></a>
+		</tr>
+	</table>
 	<li id="nav-highlight"><span class="hint--bottom" data-hint="The Homepage; plain and simple."><a href='index.html'>Home</a></span></li>
 	<li id="nav-highlight"><span class="hint--bottom" data-hint="Website changes & Project updates."><a href='news.html'>News</a></span></li>
 	<li id="nav-highlight-strait"><a href="#">Projects</a>
@@ -30,7 +39,7 @@
 			<li id="nav-highlight-right"><span class="hint--bottom--left" data-hint="Make this Website more accessible on iOS."><a href="webapp.html">iOS Web App</a></span></li>
 		</ul>
 	</li>
-	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
+	<li id="nav-highlight"><span id="nav-arrow-down"></span><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
 	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
 	<li id="nav-highlight-strait"><a>Search</a>
 		<ul>
@@ -51,9 +60,9 @@ Questions, Comments, Suggestions, <a class="link" title="Floating Survival Page"
 <h1>Contact Method</h1>
 <table class="table-contact" style="width:65%" align="center">
 	<tr>
-		<td><img class="favicon" src="./res/gmailfavicon.ico" alt="PMC Icon" height="16" width="16"> <span class="hint--top" data-hint="A method of exchanging digital messages from an author to one or more recipients"><a class="definition" id="help">E-Mail</a></span></td>
-		<td><img class="favicon" src="./res/telegramfavicon.ico" alt="Telegram Icon" height="16" width="16"> <span class="hint--top" data-hint="A cloud-based mobile and desktop messaging app with a focus on security and speed."><a class="definition" id="help">Telegram</a></span></td>
-		<td><img class="favicon" src="./res/skypefavicon.ico" alt="YT Icon" height="16" width="16"> <span class="hint--top--left" data-hint="Telecommunication software that specializes in providing video chat and voice calls from multiple devices."><a class="definition" id="help">Skype</a></span></td>
+		<td><img src="./res/gmailfavicon.ico" alt="PMC Icon" height="16" width="16"> <span class="hint--top" data-hint="A method of exchanging digital messages from an author to one or more recipients"><a class="definition" id="help">E-Mail</a></span></td>
+		<td><img src="./res/telegramfavicon.ico" alt="Telegram Icon" height="16" width="16"> <span class="hint--top--center" data-hint="A cloud-based mobile and desktop messaging app with a focus on security and speed."><a class="definition" id="help">Telegram</a></span></td>
+		<td><img src="./res/skypefavicon.ico" alt="YT Icon" height="16" width="16"> <span class="hint--top--left" data-hint="Telecommunication software that specializes in providing video chat and voice calls from multiple devices."><a class="definition" id="help">Skype</a></span></td>
 	</tr>
 	<tr>
 		<td><a class="link" title="Contact InvisaMage" href="mailto:TheMageNetwork@outlook.com">TheMageNetwork@outlook.com</a></td>
@@ -69,27 +78,28 @@ Questions, Comments, Suggestions, <a class="link" title="Floating Survival Page"
 <a title="Beam me Up" href="#"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
 <table class="table-footer" style="width:60%" align="center">
 	<tr>
-		<th><a class="link-hidden-blue" title="About Website" href="about.html">About:</a></th>
+		<th><span class="hint--top" data-hint="About this Website."><a class="link-hidden-blue" href="about.html">About:</a></span></th>
 		<th>Legal:</th>
-		<th>Settings:</th>		
+		<th>Settings:</th>
 		<th>Extras:</th>
 	</tr>
 	<tr>
-		<td><a class="link" title="About InvisaMage" href="about.html#InvisaMage">InvisaMage</a></td>
-		<td><a class="link" title="View Terms & Conditions" href="terms.html">Terms</a></td>
-		<td><a class="link" onclick="ads();">Hide Ads</a></td>
-		<td><a class="link" title="View old Versions" href="archive.html">Archive</a></td>
+		<td><span class="hint--top" data-hint="About the developer."><a class="link" href="about.html#InvisaMage">InvisaMage</a></span></td>
+		<td><span class="hint--top" data-hint="View the Terms & Conditions."><a class="link" href="terms.html">Terms</a></span></td>
+		<td><span class="hint--top" data-hint="Hide the ads."><a class="link" onclick="ads();">Hide Ads</a></span></td>
+		<td><span class="hint--top" data-hint="View old Versions of this Website."><a class="link" href="archive.html">Archive</a></span></td>
 	</tr>
 	<tr>
-		<td><a class="link" title="Contact" href="contact.html">Contact</a></td>
-		<td><a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a></td>
-		<td><a class="link" title="Go to Mobile Version" href="m-index.html">Mobile</a></td>
-		<td><a class="link" title="Visit Host" href="http://www.chaoswebs.cf/">Chaos Webs</a></td>
+		<td><span class="hint--top" data-hint="Contact the developer."><a class="link" href="contact.html">Contact</a></span></td>
+		<td><span class="hint--top" data-hint="View the Privacy Policy."><a class="link" href="privacy.html">Privacy</a></span></td>
+		<td><span class="hint--top" data-hint="Go to the Mobile Version."><a class="link" href="m-index.html">Mobile</a></span></td>
+		<td><span class="hint--top" data-hint="Visit my Host's Website."><a class="link" href="http://www.chaoswebs.cf/">Chaos Webs</a></span></td>
 	</tr>
 	<tr>
 		<td></td>
 		<td></td>
-		<td><a class="link-hidden-blue" title="Go to Desktop Version" href="index.html">Desktop</a></td>
+		<td><span class="hint--top" data-hint="Go to the Desktop Version."><a class="link-hidden-blue" href="index.html">Desktop</a></td>
+		<td><span class="hint--top" data-hint="View Website Repository."><a class="link" href="https://github.com/InvisaMage/Website">Repository</a></span></td>
 	</tr>
 </table>
 <br>
