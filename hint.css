@@ -87,11 +87,17 @@
  */
 .hint--top:before {
   border-top-color: #383838; }
+
+.hint--top--center:before {
+  border-top-color: #383838; }
   
 .hint--top--left:before {
 border-top-color: #383838; }
 
 .hint--bottom:before {
+  border-bottom-color: #383838; }
+
+.hint--bottom--center:before {
   border-bottom-color: #383838; }
 
 .hint--bottom--left:before {
@@ -113,7 +119,7 @@ border-top-color: #383838; }
 .hint--top:after {
   margin-left: -18px; }
 .hint--top:before, .hint--top:after {
-  bottom: 100%;
+  bottom: 80%;
   left: 50%; }
 .hint--top:hover:after, .hint--top:hover:before, .hint--top:focus:after, .hint--top:focus:before {
   -webkit-transform: translateY(-8px);
@@ -135,6 +141,21 @@ border-top-color: #383838; }
   -moz-transform: translateY(-8px);
   transform: translateY(-8px); }
 
+/**
+ * top center tooltip
+ */
+.hint--top--center:before {
+  margin-bottom: -12px; }
+.hint--top--center:after {
+  margin-right: -250%; }
+.hint--top--center:before, .hint--top--center:after {
+  bottom: 80%;
+  right: 40%; }
+.hint--top--center:hover:after, .hint--top--center:hover:before, .hint--top--center:focus:after, .hint--top--center:focus:before {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px); }
+ 
 /**
  * bottom tooltip
  */
@@ -161,6 +182,21 @@ border-top-color: #383838; }
   top: 100%;
   right: 50%; }
 .hint--bottom--left:hover:after, .hint--bottom--left:hover:before, .hint--bottom--left:focus:after, .hint--bottom--left:focus:before {
+  -webkit-transform: translateY(8px);
+  -moz-transform: translateY(8px);
+  transform: translateY(8px); }
+
+/**
+ * bottom center tooltip
+ */
+.hint--bottom--center:before {
+  margin-top: -12px; }
+.hint--bottom--center:after {
+  margin-left: -250%; }
+.hint--bottom--center:before, .hint--bottom--center:after {
+  top: 100%;
+  left: 50%; }
+.hint--bottom--center:hover:after, .hint--bottom--center:hover:before, .hint--bottom--center:focus:after, .hint--bottom--center:focus:before {
   -webkit-transform: translateY(8px);
   -moz-transform: translateY(8px);
   transform: translateY(8px); }
