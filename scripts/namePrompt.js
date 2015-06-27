@@ -8,7 +8,7 @@ function namePrompt()
 	{
 //Default
 		document.getElementById("name").innerHTML =
-		"Hello " + name + " and welcome to <span class='hint--bottom' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website.<br>I hope you enjoy your stay."
+		"Hello " + name + " and welcome to <span class='hint--top--center' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website.<br>I hope you enjoy your stay."
 //Creator Message
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis") || (name == "travis"))
 		document.getElementById("name").innerHTML =
@@ -40,11 +40,11 @@ function namePrompt()
 //Rachel
 		if (name == "Rachel" || (name == "rachel"))
 		document.getElementById("name").innerHTML =
-		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='definition' id='help'>femake</a></span> and welcome back to my Website."
+		"Hello <span class='hint--top' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='definition' id='help'>femake</a></span> and welcome back to my Website."
 //Tony
 		if (name == "Tony" || (name == "tony"))
 		document.getElementById("name").innerHTML =
-		"Hello <span class='hint--bottom' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='definition' id='help'>femake</a></span> lover and welcome back to my Website."
+		"Hello <span class='hint--top' data-hint='An endangered subspecies of humans which are incapable of reproducing.'><a class='definition' id='help'>femake</a></span> lover and welcome back to my Website."
 //Joe
 		if (name == "Joe" || (name == "joe") || (name == "Joey") || (name == "joey"))
 		document.getElementById("name").innerHTML =
@@ -108,10 +108,10 @@ function namePrompt()
 //Reset
 		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls"))
 		document.getElementById("name").innerHTML =
-		"Welcome to <span class='hint--bottom' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website."
+		"Welcome to <span class='hint--top--center' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website."
 //No name - Audio
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
-		"Your name goes in that box but, welcome to <span class='hint--bottom--left' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./res/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
+		"Your name goes in that box but, welcome to <span class='hint--top--center' data-hint='A 16 year old human male who likes web technologies and assorted games.'><a class='definition'>InvisaMage</a></span>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./res/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
 	}
 }
