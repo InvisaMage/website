@@ -6,6 +6,7 @@
 body {
 	font-family: "Ubuntu";
 	background-image: url("./res/bg.jpg");
+	background-attachment: fixed;
 	color: #3399FF;
 	text-align: center;
 	overflow-x: hidden;

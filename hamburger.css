@@ -7,8 +7,6 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: Arial;
-    font-size: 18px;
 }
 
 /* Header is relative so z-index: 1 guarantees always displayed on top */
@@ -26,6 +24,7 @@ header {
 /* using background color is important to cover the menu position absolute is set to cover the whole viewport */
 #content {
 	background-image: url("./res/bg.jpg");
+	background-attachment: fixed;
     background-color: #FFFFFF;
     padding: 52px 10px 10px 10px;
     position: relative;
