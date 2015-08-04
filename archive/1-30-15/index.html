@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created December 15, 2014-->
+<!--Home-->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!--Define character encoding-->
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<title>InvisaMage | Home</title>
+	<link rel="icon" href="./res/favicon.ico" type="image/.ico"/>
+<!--External Scripts-->
+	<script type="text/javascript" src="./scripts/namePrompt.js"></script>
+	<script type="text/javascript" src="./scripts/date.js"></script>
+	<script type="text/javascript" src="./scripts/clock.js"></script>
+<!--iOS Options-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="InvisaMage">
+<!--iOS Home Screen Image-->
+	<link rel="apple-touch-icon" href="./res/quasar.jpg">
+	<link rel="apple-touch-icon" sizes="76x76" href="./res/quasar.jpg">
+	<link rel="apple-touch-icon" sizes="120x120" href="./res/quasar.jpg">
+	<link rel="apple-touch-icon" sizes="152x152" href="./res/quasar.jpg">
+</head>
+
+<body class="cursorNormal" onload="clock(); date();">
+<a id="top"></a>
+
+<!--Page Title-->
+<a class="title" title="Home" href="index.html">InvisaMage's Website</a>
+<br>
+<br>
+
+<!--Navigation Bar-->
+<ul id="nav" class="nav">
+	<li><a title="Home" href="index.html">Home</a></li>
+	<li><a title="News" href="news.html">News</a></li>
+	<li><a title="Projects List" href="#">Projects</a>
+		<ul>
+			<li><a title="Floating Survival" href="fs.html">FS</a></li>
+			<li><a title="InvisaRant" href="invisarant.html">InvisaRant</a></li>
+			<li><a title="iOS Web App" href="webapp.html">iOS Web App</a></li>
+		</ul>
+	</li>
+	<li><a title="Contact" href="contact.html">Contact</a></li>
+	<li><a title="About" href="about.html">About</a>
+		<ul>
+			<li><a title="InvisaMage" href="about.html#InvisaMage">InvisaMage</a></li>
+			<li><a title="Creation" href="about.html#creation">Creation</a></li>
+			<li><a title="Information" href="about.html#info">Information</a></li>
+		</ul>
+	</li>
+</ul>
+
+<!--Clock & formatting-->
+<br>
+<br>
+<a id="hideclock" class="tooltip1"><div class="clock" id="clock"></div><span>24-Hour Clock</span></a>
+<br>
+<br>
+
+<!--Minecraft Skin-->
+<a class="a" title="InvisaMage" href="about.html#InvisaMage"><img src="./res/InvisaMage.png" alt="InvisaMage's Skin" height="200" width="100"></a>
+<br>
+<br>
+
+<!--Button and namePrompt Function-->
+<button class="button1" href="#" onclick="namePrompt();"><span>Personalize Message</span></button>
+<!--Paragraph Changes with namePrompt Input-->
+<p id="name"> Welcome to <a class="a" title="About" href="about.html#InvisaMage">InvisaMage</a>'s Website.</p>
+
+<!--Main Body-->
+<p>
+On this website you can find fast and informative information about all things InvisaMage.<br>
+Use the navigation bar at the top to begin.<br>
+Ooh look, you even get a lovely clock on every page.<br>
+</p>
+
+<!--Useful Links Table-->
+<h1>Useful Links</h1>
+<table style="width:75%" align="center">
+	<tr>
+		<td><img src="./res/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"> <a class="a" title="FS on Planet Minecraft" href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft</a></td>
+		<td><img src="./res/ytfavicon.ico" alt="YT Icon" height="16" width="16"> <a class="a" title="InvisaMage's YouTube" href="https://www.youtube.com/user/InvisaMage">YouTube</a></td>
+		<td><img src="./res/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"> <a class="a" title="InvisaMage's Twitch" href="http://www.twitch.tv/invisamage">Twitch</a></td>
+		<td><img src="./res/cwfavicon.ico" alt="CW Icon" height="16" width="16"> <a class="a" title="Visit Host" href="http://chaoswebz.tk/">Chaos Webs</a></td>
+	</tr>
+	<tr>
+		<td>Minecraft community where my <a class="a" title="Floating Survival Page" href="fs.html">Floating Survival</a> Project is hosted.</td>
+		<td>Platform for original content creators that I have some videos on.</td>
+		<td>Game streaming service which I have an account on.</td>
+		<td>My amazing friend and host.</td>
+	</tr>
+</table>
+<br>
+<br>
+
+<!--Footer-->
+<footer>
+<a title="Beam me Up" href="#top"><div class="top"><img src="./res/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+<p>
+Use of this website is subject to the <a class="a" title="View Terms & Conditions" href="terms.html">Terms</a> and <a class="a" title="View Privacy Policy" href="privacy.html">Privacy Policy</a>.<br>
+&copy; 2014-2015, InvisaMage
+</p>
+<div id="date"></div>
+</footer>
+
+</body>
+</html>
