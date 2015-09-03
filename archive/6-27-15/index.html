@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created December 15, 2014-->
+<!--Home-->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!--Define character encoding-->
+	<meta name="description" content="Information about InvisaMage and his projects.">
+	<meta name="keywords" content="InvisaMage, invisamage, Floating Survival, floating survival, FS, fs, InvisaRant, invisarant, IR, ir">
+	<link rel="stylesheet" type="text/css" href="./source/styles/styles.css">
+	<link rel="stylesheet" type="text/css" href="./source/styles/hint.css">
+	<link rel="icon" href="./source/images/icons/favicon.ico" type="image/.ico"/>
+	<title>InvisaMage | Home</title>
+<!--External Scripts-->
+	<script type="text/javascript" src="./source/scripts/time.js"></script>
+	<script type="text/javascript" src="./source/scripts/messages.js"></script>
+	<script type="text/javascript" src="./source/scripts/search.js"></script>
+	<script type="text/javascript" src="./source/scripts/namePrompt.js"></script>
+<!--iOS Options-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="InvisaMage">
+<!--iOS Home Screen Image-->
+	<link rel="apple-touch-icon" href="./source/images/icons/quasar.jpg">
+	<link rel="apple-touch-icon" sizes="76x76" href="./source/images/icons/quasar.jpg">
+	<link rel="apple-touch-icon" sizes="120x120" href="./source/images/icons/quasar.jpg">
+	<link rel="apple-touch-icon" sizes="152x152" href="./source/images/icons/quasar.jpg">
+</head>
+
+<body onload="clock();">
+
+<!--Navigation Bar-->
+<nav id="nav" class="nav">
+	<li><a href="index.html"><img class="title" src="./source/images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
+	<!--Useful Links-->
+	<table class="favicon">
+		<tr>
+			<td><a href="http://www.planetminecraft.com/project/floating-survival-2378940/"><span class='hint--bottom'  data-hint='Planet Minecraft - A Minecraft community where my Floating Survival Project is hosted.'><img src="./source/images/icons/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"></img></span></a></td>
+			<td><a href="https://www.youtube.com/user/InvisaMage"><span class='hint--bottom' data-hint='YouTube - Platform for original content creators that I have some videos on.'><img src="./source/images/icons/ytfavicon.ico" alt="YT Icon" height="16" width="16"></img></span></a></a></td>
+			<td><a href="http://www.twitch.tv/invisamage"><span class='hint--bottom' data-hint='Twitch - Game streaming service which I have an account on.'><img src="./source/images/icons/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"></img></span></a></a></td>
+			<td><a href="http://www.chaoswebs.cf/"><span class='hint--bottom' data-hint='Chaos Webs - My amazing friend and host.'><img src="./source/images/icons/cwfavicon.ico" alt="CW Icon" height="16" width="16"></img></span></a>
+		</tr>
+	</table>
+	<li id="nav-highlight"><span id="nav-arrow-down"></span><span class="hint--bottom" data-hint="The Homepage; plain and simple."><a href='index.html'>Home</a></span></li>
+	<li id="nav-highlight"><span class="hint--bottom" data-hint="Website changes & Project updates."><a href='news.html'>News</a></span></li>
+	<li id="nav-highlight-strait"><a href="#">Projects</a>
+		<ul>
+			<li id="nav-highlight-left"><span class="hint--bottom" data-hint="Floating Survival - A Minecraft adventure/survival map."><a href="fs.html">FS</a></span></li>
+			<li id="nav-highlight-strait"><span class="hint--bottom" data-hint="A podcast about random things."><a href="invisarant.html">InvisaRant</a></span></li>
+			<li id="nav-highlight-right"><span class="hint--bottom--left" data-hint="Make this Website more accessible on iOS."><a href="webapp.html">iOS Web App</a></span></li>
+		</ul>
+	</li>
+	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
+	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
+	<li id="nav-highlight-strait"><a>Search</a>
+		<ul>
+			<li id="nav-search"><span class="hint--bottom--left" data-hint="Type the name of a page and go to it."><a><input autofocus onkeypress="search()" type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
+		</ul>
+	</li>
+</nav>
+
+<!--Clock, Counter, & formatting-->
+<br>
+<br>
+<span class='hint--right' data-hint='24-Hour Clock'><div class="clock" id="clock"></div></span>
+<br>
+<br>
+<span class='hint--right' data-hint='Your page visits.'><div class="counter"><script type="text/javascript" src="./source/scripts/counter.js"></script></div></span>
+<br>
+<br>
+
+<!--Button and namePrompt Function-->
+<button class="button1" href="#" onclick="namePrompt();"><span>Personalize Message</span></button>
+<!--Paragraph Changes with namePrompt Input-->
+<p id="name"> Welcome to <span class="hint--top--center" data-hint="A 16 year old human male who likes web technologies and assorted games."><a class="definition">InvisaMage</a></span>'s Website.</p>
+
+<!--Main Body-->
+<p>
+On this website you can find fast and informative information about all things InvisaMage.<br>
+Use the navigation bar at the top to begin.<br>
+</p>
+
+<!--Footer-->
+<footer>
+<a title="Beam me Up" href="#top"><div class="top"><img src="./source/images/up.png" alt="Beam me Up" height="48" width="48"></div></a>
+<table class="table-footer" style="width:60%" align="center">
+	<tr>
+		<th><span class="hint--top" data-hint="About this Website."><a class="link-hidden-blue" href="about.html">About:</a></span></th>
+		<th>Legal:</th>
+		<th>Settings:</th>
+		<th>Extras:</th>
+	</tr>
+	<tr>
+		<td><span class="hint--top" data-hint="About the developer."><a class="link" href="about.html#InvisaMage">InvisaMage</a></span></td>
+		<td><span class="hint--top" data-hint="View the Terms & Conditions."><a class="link" href="terms.html">Terms</a></span></td>
+		<td><span class="hint--top" data-hint="Hide the ads."><a class="link" onclick="ads();">Hide Ads</a></span></td>
+		<td><span class="hint--top" data-hint="View old Versions of this Website."><a class="link" href="archive.html">Archive</a></span></td>
+	</tr>
+	<tr>
+		<td><span class="hint--top" data-hint="Contact the developer."><a class="link" href="contact.html">Contact</a></span></td>
+		<td><span class="hint--top" data-hint="View the Privacy Policy."><a class="link" href="privacy.html">Privacy</a></span></td>
+		<td><span class="hint--top" data-hint="Go to the Mobile Version."><a class="link" href="./mobile/m-index.html">Mobile</a></span></td>
+		<td><span class="hint--top" data-hint="Visit my Host's Website."><a class="link" href="http://www.chaoswebs.cf/">Chaos Webs</a></span></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td><span class="hint--top" data-hint="Go to the Desktop Version."><a class="link-hidden-blue" href="index.html">Desktop</a></td>
+		<td><span class="hint--top" data-hint="View Website Repository."><a class="link" href="https://github.com/InvisaMage/Website">Repository</a></span></td>
+	</tr>
+</table>
+<br>
+&copy; 2014-2015, InvisaMage
+<div id="date"></div>
+</footer>
+<br>
+
+</body>
+</html>
