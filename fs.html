@@ -1,185 +1,502 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created December 15, 2014-->
+<!--Bootstrap Merge began on August 7, 2015-->
 <!--Floating Survival-->
 
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!--Define character encoding-->
-	<link rel="stylesheet" type="text/css" href="./source/styles/styles.css">
-	<link rel="stylesheet" type="text/css" href="./source/styles/hint.css">
-	<title>InvisaMage | FS</title>
-	<link rel="icon" href="./source/images/icons/favicon.ico" type="image/.ico"/>
-<!--External Scripts-->
-	<script type="text/javascript" src="./source/scripts/time.js"></script>
-	<script type="text/javascript" src="./source/scripts/messages.js"></script>
-	<script type="text/javascript" src="./source/scripts/search.js"></script>
-<!---Scrolling Images--->
-	<script type="text/javascript" src="./source/scripts/jquery.js"></script>
-	<script type="text/javascript" src="./source/scripts/jquery.jcarousel.min.js"></script>
-	<script type="text/javascript" src="./source/scripts/jcarousel.basic.js"></script>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="Information about InvisaMage and his projects.">
+		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<link rel="icon" href="images/icons/favicon.ico" type="image/.ico"/>
+		<title>InvisaMage | FS</title>
+		<!--Stylesheets-->
+		<link href="css/styles.css" rel="stylesheet" >
+		<link href="css/bootstrap.css" rel="stylesheet">
+	</head>
+	<body id="top">
+		<!--Navigation Bar-->
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="index.html">InvisaMage</a>
+					<!--Useful Links-->
+					<a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-menu-down"></span></a>
+					<ul class="dropdown-menu">
+				    <li><a href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft</a></li>
+				    <li><a href="https://www.youtube.com/user/InvisaMage">YouTube</a></li>
+				    <li><a href="http://www.twitch.tv/invisamage">Twitch</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="http://www.chaoswebs.cf/">Chaos Webs</a></li>
+				  </ul>
+				</div>
 
-<body>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="news.html">News</a></li>
+					<li class="dropdown active">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li class="active"><a href="fs.html">Floating Survival</a></li>
+						<li><a href="invisarant.html">InvisaRant</a></li>
+						<li><a href="webapp.html">iOS Web App</a></li>
+					  </ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#contact">Contact</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#donate">Donate</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a class="divider-vertical"></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#stats">Stats</a></li>
+					</ul>
 
-<!--Navigation Bar-->
-<nav id="nav" class="nav">
-	<li><a href="index.html"><img class="title" src="./source/images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
-	<!--Useful Links-->
-	<table class="favicon">
-		<tr>
-			<td><a href="http://www.planetminecraft.com/project/floating-survival-2378940/"><span class='hint--bottom'  data-hint='Planet Minecraft - A Minecraft community where my Floating Survival Project is hosted.'><img src="./source/images/icons/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"></img></span></a></td>
-			<td><a href="https://www.youtube.com/user/InvisaMage"><span class='hint--bottom' data-hint='YouTube - Platform for original content creators that I have some videos on.'><img src="./source/images/icons/ytfavicon.ico" alt="YT Icon" height="16" width="16"></img></span></a></a></td>
-			<td><a href="http://www.twitch.tv/invisamage"><span class='hint--bottom' data-hint='Twitch - Game streaming service which I have an account on.'><img src="./source/images/icons/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"></img></span></a></a></td>
-			<td><a href="http://www.chaoswebs.cf/"><span class='hint--bottom' data-hint='Chaos Webs - My amazing friend and host.'><img src="./source/images/icons/cwfavicon.ico" alt="CW Icon" height="16" width="16"></img></span></a>
-		</tr>
-	</table>
-	<li id="nav-highlight"><span id="nav-arrow-down"></span><span class="hint--bottom" data-hint="The Homepage; plain and simple."><a href='index.html'>Home</a></span></li>
-	<li id="nav-highlight"><span class="hint--bottom" data-hint="Website changes & Project updates."><a href='news.html'>News</a></span></li>
-	<li id="nav-highlight-strait"><a href="#">Projects</a>
-		<ul>
-			<li id="nav-highlight-left"><span class="hint--bottom" data-hint="Floating Survival - A Minecraft adventure/survival map."><a href="fs.html">FS</a></span></li>
-			<li id="nav-highlight-strait"><span class="hint--bottom" data-hint="A podcast about random things."><a href="invisarant.html">InvisaRant</a></span></li>
-			<li id="nav-highlight-right"><span class="hint--bottom--left" data-hint="Make this Website more accessible on iOS."><a href="webapp.html">iOS Web App</a></span></li>
-		</ul>
-	</li>
-	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
-	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
-	<li id="nav-highlight-strait"><a>Search</a>
-		<ul>
-			<li id="nav-search"><span class="hint--bottom--left" data-hint="Type the name of a page and go to it."><a><input autofocus onkeypress="search()" type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
-	</ul>
-	</li>
-</nav>
+					<!--Search Function-->
+					<div onkeypress="search();" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
+						<div class="input-group">
+							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button" onClick="search();">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div><!-- /input-group -->
+					</div>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
 
-<!--Page Title-->
-<br>
-<a class="title" title="Floating Survival" href="fs.html">Floating Survival</a>
-<br>
-<br>
+		<!--Begin Content-->
+		<div class="container">
 
-<!--Menu-->
-<div id="menu2">
-	<h1>Contents</h1>
-	<li><span class="hint--right" data-hint="Learn about the Key Features."><a href="fs.html#keyfeatures">Key Features</a></span></li>
-	<li><span class="hint--right" data-hint="View the download table."><a href="fs.html#table">Data Table</a></span></li>
-	<li><span class="hint--right" data-hint="See the latest video."><a href="fs.html#video">Video</a></span></li>
-	<li><span class="hint--right" data-hint="View screenshots."><a href="fs.html#images">Screenshots</a></span></li>
-	<br>
-</div>
+			<!--Page Title-->
+			<a class="title" href="fs.html">Floating Survival</a>
+			<br>
+			<br>
 
-<!--Planet Minecraft Banner-->
-<a href="http://www.planetminecraft.com/member/invisamage/" title="InvisaMage on Planet Minecraft"><img src="http://www.planetminecraft.com/files/sigs/invisamage_1336938_sig.jpg" border="0" alt="InvisaMage SigCard"></a>
+			<!--Menu-->
+			<div id="menu2">
+				<h1>Contents</h1>
+				<li><a href="fs.html#keyfeatures">Key Features</a></li>
+				<li><a href="fs.html#table">Data Table</a></li>
+				<li><a href="fs.html#video">Video</a></li>
+				<li><a href="fs.html#images">Screenshots</a></li>
+				<br>
+			</div>
 
-<p>
-Floating Survival, or <span class="hint--bottom--center" data-hint="Floating Survival"><a class="definition">FS</a></span> for short, is a Minecraft adventure/survival map.<br>
-I work on it in my free time and when I'm really bored.<br>
-I'd appreciate any feedback that you have on it.
-</p>
+			<!--Planet Minecraft Banner-->
+			<a href="http://www.planetminecraft.com/member/invisamage/" title="InvisaMage on Planet Minecraft"><img class="img-responsive center-block" src="http://www.planetminecraft.com/files/sigs/invisamage_1336938_sig.jpg" border="0" alt="InvisaMage SigCard"></a>
 
-<!--Key Features-->
-<a id="keyfeatures"></a>
-<h1>Key Features</h1>
-<p>
-"Wireless" Redstone<br>
-Wilderness<br>
-PvP Arena<br>
-Mob Arena<br>
-Lighting System<br>
-Lock Platform (For Greifers)<br>
-Community Area<br>
-Firework Launchers<br>
-More to be discovered by you!<br>
-Spawn Tutorial
-</p>
+			<p>
+			Floating Survival, or <span class="hint--bottom--center" data-hint="Floating Survival"><a class="definition">FS</a></span> for short, is a Minecraft adventure/survival map.<br>
+			I work on it in my free time and when I'm really bored.<br>
+			I'd appreciate any feedback that you have on it.
+			</p>
 
-<!--Data Table-->
-<a id="table"></a>
-<h1>Data Table</h1>
-<table class="table-fs" style="width:60%" align="center">
-	<tr>
-		<th>Cycle</th>
-		<th>Version</th>
-		<th>Download</th>
-		<th>Change Log</th>
-	</tr>
-	<tr>
-		<td>Release</td>
-		<td>v1.6.1.1</td>
-		<td><a title="Download FS Release" href="http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival"><img src="./source/images/dl.png" alt="FS Download" height="45" width="54"></a></td>
-		<td><a title="View Release Change Log" href="http://www.mediafire.com/view/64xj50za2q1lq24/Change%20Log.txt"><img src="./source/images/txt.png" alt="FS Change Log" height="64" width="64"></a></td>
-	</tr>
-	<tr>
-		<td>Beta</td>
-		<td>v1.6.0b5</td>
-		<td><a title="Download FS Beta" href="https://www.mediafire.com/folder/ts25ce97m1b12/Betas"><img src="./source/images/dl.png" alt="FS Download" height="45" width="54"></a></td>
-		<td><a title="View Beta Change Log" href="http://www.mediafire.com/view/tcbj2jo1bqa08a1/Beta%20Change%20Log.txt"><img src="./source/images/txt.png" alt="FS Beta Change Log" height="64" width="64"></a></td>
-	</tr>
-</table>
+			<!--Mobile Menu-->
+			<div id="mobile-menu">
+				<select>
+					<option selected disabled>Date Jump</option>
+					<option value="fs.html#keyfeatures">Key Features</option>
+					<option value="fs.html#table">Data Table</option>
+					<option value="fs.html#video">Video</option>
+					<option value="fs.html#images">Screenshots</option>
+				</select>
+				<br>
+				<br>
+			</div>
 
-<!--YouTube-->
-<a id="video"></a>
-<h1>Most Recent Video</h1>
-<iframe width="750" height="500" src="http://www.youtube.com/embed/_pfHf41EkW4" frameborder="0"></iframe>
-<br>
+			<!--Key Features-->
+			<a id="keyfeatures"></a>
+			<h1>Key Features</h1>
+			<p>
+			"Wireless" Redstone<br>
+			Wilderness<br>
+			PvP Arena<br>
+			Mob Arena<br>
+			Lighting System<br>
+			Lock Platform (For Greifers)<br>
+			Community Area<br>
+			Firework Launchers<br>
+			More to be discovered by you!<br>
+			Spawn Tutorial
+			</p>
 
-<!--Screenshots-->
-<a id="images"></a>
-<h1>Screenshots</h1>
+			<!--Data Table-->
+			<a id="table"></a>
+			<h1>Data Table</h1>
+			<table class="table table-responsive table-fs" style="width:60%" align="center">
+				<tr>
+					<th>Cycle</th>
+					<th>Version</th>
+					<th>Download</th>
+					<th>Change Log</th>
+				</tr>
+				<tr>
+					<td>Release</td>
+					<td>v1.6.1.1</td>
+					<td><a title="Download FS Release" href="http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival"><img src="images/dl.png" alt="FS Download" height="45" width="54"></a></td>
+					<td><a title="View Release Change Log" href="http://www.mediafire.com/view/64xj50za2q1lq24/Change%20Log.txt"><img src="images/txt.png" alt="FS Change Log" height="64" width="64"></a></td>
+				</tr>
+				<tr>
+					<td>Beta</td>
+					<td>v1.6.0b5</td>
+					<td><a title="Download FS Beta" href="https://www.mediafire.com/folder/ts25ce97m1b12/Betas"><img src="images/dl.png" alt="FS Download" height="45" width="54"></a></td>
+					<td><a title="View Beta Change Log" href="http://www.mediafire.com/view/tcbj2jo1bqa08a1/Beta%20Change%20Log.txt"><img src="images/txt.png" alt="FS Beta Change Log" height="64" width="64"></a></td>
+				</tr>
+			</table>
 
-<div class="wrapper">
-	<div class="jcarousel-wrapper">
-		<div class="jcarousel">
-			<ul>
-				<li><img src="./source/images/fs1.png" width="800" height="500" alt=""></li>
-				<li><img src="./source/images/fs2.png" width="800" height="500" alt=""></li>
-				<li><img src="./source/images/fs3.png" width="800" height="500" alt=""></li>
-				<li><img src="./source/images/fs4.png" width="800" height="500" alt=""></li>
-				<li><img src="./source/images/fs5.png" width="800" height="500" alt=""></li>
-				<li><img src="./source/images/fs6.png" width="800" height="500" alt=""></li>
-			</ul>
+			<!--YouTube-->
+			<a id="video"></a>
+			<h1>Most Recent Video</h1>
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/_pfHf41EkW4"></iframe>
+			</div>
+
+			<br>
+			<br>
+
+			<!--Screenshots-->
+			<a id="images"></a>
+			<h1>Screenshots</h1>
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="6"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+				<div class="item active">
+				  <img src="images/fs1.png">
+				  <div class="carousel-caption">
+					<h2>Spawn</h2>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="images/fs2.png">
+				  <div class="carousel-caption">
+					<h2>Day Lobby</h2>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="images/fs3.png">
+				  <div class="carousel-caption">
+					<h2>Night Lobby</h2>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="images/fs4.png">
+				  <div class="carousel-caption">
+					<h2>Parkour</h2>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="images/fs5.png">
+				  <div class="carousel-caption">
+					<h2>Mob Arena</h2>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="images/fs6.png">
+				  <div class="carousel-caption">
+					<h2>PvP Arena</h2>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="images/fs7.png">
+				  <div class="carousel-caption">
+					<h2>Wilderness Lobby</h2>
+				  </div>
+				</div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+			<br>
+
+			<!--Footer-->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2">
+						</div>
+						<div class="col-sm-2">
+							<h4>About</h4>
+							<ul>
+								<li><a class="link" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="right" title="About the developer.">InvisaMage</a></li>
+								<li><a class="link" href="contact.html" data-toggle="tooltip" data-placement="right" title="Contact the developer.">Contact</a></li>
+								<li><a class="link" href="about.html#design" data-toggle="tooltip" data-placement="right" title="Learn how to navigate the Website.">Design</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Legal</h4>
+							<ul>
+								<li><a class="link" href="terms.html" data-toggle="tooltip" data-placement="right" title="View the Terms & Conditions.">Terms</a></li>
+								<li><a class="link" href="privacy.html" data-toggle="tooltip" data-placement="right" title="View the Privacy Policy.">Privacy</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Settings</h4>
+							<ul>
+								<li><a class="link" data-toggle="modal" data-target="#hideAds" data-toggle="tooltip" data-placement="right" title="Hide ads.">Hide Ads</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Extras</h4>
+							<ul>
+								<li><a class="link" href="archive.html" data-toggle="tooltip" data-placement="right" title="View old Versions of this Website.">Archive</a></li>
+								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
+								<li><a class="link" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="right" title="View Website Repository on Github.">Repository</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Copyright & Top Button-->
+				<p class="copyright text-center">
+					&copy; 2014-2015, InvisaMage<br>
+					<a href="#top"><img data-toggle="tooltip" data-placement="right" title="Beam me Up" src="./images/up.png" height="48" width="48"></a>
+				</p>
+			</footer>
 		</div>
-			<!--<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-			<a href="#" class="jcarousel-control-next">&rsaquo;</a>-->
-			<p class="jcarousel-pagination"></p>
-	</div>
-</div>
-<br>
+		<!--/.End Content-->
 
-<!--Footer-->
-<footer>
-<a title="Beam me Up" href="#top"><div class="top"><img src="./source/images/up.png" alt="Beam me Up" height="48" width="48"></div></a>
-<table class="table-footer" style="width:60%" align="center">
-	<tr>
-		<th><span class="hint--top" data-hint="About this Website."><a class="link-hidden-blue" href="about.html">About:</a></span></th>
-		<th>Legal:</th>
-		<th>Settings:</th>
-		<th>Extras:</th>
-	</tr>
-	<tr>
-		<td><span class="hint--top" data-hint="About the developer."><a class="link" href="about.html#InvisaMage">InvisaMage</a></span></td>
-		<td><span class="hint--top" data-hint="View the Terms & Conditions."><a class="link" href="terms.html">Terms</a></span></td>
-		<td><span class="hint--top" data-hint="Hide the ads."><a class="link" onclick="ads();">Hide Ads</a></span></td>
-		<td><span class="hint--top" data-hint="View old Versions of this Website."><a class="link" href="archive.html">Archive</a></span></td>
-	</tr>
-	<tr>
-		<td><span class="hint--top" data-hint="Contact the developer."><a class="link" href="contact.html">Contact</a></span></td>
-		<td><span class="hint--top" data-hint="View the Privacy Policy."><a class="link" href="privacy.html">Privacy</a></span></td>
-		<td><span class="hint--top" data-hint="Go to the Mobile Version."><a class="link" href="./mobile/m-index.html">Mobile</a></span></td>
-		<td><span class="hint--top" data-hint="Visit my Host's Website."><a class="link" href="http://www.chaoswebs.cf/">Chaos Webs</a></span></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td><span class="hint--top" data-hint="Go to the Desktop Version."><a class="link-hidden-blue" href="index.html">Desktop</a></td>
-		<td><span class="hint--top" data-hint="View Website Repository."><a class="link" href="https://github.com/InvisaMage/Website">Repository</a></span></td>
-	</tr>
-</table>
-<br>
-&copy; 2014-2015, InvisaMage
-<div id="date"></div>
-</footer>
-<br>
+		<!--Contact Modal-->
+		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black" id="exampleModalLabel">Contact</h4>
+					</div>
+					<div class="modal-body">
+						Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
+						<br>
+						<br>
+						<table class="table table-responsive table-condensed table-hover">
+							<!--E-mail-->
+							<tr>
+								<td><h5 class="black">E-mail</h5></td>
+								<td>
+									<div class="input-group">
+										<input readonly type="text" class="form-control" value="TheMageNetwork@outlook.com">
+											<span class="input-group-btn">
+												<a roll="button" class="btn btn-default" href="mailto:TheMageNetwork@outlook.com">Send E-mail</a>
+											</span>
+									</div><!-- /input-group -->
+								</td>
+							</tr>
+						  <!--Telegram-->
+							<tr>
+								<td><h5 class="black">Telegram</h5></td>
+								<td>
+									<div class="input-group">
+											<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
+												<span class="input-group-btn">
+													<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">Send Message</a>
+												</span>
+									</div><!-- /input-group -->
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!--Contact Help Alert-->
+					<div class="alert-contact alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-contact').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>More Information</strong><br>
+						<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+						<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-contact').toggle()">Help</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-</body>
+		<!--Donate Modal-->
+		<div class="modal fade" id="donate" tabindex="-1" role="dialog">
+		  <div class="modal-dialog modal-md">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
+		      </div>
+		      <div class="modal-body">
+						If you enjoy what I do, a donation would be highly appreciated.
+						<br>
+						<br>
+		        <table class="table table-responsive table-condensed table-hover">
+		          <!--Bitcoin-->
+		          <tr>
+		            <td><h5 class="black"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></h5></td>
+		            <td><input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr"></td>
+		          </tr>
+		          <!--Dogcoin-->
+		          <tr>
+		            <td><h5 class="black"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></h5></td>
+		            <td><input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg"></td>
+		          </tr>
+		          <!--Litecoin-->
+		          <tr>
+		            <td><h5 class="black"> <a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></h5></td>
+		            <td><input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy"></td>
+		          </tr>
+		        </table>
+		      </div>
+					<!--Information Alert-->
+					<div class="alert-donate alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-donate').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What payment methods are these?</strong><br>
+						These are called cryptocurrencies.
+						They are a digital medium of exchange.
+						They use cryptography for security, making them difficult to counterfeit.
+						Click the names of them to learn more.
+					</div>
+		      <div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-donate').toggle()">What's this?</button>
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Maybe latter</button>
+		      </div>
+		    </div>
+		  </div>
+		</div><!-- /donate modal -->
+
+		<!--Stats Modal-->
+		<div class="modal fade" id="stats" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black" id="exampleModalLabel">Stats</h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-responsive table-condensed table-hover">
+							<!--Clock-->
+							<tr>
+								<td><h5 class="black">Time</h5></td>
+						    <th><h5 class="black"><span id="clock"></span></h5></th>
+							</tr>
+						  <!--Counter-->
+							<tr>
+								<td><h5 class="black">Requests</h5></td>
+						    <th><h5 class="black"><script src="js/counter.js"></script></h5></th>
+							</tr>
+						  <!--Bootstrap Version-->
+							<tr>
+								<td><h5 class="black">Bootstrap</h5></td>
+						    <th><h5 class="black">v3.3.5</h5></th>
+							</tr>
+						  <!--OS-->
+						  <tr>
+								<td><h5 class="black">OS</h5></td>
+						    <th><h5 class="black"><script src="js/os.js"></script></h5></th>
+						  </tr>
+							<!--Browser-->
+						  <tr>
+								<td><h5 class="black">Browser</h5></td>
+						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
+						  </tr>
+						</table>
+					</div>
+					<!--Stats Help Alert-->
+					<div class="alert-stats alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-stats').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What does this do?</strong><br>
+						The Stats modal displays information related to your system.<br>
+						The "requests" are how many times you've loaded any page within this Website.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-stats').toggle()">What's this?</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Hide Ads Modal-->
+		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Hide Ads</h4>
+					</div>
+					<div class="modal-body">
+					<h5 class="black">You must be seeing things.<br>I don't see any ads.</h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--External Scripts-->
+		<script src="js/clock.js"></script>
+		<script src="js/messages.js"></script>
+		<script src="js/search.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--Show Mobile Menus-->
+		<script>
+		if(!('ontouchstart' in window))
+		{
+		$('#mobile-menu').hide()
+		}
+		</script>
+		<!--Mobile Menus-->
+		<script>
+		$('#mobile-menu select').change(function(){
+				window.location = $(this).val();
+		});
+		</script>
+		<!--Activate Tooltips-->
+		<script>
+		if(!('ontouchstart' in window))
+		{
+  	$('[data-toggle="tooltip"]').tooltip();
+		}
+		</script>
+		<!--jQuery smooth scroll to id's -->
+		<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 500);
+		        return true;
+		      }
+		    }
+		  });
+		});
+		</script>
+	</body>
 </html>

@@ -1,116 +1,357 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created December 30, 2014-->
+<!--Bootstrap Merge began on August 7, 2015-->
 <!--iOS Web Application-->
 
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!--Define character encoding-->
-	<link rel="stylesheet" type="text/css" href="./source/styles/styles.css">
-	<link rel="stylesheet" type="text/css" href="./source/styles/hint.css">
-	<title>InvisaMage | iOS Web App</title>
-	<link rel="icon" href="./source/images/icons/favicon.ico" type="image/.ico"/>
-<!--External Scripts-->
-	<script type="text/javascript" src="./source/scripts/time.js"></script>
-	<script type="text/javascript" src="./source/scripts/messages.js"></script>
-	<script type="text/javascript" src="./source/scripts/search.js"></script>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="Information about InvisaMage and his projects.">
+		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<link rel="icon" href="images/icons/favicon.ico" type="image/.ico"/>
+		<title>InvisaMage | iOS Web Application</title>
+		<!--Stylesheets-->
+		<link href="css/styles.css" rel="stylesheet" >
+		<link href="css/bootstrap.css" rel="stylesheet">
+	</head>
+	<body id="top">
+		<!--Navigation Bar-->
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="index.html">InvisaMage</a>
+					<!--Useful Links-->
+					<a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-menu-down"></span></a>
+					<ul class="dropdown-menu">
+				    <li><a href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft</a></li>
+				    <li><a href="https://www.youtube.com/user/InvisaMage">YouTube</a></li>
+				    <li><a href="http://www.twitch.tv/invisamage">Twitch</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="http://www.chaoswebs.cf/">Chaos Webs</a></li>
+				  </ul>
+				</div>
 
-<body>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="news.html">News</a></li>
+					<li class="dropdown active">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="fs.html">Floating Survival</a></li>
+						<li><a href="invisarant.html">InvisaRant</a></li>
+						<li class="active"><a href="webapp.html">iOS Web App</a></li>
+					  </ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#contact">Contact</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#donate">Donate</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a class="divider-vertical"></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#stats">Stats</a></li>
+					</ul>
 
-<!--Navigation Bar-->
-<nav id="nav" class="nav">
-	<li><a href="index.html"><img class="title" src="./source/images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170"></a></li>
-	<!--Useful Links-->
-	<table class="favicon">
-		<tr>
-			<td><a href="http://www.planetminecraft.com/project/floating-survival-2378940/"><span class='hint--bottom'  data-hint='Planet Minecraft - A Minecraft community where my Floating Survival Project is hosted.'><img src="./source/images/icons/pmcfavicon.ico" alt="PMC Icon" height="16" width="16"></img></span></a></td>
-			<td><a href="https://www.youtube.com/user/InvisaMage"><span class='hint--bottom' data-hint='YouTube - Platform for original content creators that I have some videos on.'><img src="./source/images/icons/ytfavicon.ico" alt="YT Icon" height="16" width="16"></img></span></a></a></td>
-			<td><a href="http://www.twitch.tv/invisamage"><span class='hint--bottom' data-hint='Twitch - Game streaming service which I have an account on.'><img src="./source/images/icons/twitchfavicon.ico" alt="Twitch Icon" height="16" width="16"></img></span></a></a></td>
-			<td><a href="http://www.chaoswebs.cf/"><span class='hint--bottom' data-hint='Chaos Webs - My amazing friend and host.'><img src="./source/images/icons/cwfavicon.ico" alt="CW Icon" height="16" width="16"></img></span></a>
-		</tr>
-	</table>
-	<li id="nav-highlight"><span id="nav-arrow-down"></span><span class="hint--bottom" data-hint="The Homepage; plain and simple."><a href='index.html'>Home</a></span></li>
-	<li id="nav-highlight"><span class="hint--bottom" data-hint="Website changes & Project updates."><a href='news.html'>News</a></span></li>
-	<li id="nav-highlight-strait"><a href="#">Projects</a>
-		<ul>
-			<li id="nav-highlight-left"><span class="hint--bottom" data-hint="Floating Survival - A Minecraft adventure/survival map."><a href="fs.html">FS</a></span></li>
-			<li id="nav-highlight-strait"><span class="hint--bottom" data-hint="A podcast about random things."><a href="invisarant.html">InvisaRant</a></span></li>
-			<li id="nav-highlight-right"><span class="hint--bottom--left" data-hint="Make this Website more accessible on iOS."><a href="webapp.html">iOS Web App</a></span></li>
-		</ul>
-	</li>
-	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="Questions, Comments, Concerns?"><a href="contact.html">Contact</a></span></li>
-	<li id="nav-highlight"><span class="hint--bottom--left" data-hint="About the developer, creation of this website, and its contents."><a href="about.html">About</a></span></li>
-	<li id="nav-highlight-strait"><a>Search</a>
-		<ul>
-			<li id="nav-search"><span class="hint--bottom--left" data-hint="Type the name of a page and go to it."><a><input autofocus onkeypress="search()" type="text" id="search" autocomplete="off"><button id="nav-search-button" onClick="search();">Go</button></a></li>
-		</ul>
-	</li>
-</nav>
+					<!--Search Function-->
+					<div onkeypress="search();" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
+						<div class="input-group">
+							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button" onClick="search();">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div><!-- /input-group -->
+					</div>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
 
-<!--Page Title-->
-<br>
-<a class="title" title="iOS Web App" href="webapp.html">iOS Web Application</a>
-<br>
+		<!--Begin Content-->
+		<div class="container">
 
-<p>
-This page explains how to Add this website to your Home Screen on iOS.<br>
-Don't worry, the steps are listed below and there are screenshots.<br>
-This project is to help make iOS the user experience on my website more enjoyable.
-</p>
+			<!--Page Title-->
+			<a class="title" href="webapp.html">iOS Web Application</a>
+			<br>
 
-<h1>Instructions</h1>
-<p>On Safari, go to <a class="link" title="Homepage" href="http://www.invisamage.cf/mobile/m-index.html">http://www.invisamage.cf/mobile/m-index.html</a> and tap the icon with the arrow pointing away from the box.</p>
-<img class="iosimg" src="./source/images/ios1.png" alt="Screenshot 1" height="900" width="540">
-<br>
-<br>
-<p>Next, tap "Add to Home Screen".</p>
-<img class="iosimg" src="./source/images/ios2.png" alt="Screenshot 2" height="900" width="540">
-<br>
-<br>
-<p>Finally, tap "Add".</p>
-<img class="iosimg" src="./source/images/ios3.png" alt="Screenshot 3" height="400" width="540">
-<p>
-Congratulations, you can now use this website as a web application.<br>
-You can move it around as you would any other application.<br>
-Please note that most things are broken.<br>
-The links open in a separate window in Safari.
-</p>
+			<p>
+			This page explains how to Add this website to your Home Screen on iOS.<br>
+			Don't worry, the steps are listed below and there are screenshots.<br>
+			This project is to help make iOS the user experience on my website more enjoyable.
+			</p>
 
-<!--Footer-->
-<footer>
-<a title="Beam me Up" href="#top"><div class="top"><img src="./source/images/up.png" alt="Beam me Up" height="48" width="48"></div></a>
-<table class="table-footer" style="width:60%" align="center">
-	<tr>
-		<th><span class="hint--top" data-hint="About this Website."><a class="link-hidden-blue" href="about.html">About:</a></span></th>
-		<th>Legal:</th>
-		<th>Settings:</th>
-		<th>Extras:</th>
-	</tr>
-	<tr>
-		<td><span class="hint--top" data-hint="About the developer."><a class="link" href="about.html#InvisaMage">InvisaMage</a></span></td>
-		<td><span class="hint--top" data-hint="View the Terms & Conditions."><a class="link" href="terms.html">Terms</a></span></td>
-		<td><span class="hint--top" data-hint="Hide the ads."><a class="link" onclick="ads();">Hide Ads</a></span></td>
-		<td><span class="hint--top" data-hint="View old Versions of this Website."><a class="link" href="archive.html">Archive</a></span></td>
-	</tr>
-	<tr>
-		<td><span class="hint--top" data-hint="Contact the developer."><a class="link" href="contact.html">Contact</a></span></td>
-		<td><span class="hint--top" data-hint="View the Privacy Policy."><a class="link" href="privacy.html">Privacy</a></span></td>
-		<td><span class="hint--top" data-hint="Go to the Mobile Version."><a class="link" href="./mobile/m-index.html">Mobile</a></span></td>
-		<td><span class="hint--top" data-hint="Visit my Host's Website."><a class="link" href="http://www.chaoswebs.cf/">Chaos Webs</a></span></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td><span class="hint--top" data-hint="Go to the Desktop Version."><a class="link-hidden-blue" href="index.html">Desktop</a></td>
-		<td><span class="hint--top" data-hint="View Website Repository."><a class="link" href="https://github.com/InvisaMage/Website">Repository</a></span></td>
-	</tr>
-</table>
-<br>
-&copy; 2014-2015, InvisaMage
-<div id="date"></div>
-</footer>
-<br>
+			<h1>Instructions</h1>
+			<p>On Safari, go to <a class="link" href="http://www.invisamage.cf">http://www.invisamage.cf</a> and tap the icon with the arrow pointing away from the box.</p>
+			<img class="iosimg img-responsive center-block" src="images/ios1.png" alt="Screenshot 1" height="900" width="540">
+			<br>
+			<br>
+			<p>Next, tap "Add to Home Screen".</p>
+			<img class="iosimg img-responsive center-block" src="images/ios2.png" alt="Screenshot 2" height="900" width="540">
+			<br>
+			<br>
+			<p>Finally, tap "Add".</p>
+			<img class="iosimg img-responsive center-block" src="images/ios3.png" alt="Screenshot 3" height="400" width="540">
+			<p>
+			Congratulations, you can now use this website as a web application.<br>
+			You can move it around as you would any other application.<br>
+			Please note that most things are broken.<br>
+			The links open in a separate window in Safari.
+			</p>
 
-</body>
+			<!--Footer-->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2">
+						</div>
+						<div class="col-sm-2">
+							<h4>About</h4>
+							<ul>
+								<li><a class="link" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="right" title="About the developer.">InvisaMage</a></li>
+								<li><a class="link" href="contact.html" data-toggle="tooltip" data-placement="right" title="Contact the developer.">Contact</a></li>
+								<li><a class="link" href="about.html#design" data-toggle="tooltip" data-placement="right" title="Learn how to navigate the Website.">Design</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Legal</h4>
+							<ul>
+								<li><a class="link" href="terms.html" data-toggle="tooltip" data-placement="right" title="View the Terms & Conditions.">Terms</a></li>
+								<li><a class="link" href="privacy.html" data-toggle="tooltip" data-placement="right" title="View the Privacy Policy.">Privacy</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Settings</h4>
+							<ul>
+								<li><a class="link" data-toggle="modal" data-target="#hideAds" data-toggle="tooltip" data-placement="right" title="Hide ads.">Hide Ads</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Extras</h4>
+							<ul>
+								<li><a class="link" href="archive.html" data-toggle="tooltip" data-placement="right" title="View old Versions of this Website.">Archive</a></li>
+								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
+								<li><a class="link" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="right" title="View Website Repository on Github.">Repository</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Copyright & Top Button-->
+				<p class="copyright text-center">
+					&copy; 2014-2015, InvisaMage<br>
+					<a href="#top"><img data-toggle="tooltip" data-placement="right" title="Beam me Up" src="./images/up.png" height="48" width="48"></a>
+				</p>
+			</footer>
+		</div>
+		<!--/.End Content-->
+
+		<!--Contact Modal-->
+		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black" id="exampleModalLabel">Contact</h4>
+					</div>
+					<div class="modal-body">
+						Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
+						<br>
+						<br>
+						<table class="table table-responsive table-condensed table-hover">
+							<!--E-mail-->
+							<tr>
+								<td><h5 class="black">E-mail</h5></td>
+								<td>
+									<div class="input-group">
+										<input readonly type="text" class="form-control" value="TheMageNetwork@outlook.com">
+											<span class="input-group-btn">
+												<a roll="button" class="btn btn-default" href="mailto:TheMageNetwork@outlook.com">Send E-mail</a>
+											</span>
+									</div><!-- /input-group -->
+								</td>
+							</tr>
+						  <!--Telegram-->
+							<tr>
+								<td><h5 class="black">Telegram</h5></td>
+								<td>
+									<div class="input-group">
+											<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
+												<span class="input-group-btn">
+													<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">Send Message</a>
+												</span>
+									</div><!-- /input-group -->
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!--Contact Help Alert-->
+					<div class="alert-contact alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-contact').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>More Information</strong><br>
+						<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+						<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-contact').toggle()">Help</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Donate Modal-->
+		<div class="modal fade" id="donate" tabindex="-1" role="dialog">
+		  <div class="modal-dialog modal-md">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
+		      </div>
+		      <div class="modal-body">
+						If you enjoy what I do, a donation would be highly appreciated.
+						<br>
+						<br>
+		        <table class="table table-responsive table-condensed table-hover">
+		          <!--Bitcoin-->
+		          <tr>
+		            <td><h5 class="black"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></h5></td>
+		            <td><input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr"></td>
+		          </tr>
+		          <!--Dogcoin-->
+		          <tr>
+		            <td><h5 class="black"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></h5></td>
+		            <td><input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg"></td>
+		          </tr>
+		          <!--Litecoin-->
+		          <tr>
+		            <td><h5 class="black"> <a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></h5></td>
+		            <td><input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy"></td>
+		          </tr>
+		        </table>
+		      </div>
+					<!--Information Alert-->
+					<div class="alert-donate alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-donate').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What payment methods are these?</strong><br>
+						These are called cryptocurrencies.
+						They are a digital medium of exchange.
+						They use cryptography for security, making them difficult to counterfeit.
+						Click the names of them to learn more.
+					</div>
+		      <div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-donate').toggle()">What's this?</button>
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Maybe latter</button>
+		      </div>
+		    </div>
+		  </div>
+		</div><!-- /donate modal -->
+
+		<!--Stats Modal-->
+		<div class="modal fade" id="stats" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black" id="exampleModalLabel">Stats</h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-responsive table-condensed table-hover">
+							<!--Clock-->
+							<tr>
+								<td><h5 class="black">Time</h5></td>
+						    <th><h5 class="black"><span id="clock"></span></h5></th>
+							</tr>
+						  <!--Counter-->
+							<tr>
+								<td><h5 class="black">Requests</h5></td>
+						    <th><h5 class="black"><script src="js/counter.js"></script></h5></th>
+							</tr>
+						  <!--Bootstrap Version-->
+							<tr>
+								<td><h5 class="black">Bootstrap</h5></td>
+						    <th><h5 class="black">v3.3.5</h5></th>
+							</tr>
+						  <!--OS-->
+						  <tr>
+								<td><h5 class="black">OS</h5></td>
+						    <th><h5 class="black"><script src="js/os.js"></script></h5></th>
+						  </tr>
+							<!--Browser-->
+						  <tr>
+								<td><h5 class="black">Browser</h5></td>
+						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
+						  </tr>
+						</table>
+					</div>
+					<!--Stats Help Alert-->
+					<div class="alert-stats alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-stats').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What does this do?</strong><br>
+						The Stats modal displays information related to your system.<br>
+						The "requests" are how many times you've loaded any page within this Website.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-stats').toggle()">What's this?</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Hide Ads Modal-->
+		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Hide Ads</h4>
+					</div>
+					<div class="modal-body">
+					<h5 class="black">You must be seeing things.<br>I don't see any ads.</h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--External Scripts-->
+		<script src="js/clock.js"></script>
+		<script src="js/messages.js"></script>
+		<script src="js/search.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--Activate Tooltips-->
+		<script>
+		if(!('ontouchstart' in window))
+		{
+  	$('[data-toggle="tooltip"]').tooltip();
+		}
+		</script>
+		<!--jQuery smooth scroll to id's -->
+		<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 500);
+		        return true;
+		      }
+		    }
+		  });
+		});
+		</script>
+	</body>
 </html>
