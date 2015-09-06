@@ -97,7 +97,7 @@
 			<!--Mobile Menu-->
 			<div id="mobile-menu">
 				<select>
-					<option selected disabled>Date Jump</option>
+					<option selected disabled>Contents</option>
 					<option value="terms.html#general">General</option>
 					<option value="terms.html#warranty">Warranties & Liability</option>
 					<option value="terms.html#copyright">Copyright</option>
@@ -454,25 +454,25 @@
 		<script src="js/search.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<!--Show Mobile Menus-->
-		<script>
-		if(!('ontouchstart' in window))
-		{
-		$('#mobile-menu').hide()
-		}
-		</script>
-		<!--Mobile Menus-->
-		<script>
-		$('#mobile-menu select').change(function(){
-				window.location = $(this).val();
-		});
-		</script>
-		<!--Activate Tooltips-->
+		<!--If no touchscreen, show Tooltips and hide Mobile Menus-->
 		<script>
 		if(!('ontouchstart' in window))
 		{
   	$('[data-toggle="tooltip"]').tooltip();
+		$('#mobile-menu').hide()
 		}
+		</script>
+		<!--If touchscreen, hide Date Jumps-->
+		<script>
+		if(('ontouchstart' in window))
+		{
+		$('#menu3').hide()
+		}
+		</script>
+		<script>
+		$('#mobile-menu select').change(function(){
+				window.location = $(this).val();
+		});
 		</script>
 		<!--jQuery smooth scroll to id's -->
 		<script>
