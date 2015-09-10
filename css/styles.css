@@ -654,9 +654,6 @@ h3 {
 .top {
 	opacity: 0.5;
 	transition: .3s;
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
 }
 .top:hover {
 	opacity: .98;
