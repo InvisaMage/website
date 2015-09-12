@@ -216,7 +216,26 @@
 <!--Website Pane-->
 					<div id="website" class="tab-pane fade">
 					<br>
-					<!--September x, 2015-->
+
+					<!--September 11, 2015-->
+					<span class="newsSection" id="9-11-15-website">
+						<h1>September 11, 2015</h1>
+						<p>
+							Tweaks to up button.<br>
+							Added powered by section on the <a class="link" title="About" href="about.html#creation">About</a> page.<br>
+							Fixed contact links to open the modal instead.<br>
+							Footer fixes.
+							<br>
+							<br>
+							Enhancements to the search function.<br>
+							Searching for "Contact" or "Donate" will display the corresponding modals.<br>
+						</p>
+					</span><!-- /9-11-15 -->
+
+					<br>
+					<br>
+
+					<!--September 6, 2015-->
 					<span class="newsSection" id="9-6-15-website">
 						<h1>September 6, 2015</h1>
 						<p>
@@ -883,6 +902,7 @@
 						<!--Website Menu-->
 						<div id="menu1">
 							<h1>Date Jump</h1>
+							<li><a href="news.html#9-11-15-website">September 11, 2015</a></li>
 							<li><a href="news.html#9-6-15-website">September 6, 2015</a></li>
 							<li><a href="news.html#9-4-15-website">September 4, 2015</a></li>
 							<li><a href="news.html#6-27-15-website">June 27, 2015</a></li>
@@ -935,6 +955,7 @@
 								Tables don't fit well on Mobile.<br>
 								The images on the <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page are outdated.<br>
 								The Date Jump menu is only visible on the Projects tab while on a Mobile device.<br>
+								The Search function can act weird sometimes.
 							</p>
 						</span>
 					</div><!-- /bugs-section -->
@@ -953,7 +974,7 @@
 							<h4>About</h4>
 							<ul>
 								<li><a class="link" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="right" title="About the developer.">InvisaMage</a></li>
-								<li><a class="link" href="contact.html" data-toggle="tooltip" data-placement="right" title="Contact the developer.">Contact</a></li>
+								<li><a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="right" title="Contact the developer.">Contact</a></li>
 								<li><a class="link" href="about.html#design" data-toggle="tooltip" data-placement="right" title="Learn how to navigate the Website.">Design</a></li>
 							</ul>
 						</div>
@@ -967,7 +988,7 @@
 						<div class="col-sm-2">
 							<h4>Settings</h4>
 							<ul>
-								<li><a class="link" data-toggle="modal" data-target="#hideAds" data-toggle="tooltip" data-placement="right" title="Hide ads.">Hide Ads</a></li>
+								<li><a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="right" title="Hide ads.">Hide Ads</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-2">
