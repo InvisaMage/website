@@ -1,6 +1,6 @@
 // If Search term is listed below, you will jump to that specific page
 
-function search() 
+function search()
 {
 	var search = document.getElementById("search").value;
 
@@ -24,12 +24,20 @@ function search()
 	if (search == "iOS" || (search == "ios") || (search == "App") || (search == "app") || (search == "Application") || (search == "application") || (search == "iOS Web App") || (search == "iOS web app") || (search == "webapp"))
 	window.location = "webapp.html";
 
-// Contact page
+// Contact Modal
 	if (search == "Contact" || (search == "contact") || (search == "Help") || (search == "help") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
-	window.location = "contact.html";
+	$('#contact').modal()
+
+// Donate Modal
+	if (search == "Donate" || (search == "donate") || (search == "Money") || (search == "money"))
+	$('#donate').modal()
+
+// Stats Modal
+	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Requests") || (search == "requests") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
+	$('#stats').modal()
 
 // About page
-	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information") || (search == "Help") || (search == "help") || (search == "?"))
+	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information"))
 	window.location = "about.html";
 
 // Terms page
@@ -41,7 +49,7 @@ function search()
 	window.location = "privacy.html";
 
 // Archive page
-	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages") || (search == "Old pages") || (search == "old Pages"))
+	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages"))
 	window.location = "archive.html";
 
 // 404 Error page
