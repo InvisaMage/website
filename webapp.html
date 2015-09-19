@@ -164,32 +164,24 @@
 						Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
 						<br>
 						<br>
-						<table class="table table-responsive table-condensed table-hover">
 							<!--E-mail-->
-							<tr>
-								<td><h5 class="black">E-mail</h5></td>
-								<td>
-									<div class="input-group">
-										<input readonly type="text" class="form-control" value="TheMageNetwork@outlook.com">
-											<span class="input-group-btn">
-												<a roll="button" class="btn btn-default" href="mailto:TheMageNetwork@outlook.com">Send E-mail</a>
-											</span>
-									</div><!-- /input-group -->
-								</td>
-							</tr>
+							<div class="input-group">
+								<div class="input-group-addon">E-mail</div>
+								<input readonly type="text" class="form-control" value="TheMageNetwork@outlook.com">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="mailto:TheMageNetwork@outlook.com">Send E-mail</a>
+									</span>
+							</div><!-- /input-group -->
 						  <!--Telegram-->
-							<tr>
-								<td><h5 class="black">Telegram</h5></td>
-								<td>
-									<div class="input-group">
-											<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
-												<span class="input-group-btn">
-													<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">Send Message</a>
-												</span>
-									</div><!-- /input-group -->
-								</td>
-							</tr>
-						</table>
+							<br>
+							<div class="input-group">
+								<div class="input-group-addon">Telegram</div>
+								<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">Send Message</a>
+									</span>
+							</div><!-- /input-group -->
+							<br>
 					</div>
 					<!--Contact Help Alert-->
 					<div class="alert-contact alert-info alert-dismissible" role="alert" style="display: none">
@@ -218,23 +210,33 @@
 						If you enjoy what I do, a donation would be highly appreciated.
 						<br>
 						<br>
-		        <table class="table table-responsive table-condensed table-hover">
 		          <!--Bitcoin-->
-		          <tr>
-		            <td><h5 class="black"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></h5></td>
-		            <td><input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr"></td>
-		          </tr>
-		          <!--Dogcoin-->
-		          <tr>
-		            <td><h5 class="black"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></h5></td>
-		            <td><input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg"></td>
-		          </tr>
+							<div class="input-group">
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></div>
+			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate</a>
+									</span>
+							</div>
+							<br>
+		          <!--Dogecoin-->
+							<div class="input-group">
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></div>
+			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate</a>
+									</span>
+							</div>
+							<br>
 		          <!--Litecoin-->
-		          <tr>
-		            <td><h5 class="black"> <a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></h5></td>
-		            <td><input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy"></td>
-		          </tr>
-		        </table>
+							<div class="input-group">
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></div>
+			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate</a>
+									</span>
+							</div>
+							<br>
 		      </div>
 					<!--Information Alert-->
 					<div class="alert-donate alert-info alert-dismissible" role="alert" style="display: none">
@@ -243,7 +245,9 @@
 						These are called cryptocurrencies.
 						They are a digital medium of exchange.
 						They use cryptography for security, making them difficult to counterfeit.
-						Click the names of them to learn more.
+						Click the names of them to learn more.<br>
+						<strong>Note:</strong><br>
+						You must have the correct cryptocurrency client to use the "Donate" buttons.
 					</div>
 		      <div class="modal-footer">
 						<button type="button" class="btn btn-default" onclick="$('.alert-donate').toggle()">What's this?</button>
