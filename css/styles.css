@@ -717,3 +717,8 @@ footer ul {
 		font-size: 16px;
 		margin: 0;
 }
+
+/* Stats Images */
+.stats-browser-img {
+	padding: 4px;
+}
