@@ -13,7 +13,7 @@
 		<html content="text/cache-manifest" manifest="cache.manifest">
 		<title>InvisaMage | About</title>
 		<!--Stylesheets-->
-		<link href="css/styles.css" rel="stylesheet" >
+		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body id="top">
@@ -118,7 +118,7 @@
 			<a title="InvisaMage"><img class="img-responsive center-block" src="images/InvisaMage.png" alt="InvisaMage's Skin" height="200" width="100"></a>
 			<p>
 			Hello, I am InvisaMage.<br>
-			I am 16 year old human male who likes web technologies and assorted games.<br>
+			I am 17 year old human male who likes web technologies and assorted games.<br>
 			I got the name, InvisaMage, when I was creating a name for my <a class="link" title="RuneScape" href="http://www.runescape.com/">RuneScape</a> character.<br>
 			I created this website for entertainment and to organize my projects in one place.<br>
 			My Minecraft skin, as shown above, is armour called "Rune Guthix" from <a class="link" title="RuneScape" href="http://www.runescape.com/">RuneScape</a>.
@@ -147,9 +147,9 @@
 			</p>
 			<h2>Powered By</h2>
 			<div class="row">
-			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/html.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="HTML5"></div>
-			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/css3.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="CSS3"></div>
-			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/js.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="JavaScript"></div>
+			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/html.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="HTML5"></div>
+			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/css3.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="CSS3"></div>
+			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/js.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="JavaScript"></div>
 			</div>
 
 			<h2>Git Repository</h2>
@@ -246,8 +246,12 @@
 			</p>
 			<h2>Stats</h2>
 			<p>
-			The Stats button located on the navigation bar displays information related to your system.<br>
-			The "requests" are how many times you've loaded any page within this Website.
+			The Stats button, located on the navigation bar, displays information related to your system.<br>
+			The "requests" are how many times you've loaded any page within this Website.<br>
+			The "Compatibility" row are select browsers which have been tested to some extent and work desireably.<br>
+			This does not mean unlisted browsers do not work.<br>
+			Hover over a brower logo to view more Information.<br>
+			Note: Version numbers are the last known version which the site was tested on.
 			</p>
 			</span>
 
@@ -285,8 +289,8 @@
 							<h4>Extras</h4>
 							<ul>
 								<li><a class="link" href="archive.html" data-toggle="tooltip" data-placement="right" title="View old Versions of this Website.">Archive</a></li>
-								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
 								<li><a class="link" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="right" title="View Website Repository on Github.">Repository</a></li>
+								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
 							</ul>
 						</div>
 					</div>
@@ -448,6 +452,16 @@
 								<td><h5 class="black">Browser</h5></td>
 						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
 						  </tr>
+							<!--Supported Browsers-->
+						  <tr>
+								<td><h5 class="black">Compatibility</h5></td>
+						    <th>
+									<img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
+									<img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
+									<img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
+									<img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
+								</th>
+						  </tr>
 						</table>
 					</div>
 					<!--Stats Help Alert-->
@@ -456,16 +470,26 @@
 					  <strong>What does this do?</strong><br>
 						The Stats modal displays information related to your system.<br>
 						The "requests" are how many times you've loaded any page within this Website.
+						<br>
+						<br>
+						<strong>Compatibility row?</strong><br>
+						These specific browsers have been tested to some extent and work desireably.<br>
+						This does not mean unlisted browsers do not work.<br>
+						Hover over an image to view more Information.
+						<br>
+						<br>
+						<strong>Note:</strong><br>
+						Version numbers are the last known version which the site was tested on.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" onclick="$('.alert-stats').toggle()">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
-				</div>
-			</div>
-		</div>
+					</div><!-- /.modal-footer -->
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
 		<!--Hide Ads Modal-->
 		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
