@@ -13,7 +13,7 @@
 		<html content="text/cache-manifest" manifest="cache.manifest">
 		<title>InvisaMage | FS</title>
 		<!--Stylesheets-->
-		<link href="css/styles.css" rel="stylesheet" >
+		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
 	</head>
 	<body id="top">
@@ -185,43 +185,43 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 				<div class="item active">
-				  <img src="images/fs1.png">
+				  <img src="images/fs/fs1.png">
 				  <div class="carousel-caption">
 					<h2>Spawn</h2>
 				  </div>
 				</div>
 				<div class="item">
-				  <img src="images/fs2.png">
+				  <img src="images/fs/fs2.png">
 				  <div class="carousel-caption">
 					<h2>Day Lobby</h2>
 				  </div>
 				</div>
 				<div class="item">
-				  <img src="images/fs3.png">
+				  <img src="images/fs/fs3.png">
 				  <div class="carousel-caption">
 					<h2>Night Lobby</h2>
 				  </div>
 				</div>
 				<div class="item">
-				  <img src="images/fs4.png">
+				  <img src="images/fs/fs4.png">
 				  <div class="carousel-caption">
 					<h2>Parkour</h2>
 				  </div>
 				</div>
 				<div class="item">
-				  <img src="images/fs5.png">
+				  <img src="images/fs/fs5.png">
 				  <div class="carousel-caption">
 					<h2>Mob Arena</h2>
 				  </div>
 				</div>
 				<div class="item">
-				  <img src="images/fs6.png">
+				  <img src="images/fs/fs6.png">
 				  <div class="carousel-caption">
 					<h2>PvP Arena</h2>
 				  </div>
 				</div>
 				<div class="item">
-				  <img src="images/fs7.png">
+				  <img src="images/fs/fs7.png">
 				  <div class="carousel-caption">
 					<h2>Wilderness Lobby</h2>
 				  </div>
@@ -271,8 +271,8 @@
 							<h4>Extras</h4>
 							<ul>
 								<li><a class="link" href="archive.html" data-toggle="tooltip" data-placement="right" title="View old Versions of this Website.">Archive</a></li>
-								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
 								<li><a class="link" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="right" title="View Website Repository on Github.">Repository</a></li>
+								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
 							</ul>
 						</div>
 					</div>
@@ -434,6 +434,16 @@
 								<td><h5 class="black">Browser</h5></td>
 						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
 						  </tr>
+							<!--Supported Browsers-->
+						  <tr>
+								<td><h5 class="black">Compatibility</h5></td>
+						    <th>
+									<img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
+									<img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
+									<img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
+									<img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
+								</th>
+						  </tr>
 						</table>
 					</div>
 					<!--Stats Help Alert-->
@@ -442,16 +452,26 @@
 					  <strong>What does this do?</strong><br>
 						The Stats modal displays information related to your system.<br>
 						The "requests" are how many times you've loaded any page within this Website.
+						<br>
+						<br>
+						<strong>Compatibility row?</strong><br>
+						These specific browsers have been tested to some extent and work desireably.<br>
+						This does not mean unlisted browsers do not work.<br>
+						Hover over an image to view more Information.
+						<br>
+						<br>
+						<strong>Note:</strong><br>
+						Version numbers are the last known version which the site was tested on.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" onclick="$('.alert-stats').toggle()">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
-				</div>
-			</div>
-		</div>
+					</div><!-- /.modal-footer -->
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
 		<!--Hide Ads Modal-->
 		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
