@@ -8,7 +8,7 @@ function namePrompt()
 	{
 //Default
 		document.getElementById("name").innerHTML =
-		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='bottom' title='A 16 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br>I hope you enjoy your stay."
+		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='bottom' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br>I hope you enjoy your stay."
 //Creator Message
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis") || (name == "travis"))
 		document.getElementById("name").innerHTML =
@@ -108,10 +108,10 @@ function namePrompt()
 //Reset
 		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls"))
 		document.getElementById("name").innerHTML =
-		"Welcome to <a class='definition' data-toggle='tooltip' data-placement='bottom' title='A 16 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website."
+		"Welcome to <a class='definition' data-toggle='tooltip' data-placement='bottom' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website."
 //No name - Audio
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
-		"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='bottom' title='A 16 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
+		"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='bottom' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br><br><span class='homeSection'><h2>What's Your Name</h2><audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio></span>"
 	}
 }
