@@ -32,13 +32,13 @@
 					<!--Useful Links-->
 					<a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-menu-down"></span></a>
 					<ul class="dropdown-menu">
-				    <li><a href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft</a></li>
-				    <li><a href="https://www.youtube.com/user/InvisaMage">YouTube</a></li>
-				    <li><a href="http://www.twitch.tv/invisamage">Twitch</a></li>
+				    <li><a target="_blank" href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
+				    <li><a target="_blank" href="https://www.youtube.com/user/InvisaMage">YouTube <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
+				    <li><a target="_blank" href="http://www.twitch.tv/invisamage">Twitch <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
 				    <li role="separator" class="divider"></li>
-				    <li><a href="http://www.chaoswebs.cf/">Chaos Webs</a></li>
+				    <li><a target="_blank" href="http://www.chaoswebs.cf/">Chaos Webs <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
 				  </ul>
-				</div>
+				</div><!-- /.navbar-header -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -128,7 +128,7 @@
 			Cookies may be used to enable the site to function more fluently.<br>
 			They are files with information about the website.<br>
 			They are stored locally on your computer for future use.<br>
-			If you wish to clear your internet cookies, click <a class="link" title="About Cookies" href="https://en.wikipedia.org/wiki/HTTP_cookie">here</a>.<br>
+			If you wish to clear your internet cookies, click <a class="link" onclick="$('#cookie').modal()">here</a>.<br>
 			Note: This will likely clear all of your internet cookies and not just for this website.
 			</p>
 			</span>
@@ -171,30 +171,61 @@
 						<div class="col-sm-2">
 							<h4>About</h4>
 							<ul>
-								<li><a class="link" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="right" title="About the developer.">InvisaMage</a></li>
-								<li><a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="right" title="Contact the developer.">Contact</a></li>
-								<li><a class="link" href="about.html#design" data-toggle="tooltip" data-placement="right" title="Learn how to navigate the Website.">Design</a></li>
+								<!--InvisaMage-->
+								<li>
+									<a class="link" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="top" title="About the developer.">InvisaMage</a>
+								</li>
+								<!--Contact-->
+								<li>
+									<a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
+								</li>
+								<!--Design-->
+								<li>
+									<a class="link" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the Website.">Design</a>
+								</li>
 							</ul>
 						</div>
 						<div class="col-sm-2">
 							<h4>Legal</h4>
 							<ul>
-								<li><a class="link" href="terms.html" data-toggle="tooltip" data-placement="right" title="View the Terms & Conditions.">Terms</a></li>
-								<li><a class="link" href="privacy.html" data-toggle="tooltip" data-placement="right" title="View the Privacy Policy.">Privacy</a></li>
+								<!--Terms-->
+								<li>
+									<a class="link" href="terms.html" data-toggle="tooltip" data-placement="top" title="View the Terms & Conditions.">Terms</a>
+								</li>
+								<!--Privacy-->
+								<li>
+									<a class="link" href="privacy.html" data-toggle="tooltip" data-placement="top" title="View the Privacy Policy.">Privacy</a>
+								</li>
 							</ul>
 						</div>
 						<div class="col-sm-2">
 							<h4>Settings</h4>
 							<ul>
-								<li><a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="right" title="Hide ads.">Hide Ads</a></li>
+								<!--Hide Ads-->
+								<li>
+									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+								</li>
 							</ul>
 						</div>
 						<div class="col-sm-2">
 							<h4>Extras</h4>
 							<ul>
-								<li><a class="link" href="archive.html" data-toggle="tooltip" data-placement="right" title="View old Versions of this Website.">Archive</a></li>
-								<li><a class="link" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="right" title="View Website Repository on Github.">Repository</a></li>
-								<li><a class="link" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="right" title="Visit my Host's Website.">Chaos Webs</a></li>
+								<!--Archive-->
+								<li>
+									<a class="link" href="archive.html" data-toggle="tooltip" data-placement="top" title="View old Versions of this Website.">Archive</a>
+								</li>
+								<!--Repository-->
+								<li>
+									<a class="link" target="_blank" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="top" title="View Website Repository on Github.">Repository
+										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
+									</a>
+								</li>
+								<!--Chaos Webs-->
+								<li>
+									<a class="link" target="_blank" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="top" title="Visit my Host's Website.">Chaos Webs
+										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -463,6 +494,59 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
 					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--Cookies Modal-->
+		<div class="modal fade" id="cookie" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Cookies</h4>
+					</div>
+					<div class="modal-body">
+						Click on your respective browser's logo to learn how to clear cookies.
+						<br>
+						<br>
+						<div class="row">
+							<!--Firefox-->
+							<div class="col-md-3">
+								<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"><img class="cookies-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox"></a>
+							</div>
+							<!--Chrome-->
+							<div class="col-md-3">
+								<a href="https://support.google.com/accounts/answer/61416?hl=en"><img class="cookies-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome"></a>
+							</div>
+							<!--Safari-->
+							<div class="col-md-3">
+								<a href="http://www.imore.com/how-clear-history-and-cookies-ios-7-safari"><img class="cookies-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari"></a>
+							</div>
+							<!--Edge-->
+							<div class="col-md-3">
+									<a href="http://windows.microsoft.com/en-us/windows-10/view-delete-browsing-history-microsoft-edge"><img class="cookies-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge"></a>
+							</div>
+						</div>
+						<br>
+					</div>
+					<!--Information Alert-->
+					<div class="alert-cookie alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-cookie').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>My browser is not here.<br>What do I do?</strong><br>
+						If your browser isn't listed, search the web using a search engine.
+						Here are a few suggestions.
+						<br>
+						<br>
+						<a href="https://duckduckgo.com/">DuckDuckGo</a><br>
+						<a href="https://www.google.com/">Google</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-cookie').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
