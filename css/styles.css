@@ -368,7 +368,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    width: 30%;
 }
 
 /* News Section */
@@ -720,5 +720,17 @@ footer ul {
 
 /* Stats Images */
 .stats-browser-img {
-	padding: 4px;
+	padding: 2px;
+}
+
+/* Glyphicon for external links */
+.glyphicon-colour {
+	color: #999999;
+	font-size: 16px;
+}
+
+/* Glyphicon for Useful Links dropdown menu */
+.glyphicon-useful {
+	color: #999999;
+	font-size: 12px;
 }
