@@ -38,6 +38,15 @@ p {
 	color: black;
 }
 
+.black-bold {
+	color: black;
+	font-weight: bold;
+}
+
+#search {
+	font-family: sans-serif;
+}
+
 .title {
   	color: #246BB2;
     text-decoration: none;
@@ -698,6 +707,17 @@ footer ul {
 
 /* Homepage Message */
 #alert-message {
+    position: fixed;
+    bottom: 0;
+		left: 0;
+    width: 100%;
+		z-index: 1;
+		font-size: 16px;
+		margin: 0;
+}
+
+/* Homepage Survey Message */
+#alert-survey {
     position: fixed;
     bottom: 0;
 		left: 0;
