@@ -16,9 +16,9 @@ function namePrompt()
 		"Hello creator and welcome back to your Website.<br>" +
 		"Here are some links I thought you might like.<br><br>" +
 		"<span class='homeSection'><h3>Links</h3>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Repository' href='https://github.com/'>GitHub</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' href='https://ide.c9.io'>Cloud9</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' href='https://web.telegram.org/'>Telegram Web</a>"
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Repository' target='_blank' href='https://github.com/'>GitHub</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' href='https://ide.c9.io'>Cloud9</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' href='https://web.telegram.org/'>Telegram Web</a>"
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Tanner") || (name == "tanner") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
@@ -28,7 +28,7 @@ function namePrompt()
 		document.getElementById("name").innerHTML =
 		"Hello good friend and welcome back to my Website.<br>" +
 		"Thanks for hosting.<br><br>" +
-		"<a class=link target='_blank' href=http://www.chaoswebs.cf/>http://www.chaoswebs.cf/ <span class='glyphicon glyphicon-new-window glyphicon-colour'></span></a>"
+		"<a class=link target='_blank'' href=http://www.chaoswebs.cf/>http://www.chaoswebs.cf/ <span class='glyphicon glyphicon-new-window glyphicon-colour'></span></a>"
 //Father
 		if (name == "Dan" || (name == "dan") || (name == "Daniel") || (name == "daniel") || (name == "Dad") || (name == "dad") || (name == "Father") || (name == "father"))
 		document.getElementById("name").innerHTML =
@@ -44,6 +44,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>You Are The Woman</h2>" +
 		"<audio controls autoplay><source src='./audio/woman.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3a1BhczlZS3ZyLUU' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>You Are the Woman</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Firefall</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>N/A (Single)</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1976</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Girls
 		if (name == "Kim" || (name == "kim") || (name == "Sabrina") || (name == "sabrina") || (name == "Courtney ") || (name == "courtney "))
@@ -72,6 +99,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>Remember David</h2>" +
 		"<audio controls autoplay><source src='./audio/david.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Y1lKNkFaUHZIRFU' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Remember David</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>A Flock of Seagulls</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>The Story of a Young Heart</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1984</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Jenny - Audio
 		if (name == "Jenny" || (name == "jenny"))
@@ -81,6 +135,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>867-5309/Jenny</h2>" +
 		"<audio controls autoplay><source src='./audio/jenny.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Znk3bWswQWpIaEE' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>867-5309/Jenny</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Tommy Tutone</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>N/A (Single)</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1981</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Jenny
 		if (name == "8675309" || (name == "867-5309"))
@@ -93,6 +174,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>Stacy's Mom</h2>" +
 		"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3aE1mMXhzXzNJNFU' type='audio/mpeg'></audio>"
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Stacy's Mom</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Fountains of Wayne</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>N/A (Single)</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>2003</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Jessie - Audio
 		if (name == "Jessie" || (name == "jessie"))
@@ -101,6 +209,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>Jessie's Girl</h2>" +
 		"<audio controls autoplay><source src='./audio/jessie.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3RjJaVkoxdzVTTjg' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Jessie's Girl</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Rick Springfield</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>N/A (Single)</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1980</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Leah - Audio
 		if (name == "Leah" || (name == "leah"))
@@ -109,6 +244,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>Ah Leah</h2>" +
 		"<audio controls autoplay><source src='./audio/leah.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Ah Leah</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Donnie Iris</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>N/A (Single)</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1980</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Immortal - Audio
 		if (name == "Immortal" || (name == "immortal"))
@@ -117,6 +279,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>Immortal</h2>" +
 		"<audio controls autoplay><source src='./audio/immortal.mp3' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Immortal</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Thomas Bergersen</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>Illusions</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>2011</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Raido Ga Ga - Audio
 		if (name == "Radio" || (name == "radio") || (name == "Radio Ga Ga") || (name == "radio ga ga"))
@@ -125,6 +314,68 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>Radio Ga Ga</h2>" +
 		"<audio controls autoplay><source src='./audio/radio.mp3' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Radio Ga Ga</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Queen</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>The Works</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1984</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
+		"</span>"
+//Mickey - Audio
+		if (name == "Mickey" || (name == "mickey"))
+		document.getElementById("name").innerHTML =
+		"Hey Mickey you're so fine.<br><br>" +
+		"<span class='homeSection'>" +
+		"<h2>Mickey</h2>" +
+		"<audio controls autoplay><source src='./audio/mickey.mp3' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>Mickey</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Toni Basil</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>Word of Mouth</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1982</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 //Jesus
 		if (name == "Jesus" || (name == "jesus"))
@@ -155,28 +406,28 @@ function namePrompt()
 		document.getElementById("name").innerHTML =
 		"<span class='homeSection'>" +
 		"<h3>Mirth</h3>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' href='http://www.cleverbot.com/'>Cleverbot</a>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank'' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank'' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank'' href='http://www.cleverbot.com/'>Cleverbot</a>" +
 		"</span>"
 //Software
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
 		"<span class='homeSection'>" +
 		"<h3>Software</h3>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' href='www.firefox.com'>Mozilla Firefox</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' href='https://telegram.org/'>Telegram</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Antivirus' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Password Manager' href='http://keepass.info/'>KeePass</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Software Downloader' href='https://ninite.com/'>Ninite</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' href='http://rainmeter.net/'>Rainmeter</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' href='http://portableapps.com/'>PortableApps</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Image Editor' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='3D Rendering' href='http://www.blender.org/'>Blender</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Audio Editor' href='http://audacity.sourceforge.net/'>Audacity</a>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='www.firefox.com'>Mozilla Firefox</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' href='https://telegram.org/'>Telegram</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Antivirus' target='_blank' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Password Manager' target='_blank' href='http://keepass.info/'>KeePass</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Software Downloader' target='_blank' href='https://ninite.com/'>Ninite</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' target='_blank' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' target='_blank' href='http://rainmeter.net/'>Rainmeter</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' target='_blank' href='http://portableapps.com/'>PortableApps</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Image Editor' target='_blank' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='3D Rendering' target='_blank' href='http://www.blender.org/'>Blender</a><br>" +
+		"<a class='link' data-toggle='tooltip' data-placement='top' title='Audio Editor' target='_blank' href='http://audacity.sourceforge.net/'>Audacity</a>" +
 		"</span>"
 //Python
 		if (name == "Python" || (name == "python"))
@@ -201,6 +452,33 @@ function namePrompt()
 		"<span class='homeSection'>" +
 		"<h2>What's Your Name</h2>" +
 		"<audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio>" +
+		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
+		"</a>" +
+		"<br>" +
+		"<br>" +
+		"<div class='collapse' id='collapse-info'>" +
+		  "<div class='well well-sm center-block' style='width:75%'>" +
+		    "<table class='table table-responsive table-condensed '>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Title</h5></td>" +
+		        "<th><h5 class='black'>What's Your Name</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Artist</h5></td>" +
+		        "<th><h5 class='black'>Boston</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Album</h5></td>" +
+		        "<th><h5 class='black'>Walk On</h5></th>" +
+		      "</tr>" +
+		      "<tr>" +
+		        "<td><h5 class='black-bold'>Year</h5></td>" +
+		        "<th><h5 class='black'>1994</script></h5></th>" +
+		      "</tr>" +
+		    "</table>" +
+		  "</div>" +
+		"</div>" +
 		"</span>"
 	}
 //Activate Tooltips
