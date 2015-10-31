@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created October 30, 2015-->
+<!--App-->
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="Information about InvisaMage and his projects.">
+		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
+		<title>InvisaMage | App</title>
+		<!--Stylesheets-->
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<!--iOS Options-->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="InvisaMage">
+		<!--iOS Home Screen Image-->
+		<link rel="apple-touch-icon" sizes="152x152" href="images/quasar.jpg">
+	</head>
+	<body id="top">
+		<!--Navigation Bar-->
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+          <a class="navbar-brand" id="app-back" role="button" href="index.html"> <span class="glyphicon glyphicon-menu-left" aria-expanded="false"></span></a>
+				  <a type="button" class="navbar-brand" id="app-navbar-InvisaMage" href="index.html">InvisaMage</a>
+          <a role="button" class="navbar-brand pull-right" onclick="$('#appinfo').modal()">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+          </a>
+				</div><!-- /.navbar-header -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<!--Begin Content-->
+		<div class="container">
+
+      <!--Search Function-->
+      <div onkeypress="searchapp();">
+        <div class="input-group">
+          <input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" onclick="searchapp();">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+      </div>
+      <br>
+
+      <!--Paragraph Changes with namePrompt Input-->
+  		<p id="name">
+        Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s Web App.
+      </p>.
+
+      <!--Button Section-->
+			<!--Button and namePrompt Function-->
+			<a role="button" class="btn btn-primary btn-lg btn-block" onclick="namePromptapp()">Personalize Message</a>
+			<br>
+      <!--Home-->
+      <a role="button" class="btn btn-danger btn-lg btn-block" href="index.html">Home</a>
+      <!--News-->
+      <a role="button" class="btn btn-danger btn-lg btn-block" href="news.html">News</a>
+      <br>
+      <!--Floating Survival-->
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#fs').modal()">Floating Survival</a>
+      <!--InvisaRant-->
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#invisarant').modal()">InvisaRant</a>
+      <!--iOS Web Application-->
+      <a role="button" class="btn btn-danger btn-lg btn-block" href="webapp.html">Web Application</a>
+      <br>
+      <!--Contact-->
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#contact').modal()">Contact</a>
+      <!--Donate-->
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#donate').modal()">Donate</a>
+      <!--About-->
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#about').modal()">About</a>
+      <br>
+      <!--Stats-->
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#stats').modal()">Stats</a>
+      <br>
+
+			<!--Footer-->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2">
+						</div>
+						<div class="col-sm-2">
+							<h4>About</h4>
+							<ul>
+								<!--InvisaMage-->
+								<li>
+									<a class="link-danger" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="top" title="About the developer.">InvisaMage</a>
+								</li>
+								<!--Contact-->
+								<li>
+									<a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
+								</li>
+								<!--Design-->
+								<li>
+									<a class="link-danger" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the Website.">Design</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Legal</h4>
+							<ul>
+								<!--Terms-->
+								<li>
+									<a class="link-danger" href="terms.html" data-toggle="tooltip" data-placement="top" title="View the Terms & Conditions.">Terms</a>
+								</li>
+								<!--Privacy-->
+								<li>
+									<a class="link-danger" href="privacy.html" data-toggle="tooltip" data-placement="top" title="View the Privacy Policy.">Privacy</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Settings</h4>
+							<ul>
+								<!--Hide Ads-->
+								<li>
+									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<h4>Extras</h4>
+							<ul>
+								<!--Archive-->
+								<li>
+									<a class="link-danger" href="archive.html" data-toggle="tooltip" data-placement="top" title="View old Versions of this Website.">Archive</a>
+								</li>
+								<!--Repository-->
+								<li>
+									<a class="link" target="_blank" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="top" title="View Website Repository on Github.">Repository
+										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
+									</a>
+								</li>
+								<!--Chaos Webs-->
+								<li>
+									<a class="link" target="_blank" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="top" title="Visit my Host's Website.">Chaos Webs
+										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Copyright & Top Button-->
+				<p class="copyright text-center">
+					&copy; 2014-2015, InvisaMage<br>
+					<a class="top" href="#top"><img data-toggle="tooltip" data-placement="right" title="Beam me Up" src="./images/up.png" height="48" width="48"></a>
+				</p>
+			</footer>
+		</div>
+		<!--/.End Content-->
+
+<!--Page Modals-->
+    <!--Floating Survival Modal-->
+    <div class="modal fade" id="fs" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Floating Survival</h4>
+					</div>
+					<div class="modal-body">
+            Floating Survival, or FS for short, is a Minecraft adventure/survival map.<br>
+      			I work on it in my free time and when I'm really bored.<br>
+      			I'd appreciate any feedback that you have on it.
+
+            <br>
+            <br>
+
+            <strong>Data Table</strong>
+            <table class="table table-responsive table-condensed table-hover">
+							<tr>
+								<td><h5 class="black">Latest Release</h5></td>
+						    <th><h5 class="black"><a target="_blank" href="http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival"> <span class="glyphicon glyphicon-cloud-download black"></span></a></h5></th>
+							</tr>
+              <tr>
+								<td><h5 class="black">Latest Beta</h5></td>
+						    <th><h5 class="black"><a target="_blank" href="https://www.mediafire.com/folder/ts25ce97m1b12/Betas"> <span class="glyphicon glyphicon-cloud-download black"></span></a></h5></th>
+							</tr>
+						</table>
+					</div>
+
+					<strong>Key Features</strong><br>
+					"Wireless" Redstone<br>
+					Wilderness<br>
+					PvP Arena<br>
+					Mob Arena<br>
+					Lighting System<br>
+					Lock Platform (For Greifers)<br>
+					Community Area<br>
+					Firework Launchers<br>
+					More to be discovered by you!<br>
+					Spawn Tutorial
+					<!--Floating Survival Help Alert-->
+					<div class="alert-fs alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-fs').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>What do I do?</strong><br>
+            Download the latest version and extract it into your Minecraft saves folder.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-fs').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!--InvisaRant Modal-->
+    <div class="modal fade" id="invisarant" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">InvisaRant</h4>
+					</div>
+					<div class="modal-body">
+            This is my Podcast called InvisaRant.<br>
+            Topics will vary depending on guests I have on the show.<br>
+            Mostly technologies, games, views on aspects of society, and school.<br>
+            Contact me if you have an idea or would like to be on the show.
+
+            <br>
+            <br>
+
+            <strong>Data Table</strong>
+            <table class="table table-responsive table-condensed table-hover">
+							<!--Episode 1 - The Beginning -->
+							<tr>
+								<td><h5 class="black">The Beginning</h5></td>
+						    <th><h5 class="black"><a target="_blank" href="http://www.mediafire.com/listen/13io7763zn4q68i/IR_1_-_The_Beginning.mp3"> <span class="glyphicon glyphicon-cloud-download black"></span></a></h5></th>
+							</tr>
+						</table>
+					</div>
+					<!--InvisaRant Help Alert-->
+					<div class="alert-invisarant alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-invisarant').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>What do I do?</strong><br>
+            Choose an episode to download or listen to.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-invisarant').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!--About Modal-->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">About</h4>
+					</div>
+					<div class="modal-body">
+						<strong>InvisaMage</strong><br>
+            Hello, I am InvisaMage.<br>
+      			I am 17 year old human male who likes web technologies and assorted games.<br>
+      			I got the name, InvisaMage, when I was creating a name for my <a target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> character.<br>
+      			I created this website for entertainment and to organize my projects in one place.
+
+						<hr>
+
+						<strong>Creation</strong><br>
+						This website was hand coded using <a class="definition" data-toggle="tooltip" data-placement="top" title="A hackable text editor by GitHub.">Atom</a>.<br>
+						Click <a data-toggle="tooltip" data-placement="top" title="Learn about Atom." target="_blank" href="https://atom.io/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to learn more.
+						<br>
+						<br>
+						This website uses the <a class="definition" data-toggle="tooltip" data-placement="top" title="The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.">Bootstrap</a> framework to make it mobile responsive.<br>
+						It also enables other cool features.<br>
+						Click <a data-toggle="tooltip" data-placement="top" title="Learn about Bootstrap." target="_blank" href="http://getbootstrap.com/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to check it out.
+						<br>
+						<br>
+						This website was tested on <a class="definition" data-toggle="tooltip" data-placement="top" title="A browser built for developers.">Mozilla Firefox Developer Edition</a>.<br>
+						Click <a data-toggle="tooltip" data-placement="top" title="Download Firefox Developer Edition" target="_blank" href="https://www.firefox.com/developer">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to learn more.<br>
+
+						<strong>Powered By</strong>
+						<div class="row">
+						  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/html.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="HTML5"></div>
+						  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/css3.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="CSS3"></div>
+						  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/js.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="JavaScript"></div>
+						</div>
+					</div>
+
+					<strong>Git Repository</strong><br>
+					This website is also backed up on <a data-toggle="tooltip" data-placement="top" title="Visit GitHub." target="_blank" href="https://github.com">GitHub <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+					If you are interested in viewing the source code, click <a data-toggle="tooltip" data-placement="top" title="View Website source code." target="_blank" href="https://github.com/InvisaMage/Website">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+					I use <a data-toggle="tooltip" data-placement="top" title="Check out GitHub for Windows." target="_blank" href="https://windows.github.com/">GitHub for Windows</a> as my <a data-toggle="tooltip" data-placement="top" title="Learn more about Git." target="_blank" href="http://git-scm.com/">Git <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> <a class="definition" data-toggle="tooltip" data-placement="top" title="Graphical User Interface">GUI</a>.<br>
+
+					<strong>Logo</strong><br>
+					The InvisaMage logo was created using <a data-toggle="tooltip" data-placement="top" title="Check out Paint.NET" target="_blank" href="http://www.getpaint.net/">Paint.NET <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a><br>
+					The design doesn't have any meaning, for say.<br>
+					It just has an appealing look.
+					<!--InvisaMage's Logo-->
+					<br>
+					<br>
+					<img class="img-responsive center-block" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
+					<br>
+					<!--About Help Alert-->
+					<div class="alert-about alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-about').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>That's it?</strong><br>
+            To view more information visit the <a href="about.html">About</a> page.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-about').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!--Real Modals-->
+		<!--Contact Modal-->
+		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black" id="exampleModalLabel">Contact</h4>
+					</div>
+					<div class="modal-body">
+						Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
+						<br>
+						<br>
+							<!--E-mail-->
+							<div class="input-group">
+								<div class="input-group-addon">E-mail</div>
+								<input readonly type="text" class="form-control" value="TheMageNetwork@outlook.com">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="mailto:TheMageNetwork@outlook.com">
+											<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send E-mail
+										</a>
+									</span>
+							</div><!-- /input-group -->
+						  <!--Telegram-->
+							<br>
+							<div class="input-group">
+								<div class="input-group-addon">Telegram</div>
+								<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">
+											<span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send Message
+										</a>
+									</span>
+							</div><!-- /input-group -->
+							<br>
+					</div>
+					<!--Contact Help Alert-->
+					<div class="alert-contact alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-contact').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>More Information</strong><br>
+						<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+						<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-contact').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Donate Modal-->
+		<div class="modal fade" id="donate" tabindex="-1" role="dialog">
+		  <div class="modal-dialog modal-md">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
+		      </div>
+		      <div class="modal-body">
+						If you enjoy what I do, a donation would be highly appreciated.
+						<br>
+						<br>
+		          <!--Bitcoin-->
+							<div class="input-group">
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></div>
+			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate</a>
+									</span>
+							</div>
+							<br>
+		          <!--Dogecoin-->
+							<div class="input-group">
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></div>
+			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate</a>
+									</span>
+							</div>
+							<br>
+		          <!--Litecoin-->
+							<div class="input-group">
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></div>
+			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
+									<span class="input-group-btn">
+										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate</a>
+									</span>
+							</div>
+							<br>
+		      </div>
+					<!--Information Alert-->
+					<div class="alert-donate alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-donate').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What payment methods are these?</strong><br>
+						These are called cryptocurrencies.
+						They are a digital medium of exchange.
+						They use cryptography for security, making them difficult to counterfeit.
+						Click the names of them to learn more.<br>
+						<strong>Note:</strong><br>
+						You must have the correct cryptocurrency client to use the "Donate" buttons.
+					</div>
+		      <div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-donate').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+		      </div>
+		    </div>
+		  </div>
+		</div><!-- /donate modal -->
+
+		<!--Stats Modal-->
+		<div class="modal fade" id="stats" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black" id="exampleModalLabel">Stats</h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-responsive table-condensed table-hover">
+							<!--Clock-->
+							<tr>
+								<td><h5 class="black">Time</h5></td>
+						    <th><h5 class="black"><span id="clock"></span></h5></th>
+							</tr>
+						  <!--Counter-->
+							<tr>
+								<td><h5 class="black">Requests</h5></td>
+						    <th><h5 class="black"><script src="js/counter.js"></script></h5></th>
+							</tr>
+						  <!--Bootstrap Version-->
+							<tr>
+								<td><h5 class="black">Bootstrap</h5></td>
+						    <th><h5 class="black">v3.3.5</h5></th>
+							</tr>
+						  <!--OS-->
+						  <tr>
+								<td><h5 class="black">OS</h5></td>
+						    <th><h5 class="black"><script src="js/os.js"></script></h5></th>
+						  </tr>
+							<!--Browser-->
+						  <tr>
+								<td><h5 class="black">Browser</h5></td>
+						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
+						  </tr>
+							<!--Supported Browsers-->
+						  <tr>
+								<td><h5 class="black">Compatibility</h5></td>
+						    <th>
+									<img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
+									<img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
+									<img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
+									<img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
+								</th>
+						  </tr>
+						</table>
+					</div>
+					<!--Stats Help Alert-->
+					<div class="alert-stats alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-stats').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What does this do?</strong><br>
+						The Stats modal displays information related to your system.<br>
+						The "requests" are how many times you've loaded any page within this Website.
+						<br>
+						<br>
+						<strong>Compatibility row?</strong><br>
+						These specific browsers have been tested to some extent and work desireably.<br>
+						This does not mean unlisted browsers do not work.<br>
+						Hover over an image to view more Information.
+						<br>
+						<br>
+						<strong>Note:</strong><br>
+						Version numbers are the last known version which the site was tested on.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-stats').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div><!-- /.modal-footer -->
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--Hide Ads Modal-->
+		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Hide Ads</h4>
+					</div>
+					<div class="modal-body">
+					<h5 class="black">You must be seeing things.<br>I don't see any ads.</h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+    <!--Web App Information Modal-->
+		<div class="modal fade" id="appinfo" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Help</h4>
+					</div>
+					<div class="modal-body">
+            <strong>How do I navigate this?</strong><br>
+					  Red buttons are links which lead back to the main website.<br>
+            Blue buttons are internal Web App content.<br>
+            <strong>Note:</strong> Not all features are available in the Web App.
+            <br>
+            <br>
+            Learn more about the Web App <a href="webapp.html">here</a>.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--External Scripts-->
+		<script src="js/clock.js"></script>
+		<script src="js/messages.js"></script>
+		<script src="js/search-app.js"></script>
+    <script src="js/namePrompt-app.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <!--Activate Tooltips-->
+		<script>
+		if(!('ontouchstart' in window))
+		{
+		$('[data-toggle="tooltip"]').tooltip();
+		}
+		</script>
+    <!--jQuery smooth scroll to id's -->
+		<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 500);
+		        return true;
+		      }
+		    }
+		  });
+		});
+		</script>
+	</body>
+</html>
