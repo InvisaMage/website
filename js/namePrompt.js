@@ -66,7 +66,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1976</script></h5></th>" +
+		        "<th><h5 class='black'>1976</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -121,7 +121,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1984</script></h5></th>" +
+		        "<th><h5 class='black'>1984</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -157,7 +157,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1981</script></h5></th>" +
+		        "<th><h5 class='black'>1981</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -173,7 +173,7 @@ function namePrompt()
 		"Stacy, your mom has got it going on.<br><br>" +
 		"<span class='homeSection'>" +
 		"<h2>Stacy's Mom</h2>" +
-		"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3aE1mMXhzXzNJNFU' type='audio/mpeg'></audio>"
+		"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3aE1mMXhzXzNJNFU' type='audio/mpeg'></audio>" +
 		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
 		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
 		"</a>" +
@@ -196,7 +196,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>2003</script></h5></th>" +
+		        "<th><h5 class='black'>2003</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -231,7 +231,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1980</script></h5></th>" +
+		        "<th><h5 class='black'>1980</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -266,7 +266,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1980</script></h5></th>" +
+		        "<th><h5 class='black'>1980</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -301,7 +301,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>2011</script></h5></th>" +
+		        "<th><h5 class='black'>2011</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -336,7 +336,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1984</script></h5></th>" +
+		        "<th><h5 class='black'>1984</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -371,7 +371,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1982</script></h5></th>" +
+		        "<th><h5 class='black'>1982</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
@@ -474,7 +474,7 @@ function namePrompt()
 		      "</tr>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Year</h5></td>" +
-		        "<th><h5 class='black'>1994</script></h5></th>" +
+		        "<th><h5 class='black'>1994</h5></th>" +
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
