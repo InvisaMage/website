@@ -163,6 +163,9 @@
 								<li>
 									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
 								</li>
+								<li>
+									<a class="link" onclick="$('body').ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04, });" data-toggle="tooltip" data-placement="top" title="Enable a buggy water effect.">Water</a>
+								</li>
 							</ul>
 						</div>
 						<div class="col-sm-2">
@@ -409,6 +412,7 @@
 		<script src="js/search.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.ripples.js"></script>
 		<!--Activate Tooltips-->
 		<script>
 		if(!('ontouchstart' in window))
