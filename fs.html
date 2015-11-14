@@ -146,7 +146,7 @@
 					</tr>
 					<tr>
 						<td>Release</td>
-						<td>v1.6.1.1</td>
+						<td>v1.7.0</td>
 						<td><a title="Download FS Release" href="http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival"><img src="images/dl.png" alt="FS Download" height="45" width="54"></a></td>
 						<td><a title="View Release Change Log" href="http://www.mediafire.com/view/64xj50za2q1lq24/Change%20Log.txt"><img src="images/txt.png" alt="FS Change Log" height="64" width="64"></a></td>
 					</tr>
@@ -284,6 +284,9 @@
 								<!--Hide Ads-->
 								<li>
 									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+								</li>
+								<li>
+									<a class="link" onclick="$('body').ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04, });" data-toggle="tooltip" data-placement="top" title="Enable a buggy water effect.">Water</a>
 								</li>
 							</ul>
 						</div>
@@ -531,6 +534,7 @@
 		<script src="js/search.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.ripples.js"></script>
 		<!--If no touchscreen, show Tooltips and hide Mobile Menus-->
 		<script>
 		if(!('ontouchstart' in window))
