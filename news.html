@@ -104,6 +104,7 @@
 					<div id="mobile-menu">
 				    <select>
 							<option selected disabled>Date Jump</option>
+							<option value="news.html#11-13-15-projects">November 13, 2015</option>
 							<option value="news.html#3-7-15-projects">March 7, 2015</option>
 							<option value="news.html#2-28-15-projects">February 28, 2015</option>
 							<option value="news.html#2-20-15-projects">February 20, 2015</option>
@@ -112,6 +113,24 @@
 						<br>
 						<br>
 					</div>
+
+					<!--November 13, 2015-->
+					<span class="newsSection" id="11-13-15-projects">
+						<h1>November 13, 2015</h1>
+						<h2>Floating Survival</h2>
+						<p>
+							There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
+							The current version is v1.7.0<br>
+							Updated for Minecraft 1.9.X.<br>
+							Fixed Checkpoint exploits.<br>
+							Added a Clear Chat command to "The Office".<br>
+							Removed the Teleporter Book (Caused exploits and I'm too lazy to fix them).<br>
+							To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+						</p>
+					</span><!-- /11-13-15 -->
+
+						<br>
+						<br>
 
 					<!--March 7, 2015-->
 					<span class="newsSection" id="3-7-15-projects">
@@ -182,6 +201,7 @@
 					<!--Projects Menu-->
 					<div id="menu1">
 						<h1>Date Jump</h1>
+						<li><a href="news.html#11-13-15-projects">November 13, 2015</a></li>
 						<li><a href="news.html#3-7-15-projects">March 7, 2015</a></li>
 						<li><a href="news.html#2-28-15-projects">February 28, 2015</a></li>
 						<li><a href="news.html#2-20-15-projects">February 20, 2015</a></li>
@@ -215,6 +235,18 @@
 
 <!--Website Pane-->
 					<div id="website" class="tab-pane fade">
+					<br>
+
+					<!--November 13, 2015-->
+					<span class="newsSection" id="11-13-15-website">
+						<h1>November 13, 2015</h1>
+						<p>
+							Added a buggy Water effect in the footer as a "Setting".<br>
+							New favicon.
+						</p>
+					</span><!-- /11-13-15 -->
+
+					<br>
 					<br>
 
 					<!--October 31, 2015-->
@@ -1019,6 +1051,7 @@
 						<!--Website Menu-->
 						<div id="menu1">
 							<h1>Date Jump</h1>
+							<li><a href="news.html#11-13-15-website">November 13, 2015</a></li>
 							<li><a href="news.html#10-31-15-website">October 31, 2015</a></li>
 							<li><a href="news.html#10-23-15-website">October 23, 2015</a></li>
 							<li><a href="news.html#10-12-15-website">October 12, 2015</a></li>
@@ -1144,6 +1177,9 @@
 								<!--Hide Ads-->
 								<li>
 									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+								</li>
+								<li>
+									<a class="link" onclick="$('body').ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04, });" data-toggle="tooltip" data-placement="top" title="Enable a buggy water effect.">Water</a>
 								</li>
 							</ul>
 						</div>
@@ -1391,6 +1427,7 @@
 		<script src="js/search.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.ripples.js"></script>
 		<!--If no touchscreen, show Tooltips and hide Mobile Menus-->
 		<script>
 		if(!('ontouchstart' in window))
