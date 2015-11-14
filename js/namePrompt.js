@@ -11,7 +11,7 @@ function namePrompt()
 		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br>" +
 		"I hope you enjoy your stay."
 //Creator Message
-		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis") || (name == "travis") || (name == "Sir Kipp") || (name == "sir kipp") || (name == "Kipp") || (name == "kipp"))
+		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis Kipp") || (name == "travis kipp") || (name == "Sir Kipp") || (name == "sir kipp"))
 		document.getElementById("name").innerHTML =
 		"Hello creator and welcome back to your Website.<br>" +
 		"Here are some links I thought you might like.<br><br>" +
