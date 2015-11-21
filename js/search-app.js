@@ -42,11 +42,11 @@ function searchapp()
 
 // Terms page
 	if (search == "Terms" || (search == "terms") || (search == "Copyright") || (search == "copyright") || (search == "Legal") || (search == "legal") || (search == "Warranties") || (search == "warranties") || (search == "Liability") || (search == "liability"))
-	window.location = "terms.html";
+	$('#terms').modal()
 
 // Privacy page
 	if (search == "Privacy" || (search == "privacy") || (search == "Cookies") || (search == "cookies"))
-	window.location = "privacy.html";
+	$('#privacy').modal()
 
 // Archive page
 	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages"))
