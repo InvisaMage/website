@@ -64,8 +64,8 @@
 					<!--Search Function-->
 					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
 						<div class="input-group">
-							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
-							<span class="input-group-btn">
+							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">							<span class="input-group-btn">
 								<button class="btn btn-default" type="button" onClick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
@@ -1465,19 +1465,21 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
-		<!--If no touchscreen, show Tooltips and hide Mobile Menus-->
+		<!--If no touchscreen, show Tooltips, hide mobile search, and hide Mobile Menus-->
 		<script>
 		if(!('ontouchstart' in window))
 		{
-  	$('[data-toggle="tooltip"]').tooltip();
-		$('#mobile-menu').hide()
+		$('[data-toggle="tooltip"]').tooltip();
+		$('#search-mobile').hide();
+		$('#mobile-menu').hide();
 		}
 		</script>
-		<!--If touchscreen, hide Date Jumps-->
+		<!--If touchscreen, hide desktop search, and hide Date Jump-->
 		<script>
 		if(('ontouchstart' in window))
 		{
-		$('#menu1').hide()
+		$('#search').hide();
+		$('#menu1').hide();
 		}
 		</script>
 		<!--Mobile Menus-->

@@ -64,8 +64,8 @@
 					<!--Search Function-->
 					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
 						<div class="input-group">
-							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
-							<span class="input-group-btn">
+							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">							<span class="input-group-btn">
 								<button class="btn btn-default" type="button" onClick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
@@ -406,11 +406,19 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
-		<!--Activate Tooltips-->
+		<!--If no touchscreen, show Tooltips and hide mobile search-->
 		<script>
 		if(!('ontouchstart' in window))
 		{
-  	$('[data-toggle="tooltip"]').tooltip();
+		$('[data-toggle="tooltip"]').tooltip();
+		$('#search-mobile').hide();
+		}
+		</script>
+		<!--If touchscreen, hide desktop search-->
+		<script>
+		if(('ontouchstart' in window))
+		{
+		$('#search').hide();
 		}
 		</script>
 		<!--jQuery smooth scroll to id's -->
