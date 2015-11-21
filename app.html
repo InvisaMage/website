@@ -94,7 +94,7 @@
 							<ul>
 								<!--InvisaMage-->
 								<li>
-									<a class="link-danger" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="top" title="About the developer.">InvisaMage</a>
+									<a class="link" onclick="$('#about').modal()" data-toggle="tooltip" data-placement="top" title="About the developer.">InvisaMage</a>
 								</li>
 								<!--Contact-->
 								<li>
@@ -111,11 +111,11 @@
 							<ul>
 								<!--Terms-->
 								<li>
-									<a class="link-danger" href="terms.html" data-toggle="tooltip" data-placement="top" title="View the Terms & Conditions.">Terms</a>
+									<a class="link" onclick="$('#terms').modal()" data-toggle="tooltip" data-placement="top" title="View the Terms & Conditions.">Terms</a>
 								</li>
 								<!--Privacy-->
 								<li>
-									<a class="link-danger" href="privacy.html" data-toggle="tooltip" data-placement="top" title="View the Privacy Policy.">Privacy</a>
+									<a class="link" onclick="$('#privacy').modal()" data-toggle="tooltip" data-placement="top" title="View the Privacy Policy.">Privacy</a>
 								</li>
 							</ul>
 						</div>
@@ -334,6 +334,185 @@
 				</div>
 			</div>
 		</div>
+
+		<!--Terms Modal-->
+    <div class="modal fade" id="terms" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Terms and Conditions</h4>
+					</div>
+					<div class="modal-body">
+						By using this website, you agree to the following terms and conditions...
+
+						<hr>
+
+						<!--General-->
+						<strong>General</strong><br>
+						Use this website at your own risk.<br>
+						I am not held responsible for incorrect information.<br>
+						You may not exploit this website in any way.<br>
+						I am not affiliated with external websites that are linked on this website.<br>
+						I do not support Internet Explorer.<br>
+						<!--Logo-->
+						<strong>Logo</strong><br>
+						You may not steal my logo.<br>
+						You may not vandalize my logo in any way.<br>
+						You may not claim my logo as your own.
+
+						<hr>
+
+						<!--Warranties & Liability-->
+						<strong>Warranties & Liability</strong><br>
+						This website is brought to you "as is" without any warranty.<br>
+						I am not liable for anything that you may see on this website.<br>
+						I am not accountable for any bugs or errors you may encounter.<br>
+						If a major problem occurs, please <a onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">contact</a> me.<br>
+						I will do my best to fix the issue as soon as possible.
+
+						<hr>
+
+						<!--Copyright-->
+						<strong>Copyright</strong><br>
+						<a title="Floating Survival Page" href="fs.html">Floating Survival</a>, <a title="InvisaRant" href="invisarant.html">InvisaRant</a>, and all of my other projects are licensed under the<br>
+						<a title="View License" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br>
+						(CC BY-SA 4.0)
+						<br>
+						<br>
+						<!--Copyright Image-->
+						<a title="View License" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="images/cc.png" alt="Creative Commons" height="31" width="88"></a>
+
+						<hr>
+
+						<strong>Changes</strong><br>
+						The Terms & Conditions may be changed at any time without notice.<br>
+						Be sure to check back from time to time.
+
+					</div>
+					<!--Terms Info Alert-->
+					<div class="alert-terms alert-danger alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-terms').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<div class="row">
+							<div class="col-xs-6">
+							  	Do you accept the Terms and Conditions?
+							</div>
+							<div class="col-xs-6-offset">
+								<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#yes" onclick="$('.alert').toggle()">Yes</button> <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#no" onclick="$('.alert').toggle()">No</button>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-terms').toggle()">
+							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Privacy Modal-->
+    <div class="modal fade" id="privacy" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Privacy Policy</h4>
+					</div>
+					<div class="modal-body">
+						By using this website, you agree to the following privacy policy...
+
+						<hr>
+
+						<!--General-->
+						<strong>General</strong><br>
+						This website is currently ad free.
+
+						<hr>
+
+						<!--Cookies-->
+						<strong>Cookies</strong><br>
+						Cookies may be used to enable the site to function more fluently.<br>
+						They are files with information about the website.<br>
+						They are stored locally on your computer for future use.<br>
+						If you wish to clear your internet cookies, click <a onclick="$('#cookie').modal()">here</a>.<br>
+						Note: This will likely clear all of your internet cookies and not just for this website.
+
+						<hr>
+
+						<!--Information-->
+						<strong>Information</strong><br>
+						This website will not give any personal information to 3rd parties.<br>
+						This website may use collected information to help improve this website.
+
+						<hr>
+
+						<!--Changes-->
+						<strong>Changes</strong><br>
+						The Privacy Policy may be changed at any time without notice.<br>
+						Be sure to check back from time to time.
+
+					</div>
+					<!--Privacy Info Alert-->
+					<div class="alert-privacy alert-danger alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-privacy').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<div class="row">
+							<div class="col-xs-6">
+							  Do you accept the Privacy Policy?
+							</div>
+							<div class="col-xs-6-offset">
+								<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#yes" onclick="$('.alert').toggle()">Yes</button> <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#no" onclick="$('.alert').toggle()">No</button>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-privacy').toggle()">
+							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Yes Modal-->
+		<div class="modal fade" id="yes" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Terms & Conditions</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/wisely.jpg" height="200" width="300">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--No Modal-->
+		<div class="modal fade" id="no" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Terms & Conditions</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/poorly.jpg" height="200" width="300">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="google();">Close</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="google();">Goodbye</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
 <!--Real Modals-->
 		<!--Contact Modal-->
@@ -563,6 +742,59 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
 					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--Cookies Modal-->
+		<div class="modal fade" id="cookie" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Cookies</h4>
+					</div>
+					<div class="modal-body">
+						Click on your respective browser's logo to learn how to clear cookies.
+						<br>
+						<br>
+						<div class="row">
+							<!--Firefox-->
+							<div class="col-md-3">
+								<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"><img class="cookies-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox"></a>
+							</div>
+							<!--Chrome-->
+							<div class="col-md-3">
+								<a href="https://support.google.com/accounts/answer/61416?hl=en"><img class="cookies-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome"></a>
+							</div>
+							<!--Safari-->
+							<div class="col-md-3">
+								<a href="http://www.imore.com/how-clear-history-and-cookies-ios-7-safari"><img class="cookies-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari"></a>
+							</div>
+							<!--Edge-->
+							<div class="col-md-3">
+									<a href="http://windows.microsoft.com/en-us/windows-10/view-delete-browsing-history-microsoft-edge"><img class="cookies-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge"></a>
+							</div>
+						</div>
+						<br>
+					</div>
+					<!--Information Alert-->
+					<div class="alert-cookie alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-cookie').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>My browser is not here.<br>What do I do?</strong><br>
+						If your browser isn't listed, search the web using a search engine.
+						Here are a few suggestions.
+						<br>
+						<br>
+						<a href="https://duckduckgo.com/">DuckDuckGo</a><br>
+						<a href="https://www.google.com/">Google</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-cookie').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
