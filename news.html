@@ -88,8 +88,16 @@
 			Be sure to check the important section periodically.
 			</p>
 
-			<!--Tabs-->
-			<ul class="nav nav-tabs">
+			<!--Nav Tabs (Visible on Desktop)-->
+			<ul class="nav nav-tabs hidden-xs">
+				<li class="active"><a data-toggle="tab" href="#projects">Projects</a></li>
+				<li><a data-toggle="tab" href="#important">Important</a></li>
+				<li><a data-toggle="tab" href="#website">Website</a></li>
+				<li><a data-toggle="tab" href="#bugs">Bugs</a></li>
+			</ul>
+
+			<!--Nav Pills (Visible on Mobile)-->
+			<ul class="nav nav-pills nav-stacked visible-xs">
 				<li class="active"><a data-toggle="tab" href="#projects">Projects</a></li>
 				<li><a data-toggle="tab" href="#important">Important</a></li>
 				<li><a data-toggle="tab" href="#website">Website</a></li>
@@ -236,6 +244,26 @@
 
 <!--Website Pane-->
 					<div id="website" class="tab-pane fade">
+					<br>
+
+					<!--November 20, 2015-->
+					<span class="newsSection" id="11-20-15-website">
+						<h1>November 20, 2015</h1>
+						<p>
+							You can now view the Terms & Conditions on the <a class="link" href="webapp.html">Web App</a>.<br>
+							You can now view the Privacy Policy on the <a class="link" href="webapp.html">Web App</a>.
+							<br>
+							<br>
+							Minor changes and enhancements to the <a class="link" href="about.html#functions">namePrompt</a> function.<br>
+							Added another Easter Egg.
+							<br>
+							<br>
+							Minor changes and enhancements to the <a class="link" href="about.html#functions">Search</a> function.
+							The News page now has vertical tabs on mobile devices for improved usability.
+						</p>
+					</span><!-- /11-20-15 -->
+
+					<br>
 					<br>
 
 					<!--November 13, 2015-->
@@ -1053,6 +1081,7 @@
 						<!--Website Menu-->
 						<div id="menu1">
 							<h1>Date Jump</h1>
+							<li><a href="news.html#11-20-15-website">November 20, 2015</a></li>
 							<li><a href="news.html#11-13-15-website">November 13, 2015</a></li>
 							<li><a href="news.html#10-31-15-website">October 31, 2015</a></li>
 							<li><a href="news.html#10-23-15-website">October 23, 2015</a></li>
