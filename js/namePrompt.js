@@ -14,7 +14,8 @@ function namePrompt()
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis Kipp") || (name == "travis kipp") || (name == "Sir Kipp") || (name == "sir kipp"))
 		document.getElementById("name").innerHTML =
 		"Hello creator and welcome back to your Website.<br>" +
-		"Here are some links I thought you might like.<br><br>" +
+		"Here are some links I thought you might like.<br>" +
+		"When are you ever going to make some real content?<br><br>" +
 		"<span class='homeSection'><h3>Links</h3>" +
 		"<a class='link' data-toggle='tooltip' data-placement='top' title='Repository' target='_blank' href='https://github.com/'>GitHub</a><br>" +
 		"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' href='https://ide.c9.io'>Cloud9</a><br>" +
@@ -401,6 +402,12 @@ function namePrompt()
 		"Live long, and prosper.<br>" +
 		"Leonard Nimoy, 1931-2015<br><br>" +
 		"<img class='img-responsive img-rounded center-block' src='images/spock.jpg' height='300' width='300'>"
+//Doctor Who
+		if (name == "The Doctor" || (name == "the doctor") || (name == "The doctor") || (name == "the Doctor") || (name == "Doctor") || (name == "doctor"))
+		document.getElementById("name").innerHTML =
+		"Doctor Who?<br>" +
+		"Hey look, I found your TARDIS.<br><br>" +
+		"<img class='img-responsive img-rounded center-block' src='images/tardis.jpg' height='200' width='225'>"
 //Mirth
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
