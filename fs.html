@@ -62,7 +62,7 @@
 					</ul>
 
 					<!--Search Function-->
-					<div onkeypress="search();" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
+					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
 						<div class="input-group">
 							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">

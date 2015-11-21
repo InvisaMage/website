@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
-<!--Created December 15, 2014-->
-<!--Bootstrap Merge began on August 4, 2015-->
-<!--Home-->
+<!--Created November 13, 2015-->
+<!--Computers-->
 
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Information about InvisaMage and his projects.">
-		<meta name="keywords" content="InvisaMage, invisamage, Floating Survival, floating survival, FS, fs, InvisaRant, invisarant, IR, ir">
 		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
-		<title>InvisaMage | Home</title>
+		<title>InvisaMage | Computers</title>
 		<!--Stylesheets-->
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
@@ -43,7 +41,7 @@
 				<!--Collect the nav links, forms, and other content for toggling-->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="index.html">Home</a></li>
 						<li><a href="news.html">News</a></li>
 					<!--Projets-->
 					<li class="dropdown">
@@ -52,6 +50,13 @@
 							<li><a href="fs.html">Floating Survival</a></li>
 							<li><a href="invisarant.html">InvisaRant</a></li>
 							<li><a href="webapp.html">Web Application</a></li>
+						</ul>
+					</li>
+					<!--Resources-->
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="computers.html">Computers</a></li>
 						</ul>
 					</li>
 						<li><a href="#" data-toggle="modal" data-target="#contact">Contact</a></li>
@@ -80,23 +85,22 @@
 		<div class="container">
 
 			<!--Page Title-->
-			<a class="title" href="index.html">Home</a>
+			<a class="title" href="computers.html">Computers</a>
 			<br>
 
-			<!--Button and namePrompt Function-->
-			<a role="button" class="btn btn-primary btn-lg" onclick="namePrompt()">Personalize Message</a>
-			<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#personalizeModel">Personalize Message</button>-->
+      <p>
+        This page is a reference page about Computers that is constantly being expanded.
+      </p>
+
+			<span class="computersSection" id="intro">
+				<h1>Introduction</h1>
+				<p>
+					What are computers?
+				</p>
+			</span>
+
 			<br>
 			<br>
-
-			<!--Paragraph Changes with namePrompt Input-->
-			<p id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s Website.</p>
-
-			<!--Main Body-->
-			<p>
-			On this website you can find fast and informative information about all things InvisaMage.<br>
-			Use the navigation bar at the top to begin.
-			</p>
 
 			<!--Footer-->
 			<footer>
@@ -182,62 +186,6 @@
 			</footer>
 		</div>
 		<!--/.End Content-->
-
-		<!--Personalize Message Modal
-		<div class="modal fade" id="personalizeModel" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">What is  your name?</h4>
-					</div>
-					<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label class="control-label"></label>
-							<input type="text" class="form-control">
-						</div>
-					</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal">Submit</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		-->
-
-		<!--Alert
-		<div id="alert-message" class="alert alert-info alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<div class="row">
-				<div class="col-xs-8">
-			  	<strong>Uber Cool!</strong>
-					This Website is now using the Bootstrap framework so there is no need for a mobile version.
-				</div>
-				<div class="col-xs-4-offset">
-					<button type="button" class="btn btn-danger" onclick="$('#alert-message').hide()" data-toggle="modal" data-target="#contact">Complain</button>
-					<button type="button" class="btn btn-default" data-dismiss="alert">Go Away</button>
-					<button type="button" class="btn btn-primary" data-dismiss="alert">Awesome!</button>
-				</div>
-			</div>
-		</div>-->
-
-		<!--Survey Alet-->
-		<div id="alert-survey" class="alert alert-info alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<div class="row">
-				<div class="col-xs-8">
-			  	<strong>Survey!</strong>
-					Care to take a quick survey?
-				</div>
-				<div class="col-xs-2">
-					<button type="button" class="btn btn-default" data-dismiss="alert">Nope</button>
-					<a type="button" role="button" class="btn btn-primary" target="_blank" href="http://goo.gl/forms/6Q5rWlUory">Sure</a>
-				</div>
-			</div>
-		</div>
 
 		<!--Contact Modal-->
 		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
@@ -461,14 +409,17 @@
 		$('[data-toggle="tooltip"]').tooltip();
 		}
 		</script>
-		<!--Disable Alert on Mobile
+		<!--Enable Affix-->
 		<script>
-		if(('ontouchstart' in window))
-		{
-		$('#alert-message').hide()
-		}
+		$('#myAffix').affix({
+		  offset: {
+		    top: 100,
+		    bottom: function () {
+		      return (this.bottom = $('.footer').outerHeight(true))
+		    }
+		  }
+		})
 		</script>
-		-->
 		<!--jQuery smooth scroll to id's -->
 		<script>
 		$(function() {
