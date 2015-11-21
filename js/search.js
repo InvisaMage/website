@@ -71,4 +71,12 @@ function search()
 // YouTube
 	if (search == "YouTube" || (search == "youtube") || (search == "YT") || (search == "yt"))
 	window.open("https://www.youtube.com/");
+
+// RuneScape
+	if (search == "RuneScape" || (search == "runescape") || (search == "RS") || (search == "rs"))
+	window.location = ("jagex-jav://www.runescape.com/jav_config.ws");
+
+// DarkScape
+	if (search == "DarkScape" || (search == "darkscape") || (search == "DS") || (search == "ds"))
+	window.location = ("jagex-jav://www.runescape.com/jav_config_beta.ws");
 }
