@@ -20,6 +20,15 @@
 		<!--iOS Home Screen Image-->
 		<link rel="apple-touch-icon" sizes="152x152" href="images/quasar.jpg">
 	</head>
+
+	<!--Page Loading...-->
+	<div class="preload">
+		<div class="loading">
+			<img src="images/loading.gif" src="https://i.imgur.com/KUJoe.gif">
+		</div>
+	</div>
+
+	<div class="content">
 	<body id="top">
 		<!--Navigation Bar-->
 		<nav class="navbar navbar-inverse navbar-static-top">
@@ -806,7 +815,15 @@
     <script src="js/namePrompt-app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-    <!--Activate Tooltips-->
+		<!--Content fade Logic-->
+		<script>
+		$(function() {
+    	$('.preload').fadeOut(2000, function() {
+        $('.content').fadeIn(1000);
+    	});
+		});
+		</script>
+	  <!--Activate Tooltips-->
 		<script>
 		if(!('ontouchstart' in window))
 		{
@@ -831,4 +848,5 @@
 		});
 		</script>
 	</body>
+	</div>
 </html>
