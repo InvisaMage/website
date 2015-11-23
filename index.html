@@ -17,6 +17,14 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 	</head>
 
+	<!--Page Loading...-->
+	<div class="preload">
+		<div class="loading">
+			<img src="images/loading.gif" src="https://i.imgur.com/KUJoe.gif">
+		</div>
+	</div>
+
+	<div class="content">
 	<body id="top">
 		<!--Navigation Bar-->
 		<nav class="navbar navbar-inverse navbar-static-top">
@@ -456,6 +464,14 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
+		<!--Content fade Logic-->
+		<script>
+		$(function() {
+    	$('.preload').fadeOut(1000, function() {
+        $('.content').fadeIn(500);
+    	});
+		});
+		</script>
 		<!--If no touchscreen, show Tooltips and hide mobile search-->
 		<script>
 		if(!('ontouchstart' in window))
@@ -489,4 +505,5 @@
 		});
 		</script>
 	</body>
+	</div>
 </html>
