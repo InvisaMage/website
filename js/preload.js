@@ -1,6 +1,6 @@
 // Fades out loading screen and fades in content.
 $(function() {
-  $('.preload').fadeOut(1000, function() {
-    $('.content').fadeIn(500);
+  $('.preload').delay(300).fadeOut(300, function() {
+    $('.content').fadeIn(300);
   });
 });
