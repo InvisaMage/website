@@ -15,7 +15,7 @@ var snowStorm = (function(window, document) {
 
   // --- common properties ---
 
-  this.autoStart = false;         // Whether the snow should start automatically or not.
+  this.autoStart = true;         // Whether the snow should start automatically or not.
   this.excludeMobile = false;     // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) Enable at your own risk.
   this.flakesMax = 128;           // Limit total amount of snow made (falling + sticking)
   this.flakesMaxActive = 72;      // Limit amount of snow falling at once (less = lower CPU use)
@@ -24,7 +24,7 @@ var snowStorm = (function(window, document) {
   this.className = null;          // CSS class name for further customization on snow elements
   this.excludeMobile = false;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) By default, be nice.
   this.flakeBottom = null;        // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
-  this.followMouse = true;        // Snow movement can respond to the user's mouse
+  this.followMouse = false;        // Snow movement can respond to the user's mouse
   this.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
   this.snowCharacter = '&bull;';  // &bull; = bullet, &middot; is square on some systems etc.
   this.snowStick = true;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
