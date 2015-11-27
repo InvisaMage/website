@@ -421,6 +421,96 @@
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
 
+		<!--Easter Eggs Modal-->
+		<div class="modal fade" id="easter" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">List of Easter Eggs</h4>
+					</div>
+					<div class="modal-body">
+						This is a list of Easter Eggs currently found in this Website.
+
+						<hr>
+
+						<strong>namePrompt</strong><br>
+						Inputting any of these queries into the <a href="about.html#functions">namePrompt</a> function will output a special result.<br>
+						<ul class="text-left">
+							<li>Travis Kipp</li>
+							<li>Matt, Tanner, Carson, Chris</li>
+							<li>Kevin</li>
+							<li>Dan</li>
+							<li>Connie</li>
+							<li>Emily</li>
+							<li>Kim, Sabrina, Courtney</li>
+							<li>Rachel</li>
+							<li>Tony</li>
+							<li>Joe</li>
+							<li>Brian</li>
+							<li>David</li>
+							<li>Jenny</li>
+							<li>867-5309</li>
+							<li>Stacy</li>
+							<li>Jessie</li>
+							<li>Leah</li>
+							<li>Immortal</li>
+							<li>Radio</li>
+							<li>Mickey</li>
+							<li>Jesus</li>
+							<li>Cortana</li>
+							<li>Siri</li>
+							<li>Spock</li>
+							<li>The Doctor</li>
+							<li>Mirth</li>
+							<li>Software</li>
+							<li>Python</li>
+							<li>JavaScript</li>
+							<li>Curse Words (Not going to list them)</li>
+							<li>Reset</li>
+							<li>No input (Pressing "OK")</li>
+						</ul>
+
+						<hr>
+
+						<strong>Search</strong><br>
+						Inserting these queries into the <a href="about.html#functions">Search</a> function will output special results.<br>
+						<strong>Note:</strong> This does not include page results.
+						<ul class="text-left">
+							<li>Google (Goes to: <a href="https://www.google.com/">https://www.google.com/</a>)</li>
+							<li>Bing (Goes to: <a href="https://www.bing.com/">https://www.bing.com/</a>)</li>
+							<li>Duck (Goes to: <a href="https://duckduckgo.com/">https://duckduckgo.com/</a>)</li>
+							<li>YouTube (Goes to: <a href="https://www.youtube.com/">https://www.youtube.com/</a>)</li>
+							<li>RuneScape (Launches RuneScape if it's installed.)</li>
+							<li>DarkScape (Launches DarkScape if it's installed.)</li>
+						</ul>
+
+						<hr>
+
+						<strong>General</strong><br>
+						<ul class="text-left">
+							<li>Hovering over the "arrow" button in the footer</li>
+							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
+						</ul>
+					</div>
+					<!--Contact Help Alert-->
+					<div class="alert-easter alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-easter').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What's this?</strong><br>
+						You inserted the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
+						I doubt you got here by mistake.
+						<img class="img-responsive center-block" src="./images/svg/konami.svg">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-easter').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -429,6 +519,7 @@
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/preload.js"></script>
+		<script src="js/konami.js"></script>
 		<!--If no touchscreen, show Tooltips and hide mobile search-->
 		<script>
 		if(!('ontouchstart' in window))
