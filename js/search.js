@@ -80,3 +80,13 @@ function search()
 	if (search == "DarkScape" || (search == "darkscape") || (search == "DS") || (search == "ds"))
 	window.location = ("jagex-jav://www.runescape.com/jav_config_beta.ws");
 }
+
+// Typed.js Functionality
+$(document).ready(function() {
+	$(function(){
+			$("input").typed({
+				strings: ["Home", "News", "Floating Survival", "App", "Podcast", "Terms", "Privacy", "Archive", "Stats", "404", "Jump to.."],
+				typeSpeed: .1
+			});
+	});
+});
