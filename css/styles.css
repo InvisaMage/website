@@ -605,7 +605,7 @@ h3 {
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 305px;
+	top: 314px;
 	right: 60%;
 	margin-right: 280px;
 	width: 200px;
@@ -745,7 +745,7 @@ h3 {
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 190px;
+	top: 191px;
 	right: 60%;
 	margin-right: 280px;
 	width: 200px;
@@ -876,4 +876,5 @@ footer ul {
 
 #app-navbar-InvisaMage {
 	padding-left: 5px;
+	padding-right: 0px;
 }
