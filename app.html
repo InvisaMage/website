@@ -36,7 +36,12 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
           <a class="navbar-brand" id="app-back" role="button" href="index.html"> <span class="glyphicon glyphicon-menu-left" aria-expanded="false"></span></a>
-				  <a type="button" class="navbar-brand" id="app-navbar-InvisaMage" href="index.html">InvisaMage</a>
+				  <a class="navbar-brand" id="app-navbar-InvisaMage" href="index.html">
+						InvisaMage
+					</a>
+					<a class="navbar-brand" href="index.html">
+						<img alt="Brand" src="images/imlogo.png" width="20" height="20">
+					</a>
           <a role="button" class="navbar-brand pull-right" onclick="$('#appinfo').modal()">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
           </a>
@@ -48,7 +53,7 @@
 		<div class="container">
 
       <!--Search Function-->
-      <div>
+      <div onkeydown="if (event.keyCode == 13) searchapp()">
         <div class="input-group">
           <input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
           <span class="input-group-btn">
@@ -811,6 +816,7 @@
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/typed.js"></script>
 		<script src="js/clock.js"></script>
 		<script src="js/search-app.js"></script>
     <script src="js/namePrompt-app.js"></script>
