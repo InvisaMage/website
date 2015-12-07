@@ -14,39 +14,39 @@ function searchapp()
 
 // Floating Survival page
 	if (search == "Floating Survival" || (search == "floating survival") || (search == "FS") || (search == "fs") || (search == "Floating survival") || (search == "floating Survival"))
-	$('#fs').modal()
+	$('#fs').modal();
 
 // InvisaRant page
 	if (search == "Podcast" || (search == "podcast") || (search == "InvisaRant") || (search == "invisarant") || (search == "Invisarant") || (search == "invisaRant"))
-	$('#invisarant').modal()
+	$('#invisarant').modal();
 
 // iOS Web App page
 	if (search == "iOS" || (search == "ios") || (search == "App") || (search == "app") || (search == "Application") || (search == "application") || (search == "iOS Web App") || (search == "iOS web app") || (search == "webapp"))
 	window.location = "webapp.html";
 
 // Contact Modal
-	if (search == "Contact" || (search == "contact") || (search == "Help") || (search == "help") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
-	$('#contact').modal()
+	if (search == "Contact" || (search == "contact") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
+	$('#contact').modal();
 
 // Donate Modal
 	if (search == "Donate" || (search == "donate") || (search == "Money") || (search == "money"))
-	$('#donate').modal()
+	$('#donate').modal();
 
 // Stats Modal
 	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Requests") || (search == "requests") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
-	$('#stats').modal()
+	$('#stats').modal();
 
 // About page
 	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information"))
-	$('#about').modal()
+	$('#about').modal();
 
 // Terms page
 	if (search == "Terms" || (search == "terms") || (search == "Copyright") || (search == "copyright") || (search == "Legal") || (search == "legal") || (search == "Warranties") || (search == "warranties") || (search == "Liability") || (search == "liability"))
-	$('#terms').modal()
+	$('#terms').modal();
 
 // Privacy page
 	if (search == "Privacy" || (search == "privacy") || (search == "Cookies") || (search == "cookies"))
-	$('#privacy').modal()
+	$('#privacy').modal();
 
 // Archive page
 	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages"))
@@ -55,6 +55,10 @@ function searchapp()
 // 404 Error page
 	if (search == "404" || (search == "404 Error") || (search == "404 error") || (search == "Error") || (search == "error"))
 	window.location = "404.html";
+
+// App Information
+	if (search == "Help" || (search == "help"))
+	$('#appinfo').modal();
 
 // Google
 	if (search == "Google" || (search == "google"))
@@ -72,3 +76,13 @@ function searchapp()
 	if (search == "YouTube" || (search == "youtube") || (search == "YT") || (search == "yt"))
 	window.open("https://www.youtube.com/");
 }
+
+// Typed.js Functionality
+$(document).ready(function() {
+	$(function(){
+			$("input").typed({
+				strings: ["Help", "Floating Survival", "Podcast", "About", "Terms", "Privacy", "Stats", "Jump to.."],
+				typeSpeed: .1
+			});
+	});
+});
