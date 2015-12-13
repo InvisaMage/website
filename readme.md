@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-This is a repository to help me organize my [Website](http://www.invisamage.cf/).
+This is a repository to help me organize my [Website](http://invisamage.cf/).
 
 ### How do I get set up? ###
 
@@ -12,12 +12,12 @@ To view my Website you must have an Internet browser with HTML5, CSS3, and JavaS
 * 2) Extract .zip file
 * 3) Open "index.html" file
 
-Note: You can also view the live version of the site [here](http://www.invisamage.cf/).
+Note: You can also view the live version of the site [here](http://invisamage.com/).
 
 ### Who do I talk to? ###
 
 * Owner: InvisaMage
-* Contact: [TheMageNetwork@outlook.com](mailto:TheMageNetwork@outlook.com)
+* Contact: [support@InvisaMage.com](mailto:support@InvisaMage.com)
 
 ### License ###
 
