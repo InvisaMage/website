@@ -10,6 +10,7 @@ body {
 	color: #3399FF;
 	padding: 0;
 	margin: 0;
+  padding-top: 65px;
 }
 
 /* Every Element */
@@ -74,7 +75,7 @@ body {
 }
 
 /* Makes the cursor a pointer on the navigation bar */
-nav {
+nav li:hover {
 	cursor: pointer;
 }
 
@@ -493,6 +494,7 @@ h3 {
 	margin-left: auto;
     margin-right: auto;
     width: 60%;
+	font-size: 15px;
 }
 
 /* Computers Section */
@@ -605,11 +607,12 @@ h3 {
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 314px;
+	top: 308px;
 	right: 60%;
 	margin-right: 280px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
+	font-size: 14px;
 }
 #menu1 li {
 	list-style: none;
@@ -877,4 +880,8 @@ footer ul {
 #app-navbar-InvisaMage {
 	padding-left: 5px;
 	padding-right: 0px;
+}
+
+#app-navbar-up {
+	padding-left: 2px;
 }
