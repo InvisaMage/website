@@ -27,7 +27,7 @@
 	<div class="content">
 	<body id="top">
 		<!--Navigation Bar-->
-		<nav class="navbar navbar-inverse navbar-static-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -43,15 +43,9 @@
 				  <a class="navbar-brand" href="index.html">
 						InvisaMage
 					</a>
-					<!--Useful Links-->
-					<a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-menu-down"></span></a>
-					<ul class="dropdown-menu">
-				    <li><a target="_blank" href="http://www.planetminecraft.com/project/floating-survival-2378940/">Planet Minecraft <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
-				    <li><a target="_blank" href="https://www.youtube.com/user/InvisaMage">YouTube <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
-				    <li><a target="_blank" href="http://www.twitch.tv/invisamage">Twitch <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a target="_blank" href="http://www.chaoswebs.cf/">Chaos Webs <span class="glyphicon glyphicon-new-window glyphicon-useful"></span></a></li>
-				  </ul>
+					<a class="navbar-brand" href="#top" role="button">
+						<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+					</a>
 				</div><!-- /.navbar-header -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -261,7 +255,7 @@
 								</li>
 								<!--Chaos Webs-->
 								<li>
-									<a class="link" target="_blank" href="http://www.chaoswebs.cf/" data-toggle="tooltip" data-placement="top" title="Visit my Host's Website.">Chaos Webs
+									<a class="link" target="_blank" href="http://chaoswebs.net/" data-toggle="tooltip" data-placement="top" title="Visit my Host's Website.">Chaos Webs
 										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
 									</a>
 								</li>
@@ -272,7 +266,6 @@
 				<!--Copyright & Top Button-->
 				<p class="copyright text-center">
 					&copy; 2014-2015, InvisaMage<br>
-					<a class="top" href="#top"><img data-toggle="tooltip" data-placement="right" title="Beam me Up" src="./images/up.png" height="48" width="48"></a>
 				</p>
 			</footer>
 			<br>
@@ -324,8 +317,8 @@
 						<img src="images/poorly.jpg" height="200" width="300">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="google();">Close</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="google();">Goodbye</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = 'http://www.google.com';">Close</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location = 'http://www.google.com';">Goodbye</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -346,9 +339,9 @@
 							<!--E-mail-->
 							<div class="input-group">
 								<div class="input-group-addon">E-mail</div>
-								<input readonly type="text" class="form-control" value="TheMageNetwork@outlook.com">
+								<input readonly type="text" class="form-control" value="support@InvisaMage.com">
 									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="mailto:TheMageNetwork@outlook.com">
+										<a roll="button" class="btn btn-default" href="mailto:support@invisamage.com">
 											<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send E-mail
 										</a>
 									</span>
