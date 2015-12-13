@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-This is a repository to help me organize my [Website](http://invisamage.cf/).
+This is a repository to help me organize my [Website](http://invisamage.com/).
 
 ### How do I get set up? ###
 
