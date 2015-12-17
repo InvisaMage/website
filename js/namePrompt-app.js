@@ -21,15 +21,29 @@ function namePromptapp()
 		"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' href='https://ide.c9.io'>Cloud9</a><br>" +
 		"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' href='https://web.telegram.org/'>Telegram Web</a>"
 //Friends
-		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Tanner") || (name == "tanner") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
+		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
 		"Hello good friend and welcome back to my Website."
+//Tanner - Audio
+		if (name == "Tanner" || (name == "tanner") || (name == "No") || (name == "no"))
+		document.getElementById("name").innerHTML =
+		"Ohhh No!" +
+		"<audio autoplay preload='auto'><source src='./audio/no.mp3' type='audio/mpeg'></audio>"
+//Ryan
+		if (name == "Ryan" || (name == "ryan"))
+		document.getElementById("name").innerHTML =
+		"Welcome, The almighty box ghost, to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Web App."
+//Noah
+		if (name == "Noah" || (name == "noah"))
+		document.getElementById("name").innerHTML =
+		"How's it going, SirSaltyMcDongThong?<br>" +
+		"By the way, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Web App."
 //Kevin - Host
 		if (name == "Kevin" || (name == "kevin"))
 		document.getElementById("name").innerHTML =
 		"Hello good friend and welcome back to my Web App.<br>" +
 		"Thanks for hosting.<br><br>" +
-		"<a class=link target='_blank'' href=http://www.chaoswebs.cf/>http://www.chaoswebs.cf/ <span class='glyphicon glyphicon-new-window glyphicon-colour'></span></a>"
+		"<a class=link target='_blank' href=http://chaoswebs.net/>http://chaoswebs.net/ <span class='glyphicon glyphicon-new-window glyphicon-colour'></span></a>"
 //Father
 		if (name == "Dan" || (name == "dan") || (name == "Daniel") || (name == "daniel") || (name == "Dad") || (name == "dad") || (name == "Father") || (name == "father"))
 		document.getElementById("name").innerHTML =
@@ -364,14 +378,14 @@ function namePromptapp()
 		if (name == "Jesus" || (name == "jesus"))
 		document.getElementById("name").innerHTML =
 		"So, it looks like you're back.<br>Now what?"
-//Cortana
+//Cortana - Audio
 		if (name == "Cortana" || (name == "cortana") || (name == "Hey Cortana") || (name == "hey Cortana"))
 		document.getElementById("name").innerHTML =
 		"Can I be of assistance?<br><br>" +
 		"<img class='img-responsive img-circle center-block' src='images/cortana.gif' height='175' width='175'><br>" +
 		"Thinking..." +
 		"<audio autoplay preload='auto'><source src='./audio/cortana.mp3' type='audio/mpeg'></audio>"
-//Siri
+//Siri - Audio
 		if (name == "Siri" || (name == "siri") || (name == "Hey Siri") || (name == "hey Siri"))
 		document.getElementById("name").innerHTML =
 		"What can I help you with?<br><br>" +
