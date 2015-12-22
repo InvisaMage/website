@@ -493,7 +493,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 65%;
 	font-size: 15px;
 }
 
@@ -508,7 +508,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 65%;
 }
 
 /* About Section */
@@ -522,7 +522,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 65%;
 }
 
 /* Terms Section */
@@ -536,7 +536,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 65%;
 }
 
 /* Privacy Section */
@@ -550,7 +550,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 65%;
 }
 
 /* Archive Section */
@@ -564,7 +564,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 55%;
 }
 
 /* 404 Section */
@@ -578,7 +578,7 @@ h3 {
 	background: rgba(0,0,0,0.2);
 	margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 65%;
 }
 
 /* Homepage Button */
@@ -603,23 +603,29 @@ h3 {
 
 /* Menu for News */
 #menu1 {
-	border-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	border: 1px solid black;
-	border-width:5px 0;
+	border-width: 5px 0;
 	position: absolute;
 	top: 308px;
-	right: 60%;
-	margin-right: 280px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 	font-size: 14px;
+	left: 0px;
 }
 #menu1 li {
 	list-style: none;
 	transition: .3s;
+	cursor: pointer;
+	text-align: left;
+	padding-left: 20px;
 }
 #menu1 li:hover {
 	background: #4b545f;
+}
+#menu1-nested li {
+	padding-left: 40px;
 }
 #menu1 a {
 	display: block;
@@ -639,15 +645,15 @@ h3 {
 
 /* Menu for FS */
 #menu2 {
-	border-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 190px;
-	right: 60%;
-	margin-right: 280px;
+	top: 240px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
+	left: 0px;
 }
 #menu2 li {
 	list-style: none;
@@ -674,15 +680,15 @@ h3 {
 
 /* Menu for Terms */
 #menu3 {
-	border-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 190px;
-	right: 60%;
-	margin-right: 280px;
+	top: 185px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
+	left: 0px;
 }
 #menu3 li {
 	list-style: none;
@@ -709,15 +715,15 @@ h3 {
 
 /* Menu for Privacy */
 #menu4 {
-	border-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 190px;
-	right: 60%;
-	margin-right: 280px;
+	top: 185px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
+	left: 0px;
 }
 #menu4 li {
 	list-style: none;
@@ -744,22 +750,27 @@ h3 {
 
 /* Menu for About */
 #menu5 {
-	border-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 191px;
-	right: 60%;
-	margin-right: 280px;
+	top: 185px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
+	left: 0px;
 }
 #menu5 li {
 	list-style: none;
 	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
 }
 #menu5 li:hover {
 	background: #4b545f;
+}
+#menu5-nested li {
+	padding-left: 40px;
 }
 #menu5 a {
 	display: block;
@@ -803,7 +814,6 @@ footer {
 	font-size: 100%;
 	padding: 20px;
 }
-
 footer ul {
 	list-style: none;
 	padding: 0;
