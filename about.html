@@ -91,13 +91,39 @@
 			<a class="title" href="about.html">About</a>
 
 			<!--Menu-->
-			<div id="menu5">
-				<h1>Contents</h1>
-				<li><a href="about.html#InvisaMage">InvisaMage</a></li>
-				<li><a href="about.html#creation">Creation</a></li>
-				<li><a href="about.html#functions">Functions</a></li>
-				<li><a href="about.html#design">Design</a></li>
-				<li><a href="about.html#info">Information</a></li>
+			<div id="menu5" class="hidden-xs">
+				<h2>Contents</h2>
+				<li><a href="#InvisaMage"><span class="glyphicon glyphicon-chevron-right"></span> InvisaMage</a></li>
+				<li><a href="#creation"><span class="glyphicon glyphicon-chevron-down"></span> Creation</a></li>
+					<div id="menu5-nested">
+						<li><a href="#powered-by"><span class="glyphicon glyphicon-chevron-right"></span> Powered By</a></li>
+						<li><a href="#git-repository"><span class="glyphicon glyphicon-chevron-right"></span> Git Repository</a></li>
+						<li><a href="#logo"><span class="glyphicon glyphicon-chevron-right"></span> Logo</a></li>
+					</div>
+				<li><a href="#functions"><span class="glyphicon glyphicon-chevron-down"></span> Functions</a></li>
+					<div id="menu5-nested">
+						<li><a href="#nameprompt"><span class="glyphicon glyphicon-chevron-right"></span> namePrompt</a></li>
+						<li><a href="#search"><span class="glyphicon glyphicon-chevron-right"></span> Search</a></li>
+					</div>
+				<li><a href="#design"><span class="glyphicon glyphicon-chevron-right"></span> Design</a></li>
+				<li><a href="#info"><span class="glyphicon glyphicon-chevron-down"></span> Information</a></li>
+					<div id="menu5-nested">
+						<li><a href="#stats-info"><span class="glyphicon glyphicon-chevron-right"></span> Stats</a></li>
+					</div>
+				<br>
+			</div>
+
+			<!--Mobile Menu-->
+			<div id="mobile-menu">
+				<select>
+					<option selected value="#top">Contents</option>
+					<option value="#InvisaMage">InvisaMage</option>
+					<option value="#creation">Creation</option>
+					<option value="#functions">Functions</option>
+					<option value="#design">Design</option>
+					<option value="#info">Information</option>
+				</select>
+				<br>
 				<br>
 			</div>
 
@@ -105,32 +131,17 @@
 			This page is more information about the developer, creation of this website, and its contents.
 			</p>
 
-			<!--Mobile Menu-->
-			<div id="mobile-menu">
-				<select>
-					<option selected disabled>Contents</option>
-					<option value="about.html#InvisaMage">InvisaMage</option>
-					<option value="about.html#creation">Creation</option>
-					<option value="about.html#functions">Functions</option>
-					<option value="about.html#design">Design</option>
-					<option value="about.html#info">Information</option>
-				</select>
-				<br>
-				<br>
-			</div>
-
 			<!--About InvisaMage-->
-			<span class="aboutSection">
-			<a id="InvisaMage"></a>
+			<span class="aboutSection" id="InvisaMage">
 			<h1>InvisaMage</h1>
 			<!--Minecraft Skin-->
 			<a title="InvisaMage"><img class="img-responsive center-block" src="images/InvisaMage.png" alt="InvisaMage's Skin" height="200" width="100"></a>
 			<p>
-			Hello, I am InvisaMage.<br>
-			I am 17 year old human male who likes web technologies and assorted games.<br>
-			I got the name, InvisaMage, when I was creating a name for my <a class="link" target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> character.<br>
-			I created this website for entertainment and to organize my projects in one place.<br>
-			My Minecraft skin, as shown above, is armour called "Rune Guthix" from <a class="link" target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.
+				Hello, I am InvisaMage.<br>
+				I am 17 year old human male who likes web technologies and assorted games.<br>
+				I got the name, InvisaMage, when I was creating a name for my <a class="link" target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> character.<br>
+				I created this website for entertainment and to organize my projects in one place.<br>
+				My Minecraft skin, as shown above, is armour called "Rune Guthix" from <a class="link" target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.
 			</p>
 			</span>
 
@@ -138,43 +149,42 @@
 			<br>
 
 			<!--Creation-->
-			<span class="aboutSection">
-			<a id="creation"></a>
+			<span class="aboutSection" id="creation">
 			<h1>Creation</h1>
 			<p>
-			This website was hand coded using <a class="definition" data-toggle="tooltip" data-placement="top" title="A hackable text editor by GitHub.">Atom</a>.<br>
-			Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Atom." target="_blank" href="https://atom.io/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to learn more.
-			<br>
-			<br>
-			This website uses the <a  <a class="definition" data-toggle="tooltip" data-placement="top" title="The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.">Bootstrap</a> framework to make it mobile responsive.<br>
-			It also enables other cool features.<br>
-			Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Bootstrap." target="_blank" href="http://getbootstrap.com/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to check it out.
-			<br>
-			<br>
-			This website was tested on <a class="definition" data-toggle="tooltip" data-placement="top" title="A browser built for developers.">Mozilla Firefox Developer Edition</a>.<br>
-			Click <a class="link" data-toggle="tooltip" data-placement="top" title="Download Firefox Developer Edition" target="_blank" href="https://www.firefox.com/developer">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to learn more.
+				This website was hand coded using <a class="definition" data-toggle="tooltip" data-placement="top" title="A hackable text editor by GitHub.">Atom</a>.<br>
+				Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Atom." target="_blank" href="https://atom.io/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to learn more.
+				<br>
+				<br>
+				This website uses the <a  <a class="definition" data-toggle="tooltip" data-placement="top" title="The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.">Bootstrap</a> framework to make it mobile responsive.<br>
+				It also enables other cool features.<br>
+				Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Bootstrap." target="_blank" href="http://getbootstrap.com/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to check it out.
+				<br>
+				<br>
+				This website was tested on <a class="definition" data-toggle="tooltip" data-placement="top" title="A browser built for developers.">Mozilla Firefox Developer Edition</a>.<br>
+				Click <a class="link" data-toggle="tooltip" data-placement="top" title="Download Firefox Developer Edition" target="_blank" href="https://www.firefox.com/developer">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to learn more.
 			</p>
-			<h2>Powered By</h2>
+			<h2 id="powered-by">Powered By</h2>
 			<div class="row">
 			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/html.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="HTML5"></div>
 			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/css3.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="CSS3"></div>
 			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/js.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="JavaScript"></div>
 			</div>
 
-			<h2>Git Repository</h2>
+			<h2 id="git-repository">Git Repository</h2>
 			<p>
-			This website is also backed up on <a class="link" data-toggle="tooltip" data-placement="top" title="Visit GitHub." target="_blank" href="https://github.com">GitHub <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-			If you are interested in viewing the source code, click <a class="link" data-toggle="tooltip" data-placement="top" title="View Website source code." target="_blank" href="https://github.com/InvisaMage/Website">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-			I use <a class="link" data-toggle="tooltip" data-placement="top" title="Check out GitHub for Windows." target="_blank" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about Git." target="_blank" href="http://git-scm.com/">Git <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> <a class="definition" data-toggle="tooltip" data-placement="top" title="Graphical User Interface">GUI</a>.
+				This website is also backed up on <a class="link" data-toggle="tooltip" data-placement="top" title="Visit GitHub." target="_blank" href="https://github.com">GitHub <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+				If you are interested in viewing the source code, click <a class="link" data-toggle="tooltip" data-placement="top" title="View website source code." target="_blank" href="https://github.com/InvisaMage/website">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+				I use <a class="link" data-toggle="tooltip" data-placement="top" title="Check out GitHub for Windows." target="_blank" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about Git." target="_blank" href="http://git-scm.com/">Git <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> <a class="definition" data-toggle="tooltip" data-placement="top" title="Graphical User Interface">GUI</a>.
 			</p>
-			<h2>Logo</h2>
+			<h2 id="logo">Logo</h2>
 			<p>
-			The InvisaMage logo was created using <a class="link" data-toggle="tooltip" data-placement="top" title="Check out Paint.NET" target="_blank" href="http://www.getpaint.net/">Paint.NET <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a><br>
-			The design is based on a circuit board as I find electronics fascinating.
-			<!--InvisaMage's Logo-->
-			<br>
-			<br>
-			<img class="img-responsive center-block" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
+				The InvisaMage logo was created using <a class="link" data-toggle="tooltip" data-placement="top" title="Check out Paint.NET" target="_blank" href="http://www.getpaint.net/">Paint.NET <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a><br>
+				The design is based on a circuit board as I find electronics fascinating.
+				<!--InvisaMage's Logo-->
+				<br>
+				<br>
+				<img class="img-responsive center-block" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
 			</p>
 			</span>
 
@@ -182,85 +192,82 @@
 			<br>
 
 			<!--Function Information-->
-			<span class="aboutSection">
-			<a id="functions"></a>
-			<h1>Functions</h1>
-			<p>
-			These functions are coded in <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about JavaScript." target="_blank" href="http://www.w3schools.com/js/default.asp">JavaScript <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> and are used to make the website interactive.<br>
-			Continue reading to learn more about their purpose and how you can use them.
-			</p>
-			<h2>namePrompt</h2>
-			<p>
-			The namePrompt function is located on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-			The purpose of this function is to display a more personal message on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-			This message welcomes the user to the website.<br>
-			There are also a number of <a class="definition" data-toggle="tooltip" data-placement="top" title="An intentional inside joke, hidden message, or feature in an interactive work.">Easter eggs</a>.<br>
-			For example, type the name "Spock" or "Siri" into the message box.<br>
-			You can even type "Mirth" and you'll receive a list of fun, comical, websites.
-			</p>
-			<h2>Search</h2>
-			<p>
-			The Search function can be accessed at any time on the navigation bar.<br>
-			To use this function, type what are you are looking for and click the Go button.<br>
-			If the function can identify your term, you will be redirected to the appropriate page.<br>
-			For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-			If the page you are looking for cannot be determined, nothing will happen.<br>
-			</p>
+			<span class="aboutSection" id="functions">
+				<h1>Functions</h1>
+				<p>
+					These functions are coded in <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about JavaScript." target="_blank" href="http://www.w3schools.com/js/default.asp">JavaScript <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> and are used to make the website interactive.<br>
+					Continue reading to learn more about their purpose and how you can use them.
+				</p>
+				<h2 id="nameprompt">namePrompt</h2>
+				<p>
+					The namePrompt function is located on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
+					The purpose of this function is to display a more personal message on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
+					This message welcomes the user to the website.<br>
+					There are also a number of <a class="definition" data-toggle="tooltip" data-placement="top" title="An intentional inside joke, hidden message, or feature in an interactive work.">Easter eggs</a>.<br>
+					For example, type the name "Spock" or "Siri" into the message box.<br>
+					You can even type "Mirth" and you'll receive a list of fun, comical, websites.
+				</p>
+				<h2 id="search">Search</h2>
+				<p>
+					The Search function can be accessed at any time on the navigation bar.<br>
+					To use this function, type what are you are looking for and click the Go button.<br>
+					If the function can identify your term, you will be redirected to the appropriate page.<br>
+					For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
+					If the page you are looking for cannot be determined, nothing will happen.<br>
+				</p>
 			</span>
 
 			<br>
 			<br>
 
 			<!--Design-->
-			<span class="aboutSection">
-			<a id="design"></a>
-			<h1>Design</h1>
-			<p>
-			How to effectively navigate through this website.
-			<br>
-			<br>
-			This is a <a class="link" data-toggle="tooltip" data-placement="top" title="Often times, a link will display a tooltip like this to give you more information.">link</a>.<br>
-			This is also a <a href="#">link</a> but it's not as common.<br>
-			Click it to go to its destination.<br>
-			The destination could be within this website or it could lead to an external site.<br>
-			<br>
-			<br>
-			This is a <a class="definition" data-toggle="tooltip" data-placement="top" title="A statement of the meaning of a word, phrase, or term, as in a dictionary entry.">definition</a>.<br>
-			Hover over definitions to read the definition.<br>
-			Note: Tooltips are disabled on touchscreen enabled devices
-			<br>
-			<br>
-			In the navigation bar, the page you are viewing will have a black background.<br>
-			For example, if I'm on the Homepage, the "Home" link will have a black background behinded it.
-			<br>
-			<br>
-			If you see this icon <span class="glyphicon glyphicon-new-window glyphicon-colour"></span> next to a link, it leads to an external website.<br>
-			External websites now open in a new tab.
-			</p>
+			<span class="aboutSection" id="design">
+				<h1>Design</h1>
+				<p>
+					How to effectively navigate through this website.
+					<br>
+					<br>
+					This is a <a class="link" data-toggle="tooltip" data-placement="top" title="Often times, a link will display a tooltip like this to give you more information.">link</a>.<br>
+					This is also a <a href="#">link</a> but it's not as common.<br>
+					Click it to go to its destination.<br>
+					The destination could be within this website or it could lead to an external site.<br>
+					<br>
+					<br>
+					This is a <a class="definition" data-toggle="tooltip" data-placement="top" title="A statement of the meaning of a word, phrase, or term, as in a dictionary entry.">definition</a>.<br>
+					Hover over definitions to read the definition.<br>
+					Note: Tooltips are disabled on touchscreen enabled devices
+					<br>
+					<br>
+					In the navigation bar, the page you are viewing will have a black background.<br>
+					For example, if I'm on the Homepage, the "Home" link will have a black background behinded it.
+					<br>
+					<br>
+					If you see this icon <span class="glyphicon glyphicon-new-window glyphicon-colour"></span> next to a link, it leads to an external website.<br>
+					External websites now open in a new tab.
+				</p>
 			</span>
 
 			<br>
 			<br>
 
 			<!--Information-->
-			<span class="aboutSection">
-			<a id="info"></a>
-			<h1>Information</h1>
-			<p>
-			The font used is called "<a class="link" data-toggle="tooltip" data-placement="top" title="Check out font." target="_blank" href="http://font.ubuntu.com/">Ubuntu-R <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>" which is default on the <a class="definition" data-toggle="tooltip" data-placement="top" title="Operating System">OS</a> called <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about Ubuntu." target="_blank" href="http://www.ubuntu.com/"/>Ubuntu <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-			This website was tested on <a class="link" data-toggle="tooltip" data-placement="top" title="Download Firefox." target="_blank" href="https://www.firefox.com/">Mozilla Firefox <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> and may not work correctly on other <a class="link" data-toggle="tooltip" data-placement="top" title="View common browsers." target="_blank" href="http://browsehappy.com/">browsers <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-			This website has a few <a class="definition" data-toggle="tooltip" data-placement="top" title="An intentional inside joke, hidden message, or feature in an interactive work.">Easter eggs</a> embedded into it. The hunt beings!<br>
-			Host: <a class="link" data-toggle="tooltip" data-placement="top" title="Visit host Website." target="_blank" href="http://chaoswebs.net/">Chaos Webs <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>
-			</p>
-			<h2>Stats</h2>
-			<p>
-			The Stats button, located on the navigation bar, displays information related to your system.<br>
-			The "requests" are how many times you've loaded any page within this Website.<br>
-			The "Compatibility" row are select browsers which have been tested to some extent and work desireably.<br>
-			This does not mean unlisted browsers do not work.<br>
-			Hover over a brower logo to view more Information.<br>
-			Note: Version numbers are the last known version which the site was tested on.
-			</p>
+			<span class="aboutSection" id="info">
+				<h1>Information</h1>
+				<p>
+					The font used is called "<a class="link" data-toggle="tooltip" data-placement="top" title="Check out font." target="_blank" href="http://font.ubuntu.com/">Ubuntu-R <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>" which is default on the <a class="definition" data-toggle="tooltip" data-placement="top" title="Operating System">OS</a> called <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about Ubuntu." target="_blank" href="http://www.ubuntu.com/"/>Ubuntu <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+					This website was tested on <a class="link" data-toggle="tooltip" data-placement="top" title="Download Firefox." target="_blank" href="https://www.firefox.com/">Mozilla Firefox <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> and may not work correctly on other <a class="link" data-toggle="tooltip" data-placement="top" title="View common browsers." target="_blank" href="http://browsehappy.com/">browsers <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+					This website has a few <a class="definition" data-toggle="tooltip" data-placement="top" title="An intentional inside joke, hidden message, or feature in an interactive work.">Easter eggs</a> embedded into it. The hunt beings!<br>
+					Host: <a class="link" data-toggle="tooltip" data-placement="top" title="Visit host website." target="_blank" href="http://chaoswebs.net/">Chaos Webs <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>
+				</p>
+				<h2 id="stats-info">Stats</h2>
+				<p>
+					The Stats button, located on the navigation bar, displays information related to your system.<br>
+					The "requests" are how many times you've loaded any page within this website.<br>
+					The "Compatibility" row are select browsers which have been tested to some extent and work desireably.<br>
+					This does not mean unlisted browsers do not work.<br>
+					Hover over a brower logo to view more Information.<br>
+					Note: Version numbers are the last known version which the site was tested on.
+				</p>
 			</span>
 
 			<br>
@@ -285,7 +292,7 @@
 								</li>
 								<!--Design-->
 								<li>
-									<a class="link" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the Website.">Design</a>
+									<a class="link" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the website.">Design</a>
 								</li>
 							</ul>
 						</div>
@@ -324,17 +331,17 @@
 							<ul>
 								<!--Archive-->
 								<li>
-									<a class="link" href="archive.html" data-toggle="tooltip" data-placement="top" title="View old Versions of this Website.">Archive</a>
+									<a class="link" href="archive.html" data-toggle="tooltip" data-placement="top" title="View old Versions of this website.">Archive</a>
 								</li>
 								<!--Repository-->
 								<li>
-									<a class="link" target="_blank" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="top" title="View Website Repository on Github.">Repository
+									<a class="link" target="_blank" href="https://github.com/InvisaMage/website" data-toggle="tooltip" data-placement="top" title="View website Repository on Github.">Repository
 										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
 									</a>
 								</li>
 								<!--Chaos Webs-->
 								<li>
-									<a class="link" target="_blank" href="http://chaoswebs.net/" data-toggle="tooltip" data-placement="top" title="Visit my Host's Website.">Chaos Webs
+									<a class="link" target="_blank" href="http://chaoswebs.net/" data-toggle="tooltip" data-placement="top" title="Visit my Host's website.">Chaos Webs
 										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
 									</a>
 								</li>
@@ -342,9 +349,10 @@
 						</div>
 					</div>
 				</div>
-				<!--Copyright & Top Button-->
+				<!--Copyright-->
 				<p class="copyright text-center">
-					&copy; 2014-2015, InvisaMage<br>
+					&copy; 2014 - 2016, InvisaMage<br>
+					Content available under a <a class="link" href="terms.html#copyright">Creative Commons license</a>.
 				</p>
 			</footer>
 		</div>
@@ -416,7 +424,7 @@
 						<br>
 		          <!--Bitcoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></div>
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a> <img src="images/bitcoin.png" height="15" width="15"></div>
 			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
 									<span class="input-group-btn">
 										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate</a>
@@ -425,7 +433,7 @@
 							<br>
 		          <!--Dogecoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></div>
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a> <img src="images/dogecoin.png" height="15" width="15"></div>
 			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
 									<span class="input-group-btn">
 										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate</a>
@@ -434,7 +442,7 @@
 							<br>
 		          <!--Litecoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></div>
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a> <img src="images/litecoin.png" height="15" width="15"></div>
 			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
 									<span class="input-group-btn">
 										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate</a>
@@ -469,7 +477,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black" id="exampleModalLabel">Stats</h4>
+						<h4 class="modal-title black">Stats</h4>
 					</div>
 					<div class="modal-body">
 						<table class="table table-responsive table-condensed table-hover">
@@ -515,7 +523,7 @@
 					  <button type="button" class="close" onclick="$('.alert-stats').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					  <strong>What does this do?</strong><br>
 						The Stats modal displays information related to your system.<br>
-						The "requests" are how many times you've loaded any page within this Website.
+						The "requests" are how many times you've loaded any page within this website.
 						<br>
 						<br>
 						<strong>Compatibility row?</strong><br>
@@ -565,7 +573,7 @@
 						<h4 class="modal-title black">List of Easter Eggs</h4>
 					</div>
 					<div class="modal-body">
-						This is a list of Easter Eggs currently found in this Website.
+						This is a list of Easter Eggs currently found in this website.
 
 						<hr>
 
@@ -629,6 +637,7 @@
 						<ul class="text-left">
 							<li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
 							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
+							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
 						</ul>
 					</div>
 					<!--Contact Help Alert-->
@@ -663,17 +672,16 @@
 		<script>
 		if(!('ontouchstart' in window))
 		{
-		$('[data-toggle="tooltip"]').tooltip();
-		$('#mobile-menu').hide();
-		$('#search-mobile').hide();
+			$('[data-toggle="tooltip"]').tooltip();
+			$('#mobile-menu').hide();
+			$('#search-mobile').hide();
 		}
 		</script>
-		<!--If touchscreen, hide desktop search, and hide Date Jumps-->
+		<!--If touchscreen, hide desktop search-->
 		<script>
 		if(('ontouchstart' in window))
 		{
-		$('#search').hide();
-		$('#menu5').hide();
+			$('#search').hide();
 		}
 		</script>
 		<!--Mobile Menus-->
