@@ -91,12 +91,25 @@
 			<a class="title" href="privacy.html">Privacy Policy</a>
 
 			<!--Menu-->
-			<div id="menu4">
-				<h1>Contents</h1>
-				<li><a href="privacy.html#general">General</a></span></li>
-				<li><a href="privacy.html#cookies">Cookies</a></span></li>
-				<li><a href="privacy.html#information">Information</a></span></li>
-				<li><a href="privacy.html#changes">Changes</a></span></li>
+			<div id="menu4" class="hidden-xs">
+				<h2>Contents</h2>
+				<li><a href="#general">General</a></span></li>
+				<li><a href="#cookies">Cookies</a></span></li>
+				<li><a href="#information">Information</a></span></li>
+				<li><a href="#changes">Changes</a></span></li>
+				<br>
+			</div>
+
+			<!--Mobile Menu-->
+			<div id="mobile-menu">
+				<select>
+					<option selected value="#top">Contents</option>
+					<option value="#general">General</option>
+					<option value="#cookies">Cookies</option>
+					<option value="#information">Information</option>
+					<option value="#changes">Changes</option>
+				</select>
+				<br>
 				<br>
 			</div>
 
@@ -104,42 +117,27 @@
 			By using this website, you agree to the following privacy policy...<br>
 			</p>
 
-			<!--Mobile Menu-->
-			<div id="mobile-menu">
-				<select>
-					<option selected disabled>Contents</option>
-					<option value="privacy.html#general">General</option>
-					<option value="privacy.html#cookies">Cookies</option>
-					<option value="privacy.html#information">Information</option>
-					<option value="privacy.html#changes">Changes</option>
-				</select>
-				<br>
-				<br>
-			</div>
-
 			<!--General-->
-			<span class="privacySection">
-			<a id="general"></a>
-			<h1>General</h1>
-			<p>
-			This website is currently ad free.
-			</p>
+			<span class="privacySection" id="general">
+				<h1>General</h1>
+					<p>
+						This website is currently ad free.
+					</p>
 			</span>
 
 			<br>
 			<br>
 
 			<!--Cookies-->
-			<span class="privacySection">
-			<a id="cookies"></a>
-			<h1>Cookies</h1>
-			<p>
-			Cookies may be used to enable the site to function more fluently.<br>
-			They are files with information about the website.<br>
-			They are stored locally on your computer for future use.<br>
-			If you wish to clear your internet cookies, click <a class="link" onclick="$('#cookie').modal()">here</a>.<br>
-			Note: This will likely clear all of your internet cookies and not just for this website.
-			</p>
+			<span class="privacySection" id="cookies">
+				<h1>Cookies</h1>
+				<p>
+					Cookies may be used to enable the site to function more fluently.<br>
+					They are files with information about the website.<br>
+					They are stored locally on your computer for future use.<br>
+					If you wish to clear your internet cookies, click <a class="link" onclick="$('#cookie').modal()">here</a>.<br>
+					Note: This will likely clear all of your internet cookies including ones for this website.
+				</p>
 			</span>
 
 			<br>
@@ -147,12 +145,12 @@
 
 			<!--Information-->
 			<span class="privacySection">
-			<a id="information"></a>
-			<h1>Information</h1>
-			<p>
-			This website will not give any personal information to 3rd parties.<br>
-			This website may use collected information to help improve this website.
-			</p>
+				<a id="information"></a>
+				<h1>Information</h1>
+					<p>
+						This website will not give any personal information to 3rd parties.<br>
+						This website may use collected information to help improve this website.
+					</p>
 			</span>
 
 			<br>
@@ -160,12 +158,12 @@
 
 			<!--Changes-->
 			<span class="privacySection">
-			<a id="changes"></a>
-			<h1>Changes</h1>
-			<p>
-			The Privacy Policy may be changed at any time without notice.<br>
-			Be sure to check back from time to time.
-			</p>
+				<a id="changes"></a>
+				<h1>Changes</h1>
+					<p>
+						The Privacy Policy may be changed at any time without notice.<br>
+						Be sure to check back from time to time.
+					</p>
 			</span>
 
 			<br>
@@ -190,7 +188,7 @@
 								</li>
 								<!--Design-->
 								<li>
-									<a class="link" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the Website.">Design</a>
+									<a class="link" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the website.">Design</a>
 								</li>
 							</ul>
 						</div>
@@ -229,17 +227,17 @@
 							<ul>
 								<!--Archive-->
 								<li>
-									<a class="link" href="archive.html" data-toggle="tooltip" data-placement="top" title="View old Versions of this Website.">Archive</a>
+									<a class="link" href="archive.html" data-toggle="tooltip" data-placement="top" title="View old Versions of this website.">Archive</a>
 								</li>
 								<!--Repository-->
 								<li>
-									<a class="link" target="_blank" href="https://github.com/InvisaMage/Website" data-toggle="tooltip" data-placement="top" title="View Website Repository on Github.">Repository
+									<a class="link" target="_blank" href="https://github.com/InvisaMage/website" data-toggle="tooltip" data-placement="top" title="View website Repository on Github.">Repository
 										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
 									</a>
 								</li>
 								<!--Chaos Webs-->
 								<li>
-									<a class="link" target="_blank" href="http://chaoswebs.net/" data-toggle="tooltip" data-placement="top" title="Visit my Host's Website.">Chaos Webs
+									<a class="link" target="_blank" href="http://chaoswebs.net/" data-toggle="tooltip" data-placement="top" title="Visit my Host's website.">Chaos Webs
 										<span class="glyphicon glyphicon-new-window glyphicon-colour"></span>
 									</a>
 								</li>
@@ -247,9 +245,10 @@
 						</div>
 					</div>
 				</div>
-				<!--Copyright & Top Button-->
+				<!--Copyright-->
 				<p class="copyright text-center">
-					&copy; 2014-2015, InvisaMage<br>
+					&copy; 2014 - 2016, InvisaMage<br>
+					Content available under a <a class="link" href="terms.html#copyright">Creative Commons license</a>.
 				</p>
 			</footer>
 			<br>
@@ -374,7 +373,7 @@
 						<br>
 		          <!--Bitcoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a></div>
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a> <img src="images/bitcoin.png" height="15" width="15"></div>
 			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
 									<span class="input-group-btn">
 										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate</a>
@@ -383,7 +382,7 @@
 							<br>
 		          <!--Dogecoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a></div>
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a> <img src="images/dogecoin.png" height="15" width="15"></div>
 			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
 									<span class="input-group-btn">
 										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate</a>
@@ -392,7 +391,7 @@
 							<br>
 		          <!--Litecoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a></div>
+			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a> <img src="images/litecoin.png" height="15" width="15"></div>
 			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
 									<span class="input-group-btn">
 										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate</a>
@@ -473,7 +472,7 @@
 					  <button type="button" class="close" onclick="$('.alert-stats').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					  <strong>What does this do?</strong><br>
 						The Stats modal displays information related to your system.<br>
-						The "requests" are how many times you've loaded any page within this Website.
+						The "requests" are how many times you've loaded any page within this website.
 						<br>
 						<br>
 						<strong>Compatibility row?</strong><br>
@@ -529,19 +528,19 @@
 						<div class="row">
 							<!--Firefox-->
 							<div class="col-md-3">
-								<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"><img class="cookies-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox"></a>
+								<a target="_blank" href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"><img class="cookies-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox"></a>
 							</div>
 							<!--Chrome-->
 							<div class="col-md-3">
-								<a href="https://support.google.com/accounts/answer/61416?hl=en"><img class="cookies-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome"></a>
+								<a target="_blank" href="https://support.google.com/accounts/answer/61416?hl=en"><img class="cookies-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome"></a>
 							</div>
 							<!--Safari-->
 							<div class="col-md-3">
-								<a href="http://www.imore.com/how-clear-history-and-cookies-ios-7-safari"><img class="cookies-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari"></a>
+								<a target="_blank" href="http://www.imore.com/how-clear-history-and-cookies-ios-7-safari"><img class="cookies-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari"></a>
 							</div>
 							<!--Edge-->
 							<div class="col-md-3">
-									<a href="http://windows.microsoft.com/en-us/windows-10/view-delete-browsing-history-microsoft-edge"><img class="cookies-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge"></a>
+									<a target="_blank" href="http://windows.microsoft.com/en-us/windows-10/view-delete-browsing-history-microsoft-edge"><img class="cookies-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge"></a>
 							</div>
 						</div>
 						<br>
@@ -576,7 +575,7 @@
 						<h4 class="modal-title black">List of Easter Eggs</h4>
 					</div>
 					<div class="modal-body">
-						This is a list of Easter Eggs currently found in this Website.
+						This is a list of Easter Eggs currently found in this website.
 
 						<hr>
 
@@ -640,6 +639,7 @@
 						<ul class="text-left">
 							<li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
 							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
+							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
 						</ul>
 					</div>
 					<!--Contact Help Alert-->
@@ -674,17 +674,16 @@
 		<script>
 		if(!('ontouchstart' in window))
 		{
-		$('[data-toggle="tooltip"]').tooltip();
-		$('#mobile-menu').hide()
-		$('#search-mobile').hide();
+			$('[data-toggle="tooltip"]').tooltip();
+			$('#mobile-menu').hide()
+			$('#search-mobile').hide();
 		}
 		</script>
-		<!--If touchscreen, hide desktop search, and hide Date Jumps-->
+		<!--If touchscreen, hide desktop search-->
 		<script>
 		if(('ontouchstart' in window))
 		{
-		$('#search').hide();
-		$('#menu4').hide();
+			$('#search').hide();
 		}
 		</script>
 		<!--Mobile Menus-->
