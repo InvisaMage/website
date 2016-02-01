@@ -276,6 +276,25 @@
 					<div id="website" class="tab-pane fade">
 					<br>
 
+					<!--January 31, 2016-->
+					<span class="newsSection" id="1-31-16-website">
+						<h1>January 31, 2016</h1>
+						<p>
+							Enhancements to the <a class="link" data-toggle="modal" data-target="#donate">Donate</a> modal.<br>
+							Added QR codes for all cryptocurrencies.<br>
+							Removed currency images.
+							<br>
+							<br>
+							Tweaked download tables.<br>
+							This includes the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> and <a class="link" title="InvisaRant page" href="invisarant.html">InvisaRant</a> page.<br>
+							The change logs for Floating Survival are now stored on the server.<br>
+							Added "Rig" section on the <a class="link" href="about.html#rig">About</a> page.
+						</p>
+					</span><!-- /1-31-16 -->
+
+					<br>
+					<br>
+
 					<!--January 13, 2016-->
 					<span class="newsSection" id="1-13-16-website">
 						<h1>January 13, 2016</h1>
@@ -1222,6 +1241,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> January 2016</a></li>
 								<div id="menu1-nested">
+									<li><a href="#1-31-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 31st</a></li>
 									<li><a href="#1-13-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 13th</a></li>
 								</div>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> December 2015</a></li>
@@ -1501,31 +1521,54 @@
 						<br>
 		          <!--Bitcoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a> <img src="images/bitcoin.png" height="15" width="15"></div>
+			          <div class="input-group-addon"><a target="_blank" href="https://bitcoin.org/en/">Bitcoin (฿)</a></div>
 			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
 									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate</a>
+										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate ฿</a>
+										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-bitcoin">Scan QR</a>
 									</span>
 							</div>
 							<br>
 		          <!--Dogecoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Dogecoin">Dogecoin</a> <img src="images/dogecoin.png" height="15" width="15"></div>
+			          <div class="input-group-addon"><a target="_blank" href="http://dogecoin.com/">Dogecoin (Ð)</a></div>
 			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
 									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate</a>
+										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate Ð</a>
+										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-dogecoin">Scan QR</a>
 									</span>
 							</div>
 							<br>
 		          <!--Litecoin-->
 							<div class="input-group">
-			          <div class="input-group-addon"><a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a> <img src="images/litecoin.png" height="15" width="15"></div>
+			          <div class="input-group-addon"><a target="_blank" href="https://litecoin.com/">Litecoin (Ł)</a></div>
 			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
 									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate</a>
+										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate Ł</a>
+										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-litecoin" data-toggle="tooltip">Scan QR</a>
 									</span>
 							</div>
-							<br>
+							<!--QR-Bitcoin-->
+							<div class="collapse" id="qr-bitcoin">
+							  <div class="well">
+							    <strong>Bitcoin</strong>
+									<img class="img-responsive center-block" src="images/qr-bitcoin.png" height="150" width="150">
+								</div>
+							</div>
+							<!--QR-Dogecoin-->
+							<div class="collapse" id="qr-dogecoin">
+							  <div class="well">
+							    <strong>Dogecoin</strong>
+									<img class="img-responsive center-block" src="images/qr-dogecoin.png" height="150" width="150">
+								</div>
+							</div>
+							<!--QR-Litecoin-->
+							<div class="collapse" id="qr-litecoin">
+							  <div class="well">
+							    <strong>Litecoin</strong>
+									<img class="img-responsive center-block" src="images/qr-litecoin.png" height="150" width="150">
+								</div>
+							</div>
 		      </div>
 					<!--Information Alert-->
 					<div class="alert-donate alert-info alert-dismissible" role="alert" style="display: none">
@@ -1535,6 +1578,9 @@
 						They are a digital medium of exchange.
 						They use cryptography for security, making them difficult to counterfeit.
 						Click the names of them to learn more.<br>
+						<strong>QR Codes:</strong><br>
+						You must have a QR code scanner to use these.<br>
+						Preferably one built into your cryptocurrency client.<br>
 						<strong>Note:</strong><br>
 						You must have the correct cryptocurrency client to use the "Donate" buttons.
 					</div>
@@ -1717,7 +1763,7 @@
 							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
 						</ul>
 					</div>
-					<!--Contact Help Alert-->
+					<!--Easter Egg Help Alert-->
 					<div class="alert-easter alert-info alert-dismissible" role="alert" style="display: none">
 					  <button type="button" class="close" onclick="$('.alert-easter').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					  <strong>What's this?</strong><br>
