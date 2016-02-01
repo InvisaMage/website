@@ -1,0 +1,423 @@
+
+Floating Survival
+By: InvisaMage
+Website: http://invisamage.com/
+Minecraft 1.4-1.9.X*
+
+*Please use the latest version of Minecraft as I normally use the new features.
+
+Floating Survival PMC: http://www.planetminecraft.com/project/floating-survival-2378940/
+Floating Survival MediaFire: http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival
+Floating Survival OneDrive: http://1drv.ms/1rNlwDt
+
+-------------------------------------------[Change Log]-------------------------------------------
+
+1)Please read to see what I added or changed.
+2)Also note that I'm not going to put every change in this log. Only the most notable ones.
+3)Note: Used MCedit
+
+-------------------------------------------[v1.0.0]-----------------------------------------------
+
+1)Made Spawn
+2)Made lobby
+3)Added my house/office
+4)Created Community area
+
+-------------------------------------------[v1.0.1]-----------------------------------------------
+
+1)Tweaked Lobby
+2)Added fireworks
+3)Made the housing area
+
+-------------------------------------------[v1.0.2]-----------------------------------------------
+
+1)Added useful stuff area
+2)Changed the wood railings to stone/changed overall theme to stone
+3)Added Nether portal
+4)Added End portal
+5)Added the wilderness entrance
+6)Added more detail to every area
+7)Moved the whole platform to a new location
+
+-------------------------------------------[v1.1.0]-----------------------------------------------
+
+1)Added spawn platform (Thanks to Hypixle)*
+2)Tweaked spawn
+3)Tweaked lobby
+4)Tweaked firework launcher
+5)The beacon now has secondary power
+
+*I copied this from one of his maps
+
+-------------------------------------------[v1.2.0]-----------------------------------------------
+
+Note: Using Minecraft 1.5.X
+
+1)Added lighting system
+2)Added messages when you enter areas
+3)Tweaked my house
+
+-------------------------------------------[v1.2.1]-----------------------------------------------
+
+1)Tweaked my office
+2)Added a lever so people can get behind the office
+3)Changed the roof on the office
+4)Made it more symmetrical and visually pleasing
+
+-------------------------------------------[v1.2.2]-----------------------------------------------
+
+1)Changed the gate in the office so now its a button
+2)Removed seats (stairs) in the office
+3)Moved daylight sensor
+4)Updated signs including news and the event boards
+5)Moved the "Ideas" section to the events board
+6)Added some more lights where needed
+
+-------------------------------------------[v1.2.3]-----------------------------------------------
+
+1)Moved the platform higher up (to make people reconsider stacking up to it)
+2)Changed tp's so they are the right coordinates
+3)Tweaked redstone for the gate in the office (adjusted timing)
+4)changed wilds spawn a little (Tweaked roof and tps)
+5)Tweaked some areas with lighting and detail
+6)Updated more signs
+
+-------------------------------------------[v1.3.0]-----------------------------------------------
+
+1)Removed the home area (make homes in the wild now)
+2)Expanded the diagonal path ways
+3)Added more lighting
+4)Added two Easter eggs
+5)Updated signs
+6)Tweaked firework show
+7)Edited signs
+8)Made the world size a lot smaller (including old saves)
+9)Removed files in the world save (including old saves)
+10)Tweaked my house
+11)Tweaked a lot of areas
+
+-------------------------------------------[v1.3.1]-----------------------------------------------
+
+1)Changed the way the command blocks in the office are activated
+2)Edited command block functions in the office
+3)Tweaked detail in the office
+4)Updated the news boards (in the community area)
+5)Made command blocks say what they are doing. (Ex: /say Server: Teleporting @p to lobby...)
+6)Added an Easter egg
+7)Tweaked lobby details
+8)Updated signs
+9)Tweaked redstone (Mainly under the lobby)
+10)Removed an Easter egg (The lighting one, would be too laggy for people and does not fit.)
+11)Tweaked platform (raised the slabs to full blocks)
+12)Edited an Easter egg (Furnace one)
+
+-------------------------------------------[v1.3.2]-----------------------------------------------
+
+Note: Using Minecraft 1.6.X
+
+1)Renamed map to Floating Survival (It seems more fitting)
+2)Updated signs
+3)Reworked Wild entrance/exit
+4)Fixed grammar (Signs as well as Change Log)
+5)Added an Auto Trash Can to the Useful Stuff area
+
+-------------------------------------------[v1.3.3]-----------------------------------------------
+
+1)Removed the gamemode "a" command blocks (In the Lobby)
+2)Renamed all the command blocks to "Server" (EX: [Server] Teleporting @p to the lobby...)
+3)Updated signs
+4)Added a command block that plays a sound when someone is teleported (Ex: /playsound portal.travel @p)
+
+-------------------------------------------[v1.3.4]-----------------------------------------------
+
+1)Added a command block function in my office (A tp to the Spawn Platform)
+2)Tweaked my front door
+3)Added a way to "lock" the gates open in the office (Requires an item for the hopper)
+4)Updated signs
+5)Added the mining fatigue status effect in the spawn areas (Yay no more breaking glass)
+6)Edited spawn platform command blocks
+7)Fixed spawn platform problems
+8)Changed what items you get on the first log-in
+
+-------------------------------------------[v1.3.5]-----------------------------------------------
+
+1)Added an Easter egg (Path under house)
+2)Edited an Easter egg (Added resistance for the furnace Easter egg)
+3)Changed how the Fatigue status effect is activated (Hopper Timer)
+4)Updated signs
+5)Change wild spawn
+6)Changed the location of the teleport back to the wild spawn
+7)Changed the location of the "Auto Trash Can" (For aesthetic reasons and wool burning)
+8)Added a crafting table in the center of the fountain (Useful Stuff area)
+9)Aesthetic tweaks to "Useful Stuff" area
+
+-------------------------------------------[v1.4.0]-----------------------------------------------
+
+Note: Using Minecraft 1.7.X
+
+1)Tweaked aesthetics of "Office"
+2)Merged "Useful Stuff" with "Community Area" (Not everything got re added)
+3)Removed Nether
+4)Removed End
+5)Changed how passageways to different areas look
+6)Tweaked redstone because of various changes to areas
+7)Adjusted fatigue at lobby
+8)Added/Changed flowers to my house
+9)Updated Signs
+10)Reduced firework show length
+11)Edited spawn aesthetics
+12)Replaced "Spawn Platform" with another mechanism
+13)Replaced �Platform� teleport with �Spawn Mech.� teleport (Office)
+
+-------------------------------------------[v1.4.1]-----------------------------------------------
+
+1)Moved everything to another world
+2)Various fixes due to move (Including changing biomes)
+3)Removed map in "Community Area"
+4)Tweaked redstone under office (fatigue timer)
+5)Removed the sounds played when you are teleported (Might add new sounds latter)
+6)Added cmd blocks that give you fatigue when you are teleported
+7)Added fatigue timers to Wild Spawn & Wild (Was not needed before due to location)
+8)Updated signs
+9)Removed glowstone lamps on the "Platform"
+10)Added a "Green Area" on the "Platform" (In place of the glass center)
+11)Added a better lighting system at the spawn
+12)Moved location of the fatigue timer at spawn
+13)Tweaked Spawn Mechanism
+14)Started working on the "Shop"
+15)"Personalized" the messages from the "Server" (Ex: /tellraw @p "[Server] You are being teleported to the spawn...")*
+
+*Note: Using the /tellraw cmd will only tell the person that pressed the button/pressure plate. (Less spam)
+
+-------------------------------------------[v1.4.2]-----------------------------------------------
+
+1)Added colour to  the /tellraw cmd blocks
+2)Added links to my YouTube and the project on PMC (At spawn Mechanism)
+3)Replaced cracked stone brick monster spawn blocks to just Cracked Stone (Oops)
+4)Added a teleport back to the Wild Entrance using the /tellraw cmd
+5)Added the PVP/Mob arena platform (Arenas are not up yet)
+6)Moved the boards in the "Community Area" to the back
+7)Moved the Auto Trash Can and the anvils to were the Boards were
+8)Updated signs
+9)Added cmd blocks that tells the player about the PVP/Mob Arena and links back to the pmc project for ideas
+
+-------------------------------------------[v1.4.3]-----------------------------------------------
+
+1)Adjusted the aesthetics in the "PVP/Mob Arena" platform
+2)Fixed some aesthetics problems in the "Office" and the "Lobby" (How did I miss them for that long?)
+3)Added cmd blocks that link to the Optifine mod and the Faithful Resource Pack (Spawn Mech.)
+4)Added the PVP/Mob Arena Lobby
+5)Added the Mob Arena (Very crude)
+6)Updated signs
+7)Fixed some @a cmd blocks to @p
+8)Changed the message on teleporting to the "Wild Entrance" and made it display every so often
+9)Removed the teleport to the "Wild Entrance" message at the "Wild Spawn"
+10)Changed the tp from the "Wild Entrance" to the "Lobby" now
+11)Removed the "Welcome To The Sky" sign
+12)Added "Random Teleports" at the Wild Spawn
+
+-------------------------------------------[v1.4.3 Xmas]------------------------------------------
+
+1)Changed the biomes to "FrozenOcean"
+2)At spawn Mechanism, added cmd /weather rain 1000000
+3)Added Ice/Packed Ice where water used to be
+4)Added a book in my house titled "Merry Christmas"
+5)Changed the tree at the Shop to a Christmas Tree
+6)Added some of my own snow
+7)Added "Merry Christmas" message upon log in
+8)Locked the "Office" open
+
+-------------------------------------------[v1.4.4]-----------------------------------------------
+
+1)Added the teleport Hub
+2)Added a msg that asks if you want to teleport to the Hub
+3)Updated signs* (New format now and grammar fixes)
+4)Added Health above player names
+5)Removed msg asking to tp to the "Wild Spawn" (Replaced with Hub msg)
+6)Removed the "Wild Entrance"
+7)Changed my name to "InvisaMage" (Was Invisa_Mage)
+8)Aesthetic changes and fixes to the "Lobby"
+9)Lighting system tweaked due to aesthetic changes
+
+*Note: Most of the signs got the new format.
+
+-------------------------------------------[v1.4.5]-----------------------------------------------
+
+1)Added Parkour that you can toggle on or off
+2)Added a link to my website at "Spawn Mech."
+3)House platform is now 3 blocks away from the "Office"
+4)Tweaked platform under house
+5)Eater Egg tweaks (Furnace one)
+6)Updated Signs (More layout changes)
+7)Added the "Animated" sign
+8)@a fixes at Spawn Mech.
+9)Tweaks due to sign rework
+10)Minor tweaks to my house
+
+-------------------------------------------[v1.4.6]-----------------------------------------------
+
+1)Added PvP Arena (Very crude)
+2)Added the "Extra" Area to the Mob Arena
+3)Tweaks to Mob Arena
+4)Both Arenas have decent lighting now
+5)Links have been moved to bitly
+
+-------------------------------------------[v1.5.0]-----------------------------------------------
+
+Note: Using Minecraft 1.8.X
+Note: This update fixes most exploits. Yay!
+Note: This is the biggest update ever. Cheers!
+Note: Villagers got killed on accident in the "Extra Area" (@e kill conflicts).
+
+1)Updated signs (Arena Lobby) (Other general areas)
+2)Changed ID's at "Spawn Mechanism"
+3)Removed Mining fatigue (About TIME!)
+4)Changed location of Hub teleport (Now a mechanism at "Spawn Mechanism" to change gamemode) (Works with multiple people)
+5)Changed the lighting in the "Community Area"
+6)Made the teleports face you a curtain way (Including Hub)
+7)Removed the ability to toggle the timer under the "Office"
+8)Added more detail to the "Mob Arena"
+9)Added more detail to the "PvP Arena"
+10)House tweaks (Extended sides)
+11)Added a tp out of the "Locking Mechanism" at the "Office" (In case someone falls in)
+12)Changed the locking item to a bottle (The fire glitched out with 1.8 snapshots)
+13)At "Spawn Mechanism" made the item(s) equip and put in specific slots
+14)Changed teleport at end of the Parkour to the new Hub location
+15)Added barrier blocks at the "Office" to prevent players from pressing buttons
+16)Fixed Parkour bugs (Blocks not being destroyed)
+17)Tweaks to "The Animated Sign" (Added text on the sign)
+18)Fixed clocks (Fire got deleted, replaced with bottles)
+19)Changed location of the  "Wild Entrance" teleport (Now a mechanism at "Spawn Mechanism" to change gamemode) (Works with multiple people)
+20)Tweaks to the path at "Spawn Mechanism"
+21)Added more time for the clock under the "Office"
+22)Changed the dispenser in my house to a dropper
+23)Enclosed the "Spawn" with barrier blocks and bedrock
+24)Added Rabbit Spawn egg named "Toast" in my house
+25)Added Sheep Spawn egg named "jeb_" in my house
+26)Tweaked "Wild Entrance" spawn
+27)Enclosed the "Wild Spawn" with barrier blocks and bedrock
+28)Renamed record 11 to "Emile van Krieken - Meadow" (Plays this song if you use "InvisaMage's Pack") (Should be included in the save)
+29)Added banners to my house
+30)Added "InvisaMage's Pack" to the map (Loads with the world so no need to download it) (It's still recommended to use Faithful along with it)
+31)Tweaked the "Rules" and "Information" at the "Spawn"
+32)Blocked off the "Special Features", "Enchanting Table" and the "Villager Trading" room in the "Extra Area" (Mob Arena)
+33)Removed the "Clubs" in my house
+34)Removed pressure plate on walkways (To "Platform" and "Arena")
+35)Changed Griefing options (Teleports everyone to the Hub and locks the Platform) (Also hides "Parkour") (Note: Must manually place blocks back)
+36)Changed the teleports in the Arenas (Now teleports all players to the "Arena Lobby" with a radius of 20)
+37)Both Arenas now kill all entities within them when the player(s) leave
+38)Put barrier blocks on the outside of the Platform (There is no escape!)
+39)Changed the glass to barrier blocks in both Arenas (The "Lookout" area)
+40)Put a radius on most teleports
+41)Slightly changed the way you enter the Arenas (Water in the hole rather than at the bottom)
+42)Changed lighting in the Arena Lobbies. (Right before you enter the Arenas)
+43)Put radii on the "Parkour" messages (50)
+44)Now the Parkour adds and removes the beginning platform as well as the tree
+45)The checkpoint messages at the Parkour now has a heal option (Please do not abuse this) (It's a privilege)
+46)Changed the redstone under the Area Platform (Moved cmd blocks closer to pressure plates)
+47)Fixed some issues with the Random teleports in the "Wild Lobby" (Added new Hub message)
+48)Renamed the "Wild Spawn" to the "Wild Lobby"
+49)Added a mechanism at the "Spawn Mechanism" for the "Random Teleports" at the "Wild Lobby"
+50)Added a locked chest in my house (Moved all of my things from the Ender Chest into it)
+51)Made the folder name shorter and added coloured text for level data (Folder Name: FS v(X.X.X) (Save Name: Welcome to, Floating Survival)
+52)Made some aesthetic tweaks to the "Extra Area" (Not final)
+
+
+
+1)Now shows the map version at spawn
+2)Updated signs (News Board)
+3)Added a cmd block under the "Office" that asks if I want to be teleported to different areas (House, Office, Spawn Mechanism,) (Uses Hub Mechanism)
+4)Renamed the Banner in my house to "InvisaMage's Banner"
+5)Enclosed the "PvP/Mob Arena" with bedrock
+6)Fixed a big terrain bug close to the "PvP/Mob Arena" (End portal exit somehow spawned in the ground and opened up the earth)
+7)Renamed music disc 11 to "Emile van Krieken - Meadow" (Again) (Once it's played, it comes back out as "Music Disc")
+
+-------------------------------------------[v1.5.1 Xmas]-----------------------------------------------
+
+1)Changed the biomes to "FrozenOcean"
+2)At spawn Mechanism, added cmd /weather rain 1000000
+3)Added Ice/Packed Ice where water used to be
+4)Added a book in my house titled "Merry Christmas"
+5)Added "Merry Christmas" message upon log in
+6)Locked the "Office" open
+7)Changed the tree at the Platform to a Christmas Tree
+
+Note: No new features.
+
+-------------------------------------------[v1.6.0]-----------------------------------------------
+
+Note: The Hub message does not reach the Spawn any more.
+
+1)Complete spawn rework (New design and location) (More interactive)
+2)Players now spawn with a bow
+3)Players now spawn with 16 arrows
+4)Players now spawn with the "Swift Stick" grants a speed boost when held (+0.04 Speed)
+5)Added a title welcoming the player to the map
+6)Added particle effects when the player spawns
+7)Player now spawns in the air and drops to a platform
+8)Players must now "run through" the Rules and Information
+9)Players must now agree to and abide by the rules and that they understand the consequences of their actions
+10)Links no longer display in chat when you spawn (Separate area at the Spawn) (Piston activated)
+11)Added a pressure plate at the "Spawn Mech." that changes your gamemode to creative
+12)Added the "Death Mechanism" (Changes gamemode back to adventure and teleports them back to the Spawn)
+13)Updated Signs
+14)You now spawn above the Wild Entrance (Similar to the new Spawn)
+15)Pimped the Wild Lobby (Now in the sky)
+16)Added another locked chest in my house for saved signs
+17)Added the "Redstone Box" (Under the old Spawn) (Empty box encased in redstone)
+18)Added special commands that only I get when the Hub query is displayed
+19)Moved Parkour cmds to the "Redstone Box" (It's about time) (Placement & Removal glitches, currently)
+20)Moved "Spawn Mech." to the "Redstone Box" (Test teleport commands)
+21)Removed unneeded chunks to make the file size smaller
+22)Moved "The Animated Sign" redstone to the "Redstone Box"
+23)Changed the beacon to regeneration II (Speed is gone)
+24)Changed Parkour logic (All entities are now removed first and then the blocks) (Reverse for spawning Parkour)
+25)Added a Death Platform
+26)Added slowness to player upon death
+27)Added blindness to player upon death
+28)Added nausea to player upon death
+29)Added an Easter Egg (Wild Lobby)
+30)Added some names to the "Inspirations" board (Kind of lame, but okay)
+31)Added an Easter Egg to the Mob Arena (Invisible walkway to hanging platform)
+32)Added link to my website (Spawn)
+33)Moved "Mob Arena" redstone to the Redstone Box. (More "Wireless")
+34)Added teleports to the PvP and Mob Arena Lobby at the "Hub"
+35)Removed all traces of the "Shop" from the "Platform" (It just was not going to happen)
+36)Removed the ability to toggle the "Extra Area" on or off (On all the time now)
+37)Disallowed people from pressing mechanism buttons more than once at the "Platform"
+38)Added a Loading Message on the piston for "The Animated Sign" and the "Parkour".
+39)Players now receive a book titled "Teleporter" after they agree to the terms (Portable Hub)
+
+-------------------------------------------[v1.6.1]-----------------------------------------------
+
+Note: I have finally changed my actual Minecraft name to "InvisaMage" now (Was "Invisa_Mage").
+
+1)Updated Sign at Spawn to display new version
+2)Updated all my player heads to be "InvisaMage's Head"
+3)Updated personal commands that used my Minecraft name
+4)Removed Sign in PvP Arena that I accidentally left
+5)My commands are now displayed to me when I spawn
+6)Fixed PvP Mob Spawning options
+7)Made PvP Arena redstone "Wireless"
+8)Fixed Griefing Commands (Updated Hub teleport location)
+9)Griefing command now teleports all players but "InvisaMage" (Was all players not in gamemode creative)
+10)Moved Platform locking Mechanism to the "Redstone Box"
+
+------------------------------------------[v1.6.1.1]----------------------------------------------
+
+1)Tweaked Death Mechanism
+2)Tweaked Death Message
+3)Players now receive Blindness and Night Vision.
+
+------------------------------------------[v1.7.0]----------------------------------------------
+
+Note: Using Minecraft 1.9.X
+
+1)Updated Sign at Spawn to display new version
+2)Players now spawn with a shield in the offhand slot
+3)Players now spawn with 16 cooked porkchops instead of 4
+4)Added a Clear Chat option for my commands (Fills the chat with blank messages)
+5)Added a Clear Chat button in "The Office"
+6)Fixed Checkpoint exploits (Now uses the same teleport method as the Hub and many other mechanisms) (Now heals the user and forces Adventure mode)
+7)Removed the Teleporter Book (Caused too many exploits and I'm too lazy to fix them)
+8)Added a simple map icon

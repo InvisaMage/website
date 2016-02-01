@@ -1,0 +1,116 @@
+
+Floating Survival Beta
+By: InvisaMage
+Website: http://invisamage.com/
+October 25, 2014
+Minecraft: Use the newest Snapshot.
+
+Note: If you have not already, please read the About.txt.
+Note: Every time I make a change to this log, it is automatically updated.
+Note: Betas were first offered for 1.6.0.
+
+Floating Survival PMC: http://www.planetminecraft.com/project/floating-survival-2378940/
+Floating Survival MediaFire: http://www.mediafire.com/folder/ydnk8wdiystbc/Floating_Survival
+Floating Survival OneDrive: http://1drv.ms/1rNlwDt
+
+-------------------------------------------[v1.6.0b1]-----------------------------------------------
+
+Note: The Hub message does not reach the Spawn any more.
+
+1)Complete spawn rework (New design and location) (More interactive)
+2)Added a title welcoming the player to the map
+3)Added particle effects when the player spawns
+4)Player now spawns in the air and drops to a platform
+5)Players must now "run through" the Rules and Information
+6)Players must now agree to and abide by the rules and that they understand the consequences of their actions
+7)Links no longer display in chat when you spawn (Separate area at the Spawn) (Piston activated)
+8)Added a pressure plate at the "Spawn Mech." that changes your gamemode to creative
+9)Added the "Death Mechanism" (Changes gamemode back to adventure and teleports them back to the Spawn)
+10)Updated Signs
+11)You now spawn above the Wild Entrance (Similar to the new Spawn)
+12)Added command that spawns a name tag renamed to "No Changes" as a reminder to me (The personal commands that I get)
+
+-------------------------------------------[v1.6.0b2]-----------------------------------------------
+
+Note: I'm not too happy with the way the new spawn turned out. It's clean and to the point but it's not very aesthetically pleasing.
+
+1)Pimped the Wild Lobby (Now in the sky) (Might make the cmd block do something above the spawn) (Easter Egg?)
+2)Fixed grammar at the "Spawn"
+3)Added another locked chest in my house for saved signs
+4)Added a link to the FS OneDrive folder at the "Spawn"
+
+-------------------------------------------[v1.6.0b3]-----------------------------------------------
+
+Goal: Move major redstone mechanisms to a different area and use "Wireless Redstone". (Ex: Lighting, Parkour, Sign Easter Egg)
+Goal: Make the "Spawn" aesthetically pleasing.
+
+Note: Might move Spawn Mech. to "Redstone Box". (Moved in Beta 4)
+
+Idea: Make every area a floating platform. (Ex: Lobby, Community Area, Office are all separated) (Maybe v2.0.0??)
+
+1)Added the "Redstone Box" (Under the old Spawn) (Empty box encased in redstone)
+2)Added a teleport to the "Redstone Box" (My command)
+3)Added Idea Sign (The one listed here)
+4)Moved Parkour cmds to the "Redstone Box" (It's about time) (Placement & Removal glitches, currently)
+5)Moved "Spawn Mech." to the "Redstone Box" (Test teleport commands)
+6)Removed unneeded chunks to make the file size smaller
+7)Renamed Betas to v1.6.0.
+8)Removed "Spawn Mech." teleport in my commands
+9)Replaced "Spawn Mech." teleport with Redstone Box teleport in the "Office"
+10)Moved "The Animated Sign" redstone to the "Redstone Box"
+
+-------------------------------------------[v1.6.0b4]-----------------------------------------------
+
+Goal: Fix general bugs. (Achieved)
+Goal: Fix Parkour problems. (Achieved)
+Goal: Make the "Spawn" aesthetically pleasing. (Still)
+Goal: Make use of the "Inspirations" board at the spawn. (Achieved)
+Goal: Make a separate Death Area. (Remove hub teleport at Spawn) (Achieved)
+
+Note: Honestly the shop does not look like it's going to happen. Any suggestions?
+Note: Somehow the file size got bigger.
+
+Idea: Have a currency of emeralds but renamed to something else. Exchange XP for currency/renamed emeralds.
+
+1)The map version now shows if it's a beta version
+2)Updated Signs (Community Area)
+3)Players now spawn with a bow
+4)Players now spawn with 16 arrows
+5)Players now spawn with the "Swift Stick" grants a speed boost when held (+0.04 Speed)
+6)Changed the beacon to regeneration II (Speed is gone)
+7)Changed Parkour logic (All entities are now removed first and then the blocks) (Reverse for spawning Parkour)
+8)Fixed spawn particle bugs (Not being summoned at the right time)
+9)Added a Death Platform
+10)Added slowness to player upon death
+11)Added blindness to player upon death
+12)Added nausea to player upon death
+13)Removed Hub teleport at spawn
+14)Added an Easter Egg (Wild Lobby)
+15)Added a mechanism at the "Redstone Box" for Wild Lobby Easter Egg.
+16)Removed Anvil I accidentally placed in my house in a previous version
+17)Changed some aesthetics of the "Wild Lobby"
+18)Added some names to the "Inspirations" board (Kind of lame, but okay)
+19)Added an Easter Egg to the Mob Arena (Invisible walkway to hanging platform)
+
+-------------------------------------------[v1.6.0b5]-----------------------------------------------
+
+Goal: Implement more features into the Arenas.
+Goal: Tweak Arena Redstone.
+
+Idea: Move Arena Redstone and use more "Wireless Redstone".
+Idea: Pimp out the "Hub". (Maybe a more organized platform in another location).
+Idea: Spleef Arena at the "Platform".
+
+1)Renamed saved beta folders (Example: "FS v1.6.0b5")
+2)Changed the first sign at spawn to match the current version
+3)Removed OneDrive link (Spawn)
+4)Added link to my website (Spawn)
+5)The Extra Area in the "Mob Arena" is now on by default.
+6)Moved "Mob Arena" redstone to the Redstone Box. (More "Wireless")
+7)Added teleports to the PvP and Mob Arena Lobby at the "Hub"
+8)Removed all traces of the "Shop" from the "Platform" (It just was not going to happen)
+9)Removed the ability to toggle the "Extra Area" on or off (On all the time now)
+10)Disallowed people from pressing mechanism buttons more than once at the "Platform"
+11)Added a Loading Message on the piston for "The Animated Sign" and the "Parkour".
+12)Players now receive a book titled "Teleporter" after they agree to the terms (Portable Hub)
+13)Updated Signs (Community Area)
