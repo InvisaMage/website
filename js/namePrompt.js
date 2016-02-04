@@ -398,6 +398,7 @@ function namePrompt()
 		"So, it looks like you're back.<br>Now what?"
 //Cortana - Audio
 		if (name == "Cortana" || (name == "cortana") || (name == "Hey Cortana") || (name == "hey Cortana"))
+		window.location = ("ms-Cortana://")
 		document.getElementById("name").innerHTML =
 		"Can I be of assistance?<br><br>" +
 		"<img class='img-responsive img-circle center-block' src='images/cortana.gif' height='175' width='175'><br>" +

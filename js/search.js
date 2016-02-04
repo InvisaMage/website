@@ -79,6 +79,10 @@ function search()
 // DarkScape
 	if (search == "DarkScape" || (search == "darkscape") || (search == "DS") || (search == "ds"))
 	window.location = ("jagex-jav://www.runescape.com/jav_config_beta.ws");
+
+// Cortana
+	if (search == "Cortana" || (search == "cortana"))
+	window.location = ("ms-Cortana://");
 }
 
 // Typed.js Functionality
