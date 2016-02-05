@@ -895,3 +895,9 @@ footer ul {
 #app-navbar-up {
 	padding-left: 2px;
 }
+
+.well-center {
+	width: 30%;
+	margin-right: auto;
+	margin-left: auto;
+}
