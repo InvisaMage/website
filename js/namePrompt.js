@@ -56,17 +56,24 @@ function namePrompt()
 		if (name == "Emily" || (name == "emily"))
 		document.getElementById("name").innerHTML =
 		"Hello miss and welcome back to my Website.<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>You Are The Woman</h2>" +
-		"<audio controls autoplay><source src='./audio/woman.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3a1BhczlZS3ZyLUU' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>You Are The Woman</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+			"<div class='well well-sm well-center'>" +
+				"<audio controls autoplay id='audio'><source src='./audio/woman.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3a1BhczlZS3ZyLUU' type='audio/mpeg'></audio>" +
+		    "<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>You Are the Woman</h5></th>" +
@@ -85,8 +92,7 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Girls
 		if (name == "Kim" || (name == "kim") || (name == "Sabrina") || (name == "sabrina") || (name == "Courtney ") || (name == "courtney "))
 		document.getElementById("name").innerHTML =
@@ -111,17 +117,24 @@ function namePrompt()
 		if (name == "David" || (name == "david"))
 		document.getElementById("name").innerHTML =
 		"Tell me David, what's the answer?<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Remember David</h2>" +
-		"<audio controls autoplay><source src='./audio/david.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Y1lKNkFaUHZIRFU' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Remember David</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+				"<audio controls autoplay><source src='./audio/david.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Y1lKNkFaUHZIRFU' type='audio/mpeg'></audio>" +
+		    "<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Remember David</h5></th>" +
@@ -140,24 +153,30 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Jenny - Audio
 		if (name == "Jenny" || (name == "jenny"))
 		document.getElementById("name").innerHTML =
 		"Jenny, I've got your number.<br>" +
 		"867-5309<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>867-5309/Jenny</h2>" +
-		"<audio controls autoplay><source src='./audio/jenny.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Znk3bWswQWpIaEE' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>867-5309/Jenny</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+				"<audio controls autoplay><source src='./audio/jenny.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Znk3bWswQWpIaEE' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>867-5309/Jenny</h5></th>" +
@@ -176,8 +195,7 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Jenny
 		if (name == "8675309" || (name == "867-5309"))
 		document.getElementById("name").innerHTML =
@@ -186,17 +204,24 @@ function namePrompt()
 		if (name == "Stacy" || (name == "stacy"))
 		document.getElementById("name").innerHTML =
 		"Stacy, your mom has got it going on.<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Stacy's Mom</h2>" +
-		"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3aE1mMXhzXzNJNFU' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Stacy's Mom</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+				"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3aE1mMXhzXzNJNFU' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Stacy's Mom</h5></th>" +
@@ -215,23 +240,29 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Jessie - Audio
 		if (name == "Jessie" || (name == "jessie"))
 		document.getElementById("name").innerHTML =
 		"Why can't I find a woman like that?<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Jessie's Girl</h2>" +
-		"<audio controls autoplay><source src='./audio/jessie.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3RjJaVkoxdzVTTjg' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Jessie's Girl</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+				"<audio controls autoplay><source src='./audio/jessie.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3RjJaVkoxdzVTTjg' type='audio/mpeg'></audio>" +
+		    "<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Jessie's Girl</h5></th>" +
@@ -250,23 +281,29 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Leah - Audio
 		if (name == "Leah" || (name == "leah"))
 		document.getElementById("name").innerHTML =
 		"Oh hey Leah. Look, it's your favourite song.<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Ah Leah</h2>" +
-		"<audio controls autoplay><source src='./audio/leah.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Ah Leah</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+				"<audio controls autoplay><source src='./audio/leah.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed '>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Ah Leah</h5></th>" +
@@ -285,23 +322,29 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Immortal - Audio
 		if (name == "Immortal" || (name == "immortal"))
 		document.getElementById("name").innerHTML =
 		"Are you sure you're Immortal?<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Immortal</h2>" +
-		"<audio controls autoplay><source src='./audio/immortal.mp3' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Immortal</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+			"<audio controls autoplay><source src='./audio/immortal.mp3' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Immortal</h5></th>" +
@@ -320,23 +363,29 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Raido Ga Ga - Audio
 		if (name == "Radio" || (name == "radio") || (name == "Radio Ga Ga") || (name == "radio ga ga"))
 		document.getElementById("name").innerHTML =
 		"What's new Radio?<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Radio Ga Ga</h2>" +
-		"<audio controls autoplay><source src='./audio/radio.mp3' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Radio Ga Ga</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+			"<audio controls autoplay><source src='./audio/radio.mp3' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Radio Ga Ga</h5></th>" +
@@ -355,23 +404,29 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Mickey - Audio
 		if (name == "Mickey" || (name == "mickey"))
 		document.getElementById("name").innerHTML =
 		"Hey Mickey you're so fine.<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>Mickey</h2>" +
-		"<audio controls autoplay><source src='./audio/mickey.mp3' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>Mickey</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+			"<audio controls autoplay><source src='./audio/mickey.mp3' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>Mickey</h5></th>" +
@@ -390,8 +445,7 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 //Jesus
 		if (name == "Jesus" || (name == "jesus"))
 		document.getElementById("name").innerHTML =
@@ -470,17 +524,24 @@ function namePrompt()
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
 		"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br><br>" +
-		"<span class='homeSection'>" +
-		"<h2>What's Your Name</h2>" +
-		"<audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio>" +
-		"<a class='btn btn-primary btn-sm' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-		  "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>" +
-		"</a>" +
+		"<div class='btn-group' role='group'>" +
+		  "<a class='btn btn-default btn-md' role='button'>What's Your Name</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+				"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+				"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+			"</a>" +
+			"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+				"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+			"</a>" +
+		"</div>" +
 		"<br>" +
 		"<br>" +
 		"<div class='collapse' id='collapse-info'>" +
-		  "<div class='well well-sm center-block' style='width:75%'>" +
-		    "<table class='table table-responsive table-condensed '>" +
+		  "<div class='well well-sm well-center'>" +
+			"<audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio>" +
+				"<table class='table table-responsive table-condensed'>" +
 		      "<tr>" +
 		        "<td><h5 class='black-bold'>Title</h5></td>" +
 		        "<th><h5 class='black'>What's Your Name</h5></th>" +
@@ -499,8 +560,7 @@ function namePrompt()
 		      "</tr>" +
 		    "</table>" +
 		  "</div>" +
-		"</div>" +
-		"</span>"
+		"</div>"
 	}
 //Activate Tooltips
 	if(!('ontouchstart' in window))
