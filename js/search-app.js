@@ -80,7 +80,7 @@ function searchapp()
 // Typed.js Functionality
 $(document).ready(function() {
 	$(function(){
-			$("input").typed({
+			$("#search").typed({
 				strings: ["Help", "Floating Survival", "Podcast", "About", "Terms", "Privacy", "Stats", "Jump to.."],
 				typeSpeed: .1
 			});
