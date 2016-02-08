@@ -75,7 +75,7 @@
 
       <!--Button Section-->
 			<!--Button and namePrompt Function-->
-			<a role="button" class="btn btn-primary btn-lg btn-block" onclick="namePromptapp()">Personalize Message</a>
+			<a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#personalize').modal()">Personalize Message</a>
 			<br>
       <!--Home-->
       <a role="button" class="btn btn-danger btn-lg btn-block" href="index.html">Home</a>
@@ -179,7 +179,7 @@
 				<!--Copyright-->
 				<p class="copyright text-center">
 					&copy; 2014 - 2016, InvisaMage<br>
-					Content available under a <a class="link" href="terms.html#copyright">Creative Commons license</a>.
+					Content available under a <a class="link" onclick="$('#terms').modal()">Creative Commons license</a>.
 				</p>
 			</footer>
 		</div>
@@ -334,13 +334,13 @@
 					<!--InvisaMage's Logo-->
 					<br>
 					<br>
-					<img class="img-responsive center-block" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
+					<img class="img-responsive center-block img-rounded" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
 					<br>
 					<!--About Help Alert-->
 					<div class="alert-about alert-info alert-dismissible" role="alert" style="display: none">
 					  <button type="button" class="close" onclick="$('.alert-about').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>That's it?</strong><br>
-            To view more information visit the <a href="about.html">About</a> page.
+            To view more information visit the <a class="default-danger" href="about.html">About</a> page.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" onclick="$('.alert-about').toggle()">
@@ -532,6 +532,40 @@
 		</div><!-- /.modal -->
 
 <!--Real Modals-->
+
+		<!--Personalize Message Modal-->
+		<div class="modal fade" id="personalize" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title black">Personalize Message</h4>
+					</div>
+					<div class="modal-body">
+						<div onkeydown="if (event.keyCode == 13) namePromptapp(), $('#personalize').modal('toggle');" class="center-block">
+							<input class="form-control" id="name-value" autocomplete="off" autofocus="autofocus" placeholder="What is your name?">
+						</div>
+					</div>
+					<!--Personalize Message Help Alert-->
+					<div class="alert-personalize alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-personalize').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What's this?</strong><br>
+						The purpose of this function is to display a more personal message on the Homepage.<br>
+						Detailed information may be found <a href="about.html#nameprompt">here</a>.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" onclick="$('.alert-personalize').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+						</button>
+						<button type="button" class="btn btn-primary" onclick="namePromptapp();" data-dismiss="modal">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /personalize modal -->
+
 		<!--Contact Modal-->
 		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
 			<div class="modal-dialog modal-md">
@@ -774,12 +808,12 @@
 					</div>
 					<div class="modal-body">
             <strong>How do I navigate this?</strong><br>
-					  Red buttons are links which lead back to the main website.<br>
-            Blue buttons are internal Web App content.<br>
+					  <span class="text-danger">Red</span> buttons are links which lead back to the main website.<br>
+            <span class="text-primary">Blue</span> buttons are internal Web App content.<br>
             <strong>Note:</strong> Not all features are available in the Web App.
             <br>
             <br>
-            Learn more about the Web App <a href="webapp.html">here</a>.
+            Learn more about the Web App <a class="default-danger" href="webapp.html">here</a>.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -829,8 +863,8 @@
 						Here are a few suggestions.
 						<br>
 						<br>
-						<a href="https://duckduckgo.com/">DuckDuckGo</a><br>
-						<a href="https://www.google.com/">Google</a>
+						<a class="default-danger" href="https://duckduckgo.com/">DuckDuckGo</a><br>
+						<a class="default-danger" href="https://www.google.com/">Google</a>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" onclick="$('.alert-cookie').toggle()">
@@ -856,6 +890,13 @@
 		{
 			$('[data-toggle="tooltip"]').tooltip();
 		}
+		</script>
+		<!--Autofocus Personalize Message Modal-->
+		<script>
+		$('#personalize').on('shown.bs.modal', function () {
+		  $('#name-value').focus();
+			$('#name-value').select();
+		});
 		</script>
     <!--jQuery smooth scroll to id's -->
 		<script>
