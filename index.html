@@ -95,8 +95,7 @@
 			<br>
 
 			<!--Button and namePrompt Function-->
-			<a role="button" class="btn btn-primary btn-lg" onclick="namePrompt()">Personalize Message</a>
-			<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#personalizeModel">Personalize Message</button>-->
+			<a role="button" class="btn btn-primary btn-lg" onclick="$('#personalize').modal()">Personalize Message</a>
 			<br>
 			<br>
 
@@ -105,8 +104,8 @@
 
 			<!--Main Body-->
 			<p>
-			On this website you can find fast and informative information about all things InvisaMage.<br>
-			Use the navigation bar at the top to begin.
+				On this website you can find fast and informative information about all things InvisaMage.<br>
+				Use the navigation bar at the top to begin.
 			</p>
 
 			<!--Footer-->
@@ -194,30 +193,38 @@
 		</div>
 		<!--/.End Content-->
 
-		<!--Personalize Message Modal
-		<div class="modal fade" id="personalizeModel" tabindex="-1" role="dialog">
+		<!--Personalize Message Modal-->
+		<div class="modal fade" id="personalize" tabindex="-1" role="dialog">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">What is  your name?</h4>
+						<h4 class="modal-title black">Personalize Message</h4>
 					</div>
 					<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label class="control-label"></label>
-							<input type="text" class="form-control">
+						<div onkeydown="if (event.keyCode == 13) namePrompt(), $('#personalize').modal('toggle');" class="center-block">
+							<input class="form-control" id="name-value" autocomplete="off" autofocus="autofocus" placeholder="What is your name?">
 						</div>
-					</form>
+					</div>
+					<!--Personalize Message Help Alert-->
+					<div class="alert-personalize alert-info alert-dismissible" role="alert" style="display: none">
+					  <button type="button" class="close" onclick="$('.alert-personalize').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>What's this?</strong><br>
+						The purpose of this function is to display a more personal message on the Homepage.<br>
+						Detailed information may be found <a href="about.html#nameprompt">here</a>.
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" onclick="$('.alert-personalize').toggle()">
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+						</button>
 						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal">Submit</button>
 					</div>
 				</div>
 			</div>
-		</div>
-		-->
+		</div> <!-- /personalize modal -->
 
 		<!--Survey Alet
 		<div id="alert-survey" class="alert alert-info alert-dismissible fade in" role="alert">
@@ -585,6 +592,13 @@
 		{
 			$('#search').hide();
 		}
+		</script>
+		<!--Autofocus Personalize Message Modal-->
+		<script>
+		$('#personalize').on('shown.bs.modal', function () {
+		  $('#name-value').focus();
+			$('#name-value').select();
+		});
 		</script>
 		<!--jQuery smooth scroll to id's -->
 		<script>
