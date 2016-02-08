@@ -321,6 +321,15 @@ table {
 	left: 0;
 	right: 0;
 }
+.default-danger {
+  color: #a94442;
+  text-decoration: none;
+}
+.default-danger:hover,
+.default-danger:focus {
+  color: #803432;
+  text-decoration: underline;
+}
 #help {
 	cursor: help;
 }
