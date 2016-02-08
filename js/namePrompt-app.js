@@ -2,7 +2,7 @@
 
 function namePromptapp()
 {
-	var name = prompt("What is your name?")
+	var name = document.getElementById("name-value").value;
 
 	if (name != null)
 	{
