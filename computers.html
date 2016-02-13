@@ -71,14 +71,17 @@
 						<li><a data-toggle="modal" data-target="#donate">Donate</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a class="divider-vertical"></a></li>
-						<li><a data-toggle="modal" data-target="#stats">Stats</a></li>
+						<li>
+							<a type="role" id="stats-button" onclick="$('#stats').modal()" data-toggle="tooltip" data-placement="bottom" title="Stats">
+								<span class="glyphicon glyphicon-stats"></span>
+							</a>
+						</li>
 					</ul>
 
 					<!--Search Function-->
 					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
 						<div class="input-group">
 							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
-							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">							<span class="input-group-btn">
 								<button class="btn btn-default" type="button" onClick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
@@ -230,15 +233,17 @@
 							</div><!-- /input-group -->
 							<br>
 					</div>
-					<!--Contact Help Alert-->
-					<div class="alert-contact alert-info alert-dismissible" role="alert" style="display: none">
-					  <button type="button" class="close" onclick="$('.alert-contact').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <strong>More Information</strong><br>
-						<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
-						<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
+					<!--Contact Help Collapsible Content-->
+					<div class="collapse" id="contact-collapse">
+					  <div class="well">
+					    <button type="button" class="close" onclick="$('#contact-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>More Information</strong><br>
+							<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+							<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
+					  </div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" onclick="$('.alert-contact').toggle()">
+						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
@@ -310,22 +315,24 @@
 								</div>
 							</div>
 		      </div>
-					<!--Information Alert-->
-					<div class="alert-donate alert-info alert-dismissible" role="alert" style="display: none">
-					  <button type="button" class="close" onclick="$('.alert-donate').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <strong>What payment methods are these?</strong><br>
-						These are called cryptocurrencies.
-						They are a digital medium of exchange.
-						They use cryptography for security, making them difficult to counterfeit.
-						Click the names of them to learn more.<br>
-						<strong>QR Codes:</strong><br>
-						You must have a QR code scanner to use these.<br>
-						Preferably one built into your cryptocurrency client.<br>
-						<strong>Note:</strong><br>
-						You must have the correct cryptocurrency client to use the "Donate" buttons.
+					<!--Donate Help Collapsible Content-->
+					<div class="collapse" id="donate-collapse">
+					  <div class="well">
+					    <button type="button" class="close" onclick="$('#donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>What payment methods are these?</strong><br>
+							These are called cryptocurrencies.
+							They are a digital medium of exchange.
+							They use cryptography for security, making them difficult to counterfeit.
+							Click the names of them to learn more.<br>
+							<strong>QR Codes:</strong><br>
+							You must have a QR code scanner to use these.<br>
+							Preferably one built into your cryptocurrency client.<br>
+							<strong>Note:</strong><br>
+							You must have the correct cryptocurrency client to use the "Donate" buttons.
+					  </div>
 					</div>
 		      <div class="modal-footer">
-						<button type="button" class="btn btn-default" onclick="$('.alert-donate').toggle()">
+						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 		        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
@@ -379,27 +386,41 @@
 									<img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
 								</th>
 						  </tr>
+							<!--Debugging-->
+							<tr>
+								<td><h5 class="black">Debugging</h5></td>
+						    <th>
+									<button type="button" class="btn btn-danger" onclick="location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reload Page">
+										<span class="glyphicon glyphicon-refresh" aria-hidden="true"> </span>
+									</button>
+									<button type="button" class="btn btn-danger" onclick="document.cookie='Counter=0; expires=Thu, 18 Dec 2099 12:00:00 UTC';location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reset Counter">
+										<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
+									</button>
+								</th>
+						  </tr>
 						</table>
 					</div>
-					<!--Stats Help Alert-->
-					<div class="alert-stats alert-info alert-dismissible" role="alert" style="display: none">
-					  <button type="button" class="close" onclick="$('.alert-stats').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <strong>What does this do?</strong><br>
-						The Stats modal displays information related to your system.<br>
-						The "requests" are how many times you've loaded any page within this website.
-						<br>
-						<br>
-						<strong>Compatibility row?</strong><br>
-						These specific browsers have been tested to some extent and work desireably.<br>
-						This does not mean unlisted browsers do not work.<br>
-						Hover over an image to view more Information.
-						<br>
-						<br>
-						<strong>Note:</strong><br>
-						Version numbers are the last known version which the site was tested on.
+					<!--Stats Help Collapsible Content-->
+					<div class="collapse" id="stats-collapse">
+					  <div class="well">
+					    <button type="button" class="close" onclick="$('#stats-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>What does this do?</strong><br>
+							The Stats modal displays information related to your system.<br>
+							The "requests" are how many times you've loaded any page within this website.
+							<br>
+							<br>
+							<strong>Compatibility row?</strong><br>
+							These specific browsers have been tested to some extent and work desireably.<br>
+							This does not mean unlisted browsers do not work.<br>
+							Hover over an image to view more Information.
+							<br>
+							<br>
+							<strong>Note:</strong><br>
+							Version numbers are the last known version which the site was tested on.
+					  </div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" onclick="$('.alert-stats').toggle()">
+						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
@@ -420,7 +441,9 @@
 					<h5 class="black">You must be seeing things.<br>I don't see any ads.</h5>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
 					</div>
 				</div><!-- /.modal-content -->
@@ -451,7 +474,7 @@
 							<li>Kevin</li>
 							<li>Dan</li>
 							<li>Connie</li>
-							<li>Emily</li>
+							<li>Emily (Audio)</li>
 							<li>Kim, Sabrina, Courtney</li>
 							<li>Rachel</li>
 							<li>Tony</li>
@@ -503,16 +526,18 @@
 							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
 						</ul>
 					</div>
-					<!--Easter Egg Help Alert-->
-					<div class="alert-easter alert-info alert-dismissible" role="alert" style="display: none">
-					  <button type="button" class="close" onclick="$('.alert-easter').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <strong>What's this?</strong><br>
-						You inserted the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
-						I doubt you got here by mistake.
-						<img class="img-responsive center-block" src="./images/svg/konami.svg">
+					<!--Easter Egg Help Collapsible Content-->
+					<div class="collapse" id="easteregg-collapse">
+					  <div class="well">
+					    <button type="button" class="close" onclick="$('#easteregg-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>What's this?</strong><br>
+							You inserted the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
+							I doubt you got here by mistake.
+							<img class="img-responsive center-block" src="./images/svg/konami.svg">
+					  </div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" onclick="$('.alert-easter').toggle()">
+						<button type="button" class="btn btn-info" onclick="$('#easteregg-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
@@ -537,14 +562,7 @@
 		if(!('ontouchstart' in window))
 		{
 			$('[data-toggle="tooltip"]').tooltip();
-			$('#search-mobile').hide();
-		}
-		</script>
-		<!--If touchscreen, hide desktop search-->
-		<script>
-		if(('ontouchstart' in window))
-		{
-			$('#search').hide();
+			$('#search').focus();
 		}
 		</script>
 		<!--Enable Affix-->
