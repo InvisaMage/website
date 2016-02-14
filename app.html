@@ -542,7 +542,7 @@
 						<h4 class="modal-title black">Personalize Message</h4>
 					</div>
 					<div class="modal-body">
-						<div onkeydown="if (event.keyCode == 13) namePrompt(), $('#personalize').modal('toggle');" class="center-block">
+						<div onkeydown="if (event.keyCode == 13) namePromptapp(), $('#personalize').modal('toggle');" class="center-block">
 							<input class="form-control" id="name-value" autocomplete="off" autofocus="autofocus" placeholder="What is your name?">
 						</div>
 					</div>
@@ -552,7 +552,7 @@
 					    <button type="button" class="close" onclick="$('#personalize-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						  <strong>What's this?</strong><br>
 							The purpose of this function is to display a more personal message on the Homepage.<br>
-							Detailed information may be found <a href="about.html#nameprompt">here</a>.
+							Detailed information may be found <a class="default-danger" href="about.html#nameprompt">here</a>.
 					  </div>
 					</div>
 					<div class="modal-footer">
@@ -562,7 +562,7 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal">Submit</button>
+						<button type="button" class="btn btn-primary" onclick="namePromptapp();" data-dismiss="modal">Submit</button>
 					</div>
 				</div>
 			</div>

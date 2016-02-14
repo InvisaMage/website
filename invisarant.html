@@ -77,6 +77,7 @@
 					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
 						<div class="input-group">
 							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
 								<button class="btn btn-default" type="button" onclick="search();">
 									<span class="glyphicon glyphicon-search"></span>
@@ -587,7 +588,14 @@
 		if(!('ontouchstart' in window))
 		{
 			$('[data-toggle="tooltip"]').tooltip();
-			$('#search').focus();
+			$('#search-mobile').hide();
+		}
+		</script>
+		<!--If touchscreen, hide desktop search-->
+		<script>
+		if(('ontouchstart' in window))
+		{
+			$('#search').hide();
 		}
 		</script>
 		<!--jQuery smooth scroll to id's -->
