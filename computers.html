@@ -64,7 +64,7 @@
 					<li class="dropdown active">
 						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="computers.html">Computers</a></li>
+							<li class="active"><a href="computers.html">Computers</a></li>
 						</ul>
 					</li>
 						<li><a data-toggle="modal" data-target="#contact">Contact</a></li>
@@ -84,7 +84,7 @@
 							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
-								<button class="btn btn-default" type="button" onClick="search();">
+								<button class="btn btn-default" type="button" onclick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
 							</span>
@@ -101,14 +101,37 @@
 			<a class="title" href="computers.html">Computers</a>
 			<br>
 
+			<!--Menu-->
+			<div id="menu6" class="hidden-xs">
+				<h2>Contents</h2>
+				<li><a href="#storage"><span class="glyphicon glyphicon-chevron-right"></span> Storage</a></li>
+				<div id="menu6-nested">
+					<li><a href="#storage-magnetic"><span class="glyphicon glyphicon-chevron-right"></span> Magnetic</a></li>
+					<li><a href="#storage-flash"><span class="glyphicon glyphicon-chevron-right"></span> Flash</a></li>
+					<li><a href="#storage-optical"><span class="glyphicon glyphicon-chevron-right"></span> Optical</a></li>
+				</div>
+				<br>
+			</div>
+
       <p>
-        This page is a reference page about Computers that is constantly being expanded.
+        This page is a reference page about Computers which is constantly being expanded.
       </p>
 
-			<span class="computersSection" id="intro">
-				<h1>Introduction</h1>
+			<span class="computersSection" id="storage">
+				<h1>Storage Technologies</h1>
+				<h3 id="storage-magnetic">Magnetic</h3>
 				<p>
-					What are computers?
+					HDD
+				</p>
+
+				<h3 id="storage-flash">Flash</h3>
+				<p>
+					SSDs, Flash Drives
+				</p>
+
+				<h3 id="storage-optical">Optical</h3>
+				<p>
+					CDs, DVDs, Blu-rays,
 				</p>
 			</span>
 
@@ -248,7 +271,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -337,7 +362,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-		        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 		      </div>
 		    </div>
 		  </div>
@@ -425,7 +452,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -440,14 +469,28 @@
 						<h4 class="modal-title black">Hide Ads</h4>
 					</div>
 					<div class="modal-body">
-					<h5 class="black">You must be seeing things.<br>I don't see any ads.</h5>
+					You must be seeing things.<br>
+					I don't see any ads.
 					</div>
+					<!--Hide Ads Collapsible Content-->
+					<div class="collapse" id="eyetest-collapse">
+						<button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#hideAds').modal('toggle');">
+							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
+						</button>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
+							<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+						</button>
+
+						<img class="img-responsive" src="images/eyetest.png" height="800" width="997">
+					</div><!-- /.modal-collapse-->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
+						  <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
+						</button>
+					</div><!-- /.modal-footer-->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
@@ -526,6 +569,7 @@
 							<li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
 							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
 							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
+							<li>Clicking "Hide Ads" in the footer.</li>
 						</ul>
 					</div>
 					<!--Easter Egg Help Collapsible Content-->
@@ -542,7 +586,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#easteregg-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
