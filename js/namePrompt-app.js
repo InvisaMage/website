@@ -23,7 +23,7 @@ function namePromptapp()
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
-		"Hello good friend and welcome back to my Website."
+		"Hello good friend and welcome back to my Web App."
 //Tanner - Audio
 		if (name == "Tanner" || (name == "tanner") || (name == "No") || (name == "no"))
 		document.getElementById("name").innerHTML =
@@ -55,7 +55,7 @@ function namePromptapp()
 //Emily - Audio
 		if (name == "Emily" || (name == "emily"))
 		document.getElementById("name").innerHTML =
-		"Hello miss and welcome back to my Website.<br><br>" +
+		"Hello miss and welcome back to my Web App.<br><br>" +
 		"<div class='btn-group' role='group'>" +
 		  "<a class='btn btn-default btn-md' role='button'>You Are The Woman</a>" +
 			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +

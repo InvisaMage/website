@@ -8,12 +8,12 @@ function namePrompt()
 	{
 //Default
 		document.getElementById("name").innerHTML =
-		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br>" +
+		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
 		"I hope you enjoy your stay."
 //Creator Message
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis Kipp") || (name == "travis kipp") || (name == "Sir Kipp") || (name == "sir kipp"))
 		document.getElementById("name").innerHTML =
-		"Hello creator and welcome back to your Website.<br>" +
+		"Hello creator and welcome back to your website.<br>" +
 		"Here are some links I thought you might like.<br>" +
 		"When are you ever going to make some real content?<br><br>" +
 		"<span class='homeSection'><h3>Links</h3>" +
@@ -23,7 +23,7 @@ function namePrompt()
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
-		"Hello good friend and welcome back to my Website."
+		"Hello good friend and welcome back to my website."
 //Tanner - Audio
 		if (name == "Tanner" || (name == "tanner") || (name == "No") || (name == "no"))
 		document.getElementById("name").innerHTML =
@@ -32,30 +32,30 @@ function namePrompt()
 //Ryan
 		if (name == "Ryan" || (name == "ryan"))
 		document.getElementById("name").innerHTML =
-		"Welcome, The almighty box ghost, to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website."
+		"Welcome, The almighty box ghost, to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 //Noah
 		if (name == "Noah" || (name == "noah"))
 		document.getElementById("name").innerHTML =
 		"How's it going, SirSaltyMcDongThong?<br>" +
-		"By the way, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website."
+		"By the way, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 //Kevin - Host
 		if (name == "Kevin" || (name == "kevin"))
 		document.getElementById("name").innerHTML =
-		"Hello good friend and welcome back to my Website.<br>" +
+		"Hello good friend and welcome back to my website.<br>" +
 		"Thanks for hosting.<br><br>" +
 		"<a class=link target='_blank' href=http://chaoswebs.net/>http://chaoswebs.net/ <span class='glyphicon glyphicon-new-window glyphicon-colour'></span></a>"
 //Father
 		if (name == "Dan" || (name == "dan") || (name == "Daniel") || (name == "daniel") || (name == "Dad") || (name == "dad") || (name == "Father") || (name == "father"))
 		document.getElementById("name").innerHTML =
-		"Hello father and welcome back to my Website."
+		"Hello father and welcome back to my website."
 //Mother
 		if (name == "Connie" || (name == "connie") || (name == "Mom") || (name == "mom") || (name == "Mother") || (name == "mother"))
 		document.getElementById("name").innerHTML =
-		"Hello mother and welcome back to my Website."
+		"Hello mother and welcome back to my website."
 //Emily - Audio
 		if (name == "Emily" || (name == "emily"))
 		document.getElementById("name").innerHTML =
-		"Hello miss and welcome back to my Website.<br><br>" +
+		"Hello miss and welcome back to my website.<br><br>" +
 		"<div class='btn-group' role='group'>" +
 		  "<a class='btn btn-default btn-md' role='button'>You Are The Woman</a>" +
 			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
@@ -96,23 +96,23 @@ function namePrompt()
 //Girls
 		if (name == "Kim" || (name == "kim") || (name == "Sabrina") || (name == "sabrina") || (name == "Courtney ") || (name == "courtney "))
 		document.getElementById("name").innerHTML =
-		"Hello miss and welcome back to my Website."
+		"Hello miss and welcome back to my website."
 //Rachel
 		if (name == "Rachel" || (name == "rachel"))
 		document.getElementById("name").innerHTML =
-		"Hello <a class='definition' data-toggle='tooltip' data-placement='top' title='An endangered subspecies of humans which are incapable of reproducing.'>femake</a> and welcome back to my Website."
+		"Hello <a class='definition' data-toggle='tooltip' data-placement='top' title='An endangered subspecies of humans which are incapable of reproducing.'>femake</a> and welcome back to my website."
 //Tony
 		if (name == "Tony" || (name == "tony"))
 		document.getElementById("name").innerHTML =
-		"Hello <a class='definition' data-toggle='tooltip' data-placement='top' title='An endangered subspecies of humans which are incapable of reproducing.'>femake</a> lover and welcome back to my Website."
+		"Hello <a class='definition' data-toggle='tooltip' data-placement='top' title='An endangered subspecies of humans which are incapable of reproducing.'>femake</a> lover and welcome back to my website."
 //Joe
 		if (name == "Joe" || (name == "joe") || (name == "Joey") || (name == "joey"))
 		document.getElementById("name").innerHTML =
-		"Hello nerd and welcome back to my Website."
+		"Hello nerd and welcome back to my website."
 //Brian
 		if (name == "Brian" || (name == "brian"))
 		document.getElementById("name").innerHTML =
-		"Hello brother and welcome back to my Website."
+		"Hello brother and welcome back to my website."
 //David - Audio
 		if (name == "David" || (name == "david"))
 		document.getElementById("name").innerHTML =
@@ -519,11 +519,11 @@ function namePrompt()
 //Reset
 		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls"))
 		document.getElementById("name").innerHTML =
-		"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website."
+		"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 //No name - Audio
 		if (name == "" || (name == " ") || (name == "undefined"))
 		document.getElementById("name").innerHTML =
-		"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Website.<br><br>" +
+		"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
 		"<div class='btn-group' role='group'>" +
 		  "<a class='btn btn-default btn-md' role='button'>What's Your Name</a>" +
 			"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
