@@ -269,7 +269,12 @@
 			  	Do you accept the Privacy Policy?
 				</div>
 				<div class="col-xs-6-offset">
-					<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#yes" onclick="$('.alert').toggle()">Yes</button> <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#no" onclick="$('.alert').toggle()">No</button>
+					<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#yes" onclick="$('.alert').toggle()"> Yes
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#no" onclick="$('.alert').toggle()"> No
+						<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -280,18 +285,22 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Terms & Conditions</h4>
+						<h4 class="modal-title black">Privacy Policy</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/wisely.jpg" height="200" width="300">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+						</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
+					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		</div><!-- /.yes modal -->
 
 		<!--No Modal-->
 		<div class="modal fade" id="no" tabindex="-1" role="dialog">
@@ -299,18 +308,22 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Terms & Conditions</h4>
+						<h4 class="modal-title black">Privacy Policy</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/poorly.jpg" height="200" width="300">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = 'http://www.google.com';">Close</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location = 'http://www.google.com';">Goodbye</button>
-					</div>
+						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = 'https://www.google.com';">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+						</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location = 'https://www.google.com';"> Goodbye
+							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+						</button>
+					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		</div><!-- /.no modal -->
 
 		<!--Contact Modal-->
 		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
@@ -360,7 +373,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -449,7 +464,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-		        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 		      </div>
 		    </div>
 		  </div>
@@ -537,7 +554,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -555,12 +574,25 @@
 					You must be seeing things.<br>
 					I don't see any ads.
 					</div>
+					<!--Hide Ads Collapsible Content-->
+					<div class="collapse" id="eyetest-collapse">
+						<button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#hideAds').modal('toggle');">
+							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
+						</button>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
+							<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+						</button>
+
+						<img class="img-responsive" src="images/eyetest.png" height="800" width="997">
+					</div><!-- /.modal-collapse-->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
+						  <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
+						</button>
+					</div><!-- /.modal-footer-->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
@@ -614,7 +646,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#cookies-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -694,6 +728,7 @@
 							<li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
 							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
 							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
+							<li>Clicking "Hide Ads" in the footer.</li>
 						</ul>
 					</div>
 					<!--Easter Egg Help Collapsible Content-->
@@ -710,7 +745,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#easteregg-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->

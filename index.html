@@ -226,7 +226,9 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal">Submit</button>
+						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal"> Submit
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -295,7 +297,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -384,7 +388,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-		        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 		      </div>
 		    </div>
 		  </div>
@@ -472,7 +478,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+						  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -490,12 +498,25 @@
 					You must be seeing things.<br>
 					I don't see any ads.
 					</div>
+					<!--Hide Ads Collapsible Content-->
+					<div class="collapse" id="eyetest-collapse">
+						<button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#hideAds').modal('toggle');">
+							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
+						</button>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
+							<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+						</button>
+
+						<img class="img-responsive" src="images/eyetest.png" height="800" width="997">
+					</div><!-- /.modal-collapse-->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
+						  <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
+						</button>
+					</div><!-- /.modal-footer-->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
@@ -574,6 +595,7 @@
 							<li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
 							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
 							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
+							<li>Clicking "Hide Ads" in the footer.</li>
 						</ul>
 					</div>
 					<!--Easter Egg Help Collapsible Content-->
@@ -590,7 +612,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#easteregg-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
