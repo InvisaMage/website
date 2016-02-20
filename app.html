@@ -236,7 +236,9 @@
 						<button type="button" class="btn btn-default" onclick="$('.alert-fs').toggle()">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -278,7 +280,9 @@
 						<button type="button" class="btn btn-default" onclick="$('.alert-invisarant').toggle()">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -346,7 +350,9 @@
 						<button type="button" class="btn btn-default" onclick="$('.alert-about').toggle()">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -423,7 +429,9 @@
 						<button type="button" class="btn btn-default" onclick="$('.alert-terms').toggle()">
 							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -487,7 +495,9 @@
 						<button type="button" class="btn btn-default" onclick="$('.alert-privacy').toggle()">
 							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -506,7 +516,9 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -616,7 +628,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -705,7 +719,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-		        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 		      </div>
 		    </div>
 		  </div>
@@ -793,7 +809,9 @@
 						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -811,12 +829,25 @@
 					You must be seeing things.<br>
 					I don't see any ads.
 					</div>
+					<!--Hide Ads Collapsible Content-->
+					<div class="collapse" id="eyetest-collapse">
+						<button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#hideAds').modal('toggle');">
+							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
+						</button>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
+							<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+						</button>
+
+						<img class="img-responsive" src="images/eyetest.png" height="800" width="997">
+					</div><!-- /.modal-collapse-->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-					</div>
+						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
+						  <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
+						</button>
+					</div><!-- /.modal-footer-->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
@@ -842,7 +873,9 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -895,7 +928,9 @@
 						<button type="button" class="btn btn-default" onclick="$('.alert-cookie').toggle()">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
