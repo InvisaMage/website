@@ -611,7 +611,7 @@ h3 {
 }
 
 /* Menu for News */
-#menu1 {
+#menu-news {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
@@ -623,20 +623,20 @@ h3 {
 	font-size: 14px;
 	left: 0px;
 }
-#menu1 li {
+#menu-news li {
 	list-style: none;
 	transition: .3s;
 	cursor: pointer;
 	text-align: left;
 	padding-left: 20px;
 }
-#menu1 li:hover {
+#menu-news li:hover {
 	background: #4b545f;
 }
-#menu1-nested li {
+#menu-news-nested li {
 	padding-left: 40px;
 }
-#menu1 a {
+#menu-news a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
@@ -648,12 +648,12 @@ h3 {
     text-decoration-style: solid;
     text-shadow: 0px 0px 10px;
 }
-#menu1 li a:hover {
+#menu-news li a:hover {
 	color: #00FF00;
 }
 
 /* Menu for FS */
-#menu2 {
+#menu-fs {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
@@ -664,14 +664,16 @@ h3 {
 	background: rgba(0,0,0,0.3);
 	left: 0px;
 }
-#menu2 li {
+#menu-fs li {
 	list-style: none;
 	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
 }
-#menu2 li:hover {
+#menu-fs li:hover {
 	background: #4b545f;
 }
-#menu2 a {
+#menu-fs a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
@@ -683,12 +685,12 @@ h3 {
     text-decoration-style: solid;
     text-shadow: 0px 0px 10px;
 }
-#menu2 li a:hover {
+#menu-fs li a:hover {
 	color: #00FF00;
 }
 
 /* Menu for Terms */
-#menu3 {
+#menu-terms {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
@@ -699,14 +701,16 @@ h3 {
 	background: rgba(0,0,0,0.3);
 	left: 0px;
 }
-#menu3 li {
+#menu-terms li {
 	list-style: none;
 	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
 }
-#menu3 li:hover {
+#menu-terms li:hover {
 	background: #4b545f;
 }
-#menu3 a {
+#menu-terms a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
@@ -718,12 +722,12 @@ h3 {
     text-decoration-style: solid;
     text-shadow: 0px 0px 10px;
 }
-#menu3 li a:hover {
+#menu-terms li a:hover {
 	color: #00FF00;
 }
 
 /* Menu for Privacy */
-#menu4 {
+#menu-privacy {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
@@ -734,14 +738,16 @@ h3 {
 	background: rgba(0,0,0,0.3);
 	left: 0px;
 }
-#menu4 li {
+#menu-privacy li {
 	list-style: none;
 	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
 }
-#menu4 li:hover {
+#menu-privacy li:hover {
 	background: #4b545f;
 }
-#menu4 a {
+#menu-privacy a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
@@ -753,12 +759,12 @@ h3 {
     text-decoration-style: solid;
     text-shadow: 0px 0px 10px;
 }
-#menu4 li a:hover {
+#menu-privacy li a:hover {
 	color: #00FF00;
 }
 
 /* Menu for About */
-#menu5 {
+#menu-about {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
@@ -769,19 +775,19 @@ h3 {
 	background: rgba(0,0,0,0.3);
 	left: 0px;
 }
-#menu5 li {
+#menu-about li {
 	list-style: none;
 	transition: .3s;
 	text-align: left;
 	padding-left: 20px;
 }
-#menu5 li:hover {
+#menu-about li:hover {
 	background: #4b545f;
 }
-#menu5-nested li {
+#menu-about-nested li {
 	padding-left: 40px;
 }
-#menu5 a {
+#menu-about a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
@@ -793,12 +799,12 @@ h3 {
     text-decoration-style: solid;
     text-shadow: 0px 0px 10px;
 }
-#menu5 li a:hover {
+#menu-about li a:hover {
 	color: #00FF00;
 }
 
 /* Menu for Computers */
-#menu6 {
+#menu-computers {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
@@ -809,19 +815,19 @@ h3 {
 	background: rgba(0,0,0,0.3);
 	left: 0px;
 }
-#menu6 li {
+#menu-computers li {
 	list-style: none;
 	transition: .3s;
 	text-align: left;
 	padding-left: 20px;
 }
-#menu6 li:hover {
+#menu-computers li:hover {
 	background: #4b545f;
 }
-#menu6-nested li {
+#menu-computers-nested li {
 	padding-left: 40px;
 }
-#menu6 a {
+#menu-computers a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
@@ -833,7 +839,7 @@ h3 {
     text-decoration-style: solid;
     text-shadow: 0px 0px 10px;
 }
-#menu6 li a:hover {
+#menu-computers li a:hover {
 	color: #00FF00;
 }
 
