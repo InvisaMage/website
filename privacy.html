@@ -96,7 +96,7 @@
 			<a class="title" href="privacy.html">Privacy Policy</a>
 
 			<!--Menu-->
-			<div id="menu4" class="hidden-xs">
+			<div id="menu-privacy" class="hidden-xs">
 				<h2>Contents</h2>
 				<li><a href="#general">General</a></span></li>
 				<li><a href="#cookies">Cookies</a></span></li>
@@ -106,9 +106,9 @@
 			</div>
 
 			<!--Mobile Menu-->
-			<div id="mobile-menu">
+			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
 				<select>
-					<option selected value="#top">Contents</option>
+					<option selected value="#mobile-menu">Contents</option>
 					<option value="#general">General</option>
 					<option value="#cookies">Cookies</option>
 					<option value="#information">Information</option>
@@ -768,7 +768,6 @@
 		if(!('ontouchstart' in window))
 		{
 			$('[data-toggle="tooltip"]').tooltip();
-			$('#mobile-menu').hide()
 			$('#search-mobile').hide();
 		}
 		</script>

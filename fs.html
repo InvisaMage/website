@@ -97,7 +97,7 @@
 			<br>
 
 			<!--Menu-->
-			<div id="menu2" class="hidden-xs">
+			<div id="menu-fs" class="hidden-xs">
 				<h2>Contents</h2>
 				<li><a href="fs.html#keyfeatures">Key Features</a></li>
 				<li><a href="fs.html#table">Data Table</a></li>
@@ -107,9 +107,9 @@
 			</div>
 
 			<!--Mobile Menu-->
-			<div id="mobile-menu">
+			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
 				<select>
-					<option selected disabled>Contents</option>
+					<option selected value="#mobile-menu">Contents</option>
 					<option value="fs.html#keyfeatures">Key Features</option>
 					<option value="fs.html#table">Data Table</option>
 					<option value="fs.html#video">Video</option>
@@ -739,7 +739,6 @@
 		{
 			$('[data-toggle="tooltip"]').tooltip();
 			$('#search-mobile').hide();
-			$('#mobile-menu').hide();
 		}
 		</script>
 		<!--If touchscreen, hide desktop search-->

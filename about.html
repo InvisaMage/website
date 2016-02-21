@@ -96,23 +96,23 @@
 			<a class="title" href="about.html">About</a>
 
 			<!--Menu-->
-			<div id="menu5" class="hidden-xs">
+			<div id="menu-about" class="hidden-xs">
 				<h2>Contents</h2>
 				<li><a href="#InvisaMage"><span class="glyphicon glyphicon-chevron-right"></span> InvisaMage</a></li>
 				<li><a href="#creation"><span class="glyphicon glyphicon-chevron-down"></span> Creation</a></li>
-					<div id="menu5-nested">
+					<div id="menu-about-nested">
 						<li><a href="#powered-by"><span class="glyphicon glyphicon-chevron-right"></span> Powered By</a></li>
 						<li><a href="#git-repository"><span class="glyphicon glyphicon-chevron-right"></span> Git Repository</a></li>
 						<li><a href="#logo"><span class="glyphicon glyphicon-chevron-right"></span> Logo</a></li>
 					</div>
 				<li><a href="#functions"><span class="glyphicon glyphicon-chevron-down"></span> Functions</a></li>
-					<div id="menu5-nested">
+					<div id="menu-about-nested">
 						<li><a href="#nameprompt"><span class="glyphicon glyphicon-chevron-right"></span> namePrompt</a></li>
 						<li><a href="#search-info"><span class="glyphicon glyphicon-chevron-right"></span> Search</a></li>
 					</div>
 				<li><a href="#design"><span class="glyphicon glyphicon-chevron-right"></span> Design</a></li>
 				<li><a href="#info"><span class="glyphicon glyphicon-chevron-down"></span> Information</a></li>
-					<div id="menu5-nested">
+					<div id="menu-about-nested">
 						<li><a href="#stats-info"><span class="glyphicon glyphicon-chevron-right"></span> Stats</a></li>
 						<li><a href="#rig"><span class="glyphicon glyphicon-chevron-right"></span> Rig</a></li>
 					</div>
@@ -120,9 +120,9 @@
 			</div>
 
 			<!--Mobile Menu-->
-			<div id="mobile-menu">
+			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
 				<select>
-					<option selected value="#top">Contents</option>
+					<option selected value="#mobile-menu">Contents</option>
 					<option value="#InvisaMage">InvisaMage</option>
 					<option value="#creation">Creation</option>
 					<option value="#functions">Functions</option>
@@ -763,7 +763,6 @@
 		if(!('ontouchstart' in window))
 		{
 			$('[data-toggle="tooltip"]').tooltip();
-			$('#mobile-menu').hide();
 			$('#search-mobile').hide();
 		}
 		</script>

@@ -96,7 +96,7 @@
 			<a class="title" href="terms.html">Terms & Conditions</a>
 
 			<!--Menu-->
-			<div id="menu3" class="hidden-xs">
+			<div id="menu-terms" class="hidden-xs">
 				<h2>Contents</h2>
 				<li><a href="terms.html#general">General</a></li>
 				<li><a href="terms.html#warranty">Warranties & Liability</a></li>
@@ -106,9 +106,9 @@
 			</div>
 
 			<!--Mobile Menu-->
-			<div id="mobile-menu">
+			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
 				<select>
-					<option selected disabled>Contents</option>
+					<option selected value="#mobile-menu">Contents</option>
 					<option value="terms.html#general">General</option>
 					<option value="terms.html#warranty">Warranties & Liability</option>
 					<option value="terms.html#copyright">Copyright</option>
@@ -729,7 +729,6 @@
 		if(!('ontouchstart' in window))
 		{
 			$('[data-toggle="tooltip"]').tooltip();
-			$('#mobile-menu').hide();
 			$('#search-mobile').hide();
 		}
 		</script>
