@@ -10,16 +10,24 @@ function namePromptapp()
 		document.getElementById("name").innerHTML =
 		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Web App.<br>" +
 		"I hope you enjoy your stay."
-//Creator Message
+//Creator Message - List
 		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis Kipp") || (name == "travis kipp") || (name == "Sir Kipp") || (name == "sir kipp"))
 		document.getElementById("name").innerHTML =
 		"Hello creator and welcome back to your Web App.<br>" +
 		"Here are some links I thought you might like.<br>" +
 		"When are you ever going to make some real content?<br><br>" +
-		"<h3>Links</h3>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Repository' target='_blank' href='https://github.com/'>GitHub</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' href='https://ide.c9.io'>Cloud9</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' href='https://web.telegram.org/'>Telegram Web</a>"
+		"<div class='panel panel-green'>" +
+			"<div class='panel-heading'>" +
+				"<h3 class='panel-title'>Links</h3>" +
+			"</div>" +
+			"<div class='panel-body'>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='The search engine that does not track you.' target='_blank' href='https://duckduckgo.com/'>DuckDuckGo</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A publicly accessible and editable wiki for information related to Minecraft.' target='_blank' href='http://minecraft.gamepedia.com/Minecraft_Wiki'>Minecraft Wiki</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A web-based Git repository hosting service.' target='_blank' href='https://github.com/'>GitHub</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' href='https://ide.c9.io'>Cloud9</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' href='https://web.telegram.org/'>Telegram Web</a>"
+			"</div>"+
+		"</div>"
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
 		document.getElementById("name").innerHTML =
@@ -479,28 +487,39 @@ function namePromptapp()
 //Mirth
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
-		"<h3>Mirth</h3>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank'' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank'' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank'' href='http://www.cleverbot.com/'>Cleverbot</a>"
+		"<div class='panel panel-green'>" +
+			"<div class='panel-heading'>" +
+				"<h3 class='panel-title'>Mirth</h3>" +
+			"</div>" +
+			"<div class='panel-body'>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank'' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank'' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank'' href='http://www.cleverbot.com/'>Cleverbot</a>" +
+			"</div>"+
+		"</div>"
 //Software
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
-		"<h3>Software</h3>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='www.firefox.com'>Mozilla Firefox</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' href='https://telegram.org/'>Telegram</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Antivirus' target='_blank' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Password Manager' target='_blank' href='http://keepass.info/'>KeePass</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Software Downloader' target='_blank' href='https://ninite.com/'>Ninite</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' target='_blank' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' target='_blank' href='http://rainmeter.net/'>Rainmeter</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' target='_blank' href='http://portableapps.com/'>PortableApps</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Image Editor' target='_blank' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='3D Rendering' target='_blank' href='http://www.blender.org/'>Blender</a><br>" +
-		"<a class='link' data-toggle='tooltip' data-placement='top' title='Audio Editor' target='_blank' href='http://audacity.sourceforge.net/'>Audacity</a>"
-//Python
+		"<div class='panel panel-green'>" +
+			"<div class='panel-heading'>" +
+				"<h3 class='panel-title'>Software</h3>" +
+			"</div>" +
+			"<div class='panel-body'>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='www.firefox.com'>Mozilla Firefox</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' href='https://telegram.org/'>Telegram</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Antivirus' target='_blank' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Password Manager' target='_blank' href='http://keepass.info/'>KeePass</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Software Downloader' target='_blank' href='https://ninite.com/'>Ninite</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' target='_blank' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' target='_blank' href='http://rainmeter.net/'>Rainmeter</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' target='_blank' href='http://portableapps.com/'>PortableApps</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Image Editor' target='_blank' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='3D Rendering' target='_blank' href='http://www.blender.org/'>Blender</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Audio Editor' target='_blank' href='http://audacity.sourceforge.net/'>Audacity</a>" +
+			"</div>"+
+		"</div>"
 		if (name == "Python" || (name == "python"))
 		document.getElementById("name").innerHTML =
 		"<code>print(&quot;Hello World!&quot;)</code>"
