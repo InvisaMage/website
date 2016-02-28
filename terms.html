@@ -15,12 +15,17 @@
 		<!--Stylesheets-->
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/morphext.css" rel="stylesheet">
 	</head>
 
 	<!--Page Loading...-->
 	<div class="preload">
 		<div class="loading">
 			<div class="loading-animation"></div>
+		</div>
+		<div class="center-block">
+			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
 		</div>
 	</div>
 
@@ -98,10 +103,10 @@
 			<!--Menu-->
 			<div id="menu-terms" class="hidden-xs">
 				<h2>Contents</h2>
-				<li><a href="terms.html#general">General</a></li>
-				<li><a href="terms.html#warranty">Warranties & Liability</a></li>
-				<li><a href="terms.html#copyright">Copyright</a></li>
-				<li><a href="terms.html#changes">Changes</a></li>
+				<li><a href="terms.html#general"><span class="glyphicon glyphicon-chevron-right"></span> General</a></li>
+				<li><a href="terms.html#warranty"><span class="glyphicon glyphicon-chevron-right"></span> Warranties & Liability</a></li>
+				<li><a href="terms.html#copyright"><span class="glyphicon glyphicon-chevron-right"></span> Copyright</a></li>
+				<li><a href="terms.html#changes"><span class="glyphicon glyphicon-chevron-right"></span> Changes</a></li>
 				<br>
 			</div>
 
@@ -306,7 +311,7 @@
 						<h4 class="modal-title black">Terms & Conditions</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/wisely.jpg" height="200" width="300">
+						<img class="img-responsive" src="images/wisely.jpg" height="200" width="300">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">
@@ -329,7 +334,7 @@
 						<h4 class="modal-title black">Terms & Conditions</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/poorly.jpg" height="200" width="300">
+						<img class="img-responsive" src="images/poorly.jpg" height="200" width="300">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = 'https://www.google.com';">
@@ -723,6 +728,7 @@
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/preload.js"></script>
+		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
 		<!--If no touchscreen, show Tooltips, hide mobile search, hide Mobile Menus-->
 		<script>
@@ -738,6 +744,20 @@
 		{
 			$('#search').hide();
 		}
+		</script>
+		<!--Animated Loading Text-->
+		<script>
+		$("#js-rotating").Morphext({
+				// The [in] animation type. Refer to Animate.css for a list of available animations.
+				animation: "bounceInUp",
+				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+				separator: "|",
+				// The delay between the changing of each phrase in milliseconds.
+				speed: 2000,
+				complete: function () {
+						// Called after the entrance animation is executed.
+				}
+		});
 		</script>
 		<script>
 		$('#mobile-menu select').change(function(){
