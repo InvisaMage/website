@@ -15,12 +15,17 @@
 		<!--Stylesheets-->
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/morphext.css" rel="stylesheet">
 	</head>
 
 	<!--Page Loading...-->
 	<div class="preload">
 		<div class="loading">
 			<div class="loading-animation"></div>
+		</div>
+		<div class="center-block">
+			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
 		</div>
 	</div>
 
@@ -99,10 +104,10 @@
 			<!--Menu-->
 			<div id="menu-fs" class="hidden-xs">
 				<h2>Contents</h2>
-				<li><a href="fs.html#keyfeatures">Key Features</a></li>
-				<li><a href="fs.html#table">Data Table</a></li>
-				<li><a href="fs.html#video">Video</a></li>
-				<li><a href="fs.html#images">Screenshots</a></li>
+				<li><a href="fs.html#keyfeatures"><span class="glyphicon glyphicon-chevron-right"></span> Key Features</a></li>
+				<li><a href="fs.html#table"><span class="glyphicon glyphicon-chevron-right"></span> Data Table</a></li>
+				<li><a href="fs.html#video"><span class="glyphicon glyphicon-chevron-right"></span> Video</a></li>
+				<li><a href="fs.html#images"><span class="glyphicon glyphicon-chevron-right"></span> Screenshots</a></li>
 				<br>
 			</div>
 
@@ -213,43 +218,43 @@
 				<div class="item active">
 				  <img src="images/fs/fs1.png">
 				  <div class="carousel-caption">
-						<h2>Spawn</h2>
+						<h3>Spawn</h3>
 				  </div>
 				</div>
 				<div class="item">
 				  <img src="images/fs/fs2.png">
 				  <div class="carousel-caption">
-						<h2>Day Lobby</h2>
+						<h3>Day Lobby</h3>
 				  </div>
 				</div>
 				<div class="item">
 				  <img src="images/fs/fs3.png">
 				  <div class="carousel-caption">
-						<h2>Night Lobby</h2>
+						<h3>Night Lobby</h3>
 				  </div>
 				</div>
 				<div class="item">
 				  <img src="images/fs/fs4.png">
 				  <div class="carousel-caption">
-						<h2>Parkour</h2>
+						<h3>Parkour</h3>
 				  </div>
 				</div>
 				<div class="item">
 				  <img src="images/fs/fs5.png">
 				  <div class="carousel-caption">
-						<h2>Mob Arena</h2>
+						<h3>Mob Arena</h3>
 				  </div>
 				</div>
 				<div class="item">
 				  <img src="images/fs/fs6.png">
 				  <div class="carousel-caption">
-					<h2>PvP Arena</h2>
+					<h3>PvP Arena</h3>
 				  </div>
 				</div>
 				<div class="item">
 				  <img src="images/fs/fs7.png">
 				  <div class="carousel-caption">
-					<h2>Wilderness Lobby</h2>
+					<h3>Wilderness Lobby</h3>
 				  </div>
 				</div>
 			  </div>
@@ -731,6 +736,7 @@
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/preload.js"></script>
+		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
 		<!--If no touchscreen, show Tooltips, hide mobile search, and hide Mobile Menus-->
 		<script>
@@ -746,6 +752,20 @@
 		{
 			$('#search').hide();
 		}
+		</script>
+		<!--Animated Loading Text-->
+		<script>
+		$("#js-rotating").Morphext({
+				// The [in] animation type. Refer to Animate.css for a list of available animations.
+				animation: "bounceInUp",
+				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+				separator: "|",
+				// The delay between the changing of each phrase in milliseconds.
+				speed: 2000,
+				complete: function () {
+						// Called after the entrance animation is executed.
+				}
+		});
 		</script>
 		<script>
 		$('#mobile-menu select').change(function(){
