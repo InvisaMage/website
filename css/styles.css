@@ -73,6 +73,18 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+/* Loading Text */
+.loading-text {
+	color: #246BB2;
+	text-decoration: none;
+	text-decoration-color: -moz-use-text-color;
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	text-shadow: 0px 0px 5px;
+font-size: 225%;
+font-weight: bold;
+padding-top: 25px;
+}
 
 /* Makes the cursor a pointer on the navigation bar */
 nav li:hover {
@@ -462,18 +474,8 @@ table {
 	right: 0;
 }
 
-/* Heading 1 Properties */
-h1 {
-	color: #00FF00;
-}
-
-/* Heading 2 Properties */
-h2 {
-	color: #00FF00;
-}
-
-/* Heading 3 Properties */
-h3 {
+/* Heading Properties */
+h1 h2 h3 {
 	color: #00FF00;
 }
 
