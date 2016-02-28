@@ -15,12 +15,17 @@
 		<!--Stylesheets-->
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/morphext.css" rel="stylesheet">
 	</head>
 
 	<!--Page Loading...-->
 	<div class="preload">
 		<div class="loading">
 			<div class="loading-animation"></div>
+		</div>
+		<div class="center-block">
+			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
 		</div>
 	</div>
 
@@ -223,11 +228,11 @@
 					<!--Projects Menu-->
 					<div id="menu-news" class="hidden-xs">
 						<h2>Date Jump</h2>
-						<li><a href="#11-13-15-projects">November 13, 2015</a></li>
-						<li><a href="#3-7-15-projects">March 7, 2015</a></li>
-						<li><a href="#2-28-15-projects">February 28, 2015</a></li>
-						<li><a href="#2-20-15-projects">February 20, 2015</a></li>
-						<li><a href="#2-6-15-projects">February 6, 2015</a></li>
+						<li><a href="#11-13-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> November 13, 2015</a></li>
+						<li><a href="#3-7-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> March 7, 2015</a></li>
+						<li><a href="#2-28-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 28, 2015</a></li>
+						<li><a href="#2-20-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 20, 2015</a></li>
+						<li><a href="#2-6-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 6, 2015</a></li>
 						<br>
 					</div>
 				</div><!-- /.projects-section -->
@@ -281,8 +286,8 @@
 						<!--Important Menu-->
 						<div id="menu-news" class="hidden-xs">
 							<h2>Date Jump</h2>
-							<li><a href="#12-12-15-important">December 12, 2015</a></li>
-							<li><a href="#9-4-15-important">September 4, 2015</a></li>
+							<li><a href="#12-12-15-important"><span class="glyphicon glyphicon-chevron-right"></span> December 12, 2015</a></li>
+							<li><a href="#9-4-15-important"><span class="glyphicon glyphicon-chevron-right"></span> September 4, 2015</a></li>
 							<br>
 						</div><!-- /important menu -->
 					</div><!-- /important-section -->
@@ -295,6 +300,7 @@
 						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option disabled>February 2016</option>
+							<option value="news.html#2-27-16-website">February 27, 2016</option>
 							<option value="news.html#2-21-16-website">February 21, 2016</option>
 							<option value="news.html#2-20-16-website">February 20, 2016</option>
 							<option value="news.html#2-12-16-website">February 12, 2016</option>
@@ -364,6 +370,27 @@
 						<br>
 					</div>
 
+					<!--February 27, 2016-->
+					<span class="newsSection" id="2-27-16-website">
+						<h1>February 27, 2016</h1>
+						<p>
+							Revamped the <a class="link" href="index.html">Homepage</a>.<br>
+							The <a class="link" href="about.html#functions">namePrompt</a> function now uses panels instead of wells.<br>
+							Text is displayed after page loading takes too long. (Subject to change)<br>
+							Added arrows to all Menus.<br>
+							Tweaks to bootstrap.css
+							<br>
+							<br>
+							New assets:<br>
+							animate.css<br>
+							morphext.css<br>
+							morphext.js
+						</p>
+					</span><!-- /2-27-16 -->
+
+					<br>
+					<br>
+
 					<!--February 21, 2016-->
 					<span class="newsSection" id="2-21-16-website">
 						<h1>February 21, 2016</h1>
@@ -414,7 +441,7 @@
 							<br>
 							<br>
 							Fixed a bug.<br>
-							The namePrompt function now uses a modal.
+							The <a class="link" href="about.html#functions">namePrompt</a> function now uses a modal.
 						</p>
 					</span><!-- /2-7-16 -->
 
@@ -775,7 +802,7 @@
 							<br>
 							<br>
 							Updated the <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page.<br>
-							Now you just need to go to the <a class="link" title="Homepage" href="index.html">Homepage</a> as the Mobile site no longer exists.
+							Now you just need to go to the <a class="link" href="index.html">Homepage</a> as the Mobile site no longer exists.
 							<br>
 							<br>
 							Removed Date Jump menu tooltips.<br>
@@ -1403,6 +1430,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> February 2016</a></li>
 								<div id="menu-news-nested">
+									<li><a href="#2-27-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 27st</a></li>
 									<li><a href="#2-21-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 21st</a></li>
 									<li><a href="#2-20-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 20th</a></li>
 									<li><a href="#2-12-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
@@ -1522,7 +1550,7 @@
 							<h1>Fixed</h1>
 							<p>
 								The Date Jump menu is only visible on the Projects tab while on a Mobile device.<br>
-								On the <a class="link" href="fs.html">Floating Survival</a> page, using the carousel will focus the page on it.
+								On the <a class="link" href="fs.html">Floating Survival</a> page, using the carousel will focus the page on it.<br>
 								The images on the <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page are outdated.<br>
 								The Search function can act weird sometimes.<br>
 								Pages zoom out sometimes on smaller screens.<br>
@@ -2005,6 +2033,7 @@
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/preload.js"></script>
+		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
 		<!--If no touchscreen, show Tooltips, hide mobile search, and hide Mobile Menus-->
 		<script>
@@ -2020,6 +2049,20 @@
 		{
 			$('#search').hide();
 		}
+		</script>
+		<!--Animated Loading Text-->
+		<script>
+		$("#js-rotating").Morphext({
+				// The [in] animation type. Refer to Animate.css for a list of available animations.
+				animation: "bounceInUp",
+				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+				separator: "|",
+				// The delay between the changing of each phrase in milliseconds.
+				speed: 2000,
+				complete: function () {
+						// Called after the entrance animation is executed.
+				}
+		});
 		</script>
 		<!--Mobile Menus-->
 		<script>
