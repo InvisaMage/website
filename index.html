@@ -15,6 +15,8 @@
 		<!--Stylesheets-->
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/morphext.css" rel="stylesheet">
 		<!--iOS Bookmark Image-->
 		<link rel="apple-touch-icon" sizes="152x152" href="images/imlogo.png">
 	</head>
@@ -23,6 +25,9 @@
 	<div class="preload">
 		<div class="loading">
 			<div class="loading-animation"></div>
+		</div>
+		<div class="center-block">
+			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
 		</div>
 	</div>
 
@@ -98,19 +103,70 @@
 			<a class="title" href="index.html">Home</a>
 			<br>
 
-			<!--Button and namePrompt Function-->
-			<a role="button" class="btn btn-primary btn-lg" onclick="$('#personalize').modal()">Personalize Message</a>
-			<br>
-			<br>
+			<!--Grid System-->
+			<div class="row">
+				<!--Welcome-->
+			  <div class="col-md-4">
+					<div class='panel panel-primary'>
+						<div class='panel-heading'>
+							<h3 class='panel-title'>Welcome</h3>
+						</div>
+						<div class='panel-header-top'>
+							<!--Button and namePrompt Function-->
+							<a role="button" class="btn btn-success btn-lg btn-block" onclick="$('#personalize').modal()">Personalize Message</a>
+						</div>
+						<div class='panel-body'>
+							<!--Paragraph Changes with namePrompt Input-->
+							<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span><br>
+							<!--Main Body-->
+							On this website you can find fast and informative information about all things InvisaMage.
+						</div><!-- /.panel-body -->
+					</div><!-- /.panel -->
+			  </div><!-- /welcome -->
 
-			<!--Paragraph Changes with namePrompt Input-->
-			<p id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</p>
+				<!--Recent News-->
+			  <div class="col-md-4">
+					<div class='panel panel-primary'>
+						<div class='panel-heading'>
+							<h3 class='panel-title'>Recent News</h3>
+						</div>
+						<div class='panel-header-top-2'>
+							<h3>February 27, 2016</h3>
+						</div>
+						<div class='panel-body'>
+							Revamped the <a class="link" href="index.html">Homepage</a>.<br>
+							The <a class="link" href="about.html#functions">namePrompt</a> function now uses panels instead of wells.<br>
+							Text is displayed after page loading takes too long. (Subject to change)<br>
+							Added arrows to all Menus.<br>
+							Tweaks to bootstrap.css
+							<br>
+							<br>
+							New assets:<br>
+							animate.css<br>
+							morphext.css<br>
+							morphext.js
+						</div><!-- /.panel-body -->
+						<div class="panel-footer">
+							Click <a class="link" href="news.html">here</a> to view more news.
+						</div><!-- /.panel-footer -->
+					</div><!-- /.panel -->
+			  </div><!-- /recent news -->
 
-			<!--Main Body-->
-			<p>
-				On this website you can find fast and informative information about all things InvisaMage.<br>
-				Use the navigation bar at the top to begin.
-			</p>
+				<!--About-->
+			  <div class="col-md-4">
+					<div class='panel panel-primary'>
+						<div class='panel-heading'>
+							<h3 class='panel-title'>About</h3>
+						</div>
+						<div class='panel-body'>
+							The owner of this site is a 17 year old human male who likes web technologies, assorted games, and TaeKwon-Do.<br>
+						</div><!-- /.panel-body -->
+						<div class="panel-footer">
+							Click <a class="link" href="about.html#InvisaMage">here</a> to learn more.
+						</div><!-- /.panel-footer -->
+					</div><!-- /.panel -->
+				</div><!-- /about -->
+			</div><!-- /.row -->
 
 			<!--Footer-->
 			<footer>
@@ -195,6 +251,11 @@
 				</p>
 			</footer>
 		</div>
+		<!--Added because of Alert-->
+		<br>
+		<br>
+		<br class="hidden-sm hidden-md hidden-lg">
+		<br class="hidden-sm hidden-md hidden-lg">
 		<!--/.End Content-->
 
 		<!--Personalize Message Modal-->
@@ -210,7 +271,7 @@
 							<input class="form-control" id="name-value" autocomplete="off" autofocus="autofocus" placeholder="What is your name?">
 						</div>
 					</div>
-					<!--Personalize Message Help Alert-->
+					<!--Personalize Message Help Content-->
 					<div class="collapse" id="personalize-collapse">
 					  <div class="well">
 					    <button type="button" class="close" onclick="$('#personalize-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -234,20 +295,24 @@
 			</div>
 		</div> <!-- /personalize modal -->
 
-		<!--Survey Alet
-		<div id="alert-survey" class="alert alert-info alert-dismissible fade in" role="alert">
+		<!--Alert-->
+		<div id="alert-survey" class="alert alert-success alert-dismissible fade in" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<div class="row">
 				<div class="col-xs-8">
-			  	<strong>Survey!</strong>
-					Care to take a quick survey?
+			  	<strong>Feedback</strong>
+					Let me know what you think of the new Homepage design. I'd love to hear from you.
 				</div>
 				<div class="col-xs-2">
-					<button type="button" class="btn btn-default" data-dismiss="alert">Nope</button>
-					<a type="button" role="button" class="btn btn-primary" target="_blank" href="http://goo.gl/forms/6Q5rWlUory">Sure</a>
+					<button type="button" class="btn btn-danger" data-dismiss="alert">
+						<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+					</button>
+					<button type="button" class="btn btn-primary" data-dismiss="alert" onclick="$('#contact').modal();"> Sure
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</button>
 				</div>
 			</div>
-		</div>-->
+		</div>
 
 		<!--Contact Modal-->
 		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
@@ -630,6 +695,7 @@
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/preload.js"></script>
+		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
 		<!--If no touchscreen, show Tooltips and hide mobile search-->
 		<script>
@@ -645,6 +711,20 @@
 		{
 			$('#search').hide();
 		}
+		</script>
+		<!--Animated Loading Text-->
+		<script>
+		$("#js-rotating").Morphext({
+				// The [in] animation type. Refer to Animate.css for a list of available animations.
+				animation: "bounceInUp",
+				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+				separator: "|",
+				// The delay between the changing of each phrase in milliseconds.
+				speed: 2000,
+				complete: function () {
+						// Called after the entrance animation is executed.
+				}
+		});
 		</script>
 		<!--Autofocus Personalize Message Modal-->
 		<script>
