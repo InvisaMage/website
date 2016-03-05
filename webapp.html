@@ -17,6 +17,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/morphext.css" rel="stylesheet">
+		<link href="css/nprogress.css" rel="stylesheet">
 	</head>
 
 	<!--Page Loading...-->
@@ -25,7 +26,7 @@
 			<div class="loading-animation"></div>
 		</div>
 		<div class="center-block">
-			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
+			<div class="loading-text"><span id="js-rotating"> | Loading...| | Still Loading...| | New user, huh?| | | |</span></div>
 		</div>
 	</div>
 
@@ -79,17 +80,20 @@
 					</ul>
 
 					<!--Search Function-->
-					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
+					<div onkeydown="if (event.keyCode == 13) search();" class="navbar-form navbar-right">
 						<div class="input-group">
-							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
+								<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it.">
+									<span class="glyphicon glyphicon-question-sign"></span>
+								</button>
 								<button class="btn btn-default" type="button" onclick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
 							</span>
-						</div><!-- /input-group -->
-					</div>
+						</div><!-- /.input-group -->
+					</div><!-- /search function -->
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav><!-- /.nav -->
@@ -376,12 +380,12 @@
 							<!--Clock-->
 							<tr>
 								<td><h5 class="black">Time</h5></td>
-						    <th><h5 class="black"><span id="clock"></span></h5></th>
+						    <th><h5 class="black" id="clock"></h5></th>
 							</tr>
 						  <!--Counter-->
 							<tr>
 								<td><h5 class="black">Requests</h5></td>
-						    <th><h5 class="black"><script src="js/counter.js"></script></h5></th>
+						    <th><h5 class="black" id="requests"></h5></th>
 							</tr>
 						  <!--Bootstrap Version-->
 							<tr>
@@ -391,12 +395,12 @@
 						  <!--OS-->
 						  <tr>
 								<td><h5 class="black">OS</h5></td>
-						    <th><h5 class="black"><script src="js/os.js"></script></h5></th>
+						    <th><h5 class="black" id="os"></h5></th>
 						  </tr>
 							<!--Browser-->
 						  <tr>
 								<td><h5 class="black">Browser</h5></td>
-						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
+						    <th><h5 class="black" id="browser"></h5></th>
 						  </tr>
 							<!--Supported Browsers-->
 						  <tr>
@@ -446,7 +450,7 @@
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
@@ -590,61 +594,14 @@
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/typed.js"></script>
-		<script src="js/clock.js"></script>
-		<script src="js/messages.js"></script>
 		<script src="js/search.js"></script>
+		<script src="js/nprogress.js"></script>
+		<script src="js/bootstrap3-typeahead.min.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
-		<script src="js/preload.js"></script>
 		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
-		<!--If no touchscreen, show Tooltips and hide mobile search-->
-		<script>
-		if(!('ontouchstart' in window))
-		{
-			$('[data-toggle="tooltip"]').tooltip();
-			$('#search-mobile').hide();
-		}
-		</script>
-		<!--If touchscreen, hide desktop search-->
-		<script>
-		if(('ontouchstart' in window))
-		{
-			$('#search').hide();
-		}
-		</script>
-		<!--Animated Loading Text-->
-		<script>
-		$("#js-rotating").Morphext({
-				// The [in] animation type. Refer to Animate.css for a list of available animations.
-				animation: "bounceInUp",
-				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-				separator: "|",
-				// The delay between the changing of each phrase in milliseconds.
-				speed: 2000,
-				complete: function () {
-						// Called after the entrance animation is executed.
-				}
-		});
-		</script>
-		<!--jQuery smooth scroll to id's -->
-		<script>
-		$(function() {
-		  $('a[href*=#]:not([href=#])').click(function() {
-		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		      if (target.length) {
-		        $('html,body').animate({
-		          scrollTop: target.offset().top
-		        }, 500);
-		        return true;
-		      }
-		    }
-		  });
-		});
-		</script>
+		<script src="js/compiled.js"></script>
 	</body>
 	</div>
 </html>

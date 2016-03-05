@@ -17,6 +17,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/morphext.css" rel="stylesheet">
+		<link href="css/nprogress.css" rel="stylesheet">
 	</head>
 
 	<!--Page Loading...-->
@@ -25,7 +26,7 @@
 			<div class="loading-animation"></div>
 		</div>
 		<div class="center-block">
-			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
+			<div class="loading-text"><span id="js-rotating"> | Loading...| | Still Loading...| | New user, huh?| | | |</span></div>
 		</div>
 	</div>
 
@@ -79,17 +80,20 @@
 					</ul>
 
 					<!--Search Function-->
-					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
+					<div onkeydown="if (event.keyCode == 13) search();" class="navbar-form navbar-right">
 						<div class="input-group">
-							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
+								<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it.">
+									<span class="glyphicon glyphicon-question-sign"></span>
+								</button>
 								<button class="btn btn-default" type="button" onclick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
 							</span>
-						</div><!-- /input-group -->
-					</div>
+						</div><!-- /.input-group -->
+					</div><!-- /search function -->
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav><!-- /.nav -->
@@ -104,6 +108,7 @@
 			<div id="menu-terms" class="hidden-xs">
 				<h2>Contents</h2>
 				<li><a href="terms.html#general"><span class="glyphicon glyphicon-chevron-right"></span> General</a></li>
+				<li><a href="terms.html#logo"><span class="glyphicon glyphicon-chevron-right"></span> Logo</a></li>
 				<li><a href="terms.html#warranty"><span class="glyphicon glyphicon-chevron-right"></span> Warranties & Liability</a></li>
 				<li><a href="terms.html#copyright"><span class="glyphicon glyphicon-chevron-right"></span> Copyright</a></li>
 				<li><a href="terms.html#changes"><span class="glyphicon glyphicon-chevron-right"></span> Changes</a></li>
@@ -119,6 +124,7 @@
 				<select>
 					<option selected value="#mobile-menu">Contents</option>
 					<option value="terms.html#general">General</option>
+					<option value="terms.html#logo">Logo</option>
 					<option value="terms.html#warranty">Warranties & Liability</option>
 					<option value="terms.html#copyright">Copyright</option>
 					<option value="terms.html#changes">Changes</option>
@@ -128,56 +134,59 @@
 			</div>
 
 			<!--General-->
-			<span class="termsSection">
-			<a id="general"></a>
-			<h1>General</h1>
-			<p>
-			Use this website at your own risk.<br>
-			I am not held responsible for incorrect information.<br>
-			You may not exploit this website in any way.<br>
-			I am not affiliated with external websites that are linked on this website.<br>
-			I do not support Internet Explorer.
-			</p>
+			<span class="termsSection" id="general">
+				<h1>General</h1>
+				<p>
+					Use this website at your own risk.<br>
+					I am not held responsible for incorrect information.<br>
+					You may not exploit this website in any way.<br>
+					I am not affiliated with external websites that are linked on this website.<br>
+					I do not support Internet Explorer.
+				</p>
+			</span>
+
+			<br>
+			<br>
+
 			<!--Logo-->
-			<h2>Logo</h2>
-			<p>
-			You may not steal my logo.<br>
-			You may not vandalize my logo in any way.<br>
-			You may not claim my logo as your own.
-			</p>
+			<span class="termsSection" id="logo">
+				<h1>Logo</h1>
+					<p>
+					You may not steal my logo.<br>
+					You may not vandalize my logo in any way.<br>
+					You may not claim my logo as your own.
+					</p>
 			</span>
 
 			<br>
 			<br>
 
 			<!--Warranties & Liability-->
-			<span class="termsSection">
-			<a id="warranty"></a>
-			<h1>Warranties & Liability</h1>
-			<p>
-			This website is brought to you "as is" without any warranty.<br>
-			I am not liable for anything that you may see on this website.<br>
-			I am not accountable for any bugs or errors you may encounter.<br>
-			If a major problem occurs, please <a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">contact</a> me.<br>
-			I will do my best to fix the issue as soon as possible.
-			</p>
+			<span class="termsSection" id="warranty">
+				<h1>Warranties & Liability</h1>
+				<p>
+					This website is brought to you "as is" without any warranty.<br>
+					I am not liable for anything that you may see on this website.<br>
+					I am not accountable for any bugs or errors you may encounter.<br>
+					If a major problem occurs, please <a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">contact</a> me.<br>
+					I will do my best to fix the issue as soon as possible.
+				</p>
 			</span>
 
 			<br>
 			<br>
 
 			<!--Copyright-->
-			<span class="termsSection">
-			<a id="copyright"></a>
-			<h1>Copyright</h1>
-			<p>
-			<a class="link" href="fs.html">Floating Survival</a>, <a class="link" href="invisarant.html">InvisaRant</a>, and all of my other projects are licensed under the<br>
-			<a class="link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-			(CC BY-SA 4.0)
-			<br>
-			<br>
-			<!--Copyright Image-->
-			<a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="images/cc.png" alt="Creative Commons" height="31" width="88"></a>
+			<span class="termsSection" id="copyright">
+				<h1>Copyright</h1>
+				<p>
+				<a class="link" href="fs.html">Floating Survival</a>, <a class="link" href="invisarant.html">InvisaRant</a>, and all of my other projects are licensed under the<br>
+				<a class="link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
+				(CC BY-SA 4.0)
+				<br>
+				<br>
+				<!--Copyright Image-->
+				<a href="http://creativecommons.org/licenses/by-sa/4.0/"><img class="img-responsive center-block" src="images/cc.png" height="31" width="88"></a>
 			</p>
 			</span>
 
@@ -185,13 +194,12 @@
 			<br>
 
 			<!--Changes-->
-			<span class="termsSection">
-			<a id="changes"></a>
-			<h1>Changes</h1>
-			<p>
-			The Terms & Conditions may be changed at any time without notice.<br>
-			Be sure to check back from time to time.
-			</p>
+			<span class="termsSection" id="changes">
+				<h1>Changes</h1>
+				<p>
+					The Terms & Conditions may be changed at any time without notice.<br>
+					Be sure to check back from time to time.
+				</p>
 			</span>
 
 			<br>
@@ -508,12 +516,12 @@
 							<!--Clock-->
 							<tr>
 								<td><h5 class="black">Time</h5></td>
-						    <th><h5 class="black"><span id="clock"></span></h5></th>
+						    <th><h5 class="black" id="clock"></h5></th>
 							</tr>
 						  <!--Counter-->
 							<tr>
 								<td><h5 class="black">Requests</h5></td>
-						    <th><h5 class="black"><script src="js/counter.js"></script></h5></th>
+						    <th><h5 class="black" id="requests"></h5></th>
 							</tr>
 						  <!--Bootstrap Version-->
 							<tr>
@@ -523,12 +531,12 @@
 						  <!--OS-->
 						  <tr>
 								<td><h5 class="black">OS</h5></td>
-						    <th><h5 class="black"><script src="js/os.js"></script></h5></th>
+						    <th><h5 class="black" id="os"></h5></th>
 						  </tr>
 							<!--Browser-->
 						  <tr>
 								<td><h5 class="black">Browser</h5></td>
-						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
+						    <th><h5 class="black" id="browser"></h5></th>
 						  </tr>
 							<!--Supported Browsers-->
 						  <tr>
@@ -578,7 +586,7 @@
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
 						</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 						</button>
 					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
@@ -722,65 +730,14 @@
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/typed.js"></script>
-		<script src="js/clock.js"></script>
 		<script src="js/search.js"></script>
+		<script src="js/nprogress.js"></script>
+		<script src="js/bootstrap3-typeahead.min.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
-		<script src="js/preload.js"></script>
 		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
-		<!--If no touchscreen, show Tooltips, hide mobile search, hide Mobile Menus-->
-		<script>
-		if(!('ontouchstart' in window))
-		{
-			$('[data-toggle="tooltip"]').tooltip();
-			$('#search-mobile').hide();
-		}
-		</script>
-		<!--If touchscreen, hide desktop search-->
-		<script>
-		if(('ontouchstart' in window))
-		{
-			$('#search').hide();
-		}
-		</script>
-		<!--Animated Loading Text-->
-		<script>
-		$("#js-rotating").Morphext({
-				// The [in] animation type. Refer to Animate.css for a list of available animations.
-				animation: "bounceInUp",
-				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-				separator: "|",
-				// The delay between the changing of each phrase in milliseconds.
-				speed: 2000,
-				complete: function () {
-						// Called after the entrance animation is executed.
-				}
-		});
-		</script>
-		<script>
-		$('#mobile-menu select').change(function(){
-				window.location = $(this).val();
-		});
-		</script>
-		<!--jQuery smooth scroll to id's -->
-		<script>
-		$(function() {
-		  $('a[href*=#]:not([href=#])').click(function() {
-		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		      if (target.length) {
-		        $('html,body').animate({
-		          scrollTop: target.offset().top
-		        }, 500);
-		        return true;
-		      }
-		    }
-		  });
-		});
-		</script>
+		<script src="js/compiled.js"></script>
 	</body>
 	</div>
 </html>
