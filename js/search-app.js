@@ -76,13 +76,3 @@ function searchapp()
 	if (search == "YouTube" || (search == "youtube") || (search == "YT") || (search == "yt"))
 	window.open("https://www.youtube.com/");
 }
-
-// Typed.js Functionality
-$(document).ready(function() {
-	$(function(){
-			$("#search").typed({
-				strings: ["Help", "Floating Survival", "Podcast", "About", "Terms", "Privacy", "Stats", "Jump to.."],
-				typeSpeed: .1
-			});
-	});
-});
