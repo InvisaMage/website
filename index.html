@@ -17,6 +17,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/morphext.css" rel="stylesheet">
+		<link href="css/nprogress.css" rel="stylesheet">
 		<!--iOS Bookmark Image-->
 		<link rel="apple-touch-icon" sizes="152x152" href="images/imlogo.png">
 	</head>
@@ -27,7 +28,7 @@
 			<div class="loading-animation"></div>
 		</div>
 		<div class="center-block">
-			<div class="loading-text"><span id="js-rotating"> | Loading...| This is taking longer than expected.| Please hang tight.| | Okay, just reload now.</span></div>
+			<div class="loading-text"><span id="js-rotating"> | Loading...| | Still Loading...| | New user, huh?| | | |</span></div>
 		</div>
 	</div>
 
@@ -81,17 +82,20 @@
 					</ul>
 
 					<!--Search Function-->
-					<div onkeydown="if (event.keyCode == 13) search()" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it." class="navbar-form navbar-right">
+					<div onkeydown="if (event.keyCode == 13) search();" class="navbar-form navbar-right">
 						<div class="input-group">
-							<input class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
+								<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it.">
+									<span class="glyphicon glyphicon-question-sign"></span>
+								</button>
 								<button class="btn btn-default" type="button" onclick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
 							</span>
-						</div><!-- /input-group -->
-					</div>
+						</div><!-- /.input-group -->
+					</div><!-- /search function -->
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav><!-- /.nav -->
@@ -112,15 +116,15 @@
 							<h3 class='panel-title'>Welcome</h3>
 						</div>
 						<div class='panel-header-top'>
-							<!--Button and namePrompt Function-->
 							<a role="button" class="btn btn-success btn-lg btn-block" onclick="$('#personalize').modal()">Personalize Message</a>
 						</div>
 						<div class='panel-body'>
 							<!--Paragraph Changes with namePrompt Input-->
-							<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span><br>
-							<!--Main Body-->
-							On this website you can find fast and informative information about all things InvisaMage.
+							<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span>
 						</div><!-- /.panel-body -->
+						<div class="panel-footer">
+							On this website you can find fast and informative information about all things InvisaMage.
+						</div><!-- /.panel-footer -->
 					</div><!-- /.panel -->
 			  </div><!-- /welcome -->
 
@@ -131,20 +135,21 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>February 27, 2016</h3>
+							<h3>March 4, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							Revamped the <a class="link" href="index.html">Homepage</a>.<br>
-							The <a class="link" href="about.html#functions">namePrompt</a> function now uses panels instead of wells.<br>
-							Text is displayed after page loading takes too long. (Subject to change)<br>
-							Added arrows to all Menus.<br>
-							Tweaks to bootstrap.css
+							Added help button next to the search bar.<br>
+							Hover over to display tooltip text.
 							<br>
 							<br>
-							New assets:<br>
-							animate.css<br>
-							morphext.css<br>
-							morphext.js
+							Added predictions / recommendations to the <a class="link" href="about.html#nameprompt">namePrompt</a> and <a class="link" href="about.html#search">search</a> function.<br>
+							This uses a modified version of the typeahead.js plugin.
+							<br>
+							<br>
+							Merged several JavaScript functions into one file named compiled.js.<br>
+							Expect bugs due to this.<br>
+							Added a new loading animation from the nprogress.js plugin.<br>
+							Cleaned up code.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -300,8 +305,8 @@
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<div class="row">
 				<div class="col-xs-8">
-			  	<strong>Feedback</strong>
-					Let me know what you think of the new Homepage design. I'd love to hear from you.
+			  	<strong>Feedback:</strong>
+					Let me know what you think of the new design.
 				</div>
 				<div class="col-xs-2">
 					<button type="button" class="btn btn-danger" data-dismiss="alert">
@@ -474,12 +479,12 @@
 							<!--Clock-->
 							<tr>
 								<td><h5 class="black">Time</h5></td>
-						    <th><h5 class="black"><span id="clock"></span></h5></th>
+						    <th><h5 class="black" id="clock"></h5></th>
 							</tr>
 						  <!--Counter-->
 							<tr>
 								<td><h5 class="black">Requests</h5></td>
-						    <th><h5 class="black"><script src="js/counter.js"></script></h5></th>
+						    <th><h5 class="black" id="requests"></h5></th>
 							</tr>
 						  <!--Bootstrap Version-->
 							<tr>
@@ -489,12 +494,12 @@
 						  <!--OS-->
 						  <tr>
 								<td><h5 class="black">OS</h5></td>
-						    <th><h5 class="black"><script src="js/os.js"></script></h5></th>
+						    <th><h5 class="black" id="os"></h5></th>
 						  </tr>
 							<!--Browser-->
 						  <tr>
 								<td><h5 class="black">Browser</h5></td>
-						    <th><h5 class="black"><script src="js/browser.js"></script></h5></th>
+						    <th><h5 class="black" id="browser"></h5></th>
 						  </tr>
 							<!--Supported Browsers-->
 						  <tr>
@@ -688,68 +693,16 @@
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/typed.js"></script>
-		<script src="js/clock.js"></script>
 		<script src="js/search.js"></script>
+		<script src="js/nprogress.js"></script>
+		<script src="js/bootstrap3-typeahead.min.js"></script>
 		<script src="js/namePrompt.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/preload.js"></script>
 		<script src="js/morphext.js"></script>
 		<script src="js/konami.js"></script>
-		<!--If no touchscreen, show Tooltips and hide mobile search-->
-		<script>
-		if(!('ontouchstart' in window))
-		{
-			$('[data-toggle="tooltip"]').tooltip();
-			$('#search-mobile').hide();
-		}
-		</script>
-		<!--If touchscreen, hide desktop search-->
-		<script>
-		if(('ontouchstart' in window))
-		{
-			$('#search').hide();
-		}
-		</script>
-		<!--Animated Loading Text-->
-		<script>
-		$("#js-rotating").Morphext({
-				// The [in] animation type. Refer to Animate.css for a list of available animations.
-				animation: "bounceInUp",
-				// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-				separator: "|",
-				// The delay between the changing of each phrase in milliseconds.
-				speed: 2000,
-				complete: function () {
-						// Called after the entrance animation is executed.
-				}
-		});
-		</script>
-		<!--Autofocus Personalize Message Modal-->
-		<script>
-		$('#personalize').on('shown.bs.modal', function () {
-		  $('#name-value').focus();
-			$('#name-value').select();
-		});
-		</script>
-		<!--jQuery smooth scroll to id's -->
-		<script>
-		$(function() {
-		  $('a[href*=#]:not([href=#])').click(function() {
-		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		      if (target.length) {
-		        $('html,body').animate({
-		          scrollTop: target.offset().top
-		        }, 500);
-		        return true;
-		      }
-		    }
-		  });
-		});
-		</script>
+		<script src="js/compiled.js"></script>
 	</body>
 	</div>
 </html>
