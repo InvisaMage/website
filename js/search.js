@@ -2,7 +2,7 @@
 
 function search()
 {
-	var search = document.getElementById("search").value;
+	var search = document.getElementById("search").value || document.getElementById("search-mobile").value
 
 // Homepage
 	if (search == "Home" || (search == "home"))
@@ -84,13 +84,3 @@ function search()
 	if (search == "Cortana" || (search == "cortana"))
 	window.location = ("ms-Cortana://");
 }
-
-// Typed.js Functionality
-$(document).ready(function() {
-	$(function(){
-			$("#search, #search-mobile").typed({
-				strings: ["Home", "News", "Floating Survival", "App", "Podcast", "Terms", "Privacy", "Archive", "Stats", "404", "Jump to.."],
-				typeSpeed: .1
-			});
-	});
-});
