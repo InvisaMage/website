@@ -102,7 +102,7 @@ function namePrompt()
 		  "</div>" +
 		"</div>"
 //Girls
-		if (name == "Kim" || (name == "kim") || (name == "Sabrina") || (name == "sabrina") || (name == "Courtney ") || (name == "courtney "))
+		if (name == "Kim" || (name == "kim") || (name == "Sabrina") || (name == "sabrina") || (name == "Courtney") || (name == "courtney"))
 		document.getElementById("name").innerHTML =
 		"Hello miss and welcome back to my website."
 //Rachel

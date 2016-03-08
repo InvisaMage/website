@@ -2,7 +2,7 @@
 
 function searchapp()
 {
-	var search = document.getElementById("search").value;
+	var search = document.getElementById("search-app").value;
 
 // Homepage
 	if (search == "Home" || (search == "home"))
