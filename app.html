@@ -13,8 +13,6 @@
 		<!--Stylesheets-->
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/animate.css" rel="stylesheet">
-		<link href="css/morphext.css" rel="stylesheet">
 		<link href="css/nprogress.css" rel="stylesheet">
 		<!--iOS Options-->
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,9 +26,6 @@
 	<div class="preload">
 		<div class="loading">
 			<div class="loading-animation"></div>
-		</div>
-		<div class="center-block">
-			<div class="loading-text"><span id="js-rotating"> | Loading...| | Still Loading...| | New user, huh?| | | |</span></div>
 		</div>
 	</div>
 
@@ -64,7 +59,7 @@
       <!--Search Function-->
       <div onkeydown="if (event.keyCode == 13) searchapp()">
         <div class="input-group">
-          <input class="form-control" id="search" autocomplete="off" placeholder="Jump to...">
+          <input class="form-control" id="search-app" autocomplete="off" placeholder="Jump to...">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button" onclick="searchapp();">
               <span class="glyphicon glyphicon-search"></span>
@@ -958,7 +953,6 @@
 		<script src="js/search-app.js"></script>
 		<script src="js/nprogress.js"></script>
     <script src="js/namePrompt-app.js"></script>
-		<script src="js/morphext.js"></script>
 		<script src="js/compiled.js"></script>
 	</body>
 	</div>
