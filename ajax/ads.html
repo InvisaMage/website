@@ -1,0 +1,32 @@
+<!--Hide Ads Modal-->
+<div class="modal-dialog modal-sm" id="ajax-hideads">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Hide Ads</h4>
+    </div>
+    <div class="modal-body">
+    You must be seeing things.<br>
+    I don't see any ads.
+    </div>
+    <!--Hide Ads Collapsible Content-->
+    <div class="collapse" id="eyetest-collapse">
+      <button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#modal-hideads').modal('toggle');">
+        <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
+      </button>
+      <button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
+        <span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+      </button>
+
+      <img class="img-responsive" src="images/eyetest.png" height="800" width="997">
+    </div><!-- /.modal-collapse-->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+      </button>
+      <button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
+        <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer-->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-hideads -->

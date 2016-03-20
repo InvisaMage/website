@@ -1,0 +1,53 @@
+<!--Contact Modal-->
+<div class="modal-dialog modal-md" id="ajax-contact">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Contact</h4>
+    </div>
+    <div class="modal-body">
+      Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
+      <br>
+      <br>
+        <!--E-mail-->
+        <div class="input-group">
+          <div class="input-group-addon">E-mail</div>
+          <input readonly type="text" class="form-control" value="support@InvisaMage.com">
+            <span class="input-group-btn">
+              <a roll="button" class="btn btn-default" href="mailto:support@invisamage.com">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send E-mail
+              </a>
+            </span>
+        </div><!-- /input-group -->
+        <!--Telegram-->
+        <br>
+        <div class="input-group">
+          <div class="input-group-addon">Telegram</div>
+          <input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
+            <span class="input-group-btn">
+              <a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send Message
+              </a>
+            </span>
+        </div><!-- /input-group -->
+        <br>
+    </div>
+    <!--Contact Help Collapsible Content-->
+    <div class="collapse" id="modal-contact-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-contact-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>More Information</strong><br>
+        <strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+        <strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-contact-collapse').collapse('toggle')">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div><!-- /.modal-contact-->
