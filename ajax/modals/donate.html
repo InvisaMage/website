@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<!--Donate Modal-->
+<div class="modal-dialog modal-md" id="ajax-donate">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
+    </div>
+    <div class="modal-body">
+      If you enjoy what I do, a donation would be highly appreciated.
+      <br>
+      <br>
+        <!--Bitcoin-->
+        <div class="input-group">
+          <div class="input-group-addon"><a target="_blank" href="https://bitcoin.org/en/">Bitcoin (฿)</a></div>
+          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
+            <span class="input-group-btn">
+              <a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate ฿</a>
+              <a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-bitcoin">Scan QR</a>
+            </span>
+        </div>
+        <br>
+        <!--Dogecoin-->
+        <div class="input-group">
+          <div class="input-group-addon"><a target="_blank" href="http://dogecoin.com/">Dogecoin (Ð)</a></div>
+          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
+            <span class="input-group-btn">
+              <a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate Ð</a>
+              <a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-dogecoin">Scan QR</a>
+            </span>
+        </div>
+        <br>
+        <!--Litecoin-->
+        <div class="input-group">
+          <div class="input-group-addon"><a target="_blank" href="https://litecoin.com/">Litecoin (Ł)</a></div>
+          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
+            <span class="input-group-btn">
+              <a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate Ł</a>
+              <a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-litecoin" data-toggle="tooltip">Scan QR</a>
+            </span>
+        </div>
+        <!--QR-Bitcoin-->
+        <div class="collapse" id="qr-bitcoin">
+          <div class="well">
+            <strong>Bitcoin</strong>
+            <img class="img-responsive center-block" src="images/qr-bitcoin.png" height="150" width="150">
+          </div>
+        </div>
+        <!--QR-Dogecoin-->
+        <div class="collapse" id="qr-dogecoin">
+          <div class="well">
+            <strong>Dogecoin</strong>
+            <img class="img-responsive center-block" src="images/qr-dogecoin.png" height="150" width="150">
+          </div>
+        </div>
+        <!--QR-Litecoin-->
+        <div class="collapse" id="qr-litecoin">
+          <div class="well">
+            <strong>Litecoin</strong>
+            <img class="img-responsive center-block" src="images/qr-litecoin.png" height="150" width="150">
+          </div>
+        </div>
+    </div>
+    <!--Donate Help Collapsible Content-->
+    <div class="collapse" id="modal-donate-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What payment methods are these?</strong><br>
+        These are called cryptocurrencies.
+        They are a digital medium of exchange.
+        They use cryptography for security, making them difficult to counterfeit.
+        Click the names of them to learn more.<br>
+        <strong>QR Codes:</strong><br>
+        You must have a QR code scanner to use these.<br>
+        Preferably one built into your cryptocurrency client.<br>
+        <strong>Note:</strong><br>
+        You must have the correct cryptocurrency client to use the "Donate" buttons.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-donate-collapse').collapse('toggle')">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div><!-- /.modal-donate-->
