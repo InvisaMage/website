@@ -8,6 +8,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="InvisaMage's website in one page.">
 		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<meta name="theme-color" content="#337AB7">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | App</title>
 		<!--Stylesheets-->
@@ -57,16 +58,19 @@
 		<div class="container">
 
       <!--Search Function-->
-      <div onkeydown="if (event.keyCode == 13) searchapp()">
-        <div class="input-group">
-          <input class="form-control" id="search-app" autocomplete="off" placeholder="Jump to...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" onclick="searchapp();">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-        </div><!-- /input-group -->
-      </div>
+			<div onkeydown="if (event.keyCode == 13) searchapp();">
+				<div class="input-group">
+					<input type="text" class="form-control" id="search-app" autocomplete="off" placeholder="Jump to...">
+					<span class="input-group-btn">
+						<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</a>
+						<button class="btn btn-default" type="button" onclick="searchapp();">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div><!-- /.input-group -->
+			</div><!-- /search function -->
       <br>
 
       <!--Paragraph Changes with namePrompt Input-->
@@ -91,14 +95,14 @@
       <a role="button" class="btn btn-danger btn-lg btn-block" href="webapp.html">Web Application</a>
       <br>
       <!--Contact-->
-      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#contact').modal()">Contact</a>
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a>
       <!--Donate-->
-      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#donate').modal()">Donate</a>
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a>
       <!--About-->
       <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#about').modal()">About</a>
       <br>
       <!--Stats-->
-      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#stats').modal()">Stats</a>
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();">Stats</a>
       <br>
 
 			<!--Footer-->
@@ -116,7 +120,7 @@
 								</li>
 								<!--Contact-->
 								<li>
-									<a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
+									<a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
 								</li>
 								<!--Design-->
 								<li>
@@ -142,7 +146,7 @@
 							<ul>
 								<!--Hide Ads-->
 								<li>
-									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+									<a class="link" onclick="$('#modal-hideads').load('ajax/modals/ads.html'); $('#modal-hideads').modal();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
 								</li>
 								<!--Water-->
 								<li>
@@ -422,10 +426,10 @@
 							  	Do you accept the Terms and Conditions?
 							</div>
 							<div class="col-xs-6-offset">
-								<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#yes" onclick="$('.alert').toggle()"> Yes
+								<button type="button" class="btn btn-success btn-md" onclick="$('#terms').modal('hide'); $('#terms').on('hidden.bs.modal', function (e) { $('#modal-yes-terms').load('ajax/modals/terms-yes.html'); $('#modal-yes-terms').modal(); });"> Yes
 									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#no" onclick="$('.alert').toggle()"> No
+								<button type="button" class="btn btn-danger btn-md" onclick="$('#terms').modal('hide'); $('#terms').on('hidden.bs.modal', function (e) { $('#modal-no-terms').load('ajax/modals/terms-no.html'); $('#modal-no-terms').modal(); });"> No
 									<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
 								</button>
 							</div>
@@ -467,7 +471,7 @@
 						Cookies may be used to enable the site to function more fluently.<br>
 						They are files with information about the website.<br>
 						They are stored locally on your computer for future use.<br>
-						If you wish to clear your internet cookies, click <a onclick="$('#cookie').modal()">here</a>.<br>
+						If you wish to clear your internet cookies, click <a onclick="$('#privacy').modal('hide'); $('#privacy').on('hidden.bs.modal', function (e) { $('#modal-cookie').load('ajax/modals/cookies.html'); $('#modal-cookie').modal(); });">here</a>.<br>
 						Note: This will likely clear all of your internet cookies and not just for this website.
 
 						<hr>
@@ -493,10 +497,10 @@
 							  Do you accept the Privacy Policy?
 							</div>
 							<div class="col-xs-6-offset">
-								<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#yes" onclick="$('.alert').toggle()"> Yes
+								<button type="button" class="btn btn-success btn-md" onclick="$('#privacy').modal('hide'); $('#privacy').on('hidden.bs.modal', function (e) { $('#modal-yes-privacy').load('ajax/modals/privacy-yes.html'); $('#modal-yes-privacy').modal(); });"> Yes
 									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#no" onclick="$('.alert').toggle()"> No
+								<button type="button" class="btn btn-danger btn-md" onclick="$('#privacy').modal('hide'); $('#privacy').on('hidden.bs.modal', function (e) { $('#modal-no-privacy').load('ajax/modals/privacy-no.html'); $('#modal-no-privacy').modal(); });"> No
 									<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
 								</button>
 							</div>
@@ -513,46 +517,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!--Yes Modal-->
-		<div class="modal fade" id="yes" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Terms & Conditions</h4>
-					</div>
-					<div class="modal-body">
-						<img src="images/wisely.jpg" height="200" width="300">
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
-		<!--No Modal-->
-		<div class="modal fade" id="no" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Terms & Conditions</h4>
-					</div>
-					<div class="modal-body">
-						<img src="images/poorly.jpg" height="200" width="300">
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="google();">Close</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="google();">Goodbye</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
 
 <!--Real Modals-->
 
@@ -585,283 +549,37 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
 						</button>
-						<button type="button" class="btn btn-primary" onclick="namePromptapp();" data-dismiss="modal">Submit</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+			        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+			      </button>
 					</div>
 				</div>
 			</div>
 		</div> <!-- /personalize modal -->
 
+		<!--Modals-->
 		<!--Contact Modal-->
-		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black" id="exampleModalLabel">Contact</h4>
-					</div>
-					<div class="modal-body">
-						Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
-						<br>
-						<br>
-							<!--E-mail-->
-							<div class="input-group">
-								<div class="input-group-addon">E-mail</div>
-								<input readonly type="text" class="form-control" value="support@InvisaMage.com">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="mailto:support@invisamage.com">
-											<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send E-mail
-										</a>
-									</span>
-							</div><!-- /input-group -->
-						  <!--Telegram-->
-							<br>
-							<div class="input-group">
-								<div class="input-group-addon">Telegram</div>
-								<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">
-											<span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send Message
-										</a>
-									</span>
-							</div><!-- /input-group -->
-							<br>
-					</div>
-					<!--Contact Help Collapsible Content-->
-					<div class="collapse" id="contact-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#contact-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>More Information</strong><br>
-							<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
-							<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
-					  </div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
+		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"></div>
 		<!--Donate Modal-->
-		<div class="modal fade" id="donate" tabindex="-1" role="dialog">
-		  <div class="modal-dialog modal-md">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
-		      </div>
-		      <div class="modal-body">
-						If you enjoy what I do, a donation would be highly appreciated.
-						<br>
-						<br>
-		          <!--Bitcoin-->
-							<div class="input-group">
-			          <div class="input-group-addon"><a target="_blank" href="https://bitcoin.org/en/">Bitcoin (฿)</a></div>
-			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate ฿</a>
-										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-bitcoin">Scan QR</a>
-									</span>
-							</div>
-							<br>
-		          <!--Dogecoin-->
-							<div class="input-group">
-			          <div class="input-group-addon"><a target="_blank" href="http://dogecoin.com/">Dogecoin (Ð)</a></div>
-			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate Ð</a>
-										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-dogecoin">Scan QR</a>
-									</span>
-							</div>
-							<br>
-		          <!--Litecoin-->
-							<div class="input-group">
-			          <div class="input-group-addon"><a target="_blank" href="https://litecoin.com/">Litecoin (Ł)</a></div>
-			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate Ł</a>
-										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-litecoin" data-toggle="tooltip">Scan QR</a>
-									</span>
-							</div>
-							<!--QR-Bitcoin-->
-							<div class="collapse" id="qr-bitcoin">
-							  <div class="well">
-							    <strong>Bitcoin</strong>
-									<img class="img-responsive center-block" src="images/qr-bitcoin.png" height="150" width="150">
-								</div>
-							</div>
-							<!--QR-Dogecoin-->
-							<div class="collapse" id="qr-dogecoin">
-							  <div class="well">
-							    <strong>Dogecoin</strong>
-									<img class="img-responsive center-block" src="images/qr-dogecoin.png" height="150" width="150">
-								</div>
-							</div>
-							<!--QR-Litecoin-->
-							<div class="collapse" id="qr-litecoin">
-							  <div class="well">
-							    <strong>Litecoin</strong>
-									<img class="img-responsive center-block" src="images/qr-litecoin.png" height="150" width="150">
-								</div>
-							</div>
-		      </div>
-					<!--Donate Help Collapsible Content-->
-					<div class="collapse" id="donate-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>What payment methods are these?</strong><br>
-							These are called cryptocurrencies.
-							They are a digital medium of exchange.
-							They use cryptography for security, making them difficult to counterfeit.
-							Click the names of them to learn more.<br>
-							<strong>QR Codes:</strong><br>
-							You must have a QR code scanner to use these.<br>
-							Preferably one built into your cryptocurrency client.<br>
-							<strong>Note:</strong><br>
-							You must have the correct cryptocurrency client to use the "Donate" buttons.
-					  </div>
-					</div>
-		      <div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-		      </div>
-		    </div>
-		  </div>
-		</div><!-- /donate modal -->
-
+		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"></div>
 		<!--Stats Modal-->
-		<div class="modal fade" id="stats" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black" id="exampleModalLabel">Stats</h4>
-					</div>
-					<div class="modal-body">
-						<table class="table table-responsive table-condensed table-hover">
-							<!--Clock-->
-							<tr>
-								<td><h5 class="black">Time</h5></td>
-						    <th><h5 class="black" id="clock"></h5></th>
-							</tr>
-						  <!--Counter-->
-							<tr>
-								<td><h5 class="black">Requests</h5></td>
-						    <th><h5 class="black" id="requests"></h5></th>
-							</tr>
-						  <!--Bootstrap Version-->
-							<tr>
-								<td><h5 class="black">Bootstrap</h5></td>
-						    <th><h5 class="black">v3.3.5</h5></th>
-							</tr>
-						  <!--OS-->
-						  <tr>
-								<td><h5 class="black">OS</h5></td>
-						    <th><h5 class="black" id="os"></h5></th>
-						  </tr>
-							<!--Browser-->
-						  <tr>
-								<td><h5 class="black">Browser</h5></td>
-						    <th><h5 class="black" id="browser"></h5></th>
-						  </tr>
-							<!--Supported Browsers-->
-						  <tr>
-								<td><h5 class="black">Compatibility</h5></td>
-						    <th>
-									<img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
-									<img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
-									<img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
-									<img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
-								</th>
-						  </tr>
-							<!--Debugging-->
-							<tr>
-								<td><h5 class="black">Debugging</h5></td>
-						    <th>
-									<button type="button" class="btn btn-danger" onclick="location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reload Page">
-										<span class="glyphicon glyphicon-refresh" aria-hidden="true"> </span>
-									</button>
-									<button type="button" class="btn btn-danger" onclick="document.cookie='Counter=0; expires=Thu, 18 Dec 2099 12:00:00 UTC';location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reset Counter">
-										<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
-									</button>
-								</th>
-						  </tr>
-						</table>
-					</div>
-					<!--Stats Help Collapsible Content-->
-					<div class="collapse" id="stats-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#stats-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>What does this do?</strong><br>
-							The Stats modal displays information related to your system.<br>
-							The "requests" are how many times you've loaded any page within this website.
-							<br>
-							<br>
-							<strong>Compatibility row?</strong><br>
-							These specific browsers have been tested to some extent and work desireably.<br>
-							This does not mean unlisted browsers do not work.<br>
-							Hover over an image to view more Information.
-							<br>
-							<br>
-							<strong>Note:</strong><br>
-							Version numbers are the last known version which the site was tested on.
-					  </div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-						  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div><!-- /.modal-footer -->
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
+		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
+		<!--Reload Page Modal (Activated from Stats modal)-->
+		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
 		<!--Hide Ads Modal-->
-		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Hide Ads</h4>
-					</div>
-					<div class="modal-body">
-					You must be seeing things.<br>
-					I don't see any ads.
-					</div>
-					<!--Hide Ads Collapsible Content-->
-					<div class="collapse" id="eyetest-collapse">
-						<button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#hideAds').modal('toggle');">
-							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
-						</button>
-						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
-							<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
-						</button>
-
-						<img class="img-responsive" src="images/eyetest.png" height="800" width="997">
-					</div><!-- /.modal-collapse-->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
-						</button>
-						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
-						  <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
-						</button>
-					</div><!-- /.modal-footer-->
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
+		<!--Search Help Modal-->
+		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"></div>
+		<!--Terms Yes Modal-->
+		<div class="modal fade" id="modal-yes-terms" tabindex="-1" role="dialog"></div>
+		<!--Terms No Modal-->
+		<div class="modal fade" id="modal-no-terms" tabindex="-1" role="dialog"></div>
+		<!--Privacy Yes Modal-->
+		<div class="modal fade" id="modal-yes-privacy" tabindex="-1" role="dialog"></div>
+		<!--Privacy No Modal-->
+		<div class="modal fade" id="modal-no-privacy" tabindex="-1" role="dialog"></div>
+		<!--Cookies Modal-->
+		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"></div>
 
     <!--Web App Information Modal-->
 		<div class="modal fade" id="appinfo" tabindex="-1" role="dialog">
@@ -888,61 +606,6 @@
 							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 						</button>
 					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
-		<!--Cookies Modal-->
-		<div class="modal fade" id="cookie" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Cookies</h4>
-					</div>
-					<div class="modal-body">
-						Click on your respective browser's logo to learn how to clear cookies.
-						<br>
-						<br>
-						<div class="row">
-							<!--Firefox-->
-							<div class="col-md-3">
-								<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"><img class="cookies-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox"></a>
-							</div>
-							<!--Chrome-->
-							<div class="col-md-3">
-								<a href="https://support.google.com/accounts/answer/61416?hl=en"><img class="cookies-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome"></a>
-							</div>
-							<!--Safari-->
-							<div class="col-md-3">
-								<a href="http://www.imore.com/how-clear-history-and-cookies-ios-7-safari"><img class="cookies-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari"></a>
-							</div>
-							<!--Edge-->
-							<div class="col-md-3">
-									<a href="http://windows.microsoft.com/en-us/windows-10/view-delete-browsing-history-microsoft-edge"><img class="cookies-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge"></a>
-							</div>
-						</div>
-						<br>
-					</div>
-					<!--Information Alert-->
-					<div class="alert-cookie alert-info alert-dismissible" role="alert" style="display: none">
-					  <button type="button" class="close" onclick="$('.alert-cookie').hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <strong>My browser is not here.<br>What do I do?</strong><br>
-						If your browser isn't listed, search the web using a search engine.
-						Here are a few suggestions.
-						<br>
-						<br>
-						<a class="default-danger" href="https://duckduckgo.com/">DuckDuckGo</a><br>
-						<a class="default-danger" href="https://www.google.com/">Google</a>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" onclick="$('.alert-cookie').toggle()">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div><!-- /.modal-footer -->
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
