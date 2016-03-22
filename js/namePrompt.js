@@ -4,8 +4,7 @@ function namePrompt()
 {
 	var name = document.getElementById("name-value").value;
 
-	if (name != null)
-	{
+	if (name != null) {
 //Default
 		document.getElementById("name").innerHTML =
 		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
@@ -500,6 +499,7 @@ function namePrompt()
 //Software - List
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
+		"Ask and you shall receive." +
 		"<div class='panel panel-green'>" +
 			"<div class='panel-heading'>" +
 				"<h3 class='panel-title'>Software</h3>" +

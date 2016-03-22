@@ -500,6 +500,7 @@ function namePromptapp()
 //Software
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
+		"Ask and you shall receive." +
 		"<div class='panel panel-green'>" +
 			"<div class='panel-heading'>" +
 				"<h3 class='panel-title'>Software</h3>" +
