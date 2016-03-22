@@ -21,20 +21,20 @@ function search()
 	window.location = "invisarant.html";
 
 // iOS Web App page
-	if (search == "iOS" || (search == "ios") || (search == "App") || (search == "app") || (search == "Application") || (search == "application") || (search == "iOS Web App") || (search == "iOS web app") || (search == "webapp"))
+	if (search == "Web App" || (search == "web app") || (search == "iOS") || (search == "ios") || (search == "App") || (search == "app") || (search == "Application") || (search == "application") || (search == "iOS Web App") || (search == "iOS web app") || (search == "webapp"))
 	window.location = "webapp.html";
 
 // Contact Modal
 	if (search == "Contact" || (search == "contact") || (search == "Help") || (search == "help") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
-	$('#contact').modal()
+	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
 
 // Donate Modal
 	if (search == "Donate" || (search == "donate") || (search == "Money") || (search == "money"))
-	$('#donate').modal()
+	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
 
 // Stats Modal
 	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Requests") || (search == "requests") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
-	$('#stats').modal()
+	$('#modal-stats').load('ajax/modals/stats.html') && $('#modal-stats').modal();
 
 // About page
 	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information"))
