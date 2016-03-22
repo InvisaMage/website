@@ -9,6 +9,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="News about this website and projects. ">
 		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<meta name="theme-color" content="#337AB7">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<html content="text/cache-manifest" manifest="cache.manifest">
 		<title>InvisaMage | News</title>
@@ -49,26 +50,26 @@
 					</a>
 				</div><!-- /.navbar-header -->
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
+				<!--Collect the nav links, forms, and other content for toggling-->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-					<li class="active"><a href="news.html">News</a></li>
-					<!--Projets-->
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-							<li><a href="fs.html">Floating Survival</a></li>
-							<li><a href="invisarant.html">InvisaRant</a></li>
-							<li><a href="webapp.html">Web Application</a></li>
-					  </ul>
-					</li>
-						<li><a data-toggle="modal" data-target="#contact">Contact</a></li>
-						<li><a data-toggle="modal" data-target="#donate">Donate</a></li>
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li class="active"><a href="news.html">News</a></li>
+						<!--Projects-->
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="fs.html">Floating Survival</a></li>
+								<li><a href="invisarant.html">InvisaRant</a></li>
+								<li><a href="webapp.html">Web Application</a></li>
+							</ul>
+						</li><!-- /projects -->
+						<li><a onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a></li>
+						<li><a onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a class="divider-vertical"></a></li>
 						<li>
-							<a type="role" id="stats-button" onclick="$('#stats').modal()" data-toggle="tooltip" data-placement="bottom" title="Stats">
+							<a onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
 							</a>
 						</li>
@@ -80,9 +81,9 @@
 							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
-								<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="bottom" title="Type the name of a page and hit enter to visit it.">
+								<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
 									<span class="glyphicon glyphicon-question-sign"></span>
-								</button>
+								</a>
 								<button class="btn btn-default" type="button" onclick="search();">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
@@ -299,6 +300,7 @@
 						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option disabled>March 2016</option>
+							<option value="news.html#3-22-16-website">March 22, 2016</option>
 							<option value="news.html#3-4-16-website">March 4, 2016</option>
 							<option disabled>February 2016</option>
 							<option value="news.html#2-27-16-website">February 27, 2016</option>
@@ -310,66 +312,32 @@
 							<option disabled>January 2016</option>
 							<option value="news.html#1-31-16-website">January 31, 2016</option>
 							<option value="news.html#1-13-16-website">January 13, 2016</option>
-							<option disabled>December 2015</option>
-							<option value="news.html#12-22-15-website">December 22, 2015</option>
-							<option value="news.html#12-17-15-website">December 17, 2015</option>
-							<option value="news.html#12-12-15-website">December 12, 2015</option>
-							<option value="news.html#12-5-15-website">December 5, 2015</option>
-							<option disabled>November 2015</option>
-							<option value="news.html#11-26-15-website">November 26, 2015</option>
-							<option value="news.html#11-20-15-website">November 20, 2015</option>
-							<option value="news.html#11-13-15-website">November 13, 2015</option>
-							<option disabled>October 2015</option>
-							<option value="news.html#10-31-15-website">October 31, 2015</option>
-							<option value="news.html#10-23-15-website">October 23 2015</option>
-							<option value="news.html#10-12-15-website">October 12, 2015</option>
-							<option value="news.html#10-3-15-website">October 3, 2015</option>
-							<option disabled>September 2015</option>
-							<option value="news.html#9-29-15-website">September 29, 2015</option>
-							<option value="news.html#9-19-15-website">September 19, 2015</option>
-							<option value="news.html#9-11-15-website">September 11, 2015</option>
-							<option value="news.html#9-6-15-website">September 6, 2015</option>
-							<option value="news.html#9-4-15-website">September 4, 2015</option>
-							<option disabled>June 2015</option>
-							<option value="news.html#6-27-15-website">June 27, 2015</option>
-							<option value="news.html#6-9-15-website">June 9, 2015</option>
-							<option value="news.html#6-2-15-website">June 2, 2015</option>
-							<option value="news.html#6-1-15-website">June 1, 2015</option>
-							<option disabled>May 2015</option>
-							<option value="news.html#5-20-15-website">May 20, 2015</option>
-							<option value="news.html#5-3-15-website">May 3, 2015</option>
-							<option value="news.html#5-2-15-website">May 2, 2015</option>
-							<option disabled>April 2015</option>
-							<option value="news.html#4-26-15-website">April 26, 2015</option>
-							<option value="news.html#4-25-15-website">April 25, 2015</option>
-							<option value="news.html#4-24-15-website">April 24, 2015</option>
-							<option value="news.html#4-10-15-website">April 10, 2015</option>
-							<option value="news.html#4-4-15-website">April 4, 2015</option>
-							<option disabled>March 2015</option>
-							<option value="news.html#3-29-15-website">March 29, 2015</option>
-							<option value="news.html#3-16-15-website">March 16, 2015</option>
-							<option value="news.html#3-14-15-website">March 14, 2015</option>
-							<option value="news.html#3-7-15-website">March 7, 2015</option>
-							<option disabled>February 2015</option>
-							<option value="news.html#2-28-15-website">February 28, 2015</option>
-							<option value="news.html#2-20-15-website">February 20, 2015</option>
-							<option value="news.html#2-6-15-website">February 6, 2015</option>
-							<option disabled>January 2015</option>
-							<option value="news.html#1-31-15-website">January 31, 2015</option>
-							<option value="news.html#1-30-15-website">January 30, 2015</option>
-							<option value="news.html#1-23-15-website">January 23, 2015</option>
-							<option value="news.html#1-17-15-website">January 17, 2015</option>
-							<option value="news.html#1-11-15-website">January 11, 2015</option>
-							<option value="news.html#1-6-15-website">January 6, 2015</option>
-							<option value="news.html#1-3-15-website">January 3, 2015</option>
-							<option value="news.html#1-2-15-website">January 2, 2015</option>
-							<option value="news.html#1-1-15-website">January 1, 2015</option>
-							<option disabled>December 2014</option>
-							<option value="news.html#12-30-14-website">December 30, 2014</option>
 						</select>
 						<br>
 						<br>
 					</div>
+
+					<!--March 22, 2016-->
+					<span class="newsSection" id="3-22-16-website">
+						<h1>March 22, 2016</h1>
+						<p>
+							<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed modals for faster loading and more versatility.<br>
+							Ajaxed News from 2015 in the website pane.<br>
+							Page sizes reduced due to ajaxing modals.
+							<br>
+							<br>
+							The help button next to the search bar now displays a helpful modal.<br>
+							This was implemented for better mobile support (Tooltips are disabled on small screens).
+							<br>
+							<br>
+							Added a reload page prompt after resetting request counter.<br>
+							Updated Web App to use modals and minor fixes to other content.<br>
+							General improvements and fixes.
+						</p>
+					</span><!-- /3-22-16 -->
+
+					<br>
+					<br>
 
 					<!--March 4, 2016-->
 					<span class="newsSection" id="3-4-16-website">
@@ -399,15 +367,15 @@
 						<p>
 							Revamped the <a class="link" href="index.html">Homepage</a>.<br>
 							The <a class="link" href="about.html#nameprompt">namePrompt</a> function now uses panels instead of wells.<br>
-							Text is displayed after page loading takes too long. (Subject to change)<br>
+							<s>Text is displayed after page loading takes too long (Subject to change).</s><br>
 							Added arrows to all Menus.<br>
 							Tweaks to bootstrap.css
 							<br>
 							<br>
-							New assets:<br>
-							animate.css<br>
-							morphext.css<br>
-							morphext.js
+							<s>New assets:</s><br>
+							<s>animate.css</s><br>
+							<s>morphext.css</s><br>
+							<s>morphext.js</s>
 						</p>
 					</span><!-- /2-27-16 -->
 
@@ -518,941 +486,18 @@
 					<br>
 					<br>
 
-					<!--December 22, 2015-->
-					<span class="newsSection" id="12-22-15-website">
-						<h1>December 22, 2015</h1>
-						<p>
-							Changed the <a class="link" href="webapp.html">Web App</a> layout.<br>
-							Updated <a class="link" href="webapp.html">Web App</a> screenshots.<br>
-							Added Bitcoin, Dogecoin, and Litecoin images in the Donate modal.<br>
-							Fixed resizing. (Again)
-							<br>
-							<br>
-							Tweaked menus on various pages.<br>
-							They are now "attached" to the left side of the page and are responsive.<br>
-							The <a class="link" href="about.html">About</a> page and the News page got some extra love.<br>
-							Nested items are listed and the text is pulled to the left.<br>
-							The News page's website menu is more organized.<br>
-							Month > Year > Specific date.
-							<br>
-							<br>
-							HTML organization.
-						</p>
-					</span><!-- /12-22-15 -->
-
-					<br>
-					<br>
-
-					<!--December 17, 2015-->
-					<span class="newsSection" id="12-17-15-website">
-						<h1>December 17, 2015</h1>
-						<p>
-							Tooltip for Up arrow in the navigation bar.<br>
-							Added more Easter Eggs to the namePrompt function.<br>
-							Updated Easter Egg modal.<br>
-							Minor fixes.
-						</p>
-					</span><!-- /12-17-15 -->
-
-					<br>
-					<br>
-
-					<!--December 12, 2015-->
-					<span class="newsSection" id="12-12-15-website">
-						<h1>December 12, 2015</h1>
-						<p>
-							The navigation bar is now fixed to the top of the page.<br>
-							Removed Useful Links menu.<br>
-							Removed Useful Links information from the <a class="link" href="about.html">About</a> page.
-							The Useful Links menu has been replaced with an Up arrow which jumps to the top of the page.<br>
-							Removed the Survey banner.<br>
-							Removed the Up arrow in the footer.
-						</p>
-					</span><!-- /12-12-15 -->
-
-					<br>
-					<br>
-
-					<!--December 6, 2015-->
-					<span class="newsSection" id="12-6-15-website">
-						<h1>December 6, 2015</h1>
-						<p>
-							New logo in the Navigation bar.<br>
-							Added <a class="link" target="_blank" href="http://www.mattboldt.com/demos/typed-js/">Typed.js <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> in the search box for suggestions on what to search for.<br>
-							Adjustments to menu positions.<br>
-							Spelling corrections.
-						</p>
-					</span><!-- /12-6-15 -->
-
-					<br>
-					<br>
-
-					<!--December 5, 2015-->
-					<span class="newsSection" id="12-5-15-website">
-						<h1>December 5, 2015</h1>
-						<p>
-							New loading animation.<br>
-							The loading animation logic now works correctly.<br>
-							Plays the animation until the page is fully loaded.<br>
-							Removed the Planet Minecraft banner on the <a class="link" href="fs.html">Floating Survival</a> page.<br>
-							Fixed navigation bar modal links.
-						</p>
-					</span><!-- /12-5-15 -->
-
-					<br>
-					<br>
-
-					<!--November 26, 2015-->
-					<span class="newsSection" id="11-26-15-website">
-						<h1>November 26, 2015</h1>
-						<p>
-							There is now a loading animation.<br>
-							The snowstorm is now automatically enabled.<br>
-							To toggle it, click <a class="link" onclick="snowStorm.toggleSnow()" data-toggle="tooltip" data-placement="top" title="Toggle snow">here</a>.<br>
-							Added another Easter Egg.
-						</p>
-					</span><!-- /11-26-15 -->
-
-					<br>
-					<br>
-
-					<!--November 20, 2015-->
-					<span class="newsSection" id="11-20-15-website">
-						<h1>November 20, 2015</h1>
-						<p>
-							You can now view the Terms & Conditions on the <a class="link" href="webapp.html">Web App</a>.<br>
-							You can now view the Privacy Policy on the <a class="link" href="webapp.html">Web App</a>.
-							<br>
-							<br>
-							Minor changes and enhancements to the <a class="link" href="about.html#functions">namePrompt</a> function.<br>
-							Added another Easter Egg.
-							<br>
-							<br>
-							Minor changes and enhancements to the <a class="link" href="about.html#functions">Search</a> function.
-							The News page now has vertical tabs on mobile devices for improved usability.
-						</p>
-					</span><!-- /11-20-15 -->
-
-					<br>
-					<br>
-
-					<!--November 13, 2015-->
-					<span class="newsSection" id="11-13-15-website">
-						<h1>November 13, 2015</h1>
-						<p>
-							Added a buggy Water effect in the footer under the "Settings".<br>
-							Added a snowstorm effect in the footer under the "Settings".<br>
-							New favicon.
-						</p>
-					</span><!-- /11-13-15 -->
-
-					<br>
-					<br>
-
-					<!--October 31, 2015-->
-					<span class="newsSection" id="10-31-15-website">
-						<h1>October 31, 2015</h1>
-						<p>
-							Major enhancements to the <a class="link" href="webapp.html">Web App</a>.<br>
-							Renamed to just <a class="link" href="webapp.html">Web App</a> rather than iOS Web App.<br>
-							It is no longer just my Homepage.<br>
-							It is now located <a class="link" href="app.html">here</a>.<br>
-							Displays the most important InvisMage content on one page.<br>
-							Uses modals for everything.
-							<br>
-							<br>
-							Blue buttons are internal <a class="link" href="webapp.html">Web App</a> content.<br>
-							Red buttons are external content which brings you back to the main site.
-							<br>
-							<br>
-							Forked the search and namePrompt function.<br>
-							Tweaked the forked versions for the <a class="link" href="webapp.html">Web App</a>.
-							<br>
-							<br>
-							Hopefully more useful content is on the way.
-						</p>
-					</span><!-- /10-31-15 -->
-
-					<br>
-					<br>
-
-					<!--October 23, 2015-->
-					<span class="newsSection" id="10-23-15-website">
-						<h1>October 23, 2015</h1>
-						<p>
-							More enhancements to the namePrompt fuction.<br>
-							Added more audio information for audio Easter Eggs.
-							<br>
-							<br>
-							Minor tweaks.<br>
-							Spelling corrections.
-						</p>
-					</span><!-- /10-23-15 -->
-
-					<br>
-					<br>
-
-					<!--October 12, 2015-->
-					<span class="newsSection" id="10-12-15-website">
-						<h1>October 12, 2015</h1>
-						<p>
-							Lots of enhancements to the namePrompt function.<br>
-							Added more audio Easter Eggs.<br>
-							Tweaks to existing Easter Eggs.<br>
-							Fixed tooltips not loading.<br>
-							Removed backwards compatibility for the hint.css library.
-
-							<br>
-							<br>
-							External links now open in a new tab.<br>
-							External links are now marked with an icon.<br>
-							Click <a class="link" title="About" href="about.html#design">here</a> to learn more.
-							<br>
-							<br>
-							It is now easier to view highlighted items in dropdown menus.
-						</p>
-					</span><!-- /10-12-15 -->
-
-					<br>
-					<br>
-
-					<!--October 3, 2015-->
-					<span class="newsSection" id="10-3-15-website">
-						<h1>October 3, 2015</h1>
-						<p>
-							Added "Fixed" section in the Bugs tab on the News page.
-							<br>
-							<br>
-							Fixed pages on smaller screens from zooming out.<br>
-							Edited some pages to fix this.<br>
-							Found more bugs.
-						</p>
-					</span><!-- /10-3-15 -->
-
-					<br>
-					<br>
-
-					<!--September 29, 2015-->
-					<span class="newsSection" id="9-29-15-website">
-						<h1>September 29, 2015</h1>
-						<p>
-							Added compatibility section in the <a class="link" data-toggle="modal" data-target="#stats">Stats</a> modal.<br>
-							Shows which browsers have been tested with this website.
-							<br>
-							<br>
-							Added more information on the <a class="link" title="About" href="about.html#info">About</a> page in the Information section.<br>
-							Updated <a class="link" href="webapp.html">iOS Web Application</a> screenshots.<br>
-							Cleaned up old images.<br>
-							More organization in the images folder.<br>
-							Tweaks to footer.
-						</p>
-					</span><!-- /9-29-15 -->
-
-					<br>
-					<br>
-
-					<!--September 19, 2015-->
-					<span class="newsSection" id="9-19-15-website">
-						<h1>September 19, 2015</h1>
-						<p>
-							Tables are now truly responsive.<br>
-							Tweaks to <a class="link" data-toggle="modal" data-target="#donate">Donate</a> modal.<br>
-							Tweaks to <a class="link" data-toggle="modal" data-target="#contact">Contact</a> modal.<br>
-							Minor tweaks to 404 error page.<br>
-							Some definition fixes.
-						</p>
-					</span><!-- /9-19-15 -->
-
-					<br>
-					<br>
-
-					<!--September 11, 2015-->
-					<span class="newsSection" id="9-11-15-website">
-						<h1>September 11, 2015</h1>
-						<p>
-							Tweaks to up button.<br>
-							Added powered by section on the <a class="link" title="About" href="about.html#creation">About</a> page.<br>
-							Fixed contact links to open the modal instead.<br>
-							Footer fixes.
-							<br>
-							<br>
-							Enhancements to the search function.<br>
-							Searching for "Contact" or "Donate" will display the corresponding modals.<br>
-						</p>
-					</span><!-- /9-11-15 -->
-
-					<br>
-					<br>
-
-					<!--September 6, 2015-->
-					<span class="newsSection" id="9-6-15-website">
-						<h1>September 6, 2015</h1>
-						<p>
-							Menus are now hidden on Mobile devices.<br>
-							Tweaks to Mobile Content menus.<br>
-							Created a tab on the News page for Bugs.<br>
-							More code organization.
-						</p>
-					</span><!-- /9-6-15 -->
-
-					<br>
-					<br>
-
-					<!--September 4, 2015-->
-					<span class="newsSection" id="9-4-15-website">
-						<h1>September 4, 2015</h1>
-						<p>
-							Design changes.<br>
-							This website is now using the <a class="link" target="_blank" href="http://getbootstrap.com/">Bootstrap <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> framework.<br>
-							This website is now mobile responsive.<br>
-							There are now Content menus on Mobile devices.
-							<br>
-							<br>
-							You can now donate to me using cryptocurrencies.<br>
-							Created the <a class="link" data-toggle="modal" data-target="#donate">Donate</a> modal.<br>
-							You can find this on the navigation bar.
-							<br>
-							<br>
-							Removed the contact page.<br>
-							Created the <a class="link" data-toggle="modal" data-target="#contact">Contact</a> modal.<br>
-							Feel free to give me feedback on the new design.<br>
-							Was it worth the two months with no updates?<br>
-							You can find this on the navigation bar.
-							<br>
-							<br>
-							New screenshots on the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page.<br>
-							Made images smaller in the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Data Table.
-							<br>
-							<br>
-							Updated the <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page.<br>
-							Now you just need to go to the <a class="link" href="index.html">Homepage</a> as the Mobile site no longer exists.
-							<br>
-							<br>
-							Removed Date Jump menu tooltips.<br>
-							Scripts are now located at the bottom of the pages for better loading.<br>
-							Better folder organization.<br>
-							Code organization improvemnts.<br>
-							Too many things; forgot stuff.
-						</p>
-					</span><!-- /9-4-15 -->
-
-					<br>
-					<br>
-
-					<span class="newsSection" id="6-27-15-website">
-						<h1>June 27, 2015</h1>
-						<p>
-							Moved the Useful links to the navigation bar.<br>
-							An arrow now apears over the current page you are on.<br>
-							Learn more on the <a class="link" title="About" href="about.html#design">About</a> page.
-							<br>
-							<br>
-							Added tooltips to the footer.<br>
-							Added a link to the website's repository in the footer.
-							<br>
-							<br>
-							Changed some tooltips to be centered.<br>
-							The background image is now static.<br>
-							General HTML cleanup.
-							</p>
-							<h2>Mobile</h2>
-							<p>
-							Useful Links, from the Homepage, are now located in the hamburger menu.<br>
-							Cleaned up HTML.
-							</p>
-					</span><!-- /6-27-15 -->
-
-					<br>
-					<br>
-
-					<!--June 9, 2015-->
-					<span class="newsSection" id="6-9-15-website">
-						<h1>June 9, 2015</h1>
-						<p>
-							Added tooltips on the navigation bar.<br>
-							Added tooltips for the menus.<br>
-							Menus now have a background colour hover effect (again).
-							<br>
-							<br>
-							Created the definition class.<br>
-							Learn more about them on the <a class="link" title="About" href="about.html#design">About</a> page.
-							<br>
-							<br>
-							Added a design section on the <a class="link" title="About" href="about.html#design">About</a> page.<br>
-							This is to help users understand how to navigate this website.<br>
-							Minor tweaks to the <a class="link" title="About" href="about.html">About</a> page.
-							</p>
-							<h2>Mobile</h2>
-							<p>
-							Minor Fixes to the News page.
-						</p>
-					</span><!-- /6-9-15 -->
-
-					<br>
-					<br>
-
-					<!--June 2, 2015-->
-					<span class="newsSection" id="6-2-15-website">
-						<h1>June 2, 2015</h1>
-						<p>
-							Added more names in the namePrompt function.<br>
-							New <span class='hint--top' data-hint='This is a tooltip using the Hint.css Library.'><a class="link">tooltips</a></span> for the clock and the hit counter.<br>
-							I am using the <a class='link' title="Hint.css website" target="_blank" href="http://kushagragour.in/lab/hint/">Hint.css <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> Library.<br>
-							Edited <a class="link" title="Homepage" href="index.html">Homepage</a> message.
-							<br>
-							<br>
-							Cleaned up CSS.
-						</p>
-					</span><!-- /6-2-15 -->
-
-					<br>
-					<br>
-
-					<!--June 1, 2015-->
-					<span class="newsSection" id="6-1-15-website">
-						<h1>June 1, 2015</h1>
-						<p>
-							The navigation bar is no longer fixed at the top.<br>
-							Rounded off the navigation bar and other effects.
-							<br>
-							<br>
-							Adjusted menu positions.<br>
-							Updated <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page including new images.<br>
-							Removed the clock on every page but the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-						</p>
-					</span><!-- /6-1-15 -->
-
-					<br>
-					<br>
-
-					<!--May 20, 2015-->
-					<span class="newsSection" id="5-20-15-website">
-						<h1>May 20, 2015</h1>
-							<p>
-							More audio track Easter Eggs in the namePrompt function.<br>
-							</p>
-							<h2>Mobile</h2>
-							<p>
-							You can now scroll in the hamburger menu!<br>
-							Tables fit on the screen now as well as images.<br>
-							Added a confirm dialogue for mobile users wanting to switch to the Desktop version.<br>
-							Cleaned up HTML.
-						</p>
-					</span><!-- /5-20-15 -->
-
-					<br>
-					<br>
-
-					<!--May 3, 2015-->
-					<span class="newsSection" id="5-3-15-website">
-						<h1>May 3, 2015</h1>
-						<p>
-							The Search box is now automatically focused.<br>
-							Pressing any key will now initiate a Search.<br>
-							(Go button = Any key press)
-							<br>
-							<br>
-							Moved menus to be parallel with the clock.<br>
-							Fixed news page (I forgot a backslash).<br>
-							*facepalm*
-						</p>
-					</span><!-- /5-3-15 -->
-
-					<br>
-					<br>
-
-					<!--May 2, 2015-->
-					<span class="newsSection" id="5-2-15-website">
-						<h1>May 2, 2015</h1>
-						<p>
-							Updated namePrompt function.<br>
-							Added more Easter Eggs.<br>
-							Typing "Software" will bring up a list of useful software.<br>
-							Try a curse word; I dare you.
-							<br>
-							<br>
-							Fixed spelling errors on News page.
-						</p>
-						<h2>Mobile</h2>
-						<p>
-							Changed page titles to be the appropriate title.
-						</p>
-					</span><!-- /5-2-15 -->
-
-					<br>
-					<br>
-
-					<!--April 26, 2015-->
-					<span class="newsSection" id="4-26-15-website">
-						<h1>April 26, 2015</h1>
-						<p>
-							General file adjustments.<br>
-							Changed some comment formatting.<br>
-							Added more search key words.
-						</p>
-						<h2>Mobile</h2>
-						<p>
-							Added Search capability in the Hamburger menu.<br>
-							Separate JavaScript file just for mobile.<br>
-							General improvements.
-						</p>
-					</span><!-- /4-26-15 -->
-
-					<br>
-					<br>
-
-					<!--April 25, 2015-->
-					<span class="newsSection" id="4-25-15-website">
-						<h1>April 25, 2015</h1>
-						<p>
-							Moved my Git repository to <a class="link" title="Visit GitHub" target="_blank" href="https://github.com">GitHub <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-							It is now viewable by anyone and everyone.<br>
-							Lean more on the <a class="link" title="About" href="about.html">About</a> page.
-							<br>
-							<br>
-							Added more functionality to the Search Function.<br>
-							You can now type <a class="link" title="DuckDuckGo Search" target="_blank" href="https://duckduckgo.com/">DuckDuckGo <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> or <a class="link" title="YouTube" target="_blank" href="https://www.youtube.com/">YouTube <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to go to the appropriate website.<br>
-							Minor internal enhancements.
-							<br>
-							<br>
-							Updated a namePrompt Easter Egg.
-						</p>
-					</span><!-- /4-25-15 -->
-
-					<br>
-					<br>
-
-					<!--April 24, 2015-->
-					<span class="newsSection" id="4-24-15-website">
-						<h1>April 24, 2015</h1>
-						<p>
-							Made the website more mobile friendly.<br>
-							Switch over <a class="link" title="Google Search" href="m-news.html#4-24-15">here</a>.<br>
-							There will now be a separate section in the news for mobile changes.
-							<br>
-							<br>
-							Changed footer a bit.<br>
-							Removed ability to view the date.<br>
-							Added link to mobile optimized version of the site.
-							</p>
-							<h2>Mobile</h2>
-							<p>
-							First release.<br>
-							Please note, it's not completely stable nor is it reliable.<br>
-							Made the footer horizontal.<br>
-							The counter has been removed.<br>
-							No menus on any page.
-							<br>
-							<br>
-							Replaced traditional navigation bar with a nifty hamburger menu.<br>
-							Moved the up button to the top of the screen.<br>
-							The clock has been moved to the hamburger menu.
-						</p>
-					</span><!-- /4-24-15 -->
-
-					<br>
-					<br>
-
-					<!--April 10, 2015-->
-					<span class="newsSection" id="4-10-15-website">
-						<h1>April 10, 2015</h1>
-						<p>
-							Redesigned the navigation bar; Yes, again.<br>
-							It is now fixed at the top of the page.<br>
-							Minor visual adjustments have been made as well.
-							<br>
-							<br>
-							Enhanced Search Function.<br>
-							You can now type <a class="link" title="Google Search" target="_blank" href="https://www.google.com/">Google <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> or <a class="link" title="Bing Search" target="_blank" href="https://www.bing.com/">Bing <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a> to go to the appropriate website.<br>
-							You can also type 404 and be taken to the error page.
-						</p>
-					</span><!-- /4-10-15 -->
-
-					<br>
-					<br>
-
-					<!--April 4, 2015-->
-					<span class="newsSection" id="4-4-15-website">
-						<h1>April 4, 2015</h1>
-						<p>
-							Added another <a class="link" title="Contact" href="contact.html">Contact</a> Method.<br>
-							You can now contact me via <a class="link" title="About Telegram" target="_blank" href="https://telegram.org/">Telegram <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.
-						</p>
-					</span><!-- /4-4-15 -->
-
-					<br>
-					<br>
-
-					<!--March 29, 2015-->
-					<span class="newsSection" id="3-29-15-website">
-						<h1>March 29, 2015</h1>
-						<p>
-							Redesigned the navigation bar.<br>
-							Added Search function (See <a class="link" title="About Search" href="about.html#functions">About</a> page for more information).<br>
-							Moved logo into the navigation bar.<br>
-							Removed sub links for the About section.<br>
-							No need to hide the page title or the clock anymore!<br>
-							Sub links are now displayed horizontally.
-							<br>
-							<br>
-							Created <a class="link" title="View old Versions" href="archive.html">Archive</a> page to view old website versions.
-							<br>
-							<br>
-							Completely recoded footer; again.<br>
-							Design is more horizontal now.<br>
-							Added an option to hide ads in the footer.<br>
-							Added an option to show the date in the footer.<br>
-							The date is no longer displayed when the page is loaded.
-							<br>
-							<br>
-							Added "Mirth" to the namePrompt function.<br>
-							Displays fun and intriguing websites.
-							<br>
-							<br>
-							Top of page button has been tweaked.<br>
-							Now refers to "#" instead of an HTML element with an id.
-						</p>
-					</span><!-- /3-29-15 -->
-
-					<br>
-					<br>
-
-					<!--March 16, 2015-->
-					<span class="newsSection" id="3-16-15-website">
-						<h1>March 16, 2015</h1>
-						<p>
-							Changed <a class="link" title="View Copyright" href="terms.html#copyright">Copyright</a> agreement.<br>
-							It's now <a class="link" title="View License" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-						</p>
-					</span><!-- /3-16-15 -->
-
-					<br>
-					<br>
-
-					<!--March 14, 2015-->
-					<span class="newsSection" id="3-14-15-website">
-						<h1>March 14, 2015</h1>
-						<p>
-							Changed Download image.<br>
-							Added links to items in <a class="link" title="InvisaRant page" href="invisarant.html">InvisaRant</a> Descriptions.<br>
-							<a class="link" title="Example" href="#">Links</a> are now underlined with an animation.<br>
-							Added padding to website icons on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-							Added an archive folder for old website versions.<br>
-							The time stamp no longer loads automatically.
-							<br>
-							<br>
-							Page titles are now below the navigation bar.<br>
-							The title of webpages "buzz" when you hover over them.<br>
-							Created website Logo which is above the navigation bar.<br>
-							Redesigned footer.
-							<br>
-							<br>
-							Links now have the class of ".link".<br>
-							Updated & fixed namePrompt function.<br>
-							Added website description Metatag.<br>
-							Added website keywords Metatag.<br>
-							The Body now has the id of "top".<br>
-							Removed ".button2" from CSS.
-						</p>
-					</span><!-- /3-14-15 -->
-
-					<br>
-					<br>
-
-					<!--March 7, 2015-->
-					<span class="newsSection" id="3-7-15-website">
-						<h1>March 7, 2015</h1>
-						<p>
-							Updated the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page with new information.<br>
-							Added more Easter Eggs to the namePrompt function.<br>
-							Combined some JavaScript functions into one file.<br>
-							Clock & Date are now just "time".<br>
-							Yes & No are now just "messages".<br>
-							Added a Counter function to the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-							Displays the amount of times you have visited the <a class="link" title="Homepage" href="index.html">Homepage</a>.
-							<br>
-							<br>
-							Updated Chaos Webs favicon.<br>
-							Fixed some formatting on the News page.<br>
-							Made News, <a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a>, and <a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> page easier to read.<br>
-							Added "Contents" Menus to the <a class="link" title="View Privacy Policy" href="privacy.html">Privacy</a> and <a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> pages.<br>
-							Moved my Minecraft Skin to the <a class="link" title="About page" href="about.html">About</a> page.<br>
-							Added Git Section in the <a class="link" title="About page" href="about.html">About</a> page.
-						</p>
-					</span><!-- /3-7-15 -->
-
-					<br>
-					<br>
-
-					<!--February 28, 2015-->
-					<span class="newsSection" id="2-28-15-website">
-						<h1>February 28, 2015</h1>
-						<p>
-							Changed link colours and effects.<br>
-							Changed page title colour and effects.<br>
-							Removed Net Neutrality banner on the <a class="link" title="Homepage" href="index.html">Homepage</a>.
-							<br>
-							<br>
-							Updated the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page with new information.<br>
-							Added my Planet Minecraft "SigCard" in place of the image and link to Planet Minecraft.
-						</p>
-					</span><!-- /2-28-15 -->
-
-					<br>
-					<br>
-
-					<!--February 20, 2015-->
-					<span class="newsSection" id="2-20-15-website">
-						<h1>February 20, 2015</h1>
-						<p>
-							Updated the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page with new information.<br>
-							Added Net Neutrality Countdown to the <a class="link" title="Homepage" href="index.html">Homepage</a>.
-						</p>
-					</span><!-- /2-20-15 -->
-
-					<br>
-					<br>
-
-					<!--February 6, 2015-->
-					<span class="newsSection" id="2-6-15-website">
-						<h1>February 6, 2015</h1>
-						<p>
-							New Contact information.<br>
-							New <a class="link" title="Contact InvisaMage" href="mailto:support@invisamage.com">E-mail</a>.<br>
-							My old E-mail will no longer work.
-							<br>
-							<br>
-							Changed 404 Error page image.<br>
-							Changed colour a bit for the title.<br>
-							Fixed namePrompt grammar.
-						</p>
-					</span><!-- /2-6-15 -->
-
-					<br>
-					<br>
-
-					<!--January 31, 2015-->
-					<span class="newsSection" id="1-31-15-website">
-						<h1>January 31, 2015</h1>
-						<p>
-							Reformatted the title on every page.<br>
-							Now links back to the current page just because.
-							<br>
-							<br>
-							Updated the screenshots on the <a class="link" title="iOS Web App" href="webapp.html">iOS Web App</a> page.<br>
-							Tweaked the <a class="link" title="iOS Web App" href="webapp.html">iOS Web App</a> page.<br>
-							Added borders around the images.
-							<br>
-							<br>
-							Updated the footer on the 404 Error page.<br>
-							Added Easter Eggs to the namePrompt function (Personalize Message).<br>
-							Minor changes to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page.<br>
-							Removed the scrolling slide show buttons because of rendering issues.
-						</p>
-					</span><!-- /1-31-15 -->
-
-					<br>
-					<br>
-
-					<!--January 30, 2015-->
-					<span class="newsSection" id="1-30-15-website">
-						<h1>January 30, 2015</h1>
-						<p>
-							Removed the Yes and No link in the footer.<br>
-							Added a confirm or decline terms dialogue on the <a class="link" title="View Terms & Conditions" href="terms.html">Terms</a> page.<br>
-							Added a confirm or decline privacy policy dialogue on the <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a> page.<br>
-							Yes and No links got minor style changes.<br>
-							They are now the default link colour until you hover over.<br>
-							These dialogues are what used to be in the footer.
-							<br>
-							<br>
-							For better readability, <a class="link" title="Example" href="#">links</a> change to green when you hover over them.<br>
-							Items in the navigation bar now change to green when you hover over.<br>
-							<a class="link" title="Example" href="#">Links</a> no longer get underlined.
-							<br>
-							<br>
-							Floating Menus are now absolute and don't move.<br>
-							Floating Menus are now going to be referred to as Menus.<br>
-							Menu colour changes to green when you hover over.
-							<br>
-							<br>
-							Cleaned up HTML.<br>
-							Renamed some JavaScript functions for better clarity.
-						</p>
-					</span><!-- /1-30-15 -->
-
-					<br>
-					<br>
-
-					<!--January 23, 2015-->
-					<span class="newsSection" id="1-23-15-website">
-						<h1>January 23, 2015</h1>
-						<p>
-							Cleaned up HTML.<br>
-							Cleaned up CSS.<br>
-							Edited the footer a bit.<br>
-							Hopefully made iOS Web App more useable.
-							<br>
-							<br>
-							Removed top of page button from floating menus and the bottom of the page.<br>
-							Added a fixed back to top button on every page.<br>
-							Added a scrolling slide show on the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page.
-							<br>
-							<br>
-							Changed the background image.<br>
-							The background image is no longer used under the <a class="link" title="View License" target="_blank" href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.
-						</p>
-					</span><!-- /1-23-15 -->
-
-					<br>
-					<br>
-
-					<!--January 17, 2015-->
-					<span class="newsSection" id="1-17-15-website">
-						<h1>January 17, 2015</h1>
-						<p>
-							I now have another domain; located <a class="link" target="_blank" href="http://www.invisamage.cf/">here <span class="glyphicon glyphicon-new-window glyphicon-colour"></span></a>.<br>
-							Scripts are now external files.<br>
-							Changed the Navigation Bar a bit.<br>
-							Drop down menus look much better.
-							<br>
-							<br>
-							Changed clock background colour.<br>
-							CSS file is now in the main directory.<br>
-							Cleaned up CSS.
-						</p>
-					</span><!-- /1-17-15 -->
-
-					<br>
-					<br>
-
-					<!--January 11, 2015-->
-					<span class="newsSection" id="1-11-15-website">
-						<h1>January 11, 2015</h1>
-						<p>
-							Fixed formatting on News page.<br>
-							Added background colour for the clock.<br>
-							Updated the <a class="link" title="View Terms & Conditions" href="terms.html">Terms & Conditions</a>.
-							<br>
-							<br>
-							Added <a class="link" title="InvisaRant" href="invisarant.html">InvisaRant</a> page under the projects tab.<br>
-							InvisaRant is my Podcast that I'm hopefully going to do every so often.<br>
-							Created custom logo.<br>
-							Topics will vary.<br>
-							E-mail me ideas.
-							<br>
-							<br>
-							Removed drop down menu under news link in the navigation bar.<br>
-							Added "Date Jump" menu on News page.<br>
-							Added "Contents" menu on the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page.
-							<br>
-							<br>
-							Added a tool tip when you hover over the clock.<br>
-							It tells you it's a clock<br>
-							You won't believe how many people ask me what that is.<br>
-							As a downside of this, I must hide the clock when you use the navigation bar.
-						</p>
-					</span><!-- /1-11-15 -->
-
-					<br>
-					<br>
-
-					<!--January 6, 2015-->
-					<span class="newsSection" id="1-6-15-website">
-						<h1>January 6, 2015</h1>
-						<p>
-							Font on the <a class="link" title="Homepage" href="index.html">Homepage</a> button now matches the body.<br>
-							Font on the button is now bold.<br>
-							When you hover over the button, it now displays text.<br>
-							Removed tool tip.
-							<br>
-							<br>
-							Moved "Recent Video" on the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> page above the screenshots.<br>
-							Minor adjustments to some pages.<br>
-							Cleaned up some code.<br>
-							Fixed name function.
-						</p>
-					</span><!-- /1-6-15 -->
-
-					<br>
-					<br>
-
-					<!--January 3, 2015-->
-					<span class="newsSection" id="1-3-15-website">
-						<h1>January 3, 2015</h1>
-						<p>
-							Added <a class="link" title="News" href="news.html">News</a> Page.<br>
-							Added quick access drop down menu for News dates in the Navigation Bar.<br>
-							Cleaned up some code.
-							<br>
-							<br>
-							Relocated Terms & Conditions page.<br>
-							It's now <a class="link" title="View Terms & Conditions" href="terms.html">here</a>.<br>
-							Added a "Copyright" section.
-						</p>
-					</span><!-- /1-3-15 -->
-
-					<br>
-					<br>
-
-					<!--January 2, 2015-->
-					<span class="newsSection" id="1-2-15-website">
-						<h1>January 2, 2015</h1>
-						<p>
-							Added <a class="link" title="View Privacy Policy" href="privacy.html">Privacy Policy</a> Page.<br>
-							Updated <a class="link" title="View Terms & Conditions" href="terms.html">Terms & Conditions</a>.<br>
-							Changed footer a bit.<br>
-							Made link colour less dark for faster readability.<br>
-							Added screenshots of <a class="link" title="Floating Survival" href="fs.html">FS</a>.
-						</p>
-					</span><!-- /1-2-15 -->
-
-					<br>
-					<br>
-
-					<!--January 1, 2015-->
-					<span class="newsSection" id="1-1-15-website">
-						<h1>January 1, 2015</h1>
-						<p>
-							Refined <a class="link" title="iOS Web App" href="webapp.html">iOS Web App</a> page.<br>
-							There are now screenshots to make the process easier to understand.
-							<br>
-							<br>
-							Added more information in the Skype <a class="link" title="Contact" href="contact.html">Contact</a> table.
-						</p>
-					</span><!-- /1-1-15 -->
-
-					<br>
-					<br>
-
-					<!--December 30, 2014-->
-					<span class="newsSection" id="12-30-14-website">
-						<h1>December 30, 2014</h1>
-						<p>
-							Created a separate page for the <a class="link" title="iOS Web App" href="webapp.html">iOS Web App</a> information.
-							<br>
-							<br>
-							Complete rewrite of the navigation bar.<br>
-							Created drop down menus.<br>
-							Better organization.
-							<br>
-							<br>
-							Created a separate page for <a class="link" title="Contact" href="contact.html">Contact</a> information.<br>
-							There are now two methods of Contact, E-mail and Skype.<br>
-							The Skype option is just a general group chat.
-							<br>
-							<br>
-							Removed the crash function.<br>
-							(Don't like this website? Click here to write a complaint.)<br>
-							Wasn't very professional.
-						</p>
-					</span><!-- /12-30-14 -->
+					<span id="news-website-2015">
+						<button type="button" class="btn btn-md btn-primary" onclick="$('#news-website-2015').load('ajax/news-website-2015.html');" data-toggle="tooltip" data-placement="top" title="Older News">
+			        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+			      </button>
+					</span>
 
 						<!--Website Menu-->
 						<div id="menu-news" class="hidden-xs">
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> March 2016</a></li>
 								<div id="menu-news-nested">
+									<li><a href="#3-22-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 22nd</a></li>
 									<li><a href="#3-4-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 4th</a></li>
 								</div>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> February 2016</a></li>
@@ -1468,84 +513,6 @@
 								<div id="menu-news-nested">
 									<li><a href="#1-31-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 31st</a></li>
 									<li><a href="#1-13-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 13th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> December 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#12-22-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 22nd</a></li>
-									<li><a href="#12-17-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 17th</a></li>
-									<li><a href="#12-12-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
-									<li><a href="#12-5-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 5th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> November 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#11-26-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 26th</a></li>
-									<li><a href="#11-20-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 20th</a></li>
-									<li><a href="#11-13-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 13th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> October 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#10-31-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 31st</a></li>
-									<li><a href="#10-23-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 23rd</a></li>
-									<li><a href="#10-12-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
-									<li><a href="#10-3-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 3rd</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> September 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#9-29-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 29th</a></li>
-									<li><a href="#9-19-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 19th</a></li>
-									<li><a href="#9-11-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 11th</a></li>
-									<li><a href="#9-6-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 6th</a></li>
-									<li><a href="#9-4-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 4th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> June 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#6-27-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 27th</a></li>
-									<li><a href="#6-9-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 9th</a></li>
-									<li><a href="#6-2-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 2nd</a></li>
-									<li><a href="#6-1-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 1st</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> May 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#5-20-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 20th</a></li>
-									<li><a href="#5-3-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 3rd</a></li>
-									<li><a href="#5-2-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 2nd</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> April 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#4-26-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 26th</a></li>
-									<li><a href="#4-25-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 25th</a></li>
-									<li><a href="#4-24-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 24th</a></li>
-									<li><a href="#4-10-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 10th</a></li>
-									<li><a href="#4-4-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 4th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> March 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#3-29-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 29th</a></li>
-									<li><a href="#3-16-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 16th</a></li>
-									<li><a href="#3-14-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 14th</a></li>
-									<li><a href="#3-7-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 7th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> February 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#2-28-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 28th</a></li>
-									<li><a href="#2-20-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 20th</a></li>
-									<li><a href="#2-6-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 6th</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> January 2015</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#1-31-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 31st</a></li>
-									<li><a href="#1-30-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 30th</a></li>
-									<li><a href="#1-23-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 23rd</a></li>
-									<li><a href="#1-17-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 17th</a></li>
-									<li><a href="#1-11-15-website"><span class="glyphicon glyphicon-chevron-right"></span>  11th</a></li>
-									<li><a href="#1-6-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 6th</a></li>
-									<li><a href="#1-3-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 3rd</a></li>
-									<li><a href="#1-2-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 2nd</a></li>
-									<li><a href="#1-1-15-website"><span class="glyphicon glyphicon-chevron-right"></span> 1st</a></li>
-								</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> December 2014</a></li>
-								<div id="menu-news-nested">
-									<li><a href="#12-30-14-website"><span class="glyphicon glyphicon-chevron-right"></span> 30th</a></li>
 								</div>
 							<br>
 						</div><!-- /website menu -->
@@ -1610,7 +577,7 @@
 								</li>
 								<!--Contact-->
 								<li>
-									<a class="link" onclick="$('#contact').modal()" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
+									<a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
 								</li>
 								<!--Design-->
 								<li>
@@ -1636,7 +603,7 @@
 							<ul>
 								<!--Hide Ads-->
 								<li>
-									<a class="link" onclick="$('#hideAds').modal()" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+									<a class="link" onclick="$('#modal-hideads').load('ajax/modals/ads.html'); $('#modal-hideads').modal();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
 								</li>
 								<!--Water-->
 								<li>
@@ -1680,376 +647,21 @@
 		</div>
 		<!--/.End Content-->
 
+		<!--Modals-->
 		<!--Contact Modal-->
-		<div class="modal fade" id="contact" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black" id="exampleModalLabel">Contact</h4>
-					</div>
-					<div class="modal-body">
-						Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
-						<br>
-						<br>
-							<!--E-mail-->
-							<div class="input-group">
-								<div class="input-group-addon">E-mail</div>
-								<input readonly type="text" class="form-control" value="support@InvisaMage.com">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="mailto:support@invisamage.com">
-											<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send E-mail
-										</a>
-									</span>
-							</div><!-- /input-group -->
-						  <!--Telegram-->
-							<br>
-							<div class="input-group">
-								<div class="input-group-addon">Telegram</div>
-								<input readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage">
-											<span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send Message
-										</a>
-									</span>
-							</div><!-- /input-group -->
-							<br>
-					</div>
-					<!--Contact Help Collapsible Content-->
-					<div class="collapse" id="contact-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#contact-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>More Information</strong><br>
-							<strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
-							<strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.
-					  </div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#contact-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
+		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"></div>
 		<!--Donate Modal-->
-		<div class="modal fade" id="donate" tabindex="-1" role="dialog">
-		  <div class="modal-dialog modal-md">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
-		      </div>
-		      <div class="modal-body">
-						If you enjoy what I do, a donation would be highly appreciated.
-						<br>
-						<br>
-		          <!--Bitcoin-->
-							<div class="input-group">
-			          <div class="input-group-addon"><a target="_blank" href="https://bitcoin.org/en/">Bitcoin (฿)</a></div>
-			          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate ฿</a>
-										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-bitcoin">Scan QR</a>
-									</span>
-							</div>
-							<br>
-		          <!--Dogecoin-->
-							<div class="input-group">
-			          <div class="input-group-addon"><a target="_blank" href="http://dogecoin.com/">Dogecoin (Ð)</a></div>
-			          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate Ð</a>
-										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-dogecoin">Scan QR</a>
-									</span>
-							</div>
-							<br>
-		          <!--Litecoin-->
-							<div class="input-group">
-			          <div class="input-group-addon"><a target="_blank" href="https://litecoin.com/">Litecoin (Ł)</a></div>
-			          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
-									<span class="input-group-btn">
-										<a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate Ł</a>
-										<a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-litecoin" data-toggle="tooltip">Scan QR</a>
-									</span>
-							</div>
-							<!--QR-Bitcoin-->
-							<div class="collapse" id="qr-bitcoin">
-							  <div class="well">
-							    <strong>Bitcoin</strong>
-									<img class="img-responsive center-block" src="images/qr-bitcoin.png" height="150" width="150">
-								</div>
-							</div>
-							<!--QR-Dogecoin-->
-							<div class="collapse" id="qr-dogecoin">
-							  <div class="well">
-							    <strong>Dogecoin</strong>
-									<img class="img-responsive center-block" src="images/qr-dogecoin.png" height="150" width="150">
-								</div>
-							</div>
-							<!--QR-Litecoin-->
-							<div class="collapse" id="qr-litecoin">
-							  <div class="well">
-							    <strong>Litecoin</strong>
-									<img class="img-responsive center-block" src="images/qr-litecoin.png" height="150" width="150">
-								</div>
-							</div>
-		      </div>
-					<!--Donate Help Collapsible Content-->
-					<div class="collapse" id="donate-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>What payment methods are these?</strong><br>
-							These are called cryptocurrencies.
-							They are a digital medium of exchange.
-							They use cryptography for security, making them difficult to counterfeit.
-							Click the names of them to learn more.<br>
-							<strong>QR Codes:</strong><br>
-							You must have a QR code scanner to use these.<br>
-							Preferably one built into your cryptocurrency client.<br>
-							<strong>Note:</strong><br>
-							You must have the correct cryptocurrency client to use the "Donate" buttons.
-					  </div>
-					</div>
-		      <div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#donate-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-		      </div>
-		    </div>
-		  </div>
-		</div><!-- /donate modal -->
-
+		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"></div>
 		<!--Stats Modal-->
-		<div class="modal fade" id="stats" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black" id="exampleModalLabel">Stats</h4>
-					</div>
-					<div class="modal-body">
-						<table class="table table-responsive table-condensed table-hover">
-							<!--Clock-->
-							<tr>
-								<td><h5 class="black">Time</h5></td>
-						    <th><h5 class="black" id="clock"></h5></th>
-							</tr>
-						  <!--Counter-->
-							<tr>
-								<td><h5 class="black">Requests</h5></td>
-						    <th><h5 class="black" id="requests"></h5></th>
-							</tr>
-						  <!--Bootstrap Version-->
-							<tr>
-								<td><h5 class="black">Bootstrap</h5></td>
-						    <th><h5 class="black">v3.3.5</h5></th>
-							</tr>
-						  <!--OS-->
-						  <tr>
-								<td><h5 class="black">OS</h5></td>
-						    <th><h5 class="black" id="os"></h5></th>
-						  </tr>
-							<!--Browser-->
-						  <tr>
-								<td><h5 class="black">Browser</h5></td>
-						    <th><h5 class="black" id="browser"></h5></th>
-						  </tr>
-							<!--Supported Browsers-->
-						  <tr>
-								<td><h5 class="black">Compatibility</h5></td>
-						    <th>
-									<img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
-									<img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
-									<img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
-									<img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
-								</th>
-						  </tr>
-							<!--Debugging-->
-							<tr>
-								<td><h5 class="black">Debugging</h5></td>
-						    <th>
-									<button type="button" class="btn btn-danger" onclick="location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reload Page">
-										<span class="glyphicon glyphicon-refresh" aria-hidden="true"> </span>
-									</button>
-									<button type="button" class="btn btn-danger" onclick="document.cookie='Counter=0; expires=Thu, 18 Dec 2099 12:00:00 UTC';location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reset Counter">
-										<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
-									</button>
-								</th>
-						  </tr>
-						</table>
-					</div>
-					<!--Stats Help Collapsible Content-->
-					<div class="collapse" id="stats-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#stats-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>What does this do?</strong><br>
-							The Stats modal displays information related to your system.<br>
-							The "requests" are how many times you've loaded any page within this website.
-							<br>
-							<br>
-							<strong>Compatibility row?</strong><br>
-							These specific browsers have been tested to some extent and work desireably.<br>
-							This does not mean unlisted browsers do not work.<br>
-							Hover over an image to view more Information.
-							<br>
-							<br>
-							<strong>Note:</strong><br>
-							Version numbers are the last known version which the site was tested on.
-					  </div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#stats-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-						  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div><!-- /.modal-footer -->
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
+		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
+		<!--Reload Page Modal (Activated from Stats modal)-->
+		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
 		<!--Hide Ads Modal-->
-		<div class="modal fade" id="hideAds" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Hide Ads</h4>
-					</div>
-					<div class="modal-body">
-					You must be seeing things.<br>
-					I don't see any ads.
-					</div>
-					<!--Hide Ads Collapsible Content-->
-					<div class="collapse" id="eyetest-collapse">
-						<button type="button" class="btn btn-danger" onclick="$('#eyetest-collapse').collapse('toggle'); $('#hideAds').modal('toggle');">
-							<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Go away!
-						</button>
-						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> Wow, so funny.
-							<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
-						</button>
-
-						<img class="img-responsive" src="images/eyetest.png" height="800" width="997">
-					</div><!-- /.modal-collapse-->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
-						</button>
-						<button type="button" class="btn btn-primary" onclick="$('#eyetest-collapse').collapse('toggle');"> I need an eye test!
-						  <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
-						</button>
-					</div><!-- /.modal-footer-->
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
+		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
 		<!--Easter Eggs Modal-->
-		<div class="modal fade" id="easter" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">List of Easter Eggs</h4>
-					</div>
-					<div class="modal-body">
-						This is a list of Easter Eggs currently found in this website.
-
-						<hr>
-
-						<strong>namePrompt</strong><br>
-						Inputting any of these queries into the <a href="about.html#functions">namePrompt</a> function will output a special result.<br>
-						<ul class="text-left">
-							<li>Travis Kipp</li>
-							<li>Matt, Carson, Chris</li>
-							<li>Tanner (Audio)</li>
-							<li>Ryan</li>
-							<li>Noah</li>
-							<li>Kevin</li>
-							<li>Dan</li>
-							<li>Connie</li>
-							<li>Emily (Audio)</li>
-							<li>Kim, Sabrina, Courtney</li>
-							<li>Rachel</li>
-							<li>Tony</li>
-							<li>Joe</li>
-							<li>Brian</li>
-							<li>David (Audio)</li>
-							<li>Jenny (Audio)</li>
-							<li>867-5309</li>
-							<li>Stacy (Audio)</li>
-							<li>Jessie (Audio)</li>
-							<li>Leah (Audio)</li>
-							<li>Immortal (Audio)</li>
-							<li>Radio (Audio)</li>
-							<li>Mickey (Audio)</li>
-							<li>Jesus</li>
-							<li>Cortana (Audio)</li>
-							<li>Siri (Audio)</li>
-							<li>Spock</li>
-							<li>The Doctor</li>
-							<li>Mirth</li>
-							<li>Software</li>
-							<li>Python</li>
-							<li>JavaScript</li>
-							<li>Curse Words (Not going to list them) (Audio)</li>
-							<li>Reset</li>
-							<li>No input (Pressing "OK")</li>
-						</ul>
-
-						<hr>
-
-						<strong>Search</strong><br>
-						Inserting these queries into the <a href="about.html#functions">Search</a> function will output special results.<br>
-						<strong>Note:</strong> This does not include page results.
-						<ul class="text-left">
-							<li>Google (Goes to: <a href="https://www.google.com/">https://www.google.com/</a>)</li>
-							<li>Bing (Goes to: <a href="https://www.bing.com/">https://www.bing.com/</a>)</li>
-							<li>Duck (Goes to: <a href="https://duckduckgo.com/">https://duckduckgo.com/</a>)</li>
-							<li>YouTube (Goes to: <a href="https://www.youtube.com/">https://www.youtube.com/</a>)</li>
-							<li>RuneScape (Launches RuneScape if it's installed.)</li>
-							<li>DarkScape (Launches DarkScape if it's installed.)</li>
-						</ul>
-
-						<hr>
-
-						<strong>General</strong><br>
-						<ul class="text-left">
-							<li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
-							<li>Inserting the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site</li>
-							<li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
-							<li>Clicking "Hide Ads" in the footer.</li>
-						</ul>
-					</div>
-					<!--Easter Egg Help Collapsible Content-->
-					<div class="collapse" id="easteregg-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#easteregg-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>What's this?</strong><br>
-							You inserted the <a target="_blank" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
-							I doubt you got here by mistake.
-							<img class="img-responsive center-block" src="./images/svg/konami.svg">
-					  </div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#easteregg-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"></div>
+		<!--Search Help Modal-->
+		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"></div>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
