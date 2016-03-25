@@ -322,7 +322,7 @@
 						<h1>March 22, 2016</h1>
 						<p>
 							<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed modals for faster loading and more versatility.<br>
-							Ajaxed News from 2015 in the website pane.<br>
+							<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed News from 2015 in the website pane.<br>
 							Page sizes reduced due to ajaxing modals.
 							<br>
 							<br>
@@ -526,10 +526,18 @@
 						<span class="newsSection">
 							<h1>Known Bugs / Problems</h1>
 							<p>
-								Found a problem? <a class="link" data-toggle="modal" data-target="#contact">Contact</a> me.
+								Found a problem? <a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a> me.
 								<br>
 								<br>
 								Note: Tooltips are disabled on touchsreen devices.<br>
+								Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.
+								<br>
+								<br>
+								<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on Chromium based browsers.<br>
+								A known workaround for this problem is to load Chrome with a flag.<br>
+								<kbd>Win + R</kbd> > <kbd>chrome.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd>
+								<br>
+								<br>
 								Scrolling back to the top of the page on a Mobile device can be laggy.<br>
 								Going to anchors clips content due to the fixed navigation bar.<br>
 								Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
@@ -668,7 +676,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/search.js"></script>
 		<script src="js/nprogress.js"></script>
-		<script src="js/bootstrap3-typeahead.min.js"></script>
+		<script src="js/typeahead.min.js"></script>
 		<script src="js/jquery.ripples.js"></script>
 		<script src="js/snowstorm.js"></script>
 		<script src="js/konami.js"></script>
