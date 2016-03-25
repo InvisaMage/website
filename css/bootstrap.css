@@ -5485,6 +5485,9 @@ button.list-group-item-danger.active:focus {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+.panel-transparent {
+  background: rgba(0,0,0,0);
+}
 .panel-body {
   padding: 15px;
   color: #3399FF;
@@ -5757,6 +5760,7 @@ button.list-group-item-danger.active:focus {
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #337ab7;
 }
+
 /* Green Pannel for namePrompt lists */
 .panel-green {
   border-color: #5CB85C;
@@ -5776,6 +5780,7 @@ button.list-group-item-danger.active:focus {
 .panel-green > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #5CB85C;
 }
+
 .panel-success {
   border-color: #d6e9c6;
 }
