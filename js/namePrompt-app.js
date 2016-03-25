@@ -1,11 +1,10 @@
-// If name is listed below, special message is displayed. If not, input is displayed
+//If name is listed below, special message is displayed. If not, input is displayed
 
 function namePromptapp()
 {
 	var name = document.getElementById("name-value").value;
 
-	if (name != null)
-	{
+	if (name != null) {
 //Default
 		document.getElementById("name").innerHTML =
 		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Web App.<br>" +
@@ -37,15 +36,6 @@ function namePromptapp()
 		document.getElementById("name").innerHTML =
 		"Ohhh No!" +
 		"<audio autoplay preload='auto'><source src='./audio/no.mp3' type='audio/mpeg'></audio>"
-//Ryan
-		if (name == "Ryan" || (name == "ryan"))
-		document.getElementById("name").innerHTML =
-		"Welcome, The almighty box ghost, to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Web App."
-//Noah
-		if (name == "Noah" || (name == "noah"))
-		document.getElementById("name").innerHTML =
-		"How's it going, SirSaltyMcDongThong?<br>" +
-		"By the way, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s Web App."
 //Kevin - Host
 		if (name == "Kevin" || (name == "kevin"))
 		document.getElementById("name").innerHTML =
@@ -484,7 +474,7 @@ function namePromptapp()
 		"Doctor Who?<br>" +
 		"Hey look, I found your TARDIS.<br><br>" +
 		"<img class='img-responsive img-rounded center-block' src='images/tardis.jpg' height='200' width='225'>"
-//Mirth
+//Mirth - List
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
 		"<div class='panel panel-green'>" +
@@ -497,7 +487,24 @@ function namePromptapp()
 				"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank'' href='http://www.cleverbot.com/'>Cleverbot</a>" +
 			"</div>"+
 		"</div>"
-//Software
+//Browsers - List
+		if (name == "Browsers" || (name == "browsers") || (name == "Browser") || (name == "browser"))
+		document.getElementById("name").innerHTML =
+		"A list of popular web browsers." +
+		"<div class='panel panel-green'>" +
+			"<div class='panel-heading'>" +
+				"<h3 class='panel-title'>Browsers</h3>" +
+			"</div>" +
+			"<div class='panel-body'>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' href='https://www.chromium.org/'>Chromium</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the company's Windows 10 operating systems.' target='_blank' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' href='https://www.apple.com/safari/'>Safari</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' href='https://www.opera.com/'>Opera</a>" +
+			"</div>" +
+		"</div>"
+//Software - List
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
 		"Ask and you shall receive." +

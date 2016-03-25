@@ -1,4 +1,4 @@
-// If name is listed below, special message is displayed. If not, input is displayed
+//If name is listed below, special message is displayed. If not, input is displayed
 
 function namePrompt()
 {
@@ -15,7 +15,7 @@ function namePrompt()
 		"Hello creator and welcome back to your website.<br>" +
 		"Here are some links I thought you might like.<br>" +
 		"When are you ever going to make some real content?<br><br>" +
-		"<div class='panel panel-green'>" +
+		"<div class='panel panel-transparent panel-green'>" +
 			"<div class='panel-heading'>" +
 				"<h3 class='panel-title'>Links</h3>" +
 			"</div>" +
@@ -36,15 +36,6 @@ function namePrompt()
 		document.getElementById("name").innerHTML =
 		"Ohhh No!" +
 		"<audio autoplay preload='auto'><source src='./audio/no.mp3' type='audio/mpeg'></audio>"
-//Ryan
-		if (name == "Ryan" || (name == "ryan"))
-		document.getElementById("name").innerHTML =
-		"Welcome, The almighty box ghost, to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
-//Noah
-		if (name == "Noah" || (name == "noah"))
-		document.getElementById("name").innerHTML =
-		"How's it going, SirSaltyMcDongThong?<br>" +
-		"By the way, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 //Kevin - Host
 		if (name == "Kevin" || (name == "kevin"))
 		document.getElementById("name").innerHTML =
@@ -469,7 +460,7 @@ function namePrompt()
 		document.getElementById("name").innerHTML =
 		"What can I help you with?<br><br>" +
 		"<img class='img-responsive img-rounded center-block' src='images/siri.gif' height='113' width='555'><br>" +
-		"Hmmm.. Let me think about that." +
+		"Hmmm... Let me think about that." +
 		"<audio autoplay preload='auto'><source src='./audio/siri.mp3' type='audio/mpeg'></audio>"
 //Spock
 		if (name == "Spock" || (name == "spock"))
@@ -486,26 +477,43 @@ function namePrompt()
 //Mirth - List
 		if (name == "Mirth" || (name == "mirth"))
 		document.getElementById("name").innerHTML =
-		"<div class='panel panel-green'>" +
+		"<div class='panel panel-transparent panel-green'>" +
 			"<div class='panel-heading'>" +
 				"<h3 class='panel-title'>Mirth</h3>" +
 			"</div>" +
 			"<div class='panel-body'>" +
-				"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank'' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
-				"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank'' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
-				"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank'' href='http://www.cleverbot.com/'>Cleverbot</a>" +
-			"</div>"+
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank' href='http://www.cleverbot.com/'>Cleverbot</a>" +
+			"</div>" +
+		"</div>"
+//Browsers - List
+		if (name == "Browsers" || (name == "browsers") || (name == "Browser") || (name == "browser"))
+		document.getElementById("name").innerHTML =
+		"A list of popular web browsers." +
+		"<div class='panel panel-transparent panel-green'>" +
+			"<div class='panel-heading'>" +
+				"<h3 class='panel-title'>Browsers</h3>" +
+			"</div>" +
+			"<div class='panel-body'>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' href='https://www.chromium.org/'>Chromium</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the company's Windows 10 operating systems.' target='_blank' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' href='https://www.apple.com/safari/'>Safari</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' href='https://www.opera.com/'>Opera</a>" +
+			"</div>" +
 		"</div>"
 //Software - List
 		if (name == "Software" || (name == "software"))
 		document.getElementById("name").innerHTML =
 		"Ask and you shall receive." +
-		"<div class='panel panel-green'>" +
+		"<div class='panel panel-transparent panel-green'>" +
 			"<div class='panel-heading'>" +
 				"<h3 class='panel-title'>Software</h3>" +
 			"</div>" +
 			"<div class='panel-body'>" +
-				"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='www.firefox.com'>Mozilla Firefox</a><br>" +
+				"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
 				"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' href='https://telegram.org/'>Telegram</a><br>" +
 				"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
 				"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
