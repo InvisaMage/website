@@ -5889,6 +5889,16 @@ button.list-group-item-danger.active:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+.well-black {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #737373;
+  border: 1px solid #4d4d4d;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
 .well blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
@@ -5977,6 +5987,19 @@ button.close {
           background-clip: padding-box;
   outline: 0;
 }
+.modal-content-black {
+  position: relative;
+  background-color: #333333;
+  border: 1px solid #262626;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  outline: 0;
+  color: #f2f2f2;
+}
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -5999,6 +6022,11 @@ button.close {
   border-bottom: 1px solid #e5e5e5;
   min-height: 16.42857143px;
 }
+.modal-header-black {
+  padding: 15px;
+  border-bottom: 1px solid #737373;
+  min-height: 16.42857143px;
+}
 .modal-header .close {
   margin-top: -2px;
 }
@@ -6014,6 +6042,11 @@ button.close {
   padding: 15px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
+}
+.modal-footer-black {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #737373;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
@@ -6038,6 +6071,10 @@ button.close {
     margin: 30px auto;
   }
   .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .modal-content-black {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
