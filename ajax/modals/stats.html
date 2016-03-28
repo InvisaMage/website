@@ -14,11 +14,6 @@
           <td><h5 class="black">Time</h5></td>
           <th><h5 class="black" id="clock"></h5></th>
         </tr>
-        <!--Counter-->
-        <tr>
-          <td><h5 class="black">Requests</h5></td>
-          <th><h5 class="black" id="requests"></h5></th>
-        </tr>
         <!--Bootstrap Version-->
         <tr>
           <td><h5 class="black">Bootstrap</h5></td>
@@ -41,10 +36,11 @@
         </tr>
         <!--Supported Browsers-->
         <tr>
-          <td><h5 class="black">Compatibility</h5></td>
+          <td><h5 class="black">Support</h5></td>
           <th>
             <img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
             <img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
+            <img class="stats-browser-img" src="images/browsers/opera.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Opera v33+">
             <img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
             <img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
           </th>
@@ -53,12 +49,17 @@
         <tr>
           <td><h5 class="black">Debugging</h5></td>
           <th>
-            <button type="button" class="btn btn-danger" onclick="location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reload Page">
-              <span class="glyphicon glyphicon-refresh" aria-hidden="true"> </span>
-            </button>
-            <button type="button" class="btn btn-danger" onclick="document.cookie='Counter=0; expires=Thu, 18 Dec 2099 12:00:00 UTC'; $('#modal-stats').modal('hide'); $('#modal-stats').on('hidden.bs.modal', function (e) { $('#modal-reload').load('ajax/modals/reload.html #ajax-reload'); $('#modal-reload').modal(); });" data-toggle="tooltip" data-placement="bottom" title="Reset Requests">
-              <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
-            </button>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-danger" onclick="location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reload Page" data-container="body">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-danger" onclick="document.cookie='Counter=0; expires=Thu, 18 Dec 2099 12:00:00 UTC'; $('#modal-stats').modal('hide'); $('#modal-stats').on('hidden.bs.modal', function (e) { $('#modal-reload').load('ajax/modals/reload.html'); $('#modal-reload').modal(); });" data-toggle="tooltip" data-placement="bottom" title="Reset Requests" data-container="body">
+                <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-danger" onclick="$('#modal-stats').modal('hide'); $('#modal-stats').on('hidden.bs.modal', function (e) { $('#modal-terminal').load('ajax/modals/terminal.html'); $('#modal-terminal').modal(); });" data-toggle="tooltip" data-placement="bottom" title="Terminal" data-container="body">
+                <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+              </button>
+            </div>
           </th>
         </tr>
       </table>
@@ -68,12 +69,11 @@
       <div class="well">
         <button type="button" class="close" onclick="$('#modal-stats-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>What does this do?</strong><br>
-        The Stats modal displays information related to your system.<br>
-        The "requests" are how many times you've loaded any page within this website.
+        The Stats modal displays information related to your system.
         <br>
         <br>
-        <strong>Compatibility row?</strong><br>
-        These specific browsers have been tested to some extent and work desireably.<br>
+        <strong>Support row?</strong><br>
+        These specific browsers have been tested to some extent and work desirably.<br>
         This does not mean unlisted browsers do not work.<br>
       </div>
     </div>
@@ -102,43 +102,6 @@
   		var d = new Date();
   		var t = d.toLocaleTimeString();
   		document.getElementById("clock").innerHTML = t;
-  }
-
-  //Counter - Displays how many times you have visited the web page
-  var cookiec = document.cookie
-  if (cookiec != "") {
-  	var eqchr = 0;
-  	for (var cloop = 1; cloop <= cookiec.length; cloop++) {
-  		if (cookiec.charAt(cloop) == "=") {
-  			eqchr=(++cloop);
-  		}
-  	}
-  	var cookiess = 0;
-  	clength=cookiec.length;
-  	cookies="";
-  	for (cloop = eqchr; cloop < clength; cloop++) {
-  		if (cookiec==";") {
-  			cloop=clength;
-  		}
-  		else {
-  			cookies = cookies + cookiec.charAt(cloop);
-  		}
-  	}
-  	cookiess = parseInt(cookies);
-    $('#requests').append(" " + cookiess + " ");
-  	cookiess++;
-  	cookies = cookiess;
-  	var one_week = 7 * 24 * 60 * 60 * 1000;
-  	var expDate = new Date();
-  	expDate.setTime(expDate.getTime() + one_week);
-  	document.cookie = "Counter=" + escape(cookies) + "; expires=" + expDate.toGMTString();
-  }
-  else {
-  	var one_week = 7 * 24 * 60 * 60 * 1000;
-  	var expDate = new Date();
-  	expDate.setTime(expDate.getTime() + one_week);
-  	document.cookie = "Counter=2; expires=" + expDate.toGMTString();
-    $('#requests').append("1");
   }
 
   //OS - Detects the user's OS.
