@@ -649,7 +649,7 @@ h1 h2 h3 {
 	border: 1px solid black;
 	border-width: 5px 0;
 	position: absolute;
-	top: 3255px;
+	top: 3500px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 	font-size: 14px;
@@ -991,4 +991,8 @@ footer ul {
 
 #stats-button {
 	padding-bottom: 13px;
+}
+
+.color-white {
+	color: #f2f2f2;
 }
