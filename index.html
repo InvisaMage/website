@@ -17,6 +17,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/ptty.css" rel="stylesheet">
 		<!--iOS Bookmark Image-->
 		<link rel="apple-touch-icon" sizes="152x152" href="images/imlogo.png">
 	</head>
@@ -131,21 +132,13 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>March 22, 2016</h3>
+							<h3>March 27, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed modals for faster loading and more versatility.<br>
-							<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed News from 2015 in the website pane.<br>
-							Page sizes reduced due to ajaxing modals.
-							<br>
-							<br>
-							The help button next to the search bar now displays a helpful modal.<br>
-							This was implemented for better mobile support (Tooltips are disabled on small screens).
-							<br>
-							<br>
-							Added a reload page prompt after resetting request counter.<br>
-							Updated Web App to use modals and minor fixes to other content.<br>
-							General improvements and fixes.
+								Added a fake terminal to Stats modal.<br>
+								Will add more commands over time (Maybe some useful ones).<br>
+								Added the <a class="link" href="https://www.opera.com/" target="_blank">Opera</a> browser to the "Support" list.<br>
+								Removed "requests" in the Stats modal.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -319,6 +312,8 @@
 		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
 		<!--Reload Page Modal (Activated from Stats modal)-->
 		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
+		<!--Terminal Modal (Activated from Stats modal)-->
+		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"></div>
 		<!--Hide Ads Modal-->
 		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
 		<!--Easter Eggs Modal-->
@@ -337,6 +332,7 @@
 		<script src="js/snowstorm.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/ptty.jquery.min.js"></script>
 	</body>
 	</div>
 </html>
