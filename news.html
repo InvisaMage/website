@@ -17,6 +17,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
 	<!--Page Loading...-->
@@ -300,6 +301,7 @@
 						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option disabled>March 2016</option>
+							<option value="news.html#3-27-16-website">March 27, 2016</option>
 							<option value="news.html#3-22-16-website">March 22, 2016</option>
 							<option value="news.html#3-4-16-website">March 4, 2016</option>
 							<option disabled>February 2016</option>
@@ -316,6 +318,20 @@
 						<br>
 						<br>
 					</div>
+
+					<!--March 27, 2016-->
+					<span class="newsSection" id="3-27-16-website">
+						<h1>March 27, 2016</h1>
+						<p>
+							Added a fake terminal to Stats modal.<br>
+							Will add more commands over time (Maybe some useful ones).<br>
+							Added the <a class="link" href="https://www.opera.com/" target="_blank">Opera</a> browser to the "Support" list.<br>
+							Removed "requests" in the Stats modal.
+						</p>
+					</span><!-- /3-27-16 -->
+
+					<br>
+					<br>
 
 					<!--March 22, 2016-->
 					<span class="newsSection" id="3-22-16-website">
@@ -497,6 +513,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> March 2016</a></li>
 								<div id="menu-news-nested">
+									<li><a href="#3-27-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 27th</a></li>
 									<li><a href="#3-22-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 22nd</a></li>
 									<li><a href="#3-4-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 4th</a></li>
 								</div>
@@ -664,6 +681,8 @@
 		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
 		<!--Reload Page Modal (Activated from Stats modal)-->
 		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
+		<!--Terminal Modal (Activated from Stats modal)-->
+		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"></div>
 		<!--Hide Ads Modal-->
 		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
 		<!--Easter Eggs Modal-->
@@ -681,6 +700,7 @@
 		<script src="js/snowstorm.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/ptty.jquery.min.js"></script>
 	</body>
 	</div>
 </html>
