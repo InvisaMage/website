@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<!--Terminal Modal-->
+<div class="modal-dialog modal-md">
+  <div class="modal-content-black modal-black">
+    <div class="modal-header-black">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title color-white">Terminal</h4>
+    </div>
+    <div class="modal-body">
+      <div id="terminal" style="height:200px;"></div>
+    </div>
+    <!--Terminal Help Collapsible Content-->
+    <div class="collapse" id="modal-terminal-collapse">
+      <div class="well-black">
+        <button type="button" class="close" onclick="$('#modal-terminal-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What does this do?</strong><br>
+        Terminal stuff.
+      </div>
+    </div>
+    <div class="modal-footer-black">
+      <button type="button" class="btn btn-info" onclick="$('#modal-terminal-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer-black -->
+  </div><!-- /.modal-content-black -->
+</div><!-- /.modal-terminal-->
+
+<script>
+$(document).ready(function() {
+/* Start Ptty terminal */
+$('#terminal').Ptty({
+        height   : '500px',
+        welcome  : 'InvisaMage\'s Website Interpreter | Copyright (c) 2014-2016\n Type \'help\' to view a list of commands.',
+        autofocus: 'true'
+    });
+
+$.register_command(
+    'about',
+    'Tells you about the purpose of this website.',
+    'about',
+    function(){
+        var about = 'The purpose of this website is to organize my projects and to give me something to do in my free time. ' +
+        'The website itself is a project. ' +
+        'Feel free to let me know what you think.';
+
+        return {
+            type : 'print',
+            out : about
+        };
+    }
+);
+
+$.register_command(
+    'options',
+    'options help.',
+    'options usage.',
+    function(cmd){
+        console.log(cmd);
+        var tk = $.tokenize(cmd.join(' '), ['-opt','-opt2']);
+        return cmd;
+    }
+);
+
+/* GitHub Repository */
+$.register_command(
+    'repository',
+    'View the website repository on GitHub.',
+    'repository [no options]',
+    function(){
+        	window.open("https://github.com/InvisaMage/website");
+          return {
+              type : 'print',
+              out  : 'Opening new tab.'
+          };
+    }
+);
+
+/* Open Contact Modal */
+$.register_command(
+    'contact',
+    'Contact site developer',
+    'contact [no options]',
+    function(){
+        var contact = '<a href="mailto:support@invisamage.com">E-Mail</a>       <a href="https://telegram.me/InvisaMage" target="blank_">Telegram Messenger</a>';
+
+        return {
+              type : 'print',
+              out  : contact
+          };
+    }
+);
+
+/* About InvisaMage */
+$.register_command(
+    'invisamage',
+    'Learn about InvisaMage.',
+    'invisamage [no options]',
+    function(){
+        var invisamage = 'A 17 year old human male who likes web technologies and assorted games.';
+
+        return {
+            type : 'print',
+            out : invisamage
+        };
+    }
+);
+
+/* Register Commands and Callbacks*/
+$.register_command(
+    'date',
+    'returns the current date',
+    'date [no options]',
+    function(){
+        var now = new Date();
+        return {
+            type : 'print',
+            out : now + ' '
+        };
+    }
+);
+
+$.register_command(
+    'echo',
+    'Output to the command line',
+    'echo [text to output]',
+    function(args){
+        args.shift();
+        return {out : args.join(' ')};
+});
+
+$.register_command(
+    'sudo',
+    'Perform commands with administrator privileges.',
+    'sudo [command]',
+    function(){
+        var sudo = 'Nice try.';
+
+        return {
+            type : 'print',
+            out : sudo
+        };
+    }
+);
+
+$.register_command(
+    'reload',
+    'Reload the page.',
+    'reload [no options]',
+    function(args){
+        location.reload();
+});
+
+$.register_command(
+    'exit',
+    'Exit the Terminal Modal',
+    'exit [no options]',
+    function(args){
+        $('#modal-terminal').modal('toggle')
+});
+
+$.register_command(
+    'type', // Unicode PS1
+    'Subcommand example.',
+    'type [no options]',
+    {
+        ps : 'type',
+        start_hook      : function(){
+            return {
+                type : 'print',
+                callback : 'typewriter',
+                out : '',
+                write : '&lt;p&gt;Hello, &lt;b&gt;type&lt;/b&gt; is a callback example that outputs text like a typewriter.&lt;br&gt;'
+            };
+        },
+        exit_hook       : function(){
+            return {
+                type : 'print',
+                out : 'Exit signal received: Bye.'
+            };
+        },
+        dispatch_method : function(args){
+            return {
+                type : 'print',
+                callback : 'typewriter',
+                out : '',
+                write : args.join(' ')
+            };
+        }
+    }
+);
+
+// Typewriter effect callback
+$.register_callback('typewriter', function(data){
+    var text_input = $('.cmd_terminal_prompt');
+    text_input.hide();
+    if(typeof data.write === 'string'){
+        // decode special entities.
+        var str = $('<div/>').html(data.write + ' ').text(),
+        typebox = $('<div></div>').appendTo('.cmd_terminal_content'),
+        i = 0,
+        isTag,
+        text;
+        (function typewriter() {
+            text = str.slice(0, ++i);
+            if (text === str) return text_input.show();
+
+            typebox.html(text);
+
+            var char = text.slice(-1);
+            if( char === '<' ) isTag = true;
+            if( char === '>' ) isTag = false;
+
+            if (isTag) return typewriter();
+            setTimeout(typewriter, 40);
+        }());
+    }
+});
+
+});
+</script>
