@@ -4,7 +4,7 @@
 <div class="modal-dialog modal-md">
   <div class="modal-content-black modal-black">
     <div class="modal-header-black">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white;"><span aria-hidden="true">&times;</span></button>
       <h4 class="modal-title color-white">Terminal</h4>
     </div>
     <div class="modal-body">
@@ -13,9 +13,10 @@
     <!--Terminal Help Collapsible Content-->
     <div class="collapse" id="modal-terminal-collapse">
       <div class="well-black">
-        <button type="button" class="close" onclick="$('#modal-terminal-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" onclick="$('#modal-terminal-collapse').collapse('toggle');" aria-label="Close" style="color:white;"><span aria-hidden="true">&times;</span></button>
         <strong>What does this do?</strong><br>
-        Terminal stuff.
+        Type "help" to view a list of available commands.<br>
+        Type "help [command name]" to view detailed information on a specific command.
       </div>
     </div>
     <div class="modal-footer-black">
@@ -38,33 +39,30 @@ $(document).ready(function() {
 $('#terminal').Ptty({
         height   : '500px',
         welcome  : 'InvisaMage\'s Website Interpreter | Copyright (c) 2014-2016\n Type \'help\' to view a list of commands.',
+        autofocus: 'true',
+        ps       : '',
         autofocus: 'true'
     });
 
+/* About InvisaMage | Website | Terminal */
 $.register_command(
     'about',
-    'Tells you about the purpose of this website.',
-    'about',
-    function(){
-        var about = 'The purpose of this website is to organize my projects and to give me something to do in my free time. ' +
-        'The website itself is a project. ' +
-        'Feel free to let me know what you think.';
-
-        return {
-            type : 'print',
-            out : about
-        };
-    }
-);
-
-$.register_command(
-    'options',
-    'options help.',
-    'options usage.',
-    function(cmd){
-        console.log(cmd);
-        var tk = $.tokenize(cmd.join(' '), ['-opt','-opt2']);
-        return cmd;
+    'Gives you more information on various things.',
+    'about [-invisamage | -website | -terminal]',
+    function(about){
+        var tokens = $.tokenize(about.join(' '), ['-invisamage','/i','/t','/w','-website','-terminal']);
+        if(tokens.hasOwnProperty('-invisamage')||tokens.hasOwnProperty('/i')){
+            about.out = 'A 17 year old human male who likes web technologies and assorted games.';
+        }else if(tokens.hasOwnProperty('-website')||tokens.hasOwnProperty('/w')){
+            about.out = 'The purpose of this website is to organize my projects and to give me something to do in my free time. ' +
+            'The website itself is a project. ' +
+            'Feel free to let me know what you think.';
+        }else if(tokens.hasOwnProperty('-terminal')||tokens.hasOwnProperty('/t')){
+            about.out = 'InvisaMage\'s Website Interpreter | Copyright (c) 2014-2016\nThis is a fake terminal created using <a href="https://github.com/pachanka/Ptty" target="_blank">Ptty.js</a>.';
+        }else{
+            about.out = 'Improper usage of command.\nabout [-invisamage | -website | -terminal]';
+        }
+        return about;
     }
 );
 
@@ -76,8 +74,8 @@ $.register_command(
     function(){
         	window.open("https://github.com/InvisaMage/website");
           return {
-              type : 'print',
-              out  : 'Opening new tab.'
+              type: 'print',
+              out : 'Opening new tab.'
           };
     }
 );
@@ -91,64 +89,288 @@ $.register_command(
         var contact = '<a href="mailto:support@invisamage.com">E-Mail</a>       <a href="https://telegram.me/InvisaMage" target="blank_">Telegram Messenger</a>';
 
         return {
-              type : 'print',
-              out  : contact
+              type: 'print',
+              out : contact
           };
     }
 );
 
-/* About InvisaMage */
+/* Fake dir command */
 $.register_command(
-    'invisamage',
-    'Learn about InvisaMage.',
-    'invisamage [no options]',
-    function(){
-        var invisamage = 'A 17 year old human male who likes web technologies and assorted games.';
+    'dir',
+    'Displays a list of files and subdirectories in a directory.',
+    'dir [-root | -ajax | -modals | -archive | -audio | -css | -fonts | -images | -browsers | -fs | -ios | -svg | -js | -json]',
+    function(dir){
+        var tokens = $.tokenize(dir.join(' '), ['-ajax','-root','-modals','-archive','-audio','-css','-fonts','-images','-browsers','-fs','-ios','-svg','-js','-json']);
+        if(tokens.hasOwnProperty('-root')){
+            dir.out =
+            'Directory of "root"<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> ajax<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> archive<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> audio<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> css<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> fonts<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> images<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> js<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> json<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> 404.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> about.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> app.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> archive.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs-beta-changelog.txt<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs-changelog.txt<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> index.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> invisarant.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> news.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> privacy.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terms.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> webapp.html';
+        }else if(tokens.hasOwnProperty('-ajax')){
+            dir.out =
+            'Directory of "ajax"<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> modals<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> footer.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> news-website-2015.html';
+        }else if(tokens.hasOwnProperty('-modals')){
+            dir.out =
+            'Directory of "modals"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ads.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> contact.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> cookies.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> donate.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> eastereggs.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> privacy-no.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> privacy-yes.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> reload.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search-help.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> stats.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terminal.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terms-no.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terms-yes.html';
+        }else if(tokens.hasOwnProperty('-archive')){
+            dir.out =
+            'Directory of "archive"<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> 1-30-15<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> 6-27-15<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> gdrive';
+        }else if(tokens.hasOwnProperty('-audio')){
+            dir.out =
+            'Directory of "audio"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> beep.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> cortana.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> david.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> immortal.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> jenny.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> jessie.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> leah.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> mickey.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> name.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> no.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> radio.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> siri.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> stacy.mp3<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> woman.mp3';
+        }else if(tokens.hasOwnProperty('-css')){
+            dir.out =
+            'Directory of "css"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bootstrap.css<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> nprogress.css<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ptty.css<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> styles.css';
+        }else if(tokens.hasOwnProperty('-fonts')){
+            dir.out =
+            'Directory of "fonts"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> glyphicons-halflings-regular.eot<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> glyphicons-halflings-regular.svg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> glyphicons-halflings-regular.ttf<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> glyphicons-halflings-regular.woff<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> glyphicons-halflings-regular.woff2<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ubuntu.ttf<br>';
+        }else if(tokens.hasOwnProperty('-images')){
+            dir.out =
+            'Directory of "images"<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> browsers<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> fs<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> ios<br>' +
+            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> svg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> 404.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bg.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> cc.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> cortana.gif<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> favicon.ico<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> imlogo.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> InvisaMage.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> invisarant.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> poorly.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> qr-bitcoin.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> qr-dogecoin.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> qr-litecoin.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> quasar.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> siri.gif<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> spock.gif<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> tardis.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> wisely.jpg';
+        }else if(tokens.hasOwnProperty('-browsers')){
+            dir.out =
+            'Directory of "browsers"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> chrome.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> edge.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ff.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> opera.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> safari.png';
+        }else if(tokens.hasOwnProperty('-fs')){
+            dir.out =
+            'Directory of "fs"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs1.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs2.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs3.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs4.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs5.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs6.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs7.png';
+        }else if(tokens.hasOwnProperty('-ios')){
+            dir.out =
+            'Directory of "ios"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ios1.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ios2.png<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ios3.png';
+        }else if(tokens.hasOwnProperty('-svg')){
+            dir.out =
+            'Directory of "svg"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> css3.svg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> html.svg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> js.svg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> konami.svg';
+        }else if(tokens.hasOwnProperty('-js')){
+            dir.out =
+            'Directory of "js"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bootstrap.min.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> compiled.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> jquery.min.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> jquery.ripples.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> keypress.min.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> konami.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> namePrompt-app.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> namePrompt.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> nprogress.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ptty.jquery.min.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search-app.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> snowstorm.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> typeahead.min.js';
+        }else if(tokens.hasOwnProperty('-json')){
+            dir.out =
+            'Directory of "json"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> namePrompt.json<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search.json';
+        }else{
+            dir.out =
+            'Improper usage of command.\ndir [-root | -ajax | -modals | -archive | -audio | -css | -fonts | -images | -browsers | -fs | -ios | -svg | -js | -json]';
 
-        return {
-            type : 'print',
-            out : invisamage
-        };
+        }
+        return dir;
     }
 );
 
-/* Register Commands and Callbacks*/
+/* Open command */
+$.register_command(
+    'open',
+    'Displays a list of files and subdirectories in a directory.',
+    'open [filename.extension]',
+    function(open){
+        var tokens = $.tokenize(open.join(' '), ['index.html','news.html','fs.html','invisarant.html','webapp.html','app.html','computers.html','about.html','terms.html','privacy.html','archive.html','404.html']);
+        if(tokens.hasOwnProperty('index.html')){
+            open.out = window.location = "index.html";
+        }else if(tokens.hasOwnProperty('news.html')){
+            open.out = window.location = "news.html";
+        }else if(tokens.hasOwnProperty('fs.html')){
+            open.out = window.location = "fs.html";
+        }else if(tokens.hasOwnProperty('invisarant.html')){
+            open.out = window.location = "invisarant.html";
+        }else if(tokens.hasOwnProperty('webapp.html')){
+            open.out = window.location = "webapp.html";
+        }else if(tokens.hasOwnProperty('app.html')){
+            open.out = window.location = "app.html";
+        }else if(tokens.hasOwnProperty('computers.html')){
+            open.out = window.location = "computers.html";
+        }else if(tokens.hasOwnProperty('about.html')){
+            open.out = window.location = "about.html";
+        }else if(tokens.hasOwnProperty('terms.html')){
+            open.out = window.location = "terms.html";
+        }else if(tokens.hasOwnProperty('privacy.html')){
+            open.out = window.location = "privacy.html";
+        }else if(tokens.hasOwnProperty('archive.html')){
+            open.out = window.location = "archive.html";
+        }else if(tokens.hasOwnProperty('404.html')){
+            open.out = window.location = "404.html";
+        }else{
+            open.out =
+            'Improper usage of command.\nopen [filename.extension]';
+
+        }
+        return open;
+    }
+);
+
+/* Returns the date and time in local time.. */
 $.register_command(
     'date',
-    'returns the current date',
+    'Returns the current date and time.',
     'date [no options]',
     function(){
         var now = new Date();
         return {
-            type : 'print',
+            type: 'print',
             out : now + ' '
         };
     }
 );
 
+/* Echo - Output to the command line */
 $.register_command(
     'echo',
     'Output to the command line',
     'echo [text to output]',
     function(args){
         args.shift();
-        return {out : args.join(' ')};
-});
+        return {
+          out: args.join(' ')
+        };
+    }
+);
 
+/* Fake cd command */
+$.register_command(
+    'cd',
+    'Change the current directory.',
+    'cd [no options]',
+    function(){
+        var cd = 'You do not have permission to perform this command.';
+
+        return {
+            type: 'print',
+            out : cd
+        };
+    }
+);
+
+/* Fake sudo command */
 $.register_command(
     'sudo',
     'Perform commands with administrator privileges.',
-    'sudo [command]',
+    'sudo [no options]',
     function(){
         var sudo = 'Nice try.';
 
         return {
-            type : 'print',
+            type: 'print',
             out : sudo
         };
     }
 );
 
+/* Reloads the page */
 $.register_command(
     'reload',
     'Reload the page.',
@@ -157,13 +379,24 @@ $.register_command(
         location.reload();
 });
 
+/* Closes the terminal modal */
 $.register_command(
-    'exit',
-    'Exit the Terminal Modal',
-    'exit [no options]',
-    function(args){
-        $('#modal-terminal').modal('toggle')
-});
+    'close',
+    'Close the Terminal Modal',
+    'close [no options]',
+    function(){
+        setTimeout(close, 1000);
+
+        function close(){
+          $('#modal-terminal').modal('toggle');
+        }
+
+        return {
+            type: 'print',
+            out : 'Closing Terminal modal...'
+        };
+    }
+);
 
 $.register_command(
     'type', // Unicode PS1
@@ -181,16 +414,16 @@ $.register_command(
         },
         exit_hook       : function(){
             return {
-                type : 'print',
+                type: 'print',
                 out : 'Exit signal received: Bye.'
             };
         },
         dispatch_method : function(args){
             return {
-                type : 'print',
-                callback : 'typewriter',
-                out : '',
-                write : args.join(' ')
+                type    : 'print',
+                callback: 'typewriter',
+                out     : '',
+                write   : args.join(' ')
             };
         }
     }
