@@ -27,10 +27,18 @@ function namePromptapp()
 				"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' href='https://web.telegram.org/'>Telegram Web</a>"
 			"</div>"+
 		"</div>"
+//Travis
+		if (name == "Travis" || (name == "travis"))
+		document.getElementById("name").innerHTML =
+		"Hey, that's my name!"
 //Friends
-		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson") || (name == "Chris") || (name == "chris"))
+		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson"))
 		document.getElementById("name").innerHTML =
 		"Hello good friend and welcome back to my Web App."
+//Noel
+		if (name == "Noel" || (name == "noel"))
+		document.getElementById("name").innerHTML =
+		"Trust me, there is plenty of snow, Noel."
 //Tanner - Audio
 		if (name == "Tanner" || (name == "tanner") || (name == "No") || (name == "no"))
 		document.getElementById("name").innerHTML =
