@@ -27,7 +27,7 @@ if(('ontouchstart' in window))
 }
 
 //Autofocus Personalize Message Modal
-$('#personalize').on('shown.bs.modal', function () {
+$('#modal-personalize').on('shown.bs.modal', function () {
   $('#name-value').focus();
   $('#name-value').select();
 });
@@ -67,6 +67,21 @@ $(function() {
       }
     }
   });
+});
+
+//Loads footer on page load
+$('footer').load('ajax/footer.html');
+
+//Loads terminal modal on page load
+$('#modal-terminal').load('ajax/modals/terminal.html');
+
+//Opens terminal with tilde key press
+var listener = new window.keypress.Listener();
+listener.simple_combo("`", function() {
+    //Close open modals
+    $('#modal-personalize, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-search-help, #modal-yes-privacy, #modal-no-privacy, #modal-cookie, #modal-yes-terms, #modal-no-terms').modal('hide');
+    $('#modal-terminal').modal('toggle');
+    $('#modal-terminal').on('shown.bs.modal', function (e) { $('input').focus(); });
 });
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.')
