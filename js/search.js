@@ -50,7 +50,7 @@ function search()
 
 //Archive page
 	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages"))
-	window.location = "archive.html";
+	$('#modal-archive').load('ajax/modals/archive.html') && $('#modal-archive').modal();
 
 //404 Error page
 	if (search == "404" || (search == "404 Error") || (search == "404 error") || (search == "Error") || (search == "error"))
