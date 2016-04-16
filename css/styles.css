@@ -20,6 +20,16 @@ body {
 	outline: 0;
 }
 
+/* Change highlight color and text color on highlight */
+::selection {
+  background: #00FF00;
+	color: black;
+}
+::-moz-selection {
+  background: #00FF00;
+	color: black;
+}
+
 /* Loading Animation */
 .loading-animation {
   position: absolute;
@@ -416,7 +426,7 @@ table {
 	right: 0;
 }
 
-/* Definition - Underline From Centre - Gray Colour */
+/* Definition - Underline From Centre - Gray color */
 .definition {
 	display: inline;
 	vertical-align: top;
@@ -959,7 +969,7 @@ footer ul {
 }
 
 /* Glyphicon for external links */
-.glyphicon-colour {
+.glyphicon-color {
 	color: #999999;
 	font-size: 12px;
 }
