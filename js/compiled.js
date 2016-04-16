@@ -70,7 +70,7 @@ $(function() {
 });
 
 //Loads footer on page load
-$('footer').load('ajax/footer.html');
+$('#footer').load('ajax/footer.html');
 
 //Loads terminal modal on page load
 $('#modal-terminal').load('ajax/modals/terminal.html');
