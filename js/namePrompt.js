@@ -351,6 +351,48 @@ function namePrompt()
 			  "</div>" +
 			"</div>"
 		;}
+//Eileen - Audio
+		if (name == "Eileen" || (name == "eileen")) {
+			document.getElementById("name").innerHTML =
+			"Come on Eileen.<br><br>" +
+			"<div class='btn-group' role='group'>" +
+			  "<a class='btn btn-default btn-md' role='button'>Come On Eileen</a>" +
+				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
+					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
+				"</a>" +
+				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
+				"</a>" +
+				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
+					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
+				"</a>" +
+			"</div>" +
+			"<br>" +
+			"<br>" +
+			"<div class='collapse' id='collapse-info'>" +
+			  "<div class='well well-sm'>" +
+					"<audio controls autoplay><source src='./audio/eileen.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio>" +
+					"<table class='table table-responsive table-condensed '>" +
+			      "<tr>" +
+			        "<td><h5 class='black-bold'>Title</h5></td>" +
+			        "<th><h5 class='black'>Come On Eileen</h5></th>" +
+			      "</tr>" +
+			      "<tr>" +
+			        "<td><h5 class='black-bold'>Artist</h5></td>" +
+			        "<th><h5 class='black'>Dexys Midnight Runners</h5></th>" +
+			      "</tr>" +
+			      "<tr>" +
+			        "<td><h5 class='black-bold'>Album</h5></td>" +
+			        "<th><h5 class='black'>Too-Rye-Ay</h5></th>" +
+			      "</tr>" +
+			      "<tr>" +
+			        "<td><h5 class='black-bold'>Year</h5></td>" +
+			        "<th><h5 class='black'>1982</h5></th>" +
+			      "</tr>" +
+			    "</table>" +
+			  "</div>" +
+			"</div>"
+		;}
 //Immortal - Audio
 		if (name == "Immortal" || (name == "immortal")) {
 			document.getElementById("name").innerHTML =
