@@ -310,6 +310,7 @@
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option data-divider="true"></option>
 							<option disabled>April 2016</option>
+							<option value="news.html#4-16-16-website">April 16, 2016</option>
 							<option value="news.html#4-15-16-website">April 15, 2016</option>
 							<option value="news.html#4-10-16-website">April 10, 2016</option>
 							<option data-divider="true"></option>
@@ -336,6 +337,19 @@
 						<br>
 						<br>
 					</div>
+
+					<!--April 16, 2016-->
+					<span class="newsSection" id="4-16-16-website">
+						<h1>April 16, 2016</h1>
+						<p>
+							Removed the Archive page and replaced it with a modal.<br>
+							Added new Easter egg to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
+							Minor fixes and tweaks.
+						</p>
+					</span><!-- /4-16-16 -->
+
+					<br>
+					<br>
 
 					<!--April 15, 2016-->
 					<span class="newsSection" id="4-15-16-website">
@@ -365,7 +379,7 @@
 							<br>
 							<br>
 							The footer is now <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed.<br>
-							Added new Easter egg to namePrompt function.<br>
+							Added new Easter egg to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
 							Added <a class="definition" data-toggle="tooltip" data-placement="top" title="Public key crypto for everyone, publicly auditable proofs of identity.">Keybase</a> account to the <a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">contact</a> modal.<br>
 							Removed eye test image previously found in the hide ads modal.<br>
 							Tweaked various modals.
@@ -569,6 +583,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> April 2016</a></li>
 							<div id="menu-news-nested">
+								<li><a href="#4-16-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 16th</a></li>
 								<li><a href="#4-15-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 15th</a></li>
 								<li><a href="#4-10-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 10th</a></li>
 							</div>
@@ -580,7 +595,7 @@
 								</div>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> February 2016</a></li>
 								<div id="menu-news-nested">
-									<li><a href="#2-27-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 27st</a></li>
+									<li><a href="#2-27-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 27th</a></li>
 									<li><a href="#2-21-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 21st</a></li>
 									<li><a href="#2-20-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 20th</a></li>
 									<li><a href="#2-12-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
@@ -668,6 +683,8 @@
 		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"></div>
 		<!--Hide Ads Modal-->
 		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
+		<!--Archive Modal-->
+		<div class="modal fade" id="modal-archive" tabindex="-1" role="dialog"></div>
 		<!--Easter eggs Modal-->
 		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"></div>
 		<!--Search Help Modal-->
