@@ -17,6 +17,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/bootstrap-select.css" rel="stylesheet">
 		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
@@ -120,12 +121,15 @@
 
 			<!--Mobile Menu-->
 			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
-				<select>
+				<select class="selectpicker show-menu-arrow" data-header="Select a item." data-width="auto%">
 					<option selected value="#mobile-menu">Contents</option>
+					<option data-divider="true"></option>
 					<option value="fs.html#keyfeatures">Key Features</option>
 					<option value="fs.html#table">Data Table</option>
 					<option value="fs.html#video">Video</option>
 					<option value="fs.html#images">Screenshots</option>
+					<option data-divider="true"></option>
+					<option value="#footer">Footer</option>
 				</select>
 				<br>
 			</div>
@@ -272,7 +276,7 @@
 			<br>
 
 			<!--Footer-->
-			<footer></footer>
+			<footer id="footer"></footer>
 		</div>
 		<!--/.End Content-->
 
@@ -305,6 +309,7 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/bootstrap-select.min.js"></script>
 		<script src="js/ptty.jquery.min.js"></script>
 	</body>
 	</div>
