@@ -191,7 +191,7 @@ Note: Using Minecraft 1.7.X
 
 -------------------------------------------[v1.4.2]-----------------------------------------------
 
-1)Added colour to  the /tellraw cmd blocks
+1)Added color to  the /tellraw cmd blocks
 2)Added links to my YouTube and the project on PMC (At spawn Mechanism)
 3)Replaced cracked stone brick monster spawn blocks to just Cracked Stone (Oops)
 4)Added a teleport back to the Wild Entrance using the /tellraw cmd
@@ -319,7 +319,7 @@ Note: Villagers got killed on accident in the "Extra Area" (@e kill conflicts).
 48)Renamed the "Wild Spawn" to the "Wild Lobby"
 49)Added a mechanism at the "Spawn Mechanism" for the "Random Teleports" at the "Wild Lobby"
 50)Added a locked chest in my house (Moved all of my things from the Ender Chest into it)
-51)Made the folder name shorter and added coloured text for level data (Folder Name: FS v(X.X.X) (Save Name: Welcome to, Floating Survival)
+51)Made the folder name shorter and added colored text for level data (Folder Name: FS v(X.X.X) (Save Name: Welcome to, Floating Survival)
 52)Made some aesthetic tweaks to the "Extra Area" (Not final)
 
 

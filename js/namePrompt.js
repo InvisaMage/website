@@ -56,7 +56,7 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Hello good friend and welcome back to my website.<br>" +
 			"Thanks for hosting.<br><br>" +
-			"<a class=link target='_blank' href=http://chaoswebs.net/>http://chaoswebs.net/ <span class='glyphicon glyphicon-new-window glyphicon-colour'></span></a>"
+			"<a class=link target='_blank' href=http://chaoswebs.net/>http://chaoswebs.net/ <span class='glyphicon glyphicon-new-window glyphicon-color'></span></a>"
 		;}
 //Father
 		if (name == "Dan" || (name == "dan") || (name == "Daniel") || (name == "daniel") || (name == "Dad") || (name == "dad") || (name == "Father") || (name == "father")) {
