@@ -33,7 +33,7 @@ function search()
 	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
 
 //Stats Modal
-	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Requests") || (search == "requests") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
+	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
 	$('#modal-stats').load('ajax/modals/stats.html') && $('#modal-stats').modal();
 
 //About page
@@ -48,13 +48,17 @@ function search()
 	if (search == "Privacy" || (search == "privacy") || (search == "Cookies") || (search == "cookies"))
 	window.location = "privacy.html";
 
-//Archive page
+//Archive modal
 	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages"))
 	$('#modal-archive').load('ajax/modals/archive.html') && $('#modal-archive').modal();
 
 //404 Error page
 	if (search == "404" || (search == "404 Error") || (search == "404 error") || (search == "Error") || (search == "error"))
 	window.location = "404.html";
+
+//Terminal modal
+	if (search == "Terminal" || (search == "terminal") || (search == "Commands") || (search == "commands") || (search == "cmd"))
+		$('#js-ptty').load('js/ptty.jquery.min.js') && $('#modal-terminal').load('ajax/modals/terminal.html') && $('#modal-terminal').modal();
 
 //Google
 	if (search == "Google" || (search == "google"))
@@ -74,11 +78,11 @@ function search()
 
 //RuneScape
 	if (search == "RuneScape" || (search == "runescape") || (search == "RS") || (search == "rs"))
-	window.location = ("jagex-jav://www.runescape.com/jav_config.ws");
+	window.location = ("rs-launch://www.runescape.com/jav_config.ws");
 
 //DarkScape
 	if (search == "DarkScape" || (search == "darkscape") || (search == "DS") || (search == "ds"))
-	window.location = ("jagex-jav://www.runescape.com/jav_config_beta.ws");
+	window.location = ("rs-launch://www.runescape.com/jav_config_beta.ws");
 
 //Cortana
 	if (search == "Cortana" || (search == "cortana"))
