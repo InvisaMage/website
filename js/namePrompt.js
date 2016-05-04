@@ -43,7 +43,7 @@ function namePrompt()
 		if (name == "Noel" || (name == "noel")) {
 			document.getElementById("name").innerHTML =
 			"See, there is plenty of snow, Noel."
-			snowStorm.toggleSnow();
+			loadSnowstormNamePrompt();
 		;}
 //Tanner - Audio
 		if (name == "Tanner" || (name == "tanner") || (name == "No") || (name == "no")) {
