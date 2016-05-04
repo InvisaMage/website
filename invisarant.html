@@ -6,7 +6,7 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
 		<meta name="description" content="A podcast about technologies, games, views on aspects of society, and school">
 		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
 		<meta name="theme-color" content="#337AB7">
@@ -151,22 +151,20 @@
 		<!--/.End Content-->
 
 		<!--Modals-->
-		<!--Contact Modal-->
-		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"></div>
-		<!--Donate Modal-->
-		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"></div>
-		<!--Stats Modal-->
-		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
-		<!--Reload Page Modal (Activated from Stats modal)-->
-		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
-		<!--Terminal Modal (Activated from Stats modal)-->
-		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"></div>
-		<!--Hide Ads Modal-->
-		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
-		<!--Easter Eggs Modal-->
-		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"></div>
-		<!--Search Help Modal-->
-		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-archive" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-privacy-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-privacy-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"><h1>Terminal not loaded!<br><br>Use <kbd>Shift + T</kbd> to load and try again.</h1></div>
+		<div class="modal fade" id="modal-terms-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-terms-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
@@ -174,12 +172,12 @@
 		<script src="js/search.js"></script>
 		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
-		<script src="js/jquery.ripples.js"></script>
-		<script src="js/snowstorm.js"></script>
+		<script id="js-water"></script>
+		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/ptty.jquery.min.js"></script>
+		<script id="js-ptty"></script>
 	</body>
 	</div>
 </html>
