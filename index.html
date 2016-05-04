@@ -6,7 +6,7 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
 		<meta name="description" content="Information about InvisaMage and his projects.">
 		<meta name="keywords" content="InvisaMage, invisamage, Floating Survival, floating survival, FS, fs, InvisaRant, invisarant, IR, ir">
 		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
@@ -113,7 +113,7 @@
 							<h3 class='panel-title'>Welcome</h3>
 						</div>
 						<div class='panel-header-top'>
-							<a role="button" class="btn btn-success btn-lg btn-block" onclick="$('#modal-personalize').modal();">Personalize Message</a>
+							<a role="button" class="btn btn-success btn-lg btn-block" onclick="$('#js-namePrompt').load('js/namePrompt.js'); $('#modal-personalize').modal();">Personalize Message</a>
 						</div>
 						<div class='panel-body'>
 							<!--Paragraph Changes with namePrompt Input-->
@@ -132,12 +132,29 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>April 15, 2016</h3>
+							<h3>April 30, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							Removed the Archive page and replaced it with a modal.<br>
-							Added new Easter egg to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
-							Minor fixes and tweaks.
+							Improved page loading times.<br>
+							The Terminal is no longer loaded on page load.<br>
+							Use <kbd>Shift + T</kbd> to load the assets and <kbd>`</kbd> to initiate the Terminal.
+							<br>
+							<br>
+							Added the "load" command to the Terminal.<br>
+							Allows you to load assets whenever you'd like.
+							<br>
+							<br>
+							Added the "media" command to the Terminal.<br>
+							Allows you to control media playback on a page (mostly the Homepage).
+							<br>
+							<br>
+							Added the "modal" command to the Terminal.<br>
+							Allows you to dispaly any modal on any page.
+							<br>
+							<br>
+							The snowstorm and water Easter eggs have been changed as well.<br>
+							You must now load their assets before you can enable them.<br>
+							Improved dropdown menus on smaller displays.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -223,24 +240,20 @@
 		</div>-->
 
 		<!--Modals-->
-		<!--Contact Modal-->
-		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"></div>
-		<!--Donate Modal-->
-		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"></div>
-		<!--Stats Modal-->
-		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
-		<!--Reload Page Modal (Activated from Stats modal)-->
-		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
-		<!--Terminal Modal (Activated from Stats modal)-->
-		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"></div>
-		<!--Hide Ads Modal-->
-		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
-		<!--Archive Modal-->
-		<div class="modal fade" id="modal-archive" tabindex="-1" role="dialog"></div>
-		<!--Easter Eggs Modal-->
-		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"></div>
-		<!--Search Help Modal-->
-		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-archive" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-privacy-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-privacy-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"><h1>Terminal not loaded!<br><br>Use <kbd>Shift + T</kbd> to load and try again.</h1></div>
+		<div class="modal fade" id="modal-terms-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<div class="modal fade" id="modal-terms-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
@@ -248,13 +261,13 @@
 		<script src="js/search.js"></script>
 		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
-		<script src="js/namePrompt.js"></script>
-		<script src="js/jquery.ripples.js"></script>
-		<script src="js/snowstorm.js"></script>
+		<script id="js-namePrompt"></script>
+		<script id="js-water"></script>
+		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/ptty.jquery.min.js"></script>
+		<script id="js-ptty"></script>
 	</body>
 	</div>
 </html>
