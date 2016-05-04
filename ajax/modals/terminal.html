@@ -44,7 +44,7 @@ $('#terminal').Ptty({
         autofocus: 'true'
     });
 
-/* About InvisaMage | Website | Terminal */
+/* About - InvisaMage, Website, Terminal */
 $.register_command(
     'about',
     'Gives you more information on various things.',
@@ -60,13 +60,13 @@ $.register_command(
         }else if(tokens.hasOwnProperty('-terminal')||tokens.hasOwnProperty('/t')){
             about.out = 'InvisaMage\'s Website Interpreter | Copyright (c) 2014-2016\nThis is a fake terminal created using <a href="https://github.com/pachanka/Ptty" target="_blank">Ptty.js</a>.';
         }else{
-            about.out = 'Improper usage of command.\nabout [-invisamage | -website | -terminal]';
+            about.out = 'Improper usage of command.';
         }
         return about;
     }
 );
 
-/* GitHub Repository */
+/* repository - Open GitHub Repository */
 $.register_command(
     'repository',
     'View the website repository on GitHub.',
@@ -80,7 +80,7 @@ $.register_command(
     }
 );
 
-/* Open Contact Modal */
+/* contact - Open Contact Modal */
 $.register_command(
     'contact',
     'Contact site developer',
@@ -95,7 +95,7 @@ $.register_command(
     }
 );
 
-/* Fake dir command */
+/* dir - Fake dir command */
 $.register_command(
     'dir',
     'Displays a list of files and subdirectories in a directory.',
@@ -268,17 +268,17 @@ $.register_command(
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search.json';
         }else{
             dir.out =
-            'Improper usage of command.\ndir [-root | -ajax | -modals | -archive | -audio | -css | -fonts | -images | -browsers | -fs | -ios | -svg | -js | -json]';
+            'Improper usage of command.';
 
         }
         return dir;
     }
 );
 
-/* Open command */
+/* open - Open command */
 $.register_command(
     'open',
-    'Displays a list of files and subdirectories in a directory.',
+    'Open a file.',
     'open [filename.extension]',
     function(open){
         var tokens = $.tokenize(open.join(' '), ['index.html','news.html','fs.html','invisarant.html','webapp.html','app.html','computers.html','about.html','terms.html','privacy.html','archive.html','404.html']);
@@ -308,14 +308,14 @@ $.register_command(
             open.out = window.location = "404.html";
         }else{
             open.out =
-            'Improper usage of command.\nopen [filename.extension]';
+            'Improper usage of command.';
 
         }
         return open;
     }
 );
 
-/* Returns the date and time in local time.. */
+/* date - Returns the date and time in local time.. */
 $.register_command(
     'date',
     'Returns the current date and time.',
@@ -329,7 +329,7 @@ $.register_command(
     }
 );
 
-/* Echo - Output to the command line */
+/* echo - Output to the command line */
 $.register_command(
     'echo',
     'Output to the command line',
@@ -342,7 +342,7 @@ $.register_command(
     }
 );
 
-/* Fake cd command */
+/* cd - Fake cd command */
 $.register_command(
     'cd',
     'Change the current directory.',
@@ -357,34 +357,16 @@ $.register_command(
     }
 );
 
-/* Toggle snowstorm */
-$.register_command(
-    'snowstorm',
-    'Toggle the snowstorm on the page and close the Terminal.',
-    'snowstorm [no options]',
-    function(){
-        snowStorm.toggleSnow();
-        setTimeout(close, 1500);
-
-        function close(){
-          $('#modal-terminal').modal('toggle');
-        }
-
-        return {
-            type: 'print',
-            out : 'Snowstorm toggled!\nClosing Terminal modal...'
-        };
-    }
-);
-
-/* Enable Snowstorm and options */
+/* snowstorm - Enable Snowstorm and options */
 $.register_command(
     'snowstorm',
     'Options for the snowstorm function.',
-    'snowstorm [-toggle | -freeze | -resume | -wind | -melt]',
+    'snowstorm [-load | -toggle | -freeze | -resume | -wind | -melt]',
     function(snowstorm){
-        var tokens = $.tokenize(snowstorm.join(' '), ['-toggle','-freeze','-resume','-wind','-melt']);
-        if(tokens.hasOwnProperty('-toggle')){
+        var tokens = $.tokenize(snowstorm.join(' '), ['-load','-toggle','-freeze','-resume','-wind','-melt']);
+        if(tokens.hasOwnProperty('-load')){
+            snowstorm.out = 'Loading assets...'; loadSnowstorm();
+        }else if(tokens.hasOwnProperty('-toggle')){
             snowstorm.out = 'Toggling the snow...'; snowStorm.toggleSnow();
         }else if(tokens.hasOwnProperty('-freeze')){
             snowstorm.out = 'Freezing the snow...'; snowStorm.freeze();
@@ -395,35 +377,125 @@ $.register_command(
         }else if(tokens.hasOwnProperty('-melt')){
             snowstorm.out = 'Melting the snow...'; snowStorm.stop();
         }else{
-            snowstorm.out = 'Improper usage of command.\nsnowstorm [-toggle | -freeze | -resume | -wind | -melt]';
+            snowstorm.out = 'Improper usage of command.';
         }
         return snowstorm;
     }
 );
 
-/* Enable Water and options */
+/* water - Enable Water function and options */
 $.register_command(
     'water',
     'Options for the water function.',
-    'water [-enable | -pause | -resume | -destroy]',
+    'water [-load | -enable | -pause | -resume | -destroy]',
     function(water){
-        var tokens = $.tokenize(water.join(' '), ['-enable','-pause','-resume','-destroy']);
-        if(tokens.hasOwnProperty('-enable')){
-            water.out = 'Enabling water...'; $('body').ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04, });
+        var tokens = $.tokenize(water.join(' '), ['-load','-enable','-pause','-resume','-destroy']);
+        if(tokens.hasOwnProperty('-load')){
+            water.out = 'Loading assets...'; loadWater();
+        }else if(tokens.hasOwnProperty('-enable')){
+            water.out = 'Enabling water...'; $('body').ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04, }); destroyWater();
         }else if(tokens.hasOwnProperty('-pause')){
             water.out = 'Pausing the water...'; $('body').ripples('pause');
         }else if(tokens.hasOwnProperty('-resume')){
             water.out = 'Resuming the water from the pause state...'; $('body').ripples('play');
         }else if(tokens.hasOwnProperty('-destroy')){
-            water.out = 'Mopping up the water...'; $('body').ripples('destroy');
+            water.out = 'Mopping up the water...'; $('body').ripples('destroy'); loadWater();
         }else{
-            water.out = 'Improper usage of command.\nwater [-enable | -pause | -resume | -destroy]';
+            water.out = 'Improper usage of command.';
         }
         return water;
     }
 );
 
-/* Fake sudo command */
+/* load - Load assets for various functions */
+$.register_command(
+    'load',
+    'Load assets for various functions.',
+    'load [-all | -water | -snow | -namePrompt]',
+    function(load){
+        var tokens = $.tokenize(load.join(' '), ['-all','-water','-snow','-namePrompt']);
+        if(tokens.hasOwnProperty('-all')){
+            load.out = 'Loading all assets...'; loadWater(); loadSnowstorm(); $('#js-namePrompt').load('js/namePrompt.js');
+        }else if(tokens.hasOwnProperty('-water')){
+            load.out = 'Loading water assets...'; loadWater();
+        }else if(tokens.hasOwnProperty('-snow')){
+            load.out = 'Loading snow assets...'; loadSnowstorm();
+        }else if(tokens.hasOwnProperty('-namePrompt')){
+            load.out = 'Loading namePrompt.js...'; $('#js-namePrompt').load('js/namePrompt.js');
+        }else{
+            load.out = 'Improper usage of command.';
+        }
+        return load;
+    }
+);
+
+/* media - Pause and play currently loaded media on a page.  */
+$.register_command(
+    'media',
+    'Control media assets on the current page.',
+    'media [-play | -pause | -stop | -vu | -vd]',
+    function(media){
+        var tokens = $.tokenize(media.join(' '), ['-play','-pause','-stop','-vu','-vd']);
+        if(tokens.hasOwnProperty('-play')){
+            media.out = 'Playing media...'; $('audio').trigger('play');
+        }else if(tokens.hasOwnProperty('-pause')){
+            media.out = 'Pausing media...'; $('audio').trigger('pause');
+        }else if(tokens.hasOwnProperty('-stop')){
+            media.out = 'Stopping media...'; $("audio").trigger('pause'); $("audio").prop("currentTime",0);
+        }else if(tokens.hasOwnProperty('-vu')){
+            media.out = 'Increasing media volume...'; var volume = $("audio").prop("volume")+0.2; if(volume >1){ volume = 1; } $("audio").prop("volume",volume);
+        }else if(tokens.hasOwnProperty('-vd')){
+            media.out = 'Decreasing media volume...'; var volume = $("audio").prop("volume")-0.2; if(volume <0){ volume = 0; } $("audio").prop("volume",volume);
+        }else{
+            media.out = 'Improper usage of command.';
+        }
+        return media;
+    }
+);
+
+/* modal - Load a modal on the current page.  */
+$.register_command(
+    'modal',
+    'Load a modal on the current page.',
+    'modal [-ads | -archive | -contact | -cookies | -donate | -eastereggs | -privacy-no | -privacy-yes | -reload | -search-help | -stats | -terminal | -terms-no | -terms-yes]',
+    function(modal){
+        var tokens = $.tokenize(modal.join(' '), ['-ads','-archive','-contact','-cookies','-donate','-eastereggs','-privacy-no','-privacy-yes','-reload','-search-help','-stats','-terminal','-terms-no','-terms-yes']);
+        if(tokens.hasOwnProperty('-ads')){
+            modal.out = 'Openning "ads" modal...'; $('#modal-terminal').modal('hide'); $('#modal-hideads').load('ajax/modals/ads.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-hideads').modal(); });
+        }else if(tokens.hasOwnProperty('-archive')){
+            modal.out = 'Openning "archive" modal...'; $('#modal-terminal').modal('hide'); $('#modal-archive').load('ajax/modals/archive.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-archive').modal(); });
+        }else if(tokens.hasOwnProperty('-contact')){
+            modal.out = 'Openning "contact" modal...'; $('#modal-terminal').modal('hide'); $('#modal-contact').load('ajax/modals/contact.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-contact').modal(); });
+        }else if(tokens.hasOwnProperty('-cookies')){
+            modal.out = 'Openning "cookies" modal...'; $('#modal-terminal').modal('hide'); $('#modal-cookie').load('ajax/modals/cookies.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-cookie').modal(); });
+        }else if(tokens.hasOwnProperty('-donate')){
+            modal.out = 'Openning "donate" modal...'; $('#modal-terminal').modal('hide'); $('#modal-donate').load('ajax/modals/donate.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-donate').modal(); });
+        }else if(tokens.hasOwnProperty('-eastereggs')){
+            modal.out = 'Openning "eastereggs" modal...'; $('#modal-terminal').modal('hide'); $('#modal-eastereggs').load('ajax/modals/eastereggs.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-eastereggs').modal(); });
+        }else if(tokens.hasOwnProperty('-privacy-no')){
+            modal.out = 'Openning "privacy-no" modal...'; $('#modal-terminal').modal('hide'); $('#modal-privacy-no').load('ajax/modals/privacy-no.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-privacy-no').modal(); });
+        }else if(tokens.hasOwnProperty('-privacy-yes')){
+            modal.out = 'Openning "privacy-yes" modal...'; $('#modal-terminal').modal('hide'); $('#modal-privacy-yes').load('ajax/modals/privacy-yes.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-privacy-yes').modal(); });
+        }else if(tokens.hasOwnProperty('-reload')){
+            modal.out = 'Openning "reload" modal...'; $('#modal-terminal').modal('hide'); $('#modal-reload').load('ajax/modals/reload.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-reload').modal(); });
+        }else if(tokens.hasOwnProperty('-search-help')){
+            modal.out = 'Openning "search-help" modal...'; $('#modal-terminal').modal('hide'); $('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-search-help').modal(); });
+        }else if(tokens.hasOwnProperty('-stats')){
+            modal.out = 'Openning "stats" modal...'; $('#modal-terminal').modal('hide'); $('#modal-stats').load('ajax/modals/stats.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-stats').modal(); });
+        }else if(tokens.hasOwnProperty('-terminal')){
+            modal.out = 'Error. Modal already open!';
+        }else if(tokens.hasOwnProperty('-terms-no')){
+            modal.out = 'Openning "terms-no" modal...'; $('#modal-terminal').modal('hide'); $('#modal-terms-no').load('ajax/modals/terms-no.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-terms-no').modal(); });
+        }else if(tokens.hasOwnProperty('-terms-yes')){
+            modal.out = 'Openning "terms-yes" modal...'; $('#modal-terminal').modal('hide'); $('#modal-terms-yes').load('ajax/modals/terms-yes.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-terms-yes').modal(); });
+        }else{
+            modal.out = 'Improper usage of command.';
+        }
+        return modal;
+    }
+);
+
+/* sudo - Fake sudo command */
 $.register_command(
     'sudo',
     'Perform commands with administrator privileges.',
@@ -438,16 +510,26 @@ $.register_command(
     }
 );
 
-/* Reloads the page */
+/* reload - Reloads the page */
 $.register_command(
     'reload',
     'Reload the page.',
     'reload [no options]',
-    function(args){
-        location.reload();
-});
+    function(){
+        setTimeout(reload, 800);
 
-/* Closes the terminal modal */
+        function reload(){
+          location.reload();
+        }
+
+        return {
+            type: 'print',
+            out : 'Reloading the page...'
+        };
+    }
+);
+
+/* close - Closes the terminal modal */
 $.register_command(
     'close',
     'Close the Terminal Modal',
@@ -466,6 +548,7 @@ $.register_command(
     }
 );
 
+/* type -  */
 $.register_command(
     'type', // Unicode PS1
     'Output text like a typewriter.',
