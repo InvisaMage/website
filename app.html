@@ -5,7 +5,7 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
 		<meta name="description" content="InvisaMage's website in one page.">
 		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
 		<meta name="theme-color" content="#337AB7">
@@ -427,10 +427,10 @@
 							  	Do you accept the Terms and Conditions?
 							</div>
 							<div class="col-xs-6-offset">
-								<button type="button" class="btn btn-success btn-md" onclick="$('#terms').modal('hide'); $('#terms').on('hidden.bs.modal', function (e) { $('#modal-yes-terms').load('ajax/modals/terms-yes.html'); $('#modal-yes-terms').modal(); });"> Yes
+								<button type="button" class="btn btn-success btn-md" onclick="$('#terms').modal('hide'); $('#terms').one('hidden.bs.modal', function (e) { $('#modal-yes-terms').load('ajax/modals/terms-yes.html'); $('#modal-yes-terms').modal(); });"> Yes
 									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-danger btn-md" onclick="$('#terms').modal('hide'); $('#terms').on('hidden.bs.modal', function (e) { $('#modal-no-terms').load('ajax/modals/terms-no.html'); $('#modal-no-terms').modal(); });"> No
+								<button type="button" class="btn btn-danger btn-md" onclick="$('#terms').modal('hide'); $('#terms').one('hidden.bs.modal', function (e) { $('#modal-no-terms').load('ajax/modals/terms-no.html'); $('#modal-no-terms').modal(); });"> No
 									<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
 								</button>
 							</div>
@@ -472,7 +472,7 @@
 						Cookies may be used to enable the site to function more fluently.<br>
 						They are files with information about the website.<br>
 						They are stored locally on your computer for future use.<br>
-						If you wish to clear your internet cookies, click <a onclick="$('#privacy').modal('hide'); $('#privacy').on('hidden.bs.modal', function (e) { $('#modal-cookie').load('ajax/modals/cookies.html'); $('#modal-cookie').modal(); });">here</a>.<br>
+						If you wish to clear your internet cookies, click <a onclick="$('#privacy').modal('hide'); $('#privacy').one('hidden.bs.modal', function (e) { $('#modal-cookie').load('ajax/modals/cookies.html'); $('#modal-cookie').modal(); });">here</a>.<br>
 						Note: This will likely clear all of your internet cookies and not just for this website.
 
 						<hr>
@@ -498,10 +498,10 @@
 							  Do you accept the Privacy Policy?
 							</div>
 							<div class="col-xs-6-offset">
-								<button type="button" class="btn btn-success btn-md" onclick="$('#privacy').modal('hide'); $('#privacy').on('hidden.bs.modal', function (e) { $('#modal-yes-privacy').load('ajax/modals/privacy-yes.html'); $('#modal-yes-privacy').modal(); });"> Yes
+								<button type="button" class="btn btn-success btn-md" onclick="$('#privacy').modal('hide'); $('#privacy').one('hidden.bs.modal', function (e) { $('#modal-yes-privacy').load('ajax/modals/privacy-yes.html'); $('#modal-yes-privacy').modal(); });"> Yes
 									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-danger btn-md" onclick="$('#privacy').modal('hide'); $('#privacy').on('hidden.bs.modal', function (e) { $('#modal-no-privacy').load('ajax/modals/privacy-no.html'); $('#modal-no-privacy').modal(); });"> No
+								<button type="button" class="btn btn-danger btn-md" onclick="$('#privacy').modal('hide'); $('#privacy').one('hidden.bs.modal', function (e) { $('#modal-no-privacy').load('ajax/modals/privacy-no.html'); $('#modal-no-privacy').modal(); });"> No
 									<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
 								</button>
 							</div>
@@ -560,29 +560,29 @@
 
 		<!--Modals-->
 		<!--Contact Modal-->
-		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Donate Modal-->
-		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Stats Modal-->
-		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Reload Page Modal (Activated from Stats modal)-->
-		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Terminal Modal (Activated from Stats modal)-->
-		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"><h1>Terminal not loaded!<br><br>Use Shift + T to load and try again.</h1></div>
 		<!--Hide Ads Modal-->
-		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Search Help Modal-->
-		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Terms Yes Modal-->
-		<div class="modal fade" id="modal-yes-terms" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-yes-terms" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Terms No Modal-->
-		<div class="modal fade" id="modal-no-terms" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-no-terms" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Privacy Yes Modal-->
-		<div class="modal fade" id="modal-yes-privacy" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-yes-privacy" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Privacy No Modal-->
-		<div class="modal fade" id="modal-no-privacy" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-no-privacy" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 		<!--Cookies Modal-->
-		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"></div>
+		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
 
     <!--Web App Information Modal-->
 		<div class="modal fade" id="appinfo" tabindex="-1" role="dialog">
@@ -620,7 +620,7 @@
 		<script src="js/nprogress.js"></script>
     <script src="js/namePrompt-app.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/ptty.jquery.min.js"></script>
+		<script id="js-ptty"></script>
 	</body>
 	</div>
 </html>
