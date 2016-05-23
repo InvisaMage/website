@@ -66,12 +66,12 @@
 								<li><a href="webapp.html">Web Application</a></li>
 							</ul>
 						</li><!-- /projects -->
-						<li><a onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a></li>
-						<li><a onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a></li>
+						<li><a onclick="loadContactMod();">Contact</a></li>
+						<li><a onclick="loadDonateMod();">Donate</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a class="divider-vertical"></a></li>
 						<li>
-							<a onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
+							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
 							</a>
 						</li>
@@ -83,7 +83,7 @@
 							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
-								<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
+								<a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
 									<span class="glyphicon glyphicon-question-sign"></span>
 								</a>
 								<button class="btn btn-default" type="button" onclick="search();">
@@ -316,6 +316,9 @@
 						<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option data-divider="true"></option>
+							<option disabled>May 2016</option>
+							<option value="news.html#5-22-16-website">22nd</option>
+							<option data-divider="true"></option>
 							<option disabled>April 2016</option>
 							<option value="news.html#4-30-16-website">30th</option>
 							<option value="news.html#4-16-16-website">16th</option>
@@ -346,6 +349,25 @@
 						<br>
 					</div>
 
+					<!--May 22, 2016-->
+					<span class="newsSection" id="5-22-16-website">
+						<h1>May 22, 2016</h1>
+						<p>
+							Tweaked <a class="link" onclick="loadContactMod();">contact</a> and <a class="link" onclick="loadDonateMod();">donate</a> modals.<br>
+							Added copy text buttons which display notifications on success.<br>
+							Adjusted visuals.
+							<br>
+							<br>
+							Added a general <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
+							Enhanced the backend for loading modals.<br>
+							Removed some namePrompt <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
+							Tweaked some file names.
+						</p>
+					</span><!-- /5-22-16 -->
+
+					<br>
+					<br>
+
 					<!--April 30, 2016-->
 					<span class="newsSection" id="4-30-16-website">
 						<h1>April 30, 2016</h1>
@@ -367,7 +389,7 @@
 							Allows you to dispaly any modal on any page.
 							<br>
 							<br>
-							The snowstorm and water Easter eggs have been changed as well.<br>
+							The snowstorm and water <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>s have been changed as well.<br>
 							You must now load their assets before you can enable them.<br>
 							Improved dropdown menus on smaller displays.
 						</p>
@@ -381,7 +403,7 @@
 						<h1>April 16, 2016</h1>
 						<p>
 							Removed the Archive page and replaced it with a modal.<br>
-							Added new Easter egg to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
+							Added new <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title=""><a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a></a> to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
 							Minor fixes and tweaks.
 						</p>
 					</span><!-- /4-16-16 -->
@@ -394,8 +416,8 @@
 						<h1>April 15, 2016</h1>
 						<p>
 							Added new commands to the Terminal.<br>
-							The snowstorm command allows you to change settings with the snow Easter egg.<br>
-							The water command allows you to change settings with the water Easter egg.
+							The snowstorm command allows you to change settings with the snow <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
+							The water command allows you to change settings with the water <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.
 							<br>
 							<br>
 							Implemented the bootstrap-select plugin to add extra styles to the select menus.<br>
@@ -417,8 +439,8 @@
 							<br>
 							<br>
 							The footer is now <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed.<br>
-							Added new Easter egg to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
-							Added <a class="definition" data-toggle="tooltip" data-placement="top" title="Public key crypto for everyone, publicly auditable proofs of identity.">Keybase</a> account to the <a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">contact</a> modal.<br>
+							Added new <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a> to <a class="link" href="about.html#nameprompt">namePrompt</a> function.<br>
+							Added <a class="definition" data-toggle="tooltip" data-placement="top" title="Public key crypto for everyone, publicly auditable proofs of identity.">Keybase</a> account to the <a class="link" onclick="loadContactMod();">contact</a> modal.<br>
 							Removed eye test image previously found in the hide ads modal.<br>
 							Tweaked various modals.
 						</p>
@@ -568,7 +590,7 @@
 						<h1>February 5, 2016</h1>
 						<p>
 							Enhancements to the <a class="link" href="about.html#functions">namePrompt</a> function.<br>
-							Audio Easter egg controls now have custom styling.<br>
+							Audio <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a> controls now have custom styling.<br>
 							To view built in browser controls, click this <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> button.
 							<br>
 							<br>
@@ -619,6 +641,10 @@
 						<!--Website Menu-->
 						<div id="menu-news" class="hidden-xs">
 							<h2>Date Jump</h2>
+							<li><a><span class="glyphicon glyphicon-chevron-down"></span> May 2016</a></li>
+							<div id="menu-news-nested">
+								<li><a href="#5-22-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 22nd</a></li>
+							</div>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> April 2016</a></li>
 							<div id="menu-news-nested">
 								<li><a href="#4-30-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 30th</a></li>
@@ -672,12 +698,12 @@
 						<span class="newsSection" id="problems">
 							<h1>Known Bugs / Problems</h1>
 							<p>
-								Found a problem? <a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a> me.
+								Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
 								<br>
 								<br>
 								Note: Tooltips are disabled on touchsreen devices.<br>
 								Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
-								Some content blocking extensions block the <a class="link" onclick="$('#modal-hideads').load('ajax/modals/ads.html'); $('#modal-hideads').modal();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.
+								Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.
 								<br>
 								<br>
 								<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
@@ -758,6 +784,7 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/growl.min.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
