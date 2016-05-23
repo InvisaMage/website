@@ -26,15 +26,15 @@ function search()
 
 //Contact Modal
 	if (search == "Contact" || (search == "contact") || (search == "Help") || (search == "help") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
-	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
+	loadContactMod();
 
 //Donate Modal
 	if (search == "Donate" || (search == "donate") || (search == "Money") || (search == "money"))
-	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
+	loadDonateMod();
 
 //Stats Modal
 	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
-	$('#modal-stats').load('ajax/modals/stats.html') && $('#modal-stats').modal();
+	loadStatsMod();
 
 //About page
 	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information"))
@@ -50,7 +50,7 @@ function search()
 
 //Archive modal
 	if (search == "Archive" || (search == "archive") || (search == "Old Pages") || (search == "old pages"))
-	$('#modal-archive').load('ajax/modals/archive.html') && $('#modal-archive').modal();
+	loadArchiveMod();
 
 //404 Error page
 	if (search == "404" || (search == "404 Error") || (search == "404 error") || (search == "Error") || (search == "error"))
@@ -58,7 +58,7 @@ function search()
 
 //Terminal modal
 	if (search == "Terminal" || (search == "terminal") || (search == "Commands") || (search == "commands") || (search == "cmd"))
-		$('#js-ptty').load('js/ptty.jquery.min.js') && $('#modal-terminal').load('ajax/modals/terminal.html') && $('#modal-terminal').modal();
+	loadTerminalMod();
 
 //Google
 	if (search == "Google" || (search == "google"))

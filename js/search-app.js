@@ -26,15 +26,15 @@ function searchapp()
 
 //Contact Modal
 	if (search == "Contact" || (search == "contact") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
-	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
+	loadContactMod();
 
 //Donate Modal
 	if (search == "Donate" || (search == "donate") || (search == "Money") || (search == "money"))
-	$('#modal-contact').load('ajax/modals/contact.html') && $('#modal-contact').modal();
+	loadDonateMod();
 
 //Stats Modal
 	if (search == "Stats" || (search == "stats") || (search == "Statistics") || (search == "statistics") || (search == "Requests") || (search == "requests") || (search == "Time") || (search == "time") || (search == "OS") || (search == "os") || (search == "Version") || (search == "version"))
-	$('#modal-stats').load('ajax/modals/stats.html') && $('#modal-stats').modal();
+	loadStatsMod();
 
 //About page
 	if (search == "About" || (search == "about") || (search == "InvisaMage") || (search == "invisamage") || (search == "Creation") || (search == "creation") || (search == "Information") || (search == "information"))
