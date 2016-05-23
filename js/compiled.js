@@ -92,7 +92,7 @@ function loadSnowstormNamePrompt(){
 
 //Loads water assets and replaces footer text to enable water on next click
 function loadWater() {
-  $('#js-water').load('js/jquery.ripples.js');
+  $('#js-water').load('js/ripples.js');
   $('#footer-water').tooltip('destroy');
   $('#footer-water').replaceWith( "<a class='link' id='footer-water' onclick='$(body).ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04 }); destroyWater();' data-toggle='tooltip' data-placement='top' title='Enable a buggy water effect.'>Enable Water</a>" );
   //Re enable tooltips.
@@ -119,8 +119,15 @@ $('#footer').load('ajax/footer.html');
 //Loads terminal modal on Shift + T key combination
 var listener = new window.keypress.Listener();
 listener.simple_combo("shift t", function() {
-    $('#js-ptty').load('js/ptty.jquery.min.js');
+    $('#js-ptty').load('js/ptty.min.js');
     $('#modal-terminal').load('ajax/modals/terminal.html');
+});
+
+//Delete Easter egg on del key press
+var listener = new window.keypress.Listener();
+listener.simple_combo("delete", function() {
+  var audio = new Audio('./audio/delete.mp3');
+  audio.play();
 });
 
 //Opens terminal with tilde key press
@@ -131,5 +138,122 @@ listener.simple_combo("`", function() {
     $('#modal-terminal').modal('toggle');
     $('#modal-terminal').on('shown.bs.modal', function (e) { $('form, input').focus(); });
 });
+
+//Contact modal copy messages
+function emailMsg() {
+    $.bootstrapGrowl("E-mail address copied!", {
+      type: 'success',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      allow_dismiss: true
+    });
+};
+function telegramMsg() {
+    $.bootstrapGrowl("Telegram URL copied!", {
+      type: 'success',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      allow_dismiss: true
+    });
+};
+function keybaseMsg() {
+    $.bootstrapGrowl("Keybase username copied!", {
+      type: 'success',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      allow_dismiss: true
+    });
+};
+
+//Donate modal copy messages
+function bitcoinMsg() {
+    $.bootstrapGrowl("Bitcoin wallet address copied!", {
+      type: 'success',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      allow_dismiss: true
+    });
+};
+function dogecoinMsg() {
+    $.bootstrapGrowl("Dogecoin wallet address copied!", {
+      type: 'success',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      allow_dismiss: true
+    });
+};
+function litecoinMsg() {
+    $.bootstrapGrowl("Litecoin wallet address copied!", {
+      type: 'success',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      allow_dismiss: true
+    });
+};
+
+//Shorted modal load functions
+function loadAdsMod() {
+  $('#modal-hideads').load('ajax/modals/ads.html');
+  $('#modal-hideads').modal();
+}
+function loadArchiveMod() {
+  $('#modal-archive').load('ajax/modals/archive.html');
+  $('#modal-archive').modal();
+}
+function loadContactMod() {
+  $('#modal-contact').load('ajax/modals/contact.html');
+  $('#modal-contact').modal();
+}
+function loadCookiesMod() {
+  $('#modal-cookie').load('ajax/modals/cookies.html');
+  $('#modal-cookie').modal();
+}
+function loadDonateMod() {
+  $('#modal-donate').load('ajax/modals/donate.html');
+  $('#modal-donate').modal();
+}
+function loadEastereggsMod() {
+  $('#modal-eastereggs').load('ajax/modals/eastereggs.html');
+  $('#modal-eastereggs').modal();
+}
+function loadPrivacyNoMod() {
+  $('#modal-privacy-no').load('ajax/modals/privacy-no.html');
+  $('#modal-privacy-no').modal();
+}
+function loadPrivacyYesMod() {
+  $('#modal-privacy-yes').load('ajax/modals/privacy-yes.html');
+  $('#modal-privacy-yes').modal();
+}
+function loadReloadMod() {
+  $('#modal-reload').load('ajax/modals/reload.html');
+  $('#modal-reload').modal();
+}
+function loadSearchHelpMod() {
+  $('#modal-search-help').load('ajax/modals/search-help.html');
+  $('#modal-search-help').modal();
+}
+function loadStatsMod() {
+  $('#modal-stats').load('ajax/modals/stats.html');
+  $('#modal-stats').modal();
+}
+function loadTerminalMod() {
+  $('#js-ptty').load('js/ptty.min.js');
+  $('#modal-terminal').load('ajax/modals/terminal.html');
+  $('#modal-terminal').modal();
+}
+function loadTermsNoMod() {
+  $('#modal-terms-no').load('ajax/modals/terms-no.html');
+  $('#modal-terms-no').modal();
+}
+function loadTermsYesMod() {
+  $('#modal-terms-yes').load('ajax/modals/terms-yes.html');
+  $('#modal-terms-yes').modal();
+}
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.')
