@@ -67,12 +67,12 @@
 								<li><a href="webapp.html">Web Application</a></li>
 							</ul>
 						</li><!-- /projects -->
-						<li><a onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a></li>
-						<li><a onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a></li>
+						<li><a onclick="loadContactMod();">Contact</a></li>
+						<li><a onclick="loadDonateMod();">Donate</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a class="divider-vertical"></a></li>
 						<li>
-							<a onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
+							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
 							</a>
 						</li>
@@ -84,7 +84,7 @@
 							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
-								<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
+								<a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
 									<span class="glyphicon glyphicon-question-sign"></span>
 								</a>
 								<button class="btn btn-default" type="button" onclick="search();">
@@ -108,12 +108,12 @@
 			<div class="row">
 				<!--Welcome-->
 			  <div class="col-md-4">
-					<div class='panel panel-primary'>
+					<div class='panel panel-green'>
 						<div class='panel-heading'>
 							<h3 class='panel-title'>Welcome</h3>
 						</div>
 						<div class='panel-header-top'>
-							<a role="button" class="btn btn-success btn-lg btn-block" onclick="$('#js-namePrompt').load('js/namePrompt.js'); $('#modal-personalize').modal();">Personalize Message</a>
+							<a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#js-namePrompt').load('js/namePrompt.js'); $('#modal-personalize').modal();">Personalize Message</a>
 						</div>
 						<div class='panel-body'>
 							<!--Paragraph Changes with namePrompt Input-->
@@ -127,7 +127,7 @@
 
 				<!--Recent News-->
 			  <div class="col-md-4">
-					<div class='panel panel-primary'>
+					<div class='panel panel-green'>
 						<div class='panel-heading'>
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
@@ -135,26 +135,15 @@
 							<h3>April 30, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							Improved page loading times.<br>
-							The Terminal is no longer loaded on page load.<br>
-							Use <kbd>Shift + T</kbd> to load the assets and <kbd>`</kbd> to initiate the Terminal.
+							Tweaked <a class="link" onclick="loadContactMod();">contact</a> and <a class="link" onclick="loadDonateMod();">donate</a> modals.<br>
+							Added copy text buttons which display notifications on success.<br>
+							Adjusted visuals.
 							<br>
 							<br>
-							Added the "load" command to the Terminal.<br>
-							Allows you to load assets whenever you'd like.
-							<br>
-							<br>
-							Added the "media" command to the Terminal.<br>
-							Allows you to control media playback on a page (mostly the Homepage).
-							<br>
-							<br>
-							Added the "modal" command to the Terminal.<br>
-							Allows you to dispaly any modal on any page.
-							<br>
-							<br>
-							The snowstorm and water Easter eggs have been changed as well.<br>
-							You must now load their assets before you can enable them.<br>
-							Improved dropdown menus on smaller displays.
+							Added a general <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
+							Enhanced the backend for loading modals.<br>
+							Removed some namePrompt <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
+							Tweaked some file names.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -164,7 +153,7 @@
 
 				<!--About-->
 			  <div class="col-md-4">
-					<div class='panel panel-primary'>
+					<div class='panel panel-green'>
 						<div class='panel-heading'>
 							<h3 class='panel-title'>About</h3>
 						</div>
@@ -267,6 +256,7 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/growl.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
 	</div>
