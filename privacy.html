@@ -66,12 +66,12 @@
 								<li><a href="webapp.html">Web Application</a></li>
 							</ul>
 						</li><!-- /projects -->
-						<li><a onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a></li>
-						<li><a onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a></li>
+						<li><a onclick="loadContactMod();">Contact</a></li>
+						<li><a onclick="loadDonateMod();">Donate</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a class="divider-vertical"></a></li>
 						<li>
-							<a onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
+							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
 							</a>
 						</li>
@@ -83,7 +83,7 @@
 							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
-								<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
+								<a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
 									<span class="glyphicon glyphicon-question-sign"></span>
 								</a>
 								<button class="btn btn-default" type="button" onclick="search();">
@@ -150,7 +150,7 @@
 					Cookies may be used to enable the site to function more fluently.<br>
 					They are files with information about the website.<br>
 					They are stored locally on your computer for future use.<br>
-					If you wish to clear your internet cookies, click <a class="link" onclick="$('#modal-cookie').load('ajax/modals/cookies.html'); $('#modal-cookie').modal();">here</a>.<br>
+					If you wish to clear your internet cookies, click <a class="link" onclick="loadCookiesMod();">here</a>.<br>
 					Note: This will likely clear all of your internet cookies including ones for this website.
 				</p>
 			</span>
@@ -235,6 +235,7 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/growl.min.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>

@@ -63,7 +63,7 @@
 				<div class="input-group">
 					<input type="text" class="form-control" id="search-app" autocomplete="off" placeholder="Jump to...">
 					<span class="input-group-btn">
-						<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
+						<a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
 							<span class="glyphicon glyphicon-question-sign"></span>
 						</a>
 						<button class="btn btn-default" type="button" onclick="searchapp();">
@@ -96,14 +96,14 @@
       <a role="button" class="btn btn-danger btn-lg btn-block" href="webapp.html">Web Application</a>
       <br>
       <!--Contact-->
-      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a>
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="loadContactMod();">Contact</a>
       <!--Donate-->
-      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a>
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="loadDonateMod();">Donate</a>
       <!--About-->
       <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#about').modal()">About</a>
       <br>
       <!--Stats-->
-      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();">Stats</a>
+      <a role="button" class="btn btn-primary btn-lg btn-block" onclick="loadStatsMod();">Stats</a>
       <br>
 
 			<!--Footer-->
@@ -121,7 +121,7 @@
 								</li>
 								<!--Contact-->
 								<li>
-									<a class="link" onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
+									<a class="link" onclick="loadContactMod();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
 								</li>
 								<!--Design-->
 								<li>
@@ -147,7 +147,7 @@
 							<ul>
 								<!--Hide Ads-->
 								<li>
-									<a class="link" onclick="$('#modal-hideads').load('ajax/modals/ads.html'); $('#modal-hideads').modal();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+									<a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
 								</li>
 								<!--Water-->
 								<li>

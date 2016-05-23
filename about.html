@@ -66,12 +66,12 @@
 								<li><a href="webapp.html">Web Application</a></li>
 							</ul>
 						</li><!-- /projects -->
-						<li><a onclick="$('#modal-contact').load('ajax/modals/contact.html'); $('#modal-contact').modal();">Contact</a></li>
-						<li><a onclick="$('#modal-donate').load('ajax/modals/donate.html'); $('#modal-donate').modal();">Donate</a></li>
+						<li><a onclick="loadContactMod();">Contact</a></li>
+						<li><a onclick="loadDonateMod();">Donate</a></li>
 						<li class="active"><a href="about.html">About</a></li>
 						<li><a class="divider-vertical"></a></li>
 						<li>
-							<a onclick="$('#modal-stats').load('ajax/modals/stats.html'); $('#modal-stats').modal();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
+							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
 							</a>
 						</li>
@@ -83,7 +83,7 @@
 							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
 							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
 							<span class="input-group-btn">
-								<a class="btn btn-default" type="button" onclick="$('#modal-search-help').load('ajax/modals/search-help.html'); $('#modal-search-help').modal();">
+								<a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
 									<span class="glyphicon glyphicon-question-sign"></span>
 								</a>
 								<button class="btn btn-default" type="button" onclick="search();">
@@ -166,9 +166,9 @@
 			<p>
 				Hello, I am InvisaMage.<br>
 				I am 17 year old human male who likes web technologies and assorted games.<br>
-				I got the name, InvisaMage, when I was creating a name for my <a class="link" target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> character.<br>
+				I got the name, InvisaMage, when I was creating a name for my <a id="rs-cur" class="link" target="_blank" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> character.<br>
 				I created this website for entertainment and to organize my projects in one place.<br>
-				My Minecraft skin, as shown above, is armour called "Rune Guthix" from <a class="link" target="_blank" title="RuneScape" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a>.
+				My Minecraft skin, as shown above, is armour called "Rune Guthix" from <a id="rs-cur" class="link" target="_blank" href="http://www.runescape.com/">RuneScape <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a>.
 			</p>
 			</span>
 
@@ -344,6 +344,7 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/growl.min.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
