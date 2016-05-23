@@ -14,30 +14,51 @@
         <!--Bitcoin-->
         <div class="input-group">
           <div class="input-group-addon"><a target="_blank" href="https://bitcoin.org/en/">Bitcoin (฿)</a></div>
-          <input readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
+          <input id="copyTargetBitcoin" readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
             <span class="input-group-btn">
-              <a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">Donate ฿</a>
-              <a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-bitcoin">Scan QR</a>
+              <a id="copyButtonBitcoin" roll="button" class="btn btn-default" onclick="bitcoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr" target="_blank" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" onclick="$('#qr-bitcoin').collapse('toggle');" data-placement="top" data-toggle="tooltip" title="Scan QR Code" data-container="body">
+                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
+              </a>
             </span>
         </div>
         <br>
         <!--Dogecoin-->
         <div class="input-group">
           <div class="input-group-addon"><a target="_blank" href="http://dogecoin.com/">Dogecoin (Ð)</a></div>
-          <input readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
+          <input id="copyTargetDogecoin" readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
             <span class="input-group-btn">
-              <a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">Donate Ð</a>
-              <a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-dogecoin">Scan QR</a>
+              <a id="copyButtonDogecoin" roll="button" class="btn btn-default" onclick="dogecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg" target="_blank" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" onclick="$('#qr-dogecoin').collapse('toggle');" data-placement="top" data-toggle="tooltip" title="Scan QR Code" data-container="body">
+                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
+              </a>
             </span>
         </div>
         <br>
         <!--Litecoin-->
         <div class="input-group">
           <div class="input-group-addon"><a target="_blank" href="https://litecoin.com/">Litecoin (Ł)</a></div>
-          <input readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
+          <input id="copyTargetLitecoin" readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
             <span class="input-group-btn">
-              <a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">Donate Ł</a>
-              <a roll="button" class="btn btn-default" data-toggle="collapse" data-target="#qr-litecoin" data-toggle="tooltip">Scan QR</a>
+              <a id="copyButtonLitecoin" roll="button" class="btn btn-default" onclick="litecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy" target="_blank" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" onclick="$('#qr-litecoin').collapse('toggle');" data-placement="top" data-toggle="tooltip" title="Scan QR Code" data-container="body">
+                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
+              </a>
             </span>
         </div>
         <!--QR-Bitcoin-->
@@ -75,7 +96,7 @@
         You must have a QR code scanner to use these.<br>
         Preferably one built into your cryptocurrency client.<br>
         <strong>Note:</strong><br>
-        You must have the correct cryptocurrency client to use the "Donate" buttons.
+        You must have the correct cryptocurrency client to use this <span class="glyphicon glyphicon-link" aria-hidden="true"></span> button.
       </div>
     </div>
     <div class="modal-footer">
@@ -91,3 +112,176 @@
     </div>
   </div>
 </div><!-- /.modal-donate-->
+
+<script>
+//Bitcoin Copy Function
+      document.getElementById("copyButtonBitcoin").addEventListener("click", function() {
+      copyToClipboard(document.getElementById("copyTargetBitcoin"));
+  });
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+      return succeed;
+  }
+
+//Dogecoin Copy Function
+      document.getElementById("copyButtonDogecoin").addEventListener("click", function() {
+      copyToClipboard(document.getElementById("copyTargetDogecoin"));
+  });
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+      return succeed;
+  }
+
+//Litecoin Copy Function
+      document.getElementById("copyButtonLitecoin").addEventListener("click", function() {
+      copyToClipboard(document.getElementById("copyTargetLitecoin"));
+  });
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+      return succeed;
+  }
+
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+</script>
