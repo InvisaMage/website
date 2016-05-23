@@ -105,5 +105,5 @@ var Konami = function (callback) {
 };
 
 var easter_egg = new Konami(function() {
-	$('#modal-eastereggs').load('ajax/modals/eastereggs.html'); $('#modal-eastereggs').modal();
+	loadEastereggsMod();
 });
