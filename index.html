@@ -70,7 +70,7 @@
 						<li><a onclick="loadContactMod();">Contact</a></li>
 						<li><a onclick="loadDonateMod();">Donate</a></li>
 						<li><a href="about.html">About</a></li>
-						<li><a class="divider-vertical"></a></li>
+						<li id="divider-vertical"><a class="divider-vertical"></a></li>
 						<li>
 							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
@@ -132,18 +132,12 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>May 22, 2016</h3>
+							<h3>July 6, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							Tweaked <a class="link" onclick="loadContactMod();">contact</a> and <a class="link" onclick="loadDonateMod();">donate</a> modals.<br>
-							Added copy text buttons which display notifications on success.<br>
-							Adjusted visuals.
-							<br>
-							<br>
-							Added a general <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
-							Enhanced the backend for loading modals.<br>
-							Removed some namePrompt <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>.<br>
-							Tweaked some file names.
+							Modal references are now ajaxed.<br>
+							Added RuneScape character to the <a class="link" href="about.html">about</a> page.<br>
+							Fixed reload modal.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -182,7 +176,7 @@
 					</div>
 					<div class="modal-body">
 						<div onkeydown="if (event.keyCode == 13) namePrompt(), $('#modal-personalize').modal('toggle');" class="center-block">
-							<input class="form-control" id="name-value" autocomplete="off" autofocus="autofocus" placeholder="What is your name?">
+							<input class="form-control" id="name-value" autocomplete="off" placeholder="What is your name?">
 						</div>
 					</div>
 					<!--Personalize Message Help Content-->
@@ -229,20 +223,7 @@
 		</div>-->
 
 		<!--Modals-->
-		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-archive" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-privacy-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-privacy-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"><h1>Terminal not loaded!<br><br>Use <kbd>Shift + T</kbd> to load and try again.</h1></div>
-		<div class="modal fade" id="modal-terms-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-terms-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<span id="modals"></span>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
