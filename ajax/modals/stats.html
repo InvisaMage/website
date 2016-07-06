@@ -50,13 +50,13 @@
           <td><h5 class="black">Debugging</h5></td>
           <th>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-danger" onclick="location.reload();" data-toggle="tooltip" data-placement="bottom" title="Reload Page" data-container="body">
+              <button id="btn-reload" type="button" class="btn btn-danger" onclick="loadReloadMod();" data-toggle="tooltip" data-placement="bottom" title="Reload Page" data-container="body">
                 <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
               </button>
               <!--<button type="button" class="btn btn-danger" onclick="document.cookie='Counter=0; expires=Thu, 18 Dec 2099 12:00:00 UTC'; $('#modal-stats').modal('hide'); $('#modal-stats').on('hidden.bs.modal', function (e) { $('#modal-reload').load('ajax/modals/reload.html'); $('#modal-reload').modal(); });" data-toggle="tooltip" data-placement="bottom" title="Reset Requests" data-container="body">
                 <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
               </button>-->
-              <button type="button" class="btn btn-danger" onclick="$('#modal-stats').modal('hide'); $('#js-ptty').load('js/ptty.min.js'); $('#modal-terminal').load('ajax/modals/terminal.html'); $('#modal-stats').one('hidden.bs.modal', function (e) { $('#modal-terminal').modal(); }); $('#modal-terminal').one('shown.bs.modal', function (e) { $('input').focus(); });" data-toggle="tooltip" data-placement="bottom" title="Terminal" data-container="body">
+              <button id="btn-terminal" type="button" class="btn btn-danger" onclick="$('#modal-stats').modal('hide'); $('#btn-terminal').tooltip('destroy'); $('#js-ptty').load('js/ptty.min.js'); $('#modal-terminal').load('ajax/modals/terminal.html'); $('#modal-stats').one('hidden.bs.modal', function (e) { $('#modal-terminal').modal(); }); $('#modal-terminal').one('shown.bs.modal', function (e) { $('input').focus(); });" data-toggle="tooltip" data-placement="bottom" title="Terminal" data-container="body">
                 <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
               </button>
             </div>
