@@ -87,4 +87,14 @@ function search()
 //Cortana
 	if (search == "Cortana" || (search == "cortana"))
 	window.location = ("ms-Cortana://");
+
+//Blank
+	if (search == "" || (search == " "))
+	$.bootstrapGrowl("There's nothing to search for!", {
+    type: 'danger',
+    align: 'right',
+    offset: {from: 'top', amount: 60},
+    width: 'auto',
+    allow_dismiss: true
+  });
 }
