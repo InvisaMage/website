@@ -1,7 +1,7 @@
 
 Floating Survival
 By: InvisaMage
-Website: http://invisamage.com/
+Website: http://invisamage.com
 Minecraft 1.4-1.9.X*
 
 *Please use the latest version of Minecraft as I normally use the new features.
@@ -167,7 +167,7 @@ Note: Using Minecraft 1.7.X
 10)Reduced firework show length
 11)Edited spawn aesthetics
 12)Replaced "Spawn Platform" with another mechanism
-13)Replaced �Platform� teleport with �Spawn Mech.� teleport (Office)
+13)Replaced “Platform” teleport with “Spawn Mech.” teleport (Office)
 
 -------------------------------------------[v1.4.1]-----------------------------------------------
 
@@ -421,3 +421,31 @@ Note: Using Minecraft 1.9.X
 6)Fixed Checkpoint exploits (Now uses the same teleport method as the Hub and many other mechanisms) (Now heals the user and forces Adventure mode)
 7)Removed the Teleporter Book (Caused too many exploits and I'm too lazy to fix them)
 8)Added a simple map icon
+
+------------------------------------------[v1.7.1]----------------------------------------------
+
+Forgot
+Supposed to be a patch to fix signs in 1.9 but never happened
+
+------------------------------------------[v1.8.0]----------------------------------------------
+
+Note: Using Minecraft 1.10.x
+
+1)Updated sign at Spawn to display new version
+2)Removed resources folder (contained some coustom sounds)
+3)All stone buttons are now wooden for better visibility
+4)Fixed trap door in office (Wouldn't tp player out)
+5)Updated all /setblock signs to use the new NBT data
+6)Fixed Swift Stick from not working properly (Still has some problems)
+7)Updated Website URL at spawn
+8)Added Sign which allows players to place them in the wild and tele to Hub (Only works in creative mode :/)
+9)Removed disc in house labled "Emile van Krieken - Meadow"
+10)Encased the Wild Lobby in barriers.
+11)Changed the Death Area to be Nether themed
+12)Moved the Death Area to the Redstone Box
+13)Added subtitle displaying "Please wait..." to the Death Mechanism
+14)Used the /setworldspawn command to set the world spawn to the Spawn Mechanism (Only works if the gamemode is adventure)
+15)Changed the default gamemode to adventure
+16)Improved the Spawn asthetics (Added grass border and made the underside similar to the Wild Lobby)
+17)Improved Lobby asthetics (Added grass border and made the underside similar to the Wild Lobby)
+18)Added a teleport mechanism for the Arena Lobby
