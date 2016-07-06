@@ -998,3 +998,12 @@ footer ul {
 #rs-cur {
 	cursor:url(../rs.cur), auto;
 }
+
+.cur-point {
+	cursor: pointer;
+}
+
+#divider-vertical:hover {
+	background: #222222;
+	cursor: default;
+}
