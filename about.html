@@ -162,7 +162,11 @@
 			<span class="aboutSection" id="InvisaMage">
 			<h1>InvisaMage</h1>
 			<!--Minecraft Skin-->
-			<a title="InvisaMage"><img class="img-responsive center-block" src="images/InvisaMage.png" alt="InvisaMage's Skin" height="200" width="100"></a>
+
+			<div class="row">
+			  <div class="col-md-6"><img class="img-responsive center-block" src="images/mc.png" height="200" width="100" data-toggle="tooltip" data-placement="top" title="Minecraft Skin"></div>
+			  <div class="col-md-6"><img class="img-responsive center-block" src="images/rs.png" height="200" width="100" data-toggle="tooltip" data-placement="top" title="RuneScape Character"></div>
+			</div>
 			<p>
 				Hello, I am InvisaMage.<br>
 				I am 17 year old human male who likes web technologies and assorted games.<br>
@@ -237,7 +241,7 @@
 				<h2 id="search-info">Search</h2>
 				<p>
 					The Search function can be accessed at any time on the navigation bar.<br>
-					To use this function, type what are you are looking for and click the Go button.<br>
+					To use this function, type what are you are looking for click this icon <span class="glyphicon glyphicon-search"></span> or press enter.<br>
 					If the function can identify your term, you will be redirected to the appropriate page.<br>
 					For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
 					If the page you are looking for cannot be determined, nothing will happen.<br>
@@ -300,11 +304,11 @@
 					Dell Optiplex 3010 Motherboard<br>
 					Intel Core i5-3470 CPU<br>
 					2x4GB Corsair Vengeance DDR3 RAM<br>
-					MSI Radeon R7 260x 2GB GPU<br>
+					HIS Radeon R9 290 4GB GPU<br>
 					Seagate Barracuda 500GB HDD<br>
 					Thermaltake Versa N21 Chassis<br>
 					EVGA 500W PSU<br>
-					Dell Keyboard<br>
+					Logitech Wave Keyboard<br>
 					Etekcity Blue LED Mouse
 				</p>
 			</span>
@@ -318,20 +322,7 @@
 		<!--/.End Content-->
 
 		<!--Modals-->
-		<div class="modal fade" id="modal-hideads" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-archive" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-cookie" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-donate" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-eastereggs" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-privacy-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-privacy-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-reload" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-search-help" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-stats" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-terminal" tabindex="-1" role="dialog"><h1>Terminal not loaded!<br><br>Use <kbd>Shift + T</kbd> to load and try again.</h1></div>
-		<div class="modal fade" id="modal-terms-no" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
-		<div class="modal fade" id="modal-terms-yes" tabindex="-1" role="dialog"><h1>Loading...</h1></div>
+		<span id="modals"></span>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
