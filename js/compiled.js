@@ -115,6 +115,8 @@ function destroyWater() {
 
 //Loads footer on page load
 $('#footer').load('ajax/footer.html');
+//Loads modal references on page load
+$('#modals').load('ajax/modals.html');
 
 //Loads terminal modal on Shift + T key combination
 var listener = new window.keypress.Listener();
@@ -231,9 +233,12 @@ function loadPrivacyYesMod() {
   $('#modal-privacy-yes').modal();
 }
 function loadReloadMod() {
+  $('#modal-stats').modal('hide')
+  $('#btn-reload').tooltip('destroy');
+  $('#modal-stats').one('hidden.bs.modal', function (e) {
   $('#modal-reload').load('ajax/modals/reload.html');
   $('#modal-reload').modal();
-}
+})}
 function loadSearchHelpMod() {
   $('#modal-search-help').load('ajax/modals/search-help.html');
   $('#modal-search-help').modal();
@@ -254,6 +259,10 @@ function loadTermsNoMod() {
 function loadTermsYesMod() {
   $('#modal-terms-yes').load('ajax/modals/terms-yes.html');
   $('#modal-terms-yes').modal();
+}
+function loadSfxMod() {
+  $('#modal-sfx').load('sfx/sfx.html');
+  $('#modal-sfx').modal();
 }
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.')
