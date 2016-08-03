@@ -32,7 +32,7 @@ function namePromptapp()
 //Travis
 		if (name == "Travis" || (name == "travis")) {
 			document.getElementById("name").innerHTML =
-			"Hey, that's my name!"
+			"Hey, that's my creator's name!"
 		;}
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson")) {
