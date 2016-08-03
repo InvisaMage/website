@@ -439,11 +439,11 @@ $.register_command(
     function(media){
         var tokens = $.tokenize(media.join(' '), ['-play','-pause','-stop','-vu','-vd']);
         if(tokens.hasOwnProperty('-play')){
-            media.out = 'Playing media...'; $('audio').trigger('play');
+            media.out = 'Playing media...'; play(); //Located in compiled.js
         }else if(tokens.hasOwnProperty('-pause')){
-            media.out = 'Pausing media...'; $('audio').trigger('pause');
+            media.out = 'Pausing media...'; pause(); //Located in compiled.js
         }else if(tokens.hasOwnProperty('-stop')){
-            media.out = 'Stopping media...'; $("audio").trigger('pause'); $("audio").prop("currentTime",0);
+            media.out = 'Stopping media...'; pause(); $("audio").prop("currentTime",0);
         }else if(tokens.hasOwnProperty('-vu')){
             media.out = 'Increasing media volume...'; var volume = $("audio").prop("volume")+0.2; if(volume >1){ volume = 1; } $("audio").prop("volume",volume);
         }else if(tokens.hasOwnProperty('-vd')){
