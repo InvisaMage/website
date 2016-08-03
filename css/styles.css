@@ -108,7 +108,6 @@ p {
 .black {
 	color: black;
 }
-
 .black-bold {
 	color: black;
 	font-weight: bold;
@@ -424,6 +423,12 @@ table {
 .link-hidden-green:hover:before, .link:focus:before, .link:active:before {
 	left: 0;
 	right: 0;
+}
+
+.link-404:link, .link-404:visited {
+    color: #b3b3b3;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Definition - Underline From Centre - Gray color */
@@ -1006,4 +1011,16 @@ footer ul {
 #divider-vertical:hover {
 	background: #222222;
 	cursor: default;
+}
+
+/* New 404 Image */
+#img_container-404 {
+    position:relative;
+    display:inline-block;
+    text-align:center;
+}
+#btn-404 {
+    position:absolute;
+    bottom:10px;
+    right:10px;
 }
