@@ -265,4 +265,17 @@ function loadSfxMod() {
   $('#modal-sfx').modal();
 }
 
+//namePrompt media controls
+function pause() {
+  $('audio').trigger('pause');
+  $('#pause-btn').replaceWith( "<a id='play-btn' class='btn btn-success btn-md' role='button' onclick='play();'> <span class='glyphicon glyphicon-play' aria-hidden='true'></span> </a>" );
+}
+
+function play() {
+  $('audio').trigger('play');
+  $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <span class='glyphicon glyphicon-pause' aria-hidden='true'></span> </a>" );
+}
+
+
+
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.')
