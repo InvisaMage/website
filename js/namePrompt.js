@@ -32,7 +32,7 @@ function namePrompt()
 //Travis
 		if (name == "Travis" || (name == "travis")) {
 			document.getElementById("name").innerHTML =
-			"Hey, that's my name!"
+			"Hey, that's my creator's name!"
 		;}
 //Friends
 		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson")) {
@@ -73,15 +73,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Hello miss and welcome back to my website.<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>You Are The Woman</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>You Are The Woman</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -140,15 +134,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Tell me David, what's the answer?<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>Remember David</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>Remember David</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -183,15 +171,9 @@ function namePrompt()
 			"Jenny, I've got your number.<br>" +
 			"867-5309<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>867-5309/Jenny</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>867-5309/Jenny</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -230,15 +212,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Stacy, your mom has got it going on.<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>Stacy's Mom</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>Stacy's Mom</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -272,15 +248,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Why can't I find a woman like that?<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>Jessie's Girl</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>Jessie's Girl</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -314,15 +284,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Oh hey Leah. Look, it's your favourite song.<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>Ah Leah</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>Ah Leah</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -356,15 +320,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Come on Eileen.<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>Come On Eileen</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>Come On Eileen</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -398,15 +356,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Hey Mickey you're so fine.<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>Mickey</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>Mickey</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
@@ -552,15 +504,9 @@ function namePrompt()
 			document.getElementById("name").innerHTML =
 			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
 			"<div class='btn-group' role='group'>" +
-			  "<a class='btn btn-default btn-md' role='button'>What's Your Name</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('play')>" +
-					"<span class='glyphicon glyphicon glyphicon-play' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-success btn-md' role='button' onclick=$('audio').trigger('pause')>" +
+			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>What's Your Name</a>" +
+				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +
 					"<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>" +
-				"</a>" +
-				"<a class='btn btn-info btn-md' role='button' data-toggle='collapse' href='#collapse-info' aria-expanded='false' aria-controls='collapse-info'>" +
-					"<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>" +
 				"</a>" +
 			"</div>" +
 			"<br>" +
