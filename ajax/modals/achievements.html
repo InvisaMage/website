@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<!--Achievements Modal-->
+<div class="modal-dialog modal-sm" id="ajax-achievements">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Achievements</h4>
+    </div>
+    <div class="modal-body">
+      <table class="table table-responsive table-condensed table-hover">
+        <!--Header-->
+        <tr>
+          <td><h5 class="black-bold">Name</h5></td>
+          <th><h5 class="black-bold">Achieved</h5></th>
+        </tr>
+        <!--Konami-->
+        <tr>
+          <td><h5 class="black">Konami Code</h5></td>
+          <th><h5 class="black" id="eastereggAchievement"></h5></th>
+        </tr>
+        <!--Terminal-->
+        <tr>
+          <td><h5 class="black">Hacker?!</h5></td>
+          <th><h5 class="black" id="terminalAchievement"></h5></th>
+        </tr>
+        <!--Wisely-->
+        <tr>
+          <td><h5 class="black">Chosen Wisely</h5></td>
+          <th><h5 class="black" id="wiselyAchievement"></h5></th>
+        </tr>
+      </table>
+    </div>
+    <!--Achievements Help Collapsible Content-->
+    <div class="collapse" id="modal-achievements-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-achievements-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What is this?</strong><br>
+        This shows you the status of available achievements found in this site.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-achievements-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-achievements-->
+
+<script>
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
+  //Execute checkAchievements (from compiled.js)
+  checkAchievements();
+</script>
