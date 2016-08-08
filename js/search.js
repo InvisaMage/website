@@ -20,10 +20,6 @@ function search()
 	if (search == "Podcast" || (search == "podcast") || (search == "InvisaRant") || (search == "invisarant") || (search == "Invisarant") || (search == "invisaRant"))
 	window.location = "invisarant.html";
 
-//iOS Web App page
-	if (search == "Web App" || (search == "web app") || (search == "iOS") || (search == "ios") || (search == "App") || (search == "app") || (search == "Application") || (search == "application") || (search == "iOS Web App") || (search == "iOS web app") || (search == "webapp"))
-	window.location = "webapp.html";
-
 //Contact Modal
 	if (search == "Contact" || (search == "contact") || (search == "Help") || (search == "help") || (search == "Support") || (search == "support") || (search == "Questions") || (search == "questions"))
 	loadContactMod();
