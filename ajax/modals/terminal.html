@@ -99,9 +99,9 @@ $.register_command(
 $.register_command(
     'dir',
     'Displays a list of files and subdirectories in a directory.',
-    'dir [-root | -ajax | -modals | -archive | -audio | -css | -fonts | -images | -browsers | -fs | -ios | -svg | -js | -json]',
+    'dir [-root | -ajax | -modals | -archive | -audio | -css | -fonts | -images | -browsers | -fs | -svg | -js | -json]',
     function(dir){
-        var tokens = $.tokenize(dir.join(' '), ['-ajax','-root','-modals','-archive','-audio','-css','-fonts','-images','-browsers','-fs','-ios','-svg','-js','-json']);
+        var tokens = $.tokenize(dir.join(' '), ['-ajax','-root','-modals','-archive','-audio','-css','-fonts','-images','-browsers','-fs','-svg','-js','-json']);
         if(tokens.hasOwnProperty('-root')){
             dir.out =
             'Directory of "root"<br>' +
@@ -115,17 +115,16 @@ $.register_command(
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> json<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> 404.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> about.html<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> app.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs-beta-changelog.txt<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs-changelog.txt<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> index.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> invisarant.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> keybase.txt<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> news.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> privacy.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> rs.cur<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terms.html<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> webapp.html';
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terms.html<br>';
         }else if(tokens.hasOwnProperty('-ajax')){
             dir.out =
             'Directory of "ajax"<br>' +
@@ -135,6 +134,7 @@ $.register_command(
         }else if(tokens.hasOwnProperty('-modals')){
             dir.out =
             'Directory of "modals"<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> achievements.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ads.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> archive.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> contact.html<br>' +
@@ -193,7 +193,6 @@ $.register_command(
             'Directory of "images"<br>' +
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> browsers<br>' +
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> fs<br>' +
-            '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> ios<br>' +
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> svg<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> 404.jpg<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bg.jpg<br>' +
@@ -231,12 +230,6 @@ $.register_command(
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs5.png<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs6.png<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> fs7.png';
-        }else if(tokens.hasOwnProperty('-ios')){
-            dir.out =
-            'Directory of "ios"<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ios1.png<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ios2.png<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ios3.png';
         }else if(tokens.hasOwnProperty('-svg')){
             dir.out =
             'Directory of "svg"<br>' +
@@ -252,14 +245,13 @@ $.register_command(
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> compiled.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> growl.min.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> jquery.min.js<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ripples.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> js.cookie.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> keypress.min.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> konami.js<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> namePrompt-app.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> namePrompt.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> nprogress.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ptty.min.js<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search-app.js<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ripples.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> snowstorm.js<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> typeahead.min.js';
@@ -271,7 +263,6 @@ $.register_command(
         }else{
             dir.out =
             'Improper usage of command.';
-
         }
         return dir;
     }
@@ -283,7 +274,7 @@ $.register_command(
     'Open a file.',
     'open [filename.extension]',
     function(open){
-        var tokens = $.tokenize(open.join(' '), ['index.html','news.html','fs.html','invisarant.html','webapp.html','app.html','computers.html','about.html','terms.html','privacy.html','archive.html','404.html']);
+        var tokens = $.tokenize(open.join(' '), ['index.html','news.html','fs.html','invisarant.html','computers.html','about.html','terms.html','privacy.html','archive.html','404.html']);
         if(tokens.hasOwnProperty('index.html')){
             open.out = window.location = "index.html";
         }else if(tokens.hasOwnProperty('news.html')){
@@ -292,10 +283,6 @@ $.register_command(
             open.out = window.location = "fs.html";
         }else if(tokens.hasOwnProperty('invisarant.html')){
             open.out = window.location = "invisarant.html";
-        }else if(tokens.hasOwnProperty('webapp.html')){
-            open.out = window.location = "webapp.html";
-        }else if(tokens.hasOwnProperty('app.html')){
-            open.out = window.location = "app.html";
         }else if(tokens.hasOwnProperty('computers.html')){
             open.out = window.location = "computers.html";
         }else if(tokens.hasOwnProperty('about.html')){
@@ -311,7 +298,6 @@ $.register_command(
         }else{
             open.out =
             'Improper usage of command.';
-
         }
         return open;
     }
@@ -459,10 +445,12 @@ $.register_command(
 $.register_command(
     'modal',
     'Load a modal on the current page.',
-    'modal [-ads | -archive | -contact | -cookies | -donate | -eastereggs | -privacy-no | -privacy-yes | -reload | -search-help | -stats | -terminal | -terms-no | -terms-yes]',
+    'modal [-achievements | -ads | -archive | -contact | -cookies | -donate | -eastereggs | -privacy-no | -privacy-yes | -reload | -search-help | -stats | -terminal | -terms-no | -terms-yes]',
     function(modal){
-        var tokens = $.tokenize(modal.join(' '), ['-ads','-archive','-contact','-cookies','-donate','-eastereggs','-privacy-no','-privacy-yes','-reload','-search-help','-stats','-terminal','-terms-no','-terms-yes']);
-        if(tokens.hasOwnProperty('-ads')){
+        var tokens = $.tokenize(modal.join(' '), ['-achievements','-ads','-archive','-contact','-cookies','-donate','-eastereggs','-privacy-no','-privacy-yes','-reload','-search-help','-stats','-terminal','-terms-no','-terms-yes']);
+        if(tokens.hasOwnProperty('-achievements')){
+            modal.out = 'Openning "achievements" modal...'; $('#modal-terminal').modal('hide'); $('#modal-achievements').load('ajax/modals/achievements.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-achievements').modal(); });
+        }else if(tokens.hasOwnProperty('-ads')){
             modal.out = 'Openning "ads" modal...'; $('#modal-terminal').modal('hide'); $('#modal-hideads').load('ajax/modals/ads.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-hideads').modal(); });
         }else if(tokens.hasOwnProperty('-archive')){
             modal.out = 'Openning "archive" modal...'; $('#modal-terminal').modal('hide'); $('#modal-archive').load('ajax/modals/archive.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-archive').modal(); });
@@ -494,6 +482,28 @@ $.register_command(
             modal.out = 'Improper usage of command.';
         }
         return modal;
+    }
+);
+
+/* cookies - Configure cookies.  */
+$.register_command(
+    'cookies',
+    'Configure cookies.',
+    'cookies [-remove-all | -add-eastereggAchievement | -add-terminalAchievement | -add-wisleyAchievement]',
+    function(cookies){
+        var tokens = $.tokenize(cookies.join(' '), ['-remove-all','-add-eastereggAchievement','-add-terminalAchievement','-add-wisleyAchievement']);
+        if(tokens.hasOwnProperty('-remove-all')){
+            cookies.out = 'Removed all cookies.'; Cookies.remove('eastereggAchievement'); Cookies.remove('terminalAchievement'); Cookies.remove('wiselyAchievement');
+        }else if(tokens.hasOwnProperty('-add-eastereggAchievement')){
+            cookies.out = 'Adding "eastereggAchievement" cookie...'; Cookies.set('eastereggAchievement', 'true', { expires: 30 });
+        }else if(tokens.hasOwnProperty('-add-terminalAchievement')){
+            cookies.out = 'Adding "terminalAchievement" cookie...'; Cookies.set('terminalAchievement', 'true', { expires: 30 });
+        }else if(tokens.hasOwnProperty('-add-wisleyAchievement')){
+            cookies.out = 'Adding "wiselyAchievement" cookie...'; Cookies.set('wiselyAchievement', 'true', { expires: 30 });
+        }else{
+            cookies.out = 'Improper usage of command.';
+        }
+        return cookies;
     }
 );
 
