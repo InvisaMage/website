@@ -106,4 +106,5 @@ var Konami = function (callback) {
 
 var easter_egg = new Konami(function() {
 	loadEastereggsMod();
+	eastereggCheck();
 });
