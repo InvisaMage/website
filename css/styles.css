@@ -135,56 +135,8 @@ p {
 	text-decoration: none;
 }
 
-/* Clock Properties */
-.clock {
-	border-radius: 15px;
-	border: 1px solid black;
-	border-width:5px 0;
-	display: inline-block;
-	padding: 15px;
-	font-size: 200%;
-	color: #00FF00;
-	background: rgba(0,0,0,0.2);
-	cursor: help;
-}
-
-/* Counter Properties */
-.counter {
-	border-radius: 15px;
-	border: 1px solid black;
-	border-width:5px 0;
-	display: inline-block;
-	padding: 15px;
-	font-size: 200%;
-	color: #00FF00;
-	background: rgba(0,0,0,0.2);
-	cursor: help;
-}
-
 table {
 	color: #3399FF;
-}
-
-/* Table Properties for Homepage */
-.table-home {
-	background: rgba(0,0,0,0.3);
-}
-.table-home, .table-home th, .table-home td {
-	border: black 4px solid;
-	border-collapse: collapse;
-	font-size: 105%;
-}
-.table-home, .table-home th, .table-home td {
-	padding: 5px;
-}
-
-/* Table Properties for the Footer */
-.table-footer, .table-footer th, .table-footer td {
-	font-size: 105%;
-	text-align: left;
-}
-.table-footer, .table-footer th, .table-footer td {
-	padding: 2px;
 }
 
 /* Table Properties for InvisaRant */
@@ -284,145 +236,8 @@ table {
 	left: 0;
 	right: 0;
 }
-
-/* External Links for Web App, Underline From Centre */
-.link-danger {
-	display: inline;
-	vertical-align: top;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	position: relative;
-	overflow: hidden;
-	color: #D9534F;
-	text-decoration: none;
-	text-decoration-color: -moz-use-text-color;
-	text-decoration-line: none;
-	text-decoration-style: solid;
-	text-shadow: 0px 0px 5px;
-	transition: .4s;
-	cursor: pointer;
-}
-.link-danger:hover {
-	text-decoration: none;
-	color: #D9534F;
-}
-.link-danger:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	left: 50%;
-	right: 50%;
-	bottom: 0;
-	background: #3399FF;
-	height: 2px;
-	-webkit-transition-property: left, right;
-	transition-property: left, right;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-.link-danger:hover:before, .link-danger:focus:before, .link-danger:active:before {
-	left: 0;
-	right: 0;
-}
-.default-danger {
-  color: #a94442;
-  text-decoration: none;
-}
-.default-danger:hover,
-.default-danger:focus {
-  color: #803432;
-  text-decoration: underline;
-}
 #help {
 	cursor: help;
-}
-
-/* Hidden Links - Blue */
-.link-hidden-blue {
-	display: inline-block;
-	vertical-align: text-bottom;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	position: relative;
-	overflow: hidden;
-	color: #3399FF;
-	text-decoration: none;
-	transition: .4s;
-	cursor: pointer;
-}
-.link-hidden-blue:hover {
-	text-decoration: none;
-}
-.link-hidden-blue:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	left: 50%;
-	right: 50%;
-	bottom: 0;
-	background: #3399FF;
-	height: 2px;
-	-webkit-transition-property: left, right;
-	transition-property: left, right;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-.link-hidden-blue:hover:before, .link:focus:before, .link:active:before {
-	left: 0;
-	right: 0;
-}
-
-/* Hidden Links - Green */
-.link-hidden-green {
-	display: inline-block;
-	vertical-align: text-bottom;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	position: relative;
-	overflow: hidden;
-	color: #00FF00;
-	text-decoration: none;
-	transition: .4s;
-	cursor: pointer;
-}
-.link-hidden-green:hover {
-	text-decoration: none;
-}
-.link-hidden-green:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	left: 50%;
-	right: 50%;
-	bottom: 0;
-	background: #3399FF;
-	height: 2px;
-	-webkit-transition-property: left, right;
-	transition-property: left, right;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-.link-hidden-green:hover:before, .link:focus:before, .link:active:before {
-	left: 0;
-	right: 0;
 }
 
 .link-404:link, .link-404:visited {
@@ -877,12 +692,6 @@ h1 h2 h3 {
 }
 .top:hover {
 	opacity: .98;
-}
-
-/* Border on iOS Web App Images */
-.iosimg {
-	border: 1px solid black;
-	border-width: 5px 5px;
 }
 
 /* New Footer Properties */
