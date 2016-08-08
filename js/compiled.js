@@ -136,9 +136,10 @@ listener.simple_combo("delete", function() {
 var listener = new window.keypress.Listener();
 listener.simple_combo("`", function() {
     //Close open modals
-    $('#modal-personalize, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
+    $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
     $('#modal-terminal').modal('toggle');
     $('#modal-terminal').on('shown.bs.modal', function (e) { $('form, input').focus(); });
+    terminalCheck();
 });
 
 //Contact modal copy messages
@@ -194,12 +195,103 @@ function litecoinMsg() {
       type: 'success',
       align: 'right',
       offset: {from: 'top', amount: 60},
-      width: 'auto',
+      width: '300',
       allow_dismiss: true
     });
 };
 
-//Shorted modal load functions
+//Used to see if Easteregg modal Achievement message should be displayed.
+function eastereggCheck() {
+  if (Cookies.get('eastereggAchievement') == 'true') {
+    console.log('Achievement message not displayed as user has already gotten it.')
+  } else {
+    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website.", {
+      type: 'info',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: '300',
+      delay: 10000,
+      allow_dismiss: true
+    });
+    Cookies.set('eastereggAchievement', 'true', { expires: 30 });
+  }
+}
+
+//Used to see if Terminal Achievement message should be displayed.
+function terminalCheck() {
+  if (Cookies.get('terminalAchievement') == 'true') {
+    console.log('Achievement message not displayed as user has already gotten it.')
+  } else {
+    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time.", {
+      type: 'info',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: '300',
+      delay: 10000,
+      allow_dismiss: true
+    });
+    Cookies.set('terminalAchievement', 'true', { expires: 30 });
+  }
+}
+
+//Used to see if Wisely Achievement message should be displayed.
+function wiselyCheck() {
+  if (Cookies.get('wisleyAchievement') == 'true') {
+    console.log('Achievement message not displayed as user has already gotten it.')
+  } else {
+    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>.", {
+      type: 'info',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: 'auto',
+      delay: 10000,
+      allow_dismiss: true
+    });
+    Cookies.set('wiselyAchievement', 'true', { expires: 30 });
+  }
+}
+
+//Check Achievements (used on modal).
+function checkAchievements() {
+  if (Cookies.get('eastereggAchievement') == 'true') {
+    $("#eastereggAchievement").replaceWith("<h5 class='text-success' id='eastereggAchievement'>Yes</h5>");
+  }else {
+    $("#eastereggAchievement").replaceWith("<h5 class='text-danger' id='eastereggAchievement'>No</h5>");
+  }
+
+  if (Cookies.get('terminalAchievement') == 'true') {
+    $("#terminalAchievement").replaceWith("<h5 class='text-success' id='terminalAchievement'>Yes</h5>");
+  }else {
+    $("#terminalAchievement").replaceWith("<h5 class='text-danger' id='terminalAchievement'>No</h5>");
+  }
+
+  if (Cookies.get('wiselyAchievement') == 'true') {
+    $("#wiselyAchievement").replaceWith("<h5 class='text-success' id='wiselyAchievement'>Yes</h5>");
+  }else {
+    $("#wiselyAchievement").replaceWith("<h5 class='text-danger' id='wiselyAchievement'>No</h5>");
+  }
+}
+
+//Reset Achievement cookies
+function resetAchievements() {
+  Cookies.remove('eastereggAchievement');
+  Cookies.remove('terminalAchievement');
+  Cookies.remove('wiselyAchievement');
+  $('#btn-reset-achievements').tooltip('hide')
+  $.bootstrapGrowl("Your achievement progress has been reset!", {
+    type: 'info',
+    align: 'right',
+    offset: {from: 'top', amount: 60},
+    width: 'auto',
+    allow_dismiss: true
+  });
+}
+
+//Shortened modal load functions
+function loadAchievementsMod() {
+  $('#modal-achievements').load('ajax/modals/achievements.html');
+  $('#modal-achievements').modal();
+}
 function loadAdsMod() {
   $('#modal-hideads').load('ajax/modals/ads.html');
   $('#modal-hideads').modal();
@@ -227,10 +319,13 @@ function loadEastereggsMod() {
 function loadPrivacyNoMod() {
   $('#modal-privacy-no').load('ajax/modals/privacy-no.html');
   $('#modal-privacy-no').modal();
+  $('.alert').toggle();
 }
 function loadPrivacyYesMod() {
   $('#modal-privacy-yes').load('ajax/modals/privacy-yes.html');
   $('#modal-privacy-yes').modal();
+  $('.alert').toggle();
+  wiselyCheck();
 }
 function loadReloadMod() {
   $('#modal-stats').modal('hide')
@@ -255,10 +350,13 @@ function loadTerminalMod() {
 function loadTermsNoMod() {
   $('#modal-terms-no').load('ajax/modals/terms-no.html');
   $('#modal-terms-no').modal();
+  $('.alert').toggle();
 }
 function loadTermsYesMod() {
   $('#modal-terms-yes').load('ajax/modals/terms-yes.html');
   $('#modal-terms-yes').modal();
+  $('.alert').toggle();
+  wiselyCheck();
 }
 function loadSfxMod() {
   $('#modal-sfx').load('sfx/sfx.html');
@@ -275,7 +373,5 @@ function play() {
   $('audio').trigger('play');
   $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <span class='glyphicon glyphicon-pause' aria-hidden='true'></span> </a>" );
 }
-
-
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.')
