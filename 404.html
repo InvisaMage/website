@@ -62,7 +62,6 @@
 							<ul class="dropdown-menu">
 								<li><a href="fs.html">Floating Survival</a></li>
 								<li><a href="invisarant.html">InvisaRant</a></li>
-								<li><a href="webapp.html">Web Application</a></li>
 							</ul>
 						</li><!-- /projects -->
 						<li><a onclick="loadContactMod();">Contact</a></li>
@@ -72,6 +71,11 @@
 						<li>
 							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
 								<span class="glyphicon glyphicon-stats"></span>
+							</a>
+						</li>
+						<li>
+							<a onclick="loadAchievementsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Achievements">
+								<span class="glyphicon glyphicon-tasks"></span>
 							</a>
 						</li>
 					</ul>
@@ -106,11 +110,16 @@
 				</a>
 			</div>
 
+			<!--Recent Changes-->
 			<div class="collapse" id="collapse-404">
 				<br>
 				<br>
 				<div class="well-black well-sm">
 						<p class="black">
+							The web application information page that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/webapp.html" href="http://www.invisamage.com/webapp.html">here</a> does not exist anymore.<br>
+							The web application that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/app.html" href="http://www.invisamage.com/app.html">here</a> does not exist anymore.
+							<br>
+							<br>
 							The archive page that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/archive.html" href="http://www.invisamage.com/archive.html">here</a> does not exist anymore.<br>
 							Use the archive link/modal in the footer instead.
 							<br>
@@ -148,6 +157,7 @@
 		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
+		<script src="js/js.cookie.js"></script>
 		<script src="js/compiled.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script id="js-ptty"></script>
