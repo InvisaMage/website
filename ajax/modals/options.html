@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<!--Options Modal-->
+<div class="modal-dialog modal-sm" id="ajax-achievements">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Options</h4>
+    </div>
+    <div class="modal-body text-left">
+      <!--Terminal-->
+      <div class="well well-sm">
+        Load Terminal assets on page load
+        <div class="radio radio-success" style="font-size:14px;">
+          <input type="radio" name="option1" id="terminal-radio1" value="yes">
+          <label for="terminal-radio1">Yes</label>
+        </div>
+        <div class="radio radio-danger" style="font-size:14px;">
+          <input type="radio" name="option1" id="terminal-radio2" value="no" checked>
+          <label for="terminal-radio2">No (Default)</label>
+        </div>
+      </div>
+      <!--News-->
+      <div class="well well-sm">
+        Default tab on News page
+        <div class="radio radio-primary" style="font-size:14px;">
+          <input type="radio" name="option2" id="news-radio1" value="projects" checked>
+          <label for="news-radio1">Projects (Default)</label>
+        </div>
+        <div class="radio radio-primary" style="font-size:14px;">
+          <input type="radio" name="option2" id="news-radio2" value="important">
+          <label for="news-radio2">Important</label>
+        </div>
+        <div class="radio radio-primary" style="font-size:14px;">
+          <input type="radio" name="option2" id="news-radio3" value="website">
+          <label for="news-radio3">Website</label>
+        </div>
+        <div class="radio radio-primary" style="font-size:14px;">
+          <input type="radio" name="option2" id="news-radio4" value="bugs">
+          <label for="news-radio4">Bugs</label>
+        </div>
+      </div>
+      <!--T&C Banners-->
+      <div class="well well-sm">
+        Display banners on terms and privacy pages
+        <div class="radio radio-success" style="font-size:14px;">
+          <input type="radio" name="option3" id="banners-radio1" value="yes" checked>
+          <label for="banners-radio1">Yes (Default)</label>
+        </div>
+        <div class="radio radio-danger" style="font-size:14px;">
+          <input type="radio" name="option3" id="banners-radio2" value="no">
+          <label for="banners-radio2">No</label>
+        </div>
+      </div>
+      <!--Snowstorm-->
+      <div class="well well-sm">
+        Enable snowstorm on page load
+        <div class="radio radio-success" style="font-size:14px;">
+          <input type="radio" name="option4" id="snowstorm-radio1" value="yes">
+          <label for="snowstorm-radio1">Yes</label>
+        </div>
+        <div class="radio radio-danger" style="font-size:14px;">
+          <input type="radio" name="option4" id="snowstorm-radio2" value="no" checked>
+          <label for="snowstorm-radio2">No (Default)</label>
+        </div>
+      </div>
+    </div>
+    <!--Options Help Collapsible Content-->
+    <div class="collapse" id="modal-options-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-options-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What is this?</strong><br>
+        Configure the website preferences to your liking.
+        <br>
+        <br>
+        <strong>Note:</strong><br>
+        Clicking or tapping the "Cancel" button will not save your changes.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-options-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="optionsCancelMsg();">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="optionsCheck();"> Save
+        <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-options-->
+
+<script>
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
+  //Checks which ratios should be selected
+  $(function() {
+    //Terminal
+    if (Cookies.get('loadTerminalOPL') == 'true') {
+      $("#terminal-radio1").replaceWith("<input type='radio' name='option1' id='terminal-radio1' value='yes' checked>");
+    }
+    if (Cookies.get('loadTerminalOPL') == 'false') {
+      $("#terminal-radio2").replaceWith("<input type='radio' name='option1' id='terminal-radio2' value='no' checked>");
+    }
+    //News
+    if (Cookies.get('defaultTab') == 'projects') {
+      $("#news-radio1").replaceWith("<input type='radio' name='option2' id='news-ratio1' value='projects' checked>");
+    }
+    if (Cookies.get('defaultTab') == 'important') {
+      $("#news-radio2").replaceWith("<input type='radio' name='option2' id='news-ratio2' value='important' checked>");
+    }
+    if (Cookies.get('defaultTab') == 'website') {
+      $("#news-radio3").replaceWith("<input type='radio' name='option2' id='news-ratio3' value='website' checked>");
+    }
+    if (Cookies.get('defaultTab') == 'bugs') {
+      $("#news-radio4").replaceWith("<input type='radio' name='option2' id='news-ratio4' value='bugs' checked>");
+    }
+    //T&C Banners
+    if (Cookies.get('loadBanners') == 'true') {
+      $("#banners-radio1").replaceWith("<input type='radio' name='option3' id='banners-radio1' value='yes' checked>");
+    }
+    if (Cookies.get('loadBanners') == 'false') {
+      $("#banners-radio2").replaceWith("<input type='radio' name='option3' id='banners-radio2' value='no' checked>");
+    }
+    //Snowstorm
+    if (Cookies.get('enableSnowstorm') == 'true') {
+      $("#snowstorm-radio1").replaceWith("<input type='radio' name='option4' id='snowstorm-radio1' value='yes' checked>");
+    }
+    if (Cookies.get('enableSnowstorm') == 'false') {
+      $("#snowstorm-radio2").replaceWith("<input type='radio' name='option4' id='snowstorm-radio2' value='no' checked>");
+    }
+  });
+</script>
+
+<style>
+/*awesome-boostrap-checkbox Library*/
+.checkbox {
+  padding-left: 20px;
+}
+.checkbox label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 5px;
+}
+.checkbox label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox label::after {
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 0;
+  margin-left: -20px;
+  padding-left: 3px;
+  padding-top: 1px;
+  font-size: 11px;
+  color: #555555;
+}
+.checkbox input[type="checkbox"],
+.checkbox input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+}
+.checkbox input[type="checkbox"]:checked + label::after,
+.checkbox input[type="radio"]:checked + label::after {
+  font-family: "FontAwesome";
+  content: "\f00c";
+}
+.checkbox input[type="checkbox"]:indeterminate + label::after,
+.checkbox input[type="radio"]:indeterminate + label::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 3px;
+  background-color: #555555;
+  border-radius: 2px;
+  margin-left: -16.5px;
+  margin-top: 7px;
+}
+.checkbox input[type="checkbox"]:disabled + label,
+.checkbox input[type="radio"]:disabled + label {
+  opacity: 0.65;
+}
+.checkbox input[type="checkbox"]:disabled + label::before,
+.checkbox input[type="radio"]:disabled + label::before {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+.checkbox.checkbox-circle label::before {
+  border-radius: 50%;
+}
+.checkbox.checkbox-inline {
+  margin-top: 0;
+}
+
+.checkbox-primary input[type="checkbox"]:checked + label::before,
+.checkbox-primary input[type="radio"]:checked + label::before {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.checkbox-primary input[type="checkbox"]:checked + label::after,
+.checkbox-primary input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-danger input[type="checkbox"]:checked + label::before,
+.checkbox-danger input[type="radio"]:checked + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+.checkbox-danger input[type="checkbox"]:checked + label::after,
+.checkbox-danger input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-info input[type="checkbox"]:checked + label::before,
+.checkbox-info input[type="radio"]:checked + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+.checkbox-info input[type="checkbox"]:checked + label::after,
+.checkbox-info input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-warning input[type="checkbox"]:checked + label::before,
+.checkbox-warning input[type="radio"]:checked + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+.checkbox-warning input[type="checkbox"]:checked + label::after,
+.checkbox-warning input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-success input[type="checkbox"]:checked + label::before,
+.checkbox-success input[type="radio"]:checked + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+.checkbox-success input[type="checkbox"]:checked + label::after,
+.checkbox-success input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-primary input[type="checkbox"]:indeterminate + label::before,
+.checkbox-primary input[type="radio"]:indeterminate + label::before {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.checkbox-primary input[type="checkbox"]:indeterminate + label::after,
+.checkbox-primary input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-danger input[type="checkbox"]:indeterminate + label::before,
+.checkbox-danger input[type="radio"]:indeterminate + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.checkbox-danger input[type="checkbox"]:indeterminate + label::after,
+.checkbox-danger input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-info input[type="checkbox"]:indeterminate + label::before,
+.checkbox-info input[type="radio"]:indeterminate + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+
+.checkbox-info input[type="checkbox"]:indeterminate + label::after,
+.checkbox-info input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-warning input[type="checkbox"]:indeterminate + label::before,
+.checkbox-warning input[type="radio"]:indeterminate + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.checkbox-warning input[type="checkbox"]:indeterminate + label::after,
+.checkbox-warning input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-success input[type="checkbox"]:indeterminate + label::before,
+.checkbox-success input[type="radio"]:indeterminate + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.checkbox-success input[type="checkbox"]:indeterminate + label::after,
+.checkbox-success input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.radio {
+  padding-left: 20px;
+}
+.radio label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 5px;
+}
+.radio label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out;
+}
+.radio label::after {
+  display: inline-block;
+  position: absolute;
+  content: " ";
+  width: 11px;
+  height: 11px;
+  left: 3px;
+  top: 3px;
+  margin-left: -20px;
+  border-radius: 50%;
+  background-color: #555555;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+}
+.radio input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+}
+.radio input[type="radio"]:checked + label::after {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.radio input[type="radio"]:disabled + label {
+  opacity: 0.65;
+}
+.radio input[type="radio"]:disabled + label::before {
+  cursor: not-allowed;
+}
+.radio.radio-inline {
+  margin-top: 0;
+}
+
+.radio-primary input[type="radio"] + label::after {
+  background-color: #337ab7;
+}
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: #337ab7;
+}
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: #337ab7;
+}
+
+.radio-danger input[type="radio"] + label::after {
+  background-color: #d9534f;
+}
+.radio-danger input[type="radio"]:checked + label::before {
+  border-color: #d9534f;
+}
+.radio-danger input[type="radio"]:checked + label::after {
+  background-color: #d9534f;
+}
+
+.radio-info input[type="radio"] + label::after {
+  background-color: #5bc0de;
+}
+.radio-info input[type="radio"]:checked + label::before {
+  border-color: #5bc0de;
+}
+.radio-info input[type="radio"]:checked + label::after {
+  background-color: #5bc0de;
+}
+
+.radio-warning input[type="radio"] + label::after {
+  background-color: #f0ad4e;
+}
+.radio-warning input[type="radio"]:checked + label::before {
+  border-color: #f0ad4e;
+}
+.radio-warning input[type="radio"]:checked + label::after {
+  background-color: #f0ad4e;
+}
+
+.radio-success input[type="radio"] + label::after {
+  background-color: #5cb85c;
+}
+.radio-success input[type="radio"]:checked + label::before {
+  border-color: #5cb85c;
+}
+.radio-success input[type="radio"]:checked + label::after {
+  background-color: #5cb85c;
+}
+
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after {
+  font-family: 'FontAwesome';
+  content: "\f00c";
+}
+input[type="checkbox"] .styled:checked + label::before,
+input[type="radio"] .styled:checked + label::before {
+  color: #fff;
+}
+input[type="checkbox"] .styled:checked + label::after,
+input[type="radio"] .styled:checked + label::after {
+  color: #fff;
+}
+</style>
