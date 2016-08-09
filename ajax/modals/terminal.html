@@ -445,9 +445,9 @@ $.register_command(
 $.register_command(
     'modal',
     'Load a modal on the current page.',
-    'modal [-achievements | -ads | -archive | -contact | -cookies | -donate | -eastereggs | -privacy-no | -privacy-yes | -reload | -search-help | -stats | -terminal | -terms-no | -terms-yes]',
+    'modal [-achievements | -ads | -archive | -contact | -cookies | -donate | -eastereggs | -options | -privacy-no | -privacy-yes | -reload | -search-help | -stats | -terminal | -terms-no | -terms-yes]',
     function(modal){
-        var tokens = $.tokenize(modal.join(' '), ['-achievements','-ads','-archive','-contact','-cookies','-donate','-eastereggs','-privacy-no','-privacy-yes','-reload','-search-help','-stats','-terminal','-terms-no','-terms-yes']);
+        var tokens = $.tokenize(modal.join(' '), ['-achievements','-ads','-archive','-contact','-cookies','-donate','-eastereggs','-options','-privacy-no','-privacy-yes','-reload','-search-help','-stats','-terminal','-terms-no','-terms-yes']);
         if(tokens.hasOwnProperty('-achievements')){
             modal.out = 'Openning "achievements" modal...'; $('#modal-terminal').modal('hide'); $('#modal-achievements').load('ajax/modals/achievements.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-achievements').modal(); });
         }else if(tokens.hasOwnProperty('-ads')){
@@ -462,6 +462,8 @@ $.register_command(
             modal.out = 'Openning "donate" modal...'; $('#modal-terminal').modal('hide'); $('#modal-donate').load('ajax/modals/donate.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-donate').modal(); });
         }else if(tokens.hasOwnProperty('-eastereggs')){
             modal.out = 'Openning "eastereggs" modal...'; $('#modal-terminal').modal('hide'); $('#modal-eastereggs').load('ajax/modals/eastereggs.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-eastereggs').modal(); });
+        }else if(tokens.hasOwnProperty('-options')){
+            modal.out = 'Openning "eastereggs" modal...'; $('#modal-terminal').modal('hide'); $('#modal-options').load('ajax/modals/options.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-options').modal(); });
         }else if(tokens.hasOwnProperty('-privacy-no')){
             modal.out = 'Openning "privacy-no" modal...'; $('#modal-terminal').modal('hide'); $('#modal-privacy-no').load('ajax/modals/privacy-no.html'); $('#modal-terminal').one('hidden.bs.modal', function (e) { $('#modal-privacy-no').modal(); });
         }else if(tokens.hasOwnProperty('-privacy-yes')){
@@ -489,17 +491,19 @@ $.register_command(
 $.register_command(
     'cookies',
     'Configure cookies.',
-    'cookies [-remove-all | -add-eastereggAchievement | -add-terminalAchievement | -add-wisleyAchievement]',
+    'cookies [-remove-all | -add-eastereggAchievement | -add-terminalAchievement | -add-wisleyAchievement | -add-hallucinatingAchievement]',
     function(cookies){
-        var tokens = $.tokenize(cookies.join(' '), ['-remove-all','-add-eastereggAchievement','-add-terminalAchievement','-add-wisleyAchievement']);
+        var tokens = $.tokenize(cookies.join(' '), ['-remove-all','-add-eastereggAchievement','-add-terminalAchievement','-add-wisleyAchievement','-add-hallucinatingAchievement']);
         if(tokens.hasOwnProperty('-remove-all')){
-            cookies.out = 'Removed all cookies.'; Cookies.remove('eastereggAchievement'); Cookies.remove('terminalAchievement'); Cookies.remove('wiselyAchievement');
+            cookies.out = 'Removed all cookies.'; resetAchievements();
         }else if(tokens.hasOwnProperty('-add-eastereggAchievement')){
-            cookies.out = 'Adding "eastereggAchievement" cookie...'; Cookies.set('eastereggAchievement', 'true', { expires: 30 });
+            cookies.out = 'Adding "eastereggAchievement" cookie...'; Cookies.set('eastereggAchievement', 'true', { expires: 3600 });
         }else if(tokens.hasOwnProperty('-add-terminalAchievement')){
-            cookies.out = 'Adding "terminalAchievement" cookie...'; Cookies.set('terminalAchievement', 'true', { expires: 30 });
+            cookies.out = 'Adding "terminalAchievement" cookie...'; Cookies.set('terminalAchievement', 'true', { expires: 3600 });
         }else if(tokens.hasOwnProperty('-add-wisleyAchievement')){
-            cookies.out = 'Adding "wiselyAchievement" cookie...'; Cookies.set('wiselyAchievement', 'true', { expires: 30 });
+            cookies.out = 'Adding "wiselyAchievement" cookie...'; Cookies.set('wiselyAchievement', 'true', { expires: 3600 });
+        }else if(tokens.hasOwnProperty('-add-hallucinatingAchievement')){
+            cookies.out = 'Adding "hallucinatingAchievement" cookie...'; Cookies.set('hallucinatingAchievement', 'true', { expires: 3600 });
         }else{
             cookies.out = 'Improper usage of command.';
         }
