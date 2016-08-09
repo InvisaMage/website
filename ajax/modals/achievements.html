@@ -17,17 +17,22 @@
         <!--Konami-->
         <tr>
           <td><h5 class="black">Konami Code</h5></td>
-          <th><h5 class="black" id="eastereggAchievement"></h5></th>
+          <th><h5 class="text-danger" id="eastereggAchievement">No</h5></th>
         </tr>
         <!--Terminal-->
         <tr>
           <td><h5 class="black">Hacker?!</h5></td>
-          <th><h5 class="black" id="terminalAchievement"></h5></th>
+          <th><h5 class="text-danger" id="terminalAchievement">No</h5></th>
         </tr>
         <!--Wisely-->
         <tr>
           <td><h5 class="black">Chosen Wisely</h5></td>
-          <th><h5 class="black" id="wiselyAchievement"></h5></th>
+          <th><h5 class="text-danger" id="wiselyAchievement">No</h5></th>
+        </tr>
+        <!--Hallucinating-->
+        <tr>
+          <td><h5 class="black">Hallucinating</h5></td>
+          <th><h5 class="text-danger" id="hallucinatingAchievement">No</h5></th>
         </tr>
       </table>
     </div>
@@ -54,12 +59,35 @@
 </div><!-- /.modal-achievements-->
 
 <script>
+  //Check which Achievements have been completed.
+  $(function() {
+    if (Cookies.get('eastereggAchievement') == 'true') {
+      $("#eastereggAchievement").replaceWith("<h5 class='text-success' id='eastereggAchievement'>Yes</h5>");
+    }else {
+      $("#eastereggAchievement").replaceWith("<h5 class='text-danger' id='eastereggAchievement'>No</h5>");
+    }
+
+    if (Cookies.get('terminalAchievement') == 'true') {
+      $("#terminalAchievement").replaceWith("<h5 class='text-success' id='terminalAchievement'>Yes</h5>");
+    }else {
+      $("#terminalAchievement").replaceWith("<h5 class='text-danger' id='terminalAchievement'>No</h5>");
+    }
+
+    if (Cookies.get('wiselyAchievement') == 'true') {
+      $("#wiselyAchievement").replaceWith("<h5 class='text-success' id='wiselyAchievement'>Yes</h5>");
+    }else {
+      $("#wiselyAchievement").replaceWith("<h5 class='text-danger' id='wiselyAchievement'>No</h5>");
+    }
+
+    if (Cookies.get('hallucinatingAchievement') == 'true') {
+      $("#hallucinatingAchievement").replaceWith("<h5 class='text-success' id='hallucinatingAchievement'>Yes</h5>");
+    }else {
+      $("#hallucinatingAchievement").replaceWith("<h5 class='text-danger' id='hallucinatingAchievement'>No</h5>");
+    }
+  });
   //Re enable tooltips.
   if(!('ontouchstart' in window))
   {
     $('[data-toggle="tooltip"]').tooltip();
   }
-
-  //Execute checkAchievements (from compiled.js)
-  checkAchievements();
 </script>
