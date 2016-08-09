@@ -79,6 +79,11 @@
 								<span class="glyphicon glyphicon-tasks"></span>
 							</a>
 						</li>
+						<li>
+							<a onclick="loadOptionsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Options">
+								<span class="glyphicon glyphicon-cog"></span>
+							</a>
+						</li>
 					</ul>
 
 					<!--Search Function-->
@@ -113,7 +118,7 @@
 			</p>
 
 			<!--Nav Tabs (Visible on Desktop)-->
-			<ul class="nav nav-tabs hidden-xs">
+			<ul class="nav nav-tabs hidden-xs" id="myTabs">
 				<li class="active"><a data-toggle="tab" href="#projects">Projects</a></li>
 				<li><a data-toggle="tab" href="#important">Important</a></li>
 				<li><a data-toggle="tab" href="#website">Website</a></li>
@@ -121,7 +126,7 @@
 			</ul>
 
 			<!--Nav Pills (Visible on Mobile)-->
-			<ul class="nav nav-pills nav-stacked visible-xs">
+			<ul class="nav nav-pills nav-stacked visible-xs" id="myTabs">
 				<li class="active"><a data-toggle="tab" href="#projects">Projects</a></li>
 				<li><a data-toggle="tab" href="#important">Important</a></li>
 				<li><a data-toggle="tab" href="#website">Website</a></li>
@@ -346,6 +351,7 @@
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option data-divider="true"></option>
 							<option disabled>August 2016</option>
+							<option value="news.html#8-9-16-website">9th</option>
 							<option value="news.html#8-7-16-website">7th</option>
 							<option value="news.html#8-3-16-website">3rd</option>
 							<option disabled>July 2016</option>
@@ -382,6 +388,23 @@
 						<br>
 						<br>
 					</div>
+
+					<!--August 9, 2016-->
+					<span class="newsSection" id="8-9-16-website">
+						<h1>August 9, 2016</h1>
+						<p>
+							Added Options.<br>
+							View the available options in the navigation bar by clicking this, <span class="glyphicon glyphicon-cog"></span>, icon.<br>
+							This is used to configure the website to your liking.<br>
+							For example, you can change what tab opens by default on the <a class="link" href="news.html">News</a> page.
+							<br>
+							<br>
+							Added the hallucinating achievement.
+						</p>
+					</span><!-- /8-9-16 -->
+
+					<br>
+					<br>
 
 					<!--August 7, 2016-->
 					<span class="newsSection" id="8-7-16-website">
@@ -731,6 +754,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> August 2016</a></li>
 							<div id="menu-news-nested">
+								<li><a href="#8-9-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 9th</a></li>
 								<li><a href="#8-7-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 7th</a></li>
 								<li><a href="#8-3-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 3rd</a></li>
 							</div>
@@ -869,8 +893,8 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
-		<script src="js/compiled.js"></script>
 		<script src="js/growl.min.js"></script>
+		<script src="js/compiled.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
