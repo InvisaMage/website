@@ -17,6 +17,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/bootstrap-select.css" rel="stylesheet">
 		<link href="css/ptty.css" rel="stylesheet">
 		<!--iOS Bookmark Image-->
 		<link rel="apple-touch-icon" sizes="152x152" href="images/imlogo.png">
@@ -80,6 +81,11 @@
 								<span class="glyphicon glyphicon-tasks"></span>
 							</a>
 						</li>
+						<li>
+							<a onclick="loadOptionsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Options">
+								<span class="glyphicon glyphicon-cog"></span>
+							</a>
+						</li>
 					</ul>
 
 					<!--Search Function-->
@@ -136,16 +142,12 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>August 7, 2016</h3>
+							<h3>August 9, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							Added Achievements.<br>
-							View your achievement status in the navigation bar by clicking this, <span class="glyphicon glyphicon-tasks"></span>, icon.
-							<br>
-							<br>
-							Added "cookies" command to the Terminal.<br>
-							Added download links for songs played from <a class="link" href="about.html#nameprompt">namePrompt</a> <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a>s.<br>
-							Removed all traces of the web application.
+							Added Options.<br>
+							View the available options in the navigation bar by clicking this, <span class="glyphicon glyphicon-cog"></span>, icon.<br>
+							Added a new achievement.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -245,8 +247,9 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
-		<script src="js/compiled.js"></script>
 		<script src="js/growl.min.js"></script>
+		<script src="js/compiled.js"></script>
+		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
 	</div>
