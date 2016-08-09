@@ -79,6 +79,11 @@
 								<span class="glyphicon glyphicon-tasks"></span>
 							</a>
 						</li>
+						<li>
+							<a onclick="loadOptionsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Options">
+								<span class="glyphicon glyphicon-cog"></span>
+							</a>
+						</li>
 					</ul>
 
 					<!--Search Function-->
@@ -120,6 +125,7 @@
 					<div id="menu-about-nested">
 						<li><a href="#nameprompt"><span class="glyphicon glyphicon-chevron-right"></span> namePrompt</a></li>
 						<li><a href="#search-info"><span class="glyphicon glyphicon-chevron-right"></span> Search</a></li>
+						<li><a href="#terminal-info"><span class="glyphicon glyphicon-chevron-right"></span> Terminal</a></li>
 					</div>
 				<li><a href="#design"><span class="glyphicon glyphicon-chevron-right"></span> Design</a></li>
 				<li><a href="#info"><span class="glyphicon glyphicon-chevron-down"></span> Information</a></li>
@@ -149,6 +155,7 @@
 					<option value="#functions">Functions</option>
 					<option value="#nameprompt">namePrompt</option>
 					<option value="#search-info">Search</option>
+					<option value="#terminal-info">Terminal</option>
 					<option data-divider="true"></option>
 					<option value="#design">Design</option>
 					<option data-divider="true"></option>
@@ -185,42 +192,42 @@
 
 			<!--Creation-->
 			<span class="aboutSection" id="creation">
-			<h1>Creation</h1>
-			<p>
-				This website was hand coded using <a class="definition" data-toggle="tooltip" data-placement="top" title="A hackable text editor by GitHub.">Atom</a>.<br>
-				Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Atom." target="_blank" href="https://atom.io/">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> to learn more.
-				<br>
-				<br>
-				This website uses the <a  <a class="definition" data-toggle="tooltip" data-placement="top" title="The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.">Bootstrap</a> framework to make it mobile responsive.<br>
-				It also enables other cool features.<br>
-				Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Bootstrap." target="_blank" href="http://getbootstrap.com/">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> to check it out.
-				<br>
-				<br>
-				This website was tested on <a class="definition" data-toggle="tooltip" data-placement="top" title="A browser built for developers.">Mozilla Firefox Developer Edition</a>.<br>
-				Click <a class="link" data-toggle="tooltip" data-placement="top" title="Download Firefox Developer Edition" target="_blank" href="https://www.firefox.com/developer">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> to learn more.
-			</p>
-			<h2 id="powered-by">Powered By</h2>
-			<div class="row">
-			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/html.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="HTML5"></div>
-			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/css3.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="CSS3"></div>
-			  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/js.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="JavaScript"></div>
-			</div>
+				<h1>Creation</h1>
+				<p>
+					This website was hand coded using <a class="definition" data-toggle="tooltip" data-placement="top" title="A hackable text editor by GitHub.">Atom</a>.<br>
+					Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Atom." target="_blank" href="https://atom.io/">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> to learn more.
+					<br>
+					<br>
+					This website uses the <a  <a class="definition" data-toggle="tooltip" data-placement="top" title="The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.">Bootstrap</a> framework to make it mobile responsive.<br>
+					It also enables other cool features.<br>
+					Click <a class="link" data-toggle="tooltip" data-placement="top" title="Learn about Bootstrap." target="_blank" href="http://getbootstrap.com/">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> to check it out.
+					<br>
+					<br>
+					This website was tested on <a class="definition" data-toggle="tooltip" data-placement="top" title="A browser built for developers.">Mozilla Firefox Developer Edition</a>.<br>
+					Click <a class="link" data-toggle="tooltip" data-placement="top" title="Download Firefox Developer Edition" target="_blank" href="https://www.firefox.com/developer">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> to learn more.
+				</p>
+				<h2 id="powered-by">Powered By</h2>
+				<div class="row">
+				  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/html.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="HTML5"></div>
+				  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/css3.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="CSS3"></div>
+				  <div class="col-md-4"><img class="img-responsive center-block" src="./images/svg/js.svg" height="96" width="96" data-toggle="tooltip" data-placement="right" title="JavaScript"></div>
+				</div>
 
-			<h2 id="git-repository">Git Repository</h2>
-			<p>
-				This website is also backed up on <a class="link" data-toggle="tooltip" data-placement="top" title="Visit GitHub." target="_blank" href="https://github.com">GitHub <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a>.<br>
-				If you are interested in viewing the source code, click <a class="link" data-toggle="tooltip" data-placement="top" title="View website source code." target="_blank" href="https://github.com/InvisaMage/website">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a>.<br>
-				I use <a class="link" data-toggle="tooltip" data-placement="top" title="Check out GitHub for Windows." target="_blank" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about Git." target="_blank" href="http://git-scm.com/">Git <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> <a class="definition" data-toggle="tooltip" data-placement="top" title="Graphical User Interface">GUI</a>.
-			</p>
-			<h2 id="logo">Logo</h2>
-			<p>
-				The InvisaMage logo was created using <a class="link" data-toggle="tooltip" data-placement="top" title="Check out Paint.NET" target="_blank" href="http://www.getpaint.net/">Paint.NET <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a><br>
-				The design is based on a circuit board as I find electronics fascinating.
-				<!--InvisaMage's Logo-->
-				<br>
-				<br>
-				<img class="img-responsive center-block img-rounded" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
-			</p>
+				<h2 id="git-repository">Git Repository</h2>
+				<p>
+					This website is also backed up on <a class="link" data-toggle="tooltip" data-placement="top" title="Visit GitHub." target="_blank" href="https://github.com">GitHub <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a>.<br>
+					If you are interested in viewing the source code, click <a class="link" data-toggle="tooltip" data-placement="top" title="View website source code." target="_blank" href="https://github.com/InvisaMage/website">here <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a>.<br>
+					I use <a class="link" data-toggle="tooltip" data-placement="top" title="Check out GitHub for Windows." target="_blank" href="https://windows.github.com/">GitHub for Windows</a> as my <a class="link" data-toggle="tooltip" data-placement="top" title="Learn more about Git." target="_blank" href="http://git-scm.com/">Git <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a> <a class="definition" data-toggle="tooltip" data-placement="top" title="Graphical User Interface">GUI</a>.
+				</p>
+				<h2 id="logo">Logo</h2>
+				<p>
+					The InvisaMage logo was created using <a class="link" data-toggle="tooltip" data-placement="top" title="Check out Paint.NET" target="_blank" href="http://www.getpaint.net/">Paint.NET <span class="glyphicon glyphicon-new-window glyphicon-color"></span></a><br>
+					The design is based on a circuit board as I find electronics fascinating.
+					<!--InvisaMage's Logo-->
+					<br>
+					<br>
+					<img class="img-responsive center-block img-rounded" title="InvisaMage's Logo" src="./images/imlogo.png" alt="InvisaMage's Logo" height="67" width="170">
+				</p>
 			</span>
 
 			<br>
@@ -248,7 +255,13 @@
 					To use this function, type what are you are looking for click this icon <span class="glyphicon glyphicon-search"></span> or press enter.<br>
 					If the function can identify your term, you will be redirected to the appropriate page.<br>
 					For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-					If the page you are looking for cannot be determined, nothing will happen.<br>
+					If the page you are looking for cannot be determined, nothing will happen.
+				</p>
+				<h2 id="terminal-info">Terminal</h2>
+				<p>
+					The Terminal function can be accessed by pressing the tilde (<kbd>`</kbd>) key on your keyboard.<br>
+					Make sure the assets are loaded by doing <kbd>Shift + T</kbd> (this is done for bandwidth reasons).<br>
+					Use the Terminal to change website settings and goof around.
 				</p>
 			</span>
 
@@ -339,8 +352,8 @@
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
-		<script src="js/compiled.js"></script>
 		<script src="js/growl.min.js"></script>
+		<script src="js/compiled.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
