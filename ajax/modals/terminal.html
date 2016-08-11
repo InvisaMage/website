@@ -491,23 +491,47 @@ $.register_command(
 $.register_command(
     'cookies',
     'Configure cookies.',
-    'cookies [-remove-all | -add-eastereggAchievement | -add-terminalAchievement | -add-wisleyAchievement | -add-hallucinatingAchievement]',
+    'cookies [-remove]',
     function(cookies){
-        var tokens = $.tokenize(cookies.join(' '), ['-remove-all','-add-eastereggAchievement','-add-terminalAchievement','-add-wisleyAchievement','-add-hallucinatingAchievement']);
-        if(tokens.hasOwnProperty('-remove-all')){
-            cookies.out = 'Removed all cookies.'; resetAchievements();
-        }else if(tokens.hasOwnProperty('-add-eastereggAchievement')){
-            cookies.out = 'Adding "eastereggAchievement" cookie...'; Cookies.set('eastereggAchievement', 'true', { expires: 3600 });
-        }else if(tokens.hasOwnProperty('-add-terminalAchievement')){
-            cookies.out = 'Adding "terminalAchievement" cookie...'; Cookies.set('terminalAchievement', 'true', { expires: 3600 });
-        }else if(tokens.hasOwnProperty('-add-wisleyAchievement')){
-            cookies.out = 'Adding "wiselyAchievement" cookie...'; Cookies.set('wiselyAchievement', 'true', { expires: 3600 });
-        }else if(tokens.hasOwnProperty('-add-hallucinatingAchievement')){
-            cookies.out = 'Adding "hallucinatingAchievement" cookie...'; Cookies.set('hallucinatingAchievement', 'true', { expires: 3600 });
+        var tokens = $.tokenize(cookies.join(' '), ['-remove']);
+        if(tokens.hasOwnProperty('-remove')){
+            cookies.out = 'Removed all cookies.';
+            Cookies.remove('eastereggAchievement');
+            Cookies.remove('terminalAchievement');
+            Cookies.remove('wiselyAchievement');
+            Cookies.remove('hallucinatingAchievement');
+            Cookies.remove('loadTerminal');
+            Cookies.remove('defaultTab');
+            Cookies.remove('loadBanners');
+            Cookies.remove('enableSnowstorm');
         }else{
             cookies.out = 'Improper usage of command.';
         }
         return cookies;
+    }
+);
+
+/* achievements - Add or remove achievements.  */
+$.register_command(
+    'achievements',
+    'Configure achievements.',
+    'achievements [-reset | -konami | -hacker | -wisely | -hallucinating]',
+    function(achievements){
+        var tokens = $.tokenize(achievements.join(' '), ['-reset','-konami','-hacker','-wisely','-hallucinating']);
+        if(tokens.hasOwnProperty('-reset')){
+            achievements.out = 'Reset all achievements.'; resetAchievements();
+        }else if(tokens.hasOwnProperty('-konami')){
+            achievements.out = 'Adding "Konami Code" achievement...'; Cookies.set('eastereggAchievement', 'true', { expires: 3600 });
+        }else if(tokens.hasOwnProperty('-hacker')){
+            achievements.out = 'Adding "Hacker?!" achievement...'; Cookies.set('terminalAchievement', 'true', { expires: 3600 });
+        }else if(tokens.hasOwnProperty('-wisely')){
+            achievements.out = 'Adding "Chosen Wisely" achievement...'; Cookies.set('wiselyAchievement', 'true', { expires: 3600 });
+        }else if(tokens.hasOwnProperty('-hallucinating')){
+            achievements.out = 'Adding "Hallucinating" achievement...'; Cookies.set('hallucinatingAchievement', 'true', { expires: 3600 });
+        }else{
+            achievements.out = 'Improper usage of command.';
+        }
+        return achievements;
     }
 );
 
