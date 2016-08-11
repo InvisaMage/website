@@ -124,9 +124,9 @@ listener.simple_combo("delete", function() {
   audio.play();
 });
 
-//Loads terminal modal on Shift + T key combination
+//Loads terminal modal on Ctrl + Shift + T key combination
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift t", function() {
+listener.simple_combo("ctrl shift t", function() {
     $('#js-ptty').load('js/ptty.min.js');
     $('#modal-terminal').load('ajax/modals/terminal.html');
     $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
@@ -152,10 +152,10 @@ listener.simple_combo("`", function() {
 function optionsCheck() {
   //Terminal
   if ($('#terminal-radio1:checked').val() == 'yes') {
-    Cookies.set('loadTerminalOPL', 'true', { expires: 3600 });
+    Cookies.set('loadTerminal', 'true', { expires: 3600 });
   }
   if ($('#terminal-radio2:checked').val() == 'no') {
-    Cookies.set('loadTerminalOPL', 'false', { expires: 3600 });
+    Cookies.set('loadTerminal', 'false', { expires: 3600 });
   }
   //News
   if ($('#news-radio1:checked').val() == 'projects') {
@@ -208,15 +208,15 @@ function optionsCancelMsg() {
 
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
 $(function() {
-  if (Cookies.get('loadTerminalOPL') == 'true') {
+  if (Cookies.get('loadTerminal') == 'true') {
     setTimeout(enable, 500);
       function enable(){
         $('#js-ptty').load('js/ptty.min.js');
         $('#modal-terminal').load('ajax/modals/terminal.html');
-        console.log('Terminal assets have been loaded.\nUse tilde (`) key to open.');
+        console.log('loadTerminal = true');
       }
   } else {
-    console.log('loadTerminalOPL = false');
+    console.log('loadTerminal = false');
   }
 });
 
@@ -224,27 +224,35 @@ $(function() {
 $(function() {
   if (Cookies.get('defaultTab') == 'projects') {
     $('#myTabs li:eq(0) a').tab('show');
+    $('#myPills li:eq(0) a').tab('show');
+    console.log('defaultTab = projects');
   }
   else if (Cookies.get('defaultTab') == 'important') {
     $('#myTabs li:eq(1) a').tab('show');
+    $('#myPills li:eq(1) a').tab('show');
+    console.log('defaultTab = important');
   }
   else if (Cookies.get('defaultTab') == 'website') {
     $('#myTabs li:eq(2) a').tab('show');
+    $('#myPills li:eq(2) a').tab('show');
+    console.log('defaultTab = website');
   }
   else if (Cookies.get('defaultTab') == 'bugs') {
     $('#myTabs li:eq(3) a').tab('show');
+    $('#myPills li:eq(3) a').tab('show');
+    console.log('defaultTab = bugs');
   } else {
-    console.log('Error');
+    console.log('defaultTab = null');
   }
 });
 
 //Check if banners need to be displayed on T&C pages
 $(function() {
   if (Cookies.get('loadBanners') == 'true') {
-    console.log('Banner has been loaded.')
+    console.log('loadBanners = true');
 
   } else {
-    console.log('loadBanners = false')
+    console.log('loadBanners = false');
     $('#alert').alert('close');
   }
 });
@@ -257,8 +265,9 @@ $(function() {
       function enable(){
         snowStorm.toggleSnow();
       }
+    console.log('enableSnowstorm = true');
   } else {
-    console.log('Snowstorm has not been loaded.')
+    console.log('enableSnowstorm = false');
   }
 });
 
@@ -323,7 +332,7 @@ function litecoinMsg() {
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
   if (Cookies.get('eastereggAchievement') == 'true') {
-    console.log('Achievement message not displayed as user has already gotten it.')
+    console.log('Achievement message not displayed as user has already gotten it.');
   } else {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website.", {
       type: 'info',
@@ -340,7 +349,7 @@ function eastereggCheck() {
 //Used to see if Terminal Achievement message should be displayed.
 function terminalCheck() {
   if (Cookies.get('terminalAchievement') == 'true') {
-    console.log('Achievement message not displayed as user has already gotten it.')
+    console.log('Achievement message not displayed as user has already gotten it.');
   } else {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time.", {
       type: 'info',
@@ -356,8 +365,8 @@ function terminalCheck() {
 
 //Used to see if Wisely Achievement message should be displayed.
 function wiselyCheck() {
-  if (Cookies.get('wisleyAchievement') == 'true') {
-    console.log('Achievement message not displayed as user has already gotten it.')
+  if (Cookies.get('wiselyAchievement') == 'true') {
+    console.log('Achievement message not displayed as user has already gotten it.');
   } else {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>.", {
       type: 'info',
@@ -396,6 +405,7 @@ function loadAdsMod() {
   if (Cookies.get('hallucinatingAchievement') == 'true') {
     $('#modal-hideads').load('ajax/modals/ads.html');
     $('#modal-hideads').modal();
+    console.log('Achievement message not displayed as user has already gotten it.');
   } else {
     $('#modal-hideads').load('ajax/modals/ads.html');
     $('#modal-hideads').modal();
@@ -491,4 +501,4 @@ function play() {
   $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <span class='glyphicon glyphicon-pause' aria-hidden='true'></span> </a>" );
 }
 
-console.log('What are you doing in here? \nYes I know I need to fix a few errors.')
+console.log('What are you doing in here? \nYes I know I need to fix a few errors.');
