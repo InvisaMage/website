@@ -75,6 +75,10 @@
         <br>
         <strong>Note:</strong><br>
         Clicking or tapping the "Cancel" button will not save your changes.
+        <br>
+        <br>
+        <strong>Note:</strong><br>
+        In order to see some changes you may need to reload the page.
       </div>
     </div>
     <div class="modal-footer">
@@ -101,10 +105,10 @@
   //Checks which ratios should be selected
   $(function() {
     //Terminal
-    if (Cookies.get('loadTerminalOPL') == 'true') {
+    if (Cookies.get('loadTerminal') == 'true') {
       $("#terminal-radio1").replaceWith("<input type='radio' name='option1' id='terminal-radio1' value='yes' checked>");
     }
-    if (Cookies.get('loadTerminalOPL') == 'false') {
+    if (Cookies.get('loadTerminal') == 'false') {
       $("#terminal-radio2").replaceWith("<input type='radio' name='option1' id='terminal-radio2' value='no' checked>");
     }
     //News
