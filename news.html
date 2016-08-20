@@ -80,7 +80,7 @@
 							</a>
 						</li>
 						<li>
-							<a onclick="loadOptionsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Options">
+							<a onclick="loadSettingsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Settings">
 								<span class="glyphicon glyphicon-cog"></span>
 							</a>
 						</li>
@@ -351,6 +351,7 @@
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option data-divider="true"></option>
 							<option disabled>August 2016</option>
+							<option value="news.html#8-20-16-website">10th</option>
 							<option value="news.html#8-10-16-website">10th</option>
 							<option value="news.html#8-9-16-website">9th</option>
 							<option value="news.html#8-7-16-website">7th</option>
@@ -390,12 +391,29 @@
 						<br>
 					</div>
 
+					<!--August 20, 2016-->
+					<span class="newsSection" id="8-20-16-website">
+						<h1>August 20, 2016</h1>
+						<p>
+							Added "Light" theme to the "Settings" modal.<bR>
+							Minified some files.
+							<br>
+							<br>
+							Fixed a bug.<br>
+							Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
+							After the page loads, if there's a target in the URL, the page will scroll down to it.
+						</p>
+					</span><!-- /8-20-16 -->
+
+					<br>
+					<br>
+
 					<!--August 10, 2016-->
 					<span class="newsSection" id="8-10-16-website">
 						<h1>August 10, 2016</h1>
 						<p>
 							Added "achievements" command to the Terminal.<br>
-							To load Terminal assets you must now use <kbd>Ctrl + Shift + T</kbd>.<br>
+							To load Terminal assets you must now use <kbd>Shift + Space</kbd>.<br>
 							Fixed bugs from new additions<br>
 							Added console logs for cookie values.
 						</p>
@@ -408,7 +426,7 @@
 					<span class="newsSection" id="8-9-16-website">
 						<h1>August 9, 2016</h1>
 						<p>
-							Added Options.<br>
+							Added "Settings" modal.<br>
 							View the available options in the navigation bar by clicking this, <span class="glyphicon glyphicon-cog"></span>, icon.<br>
 							This is used to configure the website to your liking.<br>
 							For example, you can change what tab opens by default on the <a class="link" href="news.html">News</a> page.
@@ -769,6 +787,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> August 2016</a></li>
 							<div id="menu-news-nested">
+								<li><a href="#8-20-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 20th</a></li>
 								<li><a href="#8-10-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 10th</a></li>
 								<li><a href="#8-9-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 9th</a></li>
 								<li><a href="#8-7-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 7th</a></li>
@@ -823,8 +842,8 @@
 								<option selected value="news.html#mobile-menu">Content</option>
 								<option data-divider="true"></option>
 								<option value="news.html#problems">Known Bugs / Problems</option>
-								<option data-divider="true"></option>
 								<option value="news.html#fixed">Fixed Bugs</option>
+								<option value="news.html#notes">Notes</option>
 								<option data-divider="true"></option>
 								<option value="#footer">Footer</option>
 							</select>
@@ -839,21 +858,9 @@
 								Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
 								<br>
 								<br>
-								Note: Tooltips are disabled on touchsreen devices.<br>
-								Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
-								Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.
-								<br>
-								<br>
-								<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
-								A known workaround for this problem is to load the browser executable with a flag.<br>
-								<kbd>Win + R</kbd> > <kbd>path/to/.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd><br>
-								Example: <kbd>Win + R</kbd> > <kbd>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd>
-								<br>
-								<br>
 								Scrolling back to the top of the page on a Mobile device can be laggy.<br>
 								Going to anchors clips content due to the fixed navigation bar.<br>
-								Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
-								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> bassed browsers.
+								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.
 							</p>
 						</span>
 
@@ -864,6 +871,7 @@
 						<span class="newsSection" id="fixed">
 							<h1>Fixed</h1>
 							<p>
+								Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
 								The Date Jump menu is only visible on the Projects tab while on a Mobile device.<br>
 								On the <a class="link" href="fs.html">Floating Survival</a> page, using the carousel will focus the page on it.<br>
 								The images on the <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page are outdated.<br>
@@ -877,11 +885,32 @@
 							</p>
 						</span>
 
+						<br>
+						<br>
+
+						<!--Notes-->
+						<span class="newsSection" id="notes">
+							<h1>Notes</h1>
+							<p>
+								Tooltips are disabled on touchsreen devices.<br>
+								Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
+								Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.<br>
+								If you are viewing this site locally, cookies will not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.
+								<br>
+								<br>
+								<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
+								A known workaround for this problem is to load the browser executable with a flag.<br>
+								<kbd>Win + R</kbd> > <kbd>path/to/.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd><br>
+								Example: <kbd>Win + R</kbd> > <kbd>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd>
+							</p>
+						</span>
+
 						<!--Bugs Menu-->
 						<div id="menu-news" class="hidden-xs">
 							<h2>Content</h2>
 							<li><a href="#problems"><span class="glyphicon glyphicon-chevron-right"></span> Known Problems</a></li>
 							<li><a href="#fixed"><span class="glyphicon glyphicon-chevron-right"></span> Fixed</a></li>
+							<li><a href="#notes"><span class="glyphicon glyphicon-chevron-right"></span> Notes</a></li>
 							<br>
 						</div>
 					</div><!-- /bugs-section -->
