@@ -4355,8 +4355,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-nav {
   margin: 7.5px -15px;
 }
-.navbar-nav li:hover {
+.navbar-inverse li:hover {
     background-color: #1a1a1a;
+}
+.navbar-default li:hover {
+    background-color: rgb(231, 231, 231);
 }
 .navbar-nav > li > a {
   padding-top: 10px;
