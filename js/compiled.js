@@ -124,9 +124,9 @@ listener.simple_combo("delete", function() {
   audio.play();
 });
 
-//Loads terminal modal on Ctrl + Shift + T key combination
+//Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl shift t", function() {
+listener.simple_combo("shift space", function() {
     $('#js-ptty').load('js/ptty.min.js');
     $('#modal-terminal').load('ajax/modals/terminal.html');
     $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
@@ -142,14 +142,14 @@ listener.simple_combo("ctrl shift t", function() {
 var listener = new window.keypress.Listener();
 listener.simple_combo("`", function() {
     //Close open modals
-    $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
+    $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
     $('#modal-terminal').modal('toggle');
     $('#modal-terminal').on('shown.bs.modal', function (e) { $('form, input').focus(); });
     terminalCheck();
 });
 
-//Options modal logic (executed on save button click in Options modal)
-function optionsCheck() {
+//Settings modal logic (executed on save button click in Settings modal)
+function settingsCheck() {
   //Terminal
   if ($('#terminal-radio1:checked').val() == 'yes') {
     Cookies.set('loadTerminal', 'true', { expires: 3600 });
@@ -184,7 +184,15 @@ function optionsCheck() {
   if ($('#snowstorm-radio2:checked').val() == 'no') {
     Cookies.set('enableSnowstorm', 'false', { expires: 3600 });
   }
-  $.bootstrapGrowl("Options Saved!", {
+  //Theme
+  if ($('#theme-radio1:checked').val() == 'dark') {
+    Cookies.set('theme', 'dark', { expires: 3600 });
+  }
+  if ($('#theme-radio2:checked').val() == 'light') {
+    Cookies.set('theme', 'light', { expires: 3600 });
+  }
+  setTimeout(enable, 1500);
+  $.bootstrapGrowl("Settings Saved!", {
     type: 'success',
     align: 'right',
     offset: {from: 'top', amount: 60},
@@ -192,10 +200,21 @@ function optionsCheck() {
     delay: 10000,
     allow_dismiss: true
   });
+  $.bootstrapGrowl("<strong>Reloading page...</strong>", {
+    type: 'danger',
+    align: 'center',
+    offset: {from: 'top', amount: 60},
+    width: 'auto',
+    delay: 10000,
+    allow_dismiss: true
+  });
+    function enable(){
+      location.reload();
+    }
 };
 
-//Options modal cancel message
-function optionsCancelMsg() {
+//Settings modal cancel message
+function settingsCancelMsg() {
     $.bootstrapGrowl("Changes have not been saved!", {
       type: 'danger',
       align: 'right',
@@ -268,6 +287,24 @@ $(function() {
     console.log('enableSnowstorm = true');
   } else {
     console.log('enableSnowstorm = false');
+  }
+});
+
+//Check which theme to apply
+$(function() {
+  if (Cookies.get('theme') == 'light') {
+    $("nav").attr("class", "navbar navbar-default navbar-fixed-top");
+    $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
+    console.log('theme = light');
+  } else {
+    console.log('theme = dark');
+  }
+});
+
+$(function() {
+setTimeout(enable, 500);
+  function enable(){
+    $("html, body").animate({ scrollTop: $('span:target').offset().top }, 1000);
   }
 });
 
@@ -440,9 +477,9 @@ function loadEastereggsMod() {
   $('#modal-eastereggs').load('ajax/modals/eastereggs.html');
   $('#modal-eastereggs').modal();
 }
-function loadOptionsMod() {
-  $('#modal-options').load('ajax/modals/options.html');
-  $('#modal-options').modal();
+function loadSettingsMod() {
+  $('#modal-settings').load('ajax/modals/settings.html');
+  $('#modal-settings').modal();
 }
 function loadPrivacyNoMod() {
   $('#modal-privacy-no').load('ajax/modals/privacy-no.html');
