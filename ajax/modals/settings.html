@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<!--Options Modal-->
+<!--Settings Modal-->
 <div class="modal-dialog modal-sm" id="ajax-achievements">
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">Options</h4>
+      <h4 class="modal-title black">Settings</h4>
     </div>
     <div class="modal-body text-left">
       <!--Terminal-->
@@ -64,11 +64,23 @@
           <label for="snowstorm-radio2">No (Default)</label>
         </div>
       </div>
+      <!--Theme-->
+      <div class="well well-sm">
+        Chose theme style
+        <div class="radio radio-primary" style="font-size:14px;">
+          <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
+          <label for="theme-radio1">Dark (Default)</label>
+        </div>
+        <div class="radio radio-primary" style="font-size:14px;">
+          <input type="radio" name="option5" id="theme-radio2" value="light">
+          <label for="theme-radio2">Light</label>
+        </div>
+      </div>
     </div>
-    <!--Options Help Collapsible Content-->
-    <div class="collapse" id="modal-options-collapse">
+    <!--Settings Help Collapsible Content-->
+    <div class="collapse" id="modal-settings-collapse">
       <div class="well">
-        <button type="button" class="close" onclick="$('#modal-options-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" onclick="$('#modal-settings-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>What is this?</strong><br>
         Configure the website preferences to your liking.
         <br>
@@ -82,18 +94,18 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info" onclick="$('#modal-options-collapse').collapse('toggle');">
+      <button type="button" class="btn btn-info" onclick="$('#modal-settings-collapse').collapse('toggle');">
         <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
       </button>
-      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="optionsCancelMsg();">
+      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="settingsCancelMsg();">
         <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel
       </button>
-      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="optionsCheck();"> Save
+      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="settingsCheck();"> Save
         <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
       </button>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-content -->
-</div><!-- /.modal-options-->
+</div><!-- /.modal-settings-->
 
 <script>
   //Re enable tooltips.
@@ -137,6 +149,13 @@
     }
     if (Cookies.get('enableSnowstorm') == 'false') {
       $("#snowstorm-radio2").replaceWith("<input type='radio' name='option4' id='snowstorm-radio2' value='no' checked>");
+    }
+    //Theme
+    if (Cookies.get('theme') == 'dark') {
+      $("#theme-radio1").replaceWith("<input type='radio' name='option5' id='theme-radio1' value='dark' checked>");
+    }
+    if (Cookies.get('theme') == 'light') {
+      $("#theme-radio2").replaceWith("<input type='radio' name='option5' id='theme-radio2' value='light' checked>");
     }
   });
 </script>
