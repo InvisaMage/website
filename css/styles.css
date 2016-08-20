@@ -219,7 +219,7 @@ table {
 .link:before {
 	content: "";
 	position: absolute;
-	z-index: -1;
+	z-index: 1;
 	left: 50%;
 	right: 50%;
 	bottom: 0;
@@ -274,7 +274,7 @@ table {
 .definition:before {
 	content: "";
 	position: absolute;
-	z-index: -1;
+	z-index: 1;
 	left: 50%;
 	right: 50%;
 	bottom: 0;
@@ -370,34 +370,6 @@ h1 h2 h3 {
 
 /* Privacy Section */
 .privacySection {
-	border-radius: 15px;
-	border: 1px solid black;
-	border-width: 5px 0;
-	position: relative;
-	display: inline-block;
-	padding: 8px;
-	background: rgba(0,0,0,0.2);
-	margin-left: auto;
-    margin-right: auto;
-    width: 65%;
-}
-
-/* Archive Section */
-.archiveSection {
-	border-radius: 15px;
-	border: 1px solid black;
-	border-width: 5px 0;
-	position: relative;
-	display: inline-block;
-	padding: 8px;
-	background: rgba(0,0,0,0.2);
-	margin-left: auto;
-    margin-right: auto;
-    width: 55%;
-}
-
-/* 404 Section */
-.errorSection {
 	border-radius: 15px;
 	border: 1px solid black;
 	border-width: 5px 0;
@@ -685,15 +657,6 @@ h1 h2 h3 {
 	color: #00FF00;
 }
 
-/* Top of Page button */
-.top {
-	opacity: 0.5;
-	transition: .3s;
-}
-.top:hover {
-	opacity: .98;
-}
-
 /* New Footer Properties */
 footer {
 	border: 1px solid black;
@@ -774,19 +737,6 @@ footer ul {
 	font-size: 12px;
 }
 
-#app-back {
-	padding-right: 0px;
-}
-
-#app-navbar-InvisaMage {
-	padding-left: 5px;
-	padding-right: 0px;
-}
-
-#app-navbar-up {
-	padding-left: 2px;
-}
-
 .well-center {
 	width: 30%;
 	margin-right: auto;
@@ -817,8 +767,13 @@ footer ul {
 	cursor: pointer;
 }
 
-#divider-vertical:hover {
+.navbar-inverse #divider-vertical:hover {
 	background: #222222;
+	cursor: default;
+}
+
+.navbar-default #divider-vertical:hover {
+	background: #F8F8F8;
 	cursor: default;
 }
 
