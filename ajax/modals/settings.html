@@ -75,6 +75,13 @@
           <input type="radio" name="option5" id="theme-radio2" value="light">
           <label for="theme-radio2">Light</label>
         </div>
+        <hr>
+        <div class="checkbox checkbox-primary" style="font-size:14px;">
+          <input type="checkbox" id="dark-modal-checkbox1" value="true">
+          <label for="checkbox1">
+            Dark modals
+          </label>
+        </div>
       </div>
     </div>
     <!--Settings Help Collapsible Content-->
@@ -157,6 +164,13 @@
     if (Cookies.get('theme') == 'light') {
       $("#theme-radio2").replaceWith("<input type='radio' name='option5' id='theme-radio2' value='light' checked>");
     }
+    //Dark modals
+    if (Cookies.get('themeDarkModal') == 'true') {
+      $("#dark-modal-checkbox1").replaceWith("<input type='checkbox' id='dark-modal-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('themeDarkModal') == null) {
+      $("#dark-modal-checkbox1").replaceWith("<input type='checkbox' id='dark-modal-checkbox1' value='true'>");
+    }
   });
 </script>
 
@@ -194,20 +208,28 @@
   left: 0;
   top: 0;
   margin-left: -20px;
-  padding-left: 3px;
-  padding-top: 1px;
-  font-size: 11px;
+  padding-left: 4px;
+  padding-top: 2px;
+  font-size: 9px;
   color: #555555;
+}
+input[type="checkbox"].styled:checked label:after,
+input[type="radio"].styled:checked label:after,
+.checkbox label:after {
+    padding-left: 4px;
+    padding-top: 2px;
+    font-size: 9px;
 }
 .checkbox input[type="checkbox"],
 .checkbox input[type="radio"] {
   opacity: 0;
   z-index: 1;
 }
-.checkbox input[type="checkbox"]:checked + label::after,
-.checkbox input[type="radio"]:checked + label::after {
-  font-family: "FontAwesome";
-  content: "\f00c";
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after,
+.checkbox input[type=checkbox]:checked + label:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
 }
 .checkbox input[type="checkbox"]:indeterminate + label::after,
 .checkbox input[type="radio"]:indeterminate + label::after {

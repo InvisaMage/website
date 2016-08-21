@@ -788,3 +788,10 @@ footer ul {
     bottom:10px;
     right:10px;
 }
+
+.panel-header-top-2 h3 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

@@ -86,8 +86,11 @@ h1, h2, h3 {
   background-color: rgba(230, 230, 230, 0.8);
 }
 
-.panel-header-top-2 {
-  padding: .01px;
+.panel-header-top-2 h3 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /* Green Pannel for Home page */

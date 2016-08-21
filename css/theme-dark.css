@@ -1,0 +1,43 @@
+/* Proudly Coded by Travis Kipp */
+/* Created August 20, 2016 */
+/* InvisaMage's Website Dark Theme */
+/* Only changes styles which need to be changed (will not work without styles.css)*/
+
+.modal-content {
+  position: relative;
+  background-color: #333333;
+  border: 1px solid #262626;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  outline: 0;
+  color: #f2f2f2;
+}
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #737373;
+}
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #737373;
+}
+.modal-title {
+  color: white;
+}
+.well {
+  background-color: #737373;
+  border: 1px solid #4d4d4d;
+  color: white;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: #737373;
+}
+
+.black, .black-bold {
+  color: white;
+}

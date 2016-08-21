@@ -191,6 +191,13 @@ function settingsCheck() {
   if ($('#theme-radio2:checked').val() == 'light') {
     Cookies.set('theme', 'light', { expires: 3600 });
   }
+  //Dark modals
+  if ($('#dark-modal-checkbox1:checked').val() == 'true') {
+    Cookies.set('themeDarkModal', 'true', { expires: 3600 });
+  }
+  if ($('#dark-modal-checkbox1:checked').val() == null) {
+    Cookies.set('themeDarkModal', 'false', { expires: 3600 });
+  }
   setTimeout(enable, 1500);
   $.bootstrapGrowl("Settings Saved!", {
     type: 'success',
@@ -301,6 +308,17 @@ $(function() {
   }
 });
 
+//Check if dark modals should be applied
+$(function() {
+  if (Cookies.get('themeDarkModal') == 'true') {
+    $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-dark.css">');
+    console.log('themeDarkModal = true');
+  } else {
+    console.log('themeDarkModal = false');
+  }
+});
+
+//Scroll to target in URL after page load
 $(function() {
 setTimeout(enable, 500);
   function enable(){
@@ -522,10 +540,6 @@ function loadTermsYesMod() {
   $('#modal-terms-yes').modal();
   $('.alert').toggle();
   wiselyCheck();
-}
-function loadSfxMod() {
-  $('#modal-sfx').load('sfx/sfx.html');
-  $('#modal-sfx').modal();
 }
 
 //namePrompt media controls
