@@ -45,6 +45,12 @@ var snowStorm = (function(window, document) {
   this.vMaxY = 4;                 // Maximum Y velocity range for snow
   this.zIndex = 0;                // CSS stacking order applied to each snowflake
 
+  if (Cookies.get('theme') == 'light') {
+    this.snowColor = '#6600ff';
+  } else {
+    this.snowColor = '#fff';
+  }
+
   // --- "No user-serviceable parts inside" past this point, yadda yadda ---
 
   var storm = this,

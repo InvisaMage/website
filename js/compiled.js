@@ -72,7 +72,7 @@ $(function() {
 function loadSnowstorm() {
   $('#js-snowstorm').load('js/snowstorm.js');
   $('#footer-snowstorm').tooltip('destroy');
-  $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
+  $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
   //Re enable tooltips.
   if(!('ontouchstart' in window))
   {
@@ -85,6 +85,7 @@ function loadSnowstormNamePrompt(){
   setTimeout(enable, 500);
   $('#js-snowstorm').load('js/snowstorm.js');
     function enable(){
+      purplerainCheck();
       snowStorm.toggleSnow();
     }
 }
@@ -320,7 +321,7 @@ $(function() {
 
 //Scroll to target in URL after page load
 $(function() {
-setTimeout(enable, 500);
+setTimeout(enable, 900);
   function enable(){
     $("html, body").animate({ scrollTop: $('span:target').offset().top }, 1000);
   }
@@ -427,11 +428,28 @@ function wiselyCheck() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 60},
-      width: 'auto',
+      width: '300',
       delay: 10000,
       allow_dismiss: true
     });
     Cookies.set('wiselyAchievement', 'true', { expires: 3600 });
+  }
+}
+
+//Used to see if Wisely Achievement message should be displayed.
+function purplerainCheck() {
+  if (Cookies.get('purplerainAchievement') == 'true' )  {
+    console.log('Achievement message not displayed as user has already gotten it.');
+  } if (Cookies.get('purplerainAchievement') !== 'true' && Cookies.get('theme') == 'light' ) {
+    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled.", {
+      type: 'info',
+      align: 'right',
+      offset: {from: 'top', amount: 60},
+      width: '300',
+      delay: 10000,
+      allow_dismiss: true
+    });
+    Cookies.set('purplerainAchievement', 'true', { expires: 3600 });
   }
 }
 
@@ -441,6 +459,7 @@ function resetAchievements() {
   Cookies.remove('terminalAchievement');
   Cookies.remove('wiselyAchievement');
   Cookies.remove('hallucinatingAchievement');
+  Cookies.remove('purplerainAchievement');
   $('#btn-reset-achievements').tooltip('hide')
   $.bootstrapGrowl("Your achievement progress has been reset!", {
     type: 'info',
@@ -469,7 +488,7 @@ function loadAdsMod() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 60},
-      width: 'auto',
+      width: '300',
       delay: 10000,
       allow_dismiss: true
     });

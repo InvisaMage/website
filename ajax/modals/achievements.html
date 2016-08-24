@@ -34,6 +34,11 @@
           <td><h5 class="black">Hallucinating</h5></td>
           <th><h5 class="text-danger" id="hallucinatingAchievement">No</h5></th>
         </tr>
+        <!--Purple Rain-->
+        <tr>
+          <td><h5 class="black">Purple Rain</h5></td>
+          <th><h5 class="text-danger" id="purplerainAchievement">No</h5></th>
+        </tr>
       </table>
     </div>
     <!--Achievements Help Collapsible Content-->
@@ -91,6 +96,14 @@
     }else {
       $("#hallucinatingAchievement").replaceWith("<h5 class='text-danger' id='hallucinatingAchievement'>No</h5>");
       console.log('hallucinatingAchievement = false');
+    }
+
+    if (Cookies.get('purplerainAchievement') == 'true') {
+      $("#purplerainAchievement").replaceWith("<h5 class='text-success' id='purplerainAchievement'>Yes</h5>");
+      console.log('purplerainAchievement = true');
+    }else {
+      $("#purplerainAchievement").replaceWith("<h5 class='text-danger' id='purplerainAchievement'>No</h5>");
+      console.log('purplerainAchievement = false');
     }
   });
   //Re enable tooltips.

@@ -130,6 +130,7 @@ $.register_command(
             'Directory of "ajax"<br>' +
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> modals<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> footer.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> modals.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> news-website-2015.html';
         }else if(tokens.hasOwnProperty('-modals')){
             dir.out =
@@ -145,6 +146,7 @@ $.register_command(
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> privacy-yes.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> reload.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> search-help.html<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> settings.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> stats.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terminal.html<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> terms-no.html<br>' +
@@ -178,7 +180,9 @@ $.register_command(
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bootstrap.css<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> nprogress.css<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> ptty.css<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> styles.css';
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> styles.css'; +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> theme-dark.css'; +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> theme-light.css';
         }else if(tokens.hasOwnProperty('-fonts')){
             dir.out =
             'Directory of "fonts"<br>' +
@@ -195,13 +199,14 @@ $.register_command(
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> fs<br>' +
             '<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> svg<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> 404.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bg-light.jpg<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> bg.jpg<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> cc.png<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> cortana.gif<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> favicon.ico<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> imlogo.png<br>' +
-            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> mc.png<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> invisarant.jpg<br>' +
+            '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> mc.png<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> poorly.jpg<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> qr-bitcoin.png<br>' +
             '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> qr-dogecoin.png<br>' +
@@ -355,7 +360,7 @@ $.register_command(
         if(tokens.hasOwnProperty('-load')){
             snowstorm.out = 'Loading assets...'; loadSnowstorm();
         }else if(tokens.hasOwnProperty('-toggle')){
-            snowstorm.out = 'Toggling the snow...'; snowStorm.toggleSnow();
+            snowstorm.out = 'Toggling the snow...'; snowStorm.toggleSnow(); purplerainCheck();
         }else if(tokens.hasOwnProperty('-freeze')){
             snowstorm.out = 'Freezing the snow...'; snowStorm.freeze();
         }else if(tokens.hasOwnProperty('-resume')){
