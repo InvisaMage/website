@@ -33,6 +33,9 @@
   border: 1px solid #4d4d4d;
   color: white;
 }
+.well a {
+  color: #224f77;
+}
 
 .table-hover > tbody > tr:hover {
   background-color: #737373;
@@ -40,4 +43,12 @@
 
 .black, .black-bold {
   color: white;
+}
+
+.text-success {
+  color: #5CB85C;
+}
+
+.text-danger {
+  color: #D9534F;
 }

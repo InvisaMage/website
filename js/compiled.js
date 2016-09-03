@@ -199,6 +199,13 @@ function settingsCheck() {
   if ($('#dark-modal-checkbox1:checked').val() == null) {
     Cookies.set('themeDarkModal', 'false', { expires: 3600 });
   }
+  //Dark modals
+  if ($('#legacy-background-checkbox1:checked').val() == 'true') {
+    Cookies.set('themeLegacyBg', 'true', { expires: 3600 });
+  }
+  if ($('#legacy-background-checkbox1:checked').val() == null) {
+    Cookies.set('themeLegacyBg', 'false', { expires: 3600 });
+  }
   setTimeout(enable, 1500);
   $.bootstrapGrowl("Settings Saved!", {
     type: 'success',
@@ -316,6 +323,16 @@ $(function() {
     console.log('themeDarkModal = true');
   } else {
     console.log('themeDarkModal = false');
+  }
+});
+
+//Check if legacy background needs to be applied
+$(function() {
+  if (Cookies.get('themeLegacyBg') == 'true' && Cookies.get('theme') != 'light' ) {
+    $('body').css("background-image", "url(./images/bg.jpg)");
+    console.log('themeLegacyBg = true');
+  } else {
+    console.log('themeLegacyBg = false');
   }
 });
 

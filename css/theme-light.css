@@ -38,11 +38,11 @@ p {
 }
 
 h1, h2, h3 {
-  color: #4d4dff;
+  color: #6600ff;
 }
 
 .title {
-  	color: #4d4dff;
+  	color: #6600ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -53,15 +53,15 @@ h1, h2, h3 {
 	transition: .3s;
 }
 .title:hover {
-	color: #246BB2; /* Green */
+	color: #B23380;
 }
 
 /* Definition - Underline From Centre - Gray color */
 .definition {
-	color: #47476b;
+	color: #B23380;
 }
 .definition:hover {
-	color: #00cc00;
+	color: #B23380;
 }
 .definition:before {
 	background: black;
@@ -122,14 +122,14 @@ h1, h2, h3 {
 }
 
 .link {
-  color: #336699;
+  color: #0066ff;
 }
 .link:hover {
 	color: #661aff;
 }
 .link:before {
 	z-index: 1;
-	background: black;
+	background: #FF6600; /* Underline Color */
 	height: 2px;
 }
 
@@ -142,7 +142,7 @@ h1, h2, h3 {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #4d4dff;
+  color: #0066ff;
   background-color: rgba(230, 230, 230, 0.8);
   border-bottom-color: transparent;
   cursor: default;
@@ -150,7 +150,7 @@ h1, h2, h3 {
 .nav-tabs li a:hover {
   background-color: rgba(230, 230, 230, 0.8);
   border: 1px solid #4E4E4E;
-	color: #4d4dff;
+	color: #0066ff;
 }
 
 .nav-pills li a {
@@ -159,12 +159,12 @@ h1, h2, h3 {
 .nav-pills > li.active > a,
 .nav-pills > li.active > li:hover,
 .nav-pills > li.active > a:focus {
-  color: #4d4dff;
+  color: #0066ff;
   background-color: rgba(230, 230, 230, 0.8);
   border: 1px solid black;
 }
 .nav-pills li a:hover {
-	color: #4d4dff;
+	color: #0066ff;
   background-color: rgba(230, 230, 230, 0.8);
 }
 
@@ -178,6 +178,10 @@ h1, h2, h3 {
 	background-color: rgb(231, 231, 231);
 }
 
+.glyphicon-color {
+	color: #6ba6e1;
+}
+
 footer h4 {
-  color: #4d4dff;
+  color: #6600ff;
 }

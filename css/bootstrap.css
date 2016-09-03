@@ -4042,7 +4042,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs {
   font-size: 110%;
-  border-bottom: 1px solid #4E4E4E;
+  border-bottom: 1px solid black;
 }
 .nav-tabs > li {
   float: none;
@@ -4063,13 +4063,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:focus {
   color: #00FF00;
   background-color: rgba(0,0,0,0.3);
-  border: 1px solid #4E4E4E;
+  border: 1px solid black;
   border-bottom-color: transparent;
   cursor: default;
 }
 .nav-tabs li a:hover {
   background-color: rgba(0,0,0,0.3);
-  border: 1px solid #4E4E4E;
+  border: 1px solid black;
 }
 .nav-tabs.nav-justified {
   width: 100%;

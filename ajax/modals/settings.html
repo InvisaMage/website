@@ -66,7 +66,7 @@
       </div>
       <!--Theme-->
       <div class="well well-sm">
-        Chose theme style
+        Website styles
         <div class="radio radio-primary" style="font-size:14px;">
           <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
           <label for="theme-radio1">Dark (Default)</label>
@@ -80,6 +80,12 @@
           <input type="checkbox" id="dark-modal-checkbox1" value="true">
           <label for="checkbox1">
             Dark modals
+          </label>
+        </div>
+        <div class="checkbox checkbox-primary" style="font-size:14px;">
+          <input type="checkbox" id="legacy-background-checkbox1" value="true">
+          <label for="checkbox2">
+            Legacy background
           </label>
         </div>
       </div>
@@ -170,6 +176,13 @@
     }
     if (Cookies.get('themeDarkModal') == null) {
       $("#dark-modal-checkbox1").replaceWith("<input type='checkbox' id='dark-modal-checkbox1' value='true'>");
+    }
+    //Legacy background
+    if (Cookies.get('themeLegacyBg') == 'true') {
+      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('themeLegacyBg') == null) {
+      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true'>");
     }
   });
 </script>
