@@ -127,7 +127,7 @@
 						</div>
 						<div class='panel-body'>
 							<!--Paragraph Changes with namePrompt Input-->
-							<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 17 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span>
+							<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="An 18 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span>
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							On this website you can find fast and informative information about all things InvisaMage.
@@ -142,11 +142,12 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>September 11, 2016</h3>
+							<h3>October 1, 2016</h3>
 						</div>
 						<div class='panel-body'>
-							Removed audio files from archives.<br>
-							Patched a <a class="link" href="https://dev.to/ben/the-targetblank-vulnerability-by-example" target="_blank" rel="noopener noreferrer">security vulnerability</a>. 
+							Added events.js.<br>
+							Displays a banner on the Homepage if there's an event for the current day.<br>
+							Added "Events Banner" to the Settings modal.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -161,7 +162,7 @@
 							<h3 class='panel-title'>About</h3>
 						</div>
 						<div class='panel-body'>
-							The owner of this site is a 17 year old human male who likes web technologies, assorted games, and TaeKwon-Do.<br>
+							The owner of this site is an 18 year old human male who likes web technologies, assorted games, and TaeKwon-Do.<br>
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="about.html#InvisaMage">here</a> to learn more.
@@ -212,24 +213,28 @@
 			</div>
 		</div><!-- /personalize modal -->
 
-		<!--Alert
-		<div id="alert-survey" class="alert alert-success alert-dismissible fade in" role="alert">
+		<!--Event Banner-->
+		<div id="event-banner" class="alert alert-success alert-dismissible fade in" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<div class="row">
-				<div class="col-xs-8">
-			  	<strong>Feedback:</strong>
-					Let me know what you think of the new design.
+				<div class="col-xs-1 pull-left">
+					<strong>Event Today</strong>
 				</div>
-				<div class="col-xs-2">
-					<button type="button" class="btn btn-danger" data-dismiss="alert">
-						<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+				<div class="col-xs-8">
+					<span id="event-banner-content">
+						If you are seeing this, something is wrong with the events.js file. <a data-dismiss="alert" onclick="loadContactMod();">Contact</a> me.
+					</span>
+				</div>
+				<div class="col-xs-2 pull-right">
+					<button type="button" class="btn btn-info" data-dismiss="alert" onclick="loadSettingsMod();">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 					</button>
-					<button type="button" class="btn btn-primary" data-dismiss="alert" onclick="$('#contact').modal();"> Sure
+					<button type="button" class="btn btn-primary" data-dismiss="alert"> Okay
 						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 					</button>
 				</div>
 			</div>
-		</div>-->
+		</div>
 
 		<!--Modals-->
 		<span id="modals"></span>
@@ -248,6 +253,7 @@
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
+		<script src="js/events.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>

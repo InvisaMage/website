@@ -687,8 +687,8 @@ footer ul {
 		margin: 0;
 }
 
-/* Homepage Message */
-#alert-message {
+/* Homepage Event Banner */
+#event-banner {
     position: fixed;
     bottom: 0;
 		left: 0;
@@ -696,21 +696,14 @@ footer ul {
 		z-index: 1;
 		font-size: 16px;
 		margin: 0;
+}
+
+#event-banner-content a {
+	cursor: pointer;
 }
 
 /* Homepage Survey Message */
 #alert-survey {
-    position: fixed;
-    bottom: 0;
-		left: 0;
-    width: 100%;
-		z-index: 1;
-		font-size: 16px;
-		margin: 0;
-}
-
-/* Donate Info */
-#alert-donate {
     position: fixed;
     bottom: 0;
 		left: 0;

@@ -52,7 +52,7 @@ $.register_command(
     function(about){
         var tokens = $.tokenize(about.join(' '), ['-invisamage','/i','/t','/w','-website','-terminal']);
         if(tokens.hasOwnProperty('-invisamage')||tokens.hasOwnProperty('/i')){
-            about.out = 'A 17 year old human male who likes web technologies and assorted games.';
+            about.out = 'An 18 year old human male who likes web technologies and assorted games.';
         }else if(tokens.hasOwnProperty('-website')||tokens.hasOwnProperty('/w')){
             about.out = 'The purpose of this website is to organize my projects and to give me something to do in my free time. ' +
             'The website itself is a project. ' +

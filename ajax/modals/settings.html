@@ -64,6 +64,18 @@
           <label for="snowstorm-radio2">No (Default)</label>
         </div>
       </div>
+      <!--Events Banner-->
+      <div class="well well-sm">
+        Enable Events Banner on the homepage
+        <div class="radio radio-success" style="font-size:14px;">
+          <input type="radio" name="option6" id="events-radio1" value="yes" checked>
+          <label for="events-radio1">Yes (Default)</label>
+        </div>
+        <div class="radio radio-danger" style="font-size:14px;">
+          <input type="radio" name="option6" id="events-radio2" value="no">
+          <label for="events-radio2">No</label>
+        </div>
+      </div>
       <!--Theme-->
       <div class="well well-sm">
         Website styles
@@ -162,6 +174,13 @@
     }
     if (Cookies.get('enableSnowstorm') == 'false') {
       $("#snowstorm-radio2").replaceWith("<input type='radio' name='option4' id='snowstorm-radio2' value='no' checked>");
+    }
+    //Events Banner
+    if (Cookies.get('enableEventsBanner') == 'true') {
+      $("#events-radio1").replaceWith("<input type='radio' name='option6' id='events-radio1' value='yes' checked>");
+    }
+    if (Cookies.get('enableEventsBanner') == 'false') {
+      $("#events-radio2").replaceWith("<input type='radio' name='option6' id='events-radio2' value='no' checked>");
     }
     //Theme
     if (Cookies.get('theme') == 'dark') {

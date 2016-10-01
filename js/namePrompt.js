@@ -7,7 +7,7 @@ function namePrompt()
 	if (name != null) {
 //Default
 		document.getElementById("name").innerHTML =
-		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
+		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
 		"I hope you enjoy your stay."
 	;}
 //Creator Message - List
@@ -529,12 +529,12 @@ function namePrompt()
 //Reset
 		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls")) {
 			document.getElementById("name").innerHTML =
-			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
+			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 		;}
 //No name - Audio
 		if (name == "" || (name == " ") || (name == "undefined")) {
 			document.getElementById("name").innerHTML =
-			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 17 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
+			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
 			"<div class='btn-group' role='group'>" +
 			  "<a class='btn btn-default btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>What's Your Name</a>" +
 				"<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>" +

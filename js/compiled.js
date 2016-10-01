@@ -185,6 +185,13 @@ function settingsCheck() {
   if ($('#snowstorm-radio2:checked').val() == 'no') {
     Cookies.set('enableSnowstorm', 'false', { expires: 3600 });
   }
+  //Events Banner
+  if ($('#events-radio1:checked').val() == 'yes') {
+    Cookies.set('enableEventsBanner', 'true', { expires: 3600 });
+  }
+  if ($('#events-radio2:checked').val() == 'no') {
+    Cookies.set('enableEventsBanner', 'false', { expires: 3600 });
+  }
   //Theme
   if ($('#theme-radio1:checked').val() == 'dark') {
     Cookies.set('theme', 'dark', { expires: 3600 });
@@ -302,6 +309,16 @@ $(function() {
     console.log('enableSnowstorm = true');
   } else {
     console.log('enableSnowstorm = false');
+  }
+});
+
+//Check if Events Banner needs to be shown on Homepage
+$(function() {
+  if (Cookies.get('enableEventsBanner') == 'false') {
+    $('#event-banner').alert('close');
+    console.log('enableEventsBanner = false');
+  } else {
+    console.log('enableEventsBanner = true');
   }
 });
 
