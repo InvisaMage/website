@@ -1,107 +1,134 @@
 <!DOCTYPE html>
 
 <!--Settings Modal-->
-<div class="modal-dialog modal-sm" id="ajax-achievements">
+<div class="modal-dialog modal-md" id="ajax-settings">
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h4 class="modal-title black">Settings</h4>
     </div>
     <div class="modal-body text-left">
-      <!--Terminal-->
-      <div class="well well-sm">
-        Load Terminal assets on page load
-        <div class="radio radio-success" style="font-size:14px;">
-          <input type="radio" name="option1" id="terminal-radio1" value="yes">
-          <label for="terminal-radio1">Yes</label>
+      <!--Row 1-->
+      <div class="row">
+        <div class="col-sm-6">
+          <!--Terminal-->
+          <div class="well well-sm fixed-well">
+            Load Terminal assets on page load
+            <div class="radio radio-success" style="font-size:14px;">
+              <input type="radio" name="option1" id="terminal-radio1" value="yes">
+              <label for="terminal-radio1">Yes</label>
+            </div>
+            <div class="radio radio-danger" style="font-size:14px;">
+              <input type="radio" name="option1" id="terminal-radio2" value="no" checked>
+              <label for="terminal-radio2">No (Default)</label>
+            </div>
+          </div>
         </div>
-        <div class="radio radio-danger" style="font-size:14px;">
-          <input type="radio" name="option1" id="terminal-radio2" value="no" checked>
-          <label for="terminal-radio2">No (Default)</label>
-        </div>
-      </div>
-      <!--News-->
-      <div class="well well-sm">
-        Default tab on News page
-        <div class="radio radio-primary" style="font-size:14px;">
-          <input type="radio" name="option2" id="news-radio1" value="projects" checked>
-          <label for="news-radio1">Projects (Default)</label>
-        </div>
-        <div class="radio radio-primary" style="font-size:14px;">
-          <input type="radio" name="option2" id="news-radio2" value="important">
-          <label for="news-radio2">Important</label>
-        </div>
-        <div class="radio radio-primary" style="font-size:14px;">
-          <input type="radio" name="option2" id="news-radio3" value="website">
-          <label for="news-radio3">Website</label>
-        </div>
-        <div class="radio radio-primary" style="font-size:14px;">
-          <input type="radio" name="option2" id="news-radio4" value="bugs">
-          <label for="news-radio4">Bugs</label>
-        </div>
-      </div>
-      <!--T&C Banners-->
-      <div class="well well-sm">
-        Display banners on terms and privacy pages
-        <div class="radio radio-success" style="font-size:14px;">
-          <input type="radio" name="option3" id="banners-radio1" value="yes" checked>
-          <label for="banners-radio1">Yes (Default)</label>
-        </div>
-        <div class="radio radio-danger" style="font-size:14px;">
-          <input type="radio" name="option3" id="banners-radio2" value="no">
-          <label for="banners-radio2">No</label>
+        <div class="col-sm-6">
+          <!--News-->
+          <div class="well well-sm fixed-well">
+            Default tab on News page
+            <div class="radio radio-primary" style="font-size:14px;">
+              <input type="radio" name="option2" id="news-radio1" value="projects" checked>
+              <label for="news-radio1">Projects (Default)</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:14px;">
+              <input type="radio" name="option2" id="news-radio2" value="important">
+              <label for="news-radio2">Important</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:14px;">
+              <input type="radio" name="option2" id="news-radio3" value="website">
+              <label for="news-radio3">Website</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:14px;">
+              <input type="radio" name="option2" id="news-radio4" value="bugs">
+              <label for="news-radio4">Bugs</label>
+            </div>
+          </div>
         </div>
       </div>
-      <!--Snowstorm-->
-      <div class="well well-sm">
-        Enable snowstorm on page load
-        <div class="radio radio-success" style="font-size:14px;">
-          <input type="radio" name="option4" id="snowstorm-radio1" value="yes">
-          <label for="snowstorm-radio1">Yes</label>
+      <!--Row 2-->
+      <div class="row">
+        <div class="col-sm-6">
+          <!--T&C Banners-->
+          <div class="well well-sm fixed-well">
+            Display banners on terms and privacy pages
+            <div class="radio radio-success" style="font-size:14px;">
+              <input type="radio" name="option3" id="banners-radio1" value="yes" checked>
+              <label for="banners-radio1">Yes (Default)</label>
+            </div>
+            <div class="radio radio-danger" style="font-size:14px;">
+              <input type="radio" name="option3" id="banners-radio2" value="no">
+              <label for="banners-radio2">No</label>
+            </div>
+          </div>
         </div>
-        <div class="radio radio-danger" style="font-size:14px;">
-          <input type="radio" name="option4" id="snowstorm-radio2" value="no" checked>
-          <label for="snowstorm-radio2">No (Default)</label>
-        </div>
-      </div>
-      <!--Events Banner-->
-      <div class="well well-sm">
-        Enable Events Banner on the homepage
-        <div class="radio radio-success" style="font-size:14px;">
-          <input type="radio" name="option6" id="events-radio1" value="yes" checked>
-          <label for="events-radio1">Yes (Default)</label>
-        </div>
-        <div class="radio radio-danger" style="font-size:14px;">
-          <input type="radio" name="option6" id="events-radio2" value="no">
-          <label for="events-radio2">No</label>
-        </div>
-      </div>
-      <!--Theme-->
-      <div class="well well-sm">
-        Website styles
-        <div class="radio radio-primary" style="font-size:14px;">
-          <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
-          <label for="theme-radio1">Dark (Default)</label>
-        </div>
-        <div class="radio radio-primary" style="font-size:14px;">
-          <input type="radio" name="option5" id="theme-radio2" value="light">
-          <label for="theme-radio2">Light</label>
-        </div>
-        <hr>
-        <div class="checkbox checkbox-primary" style="font-size:14px;">
-          <input type="checkbox" id="dark-modal-checkbox1" value="true">
-          <label for="checkbox1">
-            Dark modals
-          </label>
-        </div>
-        <div class="checkbox checkbox-primary" style="font-size:14px;">
-          <input type="checkbox" id="legacy-background-checkbox1" value="true">
-          <label for="checkbox2">
-            Legacy background
-          </label>
+        <div class="col-sm-6">
+          <!--Snowstorm-->
+          <div class="well well-sm fixed-well">
+            Enable snowstorm on page load
+            <div class="radio radio-success" style="font-size:14px;">
+              <input type="radio" name="option4" id="snowstorm-radio1" value="yes">
+              <label for="snowstorm-radio1">Yes</label>
+            </div>
+            <div class="radio radio-danger" style="font-size:14px;">
+              <input type="radio" name="option4" id="snowstorm-radio2" value="no" checked>
+              <label for="snowstorm-radio2">No (Default)</label>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <!--Row 3-->
+      <div class="row">
+        <div class="col-sm-6">
+          <!--Events Banner-->
+          <div class="well well-sm fixed-well">
+            Enable Events Banner on the homepage
+            <div class="radio radio-success" style="font-size:14px;">
+              <input type="radio" name="option6" id="events-radio1" value="yes" checked>
+              <label for="events-radio1">Yes (Default)</label>
+            </div>
+            <div class="radio radio-danger" style="font-size:14px;">
+              <input type="radio" name="option6" id="events-radio2" value="no">
+              <label for="events-radio2">No</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!--Theme-->
+          <div class="well well-sm fixed-well">
+            Website styles
+            <div class="radio radio-primary" style="font-size:14px;">
+              <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
+              <label for="theme-radio1">Dark (Default)</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:14px;">
+              <input type="radio" name="option5" id="theme-radio2" value="light">
+              <label for="theme-radio2">Light</label>
+            </div>
+            <hr>
+            <div class="checkbox checkbox-primary" style="font-size:14px;">
+              <input type="checkbox" id="dark-modal-checkbox1" value="true">
+              <label for="checkbox1">
+                Dark modals
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:14px;">
+              <input type="checkbox" id="legacy-background-checkbox1" value="true">
+              <label for="checkbox2">
+                Legacy background
+              </label>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+
     <!--Settings Help Collapsible Content-->
     <div class="collapse" id="modal-settings-collapse">
       <div class="well">
