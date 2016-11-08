@@ -118,7 +118,7 @@ p {
 }
 
 .title {
-  	color: #246BB2;
+  	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -203,7 +203,7 @@ table {
 	-moz-osx-font-smoothing: grayscale;
 	position: relative;
 	overflow: hidden;
-	color: #246BB2;
+	color: #0066ff;
 	text-decoration: none;
 	text-decoration-color: -moz-use-text-color;
 	text-decoration-line: none;
@@ -223,7 +223,7 @@ table {
 	left: 50%;
 	right: 50%;
 	bottom: 0;
-	background: #3399FF;
+	background: #0066ff;
 	height: 2px;
 	-webkit-transition-property: left, right;
 	transition-property: left, right;
