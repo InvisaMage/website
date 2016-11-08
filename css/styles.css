@@ -789,12 +789,6 @@ footer ul {
   margin-bottom: 0px;
 }
 
-/* Settings modal */
-.fixed-well {
-  height: 205px;
-  width: 270px;
-}
-
 /* Boostrap Overrides and Additions*/
 a:focus {
 	outline: none;
