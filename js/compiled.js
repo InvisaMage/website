@@ -333,16 +333,6 @@ $(function() {
   }
 });
 
-//Check if dark modals should be applied
-$(function() {
-  if (Cookies.get('themeDarkModal') == 'true') {
-    $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-dark.css">');
-    console.log('themeDarkModal = true');
-  } else {
-    console.log('themeDarkModal = false');
-  }
-});
-
 //Check if legacy background needs to be applied
 $(function() {
   if (Cookies.get('themeLegacyBg') == 'true' && Cookies.get('theme') != 'light' ) {
