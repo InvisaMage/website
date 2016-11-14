@@ -185,7 +185,9 @@ h1, h2, h3 {
 footer h4 {
   color: #6600ff;
 }
-
+.modal-title, .modal-body {
+	color: black;
+}
 .modal-content {
   position: relative;
   background-color: #ffffff;

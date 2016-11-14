@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
-	color: #246BB2;
+	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -492,7 +492,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
-	color: #246BB2;
+	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -529,7 +529,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
-	color: #246BB2;
+	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -566,7 +566,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
-	color: #246BB2;
+	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -606,7 +606,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
-	color: #246BB2;
+	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -646,7 +646,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
-	color: #246BB2;
+	color: #0066ff;
     text-decoration: none;
     text-decoration-color: -moz-use-text-color;
     text-decoration-line: none;
@@ -677,7 +677,7 @@ footer ul {
 	font-size: 90%;
 }
 
-#alert {
+#terms-banner, #privacy-banner {
     position: fixed;
     bottom: 0;
 		left: 0;
@@ -844,6 +844,9 @@ input[type="checkbox"]:focus {
   float: none;
 	display: inline-block;
 }
+.nav-tabs > li > a {
+  color: #0066ff;
+}
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -856,6 +859,7 @@ input[type="checkbox"]:focus {
   border: 1px solid black;
 }
 .nav-pills > li > a {
+  color: #0066ff;
   font-size: 18px;
 }
 .nav-pills > li.active > a,
