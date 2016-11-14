@@ -151,12 +151,33 @@ listener.simple_combo("`", function() {
 
 //Settings modal logic (executed on save button click in Settings modal)
 function settingsCheck() {
-  //Terminal
-  if ($('#terminal-radio1:checked').val() == 'yes') {
-    Cookies.set('loadTerminal', 'true', { expires: 3600 });
+  //Theme
+  if ($('#theme-radio1:checked').val() == 'dark') {
+    Cookies.set('theme', 'dark', { expires: 3600 });
   }
-  if ($('#terminal-radio2:checked').val() == 'no') {
-    Cookies.set('loadTerminal', 'false', { expires: 3600 });
+  if ($('#theme-radio2:checked').val() == 'light') {
+    Cookies.set('theme', 'light', { expires: 3600 });
+  }
+  //Legacy background
+  if ($('#legacy-background-checkbox1:checked').val() == 'true') {
+    Cookies.set('themeLegacyBg', 'true', { expires: 3600 });
+  }
+  if ($('#legacy-background-checkbox1:checked').val() != 'true') {
+    Cookies.set('themeLegacyBg', 'false', { expires: 3600 });
+  }
+  //Banner - Homepage
+  if ($('#home-banner-checkbox1:checked').val() == 'true') {
+    Cookies.set('enableEventsBanner', 'true', { expires: 3600 });
+  }
+  if ($('#home-banner-checkbox1:checked').val() != 'true') {
+    Cookies.set('enableEventsBanner', 'false', { expires: 3600 });
+  }
+  //Banner - Terms and conditions
+  if ($('#tac-banner-checkbox1:checked').val() == 'true') {
+    Cookies.set('enableTacBanner', 'true', { expires: 3600 });
+  }
+  if ($('#tac-banner-checkbox1:checked').val() != 'true') {
+    Cookies.set('enableTacBanner', 'false', { expires: 3600 });
   }
   //News
   if ($('#news-radio1:checked').val() == 'projects') {
@@ -171,47 +192,19 @@ function settingsCheck() {
   if ($('#news-radio4:checked').val() == 'bugs') {
     Cookies.set('defaultTab', 'bugs', { expires: 3600 });
   }
-  //Banners
-  if ($('#banners-radio1:checked').val() == 'yes') {
-    Cookies.set('loadBanners', 'true', { expires: 3600 });
+  //Terminal
+  if ($('#terminal-checkbox1:checked').val() == 'true') {
+    Cookies.set('loadTerminal', 'true', { expires: 3600 });
   }
-  if ($('#banners-radio2:checked').val() == 'no') {
-    Cookies.set('loadBanners', 'false', { expires: 3600 });
+  if ($('#terminal-checkbox1:checked').val() != 'true') {
+    Cookies.set('loadTerminal', 'false', { expires: 3600 });
   }
   //Snowstorm
-  if ($('#snowstorm-radio1:checked').val() == 'yes') {
+  if ($('#snowstorm-checkbox1:checked').val() == 'true') {
     Cookies.set('enableSnowstorm', 'true', { expires: 3600 });
   }
-  if ($('#snowstorm-radio2:checked').val() == 'no') {
+  if ($('#snowstorm-checkbox1:checked').val() != 'true') {
     Cookies.set('enableSnowstorm', 'false', { expires: 3600 });
-  }
-  //Events Banner
-  if ($('#events-radio1:checked').val() == 'yes') {
-    Cookies.set('enableEventsBanner', 'true', { expires: 3600 });
-  }
-  if ($('#events-radio2:checked').val() == 'no') {
-    Cookies.set('enableEventsBanner', 'false', { expires: 3600 });
-  }
-  //Theme
-  if ($('#theme-radio1:checked').val() == 'dark') {
-    Cookies.set('theme', 'dark', { expires: 3600 });
-  }
-  if ($('#theme-radio2:checked').val() == 'light') {
-    Cookies.set('theme', 'light', { expires: 3600 });
-  }
-  //Dark modals
-  if ($('#dark-modal-checkbox1:checked').val() == 'true') {
-    Cookies.set('themeDarkModal', 'true', { expires: 3600 });
-  }
-  if ($('#dark-modal-checkbox1:checked').val() == null) {
-    Cookies.set('themeDarkModal', 'false', { expires: 3600 });
-  }
-  //Dark modals
-  if ($('#legacy-background-checkbox1:checked').val() == 'true') {
-    Cookies.set('themeLegacyBg', 'true', { expires: 3600 });
-  }
-  if ($('#legacy-background-checkbox1:checked').val() == null) {
-    Cookies.set('themeLegacyBg', 'false', { expires: 3600 });
   }
   setTimeout(enable, 1500);
   $.bootstrapGrowl("Settings Saved!", {
@@ -319,6 +312,28 @@ $(function() {
     console.log('enableEventsBanner = false');
   } else {
     console.log('enableEventsBanner = true');
+  }
+});
+
+//Check if Banners needs to be shown on Terms and Privacy page
+$(function() {
+  if (Cookies.get('enableTacBanner') == 'false') {
+    $('#terms-banner').alert('close');
+    $('#privacy-banner').alert('close');
+    console.log('enableTacBanner = false');
+  } else {
+    console.log('enableTacBanner = true');
+  }
+});
+
+//Temporary workaround for settings bug
+//Forces to set banner cookies if they have not been set yet
+$(function() {
+  if (Cookies.get('enableEventsBanner') == undefined) {
+      Cookies.set('enableEventsBanner', 'true', { expires: 3600 });
+  }
+  if (Cookies.get('enableTacBanner') == undefined) {
+      Cookies.set('enableTacBanner', 'true', { expires: 3600 });
   }
 });
 

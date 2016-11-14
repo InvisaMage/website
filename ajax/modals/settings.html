@@ -10,119 +10,94 @@
     <div class="modal-body text-left">
       <!--Row 1-->
       <div class="row">
+        <!--Theme-->
         <div class="col-sm-6">
-          <!--Terminal-->
           <div class="well well-sm fixed-well">
-            Load Terminal assets on page load
-            <div class="radio radio-success" style="font-size:14px;">
-              <input type="radio" name="option1" id="terminal-radio1" value="yes">
-              <label for="terminal-radio1">Yes</label>
+            Website theme<br>
+            <span style="font-size:14px;">Customize the appearance of the site.</span>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
+              <label for="theme-radio1">Dark (Default)</label>
             </div>
-            <div class="radio radio-danger" style="font-size:14px;">
-              <input type="radio" name="option1" id="terminal-radio2" value="no" checked>
-              <label for="terminal-radio2">No (Default)</label>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option5" id="theme-radio2" value="light">
+              <label for="theme-radio2">Light</label>
             </div>
-          </div>
+            <hr>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="legacy-background-checkbox1" value="true">
+              <label for="legacy-background-checkbox1">
+                Legacy background
+              </label>
+            </div>
+          </div><!--/.well-->
         </div>
+        <!--Banners-->
         <div class="col-sm-6">
-          <!--News-->
           <div class="well well-sm fixed-well">
-            Default tab on News page
-            <div class="radio radio-primary" style="font-size:14px;">
+            Banners<br>
+            <span style="font-size:14px;">Select where you want to see banners.</span>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="home-banner-checkbox1" value="true" checked>
+              <label for="home-banner-checkbox1">
+                Homepage
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="tac-banner-checkbox1" value="true" checked>
+              <label for="tac-banner-checkbox1">
+                Terms and Privacy page
+              </label>
+            </div>
+          </div><!--/.well-->
+        </div>
+      </div><!--/row-->
+      <!--Row 2-->
+      <div class="row">
+        <!--News-->
+        <div class="col-sm-6">
+          <div class="well well-sm fixed-well">
+            News page<br>
+            <span style="font-size:14px;">Select the default tab.</span>
+            <div class="radio radio-primary" style="font-size:16px;">
               <input type="radio" name="option2" id="news-radio1" value="projects" checked>
               <label for="news-radio1">Projects (Default)</label>
             </div>
-            <div class="radio radio-primary" style="font-size:14px;">
+            <div class="radio radio-primary" style="font-size:16px;">
               <input type="radio" name="option2" id="news-radio2" value="important">
               <label for="news-radio2">Important</label>
             </div>
-            <div class="radio radio-primary" style="font-size:14px;">
+            <div class="radio radio-primary" style="font-size:16px;">
               <input type="radio" name="option2" id="news-radio3" value="website">
               <label for="news-radio3">Website</label>
             </div>
-            <div class="radio radio-primary" style="font-size:14px;">
+            <div class="radio radio-primary" style="font-size:16px;">
               <input type="radio" name="option2" id="news-radio4" value="bugs">
               <label for="news-radio4">Bugs</label>
             </div>
           </div>
         </div>
-      </div>
-      <!--Row 2-->
-      <div class="row">
+        <!--Page load-->
         <div class="col-sm-6">
-          <!--T&C Banners-->
           <div class="well well-sm fixed-well">
-            Display banners on terms and privacy pages
-            <div class="radio radio-success" style="font-size:14px;">
-              <input type="radio" name="option3" id="banners-radio1" value="yes" checked>
-              <label for="banners-radio1">Yes (Default)</label>
-            </div>
-            <div class="radio radio-danger" style="font-size:14px;">
-              <input type="radio" name="option3" id="banners-radio2" value="no">
-              <label for="banners-radio2">No</label>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <!--Snowstorm-->
-          <div class="well well-sm fixed-well">
-            Enable snowstorm on page load
-            <div class="radio radio-success" style="font-size:14px;">
-              <input type="radio" name="option4" id="snowstorm-radio1" value="yes">
-              <label for="snowstorm-radio1">Yes</label>
-            </div>
-            <div class="radio radio-danger" style="font-size:14px;">
-              <input type="radio" name="option4" id="snowstorm-radio2" value="no" checked>
-              <label for="snowstorm-radio2">No (Default)</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Row 3-->
-      <div class="row">
-        <div class="col-sm-6">
-          <!--Events Banner-->
-          <div class="well well-sm fixed-well">
-            Enable Events Banner on the homepage
-            <div class="radio radio-success" style="font-size:14px;">
-              <input type="radio" name="option6" id="events-radio1" value="yes" checked>
-              <label for="events-radio1">Yes (Default)</label>
-            </div>
-            <div class="radio radio-danger" style="font-size:14px;">
-              <input type="radio" name="option6" id="events-radio2" value="no">
-              <label for="events-radio2">No</label>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <!--Theme-->
-          <div class="well well-sm fixed-well">
-            Website styles
-            <div class="radio radio-primary" style="font-size:14px;">
-              <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
-              <label for="theme-radio1">Dark (Default)</label>
-            </div>
-            <div class="radio radio-primary" style="font-size:14px;">
-              <input type="radio" name="option5" id="theme-radio2" value="light">
-              <label for="theme-radio2">Light</label>
-            </div>
-            <hr>
-            <div class="checkbox checkbox-primary" style="font-size:14px;">
-              <input type="checkbox" id="legacy-background-checkbox1" value="true">
-              <label for="checkbox2">
-                Legacy background
+            On page load...<br>
+            <span style="font-size:14px;">What happens when the page loads.</span>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="terminal-checkbox1" value="true">
+              <label for="terminal-checkbox1">
+                Load Terminal assets
               </label>
             </div>
-          </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="snowstorm-checkbox1" value="true">
+              <label for="snowstorm-checkbox1">
+                Enable snowstorm
+              </label>
+            </div>
+          </div><!--/.well-->
         </div>
-        </div>
-      </div>
-
-
-
-
-
-
+      </div><!--/row-->
+    </div><!--/.modal-body-->
     <!--Settings Help Collapsible Content-->
     <div class="collapse" id="modal-settings-collapse">
       <div class="well">
@@ -162,12 +137,33 @@
 
   //Checks which ratios should be selected
   $(function() {
-    //Terminal
-    if (Cookies.get('loadTerminal') == 'true') {
-      $("#terminal-radio1").replaceWith("<input type='radio' name='option1' id='terminal-radio1' value='yes' checked>");
+    //Theme
+    if (Cookies.get('theme') == 'dark') {
+      $("#theme-radio1").replaceWith("<input type='radio' name='option5' id='theme-radio1' value='dark' checked>");
     }
-    if (Cookies.get('loadTerminal') == 'false') {
-      $("#terminal-radio2").replaceWith("<input type='radio' name='option1' id='terminal-radio2' value='no' checked>");
+    if (Cookies.get('theme') == 'light') {
+      $("#theme-radio2").replaceWith("<input type='radio' name='option5' id='theme-radio2' value='light' checked>");
+    }
+    //Legacy background
+    if (Cookies.get('themeLegacyBg') == 'true') {
+      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('themeLegacyBg') != 'true') {
+      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true'>");
+    }
+    //Banner - Homepage
+    if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') == undefined) {
+      $("#home-banner-checkbox1").replaceWith("<input type='checkbox' id='home-banner-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('enableEventsBanner') != 'true') {
+      $("#home-banner-checkbox1").replaceWith("<input type='checkbox' id='home-banner-checkbox1' value='true'>");
+    }
+    //Banner - Terms and Conditions
+    if (Cookies.get('enableTacBanner') == 'true' || Cookies.get('enableTacBanner') == undefined) {
+      $("#tac-banner-checkbox1").replaceWith("<input type='checkbox' id='tac-banner-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('enableTacBanner') != 'true') {
+      $("#tac-banner-checkbox1").replaceWith("<input type='checkbox' id='tac-banner-checkbox1' value='true'>");
     }
     //News
     if (Cookies.get('defaultTab') == 'projects') {
@@ -182,46 +178,27 @@
     if (Cookies.get('defaultTab') == 'bugs') {
       $("#news-radio4").replaceWith("<input type='radio' name='option2' id='news-ratio4' value='bugs' checked>");
     }
-    //T&C Banners
-    if (Cookies.get('loadBanners') == 'true') {
-      $("#banners-radio1").replaceWith("<input type='radio' name='option3' id='banners-radio1' value='yes' checked>");
-    }
-    if (Cookies.get('loadBanners') == 'false') {
-      $("#banners-radio2").replaceWith("<input type='radio' name='option3' id='banners-radio2' value='no' checked>");
-    }
-    //Snowstorm
+    //On page load - Snowstorm
     if (Cookies.get('enableSnowstorm') == 'true') {
-      $("#snowstorm-radio1").replaceWith("<input type='radio' name='option4' id='snowstorm-radio1' value='yes' checked>");
+      $("#snowstorm-checkbox1").replaceWith("<input type='checkbox' name='option4' id='snowstorm-checkbox1' value='true' checked>");
     }
-    if (Cookies.get('enableSnowstorm') == 'false') {
-      $("#snowstorm-radio2").replaceWith("<input type='radio' name='option4' id='snowstorm-radio2' value='no' checked>");
+    if (Cookies.get('enableSnowstorm') != 'true') {
+      $("#snowstorm-checkbox1").replaceWith("<input type='checkbox' name='option4' id='snowstorm-checkbox1' value='true'>");
     }
-    //Events Banner
-    if (Cookies.get('enableEventsBanner') == 'true') {
-      $("#events-radio1").replaceWith("<input type='radio' name='option6' id='events-radio1' value='yes' checked>");
+    //On page load - Terminal
+    if (Cookies.get('loadTerminal') == 'true') {
+      $("#terminal-checkbox1").replaceWith("<input type='checkbox' name='option1' id='terminal-checkbox1' value='true' checked>");
     }
-    if (Cookies.get('enableEventsBanner') == 'false') {
-      $("#events-radio2").replaceWith("<input type='radio' name='option6' id='events-radio2' value='no' checked>");
-    }
-    //Theme
-    if (Cookies.get('theme') == 'dark') {
-      $("#theme-radio1").replaceWith("<input type='radio' name='option5' id='theme-radio1' value='dark' checked>");
-    }
-    if (Cookies.get('theme') == 'light') {
-      $("#theme-radio2").replaceWith("<input type='radio' name='option5' id='theme-radio2' value='light' checked>");
-    }
-    //Legacy background
-    if (Cookies.get('themeLegacyBg') == 'true') {
-      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('themeLegacyBg') == null) {
-      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true'>");
+    if (Cookies.get('loadTerminal') != 'true') {
+      $("#terminal-checkbox1").replaceWith("<input type='checkbox' name='option1' id='terminal-checkbox1' value='true'>");
     }
   });
 </script>
 
 <style>
-/*awesome-boostrap-checkbox Library*/
+/* awesome-boostrap-checkbox Library by flatlogic
+ * https://github.com/flatlogic/awesome-bootstrap-checkbox
+ */
 .checkbox {
   padding-left: 20px;
 }
@@ -235,8 +212,8 @@
   content: "";
   display: inline-block;
   position: absolute;
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   left: 0;
   margin-left: -20px;
   border: 1px solid #cccccc;
@@ -422,8 +399,8 @@ input[type="radio"].styled:checked + label:after,
   content: "";
   display: inline-block;
   position: absolute;
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   left: 0;
   margin-left: -20px;
   border: 1px solid #cccccc;
@@ -437,8 +414,8 @@ input[type="radio"].styled:checked + label:after,
   display: inline-block;
   position: absolute;
   content: " ";
-  width: 11px;
-  height: 11px;
+  width: 14px;
+  height: 14px;
   left: 3px;
   top: 3px;
   margin-left: -20px;
