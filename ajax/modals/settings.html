@@ -25,6 +25,12 @@
             </div>
             <hr>
             <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="modal-centered-checkbox1" value="true">
+              <label for="modal-centered-checkbox1">
+                Center modals
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
               <input type="checkbox" id="legacy-background-checkbox1" value="true">
               <label for="legacy-background-checkbox1">
                 Legacy background
@@ -107,11 +113,9 @@
         <br>
         <br>
         <strong>Note:</strong><br>
-        Clicking or tapping the "Cancel" button will not save your changes.
-        <br>
-        <br>
-        <strong>Note:</strong><br>
-        In order to see some changes you may need to reload the page.
+        Clicking or tapping the "Cancel" button will not save your changes.<br>
+        In order to see some changes you may need to reload the page.<br>
+        Centered modals no not work on small displays.
       </div>
     </div>
     <div class="modal-footer">
@@ -150,6 +154,13 @@
     }
     if (Cookies.get('themeLegacyBg') != 'true') {
       $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true'>");
+    }
+    //Legacy background
+    if (Cookies.get('centeredModals') == 'true') {
+      $("#modal-centered-checkbox1").replaceWith("<input type='checkbox' id='modal-centered-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('centeredModals') != 'true') {
+      $("#modal-centered-checkbox1").replaceWith("<input type='checkbox' id='modal-centered-checkbox1' value='true'>");
     }
     //Banner - Homepage
     if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') == undefined) {
