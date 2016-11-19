@@ -84,6 +84,7 @@ function loadSnowstorm() {
 function loadSnowstormNamePrompt(){
   setTimeout(enable, 500);
   $('#js-snowstorm').load('js/snowstorm.js');
+  $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
     function enable(){
       purplerainCheck();
       snowStorm.toggleSnow();
@@ -105,7 +106,7 @@ function loadWater() {
 //Enables water and replaces footer text to enable water on next click
 function destroyWater() {
   $('#footer-water').tooltip('destroy');
-  $('#footer-water').replaceWith( "<a class='link' id='footer-water' onclick='$(`body`).ripples(`destroy`); loadWater();' data-toggle='tooltip' data-placement='top' title='Mop up the water.'>Destroy Water</a>" );
+  $('#footer-water').replaceWith( "<a class='link' id='footer-water' onclick='$(`body`).ripples(`destroy`); loadWater();' data-toggle='tooltip' data-placement='top' title='Remove the water.'>Mop Water</a>" );
   //Re enable tooltips.
   if(!('ontouchstart' in window))
   {
@@ -164,6 +165,13 @@ function settingsCheck() {
   }
   if ($('#legacy-background-checkbox1:checked').val() != 'true') {
     Cookies.set('themeLegacyBg', 'false', { expires: 3600 });
+  }
+  //Centered Modals
+  if ($('#modal-centered-checkbox1:checked').val() == 'true') {
+    Cookies.set('centeredModals', 'true', { expires: 3600 });
+  }
+  if ($('#modal-centered-checkbox1:checked').val() != 'true') {
+    Cookies.set('centeredModals', 'false', { expires: 3600 });
   }
   //Banner - Homepage
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
@@ -295,6 +303,7 @@ $(function() {
 $(function() {
   if (Cookies.get('enableSnowstorm') == 'true') {
     setTimeout(enable, 500);
+    $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
     loadSnowstorm();
       function enable(){
         snowStorm.toggleSnow();
@@ -348,6 +357,16 @@ $(function() {
   }
 });
 
+//Check if centered modals need to be applied
+$(function() {
+  if (Cookies.get('centeredModals') == 'true') {
+    $('html').append('<link rel="stylesheet" type="text/css" href="./css/modals-centered.css">');
+    console.log('centeredModals = true');
+  } else {
+    console.log('centeredModals = false');
+  }
+});
+
 //Check if legacy background needs to be applied
 $(function() {
   if (Cookies.get('themeLegacyBg') == 'true' && Cookies.get('theme') != 'light' ) {
@@ -362,7 +381,7 @@ $(function() {
 $(function() {
 setTimeout(enable, 900);
   function enable(){
-    $("html, body").animate({ scrollTop: $('span:target').offset().top }, 1000);
+    $("html, body").animate({ scrollTop: $('*:target').offset().top }, 1000);
   }
 });
 
