@@ -154,65 +154,65 @@ listener.simple_combo("`", function() {
 function settingsCheck() {
   //Theme
   if ($('#theme-radio1:checked').val() == 'dark') {
-    Cookies.set('theme', 'dark', { expires: 3600 });
+    Cookies.set('theme', 'dark', {expires: 3600}, {secure: true});
   }
   if ($('#theme-radio2:checked').val() == 'light') {
-    Cookies.set('theme', 'light', { expires: 3600 });
+    Cookies.set('theme', 'light', {expires: 3600}, {secure: true});
   }
   //Legacy background
   if ($('#legacy-background-checkbox1:checked').val() == 'true') {
-    Cookies.set('themeLegacyBg', 'true', { expires: 3600 });
+    Cookies.set('themeLegacyBg', 'true', {expires: 3600}, {secure: true});
   }
   if ($('#legacy-background-checkbox1:checked').val() != 'true') {
-    Cookies.set('themeLegacyBg', 'false', { expires: 3600 });
+    Cookies.set('themeLegacyBg', 'false', {expires: 3600}, {secure: true});
   }
   //Centered Modals
   if ($('#modal-centered-checkbox1:checked').val() == 'true') {
-    Cookies.set('centeredModals', 'true', { expires: 3600 });
+    Cookies.set('centeredModals', 'true', {expires: 3600}, {secure: true});
   }
   if ($('#modal-centered-checkbox1:checked').val() != 'true') {
-    Cookies.set('centeredModals', 'false', { expires: 3600 });
+    Cookies.set('centeredModals', 'false', {expires: 3600}, {secure: true});
   }
   //Banner - Homepage
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableEventsBanner', 'true', { expires: 3600 });
+    Cookies.set('enableEventsBanner', 'true', {expires: 3600}, {secure: true});
   }
   if ($('#home-banner-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableEventsBanner', 'false', { expires: 3600 });
+    Cookies.set('enableEventsBanner', 'false', {expires: 3600}, {secure: true});
   }
   //Banner - Terms and conditions
   if ($('#tac-banner-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableTacBanner', 'true', { expires: 3600 });
+    Cookies.set('enableTacBanner', 'true', {expires: 3600}, {secure: true});
   }
   if ($('#tac-banner-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableTacBanner', 'false', { expires: 3600 });
+    Cookies.set('enableTacBanner', 'false', {expires: 3600}, {secure: true});
   }
   //News
   if ($('#news-radio1:checked').val() == 'projects') {
-    Cookies.set('defaultTab', 'projects', { expires: 3600 });
+    Cookies.set('defaultTab', 'projects', {expires: 3600}, {secure: true});
   }
   if ($('#news-radio2:checked').val() == 'important') {
-    Cookies.set('defaultTab', 'important', { expires: 3600 });
+    Cookies.set('defaultTab', 'important', {expires: 3600}, {secure: true});
   }
   if ($('#news-radio3:checked').val() == 'website') {
-    Cookies.set('defaultTab', 'website', { expires: 3600 });
+    Cookies.set('defaultTab', 'website', {expires: 3600}, {secure: true});
   }
   if ($('#news-radio4:checked').val() == 'bugs') {
-    Cookies.set('defaultTab', 'bugs', { expires: 3600 });
+    Cookies.set('defaultTab', 'bugs', {expires: 3600}, {secure: true});
   }
   //Terminal
   if ($('#terminal-checkbox1:checked').val() == 'true') {
-    Cookies.set('loadTerminal', 'true', { expires: 3600 });
+    Cookies.set('loadTerminal', 'true', {expires: 3600}, {secure: true});
   }
   if ($('#terminal-checkbox1:checked').val() != 'true') {
-    Cookies.set('loadTerminal', 'false', { expires: 3600 });
+    Cookies.set('loadTerminal', 'false', {expires: 3600}, {secure: true});
   }
   //Snowstorm
   if ($('#snowstorm-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableSnowstorm', 'true', { expires: 3600 });
+    Cookies.set('enableSnowstorm', 'true', {expires: 3600}, {secure: true});
   }
   if ($('#snowstorm-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableSnowstorm', 'false', { expires: 3600 });
+    Cookies.set('enableSnowstorm', 'false', {expires: 3600}, {secure: true});
   }
   setTimeout(enable, 1500);
   $.bootstrapGrowl("Settings Saved!", {
@@ -339,10 +339,10 @@ $(function() {
 //Forces to set banner cookies if they have not been set yet
 $(function() {
   if (Cookies.get('enableEventsBanner') == undefined) {
-      Cookies.set('enableEventsBanner', 'true', { expires: 3600 });
+      Cookies.set('enableEventsBanner', 'true', {expires: 3600}, {secure: true});
   }
   if (Cookies.get('enableTacBanner') == undefined) {
-      Cookies.set('enableTacBanner', 'true', { expires: 3600 });
+      Cookies.set('enableTacBanner', 'true', {expires: 3600}, {secure: true});
   }
 });
 
@@ -456,7 +456,7 @@ function eastereggCheck() {
       delay: 10000,
       allow_dismiss: true
     });
-    Cookies.set('eastereggAchievement', 'true', { expires: 3600 });
+    Cookies.set('eastereggAchievement', 'true', {expires: 3600}, {secure: true});
   }
 }
 
@@ -473,7 +473,7 @@ function terminalCheck() {
       delay: 10000,
       allow_dismiss: true
     });
-    Cookies.set('terminalAchievement', 'true', { expires: 3600 });
+    Cookies.set('terminalAchievement', 'true', {expires: 3600}, {secure: true});
   }
 }
 
@@ -490,7 +490,7 @@ function wiselyCheck() {
       delay: 10000,
       allow_dismiss: true
     });
-    Cookies.set('wiselyAchievement', 'true', { expires: 3600 });
+    Cookies.set('wiselyAchievement', 'true', {expires: 3600}, {secure: true});
   }
 }
 
@@ -507,17 +507,17 @@ function purplerainCheck() {
       delay: 10000,
       allow_dismiss: true
     });
-    Cookies.set('purplerainAchievement', 'true', { expires: 3600 });
+    Cookies.set('purplerainAchievement', 'true', {expires: 3600}, {secure: true});
   }
 }
 
 //Reset Achievement cookies
 function resetAchievements() {
-  Cookies.remove('eastereggAchievement');
-  Cookies.remove('terminalAchievement');
-  Cookies.remove('wiselyAchievement');
-  Cookies.remove('hallucinatingAchievement');
-  Cookies.remove('purplerainAchievement');
+  Cookies.remove('eastereggAchievement', {secure: true});
+  Cookies.remove('terminalAchievement', {secure: true});
+  Cookies.remove('wiselyAchievement', {secure: true});
+  Cookies.remove('hallucinatingAchievement', {secure: true});
+  Cookies.remove('purplerainAchievement', {secure: true});
   $('#btn-reset-achievements').tooltip('hide')
   $.bootstrapGrowl("Your achievement progress has been reset!", {
     type: 'info',
@@ -541,7 +541,7 @@ function loadAdsMod() {
   } else {
     $('#modal-hideads').load('ajax/modals/ads.html');
     $('#modal-hideads').modal();
-    Cookies.set('hallucinatingAchievement', 'true', { expires: 3600 });
+    Cookies.set('hallucinatingAchievement', 'true', {expires: 3600}, {secure: true});
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer.", {
       type: 'info',
       align: 'right',
