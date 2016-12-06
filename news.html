@@ -29,80 +29,7 @@
 
 	<div class="content">
 	<body id="top">
-		<!--Navigation Bar-->
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				  <a class="navbar-brand" href="index.html">
-						<img alt="Brand" src="images/imlogo.png" width="20" height="20">
-					</a>
-				  <a class="navbar-brand" href="index.html">
-						InvisaMage
-					</a>
-					<a class="navbar-brand" href="#top" role="button" data-toggle="tooltip" data-placement="bottom" title="Beam me Up">
-						<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-					</a>
-				</div><!-- /.navbar-header -->
-
-				<!--Collect the nav links, forms, and other content for toggling-->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="news.html">News</a></li>
-						<!--Projects-->
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="fs.html">Floating Survival</a></li>
-								<li><a href="invisarant.html">InvisaRant</a></li>
-							</ul>
-						</li><!-- /projects -->
-						<li><a onclick="loadContactMod();">Contact</a></li>
-						<li><a onclick="loadDonateMod();">Donate</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a class="divider-vertical"></a></li>
-						<li>
-							<a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
-								<span class="glyphicon glyphicon-stats"></span>
-							</a>
-						</li>
-						<li>
-							<a onclick="loadAchievementsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Achievements">
-								<span class="glyphicon glyphicon-tasks"></span>
-							</a>
-						</li>
-						<li>
-							<a onclick="loadSettingsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Settings">
-								<span class="glyphicon glyphicon-cog"></span>
-							</a>
-						</li>
-					</ul>
-
-					<!--Search Function-->
-					<div onkeydown="if (event.keyCode == 13) search();" class="navbar-form navbar-right">
-						<div class="input-group">
-							<input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
-							<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to...">
-							<span class="input-group-btn">
-								<a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
-									<span class="glyphicon glyphicon-question-sign"></span>
-								</a>
-								<button class="btn btn-default" type="button" onclick="search();">
-									<span class="glyphicon glyphicon-search"></span>
-								</button>
-							</span>
-						</div><!-- /.input-group -->
-					</div><!-- /search function -->
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav><!-- /.nav -->
+		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -396,6 +323,9 @@
 					<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
 						<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
 							<option selected value="news.html#mobile-menu">Date Jump</option>
+							<option disabled>December 2016</option>
+							<option value="news.html#12-5-16-website">5th</option>
+							<option data-divider="true"></option>
 							<option disabled>November 2016</option>
 							<option value="news.html#11-18-16-website">18th</option>
 							<option value="news.html#11-14-16-website">14th</option>
@@ -449,6 +379,22 @@
 						<br>
 						<br>
 					</div>
+
+					<!--December 5, 2016-->
+					<span class="newsSection" id="12-5-16-website">
+						<h1>December 5, 2016</h1>
+						<p>
+							The navigation bar is now <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed.<br>
+							This makes expanding the navigation bar easier and reduces file sizes.
+							<br>
+							<br>
+							Added popovers to completed achievements.<br>
+							These explain how you achieved the particular achievement (in case you forgot).
+						</p>
+					</span><!-- /12-5-16 -->
+
+					<br>
+					<br>
 
 					<!--November 18, 2016-->
 					<span class="newsSection" id="11-18-16-website">
@@ -636,7 +582,7 @@
 					<span class="newsSection" id="7-6-16-website">
 						<h1>July 6, 2016</h1>
 						<p>
-							Modal references are now ajaxed.<br>
+							Modal references are now <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed.<br>
 							Added RuneScape character to the <a class="link" href="about.html">about</a> page.<br>
 							Fixed reload modal.
 						</p>
@@ -937,6 +883,10 @@
 						<!--Website Menu-->
 						<div id="menu-news" class="hidden-xs">
 							<h2>Date Jump</h2>
+							<li><a><span class="glyphicon glyphicon-chevron-down"></span> December 2016</a></li>
+							<div id="menu-news-nested">
+								<li><a href="#12-5-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 5th</a></li>
+							</div>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> November 2016</a></li>
 							<div id="menu-news-nested">
 								<li><a href="#11-18-16-website"><span class="glyphicon glyphicon-chevron-right"></span> 18th</a></li>
