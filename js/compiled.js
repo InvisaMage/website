@@ -25,6 +25,36 @@ if(('ontouchstart' in window))
   $('#search').hide();
 }
 
+//Loads navbar, modals, and footer on page load
+$('nav').load('ajax/nav.html');
+$('#modals').load('ajax/modals.html');
+$('#footer').load('ajax/footer.html');
+
+//Navbar current page highlight
+$(function (){
+  if ($("title").html() == "InvisaMage | Home") {
+    $("#nav-home").attr("class", "active");
+  }
+  else if ($("title").html() == "InvisaMage | News") {
+    $("#nav-news").attr("class", "active");
+  }
+  else if ($("title").html() == "InvisaMage | Floating Survival") {
+    $("#nav-fs").attr("class", "active");
+    $("#nav-projects").attr("class", "active");
+  }
+  else if ($("title").html() == "InvisaMage | InvisaRant") {
+    $("#nav-ir").attr("class", "active");
+    $("#nav-projects").attr("class", "active");
+  }
+  else if ($("title").html() == "InvisaMage | Computers") {
+    $("#nav-computers").attr("class", "active");
+    $("#nav-resources").attr("class", "active");
+  }
+  else if ($("title").html() == "InvisaMage | About") {
+    $("#nav-about").attr("class", "active");
+  }
+});
+
 //Autofocus Personalize Message Modal
 $('#modal-personalize').on('shown.bs.modal', function () {
   $('#name-value').focus();
@@ -113,11 +143,6 @@ function destroyWater() {
     $('[data-toggle="tooltip"]').tooltip();
   }
 }
-
-//Loads footer on page load
-$('#footer').load('ajax/footer.html');
-//Loads modal references on page load
-$('#modals').load('ajax/modals.html');
 
 //Delete Easter egg on del key press
 var listener = new window.keypress.Listener();
@@ -303,10 +328,10 @@ $(function() {
 $(function() {
   if (Cookies.get('enableSnowstorm') == 'true') {
     setTimeout(enable, 500);
-    $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
     loadSnowstorm();
       function enable(){
         snowStorm.toggleSnow();
+        $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
       }
     console.log('enableSnowstorm = true');
   } else {
