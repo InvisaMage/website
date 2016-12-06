@@ -759,6 +759,9 @@ footer ul {
 .cur-point {
 	cursor: pointer;
 }
+.cur-nope {
+	cursor: not-allowed;
+}
 
 .navbar-inverse #divider-vertical:hover {
 	background: #222222;
@@ -941,6 +944,28 @@ input[type="checkbox"]:focus {
 	font-size: 14px;
 }
 
+.popover {
+	background-color: black;
+}
+.popover.top .arrow:after {
+  border-top-color: black;
+}
+.popover.right .arrow:after {
+  border-right-color: black;
+}
+.popover-title {
+    color: white;
+		font-weight: bold;
+    font-size: 15px;
+		background-color: #333333;
+		border-bottom-color: black;
+}
+.popover-content {
+    color: white;
+    font-size: 14px;
+		background-color: #737373;
+}
+
 /* Imported from theme-dark.css */
 .modal-content {
   position: relative;
@@ -990,4 +1015,16 @@ input[type="checkbox"]:focus {
 
 .text-danger {
   color: #D9534F;
+}
+
+/* Game Back button */
+.game-back {
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+/* Prevent Clicks */
+.not-active {
+	pointer-events: none;
 }

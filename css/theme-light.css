@@ -230,3 +230,26 @@ footer h4 {
 .text-danger {
   color: #a94442;
 }
+
+/* Override default black popovers */
+.popover {
+	background-color: #ffffff;
+}
+.popover.top .arrow:after {
+  border-top-color: white;
+}
+.popover.right .arrow:after {
+  border-right-color: white;
+}
+.popover-title {
+    color: black;
+		font-weight: bold;
+    font-size: 15px;
+		background-color: #f7f7f7;
+		border-bottom-color: #ebebeb;
+}
+.popover-content {
+    color: black;
+    font-size: 14px;
+		background-color: #ffffff;
+}
