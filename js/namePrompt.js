@@ -22,11 +22,11 @@ function namePrompt()
 					"<h3 class='panel-title'>Links</h3>" +
 				"</div>" +
 				"<div class='panel-body'>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='The search engine that does not track you.' target='_blank' href='https://duckduckgo.com/'>DuckDuckGo</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='A publicly accessible and editable wiki for information related to Minecraft.' target='_blank' href='http://minecraft.gamepedia.com/Minecraft_Wiki'>Minecraft Wiki</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='A web-based Git repository hosting service.' target='_blank' href='https://github.com/'>GitHub</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' href='https://ide.c9.io'>Cloud9</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' href='https://web.telegram.org/'>Telegram Web</a>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='The search engine that does not track you.' target='_blank' rel='noopener noreferrer' href='https://duckduckgo.com/'>DuckDuckGo</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='A publicly accessible and editable wiki for information related to Minecraft.' target='_blank' rel='noopener noreferrer' href='http://minecraft.gamepedia.com/Minecraft_Wiki'>Minecraft Wiki</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='A web-based Git repository hosting service.' target='_blank' rel='noopener noreferrer' href='https://github.com/'>GitHub</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' rel='noopener noreferrer' href='https://ide.c9.io'>Cloud9</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' rel='noopener noreferrer' href='https://web.telegram.org/'>Telegram Web</a>" +
 				"</div>"+
 			"</div>"
 			)
@@ -62,7 +62,7 @@ function namePrompt()
 			$("#name").html(
 			"Hello good friend and welcome back to my website.<br>" +
 			"Thanks for hosting, but I grew up.<br><br>" +
-			"<a class=link target='_blank' href='https://chaoswebs.net/'>https://chaoswebs.net/ <span class='glyphicon glyphicon-new-window glyphicon-color'></span></a>"
+			"<a class=link target='_blank' rel='noopener noreferrer' href='https://chaoswebs.net/'>https://chaoswebs.net/ <span class='glyphicon glyphicon-new-window glyphicon-color'></span></a>"
 			)
 		;}
 //Father
@@ -91,7 +91,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 				"<div class='well well-sm'>" +
-					"<audio controls autoplay id='audio'><source src='./audio/woman.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3a1BhczlZS3ZyLUU' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay id='audio'><source src='./audio/woman.mp3' type='audio/mpeg'></audio>" +
 			    "<table class='table table-responsive table-condensed'>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -111,7 +111,7 @@ function namePrompt()
 			      "</tr>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/firefall-greatest-hits/id50234083' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/You-Are-The-Woman/dp/B00123NOVQ/' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/firefall-greatest-hits/id50234083' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/You-Are-The-Woman/dp/B00123NOVQ/' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -162,7 +162,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-					"<audio controls autoplay><source src='./audio/david.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Y1lKNkFaUHZIRFU' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay><source src='./audio/david.mp3' type='audio/mpeg'></audio>" +
 			    "<table class='table table-responsive table-condensed'>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -182,7 +182,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/the-story-of-a-young-heart/id295506962' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/Remember-David/dp/B001KW53EU/' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/the-story-of-a-young-heart/id295506962' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Remember-David/dp/B001KW53EU/' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -204,7 +204,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-					"<audio controls autoplay><source src='./audio/jenny.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3Znk3bWswQWpIaEE' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay><source src='./audio/jenny.mp3' type='audio/mpeg'></audio>" +
 					"<table class='table table-responsive table-condensed'>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -224,7 +224,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/867-5309-jenny-single/id278258326' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/867-5309-Jenny/dp/B001J2BFWK/' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/867-5309-jenny-single/id278258326' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/867-5309-Jenny/dp/B001J2BFWK/' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -251,7 +251,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-					"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3aE1mMXhzXzNJNFU' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'></audio>" +
 					"<table class='table table-responsive table-condensed'>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -271,7 +271,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/welcome-interstate-managers/id712721721' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/Stacys-Mom/dp/B000TEMF7S/' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/welcome-interstate-managers/id712721721' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Stacys-Mom/dp/B000TEMF7S/' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -292,7 +292,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-					"<audio controls autoplay><source src='./audio/jessie.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3RjJaVkoxdzVTTjg' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay><source src='./audio/jessie.mp3' type='audio/mpeg'></audio>" +
 			    "<table class='table table-responsive table-condensed'>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -312,7 +312,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/the-best-of-rick-springfield/id258611578' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/Jessies-Girl/dp/B00136JB14' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/the-best-of-rick-springfield/id258611578' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Jessies-Girl/dp/B00136JB14' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -333,7 +333,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-					"<audio controls autoplay><source src='./audio/leah.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay><source src='./audio/leah.mp3' type='audio/mpeg'></audio>" +
 					"<table class='table table-responsive table-condensed '>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -353,7 +353,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/20th-century-masters-millennium/id66474' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/Ah-Leah-Album-Version/dp/B000VWKVSI' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/20th-century-masters-millennium/id66474' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Ah-Leah-Album-Version/dp/B000VWKVSI' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -374,7 +374,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-					"<audio controls autoplay><source src='./audio/eileen.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3WHl4a2xNSDBjRGc' type='audio/mpeg'></audio>" +
+					"<audio controls autoplay><source src='./audio/eileen.mp3' type='audio/mpeg'></audio>" +
 					"<table class='table table-responsive table-condensed '>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -394,7 +394,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/too-rye-ay-expanded-edition/id136012' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/Come-On-Eileen-Album-Version/dp/B0013XHLG4' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/too-rye-ay-expanded-edition/id136012' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Come-On-Eileen-Album-Version/dp/B0013XHLG4' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -435,7 +435,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/mickey-very-best-toni-basil/id524095099' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/dp/B019HX0IY8' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/mickey-very-best-toni-basil/id524095099' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/dp/B019HX0IY8' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -490,9 +490,9 @@ function namePrompt()
 					"<h3 class='panel-title'>Mirth</h3>" +
 				"</div>" +
 				"<div class='panel-body'>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank' href='http://www.cleverbot.com/'>Cleverbot</a>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank' rel='noopener noreferrer' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank' rel='noopener noreferrer' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='AI' target='_blank' rel='noopener noreferrer' href='http://www.cleverbot.com/'>Cleverbot</a>" +
 				"</div>" +
 			"</div>"
 			)
@@ -506,12 +506,12 @@ function namePrompt()
 					"<h3 class='panel-title'>Browsers</h3>" +
 				"</div>" +
 				"<div class='panel-body'>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' href='https://www.chromium.org/'>Chromium</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the company's Windows 10 operating systems.' target='_blank' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' href='https://www.apple.com/safari/'>Safari</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' href='https://www.opera.com/'>Opera</a>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' rel='noopener noreferrer' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' rel='noopener noreferrer' href='https://www.chromium.org/'>Chromium</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the company's Windows 10 operating systems.' target='_blank' rel='noopener noreferrer' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' rel='noopener noreferrer' href='https://www.apple.com/safari/'>Safari</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' rel='noopener noreferrer' href='https://www.opera.com/'>Opera</a>" +
 				"</div>" +
 			"</div>"
 			)
@@ -525,19 +525,19 @@ function namePrompt()
 					"<h3 class='panel-title'>Software</h3>" +
 				"</div>" +
 				"<div class='panel-body'>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' href='https://telegram.org/'>Telegram</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Antivirus' target='_blank' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Password Manager' target='_blank' href='http://keepass.info/'>KeePass</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Software Downloader' target='_blank' href='https://ninite.com/'>Ninite</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' target='_blank' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' target='_blank' href='http://rainmeter.net/'>Rainmeter</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' target='_blank' href='http://portableapps.com/'>PortableApps</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Image Editor' target='_blank' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='3D Rendering' target='_blank' href='http://www.blender.org/'>Blender</a><br>" +
-					"<a class='link' data-toggle='tooltip' data-placement='top' title='Audio Editor' target='_blank' href='http://audacity.sourceforge.net/'>Audacity</a>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' rel='noopener noreferrer' href='https://telegram.org/'>Telegram</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' rel='noopener noreferrer' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' rel='noopener noreferrer' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Free Antivirus' target='_blank' rel='noopener noreferrer' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Password Manager' target='_blank' rel='noopener noreferrer' href='http://keepass.info/'>KeePass</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Software Downloader' target='_blank' rel='noopener noreferrer' href='https://ninite.com/'>Ninite</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' target='_blank' rel='noopener noreferrer' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' target='_blank' rel='noopener noreferrer' href='http://rainmeter.net/'>Rainmeter</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' target='_blank' rel='noopener noreferrer' href='http://portableapps.com/'>PortableApps</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Image Editor' target='_blank' rel='noopener noreferrer' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='3D Rendering' target='_blank' rel='noopener noreferrer' href='http://www.blender.org/'>Blender</a><br>" +
+					"<a class='link' data-toggle='tooltip' data-placement='top' title='Audio Editor' target='_blank' rel='noopener noreferrer' href='http://audacity.sourceforge.net/'>Audacity</a>" +
 				"</div>"+
 			"</div>"
 			)
@@ -557,7 +557,7 @@ function namePrompt()
 //Curses - Audio
 		if (name == "Fuck" || (name == "fuck") || (name == "Bitch") || (name == "bitch") || (name == "Shit") || (name == "shit") || (name == "Cunt") || (name == "cunt") || (name == "Fucker") || (name == "fucker") || (name == "Damn") || (name == "damn") || (name == "Bastard") || (name == "bastard") || (name == "Cock") || (name == "cock") || (name == "Dick") || (name == "dick") || (name == "Hoe") || (name == "hoe") || (name == "Jackass") || (name == "jackass") || (name == "Nigger") || (name == "nigger") || (name == "Nigga") || (name == "nigga")) {
 			$("#name").html(
-			"Hey, that's not nice!<br><audio autoplay preload='auto'><source src='./audio/beep.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3NUpWTTVoRnBGSXM' type='audio/mpeg'></audio>"
+			"Hey, that's not nice!<br><audio autoplay preload='auto'><source src='./audio/beep.mp3' type='audio/mpeg'></audio>"
 			)
 		;}
 //Reset
@@ -580,7 +580,7 @@ function namePrompt()
 			"<br>" +
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='well well-sm'>" +
-				"<audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'><source src='https://www.googledrive.com/host/0B29-yEHUjNU3OGducF9kRVU1dFE' type='audio/mpeg'></audio>" +
+				"<audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'></audio>" +
 					"<table class='table table-responsive table-condensed'>" +
 			      "<tr>" +
 			        "<td><h5 class='black-bold'>Title</h5></td>" +
@@ -600,7 +600,7 @@ function namePrompt()
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h5 class='black-bold'>Download</h5></td>" +
-			        "<th><h5><a href='https://itunes.apple.com/us/album/walk-on/id60981' target='_blank'>iTunes</a><br><a href='https://www.amazon.com/Whats-Your-Name-Album-Version/dp/B000VROBUM/' target='_blank'>Amazon</a></h5></th>" +
+			        "<th><h5><a href='https://itunes.apple.com/us/album/walk-on/id60981' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Whats-Your-Name-Album-Version/dp/B000VROBUM/' target='_blank' rel='noopener noreferrer'>Amazon</a></h5></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
