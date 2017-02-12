@@ -31,29 +31,40 @@ $('#modals').load('ajax/modals.html');
 $('#footer').load('ajax/footer.html');
 
 //Navbar current page highlight
-$(function (){
-  if ($("title").html() == "InvisaMage | Home") {
-    $("#nav-home").attr("class", "active");
+setTimeout(navEnable, 700);
+  function navEnable(){
+    $(function (){
+      if ($("title").html() == "InvisaMage | Home") {
+        $('#nav-home').addClass('active animated bounceIn');
+      }
+      else if ($("title").html() == "InvisaMage | News") {
+        $('#nav-news').addClass('active animated bounceIn');
+      }
+      else if ($("title").html() == "InvisaMage | Valkyrie Realms") {
+        $('#nav-mc').addClass('active');
+        $("#nav-projects").addClass("active animated bounceIn");
+      }
+      else if ($("title").html() == "InvisaMage | Floating Survival") {
+        $('#nav-fs').addClass('active');
+        $("#nav-projects").addClass("active animated bounceIn");
+      }
+      else if ($("title").html() == "InvisaMage | InvisaRant") {
+        $('#nav-ir').addClass('active');
+        $("#nav-projects").addClass("active animated bounceIn");
+      }
+      else if ($("title").html() == "InvisaMage | TxtLock") {
+        $('#nav-txtLock').addClass('active');
+        $("#nav-projects").addClass("active animated bounceIn");
+      }
+      else if ($("title").html() == "InvisaMage | Computers") {
+        $('#nav-computers').addClass('active animated bounceIn');
+        $("#nav-resources").addClass("active");
+      }
+      else if ($("title").html() == "InvisaMage | About") {
+        $('#nav-about').addClass('active animated bounceIn');
+      }
+    });
   }
-  else if ($("title").html() == "InvisaMage | News") {
-    $("#nav-news").attr("class", "active");
-  }
-  else if ($("title").html() == "InvisaMage | Floating Survival") {
-    $("#nav-fs").attr("class", "active");
-    $("#nav-projects").attr("class", "active");
-  }
-  else if ($("title").html() == "InvisaMage | InvisaRant") {
-    $("#nav-ir").attr("class", "active");
-    $("#nav-projects").attr("class", "active");
-  }
-  else if ($("title").html() == "InvisaMage | Computers") {
-    $("#nav-computers").attr("class", "active");
-    $("#nav-resources").attr("class", "active");
-  }
-  else if ($("title").html() == "InvisaMage | About") {
-    $("#nav-about").attr("class", "active");
-  }
-});
 
 //Autofocus Personalize Message Modal
 $('#modal-personalize').on('shown.bs.modal', function () {

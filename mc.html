@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created February 6, 2017-->
+<!--MC-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="A Minecraft Plotworld PVP server.">
+		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<meta name="theme-color" content="#337AB7">
+		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
+		<title>InvisaMage | Valkyrie Realms</title>
+		<!--Stylesheets-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/animate.min.css" rel="stylesheet">
+		<link href="css/bootstrap-select.css" rel="stylesheet">
+		<link href="css/ptty.css" rel="stylesheet">
+	</head>
+
+	<!--Page Loading...-->
+	<div class="preload">
+		<div class="loading">
+			<div class="loading-animation"></div>
+		</div>
+	</div>
+
+	<div class="content">
+	<body id="top">
+		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+
+		<!--Begin Content-->
+		<div class="container">
+
+			<!--Page Title-->
+			<a class="title" href="mc.html">Valkyrie Realms</a>
+			<br>
+			<img class="img-responsive center-block" src="images/server.png" height="80" width="417">
+
+
+			<!--Menu-->
+			<div id="menu-mc" class="hidden-xs">
+				<h2>Contents</h2>
+				<li><a href="mc.html#"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
+				<li><a href="mc.html#"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
+				<li><a href="mc.html#"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
+				<br>
+			</div>
+
+			<!--Status-->
+			<div id="menu-mc-status" class="hidden-xs">
+				<h2>Server Status</h2>
+				<li>Status: <span class="server-online"></span></li>
+				<li>Players: <span class="server-players"></span></li>
+				<li>Version: <span class="server-name"></li>
+				<br>
+			</div>
+
+			<p>
+				Valkyrie Realms is a Plotworld PVP server.<br>
+				Collect your resources in the wilderness and build in protected plots.<br>
+				Be careful as players can kill you while you're building.
+			</p>
+
+      <!--Footer-->
+			<footer id="footer"></footer>
+		</div>
+		<!--/.End Content-->
+
+    <!--Modals-->
+    <span id="modals"></span>
+
+    <!--External Scripts-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/nprogress.js"></script>
+    <script src="js/typeahead.min.js"></script>
+		<script src="https://mcapi.us/scripts/minecraft.js"></script>
+    <script id="js-water"></script>
+    <script id="js-snowstorm"></script>
+    <script src="js/konami.js"></script>
+    <script src="js/keypress.min.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script src="js/growl.min.js"></script>
+    <script src="js/compiled.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script id="js-ptty"></script>
+
+		<script>
+			MinecraftAPI.getServerStatus('mc.invisamage.com', {
+				port: 25565 // optional, only if you need a custom port
+			}, function (err, status) {
+				if (err) {
+					return document.querySelector('.server-status').innerHTML = 'Error loading status';
+				}
+
+				// you can change these to your own message!
+				document.querySelector('.server-online').innerHTML = status.online ? 'Online' : 'Offline';
+				name = document.querySelector('.server-name').innerHTML = status.server.name.substring(7);
+				players = document.querySelector('.server-players').innerHTML = status.players.now;
+				if (players == 1) {
+					$(".players").replaceWith("There is 1 person online.");
+				}
+
+			});
+		</script>
+  </body>
+  </div>
+</html>

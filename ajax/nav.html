@@ -11,7 +11,7 @@
     <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="index.html">
-      <img alt="Brand" src="images/imlogo.png" width="20" height="20">
+      <img alt="Brand" src="images/imlogo.png" width="20" height="20"></img>
     </a>
     <a class="navbar-brand" href="index.html">
       InvisaMage
@@ -29,8 +29,13 @@
       <li class="dropdown" id='nav-projects'>
         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li id='nav-fs'><a href="fs.html">Floating Survival</a></li>
-          <li id='nav-ir'><a href="invisarant.html">InvisaRant</a></li>
+          <li id='nav-mc' data-toggle="popover" data-content="A Minecraft Plotworld PVP server."><a href="mc.html">Valkyrie Realms</a></li>
+          <li id='nav-fs' data-toggle="popover" data-content="A Minecraft adventure/survival map."><a href="fs.html">Floating Survival</a></li>
+          <li id='nav-ir' data-toggle="popover" data-content="A Podcast about various topics."><a href="invisarant.html">InvisaRant</a></li>
+          <!--
+          <li role="separator" class="divider"></li>
+          <li id='nav-txtLock' data-toggle="popover" data-content="A Python application which locks text behind a password."><a href="txtlock.html">TxtLock</a></li>
+          -->
         </ul>
       </li><!-- /projects -->
       <!--Resources
@@ -47,7 +52,7 @@
     <!--Search Function-->
     <ul onkeydown="if (event.keyCode == 13) search();" class="nav navbar-nav navbar-form navbar-right">
       <div class="input-group">
-        <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..." autofocus="autofocus">
+        <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Jump to..."></input>
         <!--<input class="form-control" id="search-mobile" autocomplete="off" placeholder="Jump to..."-->
         <span class="input-group-btn">
           <a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
@@ -79,3 +84,33 @@
     </ul><!-- /modal buttons -->
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
+
+<script>
+  /* Allows popover activation on hover
+   * Modified from http://stackoverflow.com/questions/17437818/twitter-bootstrap-popover-trigger-how-to-set-multiple-triggers#17438133
+   */
+  $(function () {
+    var showPopover = function () {
+        $(this).popover('show');
+    }
+    , hidePopover = function () {
+        $(this).popover('hide');
+    };
+
+    $('#nav-mc, #nav-fs, #nav-ir, #nav-txtLock').popover({
+        trigger: 'manual',
+        placement: 'right',
+        container: 'body'
+    })
+    .focus(showPopover)
+    .blur(hidePopover)
+    .hover(showPopover, hidePopover);
+  });
+
+  //Enable tooltips
+  if (!('ontouchstart' in window)) {
+    $('body').popover({
+      selector: '[data-toggle="popover"]'
+    });
+  }
+</script>

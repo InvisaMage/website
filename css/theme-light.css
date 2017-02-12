@@ -173,11 +173,17 @@ h1, h2, h3 {
 	color: black;
 	background-color: rgba(230, 230, 230, 0.8);
 }
-
-.dropdown-menu > li > a:hover {
-	background-color: rgb(231, 231, 231);
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #e7e7e7;
+	color: #555;
 }
-
+.dropdown-menu > li > a {
+	color: #555;
+}
+.dropdown-menu {
+	background-color: #F8F8F8;
+}
 .glyphicon-color {
 	color: #6ba6e1;
 }

@@ -165,6 +165,19 @@ table {
 	padding: 5px;
 }
 
+/* Table Properties for TxtLock */
+.table-txtlock {
+	background: rgba(0,0,0,0.3);
+}
+.table-txtlock, .table-txtlock th, .table-txtlock td {
+	border: black 4px solid;
+	border-collapse: collapse;
+	font-size: 105%;
+}
+.table-txtlock, .table-txtlock th, .table-txtlock td {
+	padding: 5px;
+}
+
 /* Table Properties for Contact*/
 .table-contact {
 	background: rgba(0,0,0,0.3);
@@ -466,6 +479,81 @@ h1, h2, h3, h4, h5, h6 {
 	color: #00FF00;
 }
 
+/* Menu for MC */
+/* Menu for FS */
+#menu-mc {
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	position: absolute;
+	top: 240px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+	left: 0px;
+}
+#menu-mc li {
+	list-style: none;
+	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
+}
+#menu-mc li:hover {
+	background: #4b545f;
+}
+#menu-mc a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #0066ff;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+#menu-mc li a:hover {
+	color: #00FF00;
+}
+
+/* Menu for MC Status */
+#menu-mc-status {
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	position: absolute;
+	top: 240px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+	right: 0px;
+}
+#menu-mc-status li {
+	list-style: none;
+	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
+}
+#menu-mc-status li:hover {
+	background: #4b545f;
+}
+#menu-mc-status a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #0066ff;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+#menu-mc-status li a:hover {
+	color: #00FF00;
+}
+
 /* Menu for FS */
 #menu-fs {
 	border-top-right-radius: 15px;
@@ -501,6 +589,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 #menu-fs li a:hover {
 	color: #00FF00;
+}
+
+/* Menu for TxtLock */
+#menu-txtlock {
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border: 1px solid black;
+	border-width:5px 0;
+	position: absolute;
+	top: 240px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+	left: 0px;
+}
+#menu-txtlock li {
+	list-style: none;
+	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
+}
+#menu-txtlock li:hover {
+	background: #4b545f;
+}
+#menu-txtlock a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #0066ff;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 10px;
+}
+#menu-txtlock li a:hover {
+	color: #00FF00;
+}
+th {
+	text-align: center;
 }
 
 /* Menu for Terms */
@@ -763,16 +891,6 @@ footer ul {
 	cursor: not-allowed;
 }
 
-.navbar-inverse #divider-vertical:hover {
-	background: #222222;
-	cursor: default;
-}
-
-.navbar-default #divider-vertical:hover {
-	background: #F8F8F8;
-	cursor: default;
-}
-
 /* New 404 Image */
 #img_container-404 {
     position:relative;
@@ -798,7 +916,7 @@ footer ul {
   width: 270px;
 }
 
-/* Boostrap Overrides and Additions*/
+/* Bootstrap Overrides and Additions*/
 a:focus {
 	outline: none;
 	outline-offset: none:
@@ -833,7 +951,14 @@ input[type="checkbox"]:focus {
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  background-color: #B3B3B3;
+  background-color: transparent;
+	color: #fff;
+}
+.dropdown-menu > li > a {
+	color: #fff;
+}
+.dropdown-menu {
+	background-color: #737373;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -964,6 +1089,9 @@ input[type="checkbox"]:focus {
     color: white;
     font-size: 14px;
 		background-color: #737373;
+}
+.text {
+	color: white;
 }
 
 /* Imported from theme-dark.css */
