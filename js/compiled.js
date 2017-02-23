@@ -3,7 +3,7 @@
 //Preload - Fades out loading screen and fades in content.
 $(function(){
   var loadingScreen = Cookies.get('loadingScreen');
-  if (loadingScreen == null || loadingScreen == "true") {
+  if (loadingScreen == "true") {
     //The page loads normally
     $('.preload').hide();
     $('.content').show();
