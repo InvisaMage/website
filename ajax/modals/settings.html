@@ -31,6 +31,12 @@
               </label>
             </div>
             <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="loading-screen-checkbox1" value="true">
+              <label for="loading-screen-checkbox1" data-toggle="tooltip" data-placement="top" title="This feature is very buggy." data-container="body">
+                Disable loading screen
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
               <input type="checkbox" id="legacy-background-checkbox1" value="true">
               <label for="legacy-background-checkbox1">
                 Legacy background
@@ -155,12 +161,19 @@
     if (Cookies.get('themeLegacyBg') != 'true') {
       $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true'>");
     }
-    //Legacy background
+    //Centered modals
     if (Cookies.get('centeredModals') == 'true') {
       $("#modal-centered-checkbox1").replaceWith("<input type='checkbox' id='modal-centered-checkbox1' value='true' checked>");
     }
     if (Cookies.get('centeredModals') != 'true') {
       $("#modal-centered-checkbox1").replaceWith("<input type='checkbox' id='modal-centered-checkbox1' value='true'>");
+    }
+    //Loading screen
+    if (Cookies.get('loadingScreen') == 'true') {
+      $("#loading-screen-checkbox1").replaceWith("<input type='checkbox' id='loading-screen-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('loadingScreen') != 'true') {
+      $("#loading-screen-checkbox1").replaceWith("<input type='checkbox' id='loading-screen-checkbox1' value='true'>");
     }
     //Banner - Homepage
     if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') == undefined) {

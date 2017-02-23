@@ -103,7 +103,32 @@
         You must have the correct cryptocurrency client to use this <span class="glyphicon glyphicon-link" aria-hidden="true"></span> button.
       </div>
     </div>
+    <!--Donate Donor List Collapsible Content-->
+    <div class="collapse" id="modal-donors-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-donors-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>List of Known Donors</strong><br>
+        <table class="table table-responsive table-condensed table-hover">
+          <!--Header-->
+          <tr>
+            <td><h5 class="black-bold table-heading">Name</h5></td>
+            <th><h5 class="black-bold table-heading">Ammount</h5></th>
+          </tr>
+          <tr>
+            <td><h5 class="black">Kevin</h5></td>
+            <th><h5 class="black">101.00 Ð</h5></th>
+          </tr>
+          <tr>
+            <td><h5 class="black">Nicholas</h5></td>
+            <th><h5 class="black">0.00130 ฿</h5></th>
+          </tr>
+        </table>
+      </div>
+    </div>
     <div class="modal-footer">
+      <button type="button" class="btn btn-success pull-left" onclick="$('#modal-donors-collapse').collapse('toggle')">
+        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Donors
+      </button>
       <button type="button" class="btn btn-info" onclick="$('#modal-donate-collapse').collapse('toggle')">
         <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
       </button>

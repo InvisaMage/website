@@ -3,16 +3,17 @@
 function namePrompt()
 {
 	var name = document.getElementById("name-value").value;
+	var nL = name.toLowerCase();
 
 //Default
-	if (name != null) {
+	if (nL != null) {
 		$("#name").html(
 		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
 		"I hope you enjoy your stay."
 		)
 	;}
 //Creator Message - List
-		if (name == "InvisaMage" || (name == "invisamage") || (name == "Travis Kipp") || (name == "travis kipp") || (name == "Sir Kipp") || (name == "sir kipp")) {
+		if (nL == "invisamage" || nL == "travis kipp" || nL == "sir kipp") {
 			$("#name").html(
 			"Hello creator and welcome back to your website.<br>" +
 			"Here are some links I thought you might like.<br>" +
@@ -32,33 +33,33 @@ function namePrompt()
 			)
 		;}
 //Travis
-		if (name == "Travis" || (name == "travis")) {
+		if (nL == "travis") {
 			$("#name").html(
 			"Hey, that's my creator's name!"
 			)
 		;}
 //Friends
-		if (name == "Matt" || (name == "matt") || (name == "Matthew") || (name == "matthew") || (name == "Carson") || (name == "carson")) {
+		if (nL == "matt" || nL == "matthew" || nL == "carson") {
 			$("#name").html(
 			"Hello good friend and welcome back to my website."
 			)
 		;}
 //Noel
-		if (name == "Noel" || (name == "noel")) {
+		if (nL == "noel") {
 			$("#name").html(
 			"See, there is plenty of snow, Noel."
 			)
 			loadSnowstormNamePrompt();
 		;}
 //Tanner - Audio
-		if (name == "Tanner" || (name == "tanner") || (name == "No") || (name == "no")) {
+		if (nL == "tanner" || nL == "no") {
 			$("#name").html(
 			"Ohhh No!" +
 			"<audio autoplay preload='auto'><source src='./audio/no.mp3' type='audio/mpeg'></audio>"
 			)
 		;}
 //Kevin - Host
-		if (name == "Kevin" || (name == "kevin")) {
+		if (nL == "kevin") {
 			$("#name").html(
 			"Hello good friend and welcome back to my website.<br>" +
 			"Thanks for hosting, but I grew up.<br><br>" +
@@ -66,19 +67,20 @@ function namePrompt()
 			)
 		;}
 //Father
-		if (name == "Dan" || (name == "dan") || (name == "Daniel") || (name == "daniel") || (name == "Dad") || (name == "dad") || (name == "Father") || (name == "father")) {
+		if (nL == "dan" || nL == "daniel" || nL == "dad" || nL == "father") {
 			$("#name").html(
 			"Hello father and welcome back to my website."
 			)
 		;}
 //Mother
-		if (name == "Connie" || (name == "connie") || (name == "Mom") || (name == "mom") || (name == "Mother") || (name == "mother")) {
+		if (nL == "connie" || nL == "mom" || nL == "mother") {
 			$("#name").html(
 			"Hello mother and welcome back to my website."
 			)
 		;}
+/*
 //Emily - Audio
-		if (name == "Emily" || (name == "emily")) {
+		if (nL == "emily") {
 			$("#name").html(
 			"Hello miss and welcome back to my website.<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -118,38 +120,39 @@ function namePrompt()
 			"</div>"
 			)
 		;}
+*/
 //Girls
-		if (name == "Kim" || (name == "kim") || (name == "Sabrina") || (name == "sabrina") || (name == "Courtney") || (name == "courtney")) {
+		if (nL == "kim" || nL == "sabrina" || nL == "courtney" || nL == "taylor" || nL == "emily") {
 			$("#name").html(
 			"Hello miss and welcome back to my website."
 			)
 		;}
 //Rachel
-		if (name == "Rachel" || (name == "rachel")) {
+		if (nL == "rachel") {
 			$("#name").html(
 			"Hello <a class='definition' data-toggle='tooltip' data-placement='top' title='An endangered subspecies of humans which are incapable of reproducing.'>femake</a> and welcome back to my website."
 			)
 		;}
 //Tony
-		if (name == "Tony" || (name == "tony")) {
+		if (nL == "tony") {
 			$("#name").html(
 			"Hello <a class='definition' data-toggle='tooltip' data-placement='top' title='An endangered subspecies of humans which are incapable of reproducing.'>femake</a> lover and welcome back to my website."
 			)
 		;}
 //Joe
-		if (name == "Joe" || (name == "joe") || (name == "Joey") || (name == "joey")) {
+		if (nL == "joe" || nL == "joey") {
 			$("#name").html(
 			"Hello nerd and welcome back to my website."
 			)
 		;}
 //Brian
-		if (name == "Brian" || (name == "brian")) {
+		if (nL == "brian") {
 			$("#name").html(
 			"Hello brother and welcome back to my website."
 			)
 		;}
 //David - Audio
-		if (name == "David" || (name == "david")) {
+		if (nL == "david") {
 			$("#name").html(
 			"Tell me David, what's the answer?<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -190,7 +193,7 @@ function namePrompt()
 			)
 		;}
 //Jenny - Audio
-		if (name == "Jenny" || (name == "jenny")) {
+		if (nL == "jenny") {
 			$("#name").html(
 			"Jenny, I've got your number.<br>" +
 			"867-5309<br><br>" +
@@ -232,13 +235,13 @@ function namePrompt()
 			)
 		;}
 //Jenny
-		if (name == "8675309" || (name == "867-5309")) {
+		if (nL == "8675309" || nL == "867-5309") {
 			$("#name").html(
 			"Hey, that's Jenny's number."
 			)
 		;}
 //Stacy - Audio
-		if (name == "Stacy" || (name == "stacy")) {
+		if (nL == "stacy") {
 			$("#name").html(
 			"Stacy, your mom has got it going on.<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -279,7 +282,7 @@ function namePrompt()
 			)
 		;}
 //Jessie - Audio
-		if (name == "Jessie" || (name == "jessie")) {
+		if (nL == "jessie") {
 			$("#name").html(
 			"Why can't I find a woman like that?<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -320,7 +323,7 @@ function namePrompt()
 			)
 		;}
 //Leah - Audio
-		if (name == "Leah" || (name == "leah")) {
+		if (nL == "leah") {
 			$("#name").html(
 			"Oh hey Leah. Look, it's your favourite song.<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -361,7 +364,7 @@ function namePrompt()
 			)
 		;}
 //Eileen - Audio
-		if (name == "Eileen" || (name == "eileen")) {
+		if (nL == "eileen") {
 			$("#name").html(
 			"Come on Eileen.<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -402,7 +405,7 @@ function namePrompt()
 			)
 		;}
 //Mickey - Audio
-		if (name == "Mickey" || (name == "mickey")) {
+		if (nL == "mickey") {
 			$("#name").html(
 			"Hey Mickey you're so fine.<br><br>" +
 			"<div class='btn-group' role='group'>" +
@@ -443,13 +446,13 @@ function namePrompt()
 			)
 		;}
 //Jesus
-		if (name == "Jesus" || (name == "jesus")) {
+		if (nL == "jesus") {
 			$("#name").html(
 			"So, it looks like you're back.<br>Now what?"
 			)
 		;}
 //Cortana - Audio
-		if (name == "Cortana" || (name == "cortana") || (name == "Hey Cortana") || (name == "hey Cortana")) {
+		if (nL == "cortana" || nL == "hey Cortana") {
 			$("#name").html(
 			"Can I be of assistance?<br><br>" +
 			"<img class='img-responsive img-circle center-block' src='images/cortana.gif' height='175' width='175'><br>" +
@@ -458,7 +461,7 @@ function namePrompt()
 			)
 		;}
 //Siri - Audio
-		if (name == "Siri" || (name == "siri") || (name == "Hey Siri") || (name == "hey Siri")) {
+		if (nL == "siri" || nL == "hey Siri") {
 			$("#name").html(
 			"What can I help you with?<br><br>" +
 			"<img class='img-responsive img-rounded center-block' src='images/siri.gif' height='113' width='555'><br>" +
@@ -467,7 +470,7 @@ function namePrompt()
 			)
 		;}
 //Spock
-		if (name == "Spock" || (name == "spock")) {
+		if (nL == "spock") {
 			$("#name").html(
 			"Live long, and prosper.<br>" +
 			"Leonard Nimoy, 1931-2015<br><br>" +
@@ -475,7 +478,7 @@ function namePrompt()
 			)
 		;}
 //Doctor Who
-		if (name == "The Doctor" || (name == "the doctor") || (name == "The doctor") || (name == "the Doctor") || (name == "Doctor") || (name == "doctor")) {
+		if (nL == "the doctor" || nL == "doctor") {
 			$("#name").html(
 			"Doctor Who?<br>" +
 			"Hey look, I found your TARDIS.<br><br>" +
@@ -483,7 +486,7 @@ function namePrompt()
 			)
 		;}
 //Mirth - List
-		if (name == "Mirth" || (name == "mirth")) {
+		if (nL == "mirth") {
 			$("#name").html(
 			"<div class='panel panel-transparent panel-green'>" +
 				"<div class='panel-heading'>" +
@@ -498,7 +501,7 @@ function namePrompt()
 			)
 		;}
 //Browsers - List
-		if (name == "Browsers" || (name == "browsers") || (name == "Browser") || (name == "browser")) {
+		if (nL == "browsers" || nL == "browser") {
 			$("#name").html(
 			"A list of popular web browsers." +
 			"<div class='panel panel-transparent panel-green'>" +
@@ -517,7 +520,7 @@ function namePrompt()
 			)
 		;}
 //Software - List
-		if (name == "Software" || (name == "software")) {
+		if (nL == "software") {
 			$("#name").html(
 			"Ask and you shall receive." +
 			"<div class='panel panel-transparent panel-green'>" +
@@ -543,31 +546,31 @@ function namePrompt()
 			)
 		;}
 //Python
-		if (name == "Python" || (name == "python")) {
+		if (nL == "python") {
 			$("#name").html(
 			"<code>print(&quot;Hello World!&quot;)</code>"
 			)
 		;}
 //JavaScript
-		if (name == "JavaScript" || (name == "javascript") || (name == "JS") || (name == "js")) {
+		if (nL == "javascript" || nL == "js") {
 			$("#name").html(
 			"<code>document.write(&quot;Hello World!&quot;);</code>"
 			)
 		;}
 //Curses - Audio
-		if (name == "Fuck" || (name == "fuck") || (name == "Bitch") || (name == "bitch") || (name == "Shit") || (name == "shit") || (name == "Cunt") || (name == "cunt") || (name == "Fucker") || (name == "fucker") || (name == "Damn") || (name == "damn") || (name == "Bastard") || (name == "bastard") || (name == "Cock") || (name == "cock") || (name == "Dick") || (name == "dick") || (name == "Hoe") || (name == "hoe") || (name == "Jackass") || (name == "jackass") || (name == "Nigger") || (name == "nigger") || (name == "Nigga") || (name == "nigga")) {
+		if (nL == "fuck" || nL == "bitch" || nL == "shit" || nL == "cunt" || nL == "fucker" || nL == "damn" || nL == "bastard" || nL == "cock" || nL == "dick" || nL == "hoe" || nL == "jackass" || nL == "nigger" || nL == "nigga") {
 			$("#name").html(
 			"Hey, that's not nice!<br><audio autoplay preload='auto'><source src='./audio/beep.mp3' type='audio/mpeg'></audio>"
 			)
 		;}
 //Reset
-		if (name == "Reset" || (name == "reset") || (name == "Clear") || (name == "clear") || (name == "cls")) {
+		if (nL == "reset" || nL == "clear" || nL == "cls") {
 			$("#name").html(
 			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 			)
 		;}
 //No name - Audio
-		if (name == "" || (name == " ") || (name == "undefined")) {
+		if (nL == "" || nL == " " || nL == "undefined") {
 			$("#name").html(
 			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
 			"<div class='btn-group' role='group'>" +

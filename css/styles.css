@@ -139,6 +139,10 @@ table {
 	color: #3399FF;
 }
 
+.table-heading{
+	font-size: 16px;
+}
+
 /* Table Properties for InvisaRant */
 .table-ir {
 	background: rgba(0,0,0,0.3);
@@ -912,7 +916,7 @@ footer ul {
 
 /* Settings modal */
 .fixed-well {
-  height: 230px;
+  height: 260px;
   width: 270px;
 }
 
@@ -949,6 +953,64 @@ input[type="checkbox"]:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+/* Addition - Black button */
+.btn-black {
+  color: #ffffff;
+  background-color: #333333;
+  border-color: #cccccc;
+}
+.btn-black:focus,
+.btn-black.focus {
+  color: #ffffff;
+  background-color: #080808;
+  border-color: #adadad;
+}
+.btn-black:hover {
+  color: #ffffff;
+  background-color: #080808;
+  border-color: #adadad;
+}
+.btn-black:active,
+.btn-black.active,
+.open > .dropdown-toggle.btn-default {
+  color: #ffffff;
+  background-color: #080808;
+  border-color: #adadad;
+}
+.btn-black:active:hover,
+.btn-black.active:hover,
+.open > .dropdown-toggle.btn-black:hover,
+.btn-black:active:focus,
+.btn-black.active:focus,
+.open > .dropdown-toggle.btn-black:focus,
+.btn-black:active.focus,
+.btn-black.active.focus,
+.open > .dropdown-toggle.btn-black.focus {
+  color: #ffffff;
+  background-color: #080808;
+  border-color: #adadad;
+}
+.btn-black:active,
+.btn-black.active,
+.open > .dropdown-toggle.btn-black {
+  background-image: none;
+}
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.btn-default .badge {
+  color: #ffffff;
+  background-color: #333333;
+}
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background-color: transparent;
@@ -962,7 +1024,7 @@ input[type="checkbox"]:focus {
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.35);
 }
 .nav-tabs {
   font-size: 110%;
@@ -974,17 +1036,21 @@ input[type="checkbox"]:focus {
 }
 .nav-tabs > li > a {
   color: #0066ff;
+	background-color: rgba(0,0,0,0.2);
+	border: 1px solid black;
+	transition: .3s;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #00FF00;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.35);
   border: 1px solid black;
 }
 .nav-tabs li a:hover {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.35);
   border: 1px solid black;
+	color: #00FF00;
 }
 .nav-pills > li > a {
   color: #0066ff;

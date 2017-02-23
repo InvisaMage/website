@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!--Shortcuts Modal-->
+<div class="modal-dialog modal-md" id="ajax-shortcuts">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Shortcuts</h4>
+    </div>
+    <div class="modal-body">
+      <table class="table table-responsive table-condensed table-hover">
+        <!--Header-->
+        <tr>
+          <td><h5 class="black-bold table-heading">Description</h5></td>
+          <th><h5 class="black-bold table-heading">Key Combination</h5></th>
+        </tr>
+        <tr>
+          <td><h5 class="black">Show Settings</h5></td>
+          <th><kbd>Shift C</kbd></th>
+        </tr>
+        <tr>
+          <td><h5 class="black">Show Achievements</h5></td>
+          <th><kbd>Shift A</kbd></th>
+        </tr>
+        <tr>
+          <td><h5 class="black">Show Stats</h5></td>
+          <th><kbd>Shift S</kbd></th>
+        </tr>
+        <tr>
+          <td><h5 class="black">Focus Search Box</h5></td>
+          <th><kbd>Shift + F</kbd></th>
+        </tr>
+        <tr>
+          <td><h5 class="black">Load Terminal Assets</h5></td>
+          <th><kbd>Shift + Space</kbd></th>
+        </tr>
+        <tr>
+          <td><h5 class="black">Toggle Terminal</h5></td>
+          <th><kbd>`</kbd></th>
+        </tr>
+      </table>
+    </div>
+    <!--Shortcuts Help Collapsible Content-->
+    <div class="collapse" id="modal-shortcuts-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-shortcuts-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What is this?</strong><br>
+        This shows you the available shortcuts found in this site.<br>
+        These can act funny so you might have to reload the page sometimes.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-shortcuts-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-shortcuts-->
+
+<script>
+  //Enable tooltips
+  if (!('ontouchstart' in window)) {
+    $('body').popover({
+      selector: '[data-toggle="popover"]'
+    });
+  }
+</script>

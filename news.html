@@ -46,10 +46,10 @@
 
 			<!--Nav Tabs (Visible on Desktop)-->
 			<ul class="nav nav-tabs hidden-xs" id="myTabs">
-				<li class="active"><a data-toggle="tab" href="#projects">Projects</a></li>
-				<li><a data-toggle="tab" href="#important">Important</a></li>
-				<li><a data-toggle="tab" href="#website">Website</a></li>
-				<li><a data-toggle="tab" href="#bugs">Bugs</a></li>
+				<li class="active"><a data-toggle="tab" href="#projects" onclick="slideInUp();">Projects</a></li>
+				<li><a data-toggle="tab" href="#important" onclick="slideInUp();">Important</a></li>
+				<li><a data-toggle="tab" href="#website" onclick="slideInUp();">Website</a></li>
+				<li><a data-toggle="tab" href="#bugs" onclick="slideInUp();">Bugs</a></li>
 			</ul>
 
 			<!--Nav Pills (Visible on Mobile)-->
@@ -213,7 +213,7 @@
 					</span><!-- /2-6-15 -->
 
 					<!--Projects Menu-->
-					<div id="menu-news" class="hidden-xs">
+					<div id="menu-news" class="hidden-xs slide">
 						<h2>Date Jump</h2>
 						<li><a href="#2-12-17-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 12, 2017</a></li>
 						<li><a href="#6-10-16-projects"><span class="glyphicon glyphicon-chevron-right"></span> June 10, 2016</a></li>
@@ -324,7 +324,7 @@
 						</span><!-- /9-4-15 -->
 
 						<!--Important Menu-->
-						<div id="menu-news" class="hidden-xs">
+						<div id="menu-news" class="hidden-xs slide">
 							<h2>Date Jump</h2>
 							<li><a href="#11-23-16-important"><span class="glyphicon glyphicon-chevron-right"></span> November 23, 2016</a></li>
 							<li><a href="#11-18-16-important"><span class="glyphicon glyphicon-chevron-right"></span> November 18, 2016</a></li>
@@ -342,8 +342,9 @@
 					<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
 						<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
 							<option selected value="news.html#mobile-menu">Date Jump</option>
-							<option disabled>January 2017</option>
-							<option value="news.html#1-12-17-website">x</option>
+							<option disabled>February 2017</option>
+							<option value="news.html#2-22-17-website">22nd</option>
+							<option value="news.html#2-12-17-website">12th</option>
 							<option value="news.html#news-website-2016" data-icon="glyphicon glyphicon-time">Older</option>
 							<option value="#footer">Footer</option>
 						</select>
@@ -351,8 +352,28 @@
 						<br>
 					</div>
 
+					<!--February 22, 2017-->
+					<span class="newsSection" id="2-22-17-website">
+						<h1>February 22, 2017</h1>
+						<p>
+							Made the Stats, Achievements, and Settings easier to access on small displays.<br>
+							Added spiffy animations to the news page thanks to animate.css.<br>
+							Added <a class="link" onclick="loadShortcutsMod();" data-toggle="tooltip" data-placement="top" title="View key combinations.">Shortcuts</a> modal which lists and describes key combinations.<br>
+							Added the ability do disable the loading screen in the <a class="link" onclick="loadSettingsMod();">Settings</a> modal.<br>
+							Improved special namePrompt input detection.<br>
+							Improved search function detection.
+							<br>
+							<br>
+							Fixed the water function on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
+							For some unkown reason it now works on Chrome 56+.
+						</p>
+					</span><!-- /2-22-17 -->
+
+					<br>
+					<br>
+
 					<!--February 12, 2017-->
-					<span class="newsSection" id="2-12-16-website">
+					<span class="newsSection" id="2-12-17-website">
 						<h1>February 12, 2017</h1>
 						<p>
 							Added Valkyrie Realms page.<br>
@@ -372,11 +393,12 @@
 					</span>
 
 						<!--Website Menu-->
-						<div id="menu-news" class="hidden-xs">
+						<div id="menu-news" class="hidden-xs slide">
 							<h2>Date Jump</h2>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> January 2017</a></li>
+							<li><a><span class="glyphicon glyphicon-chevron-down"></span> February 2017</a></li>
 							<div id="menu-news-nested">
-								<li><a href="#1-12-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
+								<li><a href="#2-22-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 22nd</a></li>
+								<li><a href="#2-12-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
 							</div>
 							<li><a href="#news-website-2016"><span class="glyphicon glyphicon-time"></span> Older</a></li>
 							<br>
@@ -410,7 +432,6 @@
 								<br>
 								Scrolling back to the top of the page on a Mobile device can be laggy.<br>
 								Going to anchors clips content due to the fixed navigation bar.<br>
-								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.
 							</p>
 						</span>
 
@@ -421,6 +442,7 @@
 						<span class="newsSection" id="fixed">
 							<h1>Fixed</h1>
 							<p>
+								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.
 								Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
 								The Date Jump menu is only visible on the Projects tab while on a Mobile device.<br>
 								On the <a class="link" href="fs.html">Floating Survival</a> page, using the carousel will focus the page on it.<br>
@@ -457,7 +479,7 @@
 						</span>
 
 						<!--Bugs Menu-->
-						<div id="menu-news" class="hidden-xs">
+						<div id="menu-news" class="hidden-xs slide">
 							<h2>Content</h2>
 							<li><a href="#problems"><span class="glyphicon glyphicon-chevron-right"></span> Known Problems</a></li>
 							<li><a href="#fixed"><span class="glyphicon glyphicon-chevron-right"></span> Fixed</a></li>
@@ -493,6 +515,15 @@
 		<script src="js/compiled.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
+
+		<script>
+			function slideInUp(tab){
+	   		$('.newsSection').addClass('animated slideInUp');
+				$('.slide').addClass('animated slideInLeft');
+			}
+			$('.newsSection').addClass('animated slideInUp');
+			$('.slide').addClass('animated slideInLeft');
+		</script>
 	</body>
 	</div>
 </html>

@@ -1,15 +1,25 @@
 //Compiled JavaScript functions utilized on multiple pages.
 
 //Preload - Fades out loading screen and fades in content.
-$(function() {
-    NProgress.start();
-});
+$(function(){
+  var loadingScreen = Cookies.get('loadingScreen');
+  if (loadingScreen == null || loadingScreen == "true") {
+    //The page loads normally
+    $('.preload').hide();
+    $('.content').show();
+  }
+  else {
+    $(function() {
+        NProgress.start();
+    });
 
-$(window).load(function() {
-  NProgress.done();
-  $('.preload').fadeOut(300, function() {
-    $('.content').fadeIn(300);
-  });
+    $(window).load(function() {
+      NProgress.done();
+      $('.preload').fadeOut(300, function() {
+        $('.content').fadeIn(300);
+      });
+    });
+  }
 });
 
 //If no touchscreen, show Tooltips and hide mobile search
@@ -162,6 +172,7 @@ listener.simple_combo("delete", function() {
   audio.play();
 });
 
+//Shortcuts
 //Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
 listener.simple_combo("shift space", function() {
@@ -176,14 +187,52 @@ listener.simple_combo("shift space", function() {
     });
 });
 
+//Hides all modals
+function hideModals() {
+  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
+}
+
 //Opens terminal with tilde key press
 var listener = new window.keypress.Listener();
 listener.simple_combo("`", function() {
     //Close open modals
-    $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
+    $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
     $('#modal-terminal').modal('toggle');
     $('#modal-terminal').on('shown.bs.modal', function (e) { $('form, input').focus(); });
     terminalCheck();
+});
+
+//Focus search box with Shift + F key press
+var listener = new window.keypress.Listener();
+listener.simple_combo("shift f", function() {
+    $('input').focus();
+});
+
+//Settings
+var listener = new window.keypress.Listener();
+listener.simple_combo("shift c", function() {
+  hideModals();
+  loadSettingsMod();
+});
+
+//Settings
+var listener = new window.keypress.Listener();
+listener.simple_combo("shift s", function() {
+  hideModals();
+  loadStatsMod();
+});
+
+//Achievements
+var listener = new window.keypress.Listener();
+listener.simple_combo("shift a", function() {
+  hideModals();
+  loadAchievementsMod();
+});
+
+//Save
+var listener = new window.keypress.Listener();
+listener.simple_combo("ctrl s", function() {
+  alert('Trying to save the page are we?');
 });
 
 //Settings modal logic (executed on save button click in Settings modal)
@@ -208,6 +257,13 @@ function settingsCheck() {
   }
   if ($('#modal-centered-checkbox1:checked').val() != 'true') {
     Cookies.set('centeredModals', 'false', {expires: 3600, secure: true});
+  }
+  //Loading screen
+  if ($('#loading-screen-checkbox1:checked').val() == 'true') {
+    Cookies.set('loadingScreen', 'true', {expires: 3600, secure: true});
+  }
+  if ($('#loading-screen-checkbox1:checked').val() != 'true') {
+    Cookies.set('loadingScreen', 'false', {expires: 3600, secure: true});
   }
   //Banner - Homepage
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
@@ -611,6 +667,10 @@ function loadEastereggsMod() {
 function loadSettingsMod() {
   $('#modal-settings').load('ajax/modals/settings.html');
   $('#modal-settings').modal();
+}
+function loadShortcutsMod() {
+  $('#modal-shortcuts').load('ajax/modals/shortcuts.html');
+  $('#modal-shortcuts').modal();
 }
 function loadPrivacyNoMod() {
   $('#modal-privacy-no').load('ajax/modals/privacy-no.html');
