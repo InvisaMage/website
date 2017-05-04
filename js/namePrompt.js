@@ -6,7 +6,7 @@ function namePrompt()
 	var nL = name.toLowerCase();
 
 //Default
-	if (nL != null) {
+	if (nL !== null) {
 		$("#name").html(
 		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
 		"I hope you enjoy your stay."
@@ -48,9 +48,9 @@ function namePrompt()
 		if (nL == "noel") {
 			$("#name").html(
 			"See, there is plenty of snow, Noel."
-			)
+			);
 			loadSnowstormNamePrompt();
-		;}
+		}
 //Tanner - Audio
 		if (nL == "tanner" || nL == "no") {
 			$("#name").html(
@@ -570,7 +570,7 @@ function namePrompt()
 			)
 		;}
 //No name - Audio
-		if (nL == "" || nL == " " || nL == "undefined") {
+		if (nL === "" || nL == " " || nL == "undefined") {
 			$("#name").html(
 			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='An 18 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
 			"<div class='btn-group' role='group'>" +

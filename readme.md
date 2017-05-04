@@ -8,9 +8,9 @@ This is a repository to help me organize my [Website](http://invisamage.com/).
 
 To view my Website you must have an Internet browser with HTML5, CSS3, and JavaScript support.
 
-* 1) Download repository
-* 2) Extract .zip file
-* 3) Open "index.html" file
+ 1. Download repository
+ 2. Extract .zip file
+ 3. Open "index.html" file
 
 Note: You can also view the live version of the site [here](http://invisamage.com/).
 

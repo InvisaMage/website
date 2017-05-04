@@ -1,0 +1,7 @@
+TxtLock
+By: InvisaMage
+Website: https://invisamage.com
+
+-------------------------------------------[v1.0.3 (build 8)]-----------------------------------------------
+
+1) Initial release

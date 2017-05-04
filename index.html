@@ -70,13 +70,17 @@
 							<h3 class='panel-title'>Recent News</h3>
 						</div>
 						<div class='panel-header-top-2'>
-							<h3>February 22, 2017</h3>
+							<h3>May 3, 2017</h3>
 						</div>
 						<div class='panel-body'>
-							Made the Stats, Achievements, and Settings easier to access on small displays.<br>
-							Added <a class="link" onclick="loadShortcutsMod();" data-toggle="tooltip" data-placement="top" title="View key combinations.">Shortcuts</a> modal.<br>
-							Added the ability do disable the loading screen in the <a class="link" onclick="loadSettingsMod();">Settings</a> modal.<br>
-							Improved namePrompt and search input detection.
+							New project: <a class="link" href="txtlock.html">TxtLock!</a>
+
+							<br>
+							<br>
+
+							Changed most Shortcuts.<br>
+							Homepage now informs user if JavaScript has been disabled.<br>
+							Fixes to compiled.js.
 						</div><!-- /.panel-body -->
 						<div class="panel-footer">
 							Click <a class="link" href="news.html">here</a> to view more news.
@@ -185,6 +189,20 @@
 		<script src="js/events.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
+
+		<!--If scripts fail to load display JS required message-->
+		<noscript>
+			<style>
+				.preload {
+					content: 'This site requires JavaScript!' !important;
+					background-color: black !important;
+				}
+				.loading-animation:before {
+					color: red !important;
+					content: 'This site requires JavaScript!' !important;
+				}
+			</style>
+		</noscript>
 	</body>
 	</div>
 </html>

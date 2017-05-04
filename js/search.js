@@ -120,7 +120,7 @@ function search()
 	}
 
 //Blank
-	else if (sL == "" || sL == " ") {
+	else if (sL === "" || sL == " ") {
 		$.bootstrapGrowl("There's nothing to search for!", {
 	    type: 'danger',
 	    align: 'right',

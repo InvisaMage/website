@@ -202,37 +202,31 @@ listener.simple_combo("`", function() {
     terminalCheck();
 });
 
-//Focus search box with Shift + F key press
+//Focus search box with Ctrl + Alt + F key press
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift f", function() {
+listener.simple_combo("ctrl alt f", function() {
     $('input').focus();
 });
 
 //Settings
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift c", function() {
+listener.simple_combo("ctrl alt c", function() {
   hideModals();
   loadSettingsMod();
 });
 
 //Settings
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift s", function() {
+listener.simple_combo("ctrl alt s", function() {
   hideModals();
   loadStatsMod();
 });
 
 //Achievements
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift a", function() {
+listener.simple_combo("ctrl alt a", function() {
   hideModals();
   loadAchievementsMod();
-});
-
-//Save
-var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl s", function() {
-  alert('Trying to save the page are we?');
 });
 
 //Settings modal logic (executed on save button click in Settings modal)
@@ -323,10 +317,10 @@ function settingsCheck() {
     delay: 10000,
     allow_dismiss: true
   });
-    function enable(){
-      location.reload();
-    }
-};
+  function enable(){
+    location.reload();
+  }
+}
 
 //Settings modal cancel message
 function settingsCancelMsg() {
@@ -338,7 +332,7 @@ function settingsCancelMsg() {
       delay: 10000,
       allow_dismiss: true
     });
-};
+}
 
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
 $(function() {
@@ -430,10 +424,10 @@ $(function() {
 //Temporary workaround for settings bug
 //Forces to set banner cookies if they have not been set yet
 $(function() {
-  if (Cookies.get('enableEventsBanner') == undefined) {
+  if (Cookies.get('enableEventsBanner') === undefined) {
       Cookies.set('enableEventsBanner', 'true', {expires: 3600, secure: true});
   }
-  if (Cookies.get('enableTacBanner') == undefined) {
+  if (Cookies.get('enableTacBanner') === undefined) {
       Cookies.set('enableTacBanner', 'true', {expires: 3600, secure: true});
   }
 });
@@ -486,7 +480,7 @@ function emailMsg() {
       width: 'auto',
       allow_dismiss: true
     });
-};
+}
 function telegramMsg() {
     $.bootstrapGrowl("Telegram URL copied!", {
       type: 'success',
@@ -495,7 +489,7 @@ function telegramMsg() {
       width: 'auto',
       allow_dismiss: true
     });
-};
+}
 function keybaseMsg() {
     $.bootstrapGrowl("Keybase username copied!", {
       type: 'success',
@@ -504,7 +498,7 @@ function keybaseMsg() {
       width: 'auto',
       allow_dismiss: true
     });
-};
+}
 
 //Donate modal copy messages
 function bitcoinMsg() {
@@ -515,7 +509,7 @@ function bitcoinMsg() {
       width: 'auto',
       allow_dismiss: true
     });
-};
+}
 function dogecoinMsg() {
     $.bootstrapGrowl("Dogecoin wallet address copied!", {
       type: 'success',
@@ -524,7 +518,7 @@ function dogecoinMsg() {
       width: 'auto',
       allow_dismiss: true
     });
-};
+}
 function litecoinMsg() {
     $.bootstrapGrowl("Litecoin wallet address copied!", {
       type: 'success',
@@ -533,7 +527,7 @@ function litecoinMsg() {
       width: '300',
       allow_dismiss: true
     });
-};
+}
 
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
@@ -610,7 +604,7 @@ function resetAchievements() {
   Cookies.remove('wiselyAchievement', {secure: true});
   Cookies.remove('hallucinatingAchievement', {secure: true});
   Cookies.remove('purplerainAchievement', {secure: true});
-  $('#btn-reset-achievements').tooltip('hide')
+  $('#btn-reset-achievements').tooltip('hide');
   $.bootstrapGrowl("Your achievement progress has been reset!", {
     type: 'info',
     align: 'right',
@@ -684,12 +678,12 @@ function loadPrivacyYesMod() {
   wiselyCheck();
 }
 function loadReloadMod() {
-  $('#modal-stats').modal('hide')
+  $('#modal-stats').modal('hide');
   $('#btn-reload').tooltip('destroy');
   $('#modal-stats').one('hidden.bs.modal', function (e) {
   $('#modal-reload').load('ajax/modals/reload.html');
   $('#modal-reload').modal();
-})}
+});}
 function loadSearchHelpMod() {
   $('#modal-search-help').load('ajax/modals/search-help.html');
   $('#modal-search-help').modal();
