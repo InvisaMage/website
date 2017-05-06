@@ -2,6 +2,12 @@ TxtLock
 By: InvisaMage
 Website: https://invisamage.com
 
--------------------------------------------[v1.0.3 (build 8)]-----------------------------------------------
+-----------------------------------------[v1.0.3 (build 8)]---------------------------------------------
 
 1) Initial release
+
+-----------------------------------------[v1.1.0 (build 9)]---------------------------------------------
+
+1) Implemented firstRunActivity
+      Activates if the user uses the app for the first time
+      Allows the user to set their password
