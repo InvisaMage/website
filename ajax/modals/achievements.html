@@ -8,6 +8,13 @@
       <h4 class="modal-title black">Achievements</h4>
     </div>
     <div class="modal-body">
+      <!--local-warning-banner-->
+      <div id="local-warning-banner" class="alert alert-danger fade in text-center" role="alert">
+        <strong>*Warning*</strong><br>
+        <span id="local-warning-banner-content">
+          Something is wrong if you are seeing this.
+        </span>
+    	</div><!--./local-warning-banner-->
       <table class="table table-responsive table-condensed table-hover">
         <!--Header-->
         <tr>
@@ -53,10 +60,7 @@
       <button type="button" class="btn btn-info" onclick="$('#modal-achievements-collapse').collapse('toggle');">
         <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
       </button>
-      <button type="button" class="btn btn-default" data-dismiss="modal">
-        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
-      </button>
-      <button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
       </button>
     </div><!-- /.modal-footer -->
@@ -70,8 +74,8 @@
   $(function () {
     var showPopover = function () {
         $(this).popover('show');
-    }
-    , hidePopover = function () {
+      };
+      hidePopover = function () {
         $(this).popover('hide');
     };
 
@@ -91,7 +95,7 @@
     //Easter Egg
     if (Cookies.get('eastereggAchievement') == 'true') {
       $("#eastereggRow").attr("class","cur-point");
-      $("#eastereggRow").attr("data-toggle","popover");;
+      $("#eastereggRow").attr("data-toggle","popover");
       $("#eastereggRow").attr("data-content","Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
       $("#eastereggAchievement").replaceWith("<h5 class='text-success' id='eastereggAchievement'>Yes</h5>");
       console.log('eastereggAchievement = true');
@@ -160,4 +164,23 @@
       selector: '[data-toggle="popover"]'
     });
   }
+
+  //Local File Detection
+  $(function(){
+    $('#local-warning-banner').toggle();
+    var location = window.location;
+    var Slocation = String(location);
+
+    if (Slocation.startsWith("file://")) {
+      document.getElementById("local-warning-banner-content").innerHTML =
+      "It looks like you are viewing this page locally. " +
+      "Cookies are configured to only send on secure connections (https). " +
+      "As a result, Achievements will not be saved as they require cookies to function. ";
+      $('#local-warning-banner').toggle();
+      console.log("Local site");
+    }
+    else {
+      console.log("Settings will work");
+    }
+  });
 </script>
