@@ -8,6 +8,13 @@
       <h4 class="modal-title black">Settings</h4>
     </div>
     <div class="modal-body text-left">
+      <!--local-warning-banner-->
+      <div id="local-warning-banner" class="alert alert-danger fade in text-center" role="alert">
+        <strong>*Warning*</strong><br>
+        <span id="local-warning-banner-content">
+          Something is wrong if you are seeing this.
+        </span>
+    	</div><!--./local-warning-banner-->
       <!--Row 1-->
       <div class="row">
         <!--Theme-->
@@ -176,14 +183,14 @@
       $("#loading-screen-checkbox1").replaceWith("<input type='checkbox' id='loading-screen-checkbox1' value='true'>");
     }
     //Banner - Homepage
-    if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') == undefined) {
+    if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') === undefined) {
       $("#home-banner-checkbox1").replaceWith("<input type='checkbox' id='home-banner-checkbox1' value='true' checked>");
     }
     if (Cookies.get('enableEventsBanner') != 'true') {
       $("#home-banner-checkbox1").replaceWith("<input type='checkbox' id='home-banner-checkbox1' value='true'>");
     }
     //Banner - Terms and Conditions
-    if (Cookies.get('enableTacBanner') == 'true' || Cookies.get('enableTacBanner') == undefined) {
+    if (Cookies.get('enableTacBanner') == 'true' || Cookies.get('enableTacBanner') === undefined) {
       $("#tac-banner-checkbox1").replaceWith("<input type='checkbox' id='tac-banner-checkbox1' value='true' checked>");
     }
     if (Cookies.get('enableTacBanner') != 'true') {
@@ -215,6 +222,25 @@
     }
     if (Cookies.get('loadTerminal') != 'true') {
       $("#terminal-checkbox1").replaceWith("<input type='checkbox' name='option1' id='terminal-checkbox1' value='true'>");
+    }
+  });
+
+  //Local File Detection
+  $(function(){
+    $('#local-warning-banner').toggle();
+    var location = window.location;
+    var Slocation = String(location);
+
+    if (Slocation.startsWith("file://")) {
+      document.getElementById("local-warning-banner-content").innerHTML =
+      "It looks like you are viewing this page locally. " +
+      "Cookies are configured to only send on secure connections (https). " +
+      "As a result, these Settings will have no effect as they require cookies to function. ";
+      $('#local-warning-banner').toggle();
+      console.log("Local site");
+    }
+    else {
+      console.log("Settings will work");
     }
   });
 </script>

@@ -92,6 +92,10 @@
     <script id="js-ptty"></script>
 
 		<script>
+			$('#menu-mc-status').addClass('animated slideInRight');
+		</script>
+
+		<script>
 			MinecraftAPI.getServerStatus('mc.invisamage.com', {
 				port: 25565 // optional, only if you need a custom port
 			}, function (err, status) {

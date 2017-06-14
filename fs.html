@@ -40,7 +40,7 @@
 			<br>
 
 			<!--Menu-->
-			<div id="menu-fs" class="hidden-xs">
+			<div id="menu-fs" class="hidden-xs slider">
 				<h2>Contents</h2>
 				<li><a href="fs.html#keyfeatures"><span class="glyphicon glyphicon-chevron-right"></span> Key Features</a></li>
 				<li><a href="fs.html#table"><span class="glyphicon glyphicon-chevron-right"></span> Data Table</a></li>
@@ -130,7 +130,7 @@
 
 			<!--Screenshots-->
 			<h1 id="images">Screenshots</h1>
-			<div id="carousel-fs" class="carousel slide" data-ride="carousel">
+			<div id="carousel-fs" class="carousel slide center-block" data-ride="carousel" style="max-width: 640px; margin: 0 auto">
 			  <!--Indicators-->
 			  <ol class="carousel-indicators">
 					<li data-target="#carousel-fs" data-slide-to="0" class="active"></li>
@@ -146,49 +146,49 @@
 				<div class="carousel-inner" role="listbox">
 					<!--Spawn-->
 					<div class="item active">
-						<img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs110231741.png"></img>
+						<img class="img-responsive center-block" src="images/fs/fs1.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 							<h3>Spawn</h3>
 					  </div>
 					</div>
 					<!--Day Lobby-->
 					<div class="item">
-					  <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs210231717.png"></img>
+					  <img class="img-responsive center-block" src="images/fs/fs2.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 							<h3>Day Lobby</h3>
 					  </div>
 					</div>
 					<!--Night Lobby-->
 					<div class="item">
-					  <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs310231721.png"></img>
+					  <img class="img-responsive center-block" src="images/fs/fs3.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 							<h3>Night Lobby</h3>
 					  </div>
 					</div>
 					<!--Parkour-->
 					<div class="item">
-					  <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs410231724.png"></img>
+					  <img class="img-responsive center-block" src="images/fs/fs4.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 							<h3>Parkour</h3>
 					  </div>
 					</div>
 					<!--Mob Arena-->
 					<div class="item">
-					  <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs510231726.png"></img>
+					  <img class="img-responsive center-block" src="images/fs/fs5.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 							<h3>Mob Arena</h3>
 					  </div>
 					</div>
 					<!--PvP Arena-->
 					<div class="item">
-					  <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs610231730.png"></img>
+					  <img class="img-responsive center-block" src="images/fs/fs6.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 						<h3>PvP Arena</h3>
 					  </div>
 					</div>
 					<!--Wild Lobby-->
 					<div class="item">
-					  <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1623/fs710231731.png"></img>
+					  <img class="img-responsive center-block" src="images/fs/fs7.png" height="480" width="640"></img>
 					  <div class="carousel-caption">
 						<h3>Wilderness Lobby</h3>
 					  </div>
@@ -230,6 +230,10 @@
 		<script src="js/compiled.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
+
+		<script>
+			$('.slider').addClass('animated slideInLeft');
+		</script>
 	</body>
 	</div>
 </html>

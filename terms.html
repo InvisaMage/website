@@ -145,7 +145,7 @@
 		<!--/.End Content-->
 
 		<!--Terms Alert-->
-		<div id="terms-banner" class="alert alert-danger alert-dismissible fade in" role="alert">
+		<div id="terms-banner" class="alert alert-danger alert-dismissible animated bounceInUp" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 			<div class="row">
 				<div class="col-xs-6">
@@ -180,6 +180,11 @@
 		<script src="js/compiled.js"></script>
 		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
+
+		<script>
+			$('.termsSection').addClass('animated slideInUp');
+			$('#menu-terms').addClass('animated slideInLeft');
+		</script>
 	</body>
 	</div>
 </html>
