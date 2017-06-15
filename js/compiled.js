@@ -22,6 +22,8 @@ $(function(){
   }
 });
 
+var protocol = window.location.protocol;
+
 //If no touchscreen, show Tooltips and hide mobile search
 if(!('ontouchstart' in window))
 {

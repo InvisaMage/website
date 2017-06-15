@@ -12,7 +12,7 @@
       <div id="local-warning-banner" class="alert alert-danger fade in text-center" role="alert">
         <strong>*Warning*</strong><br>
         <span id="local-warning-banner-content">
-          Something is wrong if you are seeing this.
+          Something is wrong if you are seeing this. <a onclick="$('#modal-settings').modal('hide'); loadContactMod();">Contact</a> me.
         </span>
     	</div><!--./local-warning-banner-->
       <!--Row 1-->
@@ -227,19 +227,15 @@
 
   //Local File Detection
   $(function(){
-    $('#local-warning-banner').toggle();
-    var location = window.location;
-    var Slocation = String(location);
-
-    if (Slocation.startsWith("file://")) {
+    if (protocol == "file:") {
       document.getElementById("local-warning-banner-content").innerHTML =
       "It looks like you are viewing this page locally. " +
       "Cookies are configured to only send on secure connections (https). " +
       "As a result, these Settings will have no effect as they require cookies to function. ";
-      $('#local-warning-banner').toggle();
       console.log("Local site");
     }
     else {
+      $('#local-warning-banner').toggle();
       console.log("Settings will work");
     }
   });

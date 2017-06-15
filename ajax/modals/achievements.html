@@ -9,10 +9,10 @@
     </div>
     <div class="modal-body">
       <!--local-warning-banner-->
-      <div id="local-warning-banner" class="alert alert-danger fade in text-center" role="alert">
+      <div id="local-warning-banner2" class="alert alert-danger fade in text-center" role="alert">
         <strong>*Warning*</strong><br>
-        <span id="local-warning-banner-content">
-          Something is wrong if you are seeing this.
+        <span id="local-warning-banner-content2">
+          Something is wrong if you are seeing this. <a onclick="$('#modal-achievements').modal('hide'); loadContactMod();">Contact</a> me.
         </span>
     	</div><!--./local-warning-banner-->
       <table class="table table-responsive table-condensed table-hover">
@@ -167,19 +167,15 @@
 
   //Local File Detection
   $(function(){
-    $('#local-warning-banner').toggle();
-    var location = window.location;
-    var Slocation = String(location);
-
-    if (Slocation.startsWith("file://")) {
-      document.getElementById("local-warning-banner-content").innerHTML =
+    if (protocol == "file:") {
+      document.getElementById("local-warning-banner-content2").innerHTML =
       "It looks like you are viewing this page locally. " +
       "Cookies are configured to only send on secure connections (https). " +
       "As a result, Achievements will not be saved as they require cookies to function. ";
-      $('#local-warning-banner').toggle();
       console.log("Local site");
     }
     else {
+      $('#local-warning-banner2').toggle();
       console.log("Settings will work");
     }
   });
