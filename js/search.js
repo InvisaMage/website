@@ -24,6 +24,11 @@ function search()
 		window.location = "fs.html";
 	}
 
+//TxtLock page
+	else if (sL == "txtlock") {
+		window.location = "txtlock.html";
+	}
+
 //InvisaRant page
 	else if (sL == "podcast" || sL == "invisarant") {
 		window.location = "invisarant.html";
@@ -89,9 +94,21 @@ function search()
 		window.open("https://www.google.com/");
 	}
 
+//Google search
+	else if (sL.startsWith("google ")) {
+		var googleQuery = sL.substr(7);
+		window.open("https://www.google.com/search?q=" + googleQuery);
+	}
+
 //Bing
 	else if (sL == "bing") {
 		window.open("https://www.bing.com/");
+	}
+
+//Bing search
+	else if (sL.startsWith("bing ")) {
+		var bingQuery = sL.substr(5);
+		window.open("https://www.bing.com/search?q=" + bingQuery);
 	}
 
 //DuckDuckGo
@@ -99,19 +116,26 @@ function search()
 		window.open("https://duckduckgo.com/");
 	}
 
+//DuckDuckGo search
+	else if (sL.startsWith("duck ")) {
+		var duckQuery = sL.substr(5);
+		window.open("https://duckduckgo.com/?q=" + duckQuery);
+	}
+
 //YouTube
 	else if (sL == "youtube" || sL == "yt") {
 		window.open("https://www.youtube.com/");
 	}
 
+//YouTube search
+	else if (sL.startsWith("youtube ")) {
+		var ytQuery = sL.substr(8);
+		window.open("https://www.youtube.com/results?search_query=" + ytQuery);
+	}
+
 //RuneScape
 	else if (sL == "runescape" || sL == "rs") {
 		window.location = ("rs-launch://www.runescape.com/jav_config.ws");
-	}
-
-//DarkScape
-	else if (sL == "darkscape" || sL == "ds") {
-		window.location = ("rs-launch://www.runescape.com/jav_config_beta.ws");
 	}
 
 //Cortana

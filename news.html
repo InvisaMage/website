@@ -374,6 +374,7 @@
 						<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<option disabled>June 2017</option>
+							<option value="news.html#6-23-17-website">23rd</option>
 							<option value="news.html#6-14-17-website">14th</option>
 							<option data-divider="true"></option>
 							<option disabled>May 2017</option>
@@ -388,6 +389,23 @@
 						<br>
 						<br>
 					</div>
+
+					<!--June 23, 2017-->
+					<span class="newsSection" id="6-23-17-website">
+						<h1>June 23, 2017</h1>
+						<p>
+							Improved search functionality.<br>
+							You can now search using your favorite search engine.<br>
+							For example, <kbd>google Test</kbd> will open a new tab and search for Test on Google.
+							<br>
+							<br>
+							Changed the way anchors work.<br>
+							This should fix the problem of the navigation bar clipping content.
+						</p>
+					</span><!-- /6-23-17 -->
+
+					<br>
+					<br>
 
 					<!--June 14, 2017-->
 					<span class="newsSection" id="6-14-17-website">
@@ -462,6 +480,7 @@
 							<h2>Date Jump</h2>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> June 2017</a></li>
 							<div id="menu-news-nested">
+								<li><a href="#6-23-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 23rd</a></li>
 								<li><a href="#6-14-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 14th</a></li>
 							</div>
 							<li><a><span class="glyphicon glyphicon-chevron-down"></span> May 2017</a></li>
@@ -503,8 +522,7 @@
 								Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
 								<br>
 								<br>
-								Scrolling back to the top of the page on a Mobile device can be laggy.<br>
-								Going to anchors clips content due to the fixed navigation bar.<br>
+								Scrolling back to the top of the page on a Mobile device can be laggy.
 							</p>
 						</span>
 
@@ -515,7 +533,8 @@
 						<span class="newsSection" id="fixed">
 							<h1>Fixed</h1>
 							<p>
-								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.
+								Going to anchors clips content due to the fixed navigation bar.<br>
+								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
 								Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
 								The Date Jump menu is only visible on the Projects tab while on a Mobile device.<br>
 								On the <a class="link" href="fs.html">Floating Survival</a> page, using the carousel will focus the page on it.<br>

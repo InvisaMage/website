@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid black;
 	border-width: 5px 0;
 	position: absolute;
-	top: 308px;
+	top: 287px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 	font-size: 14px;
@@ -642,7 +642,7 @@ th {
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 185px;
+	top: 165px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 	left: 0px;
@@ -679,7 +679,7 @@ th {
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 185px;
+	top: 165px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 	left: 0px;
@@ -716,7 +716,7 @@ th {
 	border: 1px solid black;
 	border-width:5px 0;
 	position: absolute;
-	top: 185px;
+	top: 165px;
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 	left: 0px;
@@ -1174,6 +1174,41 @@ kbd {
 .text {
 	color: white;
 }
+
+/* Background color for input
+.form-control {
+	background-color: #737373;
+	color: #fff;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #cccccc;
+}
+.form-control:-moz-placeholder {
+   color:    #cccccc;
+   opacity:  1;
+}
+.form-control::-moz-placeholder {
+   color:    #cccccc;
+   opacity:  1;
+}
+.form-control:-ms-input-placeholder {
+   color:    #cccccc;
+}
+.form-control::-ms-input-placeholder {
+   color:    #cccccc;
+}
+*/
+
+/* Modal Close button */
+.close {
+	color: white;
+}
+.close:hover {
+	color: #D9534F;
+}
+
+/* End Bootstrap overrides */
 
 /* Imported from theme-dark.css */
 .modal-content {

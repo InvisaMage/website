@@ -169,7 +169,7 @@ h1, h2, h3 {
 }
 
 /* Table Properties */
-.table-ir, .table-fs {
+.table-ir, .table-fs, .table-txtlock {
 	color: black;
 	background-color: rgba(230, 230, 230, 0.8);
 }
@@ -258,4 +258,12 @@ footer h4 {
     color: black;
     font-size: 14px;
 		background-color: #ffffff;
+}
+
+/* Modal Close button */
+.close {
+	color: black;
+}
+.close:hover {
+	color: #D9534F;
 }
