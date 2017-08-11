@@ -267,3 +267,8 @@ footer h4 {
 .close:hover {
 	color: #D9534F;
 }
+
+/* Easteregg modal accordian */
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+	color: black;
+}

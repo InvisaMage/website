@@ -2,12 +2,37 @@ TxtLock
 By: InvisaMage
 Website: https://invisamage.com
 
------------------------------------------[v1.0.3 (build 8)]---------------------------------------------
+----------[v1.0.3 (build 8)]----------
 
 1) Initial release
 
------------------------------------------[v1.1.0 (build 9)]---------------------------------------------
+----------[v1.1.0 (build 9)]----------
 
 1) Implemented firstRunActivity
       Activates if the user uses the app for the first time
       Allows the user to set their password
+
+----------[v1.1.1 (build 16)]----------
+
+1) Added horizontal layout for KeyPadActivity
+2) Changelog now loads in WebView
+3) Centered "I'm Ready" button on firstRunActivity
+
+----------[v1.1.2 (build 21)]----------
+
+1) Added an app shortcut to view the changelog
+      Android 7.1+
+2) Added information on how to clear app data on the help Dialog
+3) In Settings, the Change password dialog has been replaced with an Activity
+      ChangePasswordActivity
+      Similar to the FirstRunActivity
+4) Tweaked the layout of FirstRunActivity
+      Adjusted padding of some elements
+5) Added floating lock icon on the TextEditActivity
+
+----------[v1.1.3 (build 24)]----------
+
+1) Added Welcome screen
+      Displays information about the application the first time the app is run
+      Replaces FirstRunActivity (user still sets their password)
+      Allows the user to enable or mute sounds

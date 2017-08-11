@@ -15,10 +15,17 @@ body {
 
 /* Every Element */
 * {
-	font-family: Ubuntu;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 103%;
 	outline: 0;
 }
+
+/* Font Information
+@font-face {
+	font-family: Ubuntu;
+	src: url(../fonts/ubuntu.ttf);
+}
+*/
 
 /* Change highlight color and text color on highlight */
 ::selection {
@@ -87,12 +94,6 @@ body {
 /* Makes the cursor a pointer on the navigation bar */
 nav li:hover {
 	cursor: pointer;
-}
-
-/* Font Information */
-@font-face {
-	font-family: Ubuntu;
-	src: url(../fonts/ubuntu.ttf);
 }
 
 /* Table fix in Firefox */
@@ -1175,6 +1176,15 @@ kbd {
 	color: white;
 }
 
+/* Easteregg modal accordian */
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+	color: white;
+	font-size: 16px;
+}
+.panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {
+	font-size: 20px;
+}
+
 /* Background color for input
 .form-control {
 	background-color: #737373;
@@ -1208,7 +1218,7 @@ kbd {
 	color: #D9534F;
 }
 
-/* End Bootstrap overrides */
+/* ---------------- End Bootstrap overrides ---------------- */
 
 /* Imported from theme-dark.css */
 .modal-content {
