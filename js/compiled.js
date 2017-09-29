@@ -7,6 +7,7 @@ $('#modals').load('ajax/modals.html');
 
 var protocol = window.location.protocol;
 var windowHeight = window.innerHeight;
+var termCounter = 0;
 
 //If no touchscreen, show Tooltips
 if(!('ontouchstart' in window)) {
@@ -124,23 +125,45 @@ listener.simple_combo("delete", function() {
 //Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
 listener.simple_combo("shift space", function() {
-  $.getScript('js/jquery.terminal.min.js');
-  $('html').append('<link rel="stylesheet" type="text/css" href="./css/jquery.terminal.css">');
-  setTimeout(enable, 500);
-    function enable(){
-      $.getScript('js/terminal.js')
-       .done(function() {
-         //Inform user of successful load
-         $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
-           type: 'success',
-           align: 'right',
-           delay: 1500,
-           offset: {from: 'top', amount: 70},
-           width: '300',
-           allow_dismiss: true
-         });
-       })
-    }
+  //Inform user of successful load
+  $.bootstrapGrowl("Loading assets...", {
+    type: 'info',
+    align: 'right',
+    delay: 1500,
+    offset: {from: 'top', amount: 70},
+    width: '300',
+    allow_dismiss: true
+  });
+  if (termCounter == 0) {
+    $.getScript('js/jquery.terminal.min.js');
+    $('html').append('<link rel="stylesheet" type="text/css" href="./css/jquery.terminal.css">');
+    setTimeout(enable, 500);
+      function enable(){
+        $.getScript('js/terminal.js')
+         .done(function() {
+           //Inform user of successful load
+           $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+             type: 'success',
+             align: 'right',
+             delay: 2000,
+             offset: {from: 'top', amount: 70},
+             width: '300',
+             allow_dismiss: true
+           });
+           termCounter = 1;
+         })
+      }
+  } else {
+    //Inform user of successful load
+    $.bootstrapGrowl("Terminal assets have already been loaded!", {
+      type: 'danger',
+      align: 'right',
+      delay: 1500,
+      offset: {from: 'top', amount: 70},
+      width: '300',
+      allow_dismiss: true
+    });
+  }
 });
 
 //Hides all modals
@@ -328,6 +351,7 @@ $(function() {
          })
 
         console.log('loadTerminal = true');
+        termCounter = 1;
       }
   } else {
     console.log('loadTerminal = false');
