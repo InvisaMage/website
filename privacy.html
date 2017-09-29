@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created January 1, 2015-->
-<!--Bootstrap Merge began on August 8, 2015-->
+<!--Bootstrap 4 update began on August 24, 2017-->
 <!--Privacy Policy-->
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="InvisaMage's privacy policy.">
-		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
-		<meta name="theme-color" content="#337AB7">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | Privacy</title>
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet">
-		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
-	<!--Page Loading...-->
-	<div class="preload">
-		<div class="loading">
-			<div class="loading-animation"></div>
-		</div>
-	</div>
-
-	<div class="content">
 	<body id="top">
-		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #22262a;"></nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -39,12 +29,12 @@
 			<a class="title" href="privacy.html">Privacy Policy</a>
 
 			<!--Menu-->
-			<div id="menu-privacy" class="hidden-xs">
-				<h2>Contents</h2>
-				<li><a href="#general"><span class="glyphicon glyphicon-chevron-right"></span> General</a></span></li>
-				<li><a href="#cookies"><span class="glyphicon glyphicon-chevron-right"></span> Cookies</a></span></li>
-				<li><a href="#information"><span class="glyphicon glyphicon-chevron-right"></span> Information</a></span></li>
-				<li><a href="#changes"><span class="glyphicon glyphicon-chevron-right"></span> Changes</a></span></li>
+			<div id="menu-privacy" class="d-none d-md-inline">
+				<h4>Contents</h4>
+				<li><a href="#general"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> General</a></span></li>
+				<li><a href="#cookies"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Cookies</a></span></li>
+				<li><a href="#information"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Information</a></span></li>
+				<li><a href="#changes"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Changes</a></span></li>
 				<br>
 			</div>
 
@@ -53,7 +43,7 @@
 			</p>
 
 			<!--Mobile Menu-->
-			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
+			<div class="d-block d-md-none" id="mobile-menu">
 				<select class="selectpicker show-menu-arrow" data-header="Select an item." data-width="auto%">
 					<option selected value="#mobile-menu">Contents</option>
 					<option data-divider="true"></option>
@@ -69,54 +59,58 @@
 			</div>
 
 			<!--General-->
-			<span class="privacySection" id="general">
-				<h1>General</h1>
+			<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="general">
+				<h4 class="card-header">General</h4>
+				<div class="card-body">
 					<p>
 						This website is currently ad free.
 					</p>
-			</span>
+				</div>
+			</div><!-- /general-->
 
-			<br>
 			<br>
 
 			<!--Cookies-->
-			<span class="privacySection" id="cookies">
-				<h1>Cookies</h1>
-				<p>
-					Cookies may be used to enable the site to function more fluently.<br>
-					They are files with information about the website.<br>
-					They are stored locally on your computer for future use.<br>
-					If you wish to clear your internet cookies, click <a class="link" onclick="loadCookiesMod();">here</a>.<br>
-					Note: This will likely clear all of your internet cookies including ones for this website.
-				</p>
-			</span>
+			<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="cookies">
+				<h4 class="card-header">Cookies</h4>
+				<div class="card-body">
+					<p>
+						Cookies may be used to enable the site to function more fluently.<br>
+						They are files with information about the website.<br>
+						They are stored locally on your computer for future use.<br>
+						If you wish to clear your internet cookies, click <a class="link" onclick="loadCookiesMod();">here</a>.<br>
+						Note: This will likely clear all of your internet cookies including ones for this website.
+					</p>
+				</div>
+			</div><!-- /cookies-->
 
-			<br>
 			<br>
 
 			<!--Information-->
-			<span class="privacySection" id="information">
-				<h1>Information</h1>
+			<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="information">
+				<h4 class="card-header">Information</h4>
+				<div class="card-body">
 					<p>
 						This website will not give any personal information to 3rd parties.<br>
 						This website may use collected information to help improve this website.<br>
-						No input from the <a class="link" href="about.html#nameprompt">namePrompt</a> or the <a class="link" href="about.html#search-info">Search</a> function is logged.
+						No input from the <a class="link" href="info.html#nameprompt">namePrompt</a> or the <a class="link" href="info.html#search-info">Search</a> function is logged.
 					</p>
-			</span>
+				</div>
+			</div><!-- /information-->
 
-			<br>
 			<br>
 
 			<!--Changes-->
-			<span class="privacySection" id="changes">
-				<h1>Changes</h1>
+			<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="changes">
+				<h4 class="card-header">Changes</h4>
+				<div class="card-body">
 					<p>
 						The Privacy Policy may be changed at any time without notice.<br>
 						Be sure to check back from time to time.
 					</p>
-			</span>
+				</div>
+			</div><!-- /changes-->
 
-			<br>
 			<br>
 
 			<!--Footer-->
@@ -126,41 +120,25 @@
 		</div>
 		<!--/.End Content-->
 
-		<!--Privacy Alert-->
-		<div id="privacy-banner" class="alert alert-danger alert-dismissible animated bounceInUp" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-			<div class="row">
-				<div class="col-xs-6">
-			  	Do you accept the Privacy Policy?
-				</div>
-				<div class="col-xs-6-offset">
-					<button type="button" class="btn btn-success btn-md" onclick="loadPrivacyYesMod();"> Yes
-						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-					</button>
-					<button type="button" class="btn btn-danger btn-md" onclick="loadPrivacyNoMod();"> No
-						<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
-					</button>
-				</div>
-			</div>
-		</div>
+		<!--Alert-->
+		<div id="ajax-privacy-banner"></div>
 
 		<!--Modals-->
 		<span id="modals"></span>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/search.js"></script>
-		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
-		<script id="js-water"></script>
 		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 
 		<script>
@@ -168,5 +146,4 @@
 			$('#menu-privacy').addClass('animated slideInLeft');
 		</script>
 	</body>
-	</div>
 </html>

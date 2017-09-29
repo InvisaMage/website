@@ -4,8 +4,8 @@
 <div class="modal-dialog modal-md" id="ajax-eastereggs">
   <div class="modal-content">
     <div class="modal-header">
+      <h4 class="modal-title mx-auto black">List of Easter Eggs</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">List of Easter Eggs</h4>
     </div>
     <div class="modal-body">
       This is a list of Easter Eggs currently found in this website.
@@ -13,24 +13,24 @@
       <br>
       <br>
 
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <!--namePrompt-->
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <div id="accordion" role="tablist">
+        <!--General-->
+        <div class="card bg-secondary">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a id="collapse-heading" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 General
               </a>
-            </h4>
+            </h5>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
+
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
               <ul class="text-left">
-                <li>Hovering over this, <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>, button in the navigation bar.</li>
-                <li>Inserting the <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site.</li>
-                <li>Declining the <a href="terms.html">Terms</a> or <a href="privacy.html">Privacy Policy</a>.</li>
+                <li>Hovering over this - <i class="fa fa-chevron-up" aria-hidden="true"></i> - button in the navigation bar.</li>
+                <li>Inserting the <a class="link link-np" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site.</li>
+                <li>Declining the <a class="link link-np" href="terms.html">Terms</a> or <a class="link link-np" href="privacy.html">Privacy Policy</a>.</li>
                 <li>Clicking "Hide Ads" in the footer.</li>
-                <li>Clicking "Load Water" and then "Enable Water" in the footer.</li>
                 <li>Clicking "Load Snow" and then "Toggle Snow" in the footer.</li>
                 <li>Pressing the "Delete" key anywhere on the site.</li>
               </ul>
@@ -38,46 +38,44 @@
           </div>
         </div>
         <!--Search-->
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingTwo">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <div class="card bg-secondary">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a id="collapse-heading" class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Search
               </a>
-            </h4>
+            </h5>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="panel-body">
-              Inserting these queries into the <a href="about.html#functions">Search</a> function will output special results.<br>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              Inserting these queries into the <a class="link link-np" href="info.html#functions">Search</a> function will output special results.<br>
               <strong>Note:</strong> This does not include page results.
 
               <br>
               <br>
 
               <ul class="text-left">
-                <li>Google (Goes to: <a href="https://www.google.com/">https://www.google.com/</a>)</li>
-                <li>Bing (Goes to: <a href="https://www.bing.com/">https://www.bing.com/</a>)</li>
-                <li>Duck (Goes to: <a href="https://duckduckgo.com/">https://duckduckgo.com/</a>)</li>
-                <li>YouTube (Goes to: <a href="https://www.youtube.com/">https://www.youtube.com/</a>)</li>
+                <li>Google (Goes to: <a class="link link-np" href="https://www.google.com/">https://www.google.com/</a>)</li>
+                <li>Bing (Goes to: <a class="link link-np" href="https://www.bing.com/">https://www.bing.com/</a>)</li>
+                <li>Duck (Goes to: <a class="link link-np" href="https://duckduckgo.com/">https://duckduckgo.com/</a>)</li>
+                <li>YouTube (Goes to: <a class="link link-np" href="https://www.youtube.com/">https://www.youtube.com/</a>)</li>
                 <li>RuneScape (Launches RuneScape if it's installed.)</li>
-                <li>DarkScape (Launches DarkScape if it's installed.)</li>
               </ul>
             </div>
           </div>
         </div>
-        <!--General-->
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingThree">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <!--namePrompt-->
+        <div class="card bg-secondary">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a id="collapse-heading" class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 namePrompt
               </a>
-            </h4>
+            </h5>
           </div>
-          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="panel-body">
-              Inputting any of these queries into the <a href="about.html#functions">namePrompt</a> function will output a special result.<br>
-
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              Inputting any of these queries into the <a class="link link-np" href="info.html#functions">namePrompt</a> function will output a special result.<br>
               <ul class="text-left">
                 <li>Travis Kipp (List)</li>
                 <li>Travis</li>
@@ -92,9 +90,9 @@
                 <li>Tony</li>
                 <li>Joe</li>
                 <li>Brian</li>
+                <li>Rudy</li>
                 <li>David (Audio)</li>
                 <li>Jenny (Audio)</li>
-                <li>867-5309</li>
                 <li>Stacy (Audio)</li>
                 <li>Jessie (Audio)</li>
                 <li>Leah (Audio)</li>
@@ -117,24 +115,27 @@
             </div>
           </div>
         </div>
-      </div><!--#/accordion-->
+      </div><!--/#accordion-->
     </div><!--./modal-body-->
     <!--Easter Egg Help Collapsible Content-->
     <div class="collapse" id="modal-eastereggs-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-eastereggs-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>What's this?</strong><br>
-        You inserted the <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
-        I doubt you got here by mistake.
-        <img class="img-responsive center-block" src="./images/svg/konami.svg">
+      <div class="card text-white bg-secondary">
+        <h5 class="card-header">How did I get here? <button type="button" class="close" onclick="$('#modal-eastereggs-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <div class="card-body">
+          <p class="card-text">
+            You inserted the <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
+            I doubt you got here by mistake.
+          </p>
+          <img class="img-fluid center-block" src="./images/svg/konami.svg">
+        </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info" onclick="$('#modal-eastereggs-collapse').collapse('toggle')">
-        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <button type="button" class="btn btn-outline-info" onclick="$('#modal-eastereggs-collapse').collapse('toggle')">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div>
   </div><!-- /.modal-content -->

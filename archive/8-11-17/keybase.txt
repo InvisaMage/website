@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/invisamage
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://invisamage.com
+  * I am invisamage (https://keybase.io/invisamage) on keybase.
+  * I have a public key with fingerprint 66D4 AABC 2F33 F7F3 D943  ABB0 B1FB 2941 1A80 AD92
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101ecf5a881daedf7f9e72434e5851757144f30b6e767708235313ce7146a4c9d790a",
+            "fingerprint": "66d4aabc2f33f7f3d943abb0b1fb29411a80ad92",
+            "host": "keybase.io",
+            "key_id": "b1fb29411a80ad92",
+            "kid": "0101ecf5a881daedf7f9e72434e5851757144f30b6e767708235313ce7146a4c9d790a",
+            "uid": "60d1181bbdc4fcef056e87b4cd82f919",
+            "username": "invisamage"
+        },
+        "service": {
+            "hostname": "invisamage.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1459215561,
+    "expire_in": 157680000,
+    "prev": "db6c25997d1ccb9982d0b94a41a0774447ea56d940f9ccec08c33086acb965ff",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.51
+Comment: https://keybase.io/crypto
+
+yMIpAnicrZJbSBRRGMfXtKS1QimLgiymsIdknTNz5rZBFyIsoRehC5Qs55w5szuo
+M9vsuGVuYRQURW0XqofyAoLZDQuCIDU1TDSh6GaFBhlEWQlWD1ug1hmpp3rsvBzO
+d37///m+73zds9N9/rSB8d7J0o/JVFp/14VK39YfQ33VHLb1Ki5YzZXRqY2W6zTm
+hspMnQtyPOABJYaEVBXoiOqGYmhUEaAIqaRKQJEUAKEh8limiqwovCqIkghEQllc
+RpBouqLxiCvgDNMKUyfqmJbLbGVZhwhhIhiiyCxFXYMiwpjHwMCCBgFAKo90TWDC
+iB3zFCw5jGI0YNosxg6hqfT+wf/nvCun7GReB0AFGOsEGoQavCRTVcGQ6KpgaEDz
+wBh1LFRBGW1acTOGKlCYcvsKOBaPm4R6rfVq+YsJELuC6aOO7drELmd3EdeNxoKe
+1q2KevBuikO/bULYtHTWS6aIUydm2hYXBIwkrun5AihpApAkGRRwdE/UdGjI9AhJ
+kVWeLe8dGmeWOpaJIGmaogNCsKapgs5jDSIIEK8oEEKFIklm/8IbGiGU8CoRRV6V
+EYNlyTA4r7Bdls0FIUsThZllzAxbyK10WNX3Ondm+NL8vhnTp3kz5vPPzP4zeetR
+5visacE1GV3L+x77J583ru0slc+8btjSuu7KlzvN4aX1e+c+7FnWdHlF1vLCjiVP
+a94lHozmDeetzD5x8ZWdO+dCIrFn/7nab05tS9Xit0XbZn8fSX6+GGnvOlCTdy19
+Ve/YwRw8cGzV/uu5zW9aGtL9033BT1ff4Lb+DmuL0X5TONX/NbDjWXIwWZ9Yerss
+P9E0/LJu9cLAoQ/vW0Mnl6VCzanNRXklQ27NrQH/9ieVPSlyesGN+/OL1pyddz6c
+m5mx6Gx37Y3i83gicLfiSElfy/DxnOxD8UfJkUuBjU7j0Q2jV37ObxuLFOafyhrr
+bqCbi0PBnE2H2ybSwclbM16MuIPhuvxffRZKgw==
+=U5l1
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/invisamage
+
+==================================================================

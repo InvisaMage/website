@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created December 15, 2014-->
+<!--Bootstrap Merge began on August 8, 2015-->
+<!--Terms & Conditions-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="InvisaMage's terms and conditions.">
+		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
+		<meta name="theme-color" content="#337AB7">
+		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
+		<title>InvisaMage | Terms</title>
+		<!--Stylesheets-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/animate.min.css" rel="stylesheet">
+		<link href="css/bootstrap-select.css" rel="stylesheet">
+		<link href="css/ptty.css" rel="stylesheet">
+	</head>
+
+	<!--Page Loading...-->
+	<div class="preload">
+		<div class="loading">
+			<div class="loading-animation"></div>
+		</div>
+	</div>
+
+	<div class="content">
+	<body id="top">
+		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+
+		<!--Begin Content-->
+		<div class="container">
+
+			<!--Page Title-->
+			<a class="title" href="terms.html">Terms & Conditions</a>
+
+			<!--Menu-->
+			<div id="menu-terms" class="hidden-xs">
+				<h2>Contents</h2>
+				<li><a href="terms.html#general"><span class="glyphicon glyphicon-chevron-right"></span> General</a></li>
+				<li><a href="terms.html#logo"><span class="glyphicon glyphicon-chevron-right"></span> Logo</a></li>
+				<li><a href="terms.html#warranty"><span class="glyphicon glyphicon-chevron-right"></span> Warranties & Liability</a></li>
+				<li><a href="terms.html#copyright"><span class="glyphicon glyphicon-chevron-right"></span> Copyright</a></li>
+				<li><a href="terms.html#changes"><span class="glyphicon glyphicon-chevron-right"></span> Changes</a></li>
+				<br>
+			</div>
+
+			<p>
+				By using this website, you agree to the following terms and conditions...<br>
+			</p>
+
+			<!--Mobile Menu-->
+			<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
+				<select class="selectpicker show-menu-arrow" data-header="Select an item." data-width="auto%">
+					<option selected value="#mobile-menu">Contents</option>
+					<option data-divider="true"></option>
+					<option value="terms.html#general">General</option>
+					<option value="terms.html#logo">Logo</option>
+					<option value="terms.html#warranty">Warranties & Liability</option>
+					<option value="terms.html#copyright">Copyright</option>
+					<option value="terms.html#changes">Changes</option>
+					<option data-divider="true"></option>
+					<option value="#footer">Footer</option>
+				</select>
+				<br>
+				<br>
+			</div>
+
+			<!--General-->
+			<span class="termsSection" id="general">
+				<h1>General</h1>
+				<p>
+					Use this website at your own risk.<br>
+					I am not held responsible for incorrect information.<br>
+					You may not exploit this website in any way.<br>
+					I am not affiliated with external websites that are linked on this website.<br>
+					I do not support Internet Explorer.
+				</p>
+			</span>
+
+			<br>
+			<br>
+
+			<!--Logo-->
+			<span class="termsSection" id="logo">
+				<h1>Logo</h1>
+					<p>
+					You may not steal my logo.<br>
+					You may not vandalize my logo in any way.<br>
+					You may not claim my logo as your own.
+					</p>
+			</span>
+
+			<br>
+			<br>
+
+			<!--Warranties & Liability-->
+			<span class="termsSection" id="warranty">
+				<h1>Warranties & Liability</h1>
+				<p>
+					This website is brought to you "as is" without any warranty.<br>
+					I am not liable for anything that you may see on this website.<br>
+					I am not accountable for any bugs or errors you may encounter.<br>
+					If a major problem occurs, please <a class="link" onclick="loadContactMod();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">contact</a> me.<br>
+					I will do my best to fix the issue as soon as possible.
+				</p>
+			</span>
+
+			<br>
+			<br>
+
+			<!--Copyright-->
+			<span class="termsSection" id="copyright">
+				<h1>Copyright</h1>
+				<p>
+				<a class="link" href="fs.html">Floating Survival</a>, <a class="link" href="invisarant.html">InvisaRant</a>, and all of my other projects are licensed under the<br>
+				<a class="link" href="LICENSE">GNU General Public License</a> (GPL v3).
+			</p>
+			</span>
+
+			<br>
+			<br>
+
+			<!--Changes-->
+			<span class="termsSection" id="changes">
+				<h1>Changes</h1>
+				<p>
+					The Terms & Conditions may be changed at any time without notice.<br>
+					Be sure to check back from time to time.
+				</p>
+			</span>
+
+			<br>
+			<br>
+
+			<!--Footer-->
+			<footer id="footer"></footer>
+			<br>
+			<br>
+		</div>
+		<!--/.End Content-->
+
+		<!--Terms Alert-->
+		<div id="terms-banner" class="alert alert-danger alert-dismissible animated bounceInUp" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			<div class="row">
+				<div class="col-xs-6">
+				  	Do you accept the Terms and Conditions?
+				</div>
+				<div class="col-xs-6-offset">
+					<button type="button" class="btn btn-success btn-md" onclick="loadTermsYesMod();"> Yes
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-danger btn-md" onclick="loadTermsNoMod();"> No
+						<span class=" glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!--Modals-->
+		<span id="modals"></span>
+
+		<!--External Scripts-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/search.js"></script>
+		<script src="js/nprogress.js"></script>
+		<script src="js/typeahead.min.js"></script>
+		<script id="js-water"></script>
+		<script id="js-snowstorm"></script>
+		<script src="js/konami.js"></script>
+		<script src="js/keypress.min.js"></script>
+		<script src="js/js.cookie.js"></script>
+		<script src="js/growl.min.js"></script>
+		<script src="js/compiled.js"></script>
+		<script src="js/bootstrap-select.min.js"></script>
+		<script id="js-ptty"></script>
+
+		<script>
+			$('.termsSection').addClass('animated slideInUp');
+			$('#menu-terms').addClass('animated slideInLeft');
+		</script>
+	</body>
+	</div>
+</html>

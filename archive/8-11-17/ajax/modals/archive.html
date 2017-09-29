@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--Archive Modal-->
+<div class="modal-dialog modal-sm" id="ajax-archive">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Website Archive</h4>
+    </div>
+    <div class="modal-body">
+      View old website versions.<br>
+
+      <hr>
+
+      <strong>June 27, 2015</strong><br>
+      Click <a href="./archive/6-27-15/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on June 27, 2015.">here</a> to view archive.
+
+      <hr>
+
+      <strong>January 30, 2015</strong><br>
+      Click <a href="./archive/1-30-15/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on January 30, 2015.">here</a> to view archive.
+
+      <hr>
+
+      <strong>Google Drive</strong><br>
+			Click <a href="./archive/gdrive/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on Google Drive.">here</a> to view archive.
+
+    </div>
+    <!--Archive Help Collapsible Content-->
+    <div class="collapse" id="modal-archive-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-archive-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What's this?</strong><br>
+        Use this screen to view old versions of the website.<br>
+        Click a link to view the archive.<br>
+        To get back, use your browser's back button.
+        <br>
+        <br>
+        <strong>Disclaimers</strong><br>
+        These pages are not up to date and will not be fixed in any way.<br>
+        Expect links and other elements to be broken.<br>
+        Audio files have been removed to reduce size.<br>
+        You cannot view archived versions within an archived site.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-archive-collapse').collapse('toggle')">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-archive -->
+
+<script>
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+</script>

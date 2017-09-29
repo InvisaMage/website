@@ -1,0 +1,274 @@
+/* Proudly Coded by Travis Kipp */
+/* Created August 19, 2016 */
+/* InvisaMage's Website Light Theme */
+/* Only changes styles which need to be changed (will not work without styles.css)*/
+
+/* Entire Body */
+body {
+	background-image: url('../images/bg-light.jpg');
+		background-attachment: fixed;
+	text-align: center;
+	color: black;
+	padding: 0;
+	margin: 0;
+  padding-top: 65px;
+}
+
+::selection {
+  background: #4495d4;
+	color: white;
+}
+::-moz-selection {
+  background: #4495d4;
+	color: white;
+}
+
+.preload {
+	background-color: #F8F8F8;
+}
+.loading-animation {
+  border: 10px solid black;
+}
+.loading-animation:after {
+  box-shadow: rgba(77, 77, 225, 0.9) -4px -5px 3px -3px;
+}
+
+p {
+  color: black;
+}
+
+h1, h2, h3 {
+  color: #6600ff;
+}
+
+.title {
+  	color: #6600ff;
+    text-decoration: none;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: 0px 0px 5px;
+	font-size: 400%;
+	font-weight: bold;
+	transition: .3s;
+}
+.title:hover {
+	color: #B23380;
+}
+
+/* Definition - Underline From Centre - Gray color */
+.definition {
+	color: #B23380;
+}
+.definition:hover {
+	color: #B23380;
+}
+.definition:before {
+	background: black;
+	z-index: 1;
+}
+
+#menu-news, #menu-fs, #menu-computers, #menu-terms, #menu-privacy, #menu-about {
+  background-color: rgba(230, 230, 230, 0.8);
+}
+#menu-news a, #menu-fs a, #menu-computers a, #menu-terms a, #menu-privacy a, #menu-about a {
+  color: black;
+}
+#menu-news li a:hover, #menu-fs li a:hover, #menu-computers li a:hover, #menu-terms li a:hover, #menu-privacy li a:hover, #menu-about li a:hover {
+  color: #661aff;
+}
+#menu-news li:hover, #menu-fs li:hover, #menu-computers li:hover, #menu-terms li:hover, #menu-privacy li:hover, #menu-about li:hover {
+  background-color: #808080;
+}
+
+.panel-body, .panel-footer, .panel-header-top, .panel-header-top-2 {
+  color: black;
+  background-color: rgba(230, 230, 230, 0.8);
+}
+
+.panel-header-top-2 h3 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Green Pannel for Home page */
+.panel-green {
+  border-color: #666666;
+}
+.panel-green > .panel-heading {
+  background-color: #666666;
+  border-color: #666666;
+}
+.panel-green > .panel-heading > .panel-collapse > .panel-body {
+  border-top-color: #666666;
+}
+.panel-green > .panel-heading > .badge {
+  color: #666666;
+}
+.panel-header-top {
+	border-bottom: 1px solid #666666;
+}
+.panel-footer {
+	border-top: 1px solid #666666;
+}
+.panel-header-top-2 {
+	border-bottom: 1px solid #666666;
+}
+
+.newsSection, .computersSection, .aboutSection, .termsSection, .privacySection {
+  background-color: rgba(230, 230, 230, 0.8);
+}
+
+.link {
+  color: #0066ff;
+}
+.link:hover {
+	color: #661aff;
+}
+.link:before {
+	z-index: 1;
+	background: #FF6600; /* Underline Color */
+	height: 2px;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid black;
+}
+.nav-tabs li a {
+	color: black;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #0066ff;
+  background-color: rgba(230, 230, 230, 0.8);
+  border-bottom-color: transparent;
+  cursor: default;
+}
+.nav-tabs li a:hover {
+  background-color: rgba(230, 230, 230, 0.8);
+  border: 1px solid #4E4E4E;
+	color: #0066ff;
+}
+
+.nav-pills li a {
+  color: black;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > li:hover,
+.nav-pills > li.active > a:focus {
+  color: #0066ff;
+  background-color: rgba(230, 230, 230, 0.8);
+  border: 1px solid black;
+}
+.nav-pills li a:hover {
+	color: #0066ff;
+  background-color: rgba(230, 230, 230, 0.8);
+}
+
+/* Table Properties */
+.table-ir, .table-fs, .table-txtlock {
+	color: black;
+	background-color: rgba(230, 230, 230, 0.8);
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #e7e7e7;
+	color: #555;
+}
+.dropdown-menu > li > a {
+	color: #555;
+}
+.dropdown-menu {
+	background-color: #F8F8F8;
+}
+.glyphicon-color {
+	color: #6ba6e1;
+}
+
+footer h4 {
+  color: #6600ff;
+}
+.modal-title, .modal-body {
+	color: black;
+}
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  outline: 0;
+}
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.well {
+	color: black;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+
+.black, .black-bold {
+  color: black;
+}
+
+.text-success {
+  color: #3c763d;
+}
+
+.text-danger {
+  color: #a94442;
+}
+
+/* Override default black popovers */
+.popover {
+	background-color: #ffffff;
+}
+.popover.top .arrow:after {
+  border-top-color: white;
+}
+.popover.right .arrow:after {
+  border-right-color: white;
+}
+.popover-title {
+    color: black;
+		font-weight: bold;
+    font-size: 15px;
+		background-color: #f7f7f7;
+		border-bottom-color: #ebebeb;
+}
+.popover-content {
+    color: black;
+    font-size: 14px;
+		background-color: #ffffff;
+}
+
+/* Modal Close button */
+.close {
+	color: black;
+}
+.close:hover {
+	color: #D9534F;
+}
+
+/* Easteregg modal accordian */
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+	color: black;
+}

@@ -1,84 +1,67 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created January 8, 2015-->
-<!--Bootstrap Merge began on August 7, 2015-->
+<!--Bootstrap 4 update began on August 24, 2017-->
 <!--InvisaRant-->
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="A podcast about technologies, games, views on aspects of society, and school">
-		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
-		<meta name="theme-color" content="#337AB7">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | InvisaRant</title>
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet">
-		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
-	<!--Page Loading...-->
-	<div class="preload">
-		<div class="loading">
-			<div class="loading-animation"></div>
-		</div>
-	</div>
-
-	<div class="content">
 	<body id="top">
-		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #22262a;"></nav>
+
+		<div class="jumbotron jumbotron-fluid text-left">
+			<div class="container">
+				<h1 class="display-4">InvisaRant</h1>
+				<p class="lead">A podcast about various topics including, technology, games, society, and education.</p>
+			</div>
+		</div>
 
 		<!--Begin Content-->
 		<div class="container">
 
-			<!--Page Title-->
-			<a class="title" href="invisarant.html">InvisaRant</a>
-			<br>
-			<br>
-
-			<!--InvisaRant Logo-->
-			<a title="InvisaRant Logo"><img class="img-responsive center-block" src="images/invisarant.jpg" alt="InvisaRant Logo" height="200" width="200"></a>
-
-			<p>
-				This page is about my Podcast called InvisaRant.<br>
-				Topics will vary depending on guests I have on the show.<br>
-				Mostly technologies, games, views on aspects of society, and school.<br>
-				<a class="link" onclick="loadContactMod();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a> me if you have an idea or would like to be on the show.
-			</p>
-
 			<!--Podcast Information Table-->
 			<a id="table"></a>
-			<h1>Data Table</h1>
-			<div class="table-responsive">
-				<table class="table-ir" style="width:75%" align="center">
-					<tr>
-						<th>Date</th>
-						<th>Show Title</th>
-						<th>Description</th>
-						<th>Credits</th>
-						<th>Download</th>
-						<th>#</th>
-					</tr>
-					<tr>
-
-						<td>3/7/2015</td>
-						<td>The Beginning</td>
-						<td>In this episode I join my friend Kevin Froman and we talk about the <a class="link" title="About Apple Watch" href="http://www.apple.com/watch/">Apple Watch</a>, Samsung Galaxy S6, Samsung Galaxy Edge, <a class="link" title="About Windows 10" href="http://windows.microsoft.com/en-us/windows-10/about">Windows 10</a>, Net Neutrality, and <a class="link" title="About HoloLens" href="http://www.microsoft.com/microsoft-hololens/en-us">HoloLens</a>.</td>
-						<td>Host - <a class="link" title="Travis' website" href="http://www.invisamage.com/">Travis Kipp</a> Guest - <a class="link" title="Kevin's website" href="http://chaoswebs.net/">Kevin Froman</a> Music - <a class="link" title="StoneOcean's YouTube" href="https://www.youtube.com/user/RatedmusicOfficial">StoneOcean</a></td>
-						<!--Download Box-->
-						<td>
-							<a class="btn btn-success btn-lg" type="button" target="_blank" rel="noopener noreferrer" href="http://www.mediafire.com/listen/13io7763zn4q68i/IR_1_-_The_Beginning.mp3">
-							  <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>
-							</a>
-						</td>
-						<td>1</td>
-					</tr>
-				</table>
-			</div>
+			<h4>Data Table</h4>
+			<table class="table table-inverse table-responsive table-ir mx-auto" style="max-width:55rem;">
+				<tr>
+					<th>Date</th>
+					<th>Show Title</th>
+					<th>Description</th>
+					<th>Credits</th>
+					<th>Download</th>
+					<th>#</th>
+				</tr>
+				<tr>
+					<td>3/7/2015</td>
+					<td>The Beginning</td>
+					<td>
+						In this episode I join my friend Kevin Froman and we talk about the <a class="link" title="About Apple Watch" href="http://www.apple.com/watch/">Apple Watch</a>,
+						Samsung Galaxy S6, Samsung Galaxy Edge, <a class="link" title="About Windows 10" href="http://windows.microsoft.com/en-us/windows-10/about">Windows 10</a>,
+						Net Neutrality, and <a class="link" title="About HoloLens" href="http://www.microsoft.com/microsoft-hololens/en-us">HoloLens</a>.
+					</td>
+					<td>Host - <a class="link" title="Travis' website" href="http://www.invisamage.com/">Travis Kipp</a> Guest - <a class="link" title="Kevin's website" href="http://chaoswebs.net/">Kevin Froman</a> Music - <a class="link" title="StoneOcean's YouTube" href="https://www.youtube.com/user/RatedmusicOfficial">StoneOcean</a></td>
+					<!--Download Box-->
+					<td>
+						<a class="btn btn-success btn-lg" roll="button" target="_blank" rel="noopener noreferrer" href="http://www.mediafire.com/listen/13io7763zn4q68i/IR_1_-_The_Beginning.mp3">
+						  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+						</a>
+					</td>
+					<td>1</td>
+				</tr>
+			</table>
 			<br>
 			<br>
 
@@ -92,19 +75,17 @@
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/search.js"></script>
-		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
-		<script id="js-water"></script>
 		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
-		<script src="js/bootstrap-select.min.js"></script>
 		<script src="js/compiled.js"></script>
 		<script id="js-ptty"></script>
 	</body>
-	</div>
 </html>

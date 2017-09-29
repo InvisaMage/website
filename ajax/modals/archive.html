@@ -4,51 +4,61 @@
 <div class="modal-dialog modal-sm" id="ajax-archive">
   <div class="modal-content">
     <div class="modal-header">
+      <h4 class="modal-title mx-auto black">Website Archive</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">Website Archive</h4>
     </div>
     <div class="modal-body">
       View old website versions.<br>
 
       <hr>
 
-      <strong>June 27, 2015</strong><br>
+      <h6>August 11, 2017</h6>
+      Click <a href="./archive/8-11-17/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on August 11, 2017.">here</a> to view archive.
+
+      <hr>
+
+      <h6>June 27, 2015</h6>
       Click <a href="./archive/6-27-15/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on June 27, 2015.">here</a> to view archive.
 
       <hr>
 
-      <strong>January 30, 2015</strong><br>
+      <h6>January 30, 2015</h6>
       Click <a href="./archive/1-30-15/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on January 30, 2015.">here</a> to view archive.
 
       <hr>
 
-      <strong>Google Drive</strong><br>
+      <h6>Google Drive</h6>
 			Click <a href="./archive/gdrive/index.html" data-toggle="tooltip" data-placement="top" title="View the website as seen on Google Drive.">here</a> to view archive.
 
     </div>
     <!--Archive Help Collapsible Content-->
     <div class="collapse" id="modal-archive-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-archive-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>What's this?</strong><br>
-        Use this screen to view old versions of the website.<br>
-        Click a link to view the archive.<br>
-        To get back, use your browser's back button.
-        <br>
-        <br>
-        <strong>Disclaimers</strong><br>
-        These pages are not up to date and will not be fixed in any way.<br>
-        Expect links and other elements to be broken.<br>
-        Audio files have been removed to reduce size.<br>
-        You cannot view archived versions within an archived site.
+      <div class="card text-white bg-secondary">
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-archive-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <div class="card-body">
+          <h6>What's this?</h6>
+          <p class="card-text">
+            Use this screen to view old versions of the website.<br>
+            Click a link to view the archive.<br>
+            To get back, use your browser's back button.
+          </p>
+          <hr>
+          <h6>Disclaimers</h6>
+          <p class="card-text">
+            These pages are not up to date and will not be fixed in any way.<br>
+            Expect links and other elements to be broken.<br>
+            Audio files have been removed to reduce size.<br>
+            You cannot view archived versions within an archived site.
+          </p>
+        </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info" onclick="$('#modal-archive-collapse').collapse('toggle')">
-        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <button type="button" class="btn btn-outline-info" onclick="$('#modal-archive-collapse').collapse('toggle')">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div>
   </div><!-- /.modal-content -->

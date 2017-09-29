@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created December 15, 2014-->
-<!--Bootstrap Merge began on August 4, 2015-->
+<!--Bootstrap 4 update began on August 24, 2017-->
 <!--Home-->
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="Information about InvisaMage and his projects.">
-		<meta name="keywords" content="InvisaMage, invisamage, Floating Survival, floating survival, FS, fs, InvisaRant, invisarant, IR, ir">
-		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
-		<meta name="theme-color" content="#337AB7">
+		<meta name="keywords" content="InvisaMage, Floating Survival, FS, InvisaRant, IR">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | Home</title>
 		<!--Prefetch-->
 		<link rel="prefetch" href="./news.html" as="html">
-		<link rel="prefetch" href="./about.html" as="html">
+		<link rel="prefetch" href="./info.html" as="html">
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet">
-		<link href="css/ptty.css" rel="stylesheet">
 		<!--iOS Bookmark Image-->
 		<link rel="apple-touch-icon" sizes="152x152" href="images/imlogo.png">
 	</head>
 
-	<!--Page Loading...-->
-	<div class="preload">
-		<div class="loading">
-			<div class="loading-animation"></div>
-		</div>
-	</div>
-
-	<div class="content">
 	<body id="top">
-		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #22262a;"></nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -45,62 +35,111 @@
 			<a class="title" href="index.html">Home</a>
 			<br>
 
-			<!--Grid System-->
-			<div class="row">
+			<div class="card-columns">
 				<!--Welcome-->
-			  <div class="col-md-4 animated pulse">
-					<div class='panel panel-green'>
-						<div class='panel-heading'>
-							<h3 class='panel-title'>Welcome</h3>
-						</div>
-						<div class='panel-header-top'>
-							<a id="pmb" role="button" class="btn btn-primary btn-lg btn-block" onclick="$('#js-namePrompt').load('js/namePrompt.js'); $('#modal-personalize').modal();">Personalize Message</a>
-						</div>
-						<div class='panel-body'>
-							<!--Paragraph Changes with namePrompt Input-->
-							<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="An 18 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span>
-						</div><!-- /.panel-body -->
-						<div class="panel-footer">
-							On this website you can find fast and informative information about all things InvisaMage.
-						</div><!-- /.panel-footer -->
-					</div><!-- /.panel -->
-			  </div><!-- /welcome -->
+				<div class="card bg-dark animated pulse" id="welcome">
+					<h4 class="card-header">Welcome</h4>
+					<div class="card-body">
+						<button id="pmb" type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="$('#js-namePrompt').load('js/namePrompt.js'); $('#modal-personalize').modal();">Personalize Message</button>
+						<br>
+						<!--Paragraph Changes with namePrompt Input-->
+						<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 19 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span>
+					</div>
+					<div class="card-footer">
+						<p class="card-text">On this website you can find information about all things InvisaMage.</p>
+					</div>
+				</div>
 
 				<!--Recent News-->
-			  <div class="col-md-4 animated pulse">
-					<div class='panel panel-green'>
-						<div class='panel-heading'>
-							<h3 class='panel-title'>Recent News</h3>
+				<div class="card bg-dark animated pulse" id="news">
+					<h4 class="card-header">Recent News</h4>
+					<div class="card-header card-header-invis">
+						<ul class="nav nav-tabs nav-tabs-home card-header-tabs justify-content-center">
+							<li class="nav-item nav-item-home">
+								<a class="nav-link nav-link-home active" data-toggle="tab" href="#projects" role="tab">Projects</a>
+							</li>
+							<li class="nav-item nav-item-home">
+								<a class="nav-link nav-link-home" data-toggle="tab" href="#important" role="tab">Important</a>
+							</li>
+							<li class="nav-item nav-item-home">
+								<a class="nav-link nav-link-home" data-toggle="tab" href="#website" role="tab">Website</a>
+							</li>
+						</ul>
+					</div>
+					<div class="card-body card-news">
+						<div class="tab-content tab-content-home">
+							<!--Projects-->
+						  <div class="tab-pane active fade show" id="projects" role="tabpanel">
+								<h5>August 11, 2017</h5>
+								<p class="card-text">
+									<a class="link" href="txtlock.html">TxtLock</a> has received an update.<br>
+									Added Welcome screen which displays information on first startup.<br>
+									Replaces FirstRunActivity (user still sets their password).
+								</p>
+							</div>
+							<!--Important-->
+						  <div class="tab-pane fade" id="important" role="tabpanel">
+								<h5>November 23, 2016</h5>
+								<p class="card-text">
+									Cookies will now only send on a secure connection.<br>
+									As a result, cookies will no longer be set when viewed locally.
+								</p>
+							</div>
+							<!--Website-->
+						  <div class="tab-pane fade" id="website" role="tabpanel">
+								<h5 class="card-text">September 29, 2017</h5>
+								<p class="card-text">
+									Complete site redesign.<br>
+									Updated to Bootstrap 4.<br>
+									Updated to jQuery 3.<br>
+									Replaced Glyphicons with Font Awesome.
+									<br>
+									<br>
+									Major changes to the Terminal.<br>
+									Using a new library called <a class="link" target="_blank" rel="noopener noreferrer" href="http://terminal.jcubic.pl/">jQuery Terminal</a>.<br>
+									Now only accessible on desktops (or mobile if you use a physical keyboard).
+									<br>
+									<br>
+									Alerts have been ajaxed to improve page loading.<br>
+									This also prevents the possibility of them being visible and then disappearing immediately. 
+									<br>
+									<br>
+									Renamed the "About" page to "Information".<br>
+									Removed the water function.<br>
+									Removed the ability to download FS Betas.<br>
+									Removed the ability to donate with a QR code.<br>
+									Removed the loading screen.
+									<br>
+									<br>
+									Archived the site from August 11, 2017.
+								</p>
+							</div>
 						</div>
-						<div class='panel-header-top-2'>
-							<h3>August 11, 2017</h3>
-						</div>
-						<div class='panel-body'>
-							<a class="link" href="txtlock.html">TxtLock</a> has received an update.<br>
-							Added Welcome screen which displays information on first startup.<br>
-							Replaces FirstRunActivity (user still sets their password).
-						</div><!-- /.panel-body -->
-						<div class="panel-footer">
+					</div>
+					<div class="card-footer">
+						<p class="card-text">
 							Click <a class="link" href="news.html">here</a> to view more news.
-						</div><!-- /.panel-footer -->
-					</div><!-- /.panel -->
-			  </div><!-- /recent news -->
+						</p>
+					</div>
+				</div>
 
 				<!--About-->
-			  <div class="col-md-4 animated pulse">
-					<div class='panel panel-green'>
-						<div class='panel-heading'>
-							<h3 class='panel-title'>About</h3>
-						</div>
-						<div class='panel-body'>
-							The owner of this site is an 18 year old human male who likes web technologies, assorted games, and TaeKwon-Do.<br>
-						</div><!-- /.panel-body -->
-						<div class="panel-footer">
-							Click <a class="link" href="about.html#InvisaMage">here</a> to learn more.
-						</div><!-- /.panel-footer -->
-					</div><!-- /.panel -->
-				</div><!-- /about -->
-			</div><!-- /.row -->
+				<div class="card bg-dark animated pulse" id="about">
+					<h4 class="card-header">About</h4>
+					<div class="card-body">
+						<p class="card-text">
+							The owner of this site is a 19 year old human male who likes web technologies, assorted games, and TaeKwon-Do.<br>
+							The name, InvisaMage dates back from when I created my <a class="link" target="_blank" rel="noopener noreferrer" href="http://www.runescape.com/">RuneScape</a> account.<br>
+							It has been my alias ever since.
+						</p>
+					</div>
+					<div class="card-footer">
+						<p class="card-text">
+							Click <a class="link" href="info.html#InvisaMage">here</a> to learn more about the site.
+						</p>
+					</div>
+				</div>
+			</div>
 
 			<!--Footer-->
 			<footer id="footer"></footer>
@@ -108,100 +147,74 @@
 		<!--/.End Content-->
 
 		<!--Personalize Message Modal-->
-		<div class="modal fade" id="modal-personalize" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title black">Personalize Message</h4>
-					</div>
-					<div class="modal-body">
+		<div class="modal" id="modal-personalize">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Personalize Message</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
 						<div onkeydown="if (event.keyCode == 13) namePrompt(), $('#modal-personalize').modal('toggle');" class="center-block">
-							<input class="form-control" id="name-value" autocomplete="off" placeholder="What is your name?">
-						</div>
-					</div>
+ 						 <input class="form-control" id="name-value" autocomplete="off" placeholder="What is your name?">
+ 					 </div>
+		      </div>
 					<!--Personalize Message Help Content-->
 					<div class="collapse" id="personalize-collapse">
-					  <div class="well">
-					    <button type="button" class="close" onclick="$('#personalize-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>What's this?</strong><br>
-							The purpose of this function is to display a more personal message on the Homepage.<br>
-							Detailed information may be found <a href="about.html#nameprompt">here</a>.
-					  </div>
+						<div class="card bg-secondary">
+			        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#personalize-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+			        <div class="card-body">
+								<h6>What does this do?</h6>
+			          <p class="card-text">
+									The purpose of this function is to display a more personal message on the Homepage.<br>
+									Detailed information may be found <a class="link link-np" href="info.html#nameprompt">here</a>.
+			          </p>
+			        </div>
+			      </div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info" onclick="$('#personalize-collapse').collapse('toggle')">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+		      <div class="modal-footer">
+						<button type="button" class="btn btn-outline-info" onclick="$('#personalize-collapse').collapse('toggle')">
+							<i class="fa fa-question-circle" aria-hidden="true"></i>
 						</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Close
+						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+							<i class="fa fa-times" aria-hidden="true"></i> Close
 						</button>
 						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal"> Submit
-							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+							<i class="fa fa-check" aria-hidden="true"></i>
 						</button>
-					</div>
-				</div>
-			</div>
-		</div><!-- /personalize modal -->
-
-		<!--Event Banner-->
-		<div id="event-banner" class="alert alert-success alert-dismissible fade in" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<div class="row">
-				<div class="col-xs-1 pull-left">
-					<strong>Event Today</strong>
-				</div>
-				<div class="col-xs-8">
-					<span id="event-banner-content">
-						If you are seeing this, something is wrong with the events.js file. <a data-dismiss="alert" onclick="loadContactMod();">Contact</a> me.
-					</span>
-				</div>
-				<div class="col-xs-2 pull-right">
-					<button type="button" class="btn btn-info" data-dismiss="alert" onclick="loadSettingsMod();">
-						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-					</button>
-					<button type="button" class="btn btn-primary" data-dismiss="alert"> Okay
-						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-					</button>
-				</div>
-			</div>
+		      </div>
+		    </div>
+		  </div>
 		</div>
+
+		<!--Alerts-->
+		<div id="ajax-event-banner"></div>
+		<div id="ajax-info-banner"></div>
 
 		<!--Modals-->
 		<span id="modals"></span>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/search.js"></script>
-		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
 		<script id="js-namePrompt"></script>
-		<script id="js-water"></script>
 		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/events.js"></script>
-		<script src="js/bootstrap-select.min.js"></script>
-		<script id="js-ptty"></script>
 
 		<!--If scripts fail to load display JS required message-->
 		<noscript>
-			<style>
-				.preload {
-					content: 'This site requires JavaScript!' !important;
-					background-color: black !important;
-				}
-				.loading-animation:before {
-					color: red !important;
-					content: 'This site requires JavaScript!' !important;
-				}
-			</style>
+      JavaScript Needed
 		</noscript>
 
 	</body>
-	</div>
 </html>

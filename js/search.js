@@ -1,7 +1,6 @@
 //If Search term is listed below, you will jump to that specific page
 
-function search()
-{
+function search() {
 	var search = document.getElementById("search").value;
 	var sL = search.toLowerCase();
 
@@ -49,9 +48,9 @@ function search()
 		loadStatsMod();
 	}
 
-//About page
-	else if (sL == "about" || sL == "invisamage" || sL == "creation" || sL == "information") {
-		window.location = "about.html";
+//Info page
+	else if (sL == "info" || sL == "creation" || sL == "information") {
+		window.location = "info.html";
 	}
 
 //Terms page
@@ -148,7 +147,7 @@ function search()
 		$.bootstrapGrowl("There's nothing to search for!", {
 	    type: 'danger',
 	    align: 'right',
-	    offset: {from: 'top', amount: 60},
+	    offset: {from: 'top', amount: 70},
 	    width: 'auto',
 	    allow_dismiss: true
 	  });
@@ -159,7 +158,7 @@ function search()
 		$.bootstrapGrowl("No Results", {
 	    type: 'danger',
 	    align: 'right',
-	    offset: {from: 'top', amount: 60},
+	    offset: {from: 'top', amount: 70},
 	    width: 'auto',
 	    allow_dismiss: true
 	  });

@@ -1,46 +1,22 @@
 //Compiled JavaScript functions utilized on multiple pages.
 
-//Preload - Fades out loading screen and fades in content.
-$(function(){
-  var loadingScreen = Cookies.get('loadingScreen');
-  if (loadingScreen == "true") {
-    //The page loads normally
-    $('.preload').hide();
-    $('.content').show();
-  }
-  else {
-    $(function() {
-        NProgress.start();
-    });
-
-    $(window).load(function() {
-      NProgress.done();
-      $('.preload').fadeOut(300, function() {
-        $('.content').fadeIn(300);
-      });
-    });
-  }
-});
-
-var protocol = window.location.protocol;
-
-//If no touchscreen, show Tooltips and hide mobile search
-if(!('ontouchstart' in window))
-{
-  $('[data-toggle="tooltip"]').tooltip();
-  $('#search-mobile').hide();
-}
-
-//If touchscreen, hide desktop search
-if(('ontouchstart' in window))
-{
-  $('#search').hide();
-}
-
 //Loads navbar, modals, and footer on page load
 $('nav').load('ajax/nav.html');
-$('#modals').load('ajax/modals.html');
 $('#footer').load('ajax/footer.html');
+$('#modals').load('ajax/modals.html');
+
+var protocol = window.location.protocol;
+var windowHeight = window.innerHeight;
+
+//If no touchscreen, show Tooltips
+if(!('ontouchstart' in window)) {
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+//If touchscreen, disable gray background in tab-content
+if(('ontouchstart' in window)) {
+  $('.tab-content').css('background-color', 'inherit');
+}
 
 //Navbar current page highlight
 setTimeout(navEnable, 700);
@@ -72,8 +48,8 @@ setTimeout(navEnable, 700);
         $('#nav-computers').addClass('active animated bounceIn');
         $("#nav-resources").addClass("active");
       }
-      else if ($("title").html() == "InvisaMage | About") {
-        $('#nav-about').addClass('active animated bounceIn');
+      else if ($("title").html() == "InvisaMage | Site Information") {
+        $('#nav-info').addClass('active animated bounceIn');
       }
     });
   }
@@ -105,86 +81,6 @@ $('#mobile-menu select').change(function(){
     window.location = $(this).val();
 });
 
-/* jQuery smooth scroll to id's and fix anchored navbar
- * https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
- * https://jsfiddle.net/ianclark001/rkocah23/
- */
-(function(document, history, location) {
-  var HISTORY_SUPPORT = !!(history && history.pushState);
-
-  var anchorScrolls = {
-    ANCHOR_REGEX: /^#[^ ]+$/,
-    OFFSET_HEIGHT_PX: 45,
-
-    /**
-     * Establish events, and fix initial scroll position if a hash is provided.
-     */
-    init: function() {
-      this.scrollToCurrent();
-      $(window).on('hashchange', $.proxy(this, 'scrollToCurrent'));
-      $('body').on('click', 'a', $.proxy(this, 'delegateAnchors'));
-    },
-
-    /**
-     * Return the offset amount to deduct from the normal scroll position.
-     * Modify as appropriate to allow for dynamic calculations
-     */
-    getFixedOffset: function() {
-      return this.OFFSET_HEIGHT_PX;
-    },
-
-    /**
-     * If the provided href is an anchor which resolves to an element on the
-     * page, scroll to it.
-     * @param  {String} href
-     * @return {Boolean} - Was the href an anchor.
-     */
-    scrollIfAnchor: function(href, pushToHistory) {
-      var match, anchorOffset;
-
-      if(!this.ANCHOR_REGEX.test(href)) {
-        return false;
-      }
-
-      match = document.getElementById(href.slice(1));
-
-      if(match) {
-        anchorOffset = $(match).offset().top - this.getFixedOffset();
-        $('html, body').animate({ scrollTop: anchorOffset});
-
-        // Add the state to history as-per normal anchor links
-        if(HISTORY_SUPPORT && pushToHistory) {
-          history.pushState({}, document.title, location.pathname + href);
-        }
-      }
-
-      return !!match;
-    },
-
-    /**
-     * Attempt to scroll to the current location's hash.
-     */
-    scrollToCurrent: function(e) {
-      if(this.scrollIfAnchor(window.location.hash) && e) {
-      	e.preventDefault();
-      }
-    },
-
-    /**
-     * If the click event's target was an anchor, fix the scroll position.
-     */
-    delegateAnchors: function(e) {
-      var elem = e.target;
-
-      if(this.scrollIfAnchor(elem.getAttribute('href'), true)) {
-        e.preventDefault();
-      }
-    }
-  };
-
-	$(document).ready($.proxy(anchorScrolls, 'init'));
-})(window.document, window.history, window.location);
-
 //Scroll to target in URL after page load
 $(function() {
 setTimeout(enable, 900);
@@ -197,7 +93,7 @@ setTimeout(enable, 900);
 //Loads snowstorm assets and replaces footer text to enable snowstorm on next click
 function loadSnowstorm() {
   $('#js-snowstorm').load('js/snowstorm.js');
-  $('#footer-snowstorm').tooltip('destroy');
+  $('#footer-snowstorm').tooltip('dispose');
   $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
   //Re enable tooltips.
   if(!('ontouchstart' in window))
@@ -217,29 +113,6 @@ function loadSnowstormNamePrompt(){
     }
 }
 
-//Loads water assets and replaces footer text to enable water on next click
-function loadWater() {
-  $('#js-water').load('js/ripples.js');
-  $('#footer-water').tooltip('destroy');
-  $('#footer-water').replaceWith( "<a class='link' id='footer-water' onclick='$(body).ripples({ resolution: 512, dropRadius: 20, perturbance: 0.04 }); destroyWater();' data-toggle='tooltip' data-placement='top' title='Enable a buggy water effect.'>Enable Water</a>" );
-  //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
-}
-
-//Enables water and replaces footer text to enable water on next click
-function destroyWater() {
-  $('#footer-water').tooltip('destroy');
-  $('#footer-water').replaceWith( "<a class='link' id='footer-water' onclick='$(`body`).ripples(`destroy`); loadWater();' data-toggle='tooltip' data-placement='top' title='Remove the water.'>Mop Water</a>" );
-  //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
-}
-
 //Delete Easter egg on del key press
 var listener = new window.keypress.Listener();
 listener.simple_combo("delete", function() {
@@ -251,31 +124,29 @@ listener.simple_combo("delete", function() {
 //Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
 listener.simple_combo("shift space", function() {
-    $('#js-ptty').load('js/ptty.min.js');
-    $('#modal-terminal').load('ajax/modals/terminal.html');
-    $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 60},
-      width: '300',
-      allow_dismiss: true
-    });
+  $.getScript('js/jquery.terminal.min.js');
+  $('html').append('<link rel="stylesheet" type="text/css" href="./css/jquery.terminal.css">');
+  setTimeout(enable, 500);
+    function enable(){
+      $.getScript('js/terminal.js')
+       .done(function() {
+         //Inform user of successful load
+         $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+           type: 'success',
+           align: 'right',
+           delay: 1500,
+           offset: {from: 'top', amount: 70},
+           width: '300',
+           allow_dismiss: true
+         });
+       })
+    }
 });
 
 //Hides all modals
 function hideModals() {
   $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
 }
-
-//Opens terminal with tilde key press
-var listener = new window.keypress.Listener();
-listener.simple_combo("`", function() {
-    //Close open modals
-    $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
-    $('#modal-terminal').modal('toggle');
-    $('#modal-terminal').on('shown.bs.modal', function (e) { $('form, input').focus(); });
-    terminalCheck();
-});
 
 //Focus search box with Ctrl + Alt + F key press
 var listener = new window.keypress.Listener();
@@ -334,12 +205,19 @@ function settingsCheck() {
   if ($('#loading-screen-checkbox1:checked').val() != 'true') {
     Cookies.set('loadingScreen', 'false', {expires: 3600, secure: true});
   }
-  //Banner - Homepage
+  //Banner - Events
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
     Cookies.set('enableEventsBanner', 'true', {expires: 3600, secure: true});
   }
   if ($('#home-banner-checkbox1:checked').val() != 'true') {
     Cookies.set('enableEventsBanner', 'false', {expires: 3600, secure: true});
+  }
+  //Banner - Info
+  if ($('#info-banner-checkbox1:checked').val() == 'true') {
+    Cookies.set('enableInfoBanner', 'true', {expires: 3600, secure: true});
+  }
+  if ($('#info-banner-checkbox1:checked').val() != 'true') {
+    Cookies.set('enableInfoBanner', 'false', {expires: 3600, secure: true});
   }
   //Banner - Terms and conditions
   if ($('#tac-banner-checkbox1:checked').val() == 'true') {
@@ -375,11 +253,17 @@ function settingsCheck() {
   if ($('#snowstorm-checkbox1:checked').val() != 'true') {
     Cookies.set('enableSnowstorm', 'false', {expires: 3600, secure: true});
   }
+  //Set background color
+  if ($('#bg-color-hex').val() !== '' || $('#bg-color-hex').val() !== ' ') {
+    var hexValue = $('#bg-color-hex').val();
+    Cookies.set('bgColor', hexValue, {expires: 3600, secure: true});
+  }
+
   setTimeout(enable, 1500);
   $.bootstrapGrowl("Settings Saved!", {
     type: 'success',
     align: 'right',
-    offset: {from: 'top', amount: 60},
+    offset: {from: 'top', amount: 70},
     width: 'auto',
     delay: 10000,
     allow_dismiss: true
@@ -387,7 +271,7 @@ function settingsCheck() {
   $.bootstrapGrowl("<strong>Reloading page...</strong>", {
     type: 'danger',
     align: 'center',
-    offset: {from: 'top', amount: 60},
+    offset: {from: 'top', amount: 70},
     width: 'auto',
     delay: 10000,
     allow_dismiss: true
@@ -402,20 +286,47 @@ function settingsCancelMsg() {
     $.bootstrapGrowl("Changes have not been saved!", {
       type: 'danger',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: 'auto',
-      delay: 10000,
+      delay: 2000,
       allow_dismiss: true
     });
 }
 
+//Set background color
+$(function() {
+  if (Cookies.get('bgColor') != null) {
+    newColor = Cookies.get('bgColor');
+    setTimeout(enable, 1);
+      function enable(){
+        $('body').css("background-color", newColor);
+        console.log("background-color: " + newColor);
+      }
+  } else {
+
+  }
+});
+
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
 $(function() {
   if (Cookies.get('loadTerminal') == 'true') {
+    $.getScript('js/jquery.terminal.min.js');
+    $('html').append('<link rel="stylesheet" type="text/css" href="./css/jquery.terminal.css">');
     setTimeout(enable, 500);
       function enable(){
-        $('#js-ptty').load('js/ptty.min.js');
-        $('#modal-terminal').load('ajax/modals/terminal.html');
+        $.getScript('js/terminal.js')
+         .done(function() {
+           //Inform user of successful load
+           $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+             type: 'success',
+             align: 'right',
+             delay: 1500,
+             offset: {from: 'top', amount: 70},
+             width: '300',
+             allow_dismiss: true
+           });
+         })
+
         console.log('loadTerminal = true');
       }
   } else {
@@ -426,37 +337,66 @@ $(function() {
 //Check which tab needs to be opened on News page.
 $(function() {
   if (Cookies.get('defaultTab') == 'projects') {
-    $('#myTabs li:eq(0) a').tab('show');
-    $('#myPills li:eq(0) a').tab('show');
+    $('#tabs li:eq(0) a').tab('show');
+    $('#pills li:eq(0) a').tab('show');
     console.log('defaultTab = projects');
   }
   else if (Cookies.get('defaultTab') == 'important') {
-    $('#myTabs li:eq(1) a').tab('show');
-    $('#myPills li:eq(1) a').tab('show');
+    $('#tabs li:eq(1) a').tab('show');
+    $('#pills li:eq(1) a').tab('show');
     console.log('defaultTab = important');
   }
   else if (Cookies.get('defaultTab') == 'website') {
-    $('#myTabs li:eq(2) a').tab('show');
-    $('#myPills li:eq(2) a').tab('show');
+    $('#tabs li:eq(2) a').tab('show');
+    $('#pills li:eq(2) a').tab('show');
     console.log('defaultTab = website');
   }
   else if (Cookies.get('defaultTab') == 'bugs') {
-    $('#myTabs li:eq(3) a').tab('show');
-    $('#myPills li:eq(3) a').tab('show');
+    $('#tabs li:eq(3) a').tab('show');
+    $('#pills li:eq(3) a').tab('show');
     console.log('defaultTab = bugs');
   } else {
     console.log('defaultTab = null');
   }
 });
 
-//Check if banners need to be displayed on T&C pages
+//Check if Events Banner needs to be shown on Homepage
 $(function() {
-  if (Cookies.get('loadBanners') == 'true') {
-    console.log('loadBanners = true');
+  //Check date to know if events needs to be loaded
+  var date = new Date();
+  var dates = ['01', '44', '64', '828', '931', '1124', '1125'];
 
+  var month = date.getMonth().toString();
+  var day = date.getDate().toString();
+  var mD = month + day;
+
+if (Cookies.get('enableEventsBanner') == 'true') {
+  if(dates.indexOf(mD) != -1) {
+    $('#ajax-event-banner').load('ajax/alerts/events.html');
+  }
+  console.log('enableEventsBanner = true');
   } else {
-    console.log('loadBanners = false');
-    $('#alert').alert('close');
+    console.log('enableEventsBanner = false');
+  }
+});
+
+//Check if info Banner needs to be shown on homepage
+if (Cookies.get('enableInfoBanner') == 'true') {
+  $('#ajax-info-banner').load('ajax/alerts/info.html');
+  console.log('enableInfoBanner = true');
+  } else {
+    console.log('enableInfoBanner = false');
+  }
+
+
+//Check if Banners needs to be shown on Terms and Privacy page
+$(function() {
+  if (Cookies.get('enableTacBanner') == 'true') {
+    $('#ajax-terms-banner').load('ajax/alerts/terms.html');
+    $('#ajax-privacy-banner').load('ajax/alerts/privacy.html');
+    console.log('enableTacBanner = true');
+  } else {
+    console.log('enableTacBanner = false');
   }
 });
 
@@ -475,27 +415,6 @@ $(function() {
   }
 });
 
-//Check if Events Banner needs to be shown on Homepage
-$(function() {
-  if (Cookies.get('enableEventsBanner') == 'false') {
-    $('#event-banner').alert('close');
-    console.log('enableEventsBanner = false');
-  } else {
-    console.log('enableEventsBanner = true');
-  }
-});
-
-//Check if Banners needs to be shown on Terms and Privacy page
-$(function() {
-  if (Cookies.get('enableTacBanner') == 'false') {
-    $('#terms-banner').alert('close');
-    $('#privacy-banner').alert('close');
-    console.log('enableTacBanner = false');
-  } else {
-    console.log('enableTacBanner = true');
-  }
-});
-
 //Temporary workaround for settings bug
 //Forces to set banner cookies if they have not been set yet
 $(function() {
@@ -505,18 +424,35 @@ $(function() {
   if (Cookies.get('enableTacBanner') === undefined) {
       Cookies.set('enableTacBanner', 'true', {expires: 3600, secure: true});
   }
+  if (Cookies.get('enableInfoBanner') === undefined) {
+      Cookies.set('enableInfoBanner', 'true', {expires: 3600, secure: true});
+  }
 });
 
 //Check which theme to apply
 $(function() {
   if (Cookies.get('theme') == 'light') {
-    $("nav").attr("class", "navbar navbar-default navbar-fixed-top");
+    $('.card').removeClass('bg-dark').addClass('bg-light');
+    //$('button').removeClass('btn-light').addClass('btn-secondary');
+    $('table').removeClass('table-inverse').addClass('table-light');
+    $("nav").attr("class", "navbar navbar-expand-md navbar-light bg-light fixed-top");
+    //$("nav").attr("style", "background-color: #e3f2fd;");
     $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
     console.log('theme = light');
   } else {
     console.log('theme = dark');
   }
 });
+
+//Test light theme locally
+function test() {
+  $('.card').removeClass('bg-dark').addClass('bg-light');
+  //$('button').removeClass('btn-light').addClass('btn-secondary');
+  $('table').removeClass('table-inverse').addClass('table-light');
+  $("nav").attr("class", "navbar navbar-expand-md navbar-light bg-light fixed-top");
+  //$("nav").attr("style", "background-color: #e3f2fd;");
+  $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
+}
 
 //Check if centered modals need to be applied
 $(function() {
@@ -543,7 +479,7 @@ function emailMsg() {
     $.bootstrapGrowl("E-mail address copied!", {
       type: 'success',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: 'auto',
       allow_dismiss: true
     });
@@ -552,7 +488,7 @@ function telegramMsg() {
     $.bootstrapGrowl("Telegram URL copied!", {
       type: 'success',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: 'auto',
       allow_dismiss: true
     });
@@ -561,7 +497,7 @@ function keybaseMsg() {
     $.bootstrapGrowl("Keybase username copied!", {
       type: 'success',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: 'auto',
       allow_dismiss: true
     });
@@ -572,7 +508,7 @@ function bitcoinMsg() {
     $.bootstrapGrowl("Bitcoin wallet address copied!", {
       type: 'success',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: 'auto',
       allow_dismiss: true
     });
@@ -581,7 +517,7 @@ function dogecoinMsg() {
     $.bootstrapGrowl("Dogecoin wallet address copied!", {
       type: 'success',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: 'auto',
       allow_dismiss: true
     });
@@ -590,7 +526,7 @@ function litecoinMsg() {
     $.bootstrapGrowl("Litecoin wallet address copied!", {
       type: 'success',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: '300',
       allow_dismiss: true
     });
@@ -604,7 +540,7 @@ function eastereggCheck() {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website.", {
       type: 'info',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: '300',
       delay: 10000,
       allow_dismiss: true
@@ -621,7 +557,7 @@ function terminalCheck() {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time.", {
       type: 'info',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: '300',
       delay: 10000,
       allow_dismiss: true
@@ -638,7 +574,7 @@ function wiselyCheck() {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>.", {
       type: 'info',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: '300',
       delay: 10000,
       allow_dismiss: true
@@ -655,7 +591,7 @@ function purplerainCheck() {
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled.", {
       type: 'info',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: '300',
       delay: 10000,
       allow_dismiss: true
@@ -675,7 +611,7 @@ function resetAchievements() {
   $.bootstrapGrowl("Your achievement progress has been reset!", {
     type: 'info',
     align: 'right',
-    offset: {from: 'top', amount: 60},
+    offset: {from: 'top', amount: 70},
     width: 'auto',
     allow_dismiss: true
   });
@@ -688,17 +624,17 @@ function loadAchievementsMod() {
 }
 function loadAdsMod() {
   if (Cookies.get('hallucinatingAchievement') == 'true') {
-    $('#modal-hideads').load('ajax/modals/ads.html');
-    $('#modal-hideads').modal();
+    $('#modal-hide-ads').load('ajax/modals/hide-ads.html');
+    $('#modal-hide-ads').modal();
     console.log('Achievement message not displayed as user has already gotten it.');
   } else {
-    $('#modal-hideads').load('ajax/modals/ads.html');
-    $('#modal-hideads').modal();
+    $('#modal-hide-ads').load('ajax/modals/hide-ads.html');
+    $('#modal-hide-ads').modal();
     Cookies.set('hallucinatingAchievement', 'true', {expires: 3600, secure: true});
     $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer.", {
       type: 'info',
       align: 'right',
-      offset: {from: 'top', amount: 60},
+      offset: {from: 'top', amount: 70},
       width: '300',
       delay: 10000,
       allow_dismiss: true
@@ -745,8 +681,8 @@ function loadPrivacyYesMod() {
   wiselyCheck();
 }
 function loadReloadMod() {
+  $('#btn-reload').tooltip('dispose');
   $('#modal-stats').modal('hide');
-  $('#btn-reload').tooltip('destroy');
   $('#modal-stats').one('hidden.bs.modal', function (e) {
   $('#modal-reload').load('ajax/modals/reload.html');
   $('#modal-reload').modal();
@@ -758,11 +694,6 @@ function loadSearchHelpMod() {
 function loadStatsMod() {
   $('#modal-stats').load('ajax/modals/stats.html');
   $('#modal-stats').modal();
-}
-function loadTerminalMod() {
-  $('#js-ptty').load('js/ptty.min.js');
-  $('#modal-terminal').load('ajax/modals/terminal.html');
-  $('#modal-terminal').modal();
 }
 function loadTermsNoMod() {
   $('#modal-terms-no').load('ajax/modals/terms-no.html');
@@ -779,11 +710,36 @@ function loadTermsYesMod() {
 //namePrompt media controls
 function pause() {
   $('audio').trigger('pause');
-  $('#pause-btn').replaceWith( "<a id='play-btn' class='btn btn-success btn-md' role='button' onclick='play();'> <span class='glyphicon glyphicon-play' aria-hidden='true'></span> </a>" );
+  $('#pause-btn').replaceWith( "<a id='play-btn' class='btn btn-success btn-md' role='button' onclick='play();'> <i class='fa fa-play' aria-hidden='true'></i> </a>" );
 }
 function play() {
   $('audio').trigger('play');
-  $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <span class='glyphicon glyphicon-pause' aria-hidden='true'></span> </a>" );
+  $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <i class='fa fa-pause' aria-hidden='true'></i> </a>" );
 }
+
+/*Settings cog spin
+$(function () {
+  $("#settings-li").hover(function () {
+    $("#settings-button").addClass("fa-spin");
+  },
+  function () {
+      $("#settings-button").removeClass("fa-spin");
+  });
+});
+*/
+
+/* Simulate key press
+ * https://stackoverflow.com/questions/22274728/simulate-a-keyboard-key-pressed-with-dispatchevent-of-keypress#22274892
+
+function simulateKeyPress(character, element) {
+    var e = $.Event('keypress');
+    e.which = character.charCodeAt(0);
+    $(element).trigger(e);
+}
+
+$('body').keypress(function(e) {
+
+});
+*/
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.');

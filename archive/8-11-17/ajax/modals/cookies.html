@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!--Cookies Modal-->
+<div class="modal-dialog modal-sm" id="ajax-cookie">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Cookies</h4>
+    </div>
+    <div class="modal-body">
+      Click on your respective browser's logo to learn how to clear cookies.
+      <br>
+      <br>
+      <div class="row" style="padding-left: 25px;">
+        <!--Firefox-->
+        <div class="col-xs-2">
+          <a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener noreferrer"><img class="cookies-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox"></a>
+        </div>
+        <!--Chrome-->
+        <div class="col-xs-2">
+          <a href="https://support.google.com/accounts/answer/61416?hl=en" target="_blank" rel="noopener noreferrer"><img class="cookies-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome"></a>
+        </div>
+        <!--Opera-->
+        <div class="col-xs-2">
+          <a href="http://www.opera.com/help/tutorials/security/privacy/" target="_blank" rel="noopener noreferrer"><img class="cookies-browser-img" src="images/browsers/opera.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Opera"></a>
+        </div>
+        <!--Safari-->
+        <div class="col-xs-2">
+          <a href="http://www.imore.com/how-clear-history-and-cookies-ios-7-safari" target="_blank" rel="noopener noreferrer"><img class="cookies-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari"></a>
+        </div>
+        <!--Edge-->
+        <div class="col-xs-2">
+            <a href="http://windows.microsoft.com/en-us/windows-10/view-delete-browsing-history-microsoft-edge" target="_blank" rel="noopener noreferrer"><img class="cookies-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge"></a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <!--Cookies Help Collapsible Content-->
+    <div class="collapse" id="modal-cookies-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-cookies-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>My browser is not here.<br>What do I do?</strong><br>
+        If your browser isn't listed, search the web using a search engine.
+        Here are a few suggestions.
+        <br>
+        <br>
+        <a href="https://duckduckgo.com/">DuckDuckGo</a><br>
+        <a href="https://www.google.com/">Google</a>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-cookies-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Okay
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+</script>

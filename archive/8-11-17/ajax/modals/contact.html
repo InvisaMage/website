@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<!--Contact Modal-->
+<div class="modal-dialog modal-md" id="ajax-contact">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Contact</h4>
+    </div>
+    <div class="modal-body">
+      Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
+      <br>
+      <br>
+        <!--E-mail-->
+        <div class="input-group">
+          <div class="input-group-addon">E-mail</div>
+          <input id="copyTargetEmail" readonly type="text" class="form-control" value="support@InvisaMage.com">
+            <span class="input-group-btn">
+              <a id="copyButtonEmail" roll="button" class="btn btn-default" onclick="emailMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" href="mailto:support@invisamage.com" data-placement="top" data-toggle="tooltip" title="Send E-mail" data-container="body">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+              </a>
+            </span>
+        </div><!-- /input-group -->
+        <!--Telegram-->
+        <br>
+        <div class="input-group">
+          <div class="input-group-addon">Telegram</div>
+          <input id="copyTargetTelegram" readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
+            <span class="input-group-btn">
+              <a id="copyButtonTelegram" roll="button" class="btn btn-default" onclick="telegramMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Send Message" data-container="body">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+              </a>
+            </span>
+        </div><!-- /input-group -->
+        <!--Keybase-->
+        <br>
+        <div class="input-group">
+          <div class="input-group-addon">Keybase</div>
+          <input id="copyTargetKeybase" readonly type="text" class="form-control" value="InvisaMage">
+            <span class="input-group-btn">
+              <a id="copyButtonKeybase" roll="button" class="btn btn-default" onclick="keybaseMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </a>
+              <a roll="button" class="btn btn-default" href="https://keybase.io/invisamage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="View Profile" data-container="body">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              </a>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+    <!--Contact Help Collapsible Content-->
+    <div class="collapse" id="modal-contact-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-contact-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Explanation of contact method</strong><br>
+        <strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.<br>
+        <strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+        <strong>Keybase</strong> - Public key crypto for everyone, publicly auditable proofs of identity.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-contact-collapse').collapse('toggle')">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div><!-- /.modal-contact-->
+
+<script>
+//Email Copy Function
+      document.getElementById("copyButtonEmail").addEventListener("click", function() {
+      copyToClipboard(document.getElementById("copyTargetEmail"));
+  });
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+      return succeed;
+  }
+
+//Telegram Copy Function
+      document.getElementById("copyButtonTelegram").addEventListener("click", function() {
+      copyToClipboard(document.getElementById("copyTargetTelegram"));
+  });
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+      return succeed;
+  }
+
+//Keybase Copy Function
+      document.getElementById("copyButtonKeybase").addEventListener("click", function() {
+      copyToClipboard(document.getElementById("copyTargetKeybase"));
+  });
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+      return succeed;
+  }
+
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+</script>

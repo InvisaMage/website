@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created February 6, 2017-->
+<!--Bootstrap 4 update began on August 24, 2017-->
 <!--MC-->
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="A Minecraft Plotworld PVP server.">
-		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
-		<meta name="theme-color" content="#337AB7">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | Valkyrie Realms</title>
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet">
-		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
-	<!--Page Loading...-->
-	<div class="preload">
-		<div class="loading">
-			<div class="loading-animation"></div>
-		</div>
-	</div>
-
-	<div class="content">
 	<body id="top">
-		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #22262a;"></nav>
+
+		<div class="jumbotron jumbotron-fluid text-left">
+			<div class="container">
+				<h1 class="display-4">Valkyrie Realms</h1>
+				<div class="d-flex justify-content-between">
+					<p class="lead">A Minecraft plotworld PVP server</p>
+					<p class="lead">mc.invisamage.com</p>
+				</div>
+			</div>
+		</div>
 
 		<!--Begin Content-->
 		<div class="container">
 
-			<!--Page Title-->
-			<a class="title" href="mc.html">Valkyrie Realms</a>
-			<br>
-			<img class="img-responsive center-block" src="images/server.png" height="80" width="417">
-
-
-			<!--Menu
-			<div id="menu-mc" class="hidden-xs">
-				<h2>Contents</h2>
-				<li><a href="mc.html#"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
-				<li><a href="mc.html#"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
-				<li><a href="mc.html#"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
+			<!--Menu-->
+			<div id="menu-mc" class="d-none d-md-inline slider">
+				<h4>Contents</h4>
+				<li><a href="mc.html#status"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Status</a></li>
+				<li><a href="mc.html#objective"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Objective</a></li>
 				<br>
 			</div>
-			-->
 
 			<!--Status-->
-			<div id="menu-mc-status" class="hidden-xs">
-				<h2>Server Status</h2>
-				<li>Status: <span class="server-online"></span></li>
-				<li>Players: <span class="server-players"></span></li>
-				<li>Version: <span class="server-name"></li>
-				<br>
-			</div>
+			<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="status">
+				<h4 class="card-header">Server Status</h4>
+				<div class="card-body">
+					<p>
+						<table class="table table-inverse table-hover mx-auto" style="max-width:30rem;">
+			        <!--Header-->
+			        <tr>
+			          <td><h6 class="black">Status</h6></td>
+			          <td><span class="server-online"></span></td>
+			        </tr>
+			        <tr>
+			          <td><h6 class="black">Players</h6></td>
+			          <td><span class="server-players"></span></td>
+			        </tr>
+			        <tr>
+			          <td><h6 class="black">Version</h6></td>
+			          <td><span class="server-name"></td>
+			        </tr>
+			      </table>
+					</p>
+				</div>
+			</div><!--/#status-->
 
-			<p>
-				Valkyrie Realms is a Plotworld PVP server.<br>
-				Collect your resources in the wilderness and build in protected plots.<br>
-				Be careful as players can kill you while you're building.
-			</p>
+			<br>
+
+			<!--Objective-->
+			<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="objective">
+				<h4 class="card-header">Objective</h4>
+				<div class="card-body">
+					<p>
+						Gather resources in the wilderness and build to your heart's content on your plot.<br>
+						Be careful as the wilderness and plotworld are PVP zones.
+					</p>
+				</div>
+			</div><!--/#objective-->
+
+			<br>
 
       <!--Footer-->
 			<footer id="footer"></footer>
@@ -74,21 +91,19 @@
     <span id="modals"></span>
 
     <!--External Scripts-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+		<script src="js/tether.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
     <script src="js/search.js"></script>
-    <script src="js/nprogress.js"></script>
     <script src="js/typeahead.min.js"></script>
 		<script src="https://mcapi.us/scripts/minecraft.js"></script>
-    <script id="js-water"></script>
     <script id="js-snowstorm"></script>
     <script src="js/konami.js"></script>
     <script src="js/keypress.min.js"></script>
     <script src="js/js.cookie.js"></script>
     <script src="js/growl.min.js"></script>
     <script src="js/compiled.js"></script>
-    <script src="js/events.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
     <script id="js-ptty"></script>
 
 		<script>
@@ -113,6 +128,9 @@
 
 			});
 		</script>
+
+		<script>
+			$('.slider').addClass('animated slideInLeft');
+		</script>
   </body>
-  </div>
 </html>

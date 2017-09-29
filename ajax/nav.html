@@ -1,127 +1,88 @@
 <!DOCTYPE html>
 
 <!--The Navigation Bar for every page-->
-<div class="container-fluid">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="index.html">
-      <img alt="Brand" src="images/imlogo.png" width="20" height="20"></img>
-    </a>
-    <a class="navbar-brand" href="index.html">
-      InvisaMage
-    </a>
-    <a class="navbar-brand" onclick="window.scrollTo(0, 0);" role="button" data-toggle="tooltip" data-placement="bottom" title="Beam me Up">
-      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-    </a>
-  </div><!-- /.navbar-header -->
-  <!--Collect the nav links, forms, and other content for toggling-->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li id='nav-home'><a href="index.html">Home</a></li>
-      <li id='nav-news'><a href="news.html">News</a></li>
-      <!--Projects-->
-      <li class="dropdown" id='nav-projects'>
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li id='nav-mc' data-toggle="popover" data-content="A Minecraft Plotworld PVP server."><a href="mc.html">Valkyrie Realms</a></li>
-          <li id='nav-fs' data-toggle="popover" data-content="A Minecraft adventure/survival map."><a href="fs.html">Floating Survival</a></li>
-          <li id='nav-ir' data-toggle="popover" data-content="A Podcast about various topics."><a href="invisarant.html">InvisaRant</a></li>
-          <li role="separator" class="divider"></li>
-          <li id='nav-txtLock' data-toggle="popover" data-content="An Android application which locks text behind a password."><a href="txtlock.html">TxtLock</a></li>
-        </ul>
-      </li><!-- /projects -->
-      <!--Resources
-      <li class="dropdown" id="nav-resources">
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li id="nav-computers"><a href="computers.html">Computers</a></li>
-        </ul>
-      </li>-->
-      <li><a onclick="loadContactMod();">Contact</a></li>
-      <li><a onclick="loadDonateMod();">Donate</a></li>
-      <li id='nav-about'><a href="about.html">About</a></li>
-    </ul>
-    <!--Search Function-->
-    <ul onkeydown="if (event.keyCode == 13) search();" class="nav navbar-nav navbar-form navbar-right">
-      <div class="input-group">
-        <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Search"></input>
-        <span class="input-group-btn">
-          <a class="btn btn-default" type="button" onclick="loadSearchHelpMod();">
-            <span class="glyphicon glyphicon-question-sign"></span>
-          </a>
-          <button class="btn btn-default" type="button" onclick="search();">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
-      </div><!-- /.input-group -->
-    </ul><!-- /search function -->
-    <!--Modal Buttons-->
-    <ul class="nav navbar-nav navbar-right hidden-xs">
-      <li>
-        <a onclick="loadStatsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
-          <span class="glyphicon glyphicon-stats"></span>
-        </a>
-      </li>
-      <li>
-        <a onclick="loadAchievementsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Achievements">
-          <span class="glyphicon glyphicon-tasks"></span>
-        </a>
-      </li>
-      <li>
-        <a onclick="loadSettingsMod();" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Settings">
-          <span class="glyphicon glyphicon-cog"></span>
-        </a>
-      </li>
-    </ul><!-- /modal buttons -->
-    <!--Model Buttons Row (visible on mobile only)-->
-    <ul class="nav navbar-nav navbar-right hidden-lg">
-      <div class="btn-group" role="group">
-        <button onclick="loadStatsMod();" type="button" class="btn btn-md btn-black">
-          <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Stats
-        </button>
-        <button onclick="loadAchievementsMod();" type="button" class="btn btn-md btn-black">
-          <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Achievements
-        </button>
-        <button onclick="loadSettingsMod();" type="button" class="btn btn-md btn-black">
-          <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
-        </button>
+<a class="navbar-brand" href="index.html">
+  <img alt="Brand" src="images/imlogo.png" width="20" height="20"></img>
+</a>
+<a id="nav-name" class="navbar-brand" href="index.html">
+  InvisaMage
+</a>
+<a id="up-chevron" class="navbar-brand" onclick="window.scrollTo(0, 0);" tyle="button" data-toggle="tooltip" data-placement="bottom" title="Beam me Up">
+  <i class="fa fa-chevron-up" aria-hidden="true"></i>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbar-default">
+  <ul class="navbar-nav mr-auto">
+    <li id="nav-home" class="nav-item"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
+    <li id="nav-news" class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+    <li class="nav-item dropdown" id="nav-projects">
+      <a class="nav-link dropdown-toggle" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+      <div class="dropdown-menu" aria-labelledby="dropdownNav">
+        <a id="nav-mc" class="dropdown-item" href="mc.html">Valkyrie Realms</a>
+        <a id="nav-fs" class="dropdown-item" href="fs.html">Floating Survival</a>
+        <a id="nav-ir" class="dropdown-item" href="invisarant.html">InvisaRant</a>
+        <div class="dropdown-divider"></div>
+        <a id="nav-txtLock" class="dropdown-item" href="txtlock.html">TxtLock</a>
       </div>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
+    </li>
+    <li class="nav-item"><a class="nav-link" onclick="loadContactMod();">Contact</a></li>
+    <li class="nav-item"><a class="nav-link" onclick="loadDonateMod();">Donate</a></li>
+    <li class="nav-item" id='nav-info'><a class="nav-link" href="info.html">Information</a></li>
+  </ul>
 
-<script>
-  /* Allows popover activation on hover
-   * Modified from http://stackoverflow.com/questions/17437818/twitter-bootstrap-popover-trigger-how-to-set-multiple-triggers#17438133
-   */
-  $(function () {
-    var showPopover = function () {
-        $(this).popover('show');
-    }
-    , hidePopover = function () {
-        $(this).popover('hide');
-    };
+   <!--Modal Buttons-->
+  <div class="nav justify-content-end d-none d-md-flex">
+    <li class="nav-item" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
+      <a class="nav-link" onclick="loadStatsMod();">
+        <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Achievements">
+      <a class="nav-link" onclick="loadAchievementsMod();" id="achievements-button">
+        <i class="fa fa-list fa-lg" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="nav-item" id="settings-li" data-toggle="tooltip" data-placement="bottom" title="Settings">
+      <a class="nav-link" onclick="loadSettingsMod();" id="settings-button">
+        <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+      </a>
+    </li>
+  </div><!-- /modal buttons -->
 
-    $('#nav-mc, #nav-fs, #nav-ir, #nav-txtLock').popover({
-        trigger: 'manual',
-        placement: 'right',
-        container: 'body'
-    })
-    .focus(showPopover)
-    .blur(hidePopover)
-    .hover(showPopover, hidePopover);
-  });
+  <hr class="d-md-none">
 
-  //Enable tooltips
-  if (!('ontouchstart' in window)) {
-    $('body').popover({
-      selector: '[data-toggle="popover"]'
-    });
-  }
-</script>
+  <!--Search-->
+  <div class="d-inline">
+    <div class="input-group mx-auto" style="max-width:15rem;">
+      <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search();">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" onclick="search();">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <button class="btn btn-outline-info" type="button" onclick="loadSearchHelpMod();">
+          <i class="fa fa-question-circle" aria-hidden="true"></i>
+        </button>
+      </span>
+    </div><!-- /.input-group -->
+  </div>
+
+  <hr class="d-md-none">
+
+  <!--Model Buttons Row (visible on mobile only)-->
+  <div class="nav justify-content-center d-md-none">
+    <div class="btn-group" role="group">
+      <button onclick="loadStatsMod();" type="button" class="btn btn-md btn-secondary">
+        <i class="fa fa-bar-chart" aria-hidden="true"></i> Stats
+      </button>
+      <button onclick="loadAchievementsMod();" type="button" class="btn btn-md btn-secondary">
+        <i class="fa fa-list" aria-hidden="true"></i> Achievements
+      </button>
+      <button onclick="loadSettingsMod();" type="button" class="btn btn-md btn-secondary">
+        <i class="fa fa-cog" aria-hidden="true"></i> Settings
+      </button>
+    </div>
+  </div>
+</div><!-- /.navbar-collapse -->

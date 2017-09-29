@@ -4,63 +4,75 @@
 <div class="modal-dialog modal-md" id="ajax-shortcuts">
   <div class="modal-content">
     <div class="modal-header">
+      <h4 class="modal-title mx-auto black">Shortcuts</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">Shortcuts</h4>
     </div>
     <div class="modal-body">
-      <table class="table table-responsive table-condensed table-hover">
+      <table class="table table-inverse table-hover">
         <!--Header-->
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Key Combination</th>
+          </tr>
+        </thead>
         <tr>
-          <td><h5 class="black-bold table-heading">Description</h5></td>
-          <th><h5 class="black-bold table-heading">Key Combination</h5></th>
-        </tr>
-        <tr>
-          <td><h5 class="black">Show Settings</h5></td>
+          <td><h6 class="black">Show Settings</h6></td>
           <th><kbd>Ctrl + Alt + C</kbd></th>
         </tr>
         <tr>
-          <td><h5 class="black">Show Achievements</h5></td>
+          <td><h6 class="black">Show Achievements</h6></td>
           <th><kbd>Ctrl + Alt + A</kbd></th>
         </tr>
         <tr>
-          <td><h5 class="black">Show Stats</h5></td>
+          <td><h6 class="black">Show Stats</h6></td>
           <th><kbd>Ctrl + Alt + S</kbd></th>
         </tr>
         <tr>
-          <td><h5 class="black">Focus Search Box</h5></td>
+          <td><h6 class="black">Focus Search Box</h6></td>
           <th><kbd>Ctrl + Alt + F</kbd></th>
         </tr>
         <tr>
-          <td><h5 class="black">Load Terminal Assets</h5></td>
+          <td><h6 class="black">Load Terminal Assets</h6></td>
           <th><kbd>Shift + Space</kbd></th>
         </tr>
         <tr>
-          <td><h5 class="black">Toggle Terminal</h5></td>
+          <td><h6 class="black">Toggle Terminal</h6></td>
           <th><kbd>`</kbd></th>
         </tr>
       </table>
     </div>
     <!--Shortcuts Help Collapsible Content-->
     <div class="collapse" id="modal-shortcuts-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-shortcuts-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>What is this?</strong><br>
-        This shows you the available shortcuts found in this site.<br>
-        These can act funny so you might have to reload the page sometimes.
+      <div class="card text-white bg-secondary">
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-shortcuts-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <div class="card-body">
+          <h6>What's this?</h6>
+          <p class="card-text">
+            This shows you the available shortcuts found in this site.<br>
+            These can act funny so you might have to reload the page sometimes.
+          </p>
+        </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info" onclick="$('#modal-shortcuts-collapse').collapse('toggle');">
-        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <button type="button" class="btn btn-outline-info" onclick="$('#modal-shortcuts-collapse').collapse('toggle');">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-content -->
 </div><!-- /.modal-shortcuts-->
 
 <script>
+  $(function() {
+    if (Cookies.get('theme') == 'light') {
+      $('table').removeClass('table-inverse').addClass('table-light');
+    }
+  });
+
   //Enable tooltips
   if (!('ontouchstart' in window)) {
     $('body').popover({

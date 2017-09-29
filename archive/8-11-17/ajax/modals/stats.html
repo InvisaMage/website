@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<!--Stats Modal-->
+<div class="modal-dialog modal-sm" id="ajax-stats">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Stats</h4>
+    </div>
+    <div class="modal-body">
+      <table class="table table-responsive table-condensed table-hover">
+        <!--Clock-->
+        <tr>
+          <td><h5 class="black">Time</h5></td>
+          <th><h5 class="black" id="clock"></h5></th>
+        </tr>
+        <!--Bootstrap Version-->
+        <tr>
+          <td><h5 class="black">Bootstrap</h5></td>
+          <th><h5 class="black">v3.3.7</h5></th>
+        </tr>
+        <!--jQuery Version-->
+        <tr>
+          <td><h5 class="black">jQuery</h5></td>
+          <th><h5 class="black">v1.10.2</h5></th>
+        </tr>
+        <!--OS-->
+        <tr>
+          <td><h5 class="black">OS</h5></td>
+          <th><h5 class="black" id="os"></h5></th>
+        </tr>
+        <!--Browser-->
+        <tr>
+          <td><h5 class="black">Browser</h5></td>
+          <th><h5 class="black" id="browser"></h5></th>
+        </tr>
+        <!--Supported Browsers-->
+        <tr>
+          <td><h5 class="black">Support</h5></td>
+          <th>
+            <img class="stats-browser-img" src="images/browsers/ff.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Firefox v40+">
+            <img class="stats-browser-img" src="images/browsers/chrome.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Chrome v45+">
+            <img class="stats-browser-img" src="images/browsers/opera.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Opera v33+">
+            <img class="stats-browser-img" src="images/browsers/safari.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Mobile Safari v8+">
+            <img class="stats-browser-img" src="images/browsers/edge.png" height="30" width="30" data-toggle="tooltip" data-placement="bottom" title="Edge v20+">
+          </th>
+        </tr>
+        <!--Debugging-->
+        <tr>
+          <td><h5 class="black">Debugging</h5></td>
+          <th>
+            <div class="btn-group" role="group">
+              <button id="btn-reload" type="button" class="btn btn-danger" onclick="loadReloadMod();" data-toggle="tooltip" data-placement="bottom" title="Reload Page" data-container="body">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              </button>
+              <button id="btn-terminal" type="button" class="btn btn-danger" onclick="$('#modal-stats').modal('hide'); $('#btn-terminal').tooltip('destroy'); $('#js-ptty').load('js/ptty.min.js'); $('#modal-terminal').load('ajax/modals/terminal.html'); $('#modal-stats').one('hidden.bs.modal', function (e) { $('#modal-terminal').modal(); }); $('#modal-terminal').one('shown.bs.modal', function (e) { $('input').focus(); });" data-toggle="tooltip" data-placement="bottom" title="Terminal" data-container="body">
+                <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+              </button>
+              <button id="btn-reset-achievements" type="button" class="btn btn-danger" onclick="resetAchievements();" data-toggle="tooltip" data-placement="bottom" title="Reset Achievements" data-container="body">
+                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+              </button>
+            </div>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <!--Stats Help Collapsible Content-->
+    <div class="collapse" id="modal-stats-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-stats-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What does this do?</strong><br>
+        The Stats modal displays information related to your system.
+        <br>
+        <br>
+        <strong>Support row?</strong><br>
+        These specific browsers have been tested to some extent and work desirably.<br>
+        This does not mean unlisted browsers do not work.<br>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-stats-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-stats-->
+
+<script>
+  //Statistics Modal Functions
+
+  //Clock - Displays the time
+  interval = setInterval(time, 1000);
+  function time()
+  {
+  	var currentTime = document.getElementById("clock");
+  		var d = new Date();
+  		var t = d.toLocaleTimeString();
+  		document.getElementById("clock").innerHTML = t;
+  }
+
+  //OS - Detects the user's OS.
+  var OSName="Unknown OS";
+  if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+  if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+  if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+  if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+  $('#os').append(OSName);
+
+  //Browser - Detects the user's browser name and version
+  var nVer = navigator.appVersion;
+  var nAgt = navigator.userAgent;
+  var browserName  = navigator.appName;
+  var fullVersion  = ''+parseFloat(navigator.appVersion);
+  var majorVersion = parseInt(navigator.appVersion,10);
+  var nameOffset,verOffset,ix;
+
+  // In Opera 15+, the true version is after "OPR/"
+  if ((verOffset=nAgt.indexOf("OPR/"))!=-1) {
+   browserName = "Opera";
+   fullVersion = nAgt.substring(verOffset+4);
+  }
+  // In older Opera, the true version is after "Opera" or after "Version"
+  else if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+   browserName = "Opera";
+   fullVersion = nAgt.substring(verOffset+6);
+   if ((verOffset=nAgt.indexOf("Version"))!=-1)
+     fullVersion = nAgt.substring(verOffset+8);
+  }
+  // In MSIE, the true version is after "MSIE" in userAgent
+  else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+   browserName = "Microsoft Internet Explorer";
+   fullVersion = nAgt.substring(verOffset+5);
+  }
+  // In Chrome, the true version is after "Chrome"
+  else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+   browserName = "Chrome";
+   fullVersion = nAgt.substring(verOffset+7);
+  }
+  // In Safari, the true version is after "Safari" or after "Version"
+  else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+   browserName = "Safari";
+   fullVersion = nAgt.substring(verOffset+7);
+   if ((verOffset=nAgt.indexOf("Version"))!=-1)
+     fullVersion = nAgt.substring(verOffset+8);
+  }
+  // In Firefox, the true version is after "Firefox"
+  else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+   browserName = "Firefox";
+   fullVersion = nAgt.substring(verOffset+8);
+  }
+  // In most other browsers, "name/version" is at the end of userAgent
+  else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) <
+            (verOffset=nAgt.lastIndexOf('/')) )
+  {
+   browserName = nAgt.substring(nameOffset,verOffset);
+   fullVersion = nAgt.substring(verOffset+1);
+   if (browserName.toLowerCase()==browserName.toUpperCase()) {
+    browserName = navigator.appName;
+   }
+  }
+  // trim the fullVersion string at semicolon/space if present
+  if ((ix=fullVersion.indexOf(";"))!=-1)
+     fullVersion=fullVersion.substring(0,ix);
+  if ((ix=fullVersion.indexOf(" "))!=-1)
+     fullVersion=fullVersion.substring(0,ix);
+
+  majorVersion = parseInt(''+fullVersion,10);
+  if (isNaN(majorVersion)) {
+   fullVersion  = ''+parseFloat(navigator.appVersion);
+   majorVersion = parseInt(navigator.appVersion,10);
+  }
+
+  $('#browser').append(''
+    +''+browserName+' '
+    +'v'+majorVersion+''
+  );
+
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+</script>

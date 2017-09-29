@@ -4,8 +4,8 @@
 <div class="modal-dialog modal-md" id="ajax-donate">
   <div class="modal-content">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h3 class="modal-title black" id="exampleModalLabel">Donate</h3>
+      <h4 class="modal-title mx-auto black">Donate</h4>
+      <button roll="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
     <div class="modal-body">
       If you enjoy what I do, a donation would be highly appreciated.
@@ -13,133 +13,117 @@
       <br>
         <!--Bitcoin-->
         <div class="input-group">
-          <div class="input-group-addon"><a target="_blank" rel="noopener noreferrer" href="https://bitcoin.org/en/">Bitcoin (฿)</a></div>
+          <div class="input-group-addon">
+            <a target="_blank" rel="noopener noreferrer" href="https://bitcoin.org/en/">Bitcoin (฿)</a>
+          </div>
           <input id="copyTargetBitcoin" readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
-            <span class="input-group-btn">
-              <a id="copyButtonBitcoin" roll="button" class="btn btn-default" onclick="bitcoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
-                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+            <div class="input-group-btn">
+              <a id="copyButtonBitcoin" roll="button" href="#" class="btn btn-light" onclick="bitcoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
+                <i class="fa fa-files-o" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <a roll="button" class="btn btn-light" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
+                <i class="fa fa-link" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" onclick="$('#qr-bitcoin').collapse('toggle');" data-placement="top" data-toggle="tooltip" title="Scan QR Code" data-container="body">
-                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-              </a>
-            </span>
+            </div>
         </div>
         <br>
         <!--Dogecoin-->
         <div class="input-group">
           <div class="input-group-addon"><a target="_blank" rel="noopener noreferrer" href="http://dogecoin.com/">Dogecoin (Ð)</a></div>
           <input id="copyTargetDogecoin" readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
-            <span class="input-group-btn">
-              <a id="copyButtonDogecoin" roll="button" class="btn btn-default" onclick="dogecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
-                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+            <div class="input-group-btn">
+              <a id="copyButtonDogecoin" roll="button" href="#" class="btn btn-light" onclick="dogecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
+                <i class="fa fa-files-o" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <a roll="button" class="btn btn-light" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
+                <i class="fa fa-link" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" onclick="$('#qr-dogecoin').collapse('toggle');" data-placement="top" data-toggle="tooltip" title="Scan QR Code" data-container="body">
-                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-              </a>
-            </span>
+            </div>
         </div>
         <br>
         <!--Litecoin-->
         <div class="input-group">
           <div class="input-group-addon"><a target="_blank" rel="noopener noreferrer" href="https://litecoin.com/">Litecoin (Ł)</a></div>
           <input id="copyTargetLitecoin" readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
-            <span class="input-group-btn">
-              <a id="copyButtonLitecoin" roll="button" class="btn btn-default" onclick="litecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
-                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+            <div class="input-group-btn">
+              <a id="copyButtonLitecoin" roll="button" class="btn btn-light" href="javascript:litecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
+                <i class="fa fa-files-o" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <a roll="button" class="btn btn-light" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
+                <i class="fa fa-link" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" onclick="$('#qr-litecoin').collapse('toggle');" data-placement="top" data-toggle="tooltip" title="Scan QR Code" data-container="body">
-                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-              </a>
-            </span>
-        </div>
-        <!--QR-Bitcoin-->
-        <div class="collapse" id="qr-bitcoin">
-          <div class="well">
-            <strong>Bitcoin</strong>
-            <img class="img-responsive center-block" src="images/qr-bitcoin.png" height="150" width="150">
-          </div>
-        </div>
-        <!--QR-Dogecoin-->
-        <div class="collapse" id="qr-dogecoin">
-          <div class="well">
-            <strong>Dogecoin</strong>
-            <img class="img-responsive center-block" src="images/qr-dogecoin.png" height="150" width="150">
-          </div>
-        </div>
-        <!--QR-Litecoin-->
-        <div class="collapse" id="qr-litecoin">
-          <div class="well">
-            <strong>Litecoin</strong>
-            <img class="img-responsive center-block" src="images/qr-litecoin.png" height="150" width="150">
-          </div>
+            </div>
         </div>
     </div>
     <!--Donate Help Collapsible Content-->
     <div class="collapse" id="modal-donate-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>What payment methods are these?</strong><br>
-        These are called cryptocurrencies.
-        They are a digital medium of exchange.
-        They use cryptography for security, making them difficult to counterfeit.
-        Click the names of them to learn more.
-        <br>
-        <br>
-        <strong>QR Codes:</strong><br>
-        You must have a QR code scanner to use these.<br>
-        Preferably one built into your cryptocurrency client.
-        <br>
-        <br>
-        <strong>Note:</strong><br>
-        You must have the correct cryptocurrency client to use this <span class="glyphicon glyphicon-link" aria-hidden="true"></span> button.
+      <div class="card bg-secondary">
+        <h5 class="card-header">Help <button roll="button" class="close" onclick="$('#modal-donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <div class="card-body">
+          <h6>What payment methods are these?</h6>
+          <p>
+            These are called cryptocurrencies.
+            They are a digital medium of exchange.
+            They use cryptography for security, making them difficult to counterfeit.
+            Click the names of them to learn more.
+          </p>
+          <hr>
+          <h6>QR Codes</h6>
+          <p>
+            You must have a QR code scanner to use these.<br>
+            Preferably one built into your cryptocurrency client.
+          </p>
+          <hr>
+          <h6>Note</h6>
+          You must have the correct cryptocurrency client to use this <i class="fa fa-link" aria-hidden="true"></i> button.
+        </div>
       </div>
     </div>
     <!--Donate Donor List Collapsible Content-->
     <div class="collapse" id="modal-donors-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-donors-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>List of Known Donors</strong><br>
-        <table class="table table-responsive table-condensed table-hover">
+      <div class="card bg-secondary">
+        <h5 class="card-header">Known Donors <button roll="button" class="close" onclick="$('#modal-donors-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <table class="table table-inverse table-hover">
           <!--Header-->
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
           <tr>
-            <td><h5 class="black-bold table-heading">Name</h5></td>
-            <th><h5 class="black-bold table-heading">Ammount</h5></th>
+            <td><h6 class="black">Kevin</h6></td>
+            <th><h6 class="black">101.00 Ð</h6></th>
           </tr>
           <tr>
-            <td><h5 class="black">Kevin</h5></td>
-            <th><h5 class="black">101.00 Ð</h5></th>
-          </tr>
-          <tr>
-            <td><h5 class="black">Nicholas</h5></td>
-            <th><h5 class="black">0.00130 ฿</h5></th>
+            <td><h6 class="black">Nicholas</h6></td>
+            <th><h6 class="black">0.00130 ฿</h6></th>
           </tr>
         </table>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-success pull-left" onclick="$('#modal-donors-collapse').collapse('toggle')">
-        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Donors
+      <button roll="button" class="btn btn-outline-success" onclick="$('#modal-donors-collapse').collapse('toggle')">
+        <i class="fa fa-list" aria-hidden="true"></i> Donors
       </button>
-      <button type="button" class="btn btn-info" onclick="$('#modal-donate-collapse').collapse('toggle')">
-        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <button roll="button" class="btn btn-outline-info" onclick="$('#modal-donate-collapse').collapse('toggle')">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
-      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <button roll="button" class="btn btn-primary" data-dismiss="modal"> Done
+        <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div>
   </div>
 </div><!-- /.modal-donate-->
 
 <script>
+  $(function() {
+    if (Cookies.get('theme') == 'light') {
+      $('table').removeClass('table-inverse').addClass('table-light');
+      $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
+    }
+  });
+
 //Bitcoin Copy Function
       document.getElementById("copyButtonBitcoin").addEventListener("click", function() {
       copyToClipboard(document.getElementById("copyTargetBitcoin"));

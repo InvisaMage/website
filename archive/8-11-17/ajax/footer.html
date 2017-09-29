@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<!--Footer for every page-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-2">
+      <h4>About</h4>
+      <ul>
+        <!--InvisaMage-->
+        <li>
+          <a class="link" href="about.html#InvisaMage" data-toggle="tooltip" data-placement="top" title="About the developer.">InvisaMage</a>
+        </li>
+        <!--Contact-->
+        <li>
+          <a class="link" onclick="loadContactMod();" data-toggle="tooltip" data-placement="top" title="Contact the developer.">Contact</a>
+        </li>
+        <!--Design-->
+        <li>
+          <a class="link" href="about.html#design" data-toggle="tooltip" data-placement="top" title="Learn how to navigate the website.">Design</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h4>Legal</h4>
+      <ul>
+        <!--Terms-->
+        <li>
+          <a class="link" href="terms.html" data-toggle="tooltip" data-placement="top" title="View the Terms & Conditions.">Terms</a>
+        </li>
+        <!--Privacy-->
+        <li>
+          <a class="link" href="privacy.html" data-toggle="tooltip" data-placement="top" title="View the Privacy Policy.">Privacy</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h4>Settings</h4>
+      <ul>
+        <!--Hide Ads-->
+        <li>
+          <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a>
+        </li>
+        <!--Water-->
+        <li>
+          <a class="link" id="footer-water" onclick="loadWater();" data-toggle="tooltip" data-placement="top" title="Load a buggy water effect.">Load Water</a>
+        </li>
+        <!--Snow-->
+        <li>
+          <a class="link" id="footer-snowstorm" onclick="loadSnowstorm();" data-toggle="tooltip" data-placement="top" title="Load a snowstorm!">Load Snow</a>
+        </li>
+        <!--More-->
+        <li>
+          <a class="link" onclick="loadSettingsMod();" data-toggle="tooltip" data-placement="top" title="More Settings">More</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h4>Extras</h4>
+      <ul>
+        <!--Shortcuts-->
+        <li>
+          <a class="link" onclick="loadShortcutsMod();" data-toggle="tooltip" data-placement="top" title="View key combinations.">Shortcuts</a>
+        </li>
+        <!--Archive-->
+        <li>
+          <a class="link" onclick="loadArchiveMod();" data-toggle="tooltip" data-placement="top" title="View old versions of this website.">Archive</a>
+        </li>
+        <!--Repository-->
+        <li>
+          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/InvisaMage/website" data-toggle="tooltip" data-placement="top" title="View website repository on Github.">Repository
+            <span class="glyphicon glyphicon-new-window glyphicon-color"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--Copyright-->
+<p class="copyright text-center">
+  &copy; 2014 - 2017, InvisaMage<br>
+  Content available under the <a class="link" href="LICENSE" target="_blank" rel="noopener noreferrer">GNU General Public License</a> (GPL v3).
+</p>
+
+<script>
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+</script>

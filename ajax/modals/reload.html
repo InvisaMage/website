@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 
 <!--Reload Page Modal--->
-<div class="modal-dialog modal-sm" id=ajax-reload>
+<div class="modal-dialog modal-sm" id="ajax-reload">
   <div class="modal-content">
     <div class="modal-header">
+      <h4 class="modal-title mx-auto black">Reload Page</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">Reload Page</h4>
     </div>
     <div class="modal-body">
       Are you sure you want to reload the page?<br>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">
-        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel
+    <div class="modal-footer" >
+      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+        <i class="fa fa-times" aria-hidden="true"></i> Cancel
       </button>
       <button type="button" class="btn btn-danger" onclick="location.reload();"> Yes Reload
-        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
       </button>
     </div><!-- /.modal-footer-->
   </div><!-- /.modal-content -->

@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created December 21, 2014-->
-<!--Bootstrap Merge began on August 8, 2015-->
+<!--Bootstrap 4 update began on August 24, 2017-->
 <!--404 Error-->
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="404 Error">
-		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
-		<meta name="theme-color" content="#337AB7">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | 404</title>
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet">
-		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
-	<!--Page Loading...-->
-	<div class="preload">
-		<div class="loading">
-			<div class="loading-animation"></div>
-		</div>
-	</div>
-
-	<div class="content">
 	<body id="top">
-		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #22262a;"></nav>
 
 		<!--Begin Content-->
 		<div class="container">
 
 			<br>
 			<div id="img_container-404">
-		    <img class="img-responsive center-block img-rounded" src="images/404.jpg" alt="404 Error" height="506" width="465">
-		    <a class="btn btn-primary" id="btn-404" role="button" onclick="$('#collapse-404').collapse('toggle')" aria-expanded="false">
+		    <img class="img-fluid center-block rounded" src="images/404.jpg" alt="404 Error" height="506" width="465">
+		    <button class="btn btn-outline-primary" id="btn-404" tyle="button" onclick="$('#collapse-404').collapse('toggle')" aria-expanded="false">
 					View Recent Changes
-				</a>
+				</button>
 			</div>
 
 			<!--Recent Changes-->
-			<div class="collapse" id="collapse-404">
+			<div class="collapse mx-auto" id="collapse-404" style="max-width:45rem;">
 				<br>
 				<br>
-				<div class="well-black well-sm">
-						<p class="black">
-							The web application information page that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/webapp.html" href="http://www.invisamage.com/webapp.html">here</a> does not exist anymore.<br>
-							The web application that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/app.html" href="http://www.invisamage.com/app.html">here</a> does not exist anymore.
-							<br>
-							<br>
-							The archive page that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/archive.html" href="http://www.invisamage.com/archive.html">here</a> does not exist anymore.<br>
+				<div class="card bg-dark">
+					<h4 class="card-header">Recent Changes</h4>
+					<div class="card-body">
+						<p class="card-text">
+							Renamed the about.html page to info.html
+							<hr>
+							The web application information page that was located <a class="link" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/webapp.html" href="http://www.invisamage.com/webapp.html">here</a> does not exist anymore.<br>
+							The web application that was located <a class="link" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/app.html" href="http://www.invisamage.com/app.html">here</a> does not exist anymore.
+							<hr>
+							The archive page that was located <a class="link" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/archive.html" href="http://www.invisamage.com/archive.html">here</a> does not exist anymore.<br>
 							Use the archive link/modal in the footer instead.
-							<br>
-							<br>
+							<hr>
 							invsamage.cf is no longer a valid domain for this website.
-							<br>
-							<br>
-							The mobile website that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/m-index.html" href="http://www.invisamage.com/m-index.html">here</a> or <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.cf/mobile/m-index.html" href="http://www.invisamage.cf/mobile/m-index.html">here</a> does not exist anymore.
-							<br>
-							<br>
-							The contact page that was located <a class="link-404" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/contact.html" href="http://www.invisamage.com/contact.html">here</a> does not exist anymore.<br>
+							<hr>
+							The mobile website that was located <a class="link" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/m-index.html" href="http://www.invisamage.com/m-index.html">here</a> or <a class="link" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.cf/mobile/m-index.html" href="http://www.invisamage.cf/mobile/m-index.html">here</a> does not exist anymore.
+							<hr>
+							The contact page that was located <a class="link" data-toggle="tooltip" data-placement="top" title="http://www.invisamage.com/contact.html" href="http://www.invisamage.com/contact.html">here</a> does not exist anymore.<br>
 							Use the contact link/modal in the navigation bar instead.
 						</p>
+					</div>
 				</div>
 			</div>
 
@@ -82,19 +73,17 @@
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/search.js"></script>
-		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
-		<script id="js-water"></script>
 		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 	</body>
-	</div>
 </html>

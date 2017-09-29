@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <!--Proudly coded by Travis Kipp-->
 <!--Created January 3, 2015-->
-<!--Bootstrap Merge began on August 6, 2015-->
+<!--Bootstrap 4 update began on August 24, 2017-->
 <!--News-->
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="News about this website and projects. ">
-		<meta name="viewport" content="width=device-width, inital-scale=1 maximum-scale=1, user-scalable=0">
-		<meta name="theme-color" content="#337AB7">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
 		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
 		<title>InvisaMage | News</title>
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet">
-		<link href="css/ptty.css" rel="stylesheet">
 	</head>
 
-	<!--Page Loading...-->
-	<div class="preload">
-		<div class="loading">
-			<div class="loading-animation"></div>
-		</div>
-	</div>
-
-	<div class="content">
 	<body id="top">
-		<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #22262a;"></nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -45,231 +35,240 @@
 			</p>
 
 			<!--Nav Tabs (Visible on Desktop)-->
-			<ul class="nav nav-tabs hidden-xs" id="myTabs">
-				<li class="active"><a data-toggle="tab" href="#projects" onclick="slideInUp();">Projects</a></li>
-				<li><a data-toggle="tab" href="#important" onclick="slideInUp();">Important</a></li>
-				<li><a data-toggle="tab" href="#website" onclick="slideInUp();">Website</a></li>
-				<li><a data-toggle="tab" href="#bugs" onclick="slideInUp();">Bugs</a></li>
+			<ul class="nav nav-tabs nav-tabs-news justify-content-center mx-auto d-none d-md-flex"  role="tablist" style="max-width: 50rem;" id="tabs">
+				<li class="nav-item nav-item-news">
+					<a class="nav-link nav-link-news active" data-toggle="tab" href="#projects" onclick="slideInUp();">Projects</a>
+				</li>
+				<li class="nav-item nav-item-news">
+					<a class="nav-link nav-link-news" data-toggle="tab" href="#important" onclick="slideInUp();">Important</a>
+				</li>
+				<li class="nav-item nav-item-news">
+					<a class="nav-link nav-link-news" data-toggle="tab" href="#website" onclick="slideInUp();">Website</a>
+				</li>
+				<li class="nav-item nav-item-news">
+					<a class="nav-link nav-link-news" data-toggle="tab" href="#bugs" onclick="slideInUp();">Bugs</a>
+				</li>
 			</ul>
 
 			<!--Nav Pills (Visible on Mobile)-->
-			<ul class="nav nav-pills nav-stacked visible-xs" id="myPills">
-				<li class="active"><a data-toggle="tab" href="#projects">Projects</a></li>
-				<li><a data-toggle="tab" href="#important">Important</a></li>
-				<li><a data-toggle="tab" href="#website">Website</a></li>
-				<li><a data-toggle="tab" href="#bugs">Bugs</a></li>
+			<ul class="nav nav-pills flex-column d-block d-md-none" id="pills">
+				<a class="nav-link active" data-toggle="tab" href="#projects">Projects</a>
+				<a class="nav-link" data-toggle="tab" href="#important">Important</a>
+				<a class="nav-link" data-toggle="tab" href="#website">Website</a>
+				<a class="nav-link" data-toggle="tab" href="#bugs">Bugs</a>
 			</ul>
 
 			<!--Tab Content-->
-			<div class="tab-content">
+			<div class="tab-content tab-content-news mx-auto news-tabs" id="news-tabs">
 <!--Projects Pane-->
-				<div id="projects" class="tab-pane fade in active">
+				<div id="projects" class="tab-pane fade show active">
 					<br>
 					<!--Mobile Menu Projects -->
-					<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
-				    <select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
+					<div class="d-block d-md-none" id="mobile-menu">
+				    <select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
-							<option disabled>August 2017</option>
-							<option value="news.html#8-11-17-projects">11th</option>
-							<option data-divider="true"></option>
-							<option disabled>May 2017</option>
-							<option value="news.html#5-3-17-projects">3rd</option>
-							<option data-divider="true"></option>
-							<option disabled>February 2017</option>
-							<option value="news.html#2-12-17-projects">12th</option>
-							<option data-divider="true"></option>
-							<option disabled>June 2016</option>
-							<option value="news.html#6-10-16-projects">10th</option>
-							<option data-divider="true"></option>
-							<option disabled>November 2015</option>
-							<option value="news.html#11-13-15-projects">13th</option>
-							<option data-divider="true"></option>
-							<option disabled>March 2015</option>
-							<option value="news.html#3-7-15-projects">7th</option>
-							<option data-divider="true"></option>
-							<option disabled>February 2015</option>
-							<option value="news.html#2-28-15-projects">28th</option>
-							<option value="news.html#2-20-15-projects">20th</option>
-							<option value="news.html#2-6-15-projects">6th</option>
-							<option data-divider="true"></option>
-							<option value="#footer">Footer</option>
+							<optgroup label="2017">
+						    <option value="news.html#8-11-17-projects">August 11th</option>
+						    <option value="news.html#5-3-17-projects">May 3rd</option>
+								<option value="news.html#2-12-17-projects">February 12th</option>
+						  </optgroup>
+							<optgroup label="2016">
+						    <option value="news.html#6-10-16-projects">June 10th</option>
+						  </optgroup>
+							<optgroup label="2015">
+						    <option value="news.html#11-13-15-projects">November 13th</option>
+								<option value="news.html#3-7-15-projects">March 7th</option>
+								<option value="news.html#2-28-15-projects">February 28th</option>
+								<option value="news.html#2-20-15-projects">February 20th</option>
+								<option value="news.html#2-6-15-projects">February 6th</option>
+						  </optgroup>
 						</select>
 						<br>
 						<br>
 					</div>
 
 					<!--August 11, 2017-->
-					<span class="newsSection" id="5-6-17-projects">
-						<h1>August 11, 2017</h1>
-						<h2>TxtLock</h2>
-						<p>
-							<a class="link" href="txtlock.html">TxtLock</a> has received an update.<br>
-							Added Welcome screen which displays information on first startup.<br>
-							Replaces FirstRunActivity (user still sets their password).
-						</p>
-					</span><!-- /8-11-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="8-11-17-projects">
+					  <h4 class="card-header">August 11, 2017</h4>
+					  <div class="card-body">
+							<h5>TxtLock</h5>
+							<p>
+								<a class="link" href="txtlock.html">TxtLock</a> has received an update.<br>
+								Added Welcome screen which displays information on first startup.<br>
+								Replaces FirstRunActivity (user still sets their password).
+							</p>
+						</div>
+					</div><!-- /8-11-17-->
 
-					<br>
 					<br>
 
 					<!--May 6, 2017-->
-					<span class="newsSection" id="5-6-17-projects">
-						<h1>May 6, 2017</h1>
-						<h2>TxtLock</h2>
-						<p>
-							<a class="link" href="txtlock.html">TxtLock</a> has received an update.<br>
-							Added FirstRunActivity which allows the user to set their password on initial startup.
-						</p>
-					</span><!-- /5-6-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="5-6-17-projects">
+					  <h4 class="card-header">May 6, 2017</h4>
+					  <div class="card-body">
+							<h5>TxtLock</h5>
+							<p>
+								<a class="link" href="txtlock.html">TxtLock</a> has received an update.<br>
+								Added FirstRunActivity which allows the user to set their password on initial startup.
+							</p>
+						</div>
+					</div><!-- /5-6-17-->
 
-					<br>
 					<br>
 
 					<!--May 3, 2017-->
-					<span class="newsSection" id="5-3-17-projects">
-						<h1>May 3, 2017</h1>
-						<h2>TxtLock</h2>
-						<p>
-							TxtLock is an Android application which locks text behind a 7 digit (or less) password.<br>
-							Learn more <a class="link" href="txtlock.html">here</a>.
-						</p>
-					</span><!-- /5-3-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="5-3-17-projects">
+					  <h4 class="card-header">May 3, 2017</h4>
+					  <div class="card-body">
+							<h5>TxtLock</h5>
+							<p>
+								TxtLock is an Android application which locks text behind a 7 digit (or less) password.<br>
+								Learn more <a class="link" href="txtlock.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /5-3-17-->
 
-					<br>
 					<br>
 
 					<!--February 12, 2017-->
-					<span class="newsSection" id="2-12-17-projects">
-						<h1>February 12, 2017</h1>
-						<h2>Valkyrie Realms</h2>
-						<p>
-							Valkyrie Realms is a new Minecraft Plotworld PVP server.<br>
-							We'd love to have you!<br>
-							Learn more <a class="link" href="mc.html">here</a>.
-						</p>
-					</span><!-- /2-12-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-12-17-projects">
+					  <h4 class="card-header">February 12, 2017</h4>
+					  <div class="card-body">
+							<h5>Valkyrie Realms</h5>
+							<p>
+								Valkyrie Realms is a new Minecraft Plotworld PVP server.<br>
+								We'd love to have you!<br>
+								Learn more <a class="link" href="mc.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /2-12-17-->
 
-					<br>
 					<br>
 
 					<!--June 10, 2016-->
-					<span class="newsSection" id="6-10-16-projects">
-						<h1>June 10, 2016</h1>
-						<h2>Floating Survival</h2>
-						<p>
-							There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
-							The current version is v1.8.0<br>
-							Updated for Minecraft 1.10.X.<br>
-							Updated all /setblock signs to use the new NBT data.<br>
-							Changed the Death Area to be Nether themed.<br>
-							Moved the Death Area to the Redstone Box.<br>
-							Used the /setworldspawn command to set the world spawn to the Spawn Mechanism.<br>
-							Improved the Spawn asthetics (Added grass border).<br>
-							Improved Lobby asthetics (Added grass border).<br>
-							To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
-						</p>
-					</span><!-- /6-10-16 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="6-10-16-projects">
+					  <h4 class="card-header">June 10, 2016</h4>
+					  <div class="card-body">
+							<h5>Floating Survival</h5>
+							<p>
+								There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
+								The current version is v1.8.0<br>
+								Updated for Minecraft 1.10.X.<br>
+								Updated all /setblock signs to use the new NBT data.<br>
+								Changed the Death Area to be Nether themed.<br>
+								Moved the Death Area to the Redstone Box.<br>
+								Used the /setworldspawn command to set the world spawn to the Spawn Mechanism.<br>
+								Improved the Spawn asthetics (Added grass border).<br>
+								Improved Lobby asthetics (Added grass border).<br>
+								To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /6-10-16-->
 
-					<br>
 					<br>
 
 					<!--November 13, 2015-->
-					<span class="newsSection" id="11-13-15-projects">
-						<h1>November 13, 2015</h1>
-						<h2>Floating Survival</h2>
-						<p>
-							There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
-							The current version is v1.7.0<br>
-							Updated for Minecraft 1.9.X.<br>
-							Fixed Checkpoint exploits.<br>
-							Added a Clear Chat command to "The Office".<br>
-							Removed the Teleporter Book (Caused exploits and I'm too lazy to fix them).<br>
-							To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
-						</p>
-					</span><!-- /11-13-15 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-13-15-projects">
+					  <h4 class="card-header">November 13, 2017</h4>
+					  <div class="card-body">
+							<h5>Floating Survival</h5>
+							<p>
+								There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
+								The current version is v1.7.0<br>
+								Updated for Minecraft 1.9.X.<br>
+								Fixed Checkpoint exploits.<br>
+								Added a Clear Chat command to "The Office".<br>
+								Removed the Teleporter Book (Caused exploits and I'm too lazy to fix them).<br>
+								To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /11-13-15-->
 
-					<br>
 					<br>
 
 					<!--March 7, 2015-->
-					<span class="newsSection" id="3-7-15-projects">
-						<h1>March 7, 2015</h1>
-						<h2>Floating Survival</h2>
-						<p>
-						There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
-						The current version is v1.6.1.1<br>
-						Tweaked the Death Mechanism.<br>
-						To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
-						</p>
-						<h2>InvisaRant</h2>
-						<p>
-						The first Episode of <a class="link" title="InvisaRant page" href="invisarant.html">InvisaRant</a> was released today.<br>
-						Check it out and give us some <a class="link" title="Contact" data-toggle="modal" data-target="#contact">feedback</a>.<br>
-						</p>
-					</span><!-- /3-7-15 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="3-7-15-projects">
+					  <h4 class="card-header">March 7, 2015</h4>
+					  <div class="card-body">
+							<h5>Floating Survival</h5>
+							<p>
+								There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
+								The current version is v1.6.1.1<br>
+								Tweaked the Death Mechanism.<br>
+								To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+								<hr>
+								<h5>InvisaRant</h5>
+								The first Episode of <a class="link" title="InvisaRant page" href="invisarant.html">InvisaRant</a> was released today.<br>
+								Check it out and give us some <a class="link" title="Contact" data-toggle="modal" data-target="#contact">feedback</a>.<br>
+							</p>
+						</div>
+					</div><!-- /3-7-15-->
 
-					<br>
 					<br>
 
 					<!--February 28, 2015-->
-					<span class="newsSection" id="2-28-15-projects">
-						<h1>February 28, 2015</h1>
-						<h2>Floating Survival</h2>
-						<p>
-						There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
-						The current version is v1.6.1.<br>
-						I fixed the PvP Arena commands and some other minor improvements.<br>
-						I also updated commands to use my new Minecraft name.<br>
-						My Minecraft name is now "InvisaMage" (Was "Invisa_Mage").<br>
-						To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
-						</p>
-					</span><!-- /3-7-15 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-28-15-projects">
+					  <h4 class="card-header">February 28, 2015</h4>
+					  <div class="card-body">
+							<h5>Floating Survival</h5>
+							<p>
+								There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
+								The current version is v1.6.1.<br>
+								I fixed the PvP Arena commands and some other minor improvements.<br>
+								I also updated commands to use my new Minecraft name.<br>
+								My Minecraft name is now "InvisaMage" (Was "Invisa_Mage").<br>
+								To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /2-28-15-->
 
-					<br>
 					<br>
 
 					<!--February 20, 2015-->
-					<span class="newsSection" id="2-20-15-projects">
-						<h1>February 20, 2015</h1>
-						<h2>Floating Survival</h2>
-						<p>
-						There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
-						The current version is v1.6.0.<br>
-						Some notable changes are a redesigned Spawn and Wild Lobby.<br>
-						You will also receive a "Teleport" book upon agreeing to the Terms of the map.<br>
-						To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
-						</p>
-					</span><!-- /2-20-15 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-20-15-projects">
+					  <h4 class="card-header">February 20, 2015</h4>
+					  <div class="card-body">
+							<h5>Floating Survival</h5>
+							<p>
+								There was an update to the <a class="link" title="Floating Survival Page" href="fs.html">Floating Survival</a> Release Channel today.<br>
+								The current version is v1.6.0.<br>
+								Some notable changes are a redesigned Spawn and Wild Lobby.<br>
+								You will also receive a "Teleport" book upon agreeing to the Terms of the map.<br>
+								To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /2-20-15-->
 
-					<br>
 					<br>
 
 					<!--February 6, 2015-->
-					<span class="newsSection" id="2-6-15-projects">
-						<h1>February 6, 2015</h1>
-						<h2>Floating Survival Beta</h2>
-						<p>
-						There was a minor Floating Survival Beta (FS v1.6.0b5) update today.<br>
-						The redstone in the Mob Arena is more "Wireless" now.<br>
-						However, I broke a few things.<br>
-						Toggling the "Extra Area" is broken due to chunk Loading issues.<br>
-						To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
-						</p>
-					</span><!-- /2-6-15 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-6-15-projects">
+					  <h4 class="card-header">February 6, 2015</h4>
+					  <div class="card-body">
+							<h5>Floating Survival Beta</h5>
+							<p>
+								There was a minor Floating Survival Beta (FS v1.6.0b5) update today.<br>
+								The redstone in the Mob Arena is more "Wireless" now.<br>
+								However, I broke a few things.<br>
+								Toggling the "Extra Area" is broken due to chunk Loading issues.<br>
+								To view the full Change Log, click <a class="link" title="View Change Log" href="fs.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /2-6-15-->
 
 					<!--Projects Menu-->
-					<div id="menu-news" class="hidden-xs slide">
-						<h2>Date Jump</h2>
-						<li><a href="#8-11-17-projects"><span class="glyphicon glyphicon-chevron-right"></span> August 11, 2017</a></li>
-						<li><a href="#5-6-17-projects"><span class="glyphicon glyphicon-chevron-right"></span> May 6, 2017</a></li>
-						<li><a href="#5-3-17-projects"><span class="glyphicon glyphicon-chevron-right"></span> May 3, 2017</a></li>
-						<li><a href="#2-12-17-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 12, 2017</a></li>
-						<li><a href="#6-10-16-projects"><span class="glyphicon glyphicon-chevron-right"></span> June 10, 2016</a></li>
-						<li><a href="#11-13-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> November 13, 2015</a></li>
-						<li><a href="#3-7-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> March 7, 2015</a></li>
-						<li><a href="#2-28-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 28, 2015</a></li>
-						<li><a href="#2-20-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 20, 2015</a></li>
-						<li><a href="#2-6-15-projects"><span class="glyphicon glyphicon-chevron-right"></span> February 6, 2015</a></li>
+					<div id="menu-news" class="d-none d-md-inline slide">
+						<h4>Date Jump</h4>
+						<li><a href="#8-11-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> August 11, 2017</a></li>
+						<li><a href="#5-6-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> May 6, 2017</a></li>
+						<li><a href="#5-3-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> May 3, 2017</a></li>
+						<li><a href="#2-12-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> February 12, 2017</a></li>
+						<li><a href="#6-10-16-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> June 10, 2016</a></li>
+						<li><a href="#11-13-15-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> November 13, 2015</a></li>
+						<li><a href="#3-7-15-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> March 7, 2015</a></li>
+						<li><a href="#2-28-15-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> February 28, 2015</a></li>
+						<li><a href="#2-20-15-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> February 20, 2015</a></li>
+						<li><a href="#2-6-15-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> February 6, 2015</a></li>
 						<br>
 					</div>
 				</div><!-- /.projects-section -->
@@ -278,107 +277,106 @@
 					<div id="important" class="tab-pane fade">
 						<br>
 						<!--Mobile Menu Important -->
-						<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
-							<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
+						<div class="d-block d-md-none" id="mobile-menu">
+							<select>
 								<option selected value="news.html#mobile-menu">Date Jump</option>
-								<option data-divider="true"></option>
-								<option disabled>November 2016</option>
-								<option value="news.html#11-23-16-important">23rd</option>
-								<option value="news.html#11-18-16-important">18th</option>
-								<option data-divider="true"></option>
-								<option disabled>September 2016</option>
-								<option value="news.html#9-11-16-important">11th</option>
-								<option data-divider="true"></option>
-								<option disabled>December 2015</option>
-								<option value="news.html#12-12-15-important">13th</option>
-								<option data-divider="true"></option>
-								<option disabled>September 2015</option>
-								<option value="news.html#9-4-15-important">7th</option>
-								<option data-divider="true"></option>
-								<option value="#footer">Footer</option>
+								<optgroup label="2016">
+									<option value="news.html#11-23-16-important">November 23rd</option>
+									<option value="news.html#11-18-16-important">November 18th</option>
+									<option value="news.html#9-11-16-important">September 11th</option>
+							  </optgroup>
+								<optgroup label="2015">
+									<option value="news.html#12-12-15-important">December 13th</option>
+									<option value="news.html#9-4-15-important">September 7th</option>
+							  </optgroup>
 							</select>
 							<br>
 							<br>
 						</div>
 
 						<!--November 23, 2016-->
-						<span class="newsSection" id="11-23-16-important">
-							<h1>November 23, 2016</h1>
-							<h2>Security</h2>
-							<p>
-								Cookies will now only send on a secure connection.<br>
-								As a result, cookies will no longer be set when viewed locally.
-							</p>
-						</span><!-- /11-23-16 -->
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-23-16-important">
+						  <h4 class="card-header">November 23, 2016</h4>
+						  <div class="card-body">
+								<h5>Security</h5>
+								<p>
+									Cookies will now only send on a secure connection.<br>
+									As a result, cookies will no longer be set when viewed locally.
+								</p>
+							</div>
+						</div><!-- /11-23-16-->
 
-						<br>
 						<br>
 
 						<!--November 18, 2016-->
-						<span class="newsSection" id="11-18-16-important">
-							<h1>November 18, 2016</h1>
-							<h2>License</h2>
-							<p>
-								Changed the project license to the <a class="link" href="LICENSE">GNU General Public License</a> (GPL v3).
-							</p>
-						</span><!-- /11-18-16 -->
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-18-16-important">
+						  <h4 class="card-header">November 18, 2016</h4>
+						  <div class="card-body">
+								<h5>License</h5>
+								<p>
+									Changed the project license to the <a class="link" href="LICENSE">GNU General Public License</a> (GPL v3).
+								</p>
+							</div>
+						</div><!-- /11-18-16-->
 
-						<br>
 						<br>
 
 						<!--September 11, 2016-->
-						<span class="newsSection" id="9-11-16-important">
-							<h1>September 11, 2016</h1>
-							<h2>Security</h2>
-							<p>
-								Patched target="_blank" vulnerability.<br>
-								To learn more about this vulnerability, click <a class="link" href="https://dev.to/ben/the-targetblank-vulnerability-by-example" target="_blank" rel="noopener noreferrer">here</a>.
-							</p>
-						</span><!-- /9-11-16 -->
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="9-11-16-important">
+						  <h4 class="card-header">September 11, 2016</h4>
+						  <div class="card-body">
+								<h5>Security</h5>
+								<p>
+									Patched target="_blank" vulnerability.<br>
+									To learn more about this vulnerability, click <a class="link" href="https://dev.to/ben/the-targetblank-vulnerability-by-example" target="_blank" rel="noopener noreferrer">here</a>.
+								</p>
+							</div>
+						</div><!-- /9-11-16-->
 
-						<br>
 						<br>
 
 						<!--December 12, 2015-->
-						<span class="newsSection" id="12-12-15-important">
-							<h1>December 12, 2015</h1>
-							<h2>Domain Changes</h2>
-							<p>
-								If you're reading this, you should already be aware of the domain change.
-								<a class="link" href="http://invisamage.com">invisamage.com</a> is where this website will be located from now on.<br>
-								invisamage.cf is no longer affiliated with this website.
-							</p>
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="12-12-15-important">
+						  <h4 class="card-header">December 12, 2015</h4>
+						  <div class="card-body">
+								<h5>Domain Changes</h5>
+								<p>
+									If you're reading this, you should already be aware of the domain change.
+									<a class="link" href="http://invisamage.com">invisamage.com</a> is where this website will be located from now on.<br>
+									invisamage.cf is no longer affiliated with this website.
+								</p>
+								<h5>E-mail Changes</h5>
+								<p>
+									To contact me, use <a class="link" href="mailto:support@invisamage.com">support@invisamage.com</a> from now on.
+								</p>
+							</div>
+						</div><!-- /12-12-15-->
 
-							<h2>E-mail Changes</h2>
-							<p>
-								To contact me, use <a class="link" href="mailto:support@invisamage.com">support@invisamage.com</a> from now on.
-							</p>
-						</span><!-- /12-12-15 -->
-
-						<br>
 						<br>
 
 						<!--September 4, 2015-->
-						<span class="newsSection" id="9-4-15-important">
-							<h1>September 4, 2015</h1>
-							<h2>Mobile Site</h2>
-							<p>
-								The mobile version of this website is now deprecated.<br>
-								There is no need for a sudo mobile "version".<br>
-								This website is now optimized for both mobile and desktop browsers.<br>
-								It's a "responsive" website.<br>
-								Horray!
-							</p>
-						</span><!-- /9-4-15 -->
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="9-4-15-important">
+						  <h4 class="card-header">September 4, 2015</h4>
+						  <div class="card-body">
+								<h5>Mobile Site</h5>
+								<p>
+									The mobile version of this website is now deprecated.<br>
+									There is no need for a sudo mobile "version".<br>
+									This website is now optimized for both mobile and desktop browsers.<br>
+									It's a "responsive" website.<br>
+									Horray!
+								</p>
+							</div>
+						</div><!-- /9-4-15-->
 
 						<!--Important Menu-->
-						<div id="menu-news" class="hidden-xs slide">
-							<h2>Date Jump</h2>
-							<li><a href="#11-23-16-important"><span class="glyphicon glyphicon-chevron-right"></span> November 23, 2016</a></li>
-							<li><a href="#11-18-16-important"><span class="glyphicon glyphicon-chevron-right"></span> November 18, 2016</a></li>
-							<li><a href="#9-11-16-important"><span class="glyphicon glyphicon-chevron-right"></span> September 11, 2016</a></li>
-							<li><a href="#12-12-15-important"><span class="glyphicon glyphicon-chevron-right"></span> December 12, 2015</a></li>
-							<li><a href="#9-4-15-important"><span class="glyphicon glyphicon-chevron-right"></span> September 4, 2015</a></li>
+						<div id="menu-news" class="d-none d-md-inline slide">
+							<h4>Date Jump</h4>
+							<li><a href="#11-23-16-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> November 23, 2016</a></li>
+							<li><a href="#11-18-16-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> November 18, 2016</a></li>
+							<li><a href="#9-11-16-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> September 11, 2016</a></li>
+							<li><a href="#12-12-15-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> December 12, 2015</a></li>
+							<li><a href="#9-4-15-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> September 4, 2015</a></li>
 							<br>
 						</div><!-- /important menu -->
 					</div><!-- /important-section -->
@@ -387,165 +385,211 @@
 					<div id="website" class="tab-pane fade">
 					<br>
 					<!--Mobile Menu Website -->
-					<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
-						<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
+					<div class="d-block d-md-none" id="mobile-menu">
+						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
-							<option disabled>August 11, 2017</option>
-							<option value="news.html#8-11-17-website">11th</option>
-							<option data-divider="true"></option>
-							<option disabled>July 2017</option>
-							<option value="news.html#7-10-17-website">10th</option>
-							<option data-divider="true"></option>
-							<option disabled>June 2017</option>
-							<option value="news.html#6-23-17-website">23rd</option>
-							<option value="news.html#6-14-17-website">14th</option>
-							<option data-divider="true"></option>
-							<option disabled>May 2017</option>
-							<option value="news.html#5-3-17-website">3rd</option>
-							<option data-divider="true"></option>
-							<option disabled>February 2017</option>
-							<option value="news.html#2-22-17-website">22nd</option>
-							<option value="news.html#2-12-17-website">12th</option>
-							<option value="news.html#news-website-2016" data-icon="glyphicon glyphicon-time">Older</option>
-							<option value="#footer">Footer</option>
+							<optgroup label="August 2017">
+						    <option value="news.html#9-29-17-website">29th</option>
+						    <option value="news.html#8-11-17-website">11th</option>
+						  </optgroup>
+							<optgroup label="July 2017">
+						    <option value="news.html#7-10-17-website">10th</option>
+						  </optgroup>
+							<optgroup label="June 2017">
+								<option value="news.html#6-23-17-website">23rd</option>
+								<option value="news.html#6-14-17-website">14th</option>
+						  </optgroup>
+							<optgroup label="May 2017">
+								<option value="news.html#5-3-17-website">3rd</option>
+						  </optgroup>
+							<optgroup label="February 2017">
+								<option value="news.html#2-22-17-website">22nd</option>
+								<option value="news.html#2-12-17-website">12th</option>
+						  </optgroup>
+							<option value="news.html#news-website-2016">Older</option>
 						</select>
 						<br>
 						<br>
 					</div>
 
-					<!--August 11, 2017-->
-					<span class="newsSection" id="8-11-17-website">
-						<h1>August 11, 2017</h1>
-						<p>
-							The Easter egg modal is now an accordion.
-						</p>
-					</span><!-- /8-11-17 -->
+					<!--September 29, 2017-->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="9-29-17-website">
+						<h4 class="card-header">September 29, 2017</h4>
+						<div class="card-body">
+							<p>
+								Complete site redesign.<br>
+								Updated to Bootstrap 4.<br>
+								Updated to jQuery 3.<br>
+								Replaced Glyphicons with Font Awesome.
+								<br>
+								<br>
+								Major changes to the Terminal.<br>
+								Using a new library called <a class="link" target="_blank" rel="noopener noreferrer" href="http://terminal.jcubic.pl/">jQuery Terminal</a>.<br>
+								Now only accessible on desktops (or mobile if you use a physical keyboard).
+								<br>
+								<br>
+								Alerts have been ajaxed to improve page loading.<br>
+								This also prevents the possibility of them being visible and then disappearing immediately. 
+								<br>
+								<br>
+								Renamed the "About" page to "Information".<br>
+								Removed the water function.<br>
+								Removed the ability to download FS Betas.<br>
+								Removed the ability to donate with a QR code.<br>
+								Removed the loading screen.
+								<br>
+								<br>
+								Archived the site from August 11, 2017.
+							</p>
+						</div>
+					</div><!-- /9-29-17-->
 
 					<br>
+
+					<!--August 11, 2017-->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="8-11-17-website">
+						<h4 class="card-header">August 11, 2017</h4>
+						<div class="card-body">
+							<p>
+								The Easter egg modal is now an accordion.
+							</p>
+						</div>
+					</div><!-- /8-11-17-->
+
 					<br>
 
 					<!--July 10, 2017-->
-					<span class="newsSection" id="7-10-17-website">
-						<h1>July 10, 2017</h1>
-						<p>
-							The font has been changed from Ubuntu to Arial to reduce page load times.
-						</p>
-					</span><!-- /7-10-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="7-10-17-website">
+						<h4 class="card-header">July 10, 2017</h4>
+						<div class="card-body">
+							<p>
+								The font has been changed from Ubuntu to Arial to reduce page load times.
+							</p>
+						</div>
+					</div><!-- /7-10-17-->
 
-					<br>
 					<br>
 
 					<!--June 23, 2017-->
-					<span class="newsSection" id="6-23-17-website">
-						<h1>June 23, 2017</h1>
-						<p>
-							Improved search functionality.<br>
-							You can now search using your favorite search engine.<br>
-							For example, <kbd>google Test</kbd> will open a new tab and search for Test on Google.
-							<br>
-							<br>
-							Changed the way anchors work.<br>
-							This should fix the problem of the navigation bar clipping content.
-						</p>
-					</span><!-- /6-23-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="6-23-17-website">
+						<h4 class="card-header">June 23, 2017</h4>
+						<div class="card-body">
+							<p>
+								Improved search functionality.<br>
+								You can now search using your favorite search engine.<br>
+								For example, <kbd>google Test</kbd> will open a new tab and search for Test on Google.
+								<br>
+								<br>
+								Changed the way anchors work.<br>
+								This should fix the problem of the navigation bar clipping content.
+							</p>
+						</div>
+					</div><!-- /6-23-17-->
 
-					<br>
 					<br>
 
 					<!--June 14, 2017-->
-					<span class="newsSection" id="6-14-17-website">
-						<h1>June 14, 2017</h1>
-						<p>
-							<a class="link" href="fs.html">Floating Survival</a> images are once again hosted locally.<br>
-							All image sizes have been optimized for faster transfer rates at a cost of quality.<br>
-							The Settings and Achievement Modal will now warn if the site is being viewed locally (Not http(s)).<br>
-							Removed duplicate close buttons on modals.<br>
-							Added more animations to pages.
-						</p>
-					</span><!-- /6-14-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="6-14-17-website">
+						<h4 class="card-header">June 14, 2017</h4>
+						<div class="card-body">
+							<p>
+								<a class="link" href="fs.html">Floating Survival</a> images are once again hosted locally.<br>
+								All image sizes have been optimized for faster transfer rates at a cost of quality.<br>
+								The Settings and Achievement Modal will now warn if the site is being viewed locally (Not http(s)).<br>
+								Removed duplicate close buttons on modals.<br>
+								Added more animations to pages.
+							</p>
+						</div>
+					</div><!-- /6-14-17-->
 
-					<br>
 					<br>
 
 					<!--May 3, 2017-->
-					<span class="newsSection" id="5-3-17-website">
-						<h1>May 3, 2017</h1>
-						<p>
-							Changed most Shortcuts.<br>
-							Homepage now informs user if JavaScript has been disabled.<br>
-							Fixes to compiled.js.
-						</p>
-					</span><!-- /5-3-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="5-3-17-website">
+						<h4 class="card-header">May 3, 2017</h4>
+						<div class="card-body">
+							<p>
+								Changed most Shortcuts.<br>
+								Homepage now informs user if JavaScript has been disabled.<br>
+								Fixes to compiled.js.
+							</p>
+						</div>
+					</div><!-- /5-3-17-->
 
-					<br>
 					<br>
 
 					<!--February 22, 2017-->
-					<span class="newsSection" id="2-22-17-website">
-						<h1>February 22, 2017</h1>
-						<p>
-							Made the Stats, Achievements, and Settings easier to access on small displays.<br>
-							Added spiffy animations to the news page thanks to animate.css.<br>
-							Added <a class="link" onclick="loadShortcutsMod();" data-toggle="tooltip" data-placement="top" title="View key combinations.">Shortcuts</a> modal which lists and describes key combinations.<br>
-							Added the ability do disable the loading screen in the <a class="link" onclick="loadSettingsMod();">Settings</a> modal.<br>
-							Improved special namePrompt input detection.<br>
-							Improved search function detection.
-							<br>
-							<br>
-							Fixed the water function on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
-							For some unkown reason it now works on Chrome 56+.
-						</p>
-					</span><!-- /2-22-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-22-17-website">
+						<h4 class="card-header">February 22, 2017</h4>
+						<div class="card-body">
+							<p>
+								Made the Stats, Achievements, and Settings easier to access on small displays.<br>
+								Added spiffy animations to the news page thanks to animate.css.<br>
+								Added <a class="link" onclick="loadShortcutsMod();" data-toggle="tooltip" data-placement="top" title="View key combinations.">Shortcuts</a> modal which lists and describes key combinations.<br>
+								Added the ability do disable the loading screen in the <a class="link" onclick="loadSettingsMod();">Settings</a> modal.<br>
+								Improved special namePrompt input detection.<br>
+								Improved search function detection.
+								<br>
+								<br>
+								Fixed the water function on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
+								For some unknown reason it now works on Chrome 56+.
+							</p>
+						</div>
+					</div><!-- /2-22-17-->
 
-					<br>
 					<br>
 
 					<!--February 12, 2017-->
-					<span class="newsSection" id="2-12-17-website">
-						<h1>February 12, 2017</h1>
-						<p>
-							Added Valkyrie Realms page.<br>
-							Added animate.css which allows for new fancy animations in the navigation bar.<br>
-							Ajaxed 2016 news.<br>
-							Minor adjustments.
-						</p>
-					</span><!-- /2-12-17 -->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-12-17-website">
+						<h4 class="card-header">February 12, 2017</h4>
+						<div class="card-body">
+							<p>
+								Added Valkyrie Realms page.<br>
+								Added animate.css which allows for new fancy animations in the navigation bar.<br>
+								Ajaxed 2016 news.<br>
+								Minor adjustments.
+							</p>
+						</div>
+					</div><!-- /2-12-17-->
 
-					<br>
 					<br>
 
 					<span id="news-website-2016">
-						<button type="button" class="btn btn-md btn-primary" onclick="$('#news-website-2016').load('ajax/news-website-2016.html');" data-toggle="tooltip" data-placement="top" title="Older News">
-			        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+						<button type="button" class="btn btn-md btn-primary" onclick="$('#news-website-2016').load('ajax/news-website-2016.html');">
+			        <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i> Show more
 			      </button>
 					</span>
 
 						<!--Website Menu-->
-						<div id="menu-news" class="hidden-xs slide">
-							<h2>Date Jump</h2>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> August 2017</a></li>
+						<div id="menu-news" class="d-none d-md-inline slide">
+							<h4>Date Jump</h4>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> September 2017</a></li>
 							<div id="menu-news-nested">
-								<li><a href="#8-11-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 11th</a></li>
+								<li><a href="#9-29-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 29th</a></li>
 							</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> July 2017</a></li>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> August 2017</a></li>
 							<div id="menu-news-nested">
-								<li><a href="#7-10-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 10th</a></li>
+								<li><a href="#8-11-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 11th</a></li>
 							</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> June 2017</a></li>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> July 2017</a></li>
 							<div id="menu-news-nested">
-								<li><a href="#6-23-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 23rd</a></li>
-								<li><a href="#6-14-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 14th</a></li>
+								<li><a href="#7-10-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 10th</a></li>
 							</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> May 2017</a></li>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> June 2017</a></li>
 							<div id="menu-news-nested">
-								<li><a href="#5-3-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 3rd</a></li>
+								<li><a href="#6-23-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 23rd</a></li>
+								<li><a href="#6-14-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 14th</a></li>
 							</div>
-							<li><a><span class="glyphicon glyphicon-chevron-down"></span> February 2017</a></li>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> May 2017</a></li>
 							<div id="menu-news-nested">
-								<li><a href="#2-22-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 22nd</a></li>
-								<li><a href="#2-12-17-website"><span class="glyphicon glyphicon-chevron-right"></span> 12th</a></li>
+								<li><a href="#5-3-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 3rd</a></li>
 							</div>
-							<li><a href="#news-website-2016"><span class="glyphicon glyphicon-time"></span> Older</a></li>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> February 2017</a></li>
+							<div id="menu-news-nested">
+								<li><a href="#2-22-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 22nd</a></li>
+								<li><a href="#2-12-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 12th</a></li>
+							</div>
+							<li><a href="#news-website-2016"><i class="fa fa-clock-o" aria-hidden="true"></i> Older</a></li>
 							<br>
 						</div><!-- /website menu -->
 					</div><!-- /website-section -->
@@ -554,87 +598,77 @@
 					<div id="bugs" class="tab-pane fade in">
 						<br>
 						<!--Mobile Menu Bugs -->
-						<div class="hidden-sm hidden-md hidden-lg" id="mobile-menu">
-							<select class="selectpicker show-menu-arrow" data-header="Select a date." data-width="auto%">
+						<div class="d-block d-md-none" id="mobile-menu">
+							<select>
 								<option selected value="news.html#mobile-menu">Content</option>
-								<option data-divider="true"></option>
 								<option value="news.html#problems">Known Bugs / Problems</option>
 								<option value="news.html#fixed">Fixed Bugs</option>
 								<option value="news.html#notes">Notes</option>
-								<option data-divider="true"></option>
-								<option value="#footer">Footer</option>
 							</select>
 							<br>
 							<br>
 						</div>
 
-						<!--Bugs-->
-						<span class="newsSection" id="problems">
-							<h1>Known Bugs / Problems</h1>
-							<p>
-								Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
-								<br>
-								<br>
-								Scrolling back to the top of the page on a Mobile device can be laggy.
-							</p>
-						</span>
+						<!--Problems-->
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="problems">
+						  <h4 class="card-header">Known Problems</h4>
+						  <div class="card-body">
+								<p>
+									Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
+									<hr>
+									<a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers stack the homepage cards incorrectly.<br>
+									Modals have no animations due to a bootstrap <a class="link" href="https://github.com/twbs/bootstrap/issues/23604" target="_blank" rel="noopener noreferrer">bug</a>.<br>
+									The navigation dropdown on mobile devices may shift over and clip content on small screens.
+								</p>
+							</div>
+						</div><!-- /problems-->
 
-						<br>
 						<br>
 
 						<!--Fixed-->
-						<span class="newsSection" id="fixed">
-							<h1>Fixed</h1>
-							<p>
-								Going to anchors clips content due to the fixed navigation bar.<br>
-								Currently the Water function does not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
-								Going to another page's anchor does not work correctly. (Stays at the top of the page).<br>
-								The Date Jump menu is only visible on the Projects tab while on a Mobile device.<br>
-								On the <a class="link" href="fs.html">Floating Survival</a> page, using the carousel will focus the page on it.<br>
-								The images on the <a class='link' title="iOS Web App" href="webapp.html">iOS Web Application</a> page are outdated.<br>
-								The Search function can act weird sometimes.<br>
-								Pages zoom out sometimes on smaller screens.<br>
-								The namePrompt function does not use a modal.<br>
-								Tables don't fit well on Mobile.<br>
-								The redirect to Google from declining the Terms or the Privacy policy.<br>
-								The news page has bigger font.<br>
-								Tooltips don't always load.
-							</p>
-						</span>
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="fixed">
+						  <h4 class="card-header">Fixed</h4>
+						  <div class="card-body">
+								<p>
+									None!
+								</p>
+							</div>
+						</div><!-- /fixed-->
 
-						<br>
 						<br>
 
 						<!--Notes-->
-						<span class="newsSection" id="notes">
-							<h1>Notes</h1>
-							<p>
-								Tooltips are disabled on touchsreen devices.<br>
-								Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
-								Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.<br>
-								If you are viewing this site locally, cookies will not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
-								Cookies will not work locally as they are only set on secure connections.
-								<br>
-								<br>
-								<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
-								A known workaround for this problem is to load the browser executable with a flag.<br>
-								<kbd>Win + R</kbd> > <kbd>path/to/.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd><br>
-								Example: <kbd>Win + R</kbd> > <kbd>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd>
-							</p>
-						</span>
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="notes">
+						  <h4 class="card-header">Notes</h4>
+						  <div class="card-body">
+								<p>
+									Tooltips are disabled on touchsreen devices.<br>
+									Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
+									Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.<br>
+									If you are viewing this site locally, cookies will not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
+									Cookies will not work locally as they are only set on secure connections.
+									<br>
+									<br>
+									<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
+									A known workaround for this problem is to load the browser executable with a flag.<br>
+									<kbd>Win + R</kbd> > <kbd>path/to/.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd><br>
+									Example: <kbd>Win + R</kbd> > <kbd>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd>
+								</p>
+							</div>
+						</div><!-- /notes-->
 
 						<!--Bugs Menu-->
-						<div id="menu-news" class="hidden-xs slide">
+						<div id="menu-news" class="d-none d-md-inline slide">
 							<h2>Content</h2>
-							<li><a href="#problems"><span class="glyphicon glyphicon-chevron-right"></span> Known Problems</a></li>
-							<li><a href="#fixed"><span class="glyphicon glyphicon-chevron-right"></span> Fixed</a></li>
-							<li><a href="#notes"><span class="glyphicon glyphicon-chevron-right"></span> Notes</a></li>
+							<li><a href="#problems"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Known Problems</a></li>
+							<li><a href="#fixed"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Fixed</a></li>
+							<li><a href="#notes"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Notes</a></li>
 							<br>
 						</div>
 					</div><!-- /bugs-section -->
+					<br>
 				</div><!-- /.tab-content -->
 
-			<br>
 			<br>
 
 			<!--Footer-->
@@ -647,28 +681,26 @@
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/search.js"></script>
-		<script src="js/nprogress.js"></script>
 		<script src="js/typeahead.min.js"></script>
-		<script id="js-water"></script>
 		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script src="js/bootstrap-select.min.js"></script>
 		<script id="js-ptty"></script>
 
 		<script>
 			function slideInUp(tab){
-	   		$('.newsSection').addClass('animated slideInUp');
+	   		$('.card').addClass('animated slideInUp');
 				$('.slide').addClass('animated slideInLeft');
 			}
-			$('.newsSection').addClass('animated slideInUp');
+			$('.card').addClass('animated slideInUp');
 			$('.slide').addClass('animated slideInLeft');
 		</script>
 	</body>
-	</div>
 </html>

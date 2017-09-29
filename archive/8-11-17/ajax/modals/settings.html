@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<!--Settings Modal-->
+<div class="modal-dialog modal-md" id="ajax-settings">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="settingsCancelMsg();"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title black">Settings</h4>
+    </div>
+    <div class="modal-body text-left">
+      <!--local-warning-banner-->
+      <div id="local-warning-banner" class="alert alert-danger fade in text-center" role="alert">
+        <strong>*Warning*</strong><br>
+        <span id="local-warning-banner-content">
+          Something is wrong if you are seeing this. <a onclick="$('#modal-settings').modal('hide'); loadContactMod();">Contact</a> me.
+        </span>
+    	</div><!--./local-warning-banner-->
+      <!--Row 1-->
+      <div class="row">
+        <!--Theme-->
+        <div class="col-sm-6">
+          <div class="well well-sm fixed-well">
+            Website theme<br>
+            <span style="font-size:14px;">Customize the appearance of the site.</span>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option5" id="theme-radio1" value="dark" checked>
+              <label for="theme-radio1">Dark (Default)</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option5" id="theme-radio2" value="light">
+              <label for="theme-radio2">Light</label>
+            </div>
+            <hr>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="modal-centered-checkbox1" value="true">
+              <label for="modal-centered-checkbox1">
+                Center modals
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="loading-screen-checkbox1" value="true">
+              <label for="loading-screen-checkbox1" data-toggle="tooltip" data-placement="top" title="This feature is very buggy." data-container="body">
+                Disable loading screen
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="legacy-background-checkbox1" value="true">
+              <label for="legacy-background-checkbox1">
+                Legacy background
+              </label>
+            </div>
+          </div><!--/.well-->
+        </div>
+        <!--Banners-->
+        <div class="col-sm-6">
+          <div class="well well-sm fixed-well">
+            Banners<br>
+            <span style="font-size:14px;">Select where you want to see banners.</span>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="home-banner-checkbox1" value="true" checked>
+              <label for="home-banner-checkbox1">
+                Homepage
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="tac-banner-checkbox1" value="true" checked>
+              <label for="tac-banner-checkbox1">
+                Terms and Privacy page
+              </label>
+            </div>
+          </div><!--/.well-->
+        </div>
+      </div><!--/row-->
+      <!--Row 2-->
+      <div class="row">
+        <!--News-->
+        <div class="col-sm-6">
+          <div class="well well-sm fixed-well">
+            News page<br>
+            <span style="font-size:14px;">Select the default tab.</span>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option2" id="news-radio1" value="projects" checked>
+              <label for="news-radio1">Projects (Default)</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option2" id="news-radio2" value="important">
+              <label for="news-radio2">Important</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option2" id="news-radio3" value="website">
+              <label for="news-radio3">Website</label>
+            </div>
+            <div class="radio radio-primary" style="font-size:16px;">
+              <input type="radio" name="option2" id="news-radio4" value="bugs">
+              <label for="news-radio4">Bugs</label>
+            </div>
+          </div>
+        </div>
+        <!--Page load-->
+        <div class="col-sm-6">
+          <div class="well well-sm fixed-well">
+            On page load...<br>
+            <span style="font-size:14px;">What happens when the page loads.</span>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="terminal-checkbox1" value="true">
+              <label for="terminal-checkbox1">
+                Load Terminal assets
+              </label>
+            </div>
+            <div class="checkbox checkbox-primary" style="font-size:16px;">
+              <input type="checkbox" id="snowstorm-checkbox1" value="true">
+              <label for="snowstorm-checkbox1">
+                Enable snowstorm
+              </label>
+            </div>
+          </div><!--/.well-->
+        </div>
+      </div><!--/row-->
+    </div><!--/.modal-body-->
+    <!--Settings Help Collapsible Content-->
+    <div class="collapse" id="modal-settings-collapse">
+      <div class="well">
+        <button type="button" class="close" onclick="$('#modal-settings-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>What is this?</strong><br>
+        Configure the website preferences to your liking.
+        <br>
+        <br>
+        <strong>Note:</strong><br>
+        Clicking or tapping the "Cancel" button will not save your changes.<br>
+        In order to see some changes you may need to reload the page.<br>
+        Centered modals no not work on small displays.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" onclick="$('#modal-settings-collapse').collapse('toggle');">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="settingsCancelMsg();">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="settingsCheck();"> Save
+        <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-settings-->
+
+<script>
+  //Re enable tooltips.
+  if(!('ontouchstart' in window))
+  {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
+  //Checks which ratios should be selected
+  $(function() {
+    //Theme
+    if (Cookies.get('theme') == 'dark') {
+      $("#theme-radio1").replaceWith("<input type='radio' name='option5' id='theme-radio1' value='dark' checked>");
+    }
+    if (Cookies.get('theme') == 'light') {
+      $("#theme-radio2").replaceWith("<input type='radio' name='option5' id='theme-radio2' value='light' checked>");
+    }
+    //Legacy background
+    if (Cookies.get('themeLegacyBg') == 'true') {
+      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('themeLegacyBg') != 'true') {
+      $("#legacy-background-checkbox1").replaceWith("<input type='checkbox' id='legacy-background-checkbox1' value='true'>");
+    }
+    //Centered modals
+    if (Cookies.get('centeredModals') == 'true') {
+      $("#modal-centered-checkbox1").replaceWith("<input type='checkbox' id='modal-centered-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('centeredModals') != 'true') {
+      $("#modal-centered-checkbox1").replaceWith("<input type='checkbox' id='modal-centered-checkbox1' value='true'>");
+    }
+    //Loading screen
+    if (Cookies.get('loadingScreen') == 'true') {
+      $("#loading-screen-checkbox1").replaceWith("<input type='checkbox' id='loading-screen-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('loadingScreen') != 'true') {
+      $("#loading-screen-checkbox1").replaceWith("<input type='checkbox' id='loading-screen-checkbox1' value='true'>");
+    }
+    //Banner - Homepage
+    if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') === undefined) {
+      $("#home-banner-checkbox1").replaceWith("<input type='checkbox' id='home-banner-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('enableEventsBanner') != 'true') {
+      $("#home-banner-checkbox1").replaceWith("<input type='checkbox' id='home-banner-checkbox1' value='true'>");
+    }
+    //Banner - Terms and Conditions
+    if (Cookies.get('enableTacBanner') == 'true' || Cookies.get('enableTacBanner') === undefined) {
+      $("#tac-banner-checkbox1").replaceWith("<input type='checkbox' id='tac-banner-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('enableTacBanner') != 'true') {
+      $("#tac-banner-checkbox1").replaceWith("<input type='checkbox' id='tac-banner-checkbox1' value='true'>");
+    }
+    //News
+    if (Cookies.get('defaultTab') == 'projects') {
+      $("#news-radio1").replaceWith("<input type='radio' name='option2' id='news-ratio1' value='projects' checked>");
+    }
+    if (Cookies.get('defaultTab') == 'important') {
+      $("#news-radio2").replaceWith("<input type='radio' name='option2' id='news-ratio2' value='important' checked>");
+    }
+    if (Cookies.get('defaultTab') == 'website') {
+      $("#news-radio3").replaceWith("<input type='radio' name='option2' id='news-ratio3' value='website' checked>");
+    }
+    if (Cookies.get('defaultTab') == 'bugs') {
+      $("#news-radio4").replaceWith("<input type='radio' name='option2' id='news-ratio4' value='bugs' checked>");
+    }
+    //On page load - Snowstorm
+    if (Cookies.get('enableSnowstorm') == 'true') {
+      $("#snowstorm-checkbox1").replaceWith("<input type='checkbox' name='option4' id='snowstorm-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('enableSnowstorm') != 'true') {
+      $("#snowstorm-checkbox1").replaceWith("<input type='checkbox' name='option4' id='snowstorm-checkbox1' value='true'>");
+    }
+    //On page load - Terminal
+    if (Cookies.get('loadTerminal') == 'true') {
+      $("#terminal-checkbox1").replaceWith("<input type='checkbox' name='option1' id='terminal-checkbox1' value='true' checked>");
+    }
+    if (Cookies.get('loadTerminal') != 'true') {
+      $("#terminal-checkbox1").replaceWith("<input type='checkbox' name='option1' id='terminal-checkbox1' value='true'>");
+    }
+  });
+
+  //Local File Detection
+  $(function(){
+    if (protocol == "file:") {
+      document.getElementById("local-warning-banner-content").innerHTML =
+      "It looks like you are viewing this page locally. " +
+      "Cookies are configured to only send on secure connections (https). " +
+      "As a result, these Settings will have no effect as they require cookies to function. ";
+      console.log("Local site");
+    }
+    else {
+      $('#local-warning-banner').toggle();
+      console.log("Settings will work");
+    }
+  });
+</script>
+
+<style>
+/* awesome-boostrap-checkbox Library by flatlogic
+ * https://github.com/flatlogic/awesome-bootstrap-checkbox
+ */
+.checkbox {
+  padding-left: 20px;
+}
+.checkbox label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 5px;
+}
+.checkbox label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox label::after {
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 0;
+  margin-left: -20px;
+  padding-left: 4px;
+  padding-top: 2px;
+  font-size: 9px;
+  color: #555555;
+}
+input[type="checkbox"].styled:checked label:after,
+input[type="radio"].styled:checked label:after,
+.checkbox label:after {
+    padding-left: 4px;
+    padding-top: 2px;
+    font-size: 9px;
+}
+.checkbox input[type="checkbox"],
+.checkbox input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+}
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after,
+.checkbox input[type=checkbox]:checked + label:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+}
+.checkbox input[type="checkbox"]:indeterminate + label::after,
+.checkbox input[type="radio"]:indeterminate + label::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 3px;
+  background-color: #555555;
+  border-radius: 2px;
+  margin-left: -16.5px;
+  margin-top: 7px;
+}
+.checkbox input[type="checkbox"]:disabled + label,
+.checkbox input[type="radio"]:disabled + label {
+  opacity: 0.65;
+}
+.checkbox input[type="checkbox"]:disabled + label::before,
+.checkbox input[type="radio"]:disabled + label::before {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+.checkbox.checkbox-circle label::before {
+  border-radius: 50%;
+}
+.checkbox.checkbox-inline {
+  margin-top: 0;
+}
+
+.checkbox-primary input[type="checkbox"]:checked + label::before,
+.checkbox-primary input[type="radio"]:checked + label::before {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.checkbox-primary input[type="checkbox"]:checked + label::after,
+.checkbox-primary input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-danger input[type="checkbox"]:checked + label::before,
+.checkbox-danger input[type="radio"]:checked + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+.checkbox-danger input[type="checkbox"]:checked + label::after,
+.checkbox-danger input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-info input[type="checkbox"]:checked + label::before,
+.checkbox-info input[type="radio"]:checked + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+.checkbox-info input[type="checkbox"]:checked + label::after,
+.checkbox-info input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-warning input[type="checkbox"]:checked + label::before,
+.checkbox-warning input[type="radio"]:checked + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+.checkbox-warning input[type="checkbox"]:checked + label::after,
+.checkbox-warning input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-success input[type="checkbox"]:checked + label::before,
+.checkbox-success input[type="radio"]:checked + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+.checkbox-success input[type="checkbox"]:checked + label::after,
+.checkbox-success input[type="radio"]:checked + label::after {
+  color: #fff;
+}
+
+.checkbox-primary input[type="checkbox"]:indeterminate + label::before,
+.checkbox-primary input[type="radio"]:indeterminate + label::before {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.checkbox-primary input[type="checkbox"]:indeterminate + label::after,
+.checkbox-primary input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-danger input[type="checkbox"]:indeterminate + label::before,
+.checkbox-danger input[type="radio"]:indeterminate + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.checkbox-danger input[type="checkbox"]:indeterminate + label::after,
+.checkbox-danger input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-info input[type="checkbox"]:indeterminate + label::before,
+.checkbox-info input[type="radio"]:indeterminate + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+
+.checkbox-info input[type="checkbox"]:indeterminate + label::after,
+.checkbox-info input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-warning input[type="checkbox"]:indeterminate + label::before,
+.checkbox-warning input[type="radio"]:indeterminate + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.checkbox-warning input[type="checkbox"]:indeterminate + label::after,
+.checkbox-warning input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.checkbox-success input[type="checkbox"]:indeterminate + label::before,
+.checkbox-success input[type="radio"]:indeterminate + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.checkbox-success input[type="checkbox"]:indeterminate + label::after,
+.checkbox-success input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
+}
+
+.radio {
+  padding-left: 20px;
+}
+.radio label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 5px;
+}
+.radio label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out;
+}
+.radio label::after {
+  display: inline-block;
+  position: absolute;
+  content: " ";
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
+  margin-left: -20px;
+  border-radius: 50%;
+  background-color: #555555;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+}
+.radio input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+}
+.radio input[type="radio"]:checked + label::after {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.radio input[type="radio"]:disabled + label {
+  opacity: 0.65;
+}
+.radio input[type="radio"]:disabled + label::before {
+  cursor: not-allowed;
+}
+.radio.radio-inline {
+  margin-top: 0;
+}
+
+.radio-primary input[type="radio"] + label::after {
+  background-color: #337ab7;
+}
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: #337ab7;
+}
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: #337ab7;
+}
+
+.radio-danger input[type="radio"] + label::after {
+  background-color: #d9534f;
+}
+.radio-danger input[type="radio"]:checked + label::before {
+  border-color: #d9534f;
+}
+.radio-danger input[type="radio"]:checked + label::after {
+  background-color: #d9534f;
+}
+
+.radio-info input[type="radio"] + label::after {
+  background-color: #5bc0de;
+}
+.radio-info input[type="radio"]:checked + label::before {
+  border-color: #5bc0de;
+}
+.radio-info input[type="radio"]:checked + label::after {
+  background-color: #5bc0de;
+}
+
+.radio-warning input[type="radio"] + label::after {
+  background-color: #f0ad4e;
+}
+.radio-warning input[type="radio"]:checked + label::before {
+  border-color: #f0ad4e;
+}
+.radio-warning input[type="radio"]:checked + label::after {
+  background-color: #f0ad4e;
+}
+
+.radio-success input[type="radio"] + label::after {
+  background-color: #5cb85c;
+}
+.radio-success input[type="radio"]:checked + label::before {
+  border-color: #5cb85c;
+}
+.radio-success input[type="radio"]:checked + label::after {
+  background-color: #5cb85c;
+}
+
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after {
+  font-family: 'FontAwesome';
+  content: "\f00c";
+}
+input[type="checkbox"] .styled:checked + label::before,
+input[type="radio"] .styled:checked + label::before {
+  color: #fff;
+}
+input[type="checkbox"] .styled:checked + label::after,
+input[type="radio"] .styled:checked + label::after {
+  color: #fff;
+}
+</style>

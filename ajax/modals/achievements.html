@@ -4,70 +4,77 @@
 <div class="modal-dialog modal-sm" id="ajax-achievements">
   <div class="modal-content">
     <div class="modal-header">
+      <h4 class="modal-title mx-auto black">Achievements</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">Achievements</h4>
     </div>
     <div class="modal-body">
       <!--local-warning-banner-->
-      <div id="local-warning-banner2" class="alert alert-danger fade in text-center" role="alert">
-        <strong>*Warning*</strong><br>
-        <span id="local-warning-banner-content2">
-          Something is wrong if you are seeing this. <a onclick="$('#modal-achievements').modal('hide'); loadContactMod();">Contact</a> me.
-        </span>
-    	</div><!--./local-warning-banner-->
-      <table class="table table-responsive table-condensed table-hover">
+      <div id="ajax-achievements-warning-banner"></div>
+      <table class="table table-inverse table-hover">
         <!--Header-->
-        <tr>
-          <td><h5 class="black-bold">Name</h5></td>
-          <th><h5 class="black-bold">Achieved</h5></th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Achieved</th>
+          </tr>
+        </thead>
         <!--Konami-->
         <tr class="not-active" id="eastereggRow">
-          <td><h5 class="black">Konami Code</h5></td>
-          <th><h5 class="text-danger" id="eastereggAchievement">No</h5></th>
+          <td><h6 class="black">Konami Code</h6></td>
+          <th><h6 class="text-danger" id="eastereggAchievement">No</h6></th>
         </tr>
         <!--Terminal-->
         <tr class="not-active" id="terminalRow">
-          <td><h5 class="black">Hacker?!</h5></td>
-          <th><h5 class="text-danger" id="terminalAchievement">No</h5></th>
+          <td><h6 class="black">Hacker?!</h6></td>
+          <th><h6 class="text-danger" id="terminalAchievement">No</h6></th>
         </tr>
         <!--Wisely-->
         <tr class="not-active" id="wiselyRow">
-          <td><h5 class="black">Chosen Wisely</h5></td>
-          <th><h5 class="text-danger" id="wiselyAchievement">No</h5></th>
+          <td><h6 class="black">Chosen Wisely</h6></td>
+          <th><h6 class="text-danger" id="wiselyAchievement">No</h6></th>
         </tr>
         <!--Hallucinating-->
         <tr class="not-active" id="hallucinatingRow">
-          <td><h5 class="black">Hallucinating</h5></td>
-          <th><h5 class="text-danger" id="hallucinatingAchievement">No</h5></th>
+          <td><h6 class="black">Hallucinating</h6></td>
+          <th><h6 class="text-danger" id="hallucinatingAchievement">No</h6></th>
         </tr>
         <!--Purple Rain-->
         <tr class="not-active" id="purplerainRow">
-          <td><h5 class="black">Purple Rain</h5></td>
-          <th><h5 class="text-danger" id="purplerainAchievement">No</h5></th>
+          <td><h6 class="black">Purple Rain</h6></td>
+          <th><h6 class="text-danger" id="purplerainAchievement">No</h6></th>
         </tr>
       </table>
     </div>
     <!--Achievements Help Collapsible Content-->
     <div class="collapse" id="modal-achievements-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-achievements-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>What is this?</strong><br>
-        This shows you the status of available achievements found in this site.
+      <div class="card text-white bg-secondary">
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-achievements-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <div class="card-body">
+          <h6>What does this do?</h6>
+          <p class="card-text">
+            This shows you the status of available achievements found in this site.
+          </p>
+        </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info" onclick="$('#modal-achievements-collapse').collapse('toggle');">
-        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <button type="button" class="btn btn-outline-info" onclick="$('#modal-achievements-collapse').collapse('toggle');">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-content -->
 </div><!-- /.modal-achievements-->
 
 <script>
+  $(function() {
+    if (Cookies.get('theme') == 'light') {
+      $('table').removeClass('table-inverse').addClass('table-light');
+    }
+  });
+
   /* Allows popover activation on hover
    * Modified from http://stackoverflow.com/questions/17437818/twitter-bootstrap-popover-trigger-how-to-set-multiple-triggers#17438133
    */
@@ -97,11 +104,11 @@
       $("#eastereggRow").attr("class","cur-point");
       $("#eastereggRow").attr("data-toggle","popover");
       $("#eastereggRow").attr("data-content","Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
-      $("#eastereggAchievement").replaceWith("<h5 class='text-success' id='eastereggAchievement'>Yes</h5>");
+      $("#eastereggAchievement").replaceWith("<h6 class='text-success' id='eastereggAchievement'>Yes</h6>");
       console.log('eastereggAchievement = true');
     }else {
       $("#eastereggRow").attr("class","not-active");
-      $("#eastereggAchievement").replaceWith("<h5 class='text-danger' id='eastereggAchievement'>No</h5>");
+      $("#eastereggAchievement").replaceWith("<h6 class='text-danger' id='eastereggAchievement'>No</h6>");
       console.log('eastereggAchievement = false');
     }
 
@@ -110,11 +117,11 @@
       $("#terminalRow").attr("class","cur-point");
       $("#terminalRow").attr("data-toggle","popover");
       $("#terminalRow").attr("data-content","Use the Terminal for the first time.");
-      $("#terminalAchievement").replaceWith("<h5 class='text-success' id='terminalAchievement'>Yes</h5>");
+      $("#terminalAchievement").replaceWith("<h6 class='text-success' id='terminalAchievement'>Yes</h6>");
       console.log('terminalAchievement = true');
     }else {
       $("#terminalRow").attr("class","not-active");
-      $("#terminalAchievement").replaceWith("<h5 class='text-danger' id='terminalAchievement'>No</h5>");
+      $("#terminalAchievement").replaceWith("<h6 class='text-danger' id='terminalAchievement'>No</h6>");
       console.log('terminalAchievement = false');
     }
 
@@ -123,11 +130,11 @@
       $("#wiselyRow").attr("class","cur-point");
       $("#wiselyRow").attr("data-toggle","popover");
       $("#wiselyRow").attr("data-content","Agree to the Terms & Conditions or Privacy Policy.");
-      $("#wiselyAchievement").replaceWith("<h5 class='text-success' id='wiselyAchievement'>Yes</h5>");
+      $("#wiselyAchievement").replaceWith("<h6 class='text-success' id='wiselyAchievement'>Yes</h6>");
       console.log('wiselyAchievement = true');
     }else {
       $("#wiselyRow").attr("class","not-active");
-      $("#wiselyAchievement").replaceWith("<h5 class='text-danger' id='wiselyAchievement'>No</h5>");
+      $("#wiselyAchievement").replaceWith("<h6 class='text-danger' id='wiselyAchievement'>No</h6>");
       console.log('wiselyAchievement = false');
     }
 
@@ -136,11 +143,11 @@
       $("#hallucinatingRow").attr("class","cur-point");
       $("#hallucinatingRow").attr("data-toggle","popover");
       $("#hallucinatingRow").attr("data-content","Click Hide Ads in the footer.");
-      $("#hallucinatingAchievement").replaceWith("<h5 class='text-success' id='hallucinatingAchievement'>Yes</h5>");
+      $("#hallucinatingAchievement").replaceWith("<h6 class='text-success' id='hallucinatingAchievement'>Yes</h6>");
       console.log('hallucinatingAchievement = true');
     }else {
       $("#hallucinatingRow").attr("class","not-active");
-      $("#hallucinatingAchievement").replaceWith("<h5 class='text-danger' id='hallucinatingAchievement'>No</h5>");
+      $("#hallucinatingAchievement").replaceWith("<h6 class='text-danger' id='hallucinatingAchievement'>No</h6>");
       console.log('hallucinatingAchievement = false');
     }
 
@@ -149,16 +156,16 @@
       $("#purplerainRow").attr("class","cur-point");
       $("#purplerainRow").attr("data-toggle","popover");
       $("#purplerainRow").attr("data-content","Enable the snowstorm with the 'light' theme enabled.");
-      $("#purplerainAchievement").replaceWith("<h5 class='text-success' id='purplerainAchievement'>Yes</h5>");
+      $("#purplerainAchievement").replaceWith("<h6 class='text-success' id='purplerainAchievement'>Yes</h6>");
       console.log('purplerainAchievement = true');
     }else {
       $("#purplerainRow").attr("class","not-active");
-      $("#purplerainAchievement").replaceWith("<h5 class='text-danger' id='purplerainAchievement'>No</h5>");
+      $("#purplerainAchievement").replaceWith("<h6 class='text-danger' id='purplerainAchievement'>No</h6>");
       console.log('purplerainAchievement = false');
     }
   });
 
-  //Enable tooltips
+  //Enable popover
   if (!('ontouchstart' in window)) {
     $('body').popover({
       selector: '[data-toggle="popover"]'
@@ -168,14 +175,10 @@
   //Local File Detection
   $(function(){
     if (protocol == "file:") {
-      document.getElementById("local-warning-banner-content2").innerHTML =
-      "It looks like you are viewing this page locally. " +
-      "Cookies are configured to only send on secure connections (https). " +
-      "As a result, Achievements will not be saved as they require cookies to function. ";
+      $('#ajax-achievements-warning-banner').load('ajax/alerts/alert-achievements.html');
       console.log("Local site");
     }
     else {
-      $('#local-warning-banner2').toggle();
       console.log("Settings will work");
     }
   });

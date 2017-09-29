@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
 <!--Contact Modal-->
-<div class="modal-dialog modal-md" id="ajax-contact">
+<div class="modal-dialog modal-md" id="ajax-contact" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title black">Contact</h4>
+       <h4 class="modal-title mx-auto black">Contact</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
     </div>
     <div class="modal-body">
       Questions, Comments, Suggestions, <a title="Floating Survival Page" href="fs.html">Floating Survival</a> problems?
@@ -13,14 +15,14 @@
       <br>
         <!--E-mail-->
         <div class="input-group">
-          <div class="input-group-addon">E-mail</div>
+          <span class="input-group-addon">E-mail</span>
           <input id="copyTargetEmail" readonly type="text" class="form-control" value="support@InvisaMage.com">
             <span class="input-group-btn">
-              <a id="copyButtonEmail" roll="button" class="btn btn-default" onclick="emailMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
-                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              <a id="copyButtonEmail" roll="button" class="btn btn-light" href="javascript:emailMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" href="mailto:support@invisamage.com" data-placement="top" data-toggle="tooltip" title="Send E-mail" data-container="body">
-                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+              <a roll="button" class="btn btn-light" href="mailto:support@invisamage.com" data-placement="top" data-toggle="tooltip" title="Send E-mail" data-container="body">
+                <i class="fa fa-inbox" aria-hidden="true"></i>
               </a>
             </span>
         </div><!-- /input-group -->
@@ -30,11 +32,11 @@
           <div class="input-group-addon">Telegram</div>
           <input id="copyTargetTelegram" readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
             <span class="input-group-btn">
-              <a id="copyButtonTelegram" roll="button" class="btn btn-default" onclick="telegramMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
-                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              <a id="copyButtonTelegram" roll="button" class="btn btn-light" href="javascript:telegramMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" href="https://telegram.me/InvisaMage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Send Message" data-container="body">
-                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+              <a roll="button" class="btn btn-light" href="https://telegram.me/InvisaMage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Send Message" data-container="body">
+                <i class="fa fa-telegram" aria-hidden="true"></i>
               </a>
             </span>
         </div><!-- /input-group -->
@@ -44,37 +46,47 @@
           <div class="input-group-addon">Keybase</div>
           <input id="copyTargetKeybase" readonly type="text" class="form-control" value="InvisaMage">
             <span class="input-group-btn">
-              <a id="copyButtonKeybase" roll="button" class="btn btn-default" onclick="keybaseMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
-                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              <a id="copyButtonKeybase" roll="button" class="btn btn-light" href="javascript:keybaseMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
               </a>
-              <a roll="button" class="btn btn-default" href="https://keybase.io/invisamage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="View Profile" data-container="body">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              <a roll="button" class="btn btn-light" href="https://keybase.io/invisamage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="View Profile" data-container="body">
+                <i class="fa fa-user" aria-hidden="true"></i>
               </a>
             </span>
         </div><!-- /input-group -->
     </div>
     <!--Contact Help Collapsible Content-->
     <div class="collapse" id="modal-contact-collapse">
-      <div class="well">
-        <button type="button" class="close" onclick="$('#modal-contact-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>Explanation of contact method</strong><br>
-        <strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.<br>
-        <strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
-        <strong>Keybase</strong> - Public key crypto for everyone, publicly auditable proofs of identity.
+      <div class="card text-white bg-secondary">
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-contact-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <div class="card-body">
+          <h6>Explanation of contact methods</h6>
+          <p class="card-text">
+            <strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.<br>
+            <strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
+            <strong>Keybase</strong> - Public key crypto for everyone, publicly auditable proofs of identity.
+          </p>
+        </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info" onclick="$('#modal-contact-collapse').collapse('toggle')">
-        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <button type="button" class="btn btn-outline-info" onclick="$('#modal-contact-collapse').collapse('toggle')">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div>
   </div>
 </div><!-- /.modal-contact-->
 
 <script>
+  $(function() {
+    if (Cookies.get('theme') == 'light') {
+      $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
+    }
+  });
+
 //Email Copy Function
       document.getElementById("copyButtonEmail").addEventListener("click", function() {
       copyToClipboard(document.getElementById("copyTargetEmail"));
