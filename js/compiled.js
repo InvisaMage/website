@@ -131,7 +131,7 @@ listener.simple_combo("shift space", function() {
     align: 'right',
     delay: 1500,
     offset: {from: 'top', amount: 70},
-    width: '300',
+    width: 300,
     allow_dismiss: true
   });
   if (termCounter == 0) {
@@ -147,7 +147,7 @@ listener.simple_combo("shift space", function() {
              align: 'right',
              delay: 2000,
              offset: {from: 'top', amount: 70},
-             width: '300',
+             width: 300,
              allow_dismiss: true
            });
            termCounter = 1;
@@ -160,7 +160,7 @@ listener.simple_combo("shift space", function() {
       align: 'right',
       delay: 1500,
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       allow_dismiss: true
     });
   }
@@ -168,7 +168,7 @@ listener.simple_combo("shift space", function() {
 
 //Hides all modals
 function hideModals() {
-  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookie, #modal-terms-yes, #modal-terms-no').modal('hide');
+  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookies, #modal-terms-yes, #modal-terms-no').modal('hide');
 }
 
 //Focus search box with Ctrl + Alt + F key press
@@ -345,7 +345,7 @@ $(function() {
              align: 'right',
              delay: 1500,
              offset: {from: 'top', amount: 70},
-             width: '300',
+             width: 300,
              allow_dismiss: true
            });
          })
@@ -551,7 +551,7 @@ function litecoinMsg() {
       type: 'success',
       align: 'right',
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       allow_dismiss: true
     });
 }
@@ -565,7 +565,7 @@ function eastereggCheck() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       delay: 10000,
       allow_dismiss: true
     });
@@ -582,7 +582,7 @@ function terminalCheck() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       delay: 10000,
       allow_dismiss: true
     });
@@ -599,7 +599,7 @@ function wiselyCheck() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       delay: 10000,
       allow_dismiss: true
     });
@@ -616,7 +616,7 @@ function purplerainCheck() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       delay: 10000,
       allow_dismiss: true
     });
@@ -659,7 +659,7 @@ function loadAdsMod() {
       type: 'info',
       align: 'right',
       offset: {from: 'top', amount: 70},
-      width: '300',
+      width: 300,
       delay: 10000,
       allow_dismiss: true
     });
@@ -674,8 +674,8 @@ function loadContactMod() {
   $('#modal-contact').modal();
 }
 function loadCookiesMod() {
-  $('#modal-cookie').load('ajax/modals/cookies.html');
-  $('#modal-cookie').modal();
+  $('#modal-cookies').load('ajax/modals/cookies.html');
+  $('#modal-cookies').modal();
 }
 function loadDonateMod() {
   $('#modal-donate').load('ajax/modals/donate.html');
