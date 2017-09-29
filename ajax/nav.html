@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 
 <!--The Navigation Bar for every page-->
-<a class="navbar-brand" href="index.html">
-  <img alt="Brand" src="images/imlogo.png" width="20" height="20"></img>
-</a>
-<a id="nav-name" class="navbar-brand" href="index.html">
-  InvisaMage
-</a>
-<a id="up-chevron" class="navbar-brand" onclick="window.scrollTo(0, 0);" tyle="button" data-toggle="tooltip" data-placement="bottom" title="Beam me Up">
-  <i class="fa fa-chevron-up" aria-hidden="true"></i>
-</a>
+<div class="d-flex justify-content-start">
+  <a class="navbar-brand" href="index.html">
+    <img alt="Brand" src="images/imlogo.png" width="20" height="20"></img>
+  </a>
+  <a id="nav-name" class="navbar-brand" href="index.html">
+    InvisaMage
+  </a>
+  <a id="up-chevron" class="navbar-brand" onclick="window.scrollTo(0, 0);" tyle="button" data-toggle="tooltip" data-placement="bottom" title="Beam me Up">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </a>
+</div>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse" id="navbar-default">
+<div class="collapse navbar-collapse navbar-toggleable-xl" id="navbar-default">
   <ul class="navbar-nav mr-auto">
     <li id="nav-home" class="nav-item"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
     <li id="nav-news" class="nav-item"><a class="nav-link" href="news.html">News</a></li>
