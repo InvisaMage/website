@@ -622,16 +622,19 @@ a .carousel-control-prev:hover, a .carousel-control-next:hover {
 
 /* News Tabs */
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news.active {
-	background-color: #454d54 !important;
+	background-color: rgba(69, 77, 84, 0.5) !important;
 	color: #a3ff66;
-	border-color: black black transparent black !important;
+	border-right-color: black !important;
+	border-top-color: black !important;
+	border-left-color: black !important;
+	border-bottom-color: rgb(69, 77, 84) !important;
 }
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news:hover {
 	color: #a3ff66;
 }
 .nav-tabs-news .nav-link-news:hover {
 	border-color: #343A40 #343A40 transparent #343A40;
-	background-color: rgba(69, 77, 84, .5);
+	background-color: rgba(69, 77, 84, 0.5);
 }
 .nav-tabs-news .nav-link-news {
 	color: #66a3ff;
@@ -640,8 +643,22 @@ a .carousel-control-prev:hover, a .carousel-control-next:hover {
 	border-bottom: 1px solid black;
 }
 .tab-content-news {
-	background-color: #454d54;
+	border-color: white !important;
+	background-color: rgba(69, 77, 84, 0.5);
 	max-width: 50rem;
+}
+
+/* News Pills */
+.nav-pills-news .nav-link.active, .show > .nav-pills .nav-link-news {
+	background-color: rgba(69, 77, 84, 0.5);
+	color: #a3ff66;
+}
+.nav-pills-news .nav-link-news {
+	color: #66a3ff;
+}
+.nav-pills-news .nav-link-news:hover {
+	background-color: rgba(69, 77, 84, 0.5);
+	color: #a3ff66;
 }
 
 kbd {
@@ -693,6 +710,19 @@ kbd {
 }
 .card-header-invis {
 	border-bottom: 0px;
+}
+
+/* Home Pills */
+.nav-pills-home .nav-link.active, .show > .nav-pills .nav-link-home {
+	background-color: #454D54;
+	color: #a3ff66;
+}
+.nav-pills-home .nav-link-home {
+	color: #66a3ff;
+}
+.nav-pills-home .nav-link-home:hover {
+	background-color: #454D54;
+	color: #a3ff66;
 }
 
 .form-check-label, .form-check-input {

@@ -54,7 +54,7 @@
 				<div class="card bg-dark animated pulse" id="news">
 					<h4 class="card-header">Recent News</h4>
 					<div class="card-header card-header-invis">
-						<ul class="nav nav-tabs nav-tabs-home card-header-tabs justify-content-center">
+						<ul class="nav nav-tabs nav-tabs-home card-header-tabs justify-content-center d-none d-xl-flex">
 							<li class="nav-item nav-item-home">
 								<a class="nav-link nav-link-home active" data-toggle="tab" href="#projects" role="tab">Projects</a>
 							</li>
@@ -64,6 +64,12 @@
 							<li class="nav-item nav-item-home">
 								<a class="nav-link nav-link-home" data-toggle="tab" href="#website" role="tab">Website</a>
 							</li>
+						</ul>
+						<!--Nav Pills (Visible on Mobile)-->
+						<ul class="nav nav-pills nav-pills-home flex-column d-block d-xl-none" id="pills">
+							<a class="nav-link nav-link-home active" data-toggle="tab" href="#projects">Projects</a>
+							<a class="nav-link nav-link-home" data-toggle="tab" href="#important">Important</a>
+							<a class="nav-link nav-link-home" data-toggle="tab" href="#website">Website</a>
 						</ul>
 					</div>
 					<div class="card-body card-news">
@@ -91,6 +97,11 @@
 								<p class="card-text">
 									The <a class="link" href="info.html#search-info">Search</a> and <a class="link" href="info.html#nameprompt">namePrompt</a> function assets are now ajaxed when needed.<br>
 									This reduces page load times.
+									<br>
+									<br>
+									Fixed tabs clipping on Homepage news.<br>
+									Added pills for Homepage on small screens.<br>
+									Added custom styles for News page pills.
 									<br>
 									<br>
 									Added an option to Toggle the Terminal on page.<br>

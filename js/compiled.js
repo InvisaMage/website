@@ -540,7 +540,6 @@ if (Cookies.get('enableInfoBanner') == 'true') {
     console.log('enableInfoBanner = false');
   }
 
-
 //Check if Banners needs to be shown on Terms and Privacy page
 $(function() {
   if (Cookies.get('enableTacBanner') == 'true') {
