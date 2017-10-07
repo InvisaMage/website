@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
         terminal.echo('   Usage: snowstorm [load | toggle | freeze | resume | wind | melt]');
       }
       else if (cmd.args == 'cookies') {
-        terminal.echo('   cookies - Interface with the snowstorm function')
+        terminal.echo('   cookies - Manipulate cookies on the site')
         terminal.echo('   Usage: cookies [get | remove <cookie name>]');
       }
       else if (cmd.args == 'less') {
@@ -240,11 +240,11 @@ jQuery(document).ready(function($) {
           terminal.echo('Cookie name required');
         }
       }
-      if ($.isEmptyObject(Cookies.get())) {
-        terminal.echo('No cookies found!');
-      }
       else {
         terminal.echo('Requires an argument');
+      }
+      if ($.isEmptyObject(Cookies.get()) && (cmd.args[0] == 'get')) {
+        terminal.echo('No cookies found!');
       }
     }
     //Reload

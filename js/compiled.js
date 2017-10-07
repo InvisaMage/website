@@ -8,6 +8,25 @@ $('#modals').load('ajax/modals.html');
 var protocol = window.location.protocol;
 var windowHeight = window.innerHeight;
 var termCounter = 0;
+var namePromptCounter = 0;
+var searchCounter = 0;
+var npFail = 0;
+var sFail = 0;
+
+/* Simulate key press
+ * https://stackoverflow.com/questions/22274728/simulate-a-keyboard-key-pressed-with-dispatchevent-of-keypress#22274892
+ * http://jsfiddle.net/QpLpG/
+ */
+function simulateKeyPress(character, element) {
+    var e = $.Event('keypress');
+    e.which = character.charCodeAt(0);
+    $(element).trigger(e);
+}
+
+//Sleep function
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 //If no touchscreen, show Tooltips
 if(!('ontouchstart' in window)) {
@@ -61,21 +80,69 @@ $('#modal-personalize').on('shown.bs.modal', function () {
   $('#name-value').select();
 });
 
-//Typeahead Function for Search (Only on Desktop)
-$(function () {
-  $.getJSON('json/search.json')
-    .done(function (data) {
-      $('#search').typeahead({ source: data });
+//loadSearch assets
+async function loadSearch() {
+  if (searchCounter == 0) {
+    $.when( $.ready,
+      $.getScript('js/typeahead.min.js'),
+      await sleep(500),
+      $.getScript('js/search.js'),
+      $.getJSON('json/search.json')
+        .done(function (data) {
+        $('#search').typeahead({ source: data });
+      })
+    ).then(function() {
+      console.log("loadSearch: Loaded assets");
+      searchCounter = 1;
+    }).catch( function() {
+      //If fail, display message and offer to retry
+       console.log("loadSearch: One or more assets failed to load");
+       $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadSearch();'>Retry</button>", {
+         type: 'danger',
+         align: 'right',
+         delay: 999999999,
+         offset: {from: 'top', amount: 70},
+         width: 300,
+         allow_dismiss: true
+      })
     });
-});
+  }
+  else {
+    console.log("loadSearch: Already loaded assets");
+  }
+}
 
-//Typeahead Function for namePrompt
-$(function () {
-  $.getJSON('json/namePrompt.json')
-    .done(function (data) {
-      $('#name-value').typeahead({ source: data });
+//loadNamePrompt assets
+async function loadNamePrompt() {
+  if (namePromptCounter == 0) {
+    $.when( $.ready,
+      $.getScript('js/typeahead.min.js'),
+      await sleep(500),
+      $.getScript('js/namePrompt.js'),
+      $.getJSON('json/namePrompt.json')
+        .done(function (data) {
+        $('#name-value').typeahead({ source: data });
+      })
+    ).then(function() {
+      console.log("loadNamePrompt: Loaded assets");
+      namePromptCounter = 1;
+    }).catch( function() {
+      //If fail, display message and offer to retry
+       console.log("loadNamePrompt: One or more assets failed to load");
+       $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadNamePrompt();'>Retry</button>", {
+         type: 'danger',
+         align: 'right',
+         delay: 999999999,
+         offset: {from: 'top', amount: 70},
+         width: 300,
+         allow_dismiss: true
+      })
     });
-});
+  }
+  else {
+    console.log("loadNamePrompt: Already loaded assets");
+  }
+}
 
 //Mobile Menu select
 $('#mobile-menu select').change(function(){
@@ -93,7 +160,7 @@ setTimeout(enable, 900);
 
 //Loads snowstorm assets and replaces footer text to enable snowstorm on next click
 function loadSnowstorm() {
-  $('#js-snowstorm').load('js/snowstorm.js');
+  $.getScript('js/snowstorm.js');
   $('#footer-snowstorm').tooltip('dispose');
   $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
   //Re enable tooltips.
@@ -106,7 +173,7 @@ function loadSnowstorm() {
 //Loads snowstorm assets and enables for namePrompt easter egg
 function loadSnowstormNamePrompt(){
   setTimeout(enable, 500);
-  $('#js-snowstorm').load('js/snowstorm.js');
+  $.getScript('js/snowstorm.js');
   $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
     function enable(){
       purplerainCheck();
@@ -124,8 +191,8 @@ listener.simple_combo("delete", function() {
 //Shortcuts
 //Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift space", function() {
-  //Inform user of successful load
+listener.simple_combo("shift space", async function() {
+  //Inform user of progress
   $.bootstrapGrowl("Loading assets...", {
     type: 'info',
     align: 'right',
@@ -134,27 +201,46 @@ listener.simple_combo("shift space", function() {
     width: 300,
     allow_dismiss: true
   });
+  //Get scripts if not already loaded
   if (termCounter == 0) {
-    $.getScript('js/jquery.terminal.min.js');
-    $('html').append('<link rel="stylesheet" type="text/css" href="./css/jquery.terminal.css">');
-    setTimeout(enable, 500);
-      function enable(){
-        $.getScript('js/terminal.js')
-         .done(function() {
-           //Inform user of successful load
-           $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
-             type: 'success',
-             align: 'right',
-             delay: 2000,
-             offset: {from: 'top', amount: 70},
-             width: 300,
-             allow_dismiss: true
-           });
-           termCounter = 1;
-         })
-      }
-  } else {
-    //Inform user of successful load
+    $.when( $.ready,
+      $.getScript('js/jquery.terminal.min.js'),
+      await sleep(500),
+      $.getScript('js/terminal.js'),
+      $.ajax({
+  			url:"./css/jquery.terminal.css",
+  			dataType:"script",
+  			success:function(data){
+  				 $("<style></style>").appendTo("head").html(data);
+  				 //loading complete code here
+  			}
+      })
+    ).then(function() {
+      console.log("KeyCombo Terminal: Loaded assets");
+      $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+        type: 'success',
+        align: 'right',
+        delay: 2000,
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        allow_dismiss: true
+      });
+      termCounter = 1;
+    }).catch( function() {
+      //If fail, display message and offer to retry
+       console.log("KeyCombo Terminal: One or more assets failed to load");
+       $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
+         type: 'danger',
+         align: 'right',
+         delay: 999999999,
+         offset: {from: 'top', amount: 70},
+         width: 300,
+         allow_dismiss: true
+      })
+    });
+  }
+  //If assets have already been loaded
+  else {
     $.bootstrapGrowl("Terminal assets have already been loaded!", {
       type: 'danger',
       align: 'right',
@@ -163,6 +249,7 @@ listener.simple_combo("shift space", function() {
       width: 300,
       allow_dismiss: true
     });
+    console.log('KeyCombo Terminal: Already loaded assets');
   }
 });
 
@@ -269,6 +356,13 @@ function settingsCheck() {
   if ($('#terminal-checkbox1:checked').val() != 'true') {
     Cookies.set('loadTerminal', 'false', {expires: 3600, secure: true});
   }
+  //Toggle Terminal
+  if ($('#terminal-checkbox2:checked').val() == 'true') {
+    Cookies.set('toggleTerminal', 'true', {expires: 3600, secure: true});
+  }
+  if ($('#terminal-checkbox2:checked').val() != 'true') {
+    Cookies.set('toggleTerminal', 'false', {expires: 3600, secure: true});
+  }
   //Snowstorm
   if ($('#snowstorm-checkbox1:checked').val() == 'true') {
     Cookies.set('enableSnowstorm', 'true', {expires: 3600, secure: true});
@@ -331,32 +425,66 @@ $(function() {
 });
 
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
-$(function() {
+async function onPageLoadTerm() {
   if (Cookies.get('loadTerminal') == 'true') {
-    $.getScript('js/jquery.terminal.min.js');
-    $('html').append('<link rel="stylesheet" type="text/css" href="./css/jquery.terminal.css">');
-    setTimeout(enable, 500);
-      function enable(){
-        $.getScript('js/terminal.js')
-         .done(function() {
-           //Inform user of successful load
-           $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
-             type: 'success',
-             align: 'right',
-             delay: 1500,
-             offset: {from: 'top', amount: 70},
-             width: 300,
-             allow_dismiss: true
-           });
-         })
-
-        console.log('loadTerminal = true');
-        termCounter = 1;
-      }
-  } else {
+    //Get scripts
+    $.when( $.ready,
+      $.getScript('js/jquery.terminal.min.js'),
+      await sleep(500),
+      $.getScript('js/terminal.js'),
+      $.ajax({
+        url:"./css/jquery.terminal.css",
+        dataType:"script",
+        success:function(data){
+           $("<style></style>").appendTo("head").html(data);
+           //loading complete code here
+        }
+      })
+    ).then(function() {
+      console.log("KeyCombo Terminal: Loaded assets");
+      $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+        type: 'success',
+        align: 'right',
+        delay: 2000,
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        allow_dismiss: true
+      });
+      termCounter = 1;
+    }).catch( function() {
+      //If fail, display message and offer to retry
+       console.log("KeyCombo Terminal: One or more assets failed to load");
+       $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
+         type: 'danger',
+         align: 'right',
+         delay: 2000,
+         offset: {from: 'top', amount: 70},
+         width: 300,
+         allow_dismiss: true
+      })
+    });
+  }
+  else {
     console.log('loadTerminal = false');
   }
+}
+
+//Load when page loads - done so async works
+$(function(){
+  onPageLoadTerm();
+  onPageLoadTermToggle();
 });
+
+//Check if Terminal needs to be toggled
+async function onPageLoadTermToggle() {
+  if (Cookies.get('toggleTerminal') == 'true') {
+    await sleep(1000),
+    simulateKeyPress("`", 'body');
+    console.log('toggleTerminal = true');
+  } else {
+    console.log('toggleTerminal = false');
+  }
+}
 
 //Check which tab needs to be opened on News page.
 $(function() {
@@ -749,20 +877,6 @@ $(function () {
   function () {
       $("#settings-button").removeClass("fa-spin");
   });
-});
-*/
-
-/* Simulate key press
- * https://stackoverflow.com/questions/22274728/simulate-a-keyboard-key-pressed-with-dispatchevent-of-keypress#22274892
-
-function simulateKeyPress(character, element) {
-    var e = $.Event('keypress');
-    e.which = character.charCodeAt(0);
-    $(element).trigger(e);
-}
-
-$('body').keypress(function(e) {
-
 });
 */
 

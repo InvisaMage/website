@@ -280,6 +280,9 @@
 						<div class="d-block d-md-none" id="mobile-menu">
 							<select>
 								<option selected value="news.html#mobile-menu">Date Jump</option>
+								<optgroup label="2017">
+									<option value="news.html#10-7-17-important">October 7th</option>
+							  </optgroup>
 								<optgroup label="2016">
 									<option value="news.html#11-23-16-important">November 23rd</option>
 									<option value="news.html#11-18-16-important">November 18th</option>
@@ -293,6 +296,20 @@
 							<br>
 							<br>
 						</div>
+
+						<!--October 7, 2017-->
+						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="10-7-17-important">
+						  <h4 class="card-header">October 7, 2017</h4>
+						  <div class="card-body">
+								<h5>Compatibility</h5>
+								<p>
+									A new type of is function being used in JavaScript, as a result, the minimum browser version requirements have changed significantly.<br>
+									Firefox 52+, Chrome 55+, Mobile Safari 10.3+, and Edge 15+.
+								</p>
+							</div>
+						</div><!-- /10-7-17-->
+
+						<br>
 
 						<!--November 23, 2016-->
 						<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-23-16-important">
@@ -372,6 +389,7 @@
 						<!--Important Menu-->
 						<div id="menu-news" class="d-none d-md-inline slide">
 							<h4>Date Jump</h4>
+							<li><a href="#10-7-17-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> October 7, 2017</a></li>
 							<li><a href="#11-23-16-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> November 23, 2016</a></li>
 							<li><a href="#11-18-16-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> November 18, 2016</a></li>
 							<li><a href="#9-11-16-important"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> September 11, 2016</a></li>
@@ -388,8 +406,13 @@
 					<div class="d-block d-md-none" id="mobile-menu">
 						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
-							<optgroup label="August 2017">
+							<optgroup label="October 2017">
+						    <option value="news.html#10-7-17-website">7th</option>
+						  </optgroup>
+							<optgroup label="September 2017">
 						    <option value="news.html#9-29-17-website">29th</option>
+						  </optgroup>
+							<optgroup label="August 2017">
 						    <option value="news.html#8-11-17-website">11th</option>
 						  </optgroup>
 							<optgroup label="July 2017">
@@ -411,6 +434,28 @@
 						<br>
 						<br>
 					</div>
+
+					<!--October 7, 2017-->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="10-7-17-website">
+						<h4 class="card-header">October 7, 2017</h4>
+						<div class="card-body">
+							<p>
+								The <a class="link" href="info.html#search-info">Search</a> and <a class="link" href="info.html#nameprompt">namePrompt</a> function assets are now ajaxed when needed.<br>
+								This reduces page load times.
+								<br>
+								<br>
+								Added an option to Toggle the Terminal on page.<br>
+								This is shown only if the Load Terminal assets option is checked.
+								<br>
+								<br>
+								Added the ability to determine if an error in loading major ajax calls occurs.<br>
+								Most ajax requests are now only done once to prevent further requests from the server.<br>
+								This will reduce server load.
+							</p>
+						</div>
+					</div><!-- /10-7-17-->
+
+					<br>
 
 					<!--September 29, 2017-->
 					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="9-29-17-website">
@@ -563,6 +608,10 @@
 						<!--Website Menu-->
 						<div id="menu-news" class="d-none d-md-inline slide">
 							<h4>Date Jump</h4>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> October 2017</a></li>
+							<div id="menu-news-nested">
+								<li><a href="#10-7-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 7th</a></li>
+							</div>
 							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> September 2017</a></li>
 							<div id="menu-news-nested">
 								<li><a href="#9-29-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 29th</a></li>
@@ -645,7 +694,6 @@
 									Tooltips are disabled on touchsreen devices.<br>
 									Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
 									Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.<br>
-									If you are viewing this site locally, cookies will not work on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
 									Cookies will not work locally as they are only set on secure connections.
 									<br>
 									<br>
@@ -684,15 +732,11 @@
     <script src="js/popper.min.js"></script>
 		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/search.js"></script>
-		<script src="js/typeahead.min.js"></script>
-		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
-		<script id="js-ptty"></script>
 
 		<script>
 			function slideInUp(tab){

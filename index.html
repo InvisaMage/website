@@ -40,7 +40,7 @@
 				<div class="card bg-dark animated pulse" id="welcome">
 					<h4 class="card-header">Welcome</h4>
 					<div class="card-body">
-						<button id="pmb" type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="$('#js-namePrompt').load('js/namePrompt.js'); $('#modal-personalize').modal();">Personalize Message</button>
+						<button id="pmb" type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="loadNamePrompt(); $('#modal-personalize').modal();">Personalize Message</button>
 						<br>
 						<!--Paragraph Changes with namePrompt Input-->
 						<span id="name"> Welcome to <a class="definition" data-toggle="tooltip" data-placement="top" title="A 19 year old human male who likes web technologies and assorted games.">InvisaMage</a>'s website.</span>
@@ -79,39 +79,27 @@
 							</div>
 							<!--Important-->
 						  <div class="tab-pane fade" id="important" role="tabpanel">
-								<h5>November 23, 2016</h5>
+								<h5>October 7, 2017</h5>
 								<p class="card-text">
-									Cookies will now only send on a secure connection.<br>
-									As a result, cookies will no longer be set when viewed locally.
+									A new type of is function being used in JavaScript, as a result, the minimum browser version requirements have changed significantly.<br>
+									Firefox 52+, Chrome 55+, Mobile Safari 10.3+, and Edge 15+.
 								</p>
 							</div>
 							<!--Website-->
 						  <div class="tab-pane fade" id="website" role="tabpanel">
-								<h5 class="card-text">September 29, 2017</h5>
+								<h5 class="card-text">October 7, 2017</h5>
 								<p class="card-text">
-									Complete site redesign.<br>
-									Updated to Bootstrap 4.<br>
-									Updated to jQuery 3.<br>
-									Replaced Glyphicons with Font Awesome.
+									The <a class="link" href="info.html#search-info">Search</a> and <a class="link" href="info.html#nameprompt">namePrompt</a> function assets are now ajaxed when needed.<br>
+									This reduces page load times.
 									<br>
 									<br>
-									Major changes to the Terminal.<br>
-									Using a new library called <a class="link" target="_blank" rel="noopener noreferrer" href="http://terminal.jcubic.pl/">jQuery Terminal</a>.<br>
-									Now only accessible on desktops (or mobile if you use a physical keyboard).
+									Added an option to Toggle the Terminal on page.<br>
+									This is shown only if the Load Terminal assets option is checked.
 									<br>
 									<br>
-									Alerts have been ajaxed to improve page loading.<br>
-									This also prevents the possibility of them being visible and then disappearing immediately.
-									<br>
-									<br>
-									Renamed the "About" page to "Information".<br>
-									Removed the water function.<br>
-									Removed the ability to download FS Betas.<br>
-									Removed the ability to donate with a QR code.<br>
-									Removed the loading screen.
-									<br>
-									<br>
-									Archived the site from August 11, 2017.
+									Added the ability to determine if an error in loading major ajax calls occurs.<br>
+									Most ajax requests are now only done once to prevent further requests from the server.<br>
+									This will reduce server load.
 								</p>
 							</div>
 						</div>
@@ -151,7 +139,7 @@
 		  <div class="modal-dialog modal-sm">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title">Personalize Message</h5>
+		        <h5 class="modal-title mx-auto">Personalize Message</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -201,10 +189,6 @@
     <script src="js/popper.min.js"></script>
 		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/search.js"></script>
-		<script src="js/typeahead.min.js"></script>
-		<script id="js-namePrompt"></script>
-		<script id="js-snowstorm"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/js.cookie.js"></script>

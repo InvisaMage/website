@@ -153,7 +153,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/the-story-of-a-young-heart/id295506962' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Remember-David/dp/B001KW53EU/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/the-story-of-a-young-heart/id295506962' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/Remember-David/dp/B001KW53EU/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -194,7 +194,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/867-5309-jenny-single/id278258326' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/867-5309-Jenny/dp/B001J2BFWK/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/867-5309-jenny-single/id278258326' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/867-5309-Jenny/dp/B001J2BFWK/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -235,7 +235,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/welcome-interstate-managers/id712721721' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Stacys-Mom/dp/B000TEMF7S/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/welcome-interstate-managers/id712721721' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/Stacys-Mom/dp/B000TEMF7S/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -276,7 +276,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/the-best-of-rick-springfield/id258611578' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Jessies-Girl/dp/B00136JB14' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/the-best-of-rick-springfield/id258611578' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/Jessies-Girl/dp/B00136JB14' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -317,7 +317,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/20th-century-masters-millennium/id66474' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Ah-Leah-Album-Version/dp/B000VWKVSI' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/20th-century-masters-millennium/id66474' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/Ah-Leah-Album-Version/dp/B000VWKVSI' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -358,7 +358,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/too-rye-ay-expanded-edition/id136012' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Come-On-Eileen-Album-Version/dp/B0013XHLG4' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/too-rye-ay-expanded-edition/id136012' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/Come-On-Eileen-Album-Version/dp/B0013XHLG4' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -399,7 +399,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/mickey-very-best-toni-basil/id524095099' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/dp/B019HX0IY8' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/mickey-very-best-toni-basil/id524095099' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/dp/B019HX0IY8' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +
@@ -577,7 +577,7 @@ function namePrompt() {
 			      "</tr>" +
 						"<tr>" +
 			        "<td><h6 class='black-bold'>Download</h6></td>" +
-			        "<th><h6><a href='https://itunes.apple.com/us/album/walk-on/id60981' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a href='https://www.amazon.com/Whats-Your-Name-Album-Version/dp/B000VROBUM/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
+			        "<th><h6><a class='link link-light' href='https://itunes.apple.com/us/album/walk-on/id60981' target='_blank' rel='noopener noreferrer'>iTunes</a><br><a class='link link-light' href='https://www.amazon.com/Whats-Your-Name-Album-Version/dp/B000VROBUM/' target='_blank' rel='noopener noreferrer'>Amazon</a></h6></th>" +
 			      "</tr>" +
 			    "</table>" +
 			  "</div>" +

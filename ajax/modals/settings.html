@@ -113,14 +113,20 @@
             <div class="card-body">
               <p class="card-text">What happens when the page loads.</p>
               <div class="form-check">
-                <label class="form-check-label">
+                <label class="form-check-label" id="load-terminal">
                   <input class="form-check-input" type="checkbox" name="load-terminal" id="terminal-checkbox1" value="true">
                   Load Terminal assets
                 </label>
               </div>
+              <div class="form-check" id="toggle-terminal">
+                <label class="form-check-label animated fadeInDown">
+                  <input class="form-check-input" type="checkbox" name="toggle-terminal" id="terminal-checkbox2" value="true">
+                  Toggle Terminal
+                </label>
+              </div>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="load-snowstorm" id="snowstorm-checkbox1" value="true">
+                  <input class="form-check-input" type="checkbox" name="toggle-snowstorm" id="snowstorm-checkbox1" value="true">
                   Enable snowstorm
                 </label>
               </div>
@@ -236,15 +242,28 @@
     //On page load - Terminal
     if (Cookies.get('loadTerminal') == 'true') {
       $("#terminal-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='load-terminal' id='terminal-checkbox1' value='true' checked>");
+      $("#toggle-terminal").show();
     }
     if (Cookies.get('loadTerminal') != 'true') {
-      $("#terminal-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='load-snowstorm' id='terminal-checkbox1' value='true'>");
+      $("#terminal-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='load-terminal' id='terminal-checkbox1' value='true'>");
+      $("#toggle-terminal").hide();
+    }
+    //On page load - Toggle Terminal
+    if (Cookies.get('toggleTerminal') == 'true') {
+      $("#terminal-checkbox2").replaceWith("<input class='form-check-input' type='checkbox' name='toggle-terminal' id='terminal-checkbox2' value='true' checked>");
+    }
+    if (Cookies.get('toggleTerminal') != 'true') {
+      $("#terminal-checkbox2").replaceWith("<input class='form-check-input' type='checkbox' name='toggle-terminal' id='terminal-checkbox2' value='true'>");
     }
     //Set background color
     if (Cookies.get('bgColor') != null) {
       var newColorCheck = Cookies.get('bgColor');
       $("#bg-color-hex").replaceWith("<input id='bg-color-hex' type='text' class='form-control'placeholder='Hex value (blank for default)' value='"+ newColorCheck +"'>");
     }
+
+    $('#load-terminal').click(function() {
+      $("#toggle-terminal").show();
+    })
   });
 
   //Local File Detection
