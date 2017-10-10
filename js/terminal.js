@@ -11,7 +11,7 @@
         var settings = {
             prompt: '[[;#FFC157;]guest@server][[;#fff;]:][[;#66a3ff;]~ $] ',
             name: 'tilda',
-            height: windowHeight-55,
+            height: windowHeight-62,
             enabled: false,
             completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'cookies', 'media', 'go', 'anchor',
             'snowstorm', 'echo', 'less', 'clear', 'credits', 'search'],
@@ -32,6 +32,9 @@
         var focus = false;
         $(document.documentElement).keypress(function(e) {
             if (e.which == 96) {
+              if (protocol != "file:") {
+                terminalCheck();
+              }
                 self.slideToggle('fast');
                 self.terminal.focus(focus = !focus);
                 self.terminal.attr({

@@ -294,26 +294,12 @@ function settingsCheck() {
   if ($('#theme-radio2:checked').val() == 'light') {
     Cookies.set('theme', 'light', {expires: 3600, secure: true});
   }
-  //Legacy background
-  if ($('#legacy-background-checkbox1:checked').val() == 'true') {
-    Cookies.set('themeLegacyBg', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#legacy-background-checkbox1:checked').val() != 'true') {
-    Cookies.set('themeLegacyBg', 'false', {expires: 3600, secure: true});
-  }
   //Centered Modals
   if ($('#modal-centered-checkbox1:checked').val() == 'true') {
     Cookies.set('centeredModals', 'true', {expires: 3600, secure: true});
   }
   if ($('#modal-centered-checkbox1:checked').val() != 'true') {
     Cookies.set('centeredModals', 'false', {expires: 3600, secure: true});
-  }
-  //Loading screen
-  if ($('#loading-screen-checkbox1:checked').val() == 'true') {
-    Cookies.set('loadingScreen', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#loading-screen-checkbox1:checked').val() != 'true') {
-    Cookies.set('loadingScreen', 'false', {expires: 3600, secure: true});
   }
   //Banner - Events
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
@@ -441,7 +427,7 @@ async function onPageLoadTerm() {
         }
       })
     ).then(function() {
-      console.log("KeyCombo Terminal: Loaded assets");
+      console.log("onPageLoadTerm: Loaded assets");
       $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
         type: 'success',
         align: 'right',
@@ -453,7 +439,7 @@ async function onPageLoadTerm() {
       termCounter = 1;
     }).catch( function() {
       //If fail, display message and offer to retry
-       console.log("KeyCombo Terminal: One or more assets failed to load");
+       console.log("onPageLoadTerm: One or more assets failed to load");
        $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
          type: 'danger',
          align: 'right',
@@ -612,16 +598,6 @@ $(function() {
     console.log('centeredModals = true');
   } else {
     console.log('centeredModals = false');
-  }
-});
-
-//Check if legacy background needs to be applied
-$(function() {
-  if (Cookies.get('themeLegacyBg') == 'true' && Cookies.get('theme') != 'light' ) {
-    $('body').css("background-image", "url(./images/bg.jpg)");
-    console.log('themeLegacyBg = true');
-  } else {
-    console.log('themeLegacyBg = false');
   }
 });
 
