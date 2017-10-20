@@ -1,5 +1,13 @@
 //Compiled JavaScript functions utilized on multiple pages.
 
+//Set localForage databases
+var settings = localforage.createInstance({
+  name: "settings"
+});
+var achievements = localforage.createInstance({
+  name: "achievements"
+});
+
 //Loads navbar, modals, and footer on page load
 $('nav').load('ajax/nav.html');
 $('#footer').load('ajax/footer.html');
@@ -10,8 +18,6 @@ var windowHeight = window.innerHeight;
 var termCounter = 0;
 var namePromptCounter = 0;
 var searchCounter = 0;
-var npFail = 0;
-var sFail = 0;
 
 /* Simulate key press
  * https://stackoverflow.com/questions/22274728/simulate-a-keyboard-key-pressed-with-dispatchevent-of-keypress#22274892
@@ -288,78 +294,54 @@ listener.simple_combo("ctrl alt a", function() {
 //Settings modal logic (executed on save button click in Settings modal)
 function settingsCheck() {
   //Theme
-  if ($('#theme-radio1:checked').val() == 'dark') {
-    Cookies.set('theme', 'dark', {expires: 3600, secure: true});
-  }
-  if ($('#theme-radio2:checked').val() == 'light') {
-    Cookies.set('theme', 'light', {expires: 3600, secure: true});
-  }
+  settings.setItem('theme', $('[name=themeStyle]:checked').val());
   //Centered Modals
-  if ($('#modal-centered-checkbox1:checked').val() == 'true') {
-    Cookies.set('centeredModals', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#modal-centered-checkbox1:checked').val() != 'true') {
-    Cookies.set('centeredModals', 'false', {expires: 3600, secure: true});
+  if ($('[name=centerModals]:checked').val() == 'true') {
+    settings.setItem('centeredModals', 'true');
+  } else {
+    settings.setItem('centeredModals', 'false');
   }
   //Banner - Events
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableEventsBanner', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#home-banner-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableEventsBanner', 'false', {expires: 3600, secure: true});
+    settings.setItem('enableEventsBanner', 'true');
+  } else {
+    settings.setItem('enableEventsBanner', 'false');
   }
   //Banner - Info
   if ($('#info-banner-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableInfoBanner', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#info-banner-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableInfoBanner', 'false', {expires: 3600, secure: true});
+    settings.setItem('enableInfoBanner', 'true');
+  } else {
+    settings.setItem('enableInfoBanner', 'false');
   }
   //Banner - Terms and conditions
   if ($('#tac-banner-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableTacBanner', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#tac-banner-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableTacBanner', 'false', {expires: 3600, secure: true});
+    settings.setItem('enableTacBanner', 'true');
+  } else {
+    settings.setItem('enableTacBanner', 'false');
   }
   //News
-  if ($('#news-radio1:checked').val() == 'projects') {
-    Cookies.set('defaultTab', 'projects', {expires: 3600, secure: true});
-  }
-  if ($('#news-radio2:checked').val() == 'important') {
-    Cookies.set('defaultTab', 'important', {expires: 3600, secure: true});
-  }
-  if ($('#news-radio3:checked').val() == 'website') {
-    Cookies.set('defaultTab', 'website', {expires: 3600, secure: true});
-  }
-  if ($('#news-radio4:checked').val() == 'bugs') {
-    Cookies.set('defaultTab', 'bugs', {expires: 3600, secure: true});
-  }
+  settings.setItem('defaultTab', $('[name=defaultTab]:checked').val());
   //Terminal
   if ($('#terminal-checkbox1:checked').val() == 'true') {
-    Cookies.set('loadTerminal', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#terminal-checkbox1:checked').val() != 'true') {
-    Cookies.set('loadTerminal', 'false', {expires: 3600, secure: true});
+    settings.setItem('loadTerminal', 'true');
+  } else {
+    settings.setItem('loadTerminal', 'false');
   }
   //Toggle Terminal
   if ($('#terminal-checkbox2:checked').val() == 'true') {
-    Cookies.set('toggleTerminal', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#terminal-checkbox2:checked').val() != 'true') {
-    Cookies.set('toggleTerminal', 'false', {expires: 3600, secure: true});
+    settings.setItem('toggleTerminal', 'true');
+  } else {
+    settings.setItem('toggleTerminal', 'false');
   }
   //Snowstorm
-  if ($('#snowstorm-checkbox1:checked').val() == 'true') {
-    Cookies.set('enableSnowstorm', 'true', {expires: 3600, secure: true});
-  }
-  if ($('#snowstorm-checkbox1:checked').val() != 'true') {
-    Cookies.set('enableSnowstorm', 'false', {expires: 3600, secure: true});
+  if ($('#snowstorm-checkbox2:checked').val() == 'true') {
+    settings.setItem('enableSnowstorm', 'true');
+  } else {
+    settings.setItem('enableSnowstorm', 'false');
   }
   //Set background color
   if ($('#bg-color-hex').val() !== '' || $('#bg-color-hex').val() !== ' ') {
-    var hexValue = $('#bg-color-hex').val();
-    Cookies.set('bgColor', hexValue, {expires: 3600, secure: true});
+    settings.setItem('backgroundColor', $('[name=backgroundColor]').val());
   }
 
   setTimeout(enable, 1500);
@@ -398,61 +380,59 @@ function settingsCancelMsg() {
 
 //Set background color
 $(function() {
-  if (Cookies.get('bgColor') != null) {
-    newColor = Cookies.get('bgColor');
-    setTimeout(enable, 1);
-      function enable(){
-        $('body').css("background-color", newColor);
-        console.log("background-color: " + newColor);
-      }
-  } else {
-
-  }
+  settings.getItem('backgroundColor').then(function(value) {
+    $('body').css("background-color", value);
+    console.log("backgroundColor = " + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
 async function onPageLoadTerm() {
-  if (Cookies.get('loadTerminal') == 'true') {
-    //Get scripts
-    $.when( $.ready,
-      $.getScript('js/jquery.terminal.min.js'),
-      await sleep(500),
-      $.getScript('js/terminal.js'),
-      $.ajax({
-        url:"./css/jquery.terminal.css",
-        dataType:"script",
-        success:function(data){
-           $("<style></style>").appendTo("head").html(data);
-           //loading complete code here
-        }
-      })
-    ).then(function() {
-      console.log("onPageLoadTerm: Loaded assets");
-      $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
-        type: 'success',
-        align: 'right',
-        delay: 2000,
-        offset: {from: 'top', amount: 70},
-        width: 300,
-        allow_dismiss: true
+  settings.getItem('loadTerminal').then(function(value) {
+    if (value == 'true') {
+      //Get scripts
+      $.when( $.ready,
+        $.getScript('js/jquery.terminal.min.js'),
+        sleep(500),
+        $.getScript('js/terminal.js'),
+        $.ajax({
+          url:"./css/jquery.terminal.css",
+          dataType:"script",
+          success:function(data){
+             $("<style></style>").appendTo("head").html(data);
+             //loading complete code here
+          }
+        })
+      ).then(function() {
+        console.log("onPageLoadTerm: Loaded assets");
+        $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+          type: 'success',
+          align: 'right',
+          delay: 2000,
+          offset: {from: 'top', amount: 70},
+          width: 300,
+          allow_dismiss: true
+        });
+        termCounter = 1;
+      }).catch( function() {
+        //If fail, display message and offer to retry
+         console.log("onPageLoadTerm: One or more assets failed to load");
+         $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
+           type: 'danger',
+           align: 'right',
+           delay: 2000,
+           offset: {from: 'top', amount: 70},
+           width: 300,
+           allow_dismiss: true
+        })
       });
-      termCounter = 1;
-    }).catch( function() {
-      //If fail, display message and offer to retry
-       console.log("onPageLoadTerm: One or more assets failed to load");
-       $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
-         type: 'danger',
-         align: 'right',
-         delay: 2000,
-         offset: {from: 'top', amount: 70},
-         width: 300,
-         allow_dismiss: true
-      })
-    });
-  }
-  else {
-    console.log('loadTerminal = false');
-  }
+    }
+    console.log('theme = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 }
 
 //Load when page loads - done so async works
@@ -463,39 +443,40 @@ $(function(){
 
 //Check if Terminal needs to be toggled
 async function onPageLoadTermToggle() {
-  if (Cookies.get('toggleTerminal') == 'true') {
-    await sleep(1000),
-    simulateKeyPress("`", 'body');
-    console.log('toggleTerminal = true');
-  } else {
-    console.log('toggleTerminal = false');
-  }
+  settings.getItem('toggleTerminal').then(async function(value) {
+    if (value == 'true') {
+      await sleep(1000);
+      simulateKeyPress("`", 'body');
+    }
+    console.log('toggleTerminal = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 }
 
 //Check which tab needs to be opened on News page.
 $(function() {
-  if (Cookies.get('defaultTab') == 'projects') {
-    $('#tabs li:eq(0) a').tab('show');
-    $('#pills li:eq(0) a').tab('show');
-    console.log('defaultTab = projects');
-  }
-  else if (Cookies.get('defaultTab') == 'important') {
-    $('#tabs li:eq(1) a').tab('show');
-    $('#pills li:eq(1) a').tab('show');
-    console.log('defaultTab = important');
-  }
-  else if (Cookies.get('defaultTab') == 'website') {
-    $('#tabs li:eq(2) a').tab('show');
-    $('#pills li:eq(2) a').tab('show');
-    console.log('defaultTab = website');
-  }
-  else if (Cookies.get('defaultTab') == 'bugs') {
-    $('#tabs li:eq(3) a').tab('show');
-    $('#pills li:eq(3) a').tab('show');
-    console.log('defaultTab = bugs');
-  } else {
-    console.log('defaultTab = null');
-  }
+  settings.getItem('defaultTab').then(function(value) {
+    if (value == 'projects') {
+      $('#tabs li:eq(0) a').tab('show');
+      $('#pills li:eq(0) a').tab('show');
+    }
+    else if (value == 'important') {
+      $('#tabs li:eq(1) a').tab('show');
+      $('#pills li:eq(1) a').tab('show');
+    }
+    else if (value == 'website') {
+      $('#tabs li:eq(2) a').tab('show');
+      $('#pills li:eq(2) a').tab('show');
+    }
+    else if (value == 'bugs') {
+      $('#tabs li:eq(3) a').tab('show');
+      $('#pills li:eq(3) a').tab('show');
+    }
+    console.log('defaultTab = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 //Check if Events Banner needs to be shown on Homepage
@@ -508,84 +489,116 @@ $(function() {
   var day = date.getDate().toString();
   var mD = month + day;
 
-if (Cookies.get('enableEventsBanner') == 'true') {
-  if(dates.indexOf(mD) != -1) {
-    $('#ajax-event-banner').load('ajax/alerts/events.html');
-  }
-  console.log('enableEventsBanner = true');
-  } else {
-    console.log('enableEventsBanner = false');
-  }
+  settings.getItem('enableEventsBanner').then(function(value) {
+    if (value == 'true') {
+      if(dates.indexOf(mD) != -1) {
+        $('#ajax-event-banner').load('ajax/alerts/alert-events.html');
+      }
+    }
+    console.log('enableEventsBanner = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
-//Check if info Banner needs to be shown on homepage
-if (Cookies.get('enableInfoBanner') == 'true') {
-  $('#ajax-info-banner').load('ajax/alerts/info.html');
-  console.log('enableInfoBanner = true');
-  } else {
-    console.log('enableInfoBanner = false');
+//Check if Info Banner needs to be shown on homepage
+settings.getItem('enableInfoBanner').then(function(value) {
+  if (value == 'true') {
+    $('#ajax-info-banner').load('ajax/alerts/alert-info.html');
   }
+  console.log('enableInfoBanner = ' + value);
+}).catch(function(err) {
+  console.log(err);
+});
 
 //Check if Banners needs to be shown on Terms and Privacy page
 $(function() {
-  if (Cookies.get('enableTacBanner') == 'true') {
-    $('#ajax-terms-banner').load('ajax/alerts/terms.html');
-    $('#ajax-privacy-banner').load('ajax/alerts/privacy.html');
-    console.log('enableTacBanner = true');
-  } else {
-    console.log('enableTacBanner = false');
-  }
+  settings.getItem('enableTacBanner').then(function(value) {
+    if (value == 'true') {
+      $('#ajax-terms-banner').load('ajax/alerts/alert-terms.html');
+      $('#ajax-privacy-banner').load('ajax/alerts/alert-privacy.html');
+    }
+    console.log("enableTacBanner = " + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 //Check if Snowstorm needs to be loaded on page load
 $(function() {
-  if (Cookies.get('enableSnowstorm') == 'true') {
-    setTimeout(enable, 500);
-    loadSnowstorm();
+  settings.getItem('enableSnowstorm').then(function(value) {
+    if (value == 'true') {
+      setTimeout(enable, 500);
+      loadSnowstorm();
       function enable(){
         snowStorm.toggleSnow();
         $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
       }
-    console.log('enableSnowstorm = true');
-  } else {
-    console.log('enableSnowstorm = false');
-  }
+    }
+    console.log('enableSnowstorm = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 //Temporary workaround for settings bug
 //Forces to set banner cookies if they have not been set yet
+//Banner - Events
 $(function() {
-  if (Cookies.get('enableEventsBanner') === undefined) {
-      Cookies.set('enableEventsBanner', 'true', {expires: 3600, secure: true});
-  }
-  if (Cookies.get('enableTacBanner') === undefined) {
-      Cookies.set('enableTacBanner', 'true', {expires: 3600, secure: true});
-  }
-  if (Cookies.get('enableInfoBanner') === undefined) {
-      Cookies.set('enableInfoBanner', 'true', {expires: 3600, secure: true});
-  }
+  settings.getItem('enableEventsBanner').then(function (value) {
+    if (value == null) {
+      settings.setItem('enableEventsBanner', 'true').then(function (value) {
+          console.log(value);
+      }).catch(function(err) {
+          console.log(err);
+      });
+    }
+  }).catch(function(err) {
+      console.log(err);
+  });
+  //Banner - Info
+  settings.getItem('enableInfoBanner').then(function (value) {
+    if (value == null) {
+      settings.setItem('enableInfoBanner', 'true').then(function (value) {
+          console.log(value);
+      }).catch(function(err) {
+          console.log(err);
+      });
+    }
+  }).catch(function(err) {
+      console.log(err);
+  });
+  //Banner - Terms and conditions
+  settings.getItem('enableTacBanner').then(function (value) {
+    if (value == null) {
+      settings.setItem('enableTacBanner', 'true').then(function (value) {
+          console.log(value);
+      }).catch(function(err) {
+          console.log(err);
+      });
+    }
+  }).catch(function(err) {
+      console.log(err);
+  });
 });
 
 //Check which theme to apply
 $(function() {
-  if (Cookies.get('theme') == 'light') {
-    $('.card').removeClass('bg-dark').addClass('bg-light');
-    //$('button').removeClass('btn-light').addClass('btn-secondary');
-    $('table').removeClass('table-inverse').addClass('table-light');
-    $("nav").attr("class", "navbar navbar-expand-md navbar-light bg-light fixed-top");
-    //$("nav").attr("style", "background-color: #e3f2fd;");
-    $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
-    console.log('theme = light');
-  } else {
-    console.log('theme = dark');
-  }
+  settings.getItem('theme').then(function(value) {
+    if (value == 'light') {
+      themeLight();
+    }
+    console.log('theme = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
-//Test light theme locally
-function test() {
+//Light theme
+function themeLight() {
   $('.card').removeClass('bg-dark').addClass('bg-light');
   //$('button').removeClass('btn-light').addClass('btn-secondary');
-  $('table').removeClass('table-inverse').addClass('table-light');
+  $('table').removeClass('table-dark').addClass('table-light');
   $("nav").attr("class", "navbar navbar-expand-md navbar-light bg-light fixed-top");
   //$("nav").attr("style", "background-color: #e3f2fd;");
   $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
@@ -593,12 +606,14 @@ function test() {
 
 //Check if centered modals need to be applied
 $(function() {
-  if (Cookies.get('centeredModals') == 'true') {
-    $('html').append('<link rel="stylesheet" type="text/css" href="./css/modals-centered.css">');
-    console.log('centeredModals = true');
-  } else {
-    console.log('centeredModals = false');
-  }
+  settings.getItem('centeredModals').then(function(value) {
+    if (value == 'true') {
+      $('html').append('<link rel="stylesheet" type="text/css" href="./css/modals-centered.css">');
+    }
+    console.log('centeredModals = ' + value);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 //Contact modal copy messages
@@ -661,81 +676,112 @@ function litecoinMsg() {
 
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
-  if (Cookies.get('eastereggAchievement') == 'true') {
-    console.log('Achievement message not displayed as user has already gotten it.');
-  } else {
-    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website.", {
-      type: 'info',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      delay: 10000,
-      allow_dismiss: true
-    });
-    Cookies.set('eastereggAchievement', 'true', {expires: 3600, secure: true});
-  }
+  achievements.getItem('eastereggAchievement').then(function(value) {
+    if (value == 'true') {
+      console.log('Achievement message not displayed as user has already gotten it.');
+    } else {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website.", {
+        type: 'info',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        delay: 10000,
+        allow_dismiss: true
+      });
+      achievements.setItem('eastereggAchievement', 'true');
+    }
+    console.log('eastereggAchievement = ' + value);
+  });
 }
 
 //Used to see if Terminal Achievement message should be displayed.
 function terminalCheck() {
-  if (Cookies.get('terminalAchievement') == 'true') {
-    console.log('Achievement message not displayed as user has already gotten it.');
-  } else {
-    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time.", {
-      type: 'info',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      delay: 10000,
-      allow_dismiss: true
-    });
-    Cookies.set('terminalAchievement', 'true', {expires: 3600, secure: true});
-  }
+  achievements.getItem('terminalAchievement').then(function(value) {
+    if (value == 'true') {
+      console.log('Achievement message not displayed as user has already gotten it.');
+    } else {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time.", {
+        type: 'info',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        delay: 10000,
+        allow_dismiss: true
+      });
+      achievements.setItem('terminalAchievement', 'true');
+    }
+    console.log('terminalAchievement = ' + value);
+  });
 }
 
 //Used to see if Wisely Achievement message should be displayed.
 function wiselyCheck() {
-  if (Cookies.get('wiselyAchievement') == 'true') {
-    console.log('Achievement message not displayed as user has already gotten it.');
-  } else {
-    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>.", {
-      type: 'info',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      delay: 10000,
-      allow_dismiss: true
-    });
-    Cookies.set('wiselyAchievement', 'true', {expires: 3600, secure: true});
-  }
+  achievements.getItem('wiselyAchievement').then(function(value) {
+    if (value == 'true') {
+      console.log('Achievement message not displayed as user has already gotten it.');
+    } else {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>.", {
+        type: 'info',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        delay: 10000,
+        allow_dismiss: true
+      });
+      achievements.setItem('wiselyAchievement', 'true');
+    }
+    console.log('wiselyAchievement = ' + value);
+  });
 }
 
 //Used to see if Wisely Achievement message should be displayed.
 function purplerainCheck() {
-  if (Cookies.get('purplerainAchievement') == 'true' )  {
-    console.log('Achievement message not displayed as user has already gotten it.');
-  } if (Cookies.get('purplerainAchievement') !== 'true' && Cookies.get('theme') == 'light' ) {
-    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled.", {
-      type: 'info',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      delay: 10000,
-      allow_dismiss: true
-    });
-    Cookies.set('purplerainAchievement', 'true', {expires: 3600, secure: true});
-  }
+  achievements.getItem('purplerainAchievement').then(function(value) {
+    if (value == 'true') {
+      console.log('Achievement message not displayed as user has already gotten it.');
+    } else {
+      settings.getItem('theme').then(function(value) {
+        if (value == 'light') {
+          $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled.", {
+            type: 'info',
+            align: 'right',
+            offset: {from: 'top', amount: 70},
+            width: 300,
+            delay: 10000,
+            allow_dismiss: true
+          });
+          achievements.setItem('purplerainAchievement', 'true');
+        }
+      });
+    }
+    console.log('purplerainAchievement = ' + value);
+  });
 }
 
 //Reset Achievement cookies
 function resetAchievements() {
-  Cookies.remove('eastereggAchievement', {secure: true});
-  Cookies.remove('terminalAchievement', {secure: true});
-  Cookies.remove('wiselyAchievement', {secure: true});
-  Cookies.remove('hallucinatingAchievement', {secure: true});
-  Cookies.remove('purplerainAchievement', {secure: true});
+  achievements.setItem('eastereggAchievement', 'false');
+  achievements.setItem('terminalAchievement', 'false');
+  achievements.setItem('wiselyAchievement', 'false');
+  achievements.setItem('hallucinatingAchievement', 'false');
+  achievements.setItem('purplerainAchievement', 'false');
   $('#btn-reset-achievements').tooltip('hide');
   $.bootstrapGrowl("Your achievement progress has been reset!", {
+    type: 'info',
+    align: 'right',
+    offset: {from: 'top', amount: 70},
+    width: 'auto',
+    allow_dismiss: true
+  });
+}
+
+//Clear Local Storage
+function clearLocalStorage() {
+  settings.clear();
+  achievements.clear();
+  localforage.clear();
+  $('#btn-clear-localstorage').tooltip('hide');
+  $.bootstrapGrowl("All local storage databases have been removed!", {
     type: 'info',
     align: 'right',
     offset: {from: 'top', amount: 70},
@@ -750,23 +796,24 @@ function loadAchievementsMod() {
   $('#modal-achievements').modal();
 }
 function loadAdsMod() {
-  if (Cookies.get('hallucinatingAchievement') == 'true') {
+  achievements.getItem('hallucinatingAchievement').then(function(value) {
+    if (value == 'true') {
+      console.log('Achievement message not displayed as user has already gotten it.');
+    } else {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer.", {
+        type: 'info',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        delay: 10000,
+        allow_dismiss: true
+      });
+      achievements.setItem('hallucinatingAchievement', 'true');
+    }
     $('#modal-hide-ads').load('ajax/modals/hide-ads.html');
     $('#modal-hide-ads').modal();
-    console.log('Achievement message not displayed as user has already gotten it.');
-  } else {
-    $('#modal-hide-ads').load('ajax/modals/hide-ads.html');
-    $('#modal-hide-ads').modal();
-    Cookies.set('hallucinatingAchievement', 'true', {expires: 3600, secure: true});
-    $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer.", {
-      type: 'info',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      delay: 10000,
-      allow_dismiss: true
-    });
-  }
+    console.log('hallucinatingAchievement = ' + value);
+  });
 }
 function loadArchiveMod() {
   $('#modal-archive').load('ajax/modals/archive.html');

@@ -83,7 +83,7 @@
     <div class="collapse" id="modal-donors-collapse">
       <div class="card bg-secondary">
         <h5 class="card-header">Known Donors <button roll="button" class="close" onclick="$('#modal-donors-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
-        <table class="table table-inverse table-hover">
+        <table class="table table-dark table-hover">
           <!--Header-->
           <thead>
             <tr>
@@ -118,10 +118,13 @@
 
 <script>
   $(function() {
-    if (Cookies.get('theme') == 'light') {
-      $('table').removeClass('table-inverse').addClass('table-light');
-      $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
-    }
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        $('table').removeClass('table-dark').addClass('table-light');
+        $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+      }
+    });
   });
 
 //Bitcoin Copy Function

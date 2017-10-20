@@ -8,7 +8,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
     <div class="modal-body">
-      <table class="table table-inverse table-hover">
+      <table class="table table-dark table-hover">
         <!--Header-->
         <thead>
           <tr>
@@ -68,9 +68,12 @@
 
 <script>
   $(function() {
-    if (Cookies.get('theme') == 'light') {
-      $('table').removeClass('table-inverse').addClass('table-light');
-    }
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        $('table').removeClass('table-dark').addClass('table-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+      }
+    });
   });
 
   //Enable tooltips

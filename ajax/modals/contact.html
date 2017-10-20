@@ -82,9 +82,12 @@
 
 <script>
   $(function() {
-    if (Cookies.get('theme') == 'light') {
-      $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
-    }
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+      }
+    });
   });
 
 //Email Copy Function

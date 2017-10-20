@@ -43,26 +43,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Definition - Underline From Centre - Gray color */
 .definition {
-	color: #B23380;
+	color: #579600 !important;
 }
 .definition:hover {
-	color: #B23380;
+	color: #579600 !important;
 }
 .definition:before {
 	background: black;
 	z-index: 1;
 }
 
-#menu-news, #menu-fs, #menu-mc, #menu-computers, #menu-terms, #menu-privacy, #menu-info {
+#menu-news, #menu-fs, #menu-mc, #menu-txtlock, #menu-terms, #menu-privacy, #menu-info {
   background-color: rgba(230, 230, 230, 0.8);
 }
-#menu-news a, #menu-fs a, #menu-mc a, #menu-computers a, #menu-terms a, #menu-privacy a, #menu-info a {
+#menu-news a, #menu-fs a, #menu-mc a, #menu-txtlock a, #menu-terms a, #menu-privacy a, #menu-info a {
   color: black;
 }
-#menu-news li a:hover, #menu-fs li a:hover, #menu-mc li a:hover, #menu-computers li a:hover, #menu-terms li a:hover, #menu-privacy li a:hover, #menu-info li a:hover {
-  color: #661aff;
+#menu-news li a:hover, #menu-fs li a:hover, #menu-mc li a:hover, #menu-txtlock li a:hover, #menu-terms li a:hover, #menu-privacy li a:hover, #menu-info li a:hover {
+  color: #c156ff;
 }
-#menu-news li:hover, #menu-fs li:hover, #menu-mc li:hover, #menu-computers li:hover, #menu-terms li:hover, #menu-privacy li:hover, #menu-info li:hover {
+#menu-news li:hover, #menu-fs li:hover, #menu-mc li:hover, #menu-txtlock li:hover, #menu-terms li:hover, #menu-privacy li:hover, #menu-info li:hover {
   background-color: #d2d9df;
 }
 
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #0066ff;
 }
 .link:hover {
-	color: #661aff;
+	color: #579600 !important;
 }
 .link:before {
 	z-index: 1;
@@ -90,32 +90,32 @@ h1, h2, h3, h4, h5, h6 {
 	height: 2px;
 }
 
-.nav-tabs {
+/* News Tabs */
+.nav-tabs-news {
   border-bottom: 1px solid black;
 }
-.nav-tabs li a {
+.nav-tabs-news li a {
 	color: black;
 }
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: #0066ff;
-  background-color: rgba(230, 230, 230, 0.8);
-  border-bottom-color: transparent;
-  cursor: default;
+.nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news.active {
+	background-color: rgba(230, 230, 230, 0.8) !important;
+	color: #c156ff;
+	border-bottom-color: rgba(230, 230, 230, 0.8) !important;
 }
-.nav-tabs li a:hover {
-  background-color: rgba(230, 230, 230, 0.8);
-  border: 1px solid #4E4E4E;
-	color: #0066ff;
+.nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news:hover {
+	color: #c156ff;
+}
+.nav-tabs-news .nav-link-news:hover {
+	border-color: #343A40 #343A40 transparent #343A40;
+	background-color: transparent;
 }
 
 /* Homepage Recent News Tabs */
 .card-news {
 	background-color: #bfbfbf;
 }
-.tab-pane {
-	background-color: #bfbfbf;
+.tab-content-news {
+	background-color: rgba(230, 230, 230, 0.8);
 }
 
 .nav-pills li a {
@@ -131,6 +131,29 @@ h1, h2, h3, h4, h5, h6 {
 .nav-pills li a:hover {
 	color: #0066ff;
   background-color: rgba(230, 230, 230, 0.8);
+}
+
+/* Home Tabs */
+.nav-tabs-home {
+  border-bottom: 1px solid black;
+}
+.nav-tabs-home li a {
+	color: black;
+}
+.nav-tabs-home .nav-item-home.show .nav-link-home, .nav-tabs-home .nav-link-home.active {
+	background-color: rgba(230, 230, 230, 0.9) !important;
+	color: #c156ff;
+	border-bottom-color: rgba(230, 230, 230, 0.9) !important;
+}
+.nav-tabs-home .nav-item-home.show .nav-link-home, .nav-tabs-home .nav-link-home:hover {
+	color: #c156ff;
+}
+.nav-tabs-home .nav-link-home:hover {
+	border-color: #343A40 #343A40 transparent #343A40;
+	background-color: transparent;
+}
+.card-news, .tab-content-home {
+	background-color: rgba(230, 230, 230, 0.9);
 }
 
 .dropdown-menu > li > a:hover,

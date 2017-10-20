@@ -10,7 +10,7 @@
     <div class="modal-body">
       <!--local-warning-banner-->
       <div id="ajax-achievements-warning-banner"></div>
-      <table class="table table-inverse table-hover">
+      <table class="table table-dark table-hover">
         <!--Header-->
         <thead>
           <tr>
@@ -70,9 +70,12 @@
 
 <script>
   $(function() {
-    if (Cookies.get('theme') == 'light') {
-      $('table').removeClass('table-inverse').addClass('table-light');
-    }
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        $('table').removeClass('table-dark').addClass('table-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+      }
+    });
   });
 
   /* Allows popover activation on hover
@@ -100,69 +103,70 @@
   //Check which Achievements have been completed.
   $(function() {
     //Easter Egg
-    if (Cookies.get('eastereggAchievement') == 'true') {
-      $("#eastereggRow").attr("class","cur-point");
-      $("#eastereggRow").attr("data-toggle","popover");
-      $("#eastereggRow").attr("data-content","Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
-      $("#eastereggAchievement").replaceWith("<h6 class='text-success' id='eastereggAchievement'>Yes</h6>");
-      console.log('eastereggAchievement = true');
-    }else {
-      $("#eastereggRow").attr("class","not-active");
-      $("#eastereggAchievement").replaceWith("<h6 class='text-danger' id='eastereggAchievement'>No</h6>");
-      console.log('eastereggAchievement = false');
-    }
-
+    achievements.getItem('eastereggAchievement').then(function(value) {
+      if (value == 'true') {
+        $("#eastereggRow").attr("class","cur-point");
+        $("#eastereggRow").attr("data-toggle","popover");
+        $("#eastereggRow").attr("data-content","Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
+        $("#eastereggAchievement").replaceWith("<h6 class='text-success' id='eastereggAchievement'>Yes</h6>");
+      } else {
+        $("#eastereggRow").attr("class","not-active");
+        $("#eastereggAchievement").replaceWith("<h6 class='text-danger' id='eastereggAchievement'>No</h6>");
+      }
+      console.log('eastereggAchievement = ' + value);
+    });
     //Terminal
-    if (Cookies.get('terminalAchievement') == 'true') {
-      $("#terminalRow").attr("class","cur-point");
-      $("#terminalRow").attr("data-toggle","popover");
-      $("#terminalRow").attr("data-content","Use the Terminal for the first time.");
-      $("#terminalAchievement").replaceWith("<h6 class='text-success' id='terminalAchievement'>Yes</h6>");
-      console.log('terminalAchievement = true');
-    }else {
-      $("#terminalRow").attr("class","not-active");
-      $("#terminalAchievement").replaceWith("<h6 class='text-danger' id='terminalAchievement'>No</h6>");
-      console.log('terminalAchievement = false');
-    }
-
+    achievements.getItem('terminalAchievement').then(function(value) {
+      if (value == 'true') {
+        $("#terminalRow").attr("class","cur-point");
+        $("#terminalRow").attr("data-toggle","popover");
+        $("#terminalRow").attr("data-content","Use the Terminal for the first time.");
+        $("#terminalAchievement").replaceWith("<h6 class='text-success' id='terminalAchievement'>Yes</h6>");
+      } else {
+        $("#terminalRow").attr("class","not-active");
+        $("#terminalAchievement").replaceWith("<h6 class='text-danger' id='terminalAchievement'>No</h6>");
+      }
+      console.log('terminalAchievement = ' + value);
+    });
     //Wisely
-    if (Cookies.get('wiselyAchievement') == 'true') {
-      $("#wiselyRow").attr("class","cur-point");
-      $("#wiselyRow").attr("data-toggle","popover");
-      $("#wiselyRow").attr("data-content","Agree to the Terms & Conditions or Privacy Policy.");
-      $("#wiselyAchievement").replaceWith("<h6 class='text-success' id='wiselyAchievement'>Yes</h6>");
-      console.log('wiselyAchievement = true');
-    }else {
-      $("#wiselyRow").attr("class","not-active");
-      $("#wiselyAchievement").replaceWith("<h6 class='text-danger' id='wiselyAchievement'>No</h6>");
-      console.log('wiselyAchievement = false');
-    }
-
+    achievements.getItem('wiselyAchievement').then(function(value) {
+      if (value == 'true') {
+        $("#wiselyRow").attr("class","cur-point");
+        $("#wiselyRow").attr("data-toggle","popover");
+        $("#wiselyRow").attr("data-content","Agree to the Terms & Conditions or Privacy Policy.");
+        $("#wiselyAchievement").replaceWith("<h6 class='text-success' id='wiselyAchievement'>Yes</h6>");
+      } else {
+        $("#wiselyRow").attr("class","not-active");
+        $("#wiselyAchievement").replaceWith("<h6 class='text-danger' id='wiselyAchievement'>No</h6>");
+      }
+      console.log('wiselyAchievement = ' + value);
+    });
     //Hallucinating
-    if (Cookies.get('hallucinatingAchievement') == 'true') {
-      $("#hallucinatingRow").attr("class","cur-point");
-      $("#hallucinatingRow").attr("data-toggle","popover");
-      $("#hallucinatingRow").attr("data-content","Click Hide Ads in the footer.");
-      $("#hallucinatingAchievement").replaceWith("<h6 class='text-success' id='hallucinatingAchievement'>Yes</h6>");
-      console.log('hallucinatingAchievement = true');
-    }else {
-      $("#hallucinatingRow").attr("class","not-active");
-      $("#hallucinatingAchievement").replaceWith("<h6 class='text-danger' id='hallucinatingAchievement'>No</h6>");
-      console.log('hallucinatingAchievement = false');
-    }
-
+    achievements.getItem('hallucinatingAchievement').then(function(value) {
+      if (value == 'true') {
+        $("#hallucinatingRow").attr("class","cur-point");
+        $("#hallucinatingRow").attr("data-toggle","popover");
+        $("#hallucinatingRow").attr("data-content","Click Hide Ads in the footer.");
+        $("#hallucinatingAchievement").replaceWith("<h6 class='text-success' id='hallucinatingAchievement'>Yes</h6>");
+      } else {
+        $("#hallucinatingRow").attr("class","not-active");
+        $("#hallucinatingAchievement").replaceWith("<h6 class='text-danger' id='hallucinatingAchievement'>No</h6>");
+      }
+      console.log('hallucinatingAchievement = ' + value);
+    });
     //Purple Rain
-    if (Cookies.get('purplerainAchievement') == 'true') {
-      $("#purplerainRow").attr("class","cur-point");
-      $("#purplerainRow").attr("data-toggle","popover");
-      $("#purplerainRow").attr("data-content","Enable the snowstorm with the 'light' theme enabled.");
-      $("#purplerainAchievement").replaceWith("<h6 class='text-success' id='purplerainAchievement'>Yes</h6>");
-      console.log('purplerainAchievement = true');
-    }else {
-      $("#purplerainRow").attr("class","not-active");
-      $("#purplerainAchievement").replaceWith("<h6 class='text-danger' id='purplerainAchievement'>No</h6>");
-      console.log('purplerainAchievement = false');
-    }
+    achievements.getItem('purplerainAchievement').then(function(value) {
+      if (value == 'true') {
+        $("#purplerainRow").attr("class","cur-point");
+        $("#purplerainRow").attr("data-toggle","popover");
+        $("#purplerainRow").attr("data-content","Enable the snowstorm with the 'light' theme enabled.");
+        $("#purplerainAchievement").replaceWith("<h6 class='text-success' id='purplerainAchievement'>Yes</h6>");
+      } else {
+        $("#purplerainRow").attr("class","not-active");
+        $("#purplerainAchievement").replaceWith("<h6 class='text-danger' id='purplerainAchievement'>No</h6>");
+      }
+      console.log('purplerainAchievement = ' + value);
+    });
   });
 
   //Enable popover
@@ -171,15 +175,4 @@
       selector: '[data-toggle="popover"]'
     });
   }
-
-  //Local File Detection
-  $(function(){
-    if (protocol == "file:") {
-      $('#ajax-achievements-warning-banner').load('ajax/alerts/alert-achievements.html');
-      console.log("Local site");
-    }
-    else {
-      console.log("Settings will work");
-    }
-  });
 </script>

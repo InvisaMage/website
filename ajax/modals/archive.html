@@ -57,6 +57,14 @@
 </div><!-- /.modal-archive -->
 
 <script>
+  $(function() {
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+      }
+    });
+  });
+  
   //Re enable tooltips.
   if(!('ontouchstart' in window))
   {

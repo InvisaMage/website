@@ -4,7 +4,7 @@
 <div class="modal-dialog modal-lg" id="ajax-settings">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title mx-auto black">Settings</h4>
+      <h4 class="modal-title mx-auto">Settings</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="settingsCancelMsg();"><span aria-hidden="true">&times;</span></button>
     </div>
     <div class="modal-body text-left">
@@ -13,7 +13,7 @@
       <div class="container">
         <!--Theme-->
         <div class="card-deck">
-          <div class="card bg-secondary text-white">
+          <div class="card bg-secondary">
             <h5 class="card-header">Appearance</h5>
             <div class="card-body">
               <p class="card-text">Customize the appearance of the site.</p>
@@ -41,12 +41,12 @@
               <hr>
               <div class="form-group">
                 <label for="bg-color-hex">Background color</label>
-                <input id="bg-color-hex" type="text" class="form-control form-control-sm" placeholder="Hex value (blank for default)" style="max-width:200px;">
+                <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
               </div>
             </div>
           </div>
           <!--News Page-->
-          <div class="card bg-secondary text-white">
+          <div class="card bg-secondary">
             <h5 class="card-header">News page</h5>
             <div class="card-body">
               <p class="card-text">Select the default tab.</p>
@@ -82,7 +82,7 @@
 
         <!--Banners-->
         <div class="card-deck">
-          <div class="card bg-secondary text-white">
+          <div class="card bg-secondary">
             <h5 class="card-header">Banners</h5>
             <div class="card-body">
               <p class="card-text">Select the type of banners you want to see.</p>
@@ -108,13 +108,13 @@
           </div>
 
         <!--Page Load-->
-          <div class="card bg-secondary text-white">
+          <div class="card bg-secondary">
             <h5 class="card-header">On page load...</h5>
             <div class="card-body">
               <p class="card-text">What happens when the page loads.</p>
               <div class="form-check">
                 <label class="form-check-label" id="load-terminal">
-                  <input class="form-check-input" type="checkbox" name="load-terminal" id="terminal-checkbox1" value="true">
+                  <input class="form-check-input" type="checkbox" name="loadTerminal" id="terminal-checkbox1" value="true">
                   Load Terminal assets
                 </label>
               </div>
@@ -137,7 +137,7 @@
     </div><!--/.modal-body-->
     <!--Settings Help Collapsible Content-->
     <div class="collapse" id="modal-settings-collapse">
-      <div class="card text-white bg-secondary">
+      <div class="card bg-secondary">
         <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-settings-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
         <div class="card-body">
           <p class="card-text">
@@ -169,6 +169,15 @@
 </div><!-- /.modal-settings-->
 
 <script>
+  $(function() {
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+      }
+    });
+  });
+  
   //Re enable tooltips.
   if(!('ontouchstart' in window))
   {
@@ -178,102 +187,101 @@
   //Checks which inputs should be selected
   $(function() {
     //Theme
-    if (Cookies.get('theme') == 'dark') {
-      $("#theme-radio1").replaceWith("<input class='form-check-input' type='radio' name='themeStyle' id='theme-radio1' value='dark' checked>");
-    }
-    if (Cookies.get('theme') == 'light') {
-      $("#theme-radio2").replaceWith("<input class='form-check-input' type='radio' name='themeStyle' id='theme-radio2' value='light' checked>");
-    }
-    //Legacy background
-    if (Cookies.get('themeLegacyBg') == 'true') {
-      $("#legacy-background-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='legacy-background-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('themeLegacyBg') != 'true') {
-      $("#legacy-background-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='legacy-background-checkbox1' value='true'>");
-    }
+    settings.getItem('theme').then(function(value) {
+      if (value == 'dark') {
+        $("#theme-radio1").prop("checked", true);
+      }
+      if (value == 'light') {
+        $("#theme-radio2").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //Centered modals
-    if (Cookies.get('centeredModals') == 'true') {
-      $("#modal-centered-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='centerModals' id='modal-centered-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('centeredModals') != 'true') {
-      $("#modal-centered-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='centerModals' id='modal-centered-checkbox1' value='true'>");
-    }
+    settings.getItem('centeredModals').then(function(value) {
+      if (value == 'true') {
+        $("#modal-centered-checkbox1").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //Banner - Events
-    if (Cookies.get('enableEventsBanner') == 'true' || Cookies.get('enableTacBanner') === undefined) {
-      $("#home-banner-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='home-banner-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('enableEventsBanner') != 'true') {
-      $("#home-banner-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='home-banner-checkbox1' value='true'>");
-    }
+    settings.getItem('enableEventsBanner').then(function(value) {
+      if (value == 'true') {
+        $("#home-banner-checkbox1").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //Banner - Info
-    if (Cookies.get('enableInfoBanner') == 'true' || Cookies.get('enableInfoBanner') === undefined) {
-      $("#info-banner-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='info-banner-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('enableEventsBanner') != 'true') {
-      $("#info-banner-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='info-banner-checkbox1' value='true'>");
-    }
+    settings.getItem('enableInfoBanner').then(function(value) {
+      if (value == 'true') {
+        $("#info-banner-checkbox1").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //Banner - Terms and Conditions
-    if (Cookies.get('enableTacBanner') == 'true' || Cookies.get('enableTacBanner') === undefined) {
-      $("#tac-banner-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='tac-banner-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('enableTacBanner') != 'true') {
-      $("#tac-banner-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' id='tac-banner-checkbox1' value='true'>");
-    }
+    settings.getItem('enableTacBanner').then(function(value) {
+      if (value == 'true') {
+        $("#tac-banner-checkbox1").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //News
-    if (Cookies.get('defaultTab') == 'projects') {
-      $("#news-radio1").replaceWith("<input class='form-check-input' type='radio' name='defaultTab' id='news-ratio1' value='projects' checked>");
-    }
-    if (Cookies.get('defaultTab') == 'important') {
-      $("#news-radio2").replaceWith("<input class='form-check-input' type='radio' name='defaultTab' id='news-ratio2' value='important' checked>");
-    }
-    if (Cookies.get('defaultTab') == 'website') {
-      $("#news-radio3").replaceWith("<input class='form-check-input' type='radio' name='defaultTab' id='news-ratio3' value='website' checked>");
-    }
-    if (Cookies.get('defaultTab') == 'bugs') {
-      $("#news-radio4").replaceWith("<input class='form-check-input' type='radio' name='defaultTab' id='news-ratio4' value='bugs' checked>");
-    }
+    settings.getItem('defaultTab').then(function(value) {
+      if (value == 'projects') {
+        $("#news-radio1").prop("checked", true);
+      }
+      else if (value == 'important') {
+        $("#news-radio2").prop("checked", true);
+      }
+      else if (value == 'website') {
+        $("#news-radio3").prop("checked", true);
+      }
+      else if (value == 'bugs') {
+        $("#news-radio4").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //On page load - Snowstorm
-    if (Cookies.get('enableSnowstorm') == 'true') {
-      $("#snowstorm-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='option4' id='snowstorm-checkbox1' value='true' checked>");
-    }
-    if (Cookies.get('enableSnowstorm') != 'true') {
-      $("#snowstorm-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='option4' id='snowstorm-checkbox1' value='true'>");
-    }
+    settings.getItem('enableSnowstorm').then(function(value) {
+      if (value == 'true') {
+        $("#snowstorm-checkbox1").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //On page load - Terminal
-    if (Cookies.get('loadTerminal') == 'true') {
-      $("#terminal-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='load-terminal' id='terminal-checkbox1' value='true' checked>");
-      $("#toggle-terminal").show();
-    }
-    if (Cookies.get('loadTerminal') != 'true') {
-      $("#terminal-checkbox1").replaceWith("<input class='form-check-input' type='checkbox' name='load-terminal' id='terminal-checkbox1' value='true'>");
-      $("#toggle-terminal").hide();
-    }
+    settings.getItem('loadTerminal').then(function(value) {
+      if (value == 'true') {
+        $("#terminal-checkbox1").prop("checked", true);
+        $("#toggle-terminal").show();
+      } else {
+        $("#toggle-terminal").hide();
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //On page load - Toggle Terminal
-    if (Cookies.get('toggleTerminal') == 'true') {
-      $("#terminal-checkbox2").replaceWith("<input class='form-check-input' type='checkbox' name='toggle-terminal' id='terminal-checkbox2' value='true' checked>");
-    }
-    if (Cookies.get('toggleTerminal') != 'true') {
-      $("#terminal-checkbox2").replaceWith("<input class='form-check-input' type='checkbox' name='toggle-terminal' id='terminal-checkbox2' value='true'>");
-    }
+    settings.getItem('toggleTerminal').then(function(value) {
+      if (value == 'true') {
+        $("#terminal-checkbox2").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
     //Set background color
-    if (Cookies.get('bgColor') != null) {
-      var newColorCheck = Cookies.get('bgColor');
-      $("#bg-color-hex").replaceWith("<input id='bg-color-hex' type='text' class='form-control'placeholder='Hex value (blank for default)' value='"+ newColorCheck +"'>");
-    }
+    settings.getItem('backgroundColor').then(function(value) {
+      $('#bg-color-hex').attr("value", value);
+    }).catch(function(err) {
+      console.log(err);
+    });
 
     $('#load-terminal').click(function() {
       $("#toggle-terminal").show();
     })
-  });
-
-  //Local File Detection
-  $(function(){
-    if (protocol == "file:") {
-      $('#ajax-settings-warning-banner').load('ajax/alerts/alert-settings.html');
-      console.log("Local site");
-    }
-    else {
-      console.log("Settings will work");
-    }
   });
 </script>

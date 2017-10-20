@@ -13,8 +13,8 @@
             name: 'tilda',
             height: windowHeight-62,
             enabled: false,
-            completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'cookies', 'media', 'go', 'anchor',
-            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search'],
+            completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'go', 'anchor',
+            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage'],
             greetings: 'Welcome to the Terminal | Copyright (c) 2014-2017\nType \'help\' to view a list of commands.',
             keypress: function(e) {
                 if (e.which == 96) {
@@ -32,9 +32,7 @@
         var focus = false;
         $(document.documentElement).keypress(function(e) {
             if (e.which == 96) {
-              if (protocol != "file:") {
                 terminalCheck();
-              }
                 self.slideToggle('fast');
                 self.terminal.focus(focus = !focus);
                 self.terminal.attr({
@@ -64,16 +62,7 @@ jQuery(document).ready(function($) {
     var modals = ['achievements', 'archive', 'contact', 'cookies', 'donate', 'eastereggs', 'hide-ads', 'privacy-no',
     'privacy-yes', 'reload', 'search-help', 'settings', 'shortcuts', 'stats', 'terms-no', 'terms-yes'];
     modals.toString();
-
     var modalsList = modals.join(", ").replaceAll(",", " |");
-
-    var commands = [];
-
-    /*
-    for (i = 0; i < modals.length; i++) {
-      console.log(modals[i]);
-    }
-    */
 
     //help
     if (cmd.name == 'help') {
@@ -100,9 +89,10 @@ jQuery(document).ready(function($) {
         terminal.echo('   snowstorm - Interface with the snowstorm function')
         terminal.echo('   Usage: snowstorm [load | toggle | freeze | resume | wind | melt]');
       }
-      else if (cmd.args == 'cookies') {
-        terminal.echo('   cookies - Manipulate cookies on the site')
-        terminal.echo('   Usage: cookies [get | remove <cookie name>]');
+      else if (cmd.args == 'storage') {
+        terminal.echo('   storage - Manipulate local storage (Interace with localForage)')
+        terminal.echo('   Usage: storage [get <database name> | set <database name> <name> <value> | remove <database name> <name>]');
+        terminal.echo('   Note: Database name is eiter Settings (-s) or Achievements (-a).')
       }
       else if (cmd.args == 'less') {
         terminal.echo('   less - View a file one line at a time')
@@ -120,27 +110,29 @@ jQuery(document).ready(function($) {
         terminal.echo('   Example: reload [(no number) | 5]');
       }
       else if (cmd.args == '') {
+        terminal.echo('To get more help for a specific command use help <cmd name>.');
+        terminal.echo(' ');
         terminal.echo('Available commands:');
         terminal.echo('   | help            -Shows this');
         terminal.echo('   |');
+        terminal.echo('   | echo            -Prints arguments given to the terminal');
         terminal.echo('   | date            -Displays the current date');
         terminal.echo('   | time            -Returns the current time');
-        terminal.echo('   | echo            -Prints arguments given to the terminal');
         terminal.echo('   |');
+        terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
+        terminal.echo('   | go              -Navigate to a file located on the server or an external website');
+        terminal.echo('   | less            -View a file one line at a time');
         terminal.echo('   | media           -Control the audio playing on the page');
         terminal.echo('   | modal           -Load a modal');
-        terminal.echo('   | go              -Navigate to a file located on the server or an external website');
-        terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
         terminal.echo('   | search          -Send input to a search engine in a new tab');
         terminal.echo('   | snowstorm       -Interface with the snowstorm function');
-        terminal.echo('   | cookies         -Manipulate cookies on the site');
-        terminal.echo('   | less            -View a file one line at a time');
+        terminal.echo('   | storage         -Manipulate local storage (Interace with localForage');
         terminal.echo('   |');
+        terminal.echo('   | clear           -Clears the terminal');
+        terminal.echo('   | close           -Hides the terminal');
         terminal.echo('   | credits         -Learn how this was made');
         terminal.echo('   | reload          -Reloads the current page');
-        terminal.echo('   | clear           -Clears the terminal');
         terminal.echo('   | reset           -Resets the Terminal to default state');
-        terminal.echo('   | close           -Hides the terminal');
       }
       else {
         terminal.echo('Can not get further information for that command')
@@ -225,29 +217,70 @@ jQuery(document).ready(function($) {
         terminal.echo('Requires an argument');
       }
     }
-    //Cookies
-    else if (cmd.name == 'cookies') {
+    //Storage
+    else if (cmd.name == 'storage') {
       if (cmd.args[0] == 'get') {
-        var cookiesString = JSON.stringify(Cookies.get());
-        var newLine = cookiesString.replaceAll(",", '\n');
-        var rm1 = newLine.replaceAll("{", '');
-        var rm2 = rm1.replaceAll("}", '');
-        terminal.echo(rm2);
-      }
-      else if (cmd.args[0] == 'remove') {
-        if (cmd.args[1] != undefined) {
-          Cookies.remove(cmd.args[1]);
-          terminal.echo('Removing ' + cmd.args[1] + ' cookie...');
+        if (cmd.args[1] == '-s') {
+          settings.iterate(function(value, key, iterationNumber) {
+              terminal.echo(key + ' = ' + value);
+          }).catch(function(err) {
+              terminal.echo(err);
+          });
+        }
+        else if (cmd.args[1] == '-a') {
+          achievements.iterate(function(value, key, iterationNumber) {
+              terminal.echo(key + ' = ' + value);
+          }).catch(function(err) {
+              terminal.echo(err);
+          });
         }
         else {
-          terminal.echo('Cookie name required');
+          terminal.echo('Unknown database');
+        }
+      }
+      else if (cmd.args[0] == 'set') {
+        if (cmd.args[1] == '-s') {
+          settings.setItem(cmd.args[2], cmd.args[3]);
+          terminal.echo('Saving item named "' + cmd.args[2] + '" with a value of "' + cmd.args[3] + '" to the Settings database...' );
+        }
+        else if (cmd.args[1] == '-a') {
+          achievements.setItem(cmd.args[2], cmd.args[3])
+          terminal.echo('Saving item named "' + cmd.args[2] + '" with a value of "' + cmd.args[3] + '" to the Achievements database...' );
+        }
+        else {
+          terminal.echo('Unknown database');
+        }
+      }
+      else if (cmd.args[0] == 'remove') {
+        if (cmd.args[1] == '-s') {
+          if (cmd.args[2] != undefined) {
+            settings.removeItem(cmd.args[2]);
+            terminal.echo('Removing item named "' + cmd.args[2] + '" from the Settings database...' );
+          }
+          else {
+            terminal.echo('Key value required');
+          }
+        }
+        else if (cmd.args[1] == '-a') {
+          if (cmd.args[2] != undefined) {
+            achievements.removeItem(cmd.args[2]);
+            terminal.echo('Removing item named "' + cmd.args[2] + '" from the Achievements database...' );
+          }
+          else {
+            terminal.echo('Key value required');
+          }
+        }
+        else if (cmd.args[1] == '--all') {
+          settings.clear();
+          achievements.clear();
+          terminal.echo('Removing all stored items...' );
+        }
+        else {
+          terminal.echo('Unknown database');
         }
       }
       else {
         terminal.echo('Requires an argument');
-      }
-      if ($.isEmptyObject(Cookies.get()) && (cmd.args[0] == 'get')) {
-        terminal.echo('No cookies found!');
       }
     }
     //Reload
