@@ -99,11 +99,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news.active {
 	background-color: rgba(230, 230, 230, 0.8) !important;
-	color: #c156ff;
+	color: #579600;
 	border-bottom-color: rgba(230, 230, 230, 0.8) !important;
 }
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news:hover {
-	color: #c156ff;
+	color: #579600;
 }
 .nav-tabs-news .nav-link-news:hover {
 	border-color: #343A40 #343A40 transparent #343A40;
@@ -142,11 +142,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-tabs-home .nav-item-home.show .nav-link-home, .nav-tabs-home .nav-link-home.active {
 	background-color: rgba(230, 230, 230, 0.9) !important;
-	color: #c156ff;
+	color: #579600;
 	border-bottom-color: rgba(230, 230, 230, 0.9) !important;
 }
 .nav-tabs-home .nav-item-home.show .nav-link-home, .nav-tabs-home .nav-link-home:hover {
-	color: #c156ff;
+	color: #579600;
 }
 .nav-tabs-home .nav-link-home:hover {
 	border-color: #343A40 #343A40 transparent #343A40;

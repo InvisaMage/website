@@ -67,9 +67,15 @@
 						</ul>
 						<!--Nav Pills (Visible on Mobile)-->
 						<ul class="nav nav-pills nav-pills-home flex-column d-block d-xl-none" id="pills">
-							<a class="nav-link nav-link-home active" data-toggle="tab" href="#projects">Projects</a>
-							<a class="nav-link nav-link-home" data-toggle="tab" href="#important">Important</a>
-							<a class="nav-link nav-link-home" data-toggle="tab" href="#website">Website</a>
+							<li class="nav-item">
+						    <a class="nav-link nav-link-home active" data-toggle="pill" href="#projects">Projects</a>
+						  </li>
+							<li class="nav-item">
+						    <a class="nav-link nav-link-home" data-toggle="pill" href="#important">Important</a>
+						  </li>
+							<li class="nav-item">
+						    <a class="nav-link nav-link-home" data-toggle="pill" href="#website">Website</a>
+						  </li>
 						</ul>
 					</div>
 					<div class="card-body card-news">
@@ -87,30 +93,26 @@
 						  <div class="tab-pane fade" id="important" role="tabpanel">
 								<h5>October 7, 2017</h5>
 								<p class="card-text">
-									A new type of is function being used in JavaScript, as a result, the minimum browser version requirements have changed significantly.<br>
+									A new type of function is being used in JavaScript, as a result, the minimum browser version requirements have changed significantly.<br>
 									Firefox 52+, Chrome 55+, Mobile Safari 10.3+, and Edge 15+.
 								</p>
 							</div>
 							<!--Website-->
 						  <div class="tab-pane fade" id="website" role="tabpanel">
-								<h5 class="card-text">October 20, 2017</h5>
+								<h5 class="card-text">October 27, 2017</h5>
 								<p class="card-text">
-									Migrated to localForage instead of cookies for storing Settings and Achievements.<br>
-									This allows for better compatibility between browsers and reduces server load.<br>
-									Added the ability to clear all local storage in the <a class="link" href="info.html#stats-info">Stats</a> modal.
+									Added "Requests" section to the <a class="link" href="info.html#stats-info">Stats</a> modal.<br>
+									This displays the number of unique IP requests to the server (so not necessarily page visits).
 									<br>
 									<br>
-									Removed the local site warning alerts as they are no longer needed.<br>
-									Renamed the alerts to have a prefix of alert.
+									Added new functions to the <a class="link" href="info.html#terminal-info">Terminal</a>.<br>
+									IP, Agent, and Display.<br>
+									View help for more information.<br>
+									Added the ability to interpret JavaScript.
 									<br>
 									<br>
-									Replaced the cookies command with the storage command in the <a class="link" href="info.html#terminal-info">Terminal</a>.<br>
-									It functions mostly the same but there are some differences.<br>
-									Make sure to view help for more information.
-									<br>
-									<br>
-									Updated <a class="link" href="info.html#bootstrap">Bootstrap</a> to beta 2.<br>
-									Updated <a class="link" href="info.html#terminal-library-info">jQuery Terminal</a> to v1.9.0.
+									The Privacy and Terms banners have been replaced with static messages on the top right of the page.<br>
+									Cleaned up some JavaScript.
 								</p>
 							</div>
 						</div>
@@ -150,7 +152,7 @@
 		  <div class="modal-dialog modal-sm">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title mx-auto">Personalize Message</h5>
+		        <h5 class="modal-title">Personalize Message</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>

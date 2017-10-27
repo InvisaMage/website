@@ -34,15 +34,16 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-//If no touchscreen, show Tooltips
-if(!('ontouchstart' in window)) {
-  $('[data-toggle="tooltip"]').tooltip();
-}
-
-//If touchscreen, disable gray background in tab-content
-if(('ontouchstart' in window)) {
-  $('.tab-content').css('background-color', 'inherit');
-}
+$(function () {
+  //If no touchscreen, show Tooltips
+  if(!('ontouchstart' in window)) {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+  //If touchscreen, disable gray background in tab-content
+  if(('ontouchstart' in window)) {
+    $('.tab-content').css('background-color', 'inherit');
+  }
+});
 
 //Navbar current page highlight
 setTimeout(navEnable, 700);
@@ -186,13 +187,6 @@ function loadSnowstormNamePrompt(){
       snowStorm.toggleSnow();
     }
 }
-
-//Delete Easter egg on del key press
-var listener = new window.keypress.Listener();
-listener.simple_combo("delete", function() {
-  var audio = new Audio('./audio/delete.mp3');
-  audio.play();
-});
 
 //Shortcuts
 //Loads terminal modal on Shift + Space key combination
@@ -383,19 +377,17 @@ $(function() {
   settings.getItem('backgroundColor').then(function(value) {
     $('body').css("background-color", value);
     console.log("backgroundColor = " + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
 async function onPageLoadTerm() {
-  settings.getItem('loadTerminal').then(function(value) {
+  settings.getItem('loadTerminal').then(async function(value) {
     if (value == 'true') {
       //Get scripts
       $.when( $.ready,
         $.getScript('js/jquery.terminal.min.js'),
-        sleep(500),
+        await sleep(500),
         $.getScript('js/terminal.js'),
         $.ajax({
           url:"./css/jquery.terminal.css",
@@ -430,8 +422,6 @@ async function onPageLoadTerm() {
       });
     }
     console.log('theme = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 }
 
@@ -449,8 +439,6 @@ async function onPageLoadTermToggle() {
       simulateKeyPress("`", 'body');
     }
     console.log('toggleTerminal = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 }
 
@@ -474,8 +462,6 @@ $(function() {
       $('#pills li:eq(3) a').tab('show');
     }
     console.log('defaultTab = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 
@@ -496,8 +482,6 @@ $(function() {
       }
     }
     console.log('enableEventsBanner = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 
@@ -507,20 +491,34 @@ settings.getItem('enableInfoBanner').then(function(value) {
     $('#ajax-info-banner').load('ajax/alerts/alert-info.html');
   }
   console.log('enableInfoBanner = ' + value);
-}).catch(function(err) {
-  console.log(err);
 });
 
 //Check if Banners needs to be shown on Terms and Privacy page
 $(function() {
   settings.getItem('enableTacBanner').then(function(value) {
     if (value == 'true') {
-      $('#ajax-terms-banner').load('ajax/alerts/alert-terms.html');
-      $('#ajax-privacy-banner').load('ajax/alerts/alert-privacy.html');
+      if (($("title").html() == "InvisaMage | Terms")) {
+        $.bootstrapGrowl("Do you accept the Terms and Conditions?<br><br> <button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadTermsYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadTermsNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>", {
+          type: 'danger',
+          align: 'right',
+          delay: 999999999,
+          offset: {from: 'top', amount: 70},
+          width: 300,
+          allow_dismiss: false
+        });
+      }
+      if (($("title").html() == "InvisaMage | Privacy")) {
+        $.bootstrapGrowl("Do you accept the Privacy Policy?<br><br> <button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadPrivacyYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadPrivacyNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>", {
+          type: 'danger',
+          align: 'right',
+          delay: 999999999,
+          offset: {from: 'top', amount: 70},
+          width: 300,
+          allow_dismiss: false
+        });
+      }
     }
     console.log("enableTacBanner = " + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 
@@ -536,8 +534,6 @@ $(function() {
       }
     }
     console.log('enableSnowstorm = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 
@@ -549,36 +545,24 @@ $(function() {
     if (value == null) {
       settings.setItem('enableEventsBanner', 'true').then(function (value) {
           console.log(value);
-      }).catch(function(err) {
-          console.log(err);
       });
     }
-  }).catch(function(err) {
-      console.log(err);
   });
   //Banner - Info
   settings.getItem('enableInfoBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableInfoBanner', 'true').then(function (value) {
           console.log(value);
-      }).catch(function(err) {
-          console.log(err);
       });
     }
-  }).catch(function(err) {
-      console.log(err);
   });
   //Banner - Terms and conditions
   settings.getItem('enableTacBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableTacBanner', 'true').then(function (value) {
           console.log(value);
-      }).catch(function(err) {
-          console.log(err);
       });
     }
-  }).catch(function(err) {
-      console.log(err);
   });
 });
 
@@ -589,8 +573,6 @@ $(function() {
       themeLight();
     }
     console.log('theme = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 
@@ -611,8 +593,6 @@ $(function() {
       $('html').append('<link rel="stylesheet" type="text/css" href="./css/modals-centered.css">');
     }
     console.log('centeredModals = ' + value);
-  }).catch(function(err) {
-    console.log(err);
   });
 });
 

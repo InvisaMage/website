@@ -14,7 +14,7 @@
             height: windowHeight-62,
             enabled: false,
             completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'go', 'anchor',
-            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage'],
+            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display'],
             greetings: 'Welcome to the Terminal | Copyright (c) 2014-2017\nType \'help\' to view a list of commands.',
             keypress: function(e) {
                 if (e.which == 96) {
@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
       else if (cmd.args == 'storage') {
         terminal.echo('   storage - Manipulate local storage (Interace with localForage)')
         terminal.echo('   Usage: storage [get <database name> | set <database name> <name> <value> | remove <database name> <name>]');
-        terminal.echo('   Note: Database name is eiter Settings (-s) or Achievements (-a).')
+        terminal.echo('   Note: Database name is either Settings (-s) or Achievements (-a).')
       }
       else if (cmd.args == 'less') {
         terminal.echo('   less - View a file one line at a time')
@@ -109,15 +109,24 @@ jQuery(document).ready(function($) {
         terminal.echo('   Usage: reload [# of seconds]');
         terminal.echo('   Example: reload [(no number) | 5]');
       }
+      else if (cmd.args == '>') {
+        terminal.echo('   > - JavaScript Interpreter')
+        terminal.echo('   Usage: > <JavaScript expression>');
+        terminal.echo('   Example: > 1+1');
+        terminal.echo('   More: https://www.w3schools.com/js/default.asp');
+      }
       else if (cmd.args == '') {
         terminal.echo('To get more help for a specific command use help <cmd name>.');
         terminal.echo(' ');
         terminal.echo('Available commands:');
         terminal.echo('   | help            -Shows this');
         terminal.echo('   |');
-        terminal.echo('   | echo            -Prints arguments given to the terminal');
+        terminal.echo('   | agent           -Prints your browser\'s user agent');
         terminal.echo('   | date            -Displays the current date');
-        terminal.echo('   | time            -Returns the current time');
+        terminal.echo('   | display         -Prints the screen resolution');
+        terminal.echo('   | echo            -Prints arguments given to the terminal');
+        terminal.echo('   | ip              -Prints your public IP address');
+        terminal.echo('   | time            -Prints the current time');
         terminal.echo('   |');
         terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
         terminal.echo('   | go              -Navigate to a file located on the server or an external website');
@@ -126,7 +135,8 @@ jQuery(document).ready(function($) {
         terminal.echo('   | modal           -Load a modal');
         terminal.echo('   | search          -Send input to a search engine in a new tab');
         terminal.echo('   | snowstorm       -Interface with the snowstorm function');
-        terminal.echo('   | storage         -Manipulate local storage (Interace with localForage');
+        terminal.echo('   | storage         -Manipulate local storage (Interace with localForage)');
+        terminal.echo('   | >               -JavaScript Interpreter');
         terminal.echo('   |');
         terminal.echo('   | clear           -Clears the terminal');
         terminal.echo('   | close           -Hides the terminal');
@@ -351,11 +361,11 @@ jQuery(document).ready(function($) {
           window.open("https://duckduckgo.com/?q=" + cmd.rest.substr(3));
           terminal.echo('Searching DuckDuckGo for "' + cmd.rest.substr(3) + '"');
         }
-        else if (cmd.args == '-y') {
+        else if (cmd.args[0] == '-y') {
           window.open("https://www.youtube.com/results?search_query=" + cmd.rest.substr(3));
           terminal.echo('Searching YouTube for "' + cmd.rest.substr(3) + '"');
         }
-        else if (cmd.args == 'vd') {
+        else if (cmd.args[0] == '-b') {
           window.open("https://www.bing.com/search?q=" + cmd.rest.substr(3));
           terminal.echo('Searching Bing for "' + cmd.rest.substr(3) + '"');
         }
@@ -394,12 +404,46 @@ jQuery(document).ready(function($) {
     }
     //Credits
     else if (cmd.name == 'credits') {
-      terminal.echo("Created using <a class='link' target='_blank' rel='noopener noreferrer' href='http://terminal.jcubic.pl/'>jquery Terminal</a>", {raw: true});
+      terminal.echo("Created using <a target='_blank' rel='noopener noreferrer' href='http://terminal.jcubic.pl/'>jquery Terminal</a>", {raw: true});
     }
     //Tree
     else if (cmd.name == 'tree') {
       terminal.echo("<pre id='tree' class='color-white'></pre>", {raw: true});
       $('#tree').load('tree.txt');
+    }
+    //IP
+    else if (cmd.name == 'ip') {
+      $(function() {
+        $.getJSON("https://api.ipify.org?format=jsonp&callback=?", function(json) {
+        })
+        .done(function(json) {
+          terminal.echo("Your public IP address is: " + json.ip);
+        })
+        .fail(function() {
+          terminal.echo("Unable to get IP!");
+          terminal.echo("Sometimes content blocking extensions will prevent this from working.");
+        });
+      });
+    }
+    //Agent
+    else if (cmd.name == 'agent') {
+      terminal.echo(navigator.userAgent);
+    }
+    //JS
+    else if (cmd.name == '>') {
+      try {
+        var result = window.eval(cmd.rest);
+        if (result !== undefined) {
+            this.echo(new String(result));
+        }
+      } catch(e) {
+        this.error(new String(e));
+
+      }
+    }
+    //Display
+    else if (cmd.name == 'display') {
+      terminal.echo(screen.width + ' ⨯ ' + screen.height);
     }
     //Less test
     else if (cmd.name == 'less') {

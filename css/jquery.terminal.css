@@ -587,3 +587,11 @@
 .cmd {
 	background-color: transparent !important;
 }
+
+/* Link colors */
+.terminal a:link, .terminal a:visited {
+  color: #66a3ff;
+}
+.terminal a:hover {
+  color: #a3ff66;
+}

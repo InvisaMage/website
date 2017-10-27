@@ -725,6 +725,11 @@ kbd {
 	cursor: pointer;
 }
 
+/* Disabled class */
+.form-check.disabled .form-check-label {
+  color: #cccccc;
+}
+
 /* Override Typeahead dropdown Menu */
 .dropdown-menu .active .dropdown-item {
 	background-color: #b8bfc6 !important;

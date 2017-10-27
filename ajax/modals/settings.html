@@ -4,7 +4,7 @@
 <div class="modal-dialog modal-lg" id="ajax-settings">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title mx-auto">Settings</h4>
+      <h4 class="modal-title">Settings</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="settingsCancelMsg();"><span aria-hidden="true">&times;</span></button>
     </div>
     <div class="modal-body text-left">
@@ -118,9 +118,9 @@
                   Load Terminal assets
                 </label>
               </div>
-              <div class="form-check" id="toggle-terminal">
-                <label class="form-check-label animated fadeInDown">
-                  <input class="form-check-input" type="checkbox" name="toggle-terminal" id="terminal-checkbox2" value="true">
+              <div class="form-check disabled" id="toggle-terminal">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="toggle-terminal" id="terminal-checkbox2" value="true" disabled>
                   Toggle Terminal
                 </label>
               </div>
@@ -177,7 +177,7 @@
       }
     });
   });
-  
+
   //Re enable tooltips.
   if(!('ontouchstart' in window))
   {
@@ -258,9 +258,10 @@
     settings.getItem('loadTerminal').then(function(value) {
       if (value == 'true') {
         $("#terminal-checkbox1").prop("checked", true);
-        $("#toggle-terminal").show();
+        $("#toggle-terminal").removeClass('disabled');
+        $("#terminal-checkbox2").prop("disabled", false);
       } else {
-        $("#toggle-terminal").hide();
+
       }
     }).catch(function(err) {
       console.log(err);
@@ -281,7 +282,8 @@
     });
 
     $('#load-terminal').click(function() {
-      $("#toggle-terminal").show();
-    })
+      $("#toggle-terminal").removeClass('disabled');
+      $("#terminal-checkbox2").prop("disabled", false);
+    });
   });
 </script>
