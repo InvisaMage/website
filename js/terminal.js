@@ -1,4 +1,14 @@
 (function($) {
+    //Change opacity
+    var settings = localforage.createInstance({
+      name: "settings"
+    });
+    settings.getItem('terminalOpacity').then(function(value) {
+      $('.terminal').css("background-color", 'rgba(34,38,42,' + value + ')');
+      console.log("terminalOpacity = " + value);
+    });
+
+    //Yup
     $.fn.tilda = function(eval, options) {
         if ($('body').data('tilda')) {
             return $('body').data('tilda').terminal;
@@ -14,7 +24,7 @@
             height: windowHeight-62,
             enabled: false,
             completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'go', 'anchor',
-            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display'],
+            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su'],
             greetings: 'Welcome to the Terminal | Copyright (c) 2014-2017\nType \'help\' to view a list of commands.',
             keypress: function(e) {
                 if (e.which == 96) {
@@ -126,6 +136,7 @@ jQuery(document).ready(function($) {
         terminal.echo('   | display         -Prints the screen resolution');
         terminal.echo('   | echo            -Prints arguments given to the terminal');
         terminal.echo('   | ip              -Prints your public IP address');
+        terminal.echo('   | su              -Switch user accounts');
         terminal.echo('   | time            -Prints the current time');
         terminal.echo('   |');
         terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
@@ -404,7 +415,7 @@ jQuery(document).ready(function($) {
     }
     //Credits
     else if (cmd.name == 'credits') {
-      terminal.echo("Created using <a target='_blank' rel='noopener noreferrer' href='http://terminal.jcubic.pl/'>jquery Terminal</a>", {raw: true});
+      terminal.echo("Created using <a target='_blank' rel='noopener noreferrer' href='http://terminal.jcubic.pl/'>jQuery Terminal</a>", {raw: true});
     }
     //Tree
     else if (cmd.name == 'tree') {
@@ -428,6 +439,16 @@ jQuery(document).ready(function($) {
     //Agent
     else if (cmd.name == 'agent') {
       terminal.echo(navigator.userAgent);
+    }
+    //su
+    else if (cmd.name == 'su') {
+      if (cmd.args[0] != undefined) {
+        terminal.set_prompt('[[;#FFC157;]' + cmd.args[0] + '@server][[;#fff;]:][[;#66a3ff;]~ $] ');
+        terminal.echo('Switched to "' + cmd.args[0] + '" user');
+      } else {
+        terminal.set_prompt('[[;#FFC157;]root@server][[;#fff;]:][[;#66a3ff;]~ $] ');
+        terminal.echo('Switched to "root" user');
+      }
     }
     //JS
     else if (cmd.name == '>') {

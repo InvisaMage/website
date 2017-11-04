@@ -17,7 +17,7 @@
         <!--Unique Requests-->
         <tr>
           <td><h7 class="black">Requests</h7></td>
-          <th><h7 class="black" id="unique-requests"></h7></th>
+          <th><h7 class="black" id="unique-requests"></h7>/ <h7 class="black" id="total-requests"></h7></th>
         </tr>
         <!--Bootstrap Version-->
         <tr>
@@ -72,9 +72,6 @@
               <button id="btn-reload" type="button" class="btn btn-danger" onclick="loadReloadMod();" data-toggle="tooltip" data-placement="bottom" title="Reload Page" data-container="body">
                 <i class="fa fa-refresh" aria-hidden="true"></i>
               </button>
-              <button id="btn-reset-achievements" type="button" class="btn btn-danger" onclick="resetAchievements();" data-toggle="tooltip" data-placement="bottom" title="Reset Achievements" data-container="body">
-                <i class="fa fa-undo" aria-hidden="true"></i>
-              </button>
               <button id="btn-clear-localstorage" type="button" class="btn btn-danger" onclick="clearLocalStorage();" data-toggle="tooltip" data-placement="bottom" title="Clear Local Storage" data-container="body">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
               </button>
@@ -95,7 +92,8 @@
           <hr>
           <h6>Requests</h6>
           <p class="card-text">
-            Unique server requests based on IP.<br>
+            Unique and total request (unique/total).<br>
+            Unique server requests are based on IP.<br>
             Updates hourly.
           </p>
           <hr>
@@ -108,9 +106,6 @@
           <h6>Debug</h6>
           <p class="card-text">
             Reload - Reloads the page after a prompt.
-            <br>
-            <br>
-            Reset Achievements - Removes local storage values for each Achievement. You'll have to earn them again.
             <br>
             <br>
             Clear Local Storage - Removes ALL local storage values on the website. This includes Settings and Achievements.
@@ -240,7 +235,18 @@
        $("#unique-requests").html(data);
     },
     error:function(){
-       $("#unique-requests").html('Unknown');
+       $("#unique-requests").html('null ');
+    }
+  });
+
+  $.ajax({
+    url:"./ajax/total-requests.txt",
+    cache: false,
+    success:function(data){
+       $("#total-requests").html(data);
+    },
+    error:function(){
+       $("#total-requests").html('null');
     }
   });
 </script>

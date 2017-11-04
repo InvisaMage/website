@@ -21,28 +21,49 @@
               <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" name="themeStyle" id="theme-radio1" value="dark" checked>
-                  Dark (Default)
+                  Dark
                 </label>
               </div>
               <div class="form-check">
-                <label class="form-check-label" data-toggle="tooltip" data-placement="right" title="Sadly, this theme does not get much attention. Some elements might look unpolished.">
+                <label class="form-check-label" data-toggle="tooltip" data-placement="right" title="This theme does not get much attention. Some elements might look unpolished.">
                   <input class="form-check-input" type="radio" name="themeStyle" id="theme-radio2" value="light">
                   Light
                 </label>
               </div><!--./Dark/Light Radios-->
               <hr>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="centerModals" id="modal-centered-checkbox1" value="true">
-                  Center modals
-                </label>
-              </div>
-              <!--Background Color-->
-              <hr>
-              <div class="form-group">
-                <label for="bg-color-hex">Background color</label>
-                <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
-              </div>
+              <!--More Button-->
+              <button id="more-options-btn" type="button" class="btn btn-dark btn-sm btn-block" onclick="showOptions();">More options
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+              </button>
+              <!--Hidden-->
+              <span id="hidden-options" hidden>
+                <!--Centered Modals-->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="centerModals" id="modal-centered-checkbox1" value="true">
+                    Center modals
+                  </label>
+                </div>
+                <hr>
+                <!--Background Color-->
+                <div class="form-group">
+                  <label for="bg-color-hex">Background color</label>
+                  <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
+                </div>
+                <!--Terminal Opacity-->
+                <hr>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col">
+                      <label for="terminal-opacity">Terminal Opacity</label>
+                      <input id="terminal-opacity" type="range" class="form-control form-control-sm" name="terminalOpacity"  min="0" max="1" step="0.1" value="0.8" style="max-width:200px;">
+                    </div>
+                    <div class="col">
+                      <label id="terminal-opacity-value"></label>
+                    </div>
+                  </div>
+                </div>
+              </span>
             </div>
           </div>
           <!--News Page-->
@@ -53,7 +74,7 @@
               <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" name="defaultTab" id="news-radio1" value="projects" checked>
-                  Projects (Default)
+                  Projects
                 </label>
               </div>
               <div class="form-check">
@@ -148,13 +169,15 @@
           <h6>Note:</h6>
           <p class="card-text">
             Clicking or tapping the "Cancel" button will not save your changes.<br>
-            Cookies are required for this to work.<br>
             Centered modals do not work on small displays.
           </p>
         </div>
       </div>
     </div>
     <div class="modal-footer">
+      <button type="button" id="default-settings" class="btn btn-outline-danger mr-auto" data-dismiss="modal" onclick="defaultSettings();" data-toggle="tooltip" data-placement="right" title="Reset Settings to default values."> Reset
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </button>
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-settings-collapse').collapse('toggle');">
         <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
@@ -178,9 +201,40 @@
     });
   });
 
+  function showOptions() {
+    $('#hidden-options').prop('hidden', false);
+    $('#more-options-btn').prop('hidden', true);
+    $('#hidden-options').addClass('animated fadeInDown');
+  }
+
+  function defaultSettings() {
+    $('#default-settings').tooltip('hide');
+    settings.clear();
+
+    setTimeout(enable, 1500);
+    $.bootstrapGrowl("Settings have been reset!", {
+      type: 'info',
+      align: 'right',
+      delay: 2000,
+      offset: {from: 'top', amount: 70},
+      width: 300,
+      allow_dismiss: true
+   })
+   $.bootstrapGrowl("<strong>Reloading page...</strong>", {
+     type: 'danger',
+     align: 'center',
+     offset: {from: 'top', amount: 70},
+     width: 'auto',
+     delay: 10000,
+     allow_dismiss: true
+   });
+   function enable(){
+     location.reload();
+   }
+  }
+
   //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
+  if(!('ontouchstart' in window)) {
     $('[data-toggle="tooltip"]').tooltip();
   }
 
@@ -202,6 +256,13 @@
       if (value == 'true') {
         $("#modal-centered-checkbox1").prop("checked", true);
       }
+    }).catch(function(err) {
+      console.log(err);
+    });
+    //Centered modals
+    settings.getItem('terminalOpacity').then(function(value) {
+      $('#terminal-opacity').prop("value", value);
+      $('#terminal-opacity-value').html(value);
     }).catch(function(err) {
       console.log(err);
     });
@@ -284,6 +345,23 @@
     $('#load-terminal').click(function() {
       $("#toggle-terminal").removeClass('disabled');
       $("#terminal-checkbox2").prop("disabled", false);
+    });
+
+    //Terminal Opacity
+    $('#terminal-opacity-value').html($('#terminal-opacity').val());
+    $(document).on('input', '#terminal-opacity', function() {
+      if ($(this).val() == 1) {
+        $('#terminal-opacity-value').html( $(this).val() + ' (Opaque)' );
+      }
+      else if ($(this).val() == 0.8) {
+        $('#terminal-opacity-value').html( $(this).val() + ' (Default)' );
+      }
+      else if ($(this).val() == 0) {
+        $('#terminal-opacity-value').html( $(this).val() + ' (Transparent)' );
+      }
+      else {
+        $('#terminal-opacity-value').html( $(this).val() );
+      }
     });
   });
 </script>

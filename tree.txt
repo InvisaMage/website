@@ -3,9 +3,7 @@
 ├── ajax
 │   ├── alerts
 │   │   ├── alert-events.html
-│   │   ├── alert-info.html
-│   │   ├── alert-privacy.html
-│   │   └── alert-terms.html
+│   │   └── alert-info.html
 │   ├── footer.html
 │   ├── modals
 │   │   ├── achievements.html
@@ -353,7 +351,6 @@
 │   ├── growl.min.js
 │   ├── jquery.min.js
 │   ├── jquery.terminal.min.js
-│   ├── js.cookie.js
 │   ├── keypress.min.js
 │   ├── konami.js
 │   ├── localforage.min.js
@@ -379,4 +376,4 @@
 ├── txtlock-changelog.txt
 └── txtlock.html
 
-36 directories, 343 files
+36 directories, 340 files

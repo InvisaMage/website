@@ -57,7 +57,7 @@
     overflow: hidden;
 }
 .terminal .error {
-    color: #f00;
+    color: #DC3545;
 }
 .terminal {
     position: relative;
@@ -228,7 +228,7 @@
     color: #000;
 }
 .terminal .terminal-output div.error, .terminal .terminal-output div.error div {
-    color: red;
+    color: #DC3545;
 }
 .tilda {
     position: fixed;

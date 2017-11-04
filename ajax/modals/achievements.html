@@ -58,6 +58,9 @@
       </div>
     </div>
     <div class="modal-footer">
+      <button type="button" id="default-settings" class="btn btn-outline-danger mr-auto" data-dismiss="modal" onclick="resetAchievements();" data-toggle="tooltip" data-placement="top" title="Reset Achievements. You will need to earn them again!"> Reset
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </button>
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-achievements-collapse').collapse('toggle');">
         <i class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
@@ -77,6 +80,28 @@
       }
     });
   });
+
+  //Re enable tooltips.
+  if(!('ontouchstart' in window)) {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
+  //Reset Achievement progress
+  function resetAchievements() {
+    achievements.setItem('eastereggAchievement', 'false');
+    achievements.setItem('terminalAchievement', 'false');
+    achievements.setItem('wiselyAchievement', 'false');
+    achievements.setItem('hallucinatingAchievement', 'false');
+    achievements.setItem('purplerainAchievement', 'false');
+    $('#btn-reset-achievements').tooltip('hide');
+    $.bootstrapGrowl("Your achievement progress has been reset!", {
+      type: 'info',
+      align: 'right',
+      offset: {from: 'top', amount: 70},
+      width: 'auto',
+      allow_dismiss: true
+    });
+  }
 
   /* Allows popover activation on hover
    * Modified from http://stackoverflow.com/questions/17437818/twitter-bootstrap-popover-trigger-how-to-set-multiple-triggers#17438133

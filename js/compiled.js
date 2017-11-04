@@ -295,6 +295,8 @@ function settingsCheck() {
   } else {
     settings.setItem('centeredModals', 'false');
   }
+  //Terminal Opacity
+  settings.setItem('terminalOpacity', $('#terminal-opacity').val());
   //Banner - Events
   if ($('#home-banner-checkbox1:checked').val() == 'true') {
     settings.setItem('enableEventsBanner', 'true');
@@ -735,23 +737,6 @@ function purplerainCheck() {
       });
     }
     console.log('purplerainAchievement = ' + value);
-  });
-}
-
-//Reset Achievement cookies
-function resetAchievements() {
-  achievements.setItem('eastereggAchievement', 'false');
-  achievements.setItem('terminalAchievement', 'false');
-  achievements.setItem('wiselyAchievement', 'false');
-  achievements.setItem('hallucinatingAchievement', 'false');
-  achievements.setItem('purplerainAchievement', 'false');
-  $('#btn-reset-achievements').tooltip('hide');
-  $.bootstrapGrowl("Your achievement progress has been reset!", {
-    type: 'info',
-    align: 'right',
-    offset: {from: 'top', amount: 70},
-    width: 'auto',
-    allow_dismiss: true
   });
 }
 
