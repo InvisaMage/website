@@ -450,6 +450,14 @@ jQuery(document).ready(function($) {
         terminal.echo('Switched to "root" user');
       }
     }
+    //cd
+    else if (cmd.name == 'cd') {
+      if (cmd.args[0] != undefined) {
+        terminal.set_prompt('[[;#FFC157;]guest@server][[;#fff;]:][[;#66a3ff;]'+ cmd.args[0] + ' $] ');
+      } else {
+        terminal.set_prompt('[[;#FFC157;]guest@server][[;#fff;]:][[;#66a3ff;]~ $] ');
+      }
+    }
     //JS
     else if (cmd.name == '>') {
       try {

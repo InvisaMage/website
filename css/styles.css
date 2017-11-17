@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid black;
 	border-width:3px 0;
 	position: absolute;
-	top: 305px;
+	top: 340px;
 	width: 200px;
 	background: rgb(52, 58, 64);
 	left: 0px;
@@ -225,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid black;
 	border-width:3px 0;
 	position: absolute;
-	top: 350px;
+	top: 380px;
 	width: 200px;
 	background: rgb(52, 58, 64);
 	left: 0px;
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid black;
 	border-width:3px 0;
 	position: absolute;
-	top: 350px;
+	top: 380px;
 	width: 200px;
 	background: rgb(52, 58, 64);
 	left: 0px;
@@ -281,6 +281,38 @@ h1, h2, h3, h4, h5, h6 {
 #menu-txtlock li a:hover {
 	color: #a3ff66;
 }
+/* Menu for TidyNT */
+#menu-tidynt {
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border: 1px solid black;
+	border-width:3px 0;
+	position: absolute;
+	top: 380px;
+	width: 200px;
+	background: rgb(52, 58, 64);
+	left: 0px;
+}
+#menu-tidynt li {
+	list-style: none;
+	transition: .3s;
+	text-align: left;
+	padding-left: 20px;
+}
+#menu-tidynt li:hover {
+	background: #4b545f;
+}
+#menu-tidynt a {
+	display: block;
+	text-decoration: none;
+	padding: .25em 0;
+	transition: .3s;
+	color: #66a3ff;
+}
+#menu-tidynt li a:hover {
+	color: #a3ff66;
+}
+
 th {
 	text-align: center;
 }

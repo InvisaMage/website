@@ -76,6 +76,7 @@
 				    <select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<optgroup label="2017">
+						    <option value="news.html#8-11-17-projects">November 17th</option>
 						    <option value="news.html#8-11-17-projects">August 11th</option>
 						    <option value="news.html#5-3-17-projects">May 3rd</option>
 								<option value="news.html#2-12-17-projects">February 12th</option>
@@ -94,6 +95,20 @@
 						<br>
 						<br>
 					</div>
+
+					<!--November 17, 2017-->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-17-17-projects">
+					  <h4 class="card-header">November 17, 2017</h4>
+					  <div class="card-body">
+							<h5>TidyNT</h5>
+							<p>
+								TidyNT is a WebExtension for Firefox which replaces the default New Tab page with a Tidier one.<br>
+								Learn more <a class="link" href="tidynt.html">here</a>.
+							</p>
+						</div>
+					</div><!-- /11-17-17-->
+
+					<br>
 
 					<!--August 11, 2017-->
 					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="8-11-17-projects">
@@ -267,6 +282,7 @@
 					<!--Projects Menu-->
 					<div id="menu-news" class="d-none d-md-inline slide">
 						<h4>Date Jump</h4>
+						<li><a href="#11-17-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> November 17, 2017</a></li>
 						<li><a href="#8-11-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> August 11, 2017</a></li>
 						<li><a href="#5-6-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> May 6, 2017</a></li>
 						<li><a href="#5-3-17-projects"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> May 3, 2017</a></li>
@@ -415,6 +431,7 @@
 						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
 							<optgroup label="November 2017">
+						    <option value="news.html#11-17-17-website">17th</option>
 						    <option value="news.html#11-4-17-website">4th</option>
 						  </optgroup>
 							<optgroup label="October 2017">
@@ -449,12 +466,26 @@
 						<br>
 					</div>
 
+					<!--November 17, 2017-->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-17-17-website">
+						<h4 class="card-header">November 17, 2017</h4>
+						<div class="card-body">
+							<p>
+								Replaced the Achievements icon with a Trophy instead of a list.<br>
+								Replaced Bootstrap dependencies with the new Bootstrap bundle script.<br>
+								Fixed elements in the navigation bar from not collapsing.
+							</p>
+						</div>
+					</div><!-- /11-17-17-->
+
+					<br>
+
 					<!--November 4, 2017-->
 					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="11-4-17-website">
 						<h4 class="card-header">November 4, 2017</h4>
 						<div class="card-body">
 							<p>
-								Added the ability to change the <a class="link" href="info.html#terminal-info">Terminal</a> opacity.<br>
+								Added the ability to change the <a class="link" href="info.html#terminal-info">Terminal</a> opacity in the <a class="link" href="info.html#settings-info">Settings</a> modal.<br>
 								Added the su command  to <a class="link" href="info.html#terminal-info">Terminal</a>.
 								<br>
 								<br>
@@ -718,6 +749,7 @@
 							<h4>Date Jump</h4>
 							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> November 2017</a></li>
 							<div id="menu-news-nested">
+								<li><a href="#11-17-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 17th</a></li>
 								<li><a href="#11-4-17-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 4th</a></li>
 							</div>
 							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> October 2017</a></li>
@@ -781,7 +813,6 @@
 									Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
 									<hr>
 									<a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers stack the homepage cards incorrectly.<br>
-									Modals have no animations due to a bootstrap <a class="link" href="https://github.com/twbs/bootstrap/issues/23604" target="_blank" rel="noopener noreferrer">bug</a>.<br>
 									The navigation dropdown on mobile devices may shift over and clip content on small screens.
 								</p>
 							</div>
@@ -794,7 +825,8 @@
 						  <h4 class="card-header">Fixed</h4>
 						  <div class="card-body">
 								<p>
-									None!
+									Modals have no animations due to a bootstrap <a class="link" href="https://github.com/twbs/bootstrap/issues/23604" target="_blank" rel="noopener noreferrer">bug</a>.<br>
+									I fixed this bug and then I liked the faster loading so now it's no longer a bug. It's a feature.
 								</p>
 							</div>
 						</div><!-- /fixed-->
@@ -843,9 +875,7 @@
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-		<script src="js/tether.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+    	<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/localforage.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>

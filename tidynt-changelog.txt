@@ -1,0 +1,15 @@
+TidyNT
+By: InvisaMage
+Website: https://invisamage.com
+
+----------[v0.1]----------
+
+1) Initial release
+
+----------[v0.2]----------
+
+1) Darkened default background color
+2) Fixed not being able to set background color
+3) Options are now changed in the extension page
+4) Now able to add a custom search engine
+    Define the name and URL in the settings page

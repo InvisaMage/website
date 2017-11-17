@@ -92,12 +92,12 @@
             </tr>
           </thead>
           <tr>
-            <td><h6 class="black">Kevin</h6></td>
-            <th><h6 class="black">101.00 Ð</h6></th>
-          </tr>
-          <tr>
             <td><h6 class="black">Nicholas</h6></td>
             <th><h6 class="black">0.00130 ฿</h6></th>
+          </tr>
+          <tr>
+            <td><h6 class="black">Kevin</h6></td>
+            <th><h6 class="black">101.00 Ð</h6></th>
           </tr>
         </table>
       </div>
@@ -290,6 +290,35 @@
           target.textContent = "";
       }
       return succeed;
+  }
+
+  //Donate modal copy messages
+  function bitcoinMsg() {
+      $.bootstrapGrowl("Bitcoin wallet address copied!", {
+        type: 'success',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 'auto',
+        allow_dismiss: true
+      });
+  }
+  function dogecoinMsg() {
+      $.bootstrapGrowl("Dogecoin wallet address copied!", {
+        type: 'success',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 'auto',
+        allow_dismiss: true
+      });
+  }
+  function litecoinMsg() {
+      $.bootstrapGrowl("Litecoin wallet address copied!", {
+        type: 'success',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        allow_dismiss: true
+      });
   }
 
   //Re enable tooltips.

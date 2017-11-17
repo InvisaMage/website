@@ -71,6 +71,10 @@ setTimeout(navEnable, 700);
         $('#nav-txtLock').addClass('active');
         $("#nav-projects").addClass("active animated bounceIn");
       }
+      else if ($("title").html() == "InvisaMage | TidyNT") {
+        $('#nav-tidynt').addClass('active');
+        $("#nav-projects").addClass("active animated bounceIn");
+      }
       else if ($("title").html() == "InvisaMage | Computers") {
         $('#nav-computers').addClass('active animated bounceIn');
         $("#nav-resources").addClass("active");
@@ -111,7 +115,7 @@ async function loadSearch() {
          offset: {from: 'top', amount: 70},
          width: 300,
          allow_dismiss: true
-      })
+      });
     });
   }
   else {
@@ -597,64 +601,6 @@ $(function() {
     console.log('centeredModals = ' + value);
   });
 });
-
-//Contact modal copy messages
-function emailMsg() {
-    $.bootstrapGrowl("E-mail address copied!", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      allow_dismiss: true
-    });
-}
-function telegramMsg() {
-    $.bootstrapGrowl("Telegram URL copied!", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      allow_dismiss: true
-    });
-}
-function keybaseMsg() {
-    $.bootstrapGrowl("Keybase username copied!", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      allow_dismiss: true
-    });
-}
-
-//Donate modal copy messages
-function bitcoinMsg() {
-    $.bootstrapGrowl("Bitcoin wallet address copied!", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      allow_dismiss: true
-    });
-}
-function dogecoinMsg() {
-    $.bootstrapGrowl("Dogecoin wallet address copied!", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      allow_dismiss: true
-    });
-}
-function litecoinMsg() {
-    $.bootstrapGrowl("Litecoin wallet address copied!", {
-      type: 'success',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      allow_dismiss: true
-    });
-}
 
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
