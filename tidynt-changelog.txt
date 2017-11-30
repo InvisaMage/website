@@ -13,3 +13,9 @@ Website: https://invisamage.com
 3) Options are now changed in the extension page
 4) Now able to add a custom search engine
     Define the name and URL in the settings page
+
+----------[v0.2.1]----------
+
+1) Added the ability to clear the custom search preferences
+2) Fixed an empty option from showing up in the search dropdown
+3) Added a proper 48x48 icon

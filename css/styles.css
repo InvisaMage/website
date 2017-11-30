@@ -2,6 +2,11 @@
 /* Created December 15, 2014 */
 /* InvisaMage's Website Theme */
 
+html {
+	position: relative;
+	min-height: 100%;
+  }
+
 /* Entire Body */
 body {
 	background-color: #666666;
@@ -9,7 +14,20 @@ body {
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 577px;
   padding-top: 55px;
+}
+
+/* Make the bottom margin smaller on bigger displays */
+@media(min-width:576px){
+	body {
+		margin-bottom: 267px;
+	}
+}
+@media(min-width:768px) and (min-width:992px) and (min-width:1200px){
+	body {
+		margin-bottom: 220px;
+	}
 }
 
 /* Every Element */
@@ -71,7 +89,7 @@ nav li:hover {
 	position: relative;
 	overflow: hidden;
 	color: #66a3ff !important;
-	transition: .4s;
+	transition: .3s;
 	cursor: pointer;
 }
 .link:hover {
@@ -90,7 +108,7 @@ nav li:hover {
 	-webkit-transition-property: left, right;
 	transition-property: left, right;
 	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
+	transition-duration: .3s;
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
@@ -116,7 +134,7 @@ nav li:hover {
 	overflow: hidden;
 	color: #a3ff66 !important;
 	text-decoration: none;
-	transition: .4s;
+	transition: .3s;
 	cursor: help;
 }
 .definition:hover {
@@ -453,11 +471,10 @@ th {
 
 /* New Footer Properties */
 footer {
-	border: 1px solid black;
-	border-bottom-style: none;
-	border-width: 2px 0;
-	margin-left: auto;
-    margin-right: auto;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #394047;
 	text-align: left;
 	font-size: 100%;
 	padding: 20px;

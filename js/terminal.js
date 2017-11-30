@@ -69,8 +69,8 @@ jQuery(document).ready(function($) {
        return this.replace(new RegExp(str1.replace(/([\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, function(c){return "\\" + c;}), "g"+(ignore?"i":"")), str2);
     };
 
-    var modals = ['achievements', 'archive', 'contact', 'cookies', 'donate', 'eastereggs', 'hide-ads', 'privacy-no',
-    'privacy-yes', 'reload', 'search-help', 'settings', 'shortcuts', 'stats', 'terms-no', 'terms-yes'];
+    var modals = ['achievements', 'archive', 'contact', 'cookies', 'donate', 'eastereggs', 'hide-ads', 'reload', 
+    'search-help', 'settings', 'shortcuts', 'stats', 'no', 'yes'];
     modals.toString();
     var modalsList = modals.join(", ").replaceAll(",", " |");
 
@@ -415,7 +415,7 @@ jQuery(document).ready(function($) {
     }
     //Credits
     else if (cmd.name == 'credits') {
-      terminal.echo("Created using <a target='_blank' rel='noopener noreferrer' href='http://terminal.jcubic.pl/'>jQuery Terminal</a>", {raw: true});
+      terminal.echo("Created using <a target='_blank' rel='noopener noreferrer' href='http://terminal.jcubic.pl/'>jQuery Terminal</a> by <a target='_blank' rel='noopener noreferrer' href='http://jcubic.pl/jakub-jankiewicz/'>Jakub Jankiewicz</a>.", {raw: true});
     }
     //Tree
     else if (cmd.name == 'tree') {
@@ -446,7 +446,7 @@ jQuery(document).ready(function($) {
         terminal.set_prompt('[[;#FFC157;]' + cmd.args[0] + '@server][[;#fff;]:][[;#66a3ff;]~ $] ');
         terminal.echo('Switched to "' + cmd.args[0] + '" user');
       } else {
-        terminal.set_prompt('[[;#FFC157;]root@server][[;#fff;]:][[;#66a3ff;]~ $] ');
+        terminal.set_prompt('[[;#FFC157;]root@server][[;#fff;]:][[;#66a3ff;]~ #] ');
         terminal.echo('Switched to "root" user');
       }
     }

@@ -1,7 +1,7 @@
 //If Search term is listed below, you will jump to that specific page
 
 function search() {
-	var search = document.getElementById("search").value;
+	var search = $("#search").val();
 	var sL = search.toLowerCase();
 
 //Homepage

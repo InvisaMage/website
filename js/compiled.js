@@ -100,7 +100,7 @@ async function loadSearch() {
       $.getScript('js/search.js'),
       $.getJSON('json/search.json')
         .done(function (data) {
-        $('#search').typeahead({ source: data });
+        $('#search, #search-mobile').typeahead({ source: data });
       })
     ).then(function() {
       console.log("loadSearch: Loaded assets");
@@ -259,7 +259,7 @@ listener.simple_combo("shift space", async function() {
 
 //Hides all modals
 function hideModals() {
-  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-privacy-yes, #modal-privacy-no, #modal-cookies, #modal-terms-yes, #modal-terms-no').modal('hide');
+  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-cookies, #modal-yes, #modal-no').modal('hide');
 }
 
 //Focus search box with Ctrl + Alt + F key press
@@ -334,7 +334,7 @@ function settingsCheck() {
     settings.setItem('toggleTerminal', 'false');
   }
   //Snowstorm
-  if ($('#snowstorm-checkbox2:checked').val() == 'true') {
+  if ($('#snowstorm-checkbox1:checked').val() == 'true') {
     settings.setItem('enableSnowstorm', 'true');
   } else {
     settings.setItem('enableSnowstorm', 'false');
@@ -503,18 +503,8 @@ settings.getItem('enableInfoBanner').then(function(value) {
 $(function() {
   settings.getItem('enableTacBanner').then(function(value) {
     if (value == 'true') {
-      if (($("title").html() == "InvisaMage | Terms")) {
-        $.bootstrapGrowl("Do you accept the Terms and Conditions?<br><br> <button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadTermsYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadTermsNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>", {
-          type: 'danger',
-          align: 'right',
-          delay: 999999999,
-          offset: {from: 'top', amount: 70},
-          width: 300,
-          allow_dismiss: false
-        });
-      }
-      if (($("title").html() == "InvisaMage | Privacy")) {
-        $.bootstrapGrowl("Do you accept the Privacy Policy?<br><br> <button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadPrivacyYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadPrivacyNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>", {
+      if (($("title").html() == "InvisaMage | Terms") || ($("title").html() == "InvisaMage | Privacy")) {
+        $.bootstrapGrowl("Do you accept the Terms and Conditions?<br><br> <button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>", {
           type: 'danger',
           align: 'right',
           delay: 999999999,
@@ -754,17 +744,6 @@ function loadShortcutsMod() {
   $('#modal-shortcuts').load('ajax/modals/shortcuts.html');
   $('#modal-shortcuts').modal();
 }
-function loadPrivacyNoMod() {
-  $('#modal-privacy-no').load('ajax/modals/privacy-no.html');
-  $('#modal-privacy-no').modal();
-  $('.alert').toggle();
-}
-function loadPrivacyYesMod() {
-  $('#modal-privacy-yes').load('ajax/modals/privacy-yes.html');
-  $('#modal-privacy-yes').modal();
-  $('.alert').toggle();
-  wiselyCheck();
-}
 function loadReloadMod() {
   $('#btn-reload').tooltip('dispose');
   $('#modal-stats').modal('hide');
@@ -776,18 +755,22 @@ function loadSearchHelpMod() {
   $('#modal-search-help').load('ajax/modals/search-help.html');
   $('#modal-search-help').modal();
 }
+function loadSearchMod() {
+  $('#modal-search').load('ajax/modals/search.html');
+  $('#modal-search').modal();
+}
 function loadStatsMod() {
   $('#modal-stats').load('ajax/modals/stats.html');
   $('#modal-stats').modal();
 }
-function loadTermsNoMod() {
-  $('#modal-terms-no').load('ajax/modals/terms-no.html');
-  $('#modal-terms-no').modal();
+function loadNoMod() {
+  $('#modal-no').load('ajax/modals/no.html');
+  $('#modal-no').modal();
   $('.alert').toggle();
 }
-function loadTermsYesMod() {
-  $('#modal-terms-yes').load('ajax/modals/terms-yes.html');
-  $('#modal-terms-yes').modal();
+function loadYesMod() {
+  $('#modal-yes').load('ajax/modals/yes.html');
+  $('#modal-yes').modal();
   $('.alert').toggle();
   wiselyCheck();
 }
