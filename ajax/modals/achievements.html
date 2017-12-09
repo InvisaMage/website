@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--Achievements Modal-->
-<div class="modal-dialog modal-sm" id="ajax-achievements">
+<div class="modal-dialog modal-md" id="ajax-achievements">
   <div class="modal-content">
     <div class="modal-header">
       <h4 class="modal-title">Achievements</h4>
@@ -10,38 +10,50 @@
     <div class="modal-body">
       <!--local-warning-banner-->
       <div id="ajax-achievements-warning-banner"></div>
-      <table class="table table-dark table-hover">
+      <table class="table table-achievements table-dark table-hover table-responsive">
         <!--Header-->
         <thead>
           <tr>
             <th>Name</th>
             <th>Achieved</th>
+            <th>Achievement Method</th>
           </tr>
         </thead>
         <!--Konami-->
         <tr class="not-active" id="eastereggRow">
           <td><h6 class="black">Konami Code</h6></td>
-          <th><h6 class="text-danger" id="eastereggAchievement">No</h6></th>
+          <td><h6 class="text-danger" id="eastereggAchievement">No</h6></td>
+          <td><h6 class="black" id="easteregg-achievement-method">Unknown</h6></td>
         </tr>
         <!--Terminal-->
         <tr class="not-active" id="terminalRow">
           <td><h6 class="black">Hacker?!</h6></td>
-          <th><h6 class="text-danger" id="terminalAchievement">No</h6></th>
+          <td><h6 class="text-danger" id="terminalAchievement">No</h6></td>
+          <td><h6 class="black" id="terminal-achievement-method">Unknown</h6></td>
+        </tr>
+        <!--Unlimted Power-->
+        <tr class="not-active" id="unlimitedPowerRow">
+          <td><h6 class="black">Unlimited POWER!</h6></td>
+          <td><h6 class="text-danger" id="unlimitedPowerAchievement">No</h6></td>
+          <td><h6 class="black" id="unlimited-power-achievement-method">Unknown</h6></td>
         </tr>
         <!--Wisely-->
         <tr class="not-active" id="wiselyRow">
           <td><h6 class="black">Chosen Wisely</h6></td>
-          <th><h6 class="text-danger" id="wiselyAchievement">No</h6></th>
+          <td><h6 class="text-danger" id="wiselyAchievement">No</h6></td>
+          <td><h6 class="black" id="wisely-achievement-method">Unknown</h6></td>
         </tr>
         <!--Hallucinating-->
         <tr class="not-active" id="hallucinatingRow">
           <td><h6 class="black">Hallucinating</h6></td>
-          <th><h6 class="text-danger" id="hallucinatingAchievement">No</h6></th>
+          <td><h6 class="text-danger" id="hallucinatingAchievement">No</h6></td>
+          <td><h6 class="black" id="hallucinating-achievement-method">Unknown</h6></td>
         </tr>
         <!--Purple Rain-->
         <tr class="not-active" id="purplerainRow">
           <td><h6 class="black">Purple Rain</h6></td>
-          <th><h6 class="text-danger" id="purplerainAchievement">No</h6></th>
+          <td><h6 class="text-danger" id="purplerainAchievement">No</h6></td>
+          <td><h6 class="black" id="purple-rain-achievement-method">Unknown</h6></td>
         </tr>
       </table>
     </div>
@@ -53,12 +65,13 @@
           <h6>What does this do?</h6>
           <p class="card-text">
             This shows you the status of available achievements found in this site.
+            The Achievement Method column will display how you earned the achievment once you have completed it.
           </p>
         </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" id="default-settings" class="btn btn-outline-danger mr-auto" data-dismiss="modal" onclick="resetAchievements();" data-toggle="tooltip" data-placement="top" title="Reset Achievements. You will need to earn them again!"> Reset
+      <button type="button" id="default-settings" class="btn btn-outline-danger mr-auto" data-dismiss="modal" onclick="resetAchievements();" data-toggle="tooltip" data-placement="right" title="Reset Achievements. You will need to earn them again!"> Reset
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
       </button>
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-achievements-collapse').collapse('toggle');">
@@ -92,6 +105,7 @@
     achievements.setItem('terminalAchievement', 'false');
     achievements.setItem('wiselyAchievement', 'false');
     achievements.setItem('hallucinatingAchievement', 'false');
+    achievements.setItem('unlimitedPowerAchievement', 'false');
     achievements.setItem('purplerainAchievement', 'false');
     $('#btn-reset-achievements').tooltip('hide');
     $.bootstrapGrowl("Your achievement progress has been reset!", {
@@ -103,101 +117,55 @@
     });
   }
 
-  /* Allows popover activation on hover
-   * Modified from http://stackoverflow.com/questions/17437818/twitter-bootstrap-popover-trigger-how-to-set-multiple-triggers#17438133
-   */
-  $(function () {
-    var showPopover = function () {
-        $(this).popover('show');
-      };
-      hidePopover = function () {
-        $(this).popover('hide');
-    };
-
-    $('#eastereggRow, #terminalRow, #wiselyRow, #hallucinatingRow, #purplerainRow').popover({
-        trigger: 'manual',
-        title: 'Achievement Method',
-        placement: 'right',
-        container: 'body'
-    })
-    .focus(showPopover)
-    .blur(hidePopover)
-    .hover(showPopover, hidePopover);
-  });
-
   //Check which Achievements have been completed.
   $(function() {
     //Easter Egg
     achievements.getItem('eastereggAchievement').then(function(value) {
       if (value == 'true') {
-        $("#eastereggRow").attr("class","cur-point");
-        $("#eastereggRow").attr("data-toggle","popover");
-        $("#eastereggRow").attr("data-content","Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
+        $("#easteregg-achievement-method").replaceWith("Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
         $("#eastereggAchievement").replaceWith("<h6 class='text-success' id='eastereggAchievement'>Yes</h6>");
-      } else {
-        $("#eastereggRow").attr("class","not-active");
-        $("#eastereggAchievement").replaceWith("<h6 class='text-danger' id='eastereggAchievement'>No</h6>");
       }
       console.log('eastereggAchievement = ' + value);
     });
     //Terminal
     achievements.getItem('terminalAchievement').then(function(value) {
       if (value == 'true') {
-        $("#terminalRow").attr("class","cur-point");
-        $("#terminalRow").attr("data-toggle","popover");
-        $("#terminalRow").attr("data-content","Use the Terminal for the first time.");
+        $("#terminal-achievement-method").replaceWith("Use the Terminal for the first time.");
         $("#terminalAchievement").replaceWith("<h6 class='text-success' id='terminalAchievement'>Yes</h6>");
-      } else {
-        $("#terminalRow").attr("class","not-active");
-        $("#terminalAchievement").replaceWith("<h6 class='text-danger' id='terminalAchievement'>No</h6>");
       }
       console.log('terminalAchievement = ' + value);
+    });
+    //Unlimited Power
+    achievements.getItem('unlimitedPowerAchievement').then(function(value) {
+      if (value == 'true') {
+        $("#unlimited-power-achievement-method").replaceWith("Change to the super user account.");
+        $("#unlimitedPowerAchievement").replaceWith("<h6 class='text-success' id='unlimitedPowerAchievement'>Yes</h6>");
+      }
+      console.log('unlimitedPowerAchievement = ' + value);
     });
     //Wisely
     achievements.getItem('wiselyAchievement').then(function(value) {
       if (value == 'true') {
-        $("#wiselyRow").attr("class","cur-point");
-        $("#wiselyRow").attr("data-toggle","popover");
-        $("#wiselyRow").attr("data-content","Agree to the Terms & Conditions or Privacy Policy.");
+        $("#wisely-achievement-method").replaceWith("Agree to the Terms & Conditions or Privacy Policy.");
         $("#wiselyAchievement").replaceWith("<h6 class='text-success' id='wiselyAchievement'>Yes</h6>");
-      } else {
-        $("#wiselyRow").attr("class","not-active");
-        $("#wiselyAchievement").replaceWith("<h6 class='text-danger' id='wiselyAchievement'>No</h6>");
       }
       console.log('wiselyAchievement = ' + value);
     });
     //Hallucinating
     achievements.getItem('hallucinatingAchievement').then(function(value) {
       if (value == 'true') {
-        $("#hallucinatingRow").attr("class","cur-point");
-        $("#hallucinatingRow").attr("data-toggle","popover");
-        $("#hallucinatingRow").attr("data-content","Click Hide Ads in the footer.");
+        $("#hallucinating-achievement-method").replaceWith("Click Hide Ads in the footer.");
         $("#hallucinatingAchievement").replaceWith("<h6 class='text-success' id='hallucinatingAchievement'>Yes</h6>");
-      } else {
-        $("#hallucinatingRow").attr("class","not-active");
-        $("#hallucinatingAchievement").replaceWith("<h6 class='text-danger' id='hallucinatingAchievement'>No</h6>");
       }
       console.log('hallucinatingAchievement = ' + value);
     });
     //Purple Rain
     achievements.getItem('purplerainAchievement').then(function(value) {
       if (value == 'true') {
-        $("#purplerainRow").attr("class","cur-point");
-        $("#purplerainRow").attr("data-toggle","popover");
-        $("#purplerainRow").attr("data-content","Enable the snowstorm with the 'light' theme enabled.");
+        $("#purple-rain-achievement-method").replaceWith("Enable the snowstorm with the 'light' theme enabled.");
         $("#purplerainAchievement").replaceWith("<h6 class='text-success' id='purplerainAchievement'>Yes</h6>");
-      } else {
-        $("#purplerainRow").attr("class","not-active");
-        $("#purplerainAchievement").replaceWith("<h6 class='text-danger' id='purplerainAchievement'>No</h6>");
       }
       console.log('purplerainAchievement = ' + value);
     });
   });
-
-  //Enable popover
-  if (!('ontouchstart' in window)) {
-    $('body').popover({
-      selector: '[data-toggle="popover"]'
-    });
-  }
 </script>

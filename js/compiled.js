@@ -632,6 +632,26 @@ function terminalCheck() {
   });
 }
 
+//Used to see if Unlimited Power Achievement message should be displayed.
+function unlimitedPowerCheck() {
+  achievements.getItem('unlimitedPowerAchievement').then(function(value) {
+    if (value == 'true') {
+      console.log('Achievement message not displayed as user has already gotten it.');
+    } else {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Unlimited POWER!<br><br>Change to the super user account.", {
+        type: 'info',
+        align: 'right',
+        offset: {from: 'top', amount: 70},
+        width: 300,
+        delay: 10000,
+        allow_dismiss: true
+      });
+      achievements.setItem('unlimitedPowerAchievement', 'true');
+    }
+    console.log('unlimitedPowerAchievement = ' + value);
+  });
+}
+
 //Used to see if Wisely Achievement message should be displayed.
 function wiselyCheck() {
   achievements.getItem('wiselyAchievement').then(function(value) {

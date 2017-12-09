@@ -134,7 +134,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  card +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/david.mp3' type='audio/mpeg'></audio></div>" +
-			    "<table class='table table-responsive'>" +
+			    "<table class='table'>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>Remember David</h6></th>" +
@@ -175,7 +175,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  card +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/jenny.mp3' type='audio/mpeg'></audio></div>" +
-					"<table class='table table-responsive'>" +
+					"<table class='table'>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>867-5309/Jenny</h6></th>" +
@@ -216,7 +216,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  card +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/stacy.mp3' type='audio/mpeg'></audio></div>" +
-					"<table class='table table-responsive'>" +
+					"<table class='table'>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>Stacy's Mom</h6></th>" +
@@ -257,7 +257,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  card +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/jessie.mp3' type='audio/mpeg'></audio></div>" +
-			    "<table class='table table-responsive table-condensed'>" +
+			    "<table class='table table-condensed'>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>Jessie's Girl</h6></th>" +
@@ -298,7 +298,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  "<div class='card bg-secondary'>" +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/leah.mp3' type='audio/mpeg'></audio></div>" +
-					"<table class='table table-responsive table-condensed '>" +
+					"<table class='table table-condensed '>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>Ah Leah</h6></th>" +
@@ -339,7 +339,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  	"<div class='card bg-secondary'>" +
 					"<div class='card-header'><audio controls autoplay><source src='./audio/eileen.mp3' type='audio/mpeg'></audio></div>" +
-					"<table class='table table-responsive table-condensed '>" +
+					"<table class='table table-condensed '>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>Come On Eileen</h6></th>" +
@@ -380,7 +380,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 				"<div class='card bg-secondary'>" +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/mickey.mp3' type='audio/mpeg'></audio></div>" +
-					"<table class='table table-responsive table-condensed'>" +
+					"<table class='table'>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>Mickey</h6></th>" +
@@ -558,7 +558,7 @@ function namePrompt() {
 			"<div class='collapse' id='collapse-info'>" +
 			  card +
 				"<div class='card-header'><audio controls autoplay><source src='./audio/name.mp3' type='audio/mpeg'></audio></div>" +
-					"<table class='table table-responsive'>" +
+					"<table class='table'>" +
 			      "<tr>" +
 			        "<td><h6 class='black-bold'>Title</h6></td>" +
 			        "<th><h6 class='black'>What's Your Name</h6></th>" +

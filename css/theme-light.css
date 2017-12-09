@@ -53,16 +53,16 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 1;
 }
 
-#menu-news, #menu-fs, #menu-mc, #menu-txtlock, #menu-terms, #menu-privacy, #menu-info {
+#menu-news, #menu-fs, #menu-mc, #menu-txtlock, #menu-terms, #menu-privacy, #menu-info, #menu-tidynt {
   background-color: rgba(230, 230, 230, 0.8);
 }
-#menu-news a, #menu-fs a, #menu-mc a, #menu-txtlock a, #menu-terms a, #menu-privacy a, #menu-info a {
+#menu-news a, #menu-fs a, #menu-mc a, #menu-txtlock a, #menu-terms a, #menu-privacy a, #menu-info a, #menu-tidynt a {
   color: black;
 }
-#menu-news li a:hover, #menu-fs li a:hover, #menu-mc li a:hover, #menu-txtlock li a:hover, #menu-terms li a:hover, #menu-privacy li a:hover, #menu-info li a:hover {
+#menu-news li a:hover, #menu-fs li a:hover, #menu-mc li a:hover, #menu-txtlock li a:hover, #menu-terms li a:hover, #menu-privacy li a:hover, #menu-info li a:hover, #menu-tidynt li a:hover {
   color: #c156ff;
 }
-#menu-news li:hover, #menu-fs li:hover, #menu-mc li:hover, #menu-txtlock li:hover, #menu-terms li:hover, #menu-privacy li:hover, #menu-info li:hover {
+#menu-news li:hover, #menu-fs li:hover, #menu-mc li:hover, #menu-txtlock li:hover, #menu-terms li:hover, #menu-privacy li:hover, #menu-info li:hover, #menu-tidynt li:hover {
   background-color: #d2d9df;
 }
 
@@ -296,4 +296,15 @@ kbd {
 /* Override background color*/
 .cmd {
 	background-color: transparent !important;
+}
+
+@keyframes terminal-blink {
+	0%, 100% {
+			background-color: var(--background, transparent);
+			color: var(--color, #000);
+	}
+	50% {
+			background-color: var(--color, #000);
+			color: var(--background, #000);
+	}
 }

@@ -3,9 +3,21 @@
     var settings = localforage.createInstance({
       name: "settings"
     });
-    settings.getItem('terminalOpacity').then(function(value) {
-      $('.terminal').css("background-color", 'rgba(34,38,42,' + value + ')');
-      console.log("terminalOpacity = " + value);
+    settings.getItem('theme').then(function(value) {
+      if (value == 'light') {
+        settings.getItem('terminalOpacity').then(function(value) {
+          $('.terminal').css("background-color", 'rgba(248,249,250,' + value + ')');
+          $('.terminal, .prompt, .cmd, .cursor, .blink').css("color", '#000');
+          $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
+          console.log("terminalOpacity = " + value);
+        });
+      }
+      if (value == 'dark') {
+        settings.getItem('terminalOpacity').then(function(value) {
+          $('.terminal').css("background-color", 'rgba(34,38,42,' + value + ')');
+          console.log("terminalOpacity = " + value);
+        });
+      }
     });
 
     //Yup
@@ -24,7 +36,7 @@
             height: windowHeight-62,
             enabled: false,
             completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'go', 'anchor',
-            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su'],
+            'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history'],
             greetings: 'Welcome to the Terminal | Copyright (c) 2014-2017\nType \'help\' to view a list of commands.',
             keypress: function(e) {
                 if (e.which == 96) {
@@ -73,57 +85,88 @@ jQuery(document).ready(function($) {
     'search-help', 'settings', 'shortcuts', 'stats', 'no', 'yes'];
     modals.toString();
     var modalsList = modals.join(", ").replaceAll(",", " |");
+    var modalsListComma = modals.join(", ");
+    
+    var users = ['guest', 'root', 'pi'];
+    users.toString();
+    var usersList = users.join(", ");
+
+    function getSettings() {
+      settings.iterate(function(value, key, iterationNumber) {terminal.echo(key + ' = ' + value);}).catch(function(err) {terminal.echo(err);});
+    }
+    function getAchievements() {
+      achievements.iterate(function(value, key, iterationNumber) {terminal.echo(key + ' = ' + value);}).catch(function(err) {terminal.echo(err);});
+    }
 
     //help
     if (cmd.name == 'help') {
       if (cmd.args == 'media') {
-        terminal.echo('   media - Control the audio playing on the page')
-        terminal.echo('   Usage: media [play | pause | vu | vd]')
+        terminal.echo('   media - Control the audio playing on the page');
+        terminal.echo('   Usage: media [play | pause | vu | vd]');
       }
       else if (cmd.args == 'modal') {
-        terminal.echo('   modal - Load a modal')
+        terminal.echo('   modal - Load a modal');
         terminal.echo('   Usage: modal [ (-o | -c) ' + modalsList + ']');
-        terminal.echo('   -o -Opens modal');
-        terminal.echo('   -c -Closes modal');
+        terminal.echo('   ');
+        terminal.echo('   -o, --open');
+        terminal.echo('      Opens modal');
+        terminal.echo('   -c, --close');
+        terminal.echo('      Closes modal');
+        terminal.echo('   -l, --list');
+        terminal.echo('      Lists all modals');
       }
       else if (cmd.args == 'go') {
-        terminal.echo('   go - Go to a file located on the server or an external website')
+        terminal.echo('   go - Go to a file located on the server or an external website');
         terminal.echo('   Usage: go [local file | website]');
+        terminal.echo('   ');
         terminal.echo('   Examples: go [info.html | images/txtlock/txtlock1.png | https://google.com]');
       }
       else if (cmd.args == 'anchor') {
-        terminal.echo('   anchor - Jump to an element\'s ID on the current page')
+        terminal.echo('   anchor - Jump to an element\'s ID on the current page');
         terminal.echo('   Usage: anchor [element ID]');
       }
       else if (cmd.args == 'snowstorm') {
-        terminal.echo('   snowstorm - Interface with the snowstorm function')
+        terminal.echo('   snowstorm - Interface with the snowstorm function');
         terminal.echo('   Usage: snowstorm [load | toggle | freeze | resume | wind | melt]');
       }
       else if (cmd.args == 'storage') {
-        terminal.echo('   storage - Manipulate local storage (Interace with localForage)')
+        terminal.echo('   storage - Manipulate local storage (Interace with localForage)');
         terminal.echo('   Usage: storage [get <database name> | set <database name> <name> <value> | remove <database name> <name>]');
-        terminal.echo('   Note: Database name is either Settings (-s) or Achievements (-a).')
+        terminal.echo('   ');
+        terminal.echo('   Note: Database name is either Settings (-s) or Achievements (-a).');
       }
       else if (cmd.args == 'less') {
-        terminal.echo('   less - View a file one line at a time')
+        terminal.echo('   less - View a file one line at a time');
         terminal.echo('   Usage: less [filename.extension]');
+        terminal.echo('   ');
         terminal.echo('   Press q to quit');
       }
       else if (cmd.args == 'search') {
-        terminal.echo('   search - Send input to a search engine in a new tab')
+        terminal.echo('   search - Send input to a search engine in a new tab');
         terminal.echo('   Usage: search [-g | -d | -y | -b query]');
+        terminal.echo('   ');
         terminal.echo('   Example: search [-g invisamage | -y AntVenom]');
       }
       else if (cmd.args == 'reload') {
-        terminal.echo('   reload - Reloads the current page')
+        terminal.echo('   reload - Reloads the current page');
         terminal.echo('   Usage: reload [# of seconds]');
+        terminal.echo('   ');
         terminal.echo('   Example: reload [(no number) | 5]');
       }
       else if (cmd.args == '>') {
-        terminal.echo('   > - JavaScript Interpreter')
+        terminal.echo('   > - JavaScript Interpreter');
         terminal.echo('   Usage: > <JavaScript expression>');
+        terminal.echo('   ');
         terminal.echo('   Example: > 1+1');
+        terminal.echo('   Example: > $(\'body\').css(\'background-color\', \'red\');');
         terminal.echo('   More: https://www.w3schools.com/js/default.asp');
+      }
+      else if (cmd.args == 'history') {
+        terminal.echo('   history - Manipulate command history');
+        terminal.echo('   Usage: history | history -c');
+        terminal.echo('   ');
+        terminal.echo('   -c, --clear');
+        terminal.echo('      Clears history');
       }
       else if (cmd.args == '') {
         terminal.echo('To get more help for a specific command use help <cmd name>.');
@@ -138,6 +181,7 @@ jQuery(document).ready(function($) {
         terminal.echo('   | ip              -Prints your public IP address');
         terminal.echo('   | su              -Switch user accounts');
         terminal.echo('   | time            -Prints the current time');
+        terminal.echo('   | users           -Display users on system');
         terminal.echo('   |');
         terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
         terminal.echo('   | go              -Navigate to a file located on the server or an external website');
@@ -152,6 +196,7 @@ jQuery(document).ready(function($) {
         terminal.echo('   | clear           -Clears the terminal');
         terminal.echo('   | close           -Hides the terminal');
         terminal.echo('   | credits         -Learn how this was made');
+        terminal.echo('   | history         -Manipulate command history');
         terminal.echo('   | reload          -Reloads the current page');
         terminal.echo('   | reset           -Resets the Terminal to default state');
       }
@@ -191,16 +236,16 @@ jQuery(document).ready(function($) {
     }
     //Time
     else if (cmd.name == 'time') {
-      var now = new Date();
-      hr = now.getHours().toString();
-      min = now.getMinutes().toString();
-      sec = now.getSeconds().toString();
+      var time = new Date();
+      hr = time.getHours().toString();
+      min = time.getMinutes().toString();
+      sec = time.getSeconds().toString();
       terminal.echo(hr+':'+min+':'+sec);
     }
     //Date
     else if (cmd.name == 'date') {
-      var now = new Date();
-      terminal.echo(now);
+      var date = new Date();
+      terminal.echo(date);
     }
     //Reset
     else if (cmd.name == 'reset') {
@@ -242,18 +287,14 @@ jQuery(document).ready(function($) {
     else if (cmd.name == 'storage') {
       if (cmd.args[0] == 'get') {
         if (cmd.args[1] == '-s') {
-          settings.iterate(function(value, key, iterationNumber) {
-              terminal.echo(key + ' = ' + value);
-          }).catch(function(err) {
-              terminal.echo(err);
-          });
+          getSettings();
         }
         else if (cmd.args[1] == '-a') {
-          achievements.iterate(function(value, key, iterationNumber) {
-              terminal.echo(key + ' = ' + value);
-          }).catch(function(err) {
-              terminal.echo(err);
-          });
+          getAchievements();
+        }
+        else if (cmd.args[1] == '--all') {
+          getSettings();
+          getAchievements();
         }
         else {
           terminal.echo('Unknown database');
@@ -307,24 +348,15 @@ jQuery(document).ready(function($) {
     //Reload
     else if (cmd.name == 'reload') {
       var offset = cmd.args[0];
-      var history = terminal.history();
-      history.disable();
-      terminal.push(function(command) {
-          if (command.match(/^(y|yes)$/i)) {
-            terminal.echo('Reloading page in ' + offset + ' seconds...');
-            setTimeout(reload, offset*1000);
-            function reload() {
-              location.reload();
-            }
-              terminal.pop();
-              history.enable();
-          } else if (command.match(/^(n|no)$/i)) {
-              terminal.pop();
-              history.enable();
-          }
-      }, {
-          prompt: 'Are you sure? [y|n] '
-      });
+      if (cmd.args[0] != undefined) {
+        terminal.echo('Reloading page in ' + offset + ' seconds...');
+        setTimeout(reload, offset*1000);
+        function reload() {
+          location.reload();
+        }
+      } else {
+        location.reload();
+      }
     }
     //Media
     else if (cmd.name == 'media') {
@@ -391,22 +423,25 @@ jQuery(document).ready(function($) {
     //Modals
     else if (cmd.name == 'modal') {
       if (cmd.args[0] != undefined) {
-        if (cmd.args[0] == '-o') {
+        if (cmd.args[0] == '-o' || cmd.args[0] == '--open') {
           if (cmd.args[1] != undefined) {
             $('#modal-' + cmd.args[1]).load('ajax/modals/'+ cmd.args[1] +'.html');
             $('#modal-'+ cmd.args[1]).modal();
           }
           else {
-            terminal.echo('Requires an argument');
+            terminal.echo('Requires modal name');
           }
         }
-        if (cmd.args[0] == '-c') {
+        if (cmd.args[0] == '-c' || cmd.args[0] == '--close') {
           if (cmd.args[1] != undefined) {
             $('#modal-'+ cmd.args[1]).modal('hide');
           }
           else {
-            terminal.echo('Requires an argument');
+            terminal.echo('Requires modal name');
           }
+        }
+        if (cmd.args[0] == '-l' || cmd.args[0] == '--list') {
+          terminal.echo(modalsListComma);
         }
       }
       else {
@@ -443,11 +478,44 @@ jQuery(document).ready(function($) {
     //su
     else if (cmd.name == 'su') {
       if (cmd.args[0] != undefined) {
-        terminal.set_prompt('[[;#FFC157;]' + cmd.args[0] + '@server][[;#fff;]:][[;#66a3ff;]~ $] ');
-        terminal.echo('Switched to "' + cmd.args[0] + '" user');
-      } else {
-        terminal.set_prompt('[[;#FFC157;]root@server][[;#fff;]:][[;#66a3ff;]~ #] ');
+        if (cmd.args[0] == 'root' || cmd.args[0] == '-') {
+          terminal.set_prompt('[[;#FFC157;]root@server][[;#fff;]:][[;#66a3ff;]~] [[;#DC3545;]#] ');
+          terminal.echo('Switched to "root" user');
+          unlimitedPowerCheck();
+        }
+        else if (jQuery.inArray(cmd.args[0], users) !== -1) {
+          terminal.set_prompt('[[;#FFC157;]' + cmd.args[0] + '@server][[;#fff;]:][[;#66a3ff;]~ $] ');
+          terminal.echo('Switched to "' + cmd.args[0] + '" user');
+        }
+        else {
+          terminal.echo('Unknown user');
+        }
+      }
+      else {
+        terminal.set_prompt('[[;#FFC157;]root@server][[;#fff;]:][[;#66a3ff;]~] [[;#DC3545;]#] ');
         terminal.echo('Switched to "root" user');
+        unlimitedPowerCheck();
+      }
+    }
+    //users
+    else if (cmd.name == 'users') {
+      terminal.echo(usersList);
+    }
+    //history
+    else if (cmd.name == 'history') {
+      console.log(terminal.history());
+      var history = terminal.history().data();
+      history.toString();
+      var historyList = history.join("\n");
+
+      if (cmd.args[0] != undefined) {
+        if (cmd.args[0] == '-c' || cmd.args[0] == '--clear') {
+          terminal.history().clear();
+          terminal.echo('Cleared command history...');
+        }
+      }
+      else {
+        terminal.echo(historyList);
       }
     }
     //cd

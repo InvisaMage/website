@@ -167,306 +167,69 @@ h1, h2, h3, h4, h5, h6 {
 	color: #FFC157;
 }
 
-/* Menu for News */
-#menu-news {
+/* Global Menu Class */
+.menu {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	border: 1px solid black;
-	border-width: 3px 0;
+	border-width: 2px 0;
 	position: absolute;
-	top: 275px;
 	width: 200px;
 	background: rgb(52, 58, 64);
-	font-size: 14px;
+	font-size: 16px;
 	left: 0px;
 }
-#menu-news li {
+.menu li {
 	list-style: none;
 	transition: .3s;
 	cursor: pointer;
 	text-align: left;
 	padding-left: 20px;
 }
-#menu-news li:hover {
+.menu li:hover {
 	background: #4b545f;
 }
-#menu-news-nested li {
+.menu div li {
 	padding-left: 40px;
 }
-#menu-news a {
+.menu a {
 	display: block;
 	text-decoration: none;
 	padding: .25em 0;
 	transition: .3s;
 	color: #66a3ff;
 }
-#menu-news li a:hover {
+.menu li a:hover {
 	color: #a3ff66;
 }
 
-/* Menu for FS */
-#menu-mc {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+/* Special Menu Styles */
+.menu-news {
+	top: 275px;
+}
+.menu-news li {
+	color: #FFC157;
+}
+.menu-mc {
 	top: 340px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
 }
-#menu-mc li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-mc li:hover {
-	background: #4b545f;
-}
-#menu-mc a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-mc li a:hover {
-	color: #a3ff66;
-}
-
-/* Menu for FS */
-#menu-fs {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+.menu-fs {
 	top: 380px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
 }
-#menu-fs li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-fs li:hover {
-	background: #4b545f;
-}
-#menu-fs a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-fs li a:hover {
-	color: #a3ff66;
-}
-
-/* Menu for TxtLock */
-#menu-txtlock {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+.menu-txtlock {
 	top: 380px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
 }
-#menu-txtlock li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-txtlock li:hover {
-	background: #4b545f;
-}
-#menu-txtlock a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-txtlock li a:hover {
-	color: #a3ff66;
-}
-/* Menu for TidyNT */
-#menu-tidynt {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+.menu-tidynt {
 	top: 380px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
 }
-#menu-tidynt li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-tidynt li:hover {
-	background: #4b545f;
-}
-#menu-tidynt a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-tidynt li a:hover {
-	color: #a3ff66;
-}
-
-th {
-	text-align: center;
-}
-
-/* Menu for Terms */
-#menu-terms {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+.menu-terms {
 	top: 162px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
 }
-#menu-terms li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-terms li:hover {
-	background: #4b545f;
-}
-#menu-terms a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-terms li a:hover {
-	color: #a3ff66;
-}
-
-/* Menu for Privacy */
-#menu-privacy {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+.menu-privacy {
 	top: 162px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
 }
-#menu-privacy li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-privacy li:hover {
-	background: #4b545f;
-}
-#menu-privacy a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-privacy li a:hover {
-	color: #a3ff66;
-}
-
-/* Menu for Site Information */
-#menu-info {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
+.menu-info {
 	top: 162px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
-}
-#menu-info li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-info li:hover {
-	background: #4b545f;
-}
-#menu-info-nested li {
-	padding-left: 40px;
-}
-#menu-info a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-info li a:hover {
-	color: #a3ff66;
-}
-
-/* Menu for Computers */
-#menu-computers {
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border: 1px solid black;
-	border-width:3px 0;
-	position: absolute;
-	top: 185px;
-	width: 200px;
-	background: rgb(52, 58, 64);
-	left: 0px;
-}
-#menu-computers li {
-	list-style: none;
-	transition: .3s;
-	text-align: left;
-	padding-left: 20px;
-}
-#menu-computers li:hover {
-	background: #4b545f;
-}
-#menu-computers-nested li {
-	padding-left: 40px;
-}
-#menu-computers a {
-	display: block;
-	text-decoration: none;
-	padding: .25em 0;
-	transition: .3s;
-	color: #66a3ff;
-}
-#menu-computers li a:hover {
-	color: #a3ff66;
 }
 
 /* New Footer Properties */
@@ -617,21 +380,24 @@ footer h4 {
 	cursor: pointer;
 }
 
-/* Prevent Clicks */
-.not-active {
-	pointer-events: none;
-}
-
 /* Easter egg accordian headers */
 #collapse-heading {
 	color: #FFC157;
 }
 
-.table-ir td, .table-ir th, .table-txtlock td, .table-txtlock th {
+
+.table-ir td, .table-ir th, .table-txtlock td, .table-txtlock th, .table-achievements td, .table-achievements th {
 	vertical-align: middle;
 }
 
-/*Bootstrap 4 overrides*/
+th {
+	text-align: center;
+}
+
+/* Bootstrap 4 overrides 
+ *
+ *
+ */
 .btn {
 	cursor: pointer;
 }
