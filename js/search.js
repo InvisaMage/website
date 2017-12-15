@@ -59,7 +59,7 @@ function search() {
 	}
 
 //Privacy page
-	else if (sL == "privacy" || sL == "cookies") {
+	else if (sL == "privacy" || sL == "local storage") {
 		window.location = "privacy.html";
 	}
 
@@ -75,7 +75,7 @@ function search() {
 
 //Terminal modal
 	else if (sL == "terminal" || sL == "commands" || sL == "cmd") {
-		loadTerminalMod();
+		window.location = "info.html#terminal-info";
 	}
 
 //Achievements modal

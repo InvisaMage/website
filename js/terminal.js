@@ -81,8 +81,8 @@ jQuery(document).ready(function($) {
        return this.replace(new RegExp(str1.replace(/([\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, function(c){return "\\" + c;}), "g"+(ignore?"i":"")), str2);
     };
 
-    var modals = ['achievements', 'archive', 'contact', 'cookies', 'donate', 'eastereggs', 'hide-ads', 'reload', 
-    'search-help', 'settings', 'shortcuts', 'stats', 'no', 'yes'];
+    var modals = ['achievements', 'archive', 'contact', 'donate', 'eastereggs', 'hide-ads', 'search-help', 'settings',
+    'shortcuts', 'stats', 'no', 'yes'];
     modals.toString();
     var modalsList = modals.join(", ").replaceAll(",", " |");
     var modalsListComma = modals.join(", ");

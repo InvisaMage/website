@@ -31,10 +31,6 @@
                 </label>
               </div><!--./Dark/Light Radios-->
               <hr>
-              <!--More Button-->
-              <button id="more-options-btn" type="button" class="btn btn-dark btn-sm btn-block" onclick="showOptions();">More options
-                <i class="fa fa-cogs" aria-hidden="true"></i>
-              </button>
               <!--Hidden-->
               <span id="hidden-options" hidden>
                 <!--Centered Modals-->
@@ -64,6 +60,10 @@
                   </div>
                 </div>
               </span>
+              <!--More Button-->
+              <button id="more-options-btn" type="button" class="btn btn-dark btn-sm btn-block" onclick="showOptions();">
+                <i class="fa fa-cogs" aria-hidden="true"></i> More options <i id="btn-more-options-icon" class="fas fa-chevron-down"></i>
+              </button>
             </div>
           </div>
           <!--News Page-->
@@ -185,13 +185,15 @@
         <i class="fa fa-times" aria-hidden="true"></i> Cancel
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="settingsCheck();"> Save
-        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        <i class="far fa-save" aria-hidden="true"></i>
       </button>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-content -->
 </div><!-- /.modal-settings-->
 
 <script>
+  var btnMoreCounter = 0;
+
   $(function() {
     settings.getItem('theme').then(function(value) {
       if (value == 'light') {
@@ -202,9 +204,16 @@
   });
 
   function showOptions() {
-    $('#hidden-options').prop('hidden', false);
-    $('#more-options-btn').prop('hidden', true);
-    $('#hidden-options').addClass('animated fadeInDown');
+    if (btnMoreCounter % 2 === 0) {
+      $("#btn-more-options-icon").attr("data-fa-transform", "rotate-180");
+      $('#hidden-options').prop('hidden', false);
+      $('#hidden-options').addClass('animated fadeInDown');
+    } 
+    else {
+      $("#btn-more-options-icon").attr("data-fa-transform", "rotate-360");
+      $('#hidden-options').prop('hidden', true);
+    }
+    btnMoreCounter++;
   }
 
   function defaultSettings() {

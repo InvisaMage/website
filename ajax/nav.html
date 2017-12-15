@@ -40,7 +40,7 @@
   <div class="nav justify-content-end d-none d-xl-flex">
     <li class="nav-item" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats">
       <a class="nav-link" onclick="loadStatsMod();">
-        <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+        <i class="fas fa-chart-bar fa-lg" aria-hidden="true"></i>
       </a>
     </li>
     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Achievements">
@@ -50,7 +50,7 @@
     </li>
     <li class="nav-item" id="settings-li" data-toggle="tooltip" data-placement="bottom" title="Settings">
       <a class="nav-link" onclick="loadSettingsMod();" id="settings-button">
-        <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+        <i id="settings-fa-spin" class="fa fa-cog fa-lg" aria-hidden="true"></i>
       </a>
     </li>
   </div><!-- /modal buttons -->
@@ -78,7 +78,7 @@
   <div class="nav justify-content-center d-xl-none">
     <div class="btn-group" role="group">
       <button onclick="loadStatsMod();" type="button" class="btn btn-md btn-secondary">
-        <i class="fa fa-bar-chart" aria-hidden="true"></i> Stats
+        <i class="fas fa-chart-bar" aria-hidden="true"></i> Stats
       </button>
       <button onclick="loadAchievementsMod();" type="button" class="btn btn-md btn-secondary">
         <i class="fa fa-trophy" aria-hidden="true"></i> Achievements

@@ -18,6 +18,7 @@ var windowHeight = window.innerHeight;
 var termCounter = 0;
 var namePromptCounter = 0;
 var searchCounter = 0;
+var btn404Counter = 0;
 
 /* Simulate key press
  * https://stackoverflow.com/questions/22274728/simulate-a-keyboard-key-pressed-with-dispatchevent-of-keypress#22274892
@@ -259,7 +260,7 @@ listener.simple_combo("shift space", async function() {
 
 //Hides all modals
 function hideModals() {
-  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-reload, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-cookies, #modal-yes, #modal-no').modal('hide');
+  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-yes, #modal-no').modal('hide');
 }
 
 //Focus search box with Ctrl + Alt + F key press
@@ -744,10 +745,6 @@ function loadContactMod() {
   $('#modal-contact').load('ajax/modals/contact.html');
   $('#modal-contact').modal();
 }
-function loadCookiesMod() {
-  $('#modal-cookies').load('ajax/modals/cookies.html');
-  $('#modal-cookies').modal();
-}
 function loadDonateMod() {
   $('#modal-donate').load('ajax/modals/donate.html');
   $('#modal-donate').modal();
@@ -764,13 +761,6 @@ function loadShortcutsMod() {
   $('#modal-shortcuts').load('ajax/modals/shortcuts.html');
   $('#modal-shortcuts').modal();
 }
-function loadReloadMod() {
-  $('#btn-reload').tooltip('dispose');
-  $('#modal-stats').modal('hide');
-  $('#modal-stats').one('hidden.bs.modal', function (e) {
-  $('#modal-reload').load('ajax/modals/reload.html');
-  $('#modal-reload').modal();
-});}
 function loadSearchHelpMod() {
   $('#modal-search-help').load('ajax/modals/search-help.html');
   $('#modal-search-help').modal();
@@ -805,15 +795,25 @@ function play() {
   $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <i class='fa fa-pause' aria-hidden='true'></i> </a>" );
 }
 
-/*Settings cog spin
+/* 404 Button */
+function btn404() {
+  if (btn404Counter % 2 === 0) {
+    $("#btn-404-icon").attr("data-fa-transform", "rotate-180");
+  } 
+  else {
+    $("#btn-404-icon").attr("data-fa-transform", "rotate-360");
+  }
+  btn404Counter++;
+}
+
+/*Settings cog spin */
 $(function () {
-  $("#settings-li").hover(function () {
-    $("#settings-button").addClass("fa-spin");
+  $("#settings-button").hover(function () {
+    $("#settings-fa-spin").addClass("fa-spin");
   },
   function () {
-      $("#settings-button").removeClass("fa-spin");
+      $("#settings-fa-spin").removeClass("fa-spin");
   });
 });
-*/
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.');

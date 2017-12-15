@@ -15,7 +15,7 @@
 		<!--Stylesheets-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/fa-svg-with-js.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
 	</head>
 
@@ -28,9 +28,9 @@
 			<br>
 			<div id="img_container-404">
 		    <img class="img-fluid center-block rounded" src="images/404.jpg" alt="404 Error" height="506" width="465">
-		    <button class="btn btn-outline-primary" id="btn-404" tyle="button" onclick="$('#collapse-404').collapse('toggle')" aria-expanded="false">
-					View Recent Changes
-				</button>
+		    <button class="btn btn-outline-primary" id="btn-404" tyle="button" onclick="$('#collapse-404').collapse('toggle'); btn404();" aria-expanded="false">
+				View Recent Changes <i id="btn-404-icon" class="fas fa-chevron-down"></i>
+			</button>
 			</div>
 
 			<!--Recent Changes-->
@@ -75,6 +75,7 @@
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/fontawesome-all.min.js"></script>
 		<script src="js/localforage.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
