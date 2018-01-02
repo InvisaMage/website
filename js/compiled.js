@@ -587,7 +587,7 @@ function themeLight() {
 $(function() {
   settings.getItem('centeredModals').then(function(value) {
     if (value == 'true') {
-      $('html').append('<link rel="stylesheet" type="text/css" href="./css/modals-centered.css">');
+      $('.modal-dialog').addClass('modal-dialog-centered');
     }
     console.log('centeredModals = ' + value);
   });

@@ -24,3 +24,14 @@
     </div><!-- /.modal-footer-->
   </div><!-- /.modal-content -->
 </div><!-- /.modal-search-help -->
+
+<script>
+  $(function() {
+    settings.getItem('centeredModals').then(function(value) {
+    if (value == 'true') {
+      $('.modal-dialog').addClass('modal-dialog-centered');
+    }
+    console.log('centeredModals = ' + value);
+    });
+  });
+</script>

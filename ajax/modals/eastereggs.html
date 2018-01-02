@@ -148,5 +148,11 @@
         $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
       }
     });
+    settings.getItem('centeredModals').then(function(value) {
+      if (value == 'true') {
+        $('.modal-dialog').addClass('modal-dialog-centered');
+      }
+      console.log('centeredModals = ' + value);
+    });
   });
 </script>
