@@ -37,7 +37,7 @@
             enabled: false,
             completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'go', 'anchor',
             'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history'],
-            greetings: 'Welcome to the Terminal | Copyright (c) 2014-2017\nType \'help\' to view a list of commands.',
+            greetings: 'Welcome to the Terminal | Copyright (c) 2014-2018\nType \'help\' to view a list of commands.',
             keypress: function(e) {
                 if (e.which == 96) {
                     return false;

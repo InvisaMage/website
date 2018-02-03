@@ -549,3 +549,10 @@ kbd {
 .dropdown-menu .active .dropdown-item {
 	background-color: #b8bfc6 !important;
 }
+
+.info {
+    position: fixed;
+    bottom: 20px;
+	right: 20px;
+	z-index: 99;
+}

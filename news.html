@@ -20,7 +20,7 @@
 	</head>
 
 	<body id="top">
-		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">JavaScript Needed</nav>
+		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">Enable JavaScript and/or update browser</nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -447,7 +447,11 @@
 					<div class="d-block d-md-none" id="mobile-menu">
 						<select>
 							<option selected value="news.html#mobile-menu">Date Jump</option>
+							<optgroup label="February 2018">
+								<option value="news.html#2-2-18-website">2nd</option>
+							</optgroup>
 							<optgroup label="January 2018">
+								<option value="news.html#1-20-18-website">20th</option>
 								<option value="news.html#1-1-18-website">1st</option>
 							</optgroup>
 							<option value="news.html#news-website-2017">Older</option>
@@ -455,6 +459,27 @@
 						<br>
 						<br>
 					</div>
+
+					<!--Februray 2, 2018-->
+					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="2-2-18-website">
+						<h4 class="card-header">Februray 2, 2018</h4>
+						<div class="card-body">
+							<p>
+								Added a new <a class="link" href="info.html#settings-info">Setting</a> called Silent Mode which prevents messages from being displayed.<br>
+								The Privacy and Terms messages have been replaced with a button which shows a popover.<br>
+								Something now happens when all <a class="link" href="info.html#achievements-info">Achievements</a> have been earned.<br>
+								The "More options" section in <a class="link" href="info.html#settings-info">Settings</a> is now more coherent.
+								<br>
+								<br>
+								Updated <a class="link" href="info.html#bootstrap">Bootstrap</a> to release 4.0.0.<br>
+								Updated <a class="link" href="info.html#font-awesome">Font Awesome</a> to version 5.0.4.<br>
+								Updated <a class="link" href="info.html#jquery-info">jQuery</a> to version 3.3.1.<br>
+								Updated <a class="link" href="info.html#localforage-info">localForage</a> to version 1.5.6 and added getItems plugin.
+							</p>
+						</div>
+					</div><!-- /2-2-18-->
+
+					<br>
 
 					<!--January 1, 2018-->
 					<div class="card bg-dark mx-auto" style="max-width: 45rem;" id="1-1-18-website">
@@ -479,6 +504,10 @@
 						<!--Website Menu-->
 						<div id="menu-news" class="menu menu-news d-none d-md-inline slide">
 							<h4>Date Jump</h4>
+							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> February 2018</a></li>
+							<div>
+								<li><a href="#2-2-18-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 2nd</a></li>
+							</div>
 							<li><a><i class="fa fa-chevron-down" aria-hidden="true"></i> January 2018</a></li>
 							<div>
 								<li><a href="#1-1-18-website"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> 1st</a></li>
@@ -580,7 +609,6 @@
 		<script src="js/localforage.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
-		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
 
 		<script>

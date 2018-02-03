@@ -20,7 +20,7 @@
 	</head>
 
 	<body id="top">
-		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">JavaScript Needed</nav>
+		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">Enable JavaScript and/or update browser</nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -109,6 +109,11 @@
 			</div><!-- /changes-->
 
 			<br>
+
+			<!--Accept Popover-->
+			<button id="info-accept" type="button" class="info btn btn-sm btn-outline-info">
+				<i class="fas fa-info-circle fa-lg"></i>
+			</button>
 		</div>
 
 		<!--Footer-->
@@ -126,12 +131,23 @@
 		<script src="js/localforage.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
-		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
 
 		<script>
 			$('.privacySection').addClass('animated slideInUp');
 			$('#menu-privacy').addClass('animated slideInLeft');
+
+			$(function () {
+				$('[data-toggle="popover"]').popover()
+
+				$('#info-accept').popover({ 
+					title: "Do you accept the Privacy Policy?",
+					content: "<button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>",
+					placement: "top",
+					html: true,
+					trigger: "focus"
+				});
+			});
 		</script>
 	</body>
 </html>

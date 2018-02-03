@@ -20,7 +20,7 @@
 	</head>
 
 	<body id="top">
-		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">JavaScript Needed</nav>
+		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">Enable JavaScript and/or update browser</nav>
 
 		<!--Begin Content-->
 		<div class="container">
@@ -43,6 +43,7 @@
 						<li><a href="#font-awesome"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Font Awesome</a></li>
 						<li><a href="#jquery-info"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> jQuery</a></li>
 						<li><a href="#terminal-library-info"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> jQuery Terminal</a></li>
+						<li><a href="#localforage-info"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> localForage</a></li>
 						<li><a href="#snowstorm-info"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Snowstorm</a></li>
 					</div>
 				<li><a href="#functions"><i class="fa fa-chevron-down" aria-hidden="true"></i> Functions</a></li>
@@ -78,6 +79,7 @@
 					<option value="#font-awesome">Font Awesome</option>
 					<option value="#jquery-info">jQuery</option>
 					<option value="#terminal-library-info">jQuery Terminal</option>
+					<option value="#localforage-info">localForage</option>
 					<option value="#snowstorm-info">Snowstorm</option>
 					<option value="#functions">Functions</option>
 					<option value="#nameprompt">namePrompt</option>
@@ -172,10 +174,17 @@
 						Check it out <a class="link" target="_blank" rel="noopener noreferrer" href="http://terminal.jcubic.pl/">here</a>.
 					</p>
 					<hr>
+					<h5 id="localforage-info">localForage</h5>
+					<p>
+						"Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API."<br>
+						This makes storage and retrieval of <a class="link" href="info.html#settings-info">Settings</a> and <a class="link" href="info.html#achievements-info">Achievement</a> data a breeze.<br>
+						Check it out <a class="link" target="_blank" rel="noopener noreferrer" href="https://localforage.github.io/localForage/">here</a>.
+					</p>
+					<hr>
 					<h5 id="snowstorm-info">Snowstorm</h5>
 					<p>
 						"A JavaScript-driven snow effect that can be easily added to web pages."<br>
-						Try it here! | <a class="link" id="footer-snowstorm" onclick="loadSnowstorm();" data-toggle="tooltip" data-placement="top" title="Load the snowstorm!">Load Snow</a><br>
+						See it in action by enabling it in the footer.<br>
 						Check it out <a class="link" target="_blank" rel="noopener noreferrer" href="http://www.schillmania.com/projects/snowstorm/">here</a>.
 					</p>
 				</div>
@@ -299,7 +308,6 @@
 		<script src="js/localforage.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
-		<script src="js/growl.min.js"></script>
 		<script src="js/compiled.js"></script>
 
 		<script>

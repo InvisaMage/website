@@ -276,7 +276,7 @@ listener.simple_combo("ctrl alt c", function() {
   loadSettingsMod();
 });
 
-//Settings
+//Stats
 var listener = new window.keypress.Listener();
 listener.simple_combo("ctrl alt s", function() {
   hideModals();
@@ -299,6 +299,12 @@ function settingsCheck() {
     settings.setItem('centeredModals', 'true');
   } else {
     settings.setItem('centeredModals', 'false');
+  }
+  //Silent Mode
+  if ($('[name=silentMode]:checked').val() == 'true') {
+    settings.setItem('silentMode', 'true');
+  } else {
+    settings.setItem('silentMode', 'false');
   }
   //Terminal Opacity
   settings.setItem('terminalOpacity', $('#terminal-opacity').val());
@@ -505,14 +511,7 @@ $(function() {
   settings.getItem('enableTacBanner').then(function(value) {
     if (value == 'true') {
       if (($("title").html() == "InvisaMage | Terms") || ($("title").html() == "InvisaMage | Privacy")) {
-        $.bootstrapGrowl("Do you accept the Terms and Conditions?<br><br> <button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>", {
-          type: 'danger',
-          align: 'right',
-          delay: 999999999,
-          offset: {from: 'top', amount: 70},
-          width: 300,
-          allow_dismiss: false
-        });
+        $('#info-accept').focus()
       }
     }
     console.log("enableTacBanner = " + value);
@@ -529,6 +528,7 @@ $(function() {
         snowStorm.toggleSnow();
         $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
       }
+      purplerainCheck();
     }
     console.log('enableSnowstorm = ' + value);
   });
@@ -591,6 +591,14 @@ $(function() {
     }
     console.log('centeredModals = ' + value);
   });
+});
+
+//Check if Growl should be loaded
+settings.getItem('silentMode').then(function(value) {
+  if (value != 'true') {
+    $.getScript('js/growl.min.js')
+  }
+  console.log('silentMode = ' + value);
 });
 
 //Used to see if Easteregg modal Achievement message should be displayed.
@@ -697,6 +705,18 @@ function purplerainCheck() {
   });
 }
 
+//Check if Achievements icon needs to be gold
+function goldCheck() {
+  var keys = ['eastereggAchievement','terminalAchievement','unlimitedPowerAchievement', 'wiselyAchievement', 'hallucinatingAchievement', 'purplerainAchievement'];
+
+  achievements.getItems(keys).then(function(results) {
+    if (results.eastereggAchievement == 'true' && results.terminalAchievement == 'true' && results.unlimitedPowerAchievement == 'true' && results.wiselyAchievement == 'true' && results.hallucinatingAchievement == 'true' && results.purplerainAchievement == 'true')  {
+      $("#achievements-star, #achievements-star-mobile ").css('color','gold');
+      console.log("Changed achievements icon color");
+    }
+  });
+}
+
 //Clear Local Storage
 function clearLocalStorage() {
   settings.clear();
@@ -783,16 +803,6 @@ function loadYesMod() {
   $('#modal-yes').modal();
   $('.alert').toggle();
   wiselyCheck();
-}
-
-//namePrompt media controls
-function pause() {
-  $('audio').trigger('pause');
-  $('#pause-btn').replaceWith( "<a id='play-btn' class='btn btn-success btn-md' role='button' onclick='play();'> <i class='fa fa-play' aria-hidden='true'></i> </a>" );
-}
-function play() {
-  $('audio').trigger('play');
-  $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <i class='fa fa-pause' aria-hidden='true'></i> </a>" );
 }
 
 /* 404 Button */

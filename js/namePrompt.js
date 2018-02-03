@@ -430,12 +430,21 @@ function namePrompt() {
 			"<audio autoplay preload='auto'><source src='./audio/siri.mp3' type='audio/mpeg'></audio>"
 			)
 		;}
-//Spock
+//1
 		if (nL == "spock") {
 			$("#name").html(
 			"Live long, and prosper.<br>" +
 			"Leonard Nimoy, 1931-2015<br><br>" +
-			"<img class='img-fluid rounded center-block' src='images/spock.jpg' height='300' width='300'>"
+			"<img class='img-fluid rounded center-block' src='images/spock.jpg' height='300' width='300'><br><br>" +
+			"<i class='far fa-hand-spock fa-4x'></i>"
+			)
+		;}
+//Leia
+		if (nL == "leia" || nL == "princess leia") {
+			$("#name").html(
+			"Aren't you a little short for a stormtrooper?<br>" +
+			"Carrie Fisher, 1956-2016<br><br>" +
+			"<img class='img-fluid rounded center-block' src='images/leia.jpg' height='383' width='260'>"
 			)
 		;}
 //Doctor Who
@@ -590,4 +599,14 @@ function namePrompt() {
 		$('[data-toggle="tooltip"]').tooltip();
 	}
 	var volume = $("audio").prop("volume")-0.9; if(volume <0){ volume = 0; } $("audio").prop("volume",volume);
+}
+
+//namePrompt media controls
+function pause() {
+  $('audio').trigger('pause');
+  $('#pause-btn').replaceWith( "<a id='play-btn' class='btn btn-success btn-md' role='button' onclick='play();'> <i class='fa fa-play' aria-hidden='true'></i> </a>" );
+}
+function play() {
+  $('audio').trigger('play');
+  $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <i class='fa fa-pause' aria-hidden='true'></i> </a>" );
 }

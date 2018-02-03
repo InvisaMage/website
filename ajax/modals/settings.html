@@ -25,44 +25,51 @@
                 </label>
               </div>
               <div class="form-check">
-                <label class="form-check-label" data-toggle="tooltip" data-placement="right" title="This theme does not get much attention. Some elements might look unpolished.">
+                <label class="form-check-label" data-toggle="tooltip" data-html="true" data-placement="right" title="This theme <b>does not</b> get much attention. Some elements might look unpolished.">
                   <input class="form-check-input" type="radio" name="themeStyle" id="theme-radio2" value="light">
                   Light
                 </label>
               </div><!--./Dark/Light Radios-->
               <hr>
               <!--Hidden-->
-              <span id="hidden-options" hidden>
+              <div class="collapse mx-auto" id="collapse-more">
                 <!--Centered Modals-->
                 <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="centerModals" id="modal-centered-checkbox1" value="true">
-                    Center modals
-                  </label>
-                </div>
-                <hr>
-                <!--Background Color-->
-                <div class="form-group">
-                  <label for="bg-color-hex">Background color</label>
-                  <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
-                </div>
-                <!--Terminal Opacity-->
-                <hr>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col">
-                      <label for="terminal-opacity">Terminal Opacity</label>
-                      <input id="terminal-opacity" type="range" class="form-control form-control-sm" name="terminalOpacity"  min="0" max="1" step="0.1" value="0.8" style="max-width:200px;">
-                    </div>
-                    <div class="col">
-                      <label id="terminal-opacity-value"></label>
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="centerModals" id="modal-centered-checkbox1" value="true">
+                      Center modals
+                    </label>
+                  </div>
+                  <!--Silent Mode-->
+                  <div class="form-check">
+                    <label class="form-check-label" data-toggle="tooltip" data-html="true" data-placement="right" title="Hide informational messages.<br><br>This prevents the script from loading thus errors will be thrown in the console.<br>This may break things.">
+                      <input class="form-check-input" type="checkbox" name="silentMode" id="silent-mode-checkbox1" value="true">
+                      Silent mode
+                    </label>
+                  </div>
+                  <hr>
+                  <!--Background Color-->
+                  <div class="form-group">
+                    <label for="bg-color-hex">Background color</label>
+                    <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
+                  </div>
+                  <!--Terminal Opacity-->
+                  <hr>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col">
+                        <label for="terminal-opacity">Terminal Opacity</label>
+                        <input id="terminal-opacity" type="range" class="form-control form-control-sm" name="terminalOpacity"  min="0" max="1" step="0.1" value="0.8" style="max-width:200px;">
+                      </div>
+                      <div class="col">
+                        <label id="terminal-opacity-value"></label>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </span>
+              </div>
               <!--More Button-->
-              <button id="more-options-btn" type="button" class="btn btn-dark btn-sm btn-block" onclick="showOptions();">
-                <i class="fa fa-cogs" aria-hidden="true"></i> More options <i id="btn-more-options-icon" class="fas fa-chevron-down"></i>
+              <button id="more-options-btn" type="button" class="btn btn-dark btn-sm btn-block" onclick="$('#collapse-more').collapse('toggle'); showOptions();">
+                <i class="fa fa-cogs" aria-hidden="true"></i> <span id="btn-more-options-text">More options</span> <i id="btn-more-options-icon" class="fas fa-chevron-down"></i>
               </button>
             </div>
           </div>
@@ -212,12 +219,11 @@
   function showOptions() {
     if (btnMoreCounter % 2 === 0) {
       $("#btn-more-options-icon").attr("data-fa-transform", "rotate-180");
-      $('#hidden-options').prop('hidden', false);
-      $('#hidden-options').addClass('animated fadeInDown');
+      $("#btn-more-options-text").text("Less options");
     } 
     else {
       $("#btn-more-options-icon").attr("data-fa-transform", "rotate-360");
-      $('#hidden-options').prop('hidden', true);
+      $("#btn-more-options-text").text("More options");
     }
     btnMoreCounter++;
   }
@@ -274,7 +280,15 @@
     }).catch(function(err) {
       console.log(err);
     });
-    //Centered modals
+    //Silent mode
+    settings.getItem('silentMode').then(function(value) {
+      if (value == 'true') {
+        $("#silent-mode-checkbox1").prop("checked", true);
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
+    //Terminal Opacity
     settings.getItem('terminalOpacity').then(function(value) {
       $('#terminal-opacity').prop("value", value);
       $('#terminal-opacity-value').html(value);
