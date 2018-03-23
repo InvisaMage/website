@@ -64,10 +64,6 @@ setTimeout(navEnable, 700);
         $('#nav-fs').addClass('active');
         $("#nav-projects").addClass("active animated bounceIn");
       }
-      else if ($("title").html() == "InvisaMage | InvisaRant") {
-        $('#nav-ir').addClass('active');
-        $("#nav-projects").addClass("active animated bounceIn");
-      }
       else if ($("title").html() == "InvisaMage | TxtLock") {
         $('#nav-txtLock').addClass('active');
         $("#nav-projects").addClass("active animated bounceIn");
@@ -412,10 +408,10 @@ async function onPageLoadTerm() {
         })
       ).then(function() {
         console.log("onPageLoadTerm: Loaded assets");
-        $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+        $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>", {
           type: 'success',
           align: 'right',
-          delay: 2000,
+          delay: 4000,
           offset: {from: 'top', amount: 70},
           width: 300,
           allow_dismiss: true
@@ -506,6 +502,14 @@ settings.getItem('enableInfoBanner').then(function(value) {
   console.log('enableInfoBanner = ' + value);
 });
 
+//Check if Cookie Banner needs to be shown on homepage
+settings.getItem('enableCookiesBanner').then(function(value) {
+  if (value == 'true') {
+    $('#ajax-cookies-banner').load('ajax/alerts/alert-cookies.html');
+  }
+  console.log('enableCookiesBanner = ' + value);
+});
+
 //Check if Banners needs to be shown on Terms and Privacy page
 $(function() {
   settings.getItem('enableTacBanner').then(function(value) {
@@ -553,6 +557,14 @@ $(function() {
       });
     }
   });
+  //Banner - Cookies
+  settings.getItem('enableCookiesBanner').then(function (value) {
+    if (value == null) {
+      settings.setItem('enableCookiesBanner', 'true').then(function (value) {
+          console.log(value);
+      });
+    }
+  });
   //Banner - Terms and conditions
   settings.getItem('enableTacBanner').then(function (value) {
     if (value == null) {
@@ -578,7 +590,7 @@ function themeLight() {
   $('.card').removeClass('bg-dark').addClass('bg-light');
   //$('button').removeClass('btn-light').addClass('btn-secondary');
   $('table').removeClass('table-dark').addClass('table-light');
-  $("nav").attr("class", "navbar navbar-expand-md navbar-light bg-light fixed-top");
+  $("nav").attr("class", "navbar navbar-expand-xl navbar-light bg-light fixed-top");
   //$("nav").attr("style", "background-color: #e3f2fd;");
   $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
 }
@@ -607,7 +619,7 @@ function eastereggCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website.", {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
         offset: {from: 'top', amount: 70},
@@ -627,7 +639,7 @@ function terminalCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time.", {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
         offset: {from: 'top', amount: 70},
@@ -647,7 +659,7 @@ function unlimitedPowerCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Unlimited POWER!<br><br>Change to the super user account.", {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Unlimited POWER!<br><br>Change to the super user account. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
         offset: {from: 'top', amount: 70},
@@ -667,7 +679,7 @@ function wiselyCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>.", {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
         offset: {from: 'top', amount: 70},
@@ -689,7 +701,7 @@ function purplerainCheck() {
     } else {
       settings.getItem('theme').then(function(value) {
         if (value == 'light') {
-          $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled.", {
+          $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
             type: 'info',
             align: 'right',
             offset: {from: 'top', amount: 70},
@@ -742,7 +754,7 @@ function loadAdsMod() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer.", {
+      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
         offset: {from: 'top', amount: 70},
@@ -804,6 +816,18 @@ function loadYesMod() {
   $('.alert').toggle();
   wiselyCheck();
 }
+function loadResetSettingsMod() {
+  $('#modal-reset-settings').load('ajax/modals/dialog/reset-settings.html');
+  $('#modal-reset-settings').modal();
+}
+function loadResetAchievementsMod() {
+  $('#modal-reset-achievements').load('ajax/modals/dialog/reset-achievements.html');
+  $('#modal-reset-achievements').modal();
+}
+function loadClearLocalStorageMod() {
+  $('#modal-clear-local-storage').load('ajax/modals/dialog/clear-local-storage.html');
+  $('#modal-clear-local-storage').modal();
+}
 
 /* 404 Button */
 function btn404() {
@@ -816,7 +840,7 @@ function btn404() {
   btn404Counter++;
 }
 
-/*Settings cog spin */
+/*Settings cog spin 
 $(function () {
   $("#settings-button").hover(function () {
     $("#settings-fa-spin").addClass("fa-spin");
@@ -825,5 +849,6 @@ $(function () {
       $("#settings-fa-spin").removeClass("fa-spin");
   });
 });
+*/
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.');

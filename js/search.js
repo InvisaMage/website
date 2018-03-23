@@ -28,9 +28,9 @@ function search() {
 		window.location = "txtlock.html";
 	}
 
-//InvisaRant page
-	else if (sL == "podcast" || sL == "invisarant") {
-		window.location = "invisarant.html";
+//TidyNT page
+	else if (sL == "tidynt") {
+		window.location = "tidynt.html";
 	}
 
 //Contact Modal
@@ -49,7 +49,7 @@ function search() {
 	}
 
 //Info page
-	else if (sL == "info" || sL == "creation" || sL == "information") {
+	else if (sL == "info" || sL == "creation" || sL == "libraries" || sL == "functions" || sL == "design" || sL == "information") {
 		window.location = "info.html";
 	}
 

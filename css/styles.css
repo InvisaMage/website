@@ -237,7 +237,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #394047;
+	background-color: #343a40;
 	text-align: left;
 	font-size: 100%;
 	padding: 20px;
@@ -265,7 +265,7 @@ footer h4 {
 }
 
 /* Homepage Event Banner */
-#event-banner, #info-banner {
+#event-banner, #info-banner, #cookies-banner {
     position: fixed;
     bottom: 0;
 		left: 0;
@@ -277,17 +277,6 @@ footer h4 {
 
 #event-banner-content a {
 	cursor: pointer;
-}
-
-/* Homepage Survey Message */
-#alert-survey {
-    position: fixed;
-    bottom: 0;
-		left: 0;
-    width: 100%;
-		z-index: 1;
-		font-size: 16px;
-		margin: 0;
 }
 
 #stats-button, #achievements-button, #settings-button {
@@ -437,12 +426,12 @@ a .carousel-control-prev:hover, a .carousel-control-next:hover {
 
 /* News Tabs */
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news.active {
-	background-color: rgba(69, 77, 84, 0.5) !important;
+	background-color: #55595d !important;
 	color: #a3ff66;
 	border-right-color: black !important;
 	border-top-color: black !important;
 	border-left-color: black !important;
-	border-bottom-color: rgb(69, 77, 84) !important;
+	border-bottom-color: #55595d !important;
 }
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news:hover {
 	color: #a3ff66;
@@ -458,21 +447,20 @@ a .carousel-control-prev:hover, a .carousel-control-next:hover {
 	border-bottom: 1px solid black;
 }
 .tab-content-news {
-	border-color: white !important;
-	background-color: rgba(69, 77, 84, 0.5);
+	background: linear-gradient(rgba(85, 89, 93, 1), RGBA(85, 89, 93, 0) 50rem);
 	max-width: 50rem;
 }
 
 /* News Pills */
 .nav-pills-news .nav-link.active, .show > .nav-pills .nav-link-news {
-	background-color: #454d54;
+	background-color: #55595d;
 	color: #a3ff66;
 }
 .nav-pills-news .nav-link-news {
 	color: #66a3ff;
 }
 .nav-pills-news .nav-link-news:hover {
-	background-color: #454d54;
+	background-color: #55595d;
 	color: #a3ff66;
 }
 

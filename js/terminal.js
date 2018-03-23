@@ -35,9 +35,9 @@
             name: 'tilda',
             height: windowHeight-62,
             enabled: false,
-            completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'go', 'anchor',
+            completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert',
             'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history'],
-            greetings: 'Welcome to the Terminal | Copyright (c) 2014-2018\nType \'help\' to view a list of commands.',
+            greetings: 'Welcome to the Terminal | Copyright (c) 2014-2018\nType \'help\' to view a list of commands.\nPress ~ to exit.',
             keypress: function(e) {
                 if (e.which == 96) {
                     return false;
@@ -99,10 +99,16 @@ jQuery(document).ready(function($) {
     }
 
     //help
-    if (cmd.name == 'help') {
+    if (cmd.name == 'help' || cmd.name == '?') {
       if (cmd.args == 'media') {
         terminal.echo('   media - Control the audio playing on the page');
         terminal.echo('   Usage: media [play | pause | vu | vd]');
+      }
+      else if (cmd.args == 'ip') {
+        terminal.echo('   ip - Prints your public IP address');
+        terminal.echo('   Usage: ip');
+        terminal.echo('   ');
+        terminal.echo('   Note: Relies on https://api.ipify.org');
       }
       else if (cmd.args == 'modal') {
         terminal.echo('   modal - Load a modal');
@@ -129,11 +135,28 @@ jQuery(document).ready(function($) {
         terminal.echo('   snowstorm - Interface with the snowstorm function');
         terminal.echo('   Usage: snowstorm [load | toggle | freeze | resume | wind | melt]');
       }
+      else if (cmd.args == 'name') {
+        terminal.echo('   name - Interface with namePrompt function (Only works on homepage)');
+        terminal.echo('   Usage: snowstorm [Travis | Dude | Spock | Cortana]');
+      }
       else if (cmd.args == 'storage') {
-        terminal.echo('   storage - Manipulate local storage (Interace with localForage)');
-        terminal.echo('   Usage: storage [get <database name> | set <database name> <name> <value> | remove <database name> <name>]');
+        terminal.echo('   storage - Manipulate local storage (Interface with localForage)');
+        terminal.echo('   Usage: storage [get <database name> | set <database name> <key name> <value> | remove <database name> <key name>]');
+        terminal.echo('   ');
+        terminal.echo('   Example: storage get -s');
+        terminal.echo('   Example: storage set -s terminalOpacity 1');
         terminal.echo('   ');
         terminal.echo('   Note: Database name is either Settings (-s) or Achievements (-a).');
+      }
+      else if (cmd.args == 'alert') {
+        terminal.echo('   alert - Display an alert on the page with the bootstrapGrowl plugin');
+        terminal.echo('   Usage: alert [<"message"> <type> <alignment> <delay>]');
+        terminal.echo('   ');
+        terminal.echo('   Type can be: null, info, danger, success');
+        terminal.echo('   Alignment can be: left, center, right');
+        terminal.echo('   Delay is integer in milliseconds');
+        terminal.echo('   ');
+        terminal.echo('   Example: alert "Welcome to Windows XP!" info center 2000');
       }
       else if (cmd.args == 'less') {
         terminal.echo('   less - View a file one line at a time');
@@ -143,9 +166,23 @@ jQuery(document).ready(function($) {
       }
       else if (cmd.args == 'search') {
         terminal.echo('   search - Send input to a search engine in a new tab');
-        terminal.echo('   Usage: search [-g | -d | -y | -b query]');
+        terminal.echo('   Usage: search [-d | -g | -yt | -y | w | -b query]');
         terminal.echo('   ');
-        terminal.echo('   Example: search [-g invisamage | -y AntVenom]');
+        terminal.echo('   -d');
+        terminal.echo('      Search with DuckDuckGo');
+        terminal.echo('   -g');
+        terminal.echo('      Search with Google');
+        terminal.echo('   -yt');
+        terminal.echo('      Search with YouTube');
+        terminal.echo('   -y');
+        terminal.echo('      Search with Yahoo');
+        terminal.echo('   -w');
+        terminal.echo('      Search with Wikipedia');
+        terminal.echo('   -b');
+        terminal.echo('      Search with Bing');
+        terminal.echo('   ');
+        terminal.echo('   Example: search -g invisamage');
+        terminal.echo('   Example: search -yt AntVenom');
       }
       else if (cmd.args == 'reload') {
         terminal.echo('   reload - Reloads the current page');
@@ -169,7 +206,7 @@ jQuery(document).ready(function($) {
         terminal.echo('      Clears history');
       }
       else if (cmd.args == '') {
-        terminal.echo('To get more help for a specific command use help <cmd name>.');
+        terminal.echo('To get additional help for a command use help <cmd name>.');
         terminal.echo(' ');
         terminal.echo('Available commands:');
         terminal.echo('   | help            -Shows this');
@@ -180,17 +217,20 @@ jQuery(document).ready(function($) {
         terminal.echo('   | echo            -Prints arguments given to the terminal');
         terminal.echo('   | ip              -Prints your public IP address');
         terminal.echo('   | su              -Switch user accounts');
+        terminal.echo('   | support         -Determine what features the browser supports based on current configuration');
         terminal.echo('   | time            -Prints the current time');
         terminal.echo('   | users           -Display users on system');
         terminal.echo('   |');
         terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
+        terminal.echo('   | alert           -Display an alert on the page with the bootstrapGrowl plugin');
         terminal.echo('   | go              -Navigate to a file located on the server or an external website');
         terminal.echo('   | less            -View a file one line at a time');
         terminal.echo('   | media           -Control the audio playing on the page');
         terminal.echo('   | modal           -Load a modal');
+        terminal.echo('   | name            -Interface with namePrompt function (Only works on homepage)');
         terminal.echo('   | search          -Send input to a search engine in a new tab');
         terminal.echo('   | snowstorm       -Interface with the snowstorm function');
-        terminal.echo('   | storage         -Manipulate local storage (Interace with localForage)');
+        terminal.echo('   | storage         -Manipulate local storage (Interface with localForage)');
         terminal.echo('   | >               -JavaScript Interpreter');
         terminal.echo('   |');
         terminal.echo('   | clear           -Clears the terminal');
@@ -198,7 +238,7 @@ jQuery(document).ready(function($) {
         terminal.echo('   | credits         -Learn how this was made');
         terminal.echo('   | history         -Manipulate command history');
         terminal.echo('   | reload          -Reloads the current page');
-        terminal.echo('   | reset           -Resets the Terminal to default state');
+        terminal.echo('   | reset           -Resets the terminal to default state');
       }
       else {
         terminal.echo('Can not get further information for that command')
@@ -396,24 +436,32 @@ jQuery(document).ready(function($) {
     //Search
     else if (cmd.name == 'search') {
       if (cmd.args[0] != undefined) {
-        if (cmd.args[0] == '-g') {
-      		window.open("https://www.google.com/search?q=" + cmd.rest.substr(3));
-          terminal.echo('Searching Google for "' + cmd.rest.substr(3) + '"');
-        }
-        else if (cmd.args[0] == '-d') {
+        if (cmd.args[0] == '-d') {
           window.open("https://duckduckgo.com/?q=" + cmd.rest.substr(3));
           terminal.echo('Searching DuckDuckGo for "' + cmd.rest.substr(3) + '"');
         }
+        else if (cmd.args[0] == '-g') {
+      		window.open("https://www.google.com/search?q=" + cmd.rest.substr(3));
+          terminal.echo('Searching Google for "' + cmd.rest.substr(3) + '"');
+        }
+        else if (cmd.args[0] == '-yt') {
+          window.open("https://www.youtube.com/results?search_query=" + cmd.rest.substr(4));
+          terminal.echo('Searching YouTube for "' + cmd.rest.substr(4) + '"');
+        }
         else if (cmd.args[0] == '-y') {
-          window.open("https://www.youtube.com/results?search_query=" + cmd.rest.substr(3));
-          terminal.echo('Searching YouTube for "' + cmd.rest.substr(3) + '"');
+          window.open("https://search.yahoo.com/search?p=" + cmd.rest.substr(3));
+          terminal.echo('Searching Yahoo for "' + cmd.rest.substr(3) + '"');
         }
         else if (cmd.args[0] == '-b') {
           window.open("https://www.bing.com/search?q=" + cmd.rest.substr(3));
           terminal.echo('Searching Bing for "' + cmd.rest.substr(3) + '"');
         }
+        else if (cmd.args[0] == '-w') {
+          window.open("https://en.wikipedia.org/w/index.php?search=" + cmd.rest.substr(3));
+          terminal.echo('Searching Wikipedia for "' + cmd.rest.substr(3) + '"');
+        }
         else {
-          terminal.echo('Unknown argument');
+          terminal.echo('Unknown search engine argument');
         }
       }
       else {
@@ -497,13 +545,43 @@ jQuery(document).ready(function($) {
         unlimitedPowerCheck();
       }
     }
+    //alert
+    else if (cmd.name == 'alert') {
+      if (cmd.args[0] != undefined) {
+        if (cmd.args[1] != undefined) {
+          if (cmd.args[2] != undefined) {
+            if (cmd.args[3] != undefined) {
+              $.bootstrapGrowl(cmd.args[0], {
+                type: cmd.args[1],
+                align: cmd.args[2],
+                delay: cmd.args[3],
+                offset: {from: 'top', amount: 70},
+                width: 300,
+                allow_dismiss: true
+              });
+            }
+            else {
+              terminal.echo('Requires delay in milliseconds');
+            }
+          }
+          else {
+            terminal.echo('Requires alignment argument');
+          }
+        }
+        else {
+          terminal.echo('Requires alert type');
+        }
+      }
+      else {
+        terminal.echo('Requires a message');
+      }
+    }
     //users
     else if (cmd.name == 'users') {
       terminal.echo(usersList);
     }
     //history
     else if (cmd.name == 'history') {
-      console.log(terminal.history());
       var history = terminal.history().data();
       history.toString();
       var historyList = history.join("\n");
@@ -516,6 +594,43 @@ jQuery(document).ready(function($) {
       }
       else {
         terminal.echo(historyList);
+      }
+    }
+    //support
+    else if (cmd.name == 'support') {
+      //Flash
+      var hasFlash = false;
+      try {
+          hasFlash = Boolean(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'));
+      } catch(exception) {
+          hasFlash = ('undefined' != typeof navigator.mimeTypes['application/x-shockwave-flash']);
+      }
+
+      //DoNotTrack
+      var doNotTrack = navigator.doNotTrack
+      if (doNotTrack == 1) {
+        doNotTrack = true
+      }
+      else {
+        doNotTrack = false
+      }
+
+      terminal.echo("Cookies Enabled:    "+ navigator.cookieEnabled);
+      terminal.echo("Java Enabled:       "+ navigator.javaEnabled());
+      terminal.echo("Flash Enabled:      "+ hasFlash);
+      terminal.echo("DoNotTrack Enabled: "+ doNotTrack);
+
+      if (hasFlash == true || navigator.javaEnabled() == true) {
+        terminal.echo(" ");
+        terminal.echo("Notes:");
+      }
+      if (hasFlash == true) {
+        terminal.echo("For security reasons, it is recommended to make Flash 'Ask to Activate' rather than leave it on.");
+      }
+      if (navigator.javaEnabled() == true) {
+        terminal.echo(" ");
+        terminal.echo("Notes:");
+        terminal.echo("For security reasons, it is recommended to make Flash 'Ask to Activate' rather than leave it on.");
       }
     }
     //cd
@@ -537,6 +652,20 @@ jQuery(document).ready(function($) {
         this.error(new String(e));
 
       }
+    }
+    //namePrompt
+    else if (cmd.name == 'name') {
+      $.when( $.ready,
+        loadNamePrompt()
+      )
+      .then(function() {
+        if (cmd.args[0] != undefined) {
+          namePrompt(cmd.rest);
+        }
+        else {
+          terminal.echo('Requires an argument');
+        }
+      });
     }
     //Display
     else if (cmd.name == 'display') {

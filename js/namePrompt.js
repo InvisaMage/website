@@ -1,7 +1,6 @@
 //If name is listed below, special message is displayed. If not, input is displayed
 
-function namePrompt() {
-	var name = document.getElementById("name-value").value;
+function namePrompt(name) {
 	var nL = name.toLowerCase();
 
 	//Audio Template
@@ -478,7 +477,7 @@ function namePrompt() {
 					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
 					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' rel='noopener noreferrer' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
 					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' rel='noopener noreferrer' href='https://www.chromium.org/'>Chromium</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the company's Windows 10 operating systems.' target='_blank' rel='noopener noreferrer' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
+					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the companies Windows 10 operating systems.' target='_blank' rel='noopener noreferrer' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
 					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' rel='noopener noreferrer' href='https://www.apple.com/safari/'>Safari</a><br>" +
 					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' rel='noopener noreferrer' href='https://www.opera.com/'>Opera</a>" +
 				"</div>" +

@@ -35,9 +35,9 @@
 			<a class="title" href="index.html">Home</a>
 			<br>
 
-			<div class="card-columns d-table d-lg-inline-block">
+			<div class="card-columns d-table d-lg-inline-block animated pulse" style="orphans: 1; widows:1;">
 				<!--Welcome-->
-				<div class="card bg-dark animated pulse" id="welcome">
+				<div class="card bg-dark" id="welcome">
 					<h4 class="card-header">Welcome</h4>
 					<div class="card-body">
 						<button id="pmb" type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="loadNamePrompt(); $('#modal-personalize').modal();">Personalize Message</button>
@@ -51,7 +51,7 @@
 				</div>
 
 				<!--Recent News-->
-				<div class="card bg-dark animated pulse" id="news">
+				<div class="card bg-dark" id="news">
 					<h4 class="card-header">Recent News</h4>
 					<div class="card-header card-header-invis">
 						<ul class="nav nav-tabs nav-tabs-home card-header-tabs justify-content-center d-none d-xl-flex">
@@ -82,11 +82,10 @@
 						<div class="tab-content tab-content-home">
 							<!--Projects-->
 						  <div class="tab-pane active fade show" id="projects" role="tabpanel">
-								<h5>November 30, 2017</h5>
+								<h5>March 23, 2018</h5>
 								<p class="card-text">
-									<a class="link" href="tidynt.html">TidyNT</a> received an update.<br>
-									Added the ability to clear the custom search engine inputs.<br>
-									Fixed an empty search option being displayed sometimes.
+										Removed InvisaRant from the site.<br>
+										Only one episode was ever created and we lost interest.
 								</p>
 							</div>
 							<!--Important-->
@@ -99,15 +98,12 @@
 							</div>
 							<!--Website-->
 						  <div class="tab-pane fade" id="website" role="tabpanel">
-								<h5 class="card-text">February 2, 2018</h5>
+								<h5 class="card-text">March 23, 2018</h5>
 								<p class="card-text">
-									Added a new <a class="link" href="info.html#settings-info">Setting</a> called Silent Mode which prevents messages from being displayed.<br>
-									The Privacy and Terms messages have been replaced with a button which shows a popover.<br>
-									Something now happens when all <a class="link" href="info.html#achievements-info">Achievements</a> have been earned.<br>
-									The "More options" section in <a class="link" href="info.html#settings-info">Settings</a> is now more coherent.
-									<br>
-									<br>
-									Updated lots of libraries.
+										Added linear gradient to news content sections.<br>
+										Added prompts when Resting Settings and Achievements.<br>
+										Reordered items in the Projects dropdown menu.<br>
+										Changed style of dropdown menus.
 								</p>
 							</div>
 						</div>
@@ -120,7 +116,7 @@
 				</div>
 
 				<!--About-->
-				<div class="card bg-dark animated pulse" id="about">
+				<div class="card bg-dark" id="about">
 					<h4 class="card-header">About</h4>
 					<div class="card-body">
 						<p class="card-text">
@@ -131,7 +127,7 @@
 					</div>
 					<div class="card-footer">
 						<p class="card-text">
-							Click <a class="link" href="info.html#InvisaMage">here</a> to learn more about the site.
+							Click <a class="link" href="info.html">here</a> to learn more about the site.
 						</p>
 					</div>
 				</div>
@@ -154,7 +150,7 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-						<div onkeydown="if (event.keyCode == 13) namePrompt(), $('#modal-personalize').modal('toggle');" class="center-block">
+						<div onkeydown="if (event.keyCode == 13) namePrompt(document.getElementById('name-value').value), $('#modal-personalize').modal('toggle');" class="center-block">
  						 <input class="form-control" id="name-value" autocomplete="off" placeholder="What is your name?">
  					 </div>
 		      </div>
@@ -178,7 +174,7 @@
 						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
 							<i class="fa fa-times" aria-hidden="true"></i> Close
 						</button>
-						<button type="button" class="btn btn-primary" onclick="namePrompt();" data-dismiss="modal"> Submit
+						<button type="button" class="btn btn-primary" onclick="namePrompt(document.getElementById('name-value').value);" data-dismiss="modal"> Submit
 							<i class="fa fa-check" aria-hidden="true"></i>
 						</button>
 		      </div>
@@ -189,6 +185,7 @@
 		<!--Alerts-->
 		<div id="ajax-event-banner"></div>
 		<div id="ajax-info-banner"></div>
+		<div id="ajax-cookies-banner"></div>
 
 		<!--Modals-->
 		<span id="modals"></span>

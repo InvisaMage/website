@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--Rest Settings Modal-->
+<div class="modal-dialog modal-sm" id="ajax-reset-settings">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Reset Settings?</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+      Are you sure you want to reset all Settings to their default value?
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onclick="$('#modal-reset-settings').one('hidden.bs.modal', function (e) { loadSettingsMod(); })">
+        <i class="fa fa-times" aria-hidden="true"></i> No
+      </button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="defaultSettings();"> Yes, reset Settings
+        <i class="fa fa-ban" aria-hidden="true"></i>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-reset-settings -->
+
+<script>
+  $(function() {
+    settings.getItem('centeredModals').then(function(value) {
+    if (value == 'true') {
+      $('.modal-dialog').addClass('modal-dialog-centered');
+    }
+    console.log('centeredModals = ' + value);
+    });
+  });
+</script>

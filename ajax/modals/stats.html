@@ -69,7 +69,7 @@
           <td><h7 class="black">Debug</h7></td>
           <th>
             <div class="btn-group" role="group">
-              <button id="btn-clear-localstorage" type="button" class="btn btn-danger" onclick="clearLocalStorage();" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Clear Local Storage<br><br>This will clear all Settings and Achievements!" data-container="body">
+              <button id="btn-clear-localstorage" type="button" class="btn btn-danger" data-dismiss="modal" onclick="loadClearLocalStorageMod();" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Clear Local Storage" data-container="body">
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </button>
             </div>
@@ -102,9 +102,6 @@
           <hr>
           <h6>Debug</h6>
           <p class="card-text">
-            Reload - Reloads the page after a prompt.
-            <br>
-            <br>
             Clear Local Storage - Removes ALL local storage values on the website. This includes Settings and Achievements.
           </p>
         </div>

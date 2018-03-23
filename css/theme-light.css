@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #bfbfbf;
 }
 .tab-content-news {
-	background-color: rgba(230, 230, 230, 0.8);
+	background: linear-gradient(rgba(227, 227, 227, 1), rgba(227, 227, 227, 0) 50rem);
 }
 
 .nav-pills li a {
@@ -290,7 +290,7 @@ kbd {
 */
 
 .jumbotron {
-	background-color: #e9ecef;
+	background-color: #f8f9fa;
 }
 
 /* Override background color*/
