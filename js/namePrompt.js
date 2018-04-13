@@ -3,6 +3,15 @@
 function namePrompt(name) {
 	var nL = name.toLowerCase();
 
+	//Light Theme
+	$(function() {
+		settings.getItem('theme').then(function(value) {
+		if (value == 'light') {
+				$('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+		}
+		});
+});
+
 	//Audio Template
 	var btnGroup = "<div class='btn-group' role='group'>";
 	var pauseBtn = "<button id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'>";
@@ -162,7 +171,7 @@ function namePrompt(name) {
 //Jenny - Audio
 		if (nL == "jenny") {
 			$("#name").html(
-			"Jenny, I've got your number.<br>" +
+			"Jenny, I've got your number.<br><br>" +
 			btnGroup +
 			  "<button class='btn btn-secondary btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>867-5309/Jenny</button>" +
 				pauseBtn +

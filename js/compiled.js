@@ -25,9 +25,9 @@ var btn404Counter = 0;
  * http://jsfiddle.net/QpLpG/
  */
 function simulateKeyPress(character, element) {
-    var e = $.Event('keypress');
-    e.which = character.charCodeAt(0);
-    $(element).trigger(e);
+  var e = $.Event('keypress');
+  e.which = character.charCodeAt(0);
+  $(element).trigger(e);
 }
 
 //Sleep function
@@ -37,50 +37,50 @@ function sleep(ms) {
 
 $(function () {
   //If no touchscreen, show Tooltips
-  if(!('ontouchstart' in window)) {
+  if (!('ontouchstart' in window)) {
     $('[data-toggle="tooltip"]').tooltip();
   }
   //If touchscreen, disable gray background in tab-content
-  if(('ontouchstart' in window)) {
+  if (('ontouchstart' in window)) {
     $('.tab-content').css('background-color', 'inherit');
   }
 });
 
 //Navbar current page highlight
 setTimeout(navEnable, 700);
-  function navEnable(){
-    $(function (){
-      if ($("title").html() == "InvisaMage | Home") {
-        $('#nav-home').addClass('active animated bounceIn');
-      }
-      else if ($("title").html() == "InvisaMage | News") {
-        $('#nav-news').addClass('active animated bounceIn');
-      }
-      else if ($("title").html() == "InvisaMage | Valkyrie Realms") {
-        $('#nav-mc').addClass('active');
-        $("#nav-projects").addClass("active animated bounceIn");
-      }
-      else if ($("title").html() == "InvisaMage | Floating Survival") {
-        $('#nav-fs').addClass('active');
-        $("#nav-projects").addClass("active animated bounceIn");
-      }
-      else if ($("title").html() == "InvisaMage | TxtLock") {
-        $('#nav-txtLock').addClass('active');
-        $("#nav-projects").addClass("active animated bounceIn");
-      }
-      else if ($("title").html() == "InvisaMage | TidyNT") {
-        $('#nav-tidynt').addClass('active');
-        $("#nav-projects").addClass("active animated bounceIn");
-      }
-      else if ($("title").html() == "InvisaMage | Computers") {
-        $('#nav-computers').addClass('active animated bounceIn');
-        $("#nav-resources").addClass("active");
-      }
-      else if ($("title").html() == "InvisaMage | Site Information") {
-        $('#nav-info').addClass('active animated bounceIn');
-      }
-    });
-  }
+function navEnable() {
+  $(function () {
+    if ($("title").html() == "InvisaMage | Home") {
+      $('#nav-home').addClass('active animated bounceIn');
+    }
+    else if ($("title").html() == "InvisaMage | News") {
+      $('#nav-news').addClass('active animated bounceIn');
+    }
+    else if ($("title").html() == "InvisaMage | Valkyrie Realms") {
+      $('#nav-mc').addClass('active');
+      $("#nav-projects").addClass("active animated bounceIn");
+    }
+    else if ($("title").html() == "InvisaMage | Floating Survival") {
+      $('#nav-fs').addClass('active');
+      $("#nav-projects").addClass("active animated bounceIn");
+    }
+    else if ($("title").html() == "InvisaMage | TxtLock") {
+      $('#nav-txtLock').addClass('active');
+      $("#nav-projects").addClass("active animated bounceIn");
+    }
+    else if ($("title").html() == "InvisaMage | TidyNT") {
+      $('#nav-tidynt').addClass('active');
+      $("#nav-projects").addClass("active animated bounceIn");
+    }
+    else if ($("title").html() == "InvisaMage | Computers") {
+      $('#nav-computers').addClass('active animated bounceIn');
+      $("#nav-resources").addClass("active");
+    }
+    else if ($("title").html() == "InvisaMage | Site Information") {
+      $('#nav-info').addClass('active animated bounceIn');
+    }
+  });
+}
 
 //Autofocus Personalize Message Modal
 $('#modal-personalize').on('shown.bs.modal', function () {
@@ -91,27 +91,27 @@ $('#modal-personalize').on('shown.bs.modal', function () {
 //loadSearch assets
 async function loadSearch() {
   if (searchCounter == 0) {
-    $.when( $.ready,
+    $.when($.ready,
       $.getScript('js/typeahead.min.js'),
       await sleep(500),
       $.getScript('js/search.js'),
       $.getJSON('json/search.json')
         .done(function (data) {
-        $('#search, #search-mobile').typeahead({ source: data });
-      })
-    ).then(function() {
+          $('#search, #search-mobile').typeahead({ source: data });
+        })
+    ).then(function () {
       console.log("loadSearch: Loaded assets");
       searchCounter = 1;
-    }).catch( function() {
+    }).catch(function () {
       //If fail, display message and offer to retry
-       console.log("loadSearch: One or more assets failed to load");
-       $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadSearch();'>Retry</button>", {
-         type: 'danger',
-         align: 'right',
-         delay: 999999999,
-         offset: {from: 'top', amount: 70},
-         width: 300,
-         allow_dismiss: true
+      console.log("loadSearch: One or more assets failed to load");
+      $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br><br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadSearch();'>Retry</button>", {
+        type: 'danger',
+        align: 'right',
+        delay: 999999999,
+        offset: { from: 'top', amount: 70 },
+        width: 300,
+        allow_dismiss: true
       });
     });
   }
@@ -123,27 +123,27 @@ async function loadSearch() {
 //loadNamePrompt assets
 async function loadNamePrompt() {
   if (namePromptCounter == 0) {
-    $.when( $.ready,
+    $.when($.ready,
       $.getScript('js/typeahead.min.js'),
       await sleep(500),
       $.getScript('js/namePrompt.js'),
       $.getJSON('json/namePrompt.json')
         .done(function (data) {
-        $('#name-value').typeahead({ source: data });
-      })
-    ).then(function() {
+          $('#name-value').typeahead({ source: data });
+        })
+    ).then(function () {
       console.log("loadNamePrompt: Loaded assets");
       namePromptCounter = 1;
-    }).catch( function() {
+    }).catch(function () {
       //If fail, display message and offer to retry
-       console.log("loadNamePrompt: One or more assets failed to load");
-       $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadNamePrompt();'>Retry</button>", {
-         type: 'danger',
-         align: 'right',
-         delay: 999999999,
-         offset: {from: 'top', amount: 70},
-         width: 300,
-         allow_dismiss: true
+      console.log("loadNamePrompt: One or more assets failed to load");
+      $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br><br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadNamePrompt();'>Retry</button>", {
+        type: 'danger',
+        align: 'right',
+        delay: 999999999,
+        offset: { from: 'top', amount: 70 },
+        width: 300,
+        allow_dismiss: true
       })
     });
   }
@@ -153,16 +153,16 @@ async function loadNamePrompt() {
 }
 
 //Mobile Menu select
-$('#mobile-menu select').change(function(){
-    window.location = $(this).val();
+$('#mobile-menu select').change(function () {
+  window.location = $(this).val();
 });
 
 //Scroll to target in URL after page load
-$(function() {
-setTimeout(enable, 900);
-  function enable(){
+$(function () {
+  setTimeout(enable, 900);
+  function enable() {
     var test = $('*:target').offset().top;
-    $("html, body").animate({ scrollTop: test -200 }, 1000);
+    $("html, body").animate({ scrollTop: test - 200 }, 1000);
   }
 });
 
@@ -170,73 +170,72 @@ setTimeout(enable, 900);
 function loadSnowstorm() {
   $.getScript('js/snowstorm.js');
   $('#footer-snowstorm').tooltip('dispose');
-  $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
   //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
+  if (!('ontouchstart' in window)) {
     $('[data-toggle="tooltip"]').tooltip();
   }
 }
 
 //Loads snowstorm assets and enables for namePrompt easter egg
-function loadSnowstormNamePrompt(){
+function loadSnowstormNamePrompt() {
   setTimeout(enable, 500);
   $.getScript('js/snowstorm.js');
-  $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
-    function enable(){
-      purplerainCheck();
-      snowStorm.toggleSnow();
-    }
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+  function enable() {
+    purplerainCheck();
+    snowStorm.toggleSnow();
+  }
 }
 
 //Shortcuts
 //Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift space", async function() {
+listener.simple_combo("shift space", async function () {
   //Inform user of progress
   $.bootstrapGrowl("Loading assets...", {
     type: 'info',
     align: 'right',
     delay: 1500,
-    offset: {from: 'top', amount: 70},
+    offset: { from: 'top', amount: 70 },
     width: 300,
     allow_dismiss: true
   });
   //Get scripts if not already loaded
   if (termCounter == 0) {
-    $.when( $.ready,
+    $.when($.ready,
       $.getScript('js/jquery.terminal.min.js'),
       await sleep(500),
       $.getScript('js/terminal.js'),
       $.ajax({
-  			url:"./css/jquery.terminal.css",
-  			dataType:"script",
-  			success:function(data){
-  				 $("<style></style>").appendTo("head").html(data);
-  				 //loading complete code here
-  			}
+        url: "./css/jquery.terminal.css",
+        dataType: "script",
+        success: function (data) {
+          $("<style></style>").appendTo("head").html(data);
+          //loading complete code here
+        }
       })
-    ).then(function() {
+    ).then(function () {
       console.log("KeyCombo Terminal: Loaded assets");
       $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
         type: 'success',
         align: 'right',
         delay: 2000,
-        offset: {from: 'top', amount: 70},
+        offset: { from: 'top', amount: 70 },
         width: 300,
         allow_dismiss: true
       });
       termCounter = 1;
-    }).catch( function() {
+    }).catch(function () {
       //If fail, display message and offer to retry
-       console.log("KeyCombo Terminal: One or more assets failed to load");
-       $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
-         type: 'danger',
-         align: 'right',
-         delay: 999999999,
-         offset: {from: 'top', amount: 70},
-         width: 300,
-         allow_dismiss: true
+      console.log("KeyCombo Terminal: One or more assets failed to load");
+      $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
+        type: 'danger',
+        align: 'right',
+        delay: 999999999,
+        offset: { from: 'top', amount: 70 },
+        width: 300,
+        allow_dismiss: true
       })
     });
   }
@@ -246,7 +245,7 @@ listener.simple_combo("shift space", async function() {
       type: 'danger',
       align: 'right',
       delay: 1500,
-      offset: {from: 'top', amount: 70},
+      offset: { from: 'top', amount: 70 },
       width: 300,
       allow_dismiss: true
     });
@@ -261,27 +260,27 @@ function hideModals() {
 
 //Focus search box with Ctrl + Alt + F key press
 var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl alt f", function() {
-    $('input').focus();
+listener.simple_combo("ctrl alt f", function () {
+  $('input').focus();
 });
 
 //Settings
 var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl alt c", function() {
+listener.simple_combo("ctrl alt c", function () {
   hideModals();
   loadSettingsMod();
 });
 
 //Stats
 var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl alt s", function() {
+listener.simple_combo("ctrl alt s", function () {
   hideModals();
   loadStatsMod();
 });
 
 //Achievements
 var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl alt a", function() {
+listener.simple_combo("ctrl alt a", function () {
   hideModals();
   loadAchievementsMod();
 });
@@ -351,7 +350,7 @@ function settingsCheck() {
   $.bootstrapGrowl("Settings Saved!", {
     type: 'success',
     align: 'right',
-    offset: {from: 'top', amount: 70},
+    offset: { from: 'top', amount: 70 },
     width: 'auto',
     delay: 10000,
     allow_dismiss: true
@@ -359,31 +358,31 @@ function settingsCheck() {
   $.bootstrapGrowl("<strong>Reloading page...</strong>", {
     type: 'danger',
     align: 'center',
-    offset: {from: 'top', amount: 70},
+    offset: { from: 'top', amount: 70 },
     width: 'auto',
     delay: 10000,
     allow_dismiss: true
   });
-  function enable(){
+  function enable() {
     location.reload();
   }
 }
 
 //Settings modal cancel message
 function settingsCancelMsg() {
-    $.bootstrapGrowl("Changes have not been saved!", {
-      type: 'danger',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      delay: 2000,
-      allow_dismiss: true
-    });
+  $.bootstrapGrowl("Changes have not been saved!", {
+    type: 'danger',
+    align: 'right',
+    offset: { from: 'top', amount: 70 },
+    width: 'auto',
+    delay: 2000,
+    allow_dismiss: true
+  });
 }
 
 //Set background color
-$(function() {
-  settings.getItem('backgroundColor').then(function(value) {
+$(function () {
+  settings.getItem('backgroundColor').then(function (value) {
     $('body').css("background-color", value);
     console.log("backgroundColor = " + value);
   });
@@ -391,42 +390,42 @@ $(function() {
 
 //Check if Load Terminal on page load? is set to yes, if yes, load terminal assets.
 async function onPageLoadTerm() {
-  settings.getItem('loadTerminal').then(async function(value) {
+  settings.getItem('loadTerminal').then(async function (value) {
     if (value == 'true') {
       //Get scripts
-      $.when( $.ready,
+      $.when($.ready,
         $.getScript('js/jquery.terminal.min.js'),
         await sleep(500),
         $.getScript('js/terminal.js'),
         $.ajax({
-          url:"./css/jquery.terminal.css",
-          dataType:"script",
-          success:function(data){
-             $("<style></style>").appendTo("head").html(data);
-             //loading complete code here
+          url: "./css/jquery.terminal.css",
+          dataType: "script",
+          success: function (data) {
+            $("<style></style>").appendTo("head").html(data);
+            //loading complete code here
           }
         })
-      ).then(function() {
+      ).then(function () {
         console.log("onPageLoadTerm: Loaded assets");
         $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>", {
           type: 'success',
           align: 'right',
           delay: 4000,
-          offset: {from: 'top', amount: 70},
+          offset: { from: 'top', amount: 70 },
           width: 300,
           allow_dismiss: true
         });
         termCounter = 1;
-      }).catch( function() {
+      }).catch(function () {
         //If fail, display message and offer to retry
-         console.log("onPageLoadTerm: One or more assets failed to load");
-         $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
-           type: 'danger',
-           align: 'right',
-           delay: 2000,
-           offset: {from: 'top', amount: 70},
-           width: 300,
-           allow_dismiss: true
+        console.log("onPageLoadTerm: One or more assets failed to load");
+        $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
+          type: 'danger',
+          align: 'right',
+          delay: 2000,
+          offset: { from: 'top', amount: 70 },
+          width: 300,
+          allow_dismiss: true
         })
       });
     }
@@ -435,14 +434,14 @@ async function onPageLoadTerm() {
 }
 
 //Load when page loads - done so async works
-$(function(){
+$(function () {
   onPageLoadTerm();
   onPageLoadTermToggle();
 });
 
 //Check if Terminal needs to be toggled
 async function onPageLoadTermToggle() {
-  settings.getItem('toggleTerminal').then(async function(value) {
+  settings.getItem('toggleTerminal').then(async function (value) {
     if (value == 'true') {
       await sleep(1000);
       simulateKeyPress("`", 'body');
@@ -452,8 +451,8 @@ async function onPageLoadTermToggle() {
 }
 
 //Check which tab needs to be opened on News page.
-$(function() {
-  settings.getItem('defaultTab').then(function(value) {
+$(function () {
+  settings.getItem('defaultTab').then(function (value) {
     if (value == 'projects') {
       $('#tabs li:eq(0) a').tab('show');
       $('#pills li:eq(0) a').tab('show');
@@ -475,7 +474,7 @@ $(function() {
 });
 
 //Check if Events Banner needs to be shown on Homepage
-$(function() {
+$(function () {
   //Check date to know if events needs to be loaded
   var date = new Date();
   var dates = ['01', '44', '64', '828', '931', '1124', '1125'];
@@ -484,9 +483,9 @@ $(function() {
   var day = date.getDate().toString();
   var mD = month + day;
 
-  settings.getItem('enableEventsBanner').then(function(value) {
+  settings.getItem('enableEventsBanner').then(function (value) {
     if (value == 'true') {
-      if(dates.indexOf(mD) != -1) {
+      if (dates.indexOf(mD) != -1) {
         $('#ajax-event-banner').load('ajax/alerts/alert-events.html');
       }
     }
@@ -495,7 +494,7 @@ $(function() {
 });
 
 //Check if Info Banner needs to be shown on homepage
-settings.getItem('enableInfoBanner').then(function(value) {
+settings.getItem('enableInfoBanner').then(function (value) {
   if (value == 'true') {
     $('#ajax-info-banner').load('ajax/alerts/alert-info.html');
   }
@@ -503,7 +502,7 @@ settings.getItem('enableInfoBanner').then(function(value) {
 });
 
 //Check if Cookie Banner needs to be shown on homepage
-settings.getItem('enableCookiesBanner').then(function(value) {
+settings.getItem('enableCookiesBanner').then(function (value) {
   if (value == 'true') {
     $('#ajax-cookies-banner').load('ajax/alerts/alert-cookies.html');
   }
@@ -511,8 +510,8 @@ settings.getItem('enableCookiesBanner').then(function(value) {
 });
 
 //Check if Banners needs to be shown on Terms and Privacy page
-$(function() {
-  settings.getItem('enableTacBanner').then(function(value) {
+$(function () {
+  settings.getItem('enableTacBanner').then(function (value) {
     if (value == 'true') {
       if (($("title").html() == "InvisaMage | Terms") || ($("title").html() == "InvisaMage | Privacy")) {
         $('#info-accept').focus()
@@ -523,14 +522,14 @@ $(function() {
 });
 
 //Check if Snowstorm needs to be loaded on page load
-$(function() {
-  settings.getItem('enableSnowstorm').then(function(value) {
+$(function () {
+  settings.getItem('enableSnowstorm').then(function (value) {
     if (value == 'true') {
       setTimeout(enable, 500);
       loadSnowstorm();
-      function enable(){
+      function enable() {
         snowStorm.toggleSnow();
-        $('#footer-snowstorm').replaceWith( "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>" );
+        $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
       }
       purplerainCheck();
     }
@@ -541,11 +540,11 @@ $(function() {
 //Temporary workaround for settings bug
 //Forces to set banner cookies if they have not been set yet
 //Banner - Events
-$(function() {
+$(function () {
   settings.getItem('enableEventsBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableEventsBanner', 'true').then(function (value) {
-          console.log(value);
+        console.log(value);
       });
     }
   });
@@ -553,7 +552,7 @@ $(function() {
   settings.getItem('enableInfoBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableInfoBanner', 'true').then(function (value) {
-          console.log(value);
+        console.log(value);
       });
     }
   });
@@ -561,7 +560,7 @@ $(function() {
   settings.getItem('enableCookiesBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableCookiesBanner', 'true').then(function (value) {
-          console.log(value);
+        console.log(value);
       });
     }
   });
@@ -569,15 +568,15 @@ $(function() {
   settings.getItem('enableTacBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableTacBanner', 'true').then(function (value) {
-          console.log(value);
+        console.log(value);
       });
     }
   });
 });
 
 //Check which theme to apply
-$(function() {
-  settings.getItem('theme').then(function(value) {
+$(function () {
+  settings.getItem('theme').then(function (value) {
     if (value == 'light') {
       themeLight();
     }
@@ -596,8 +595,8 @@ function themeLight() {
 }
 
 //Check if centered modals need to be applied
-$(function() {
-  settings.getItem('centeredModals').then(function(value) {
+$(function () {
+  settings.getItem('centeredModals').then(function (value) {
     if (value == 'true') {
       $('.modal-dialog').addClass('modal-dialog-centered');
     }
@@ -606,7 +605,7 @@ $(function() {
 });
 
 //Check if Growl should be loaded
-settings.getItem('silentMode').then(function(value) {
+settings.getItem('silentMode').then(function (value) {
   if (value != 'true') {
     $.getScript('js/growl.min.js')
   }
@@ -615,14 +614,14 @@ settings.getItem('silentMode').then(function(value) {
 
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
-  achievements.getItem('eastereggAchievement').then(function(value) {
+  achievements.getItem('eastereggAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
-        offset: {from: 'top', amount: 70},
+        offset: { from: 'top', amount: 70 },
         width: 300,
         delay: 10000,
         allow_dismiss: true
@@ -635,14 +634,14 @@ function eastereggCheck() {
 
 //Used to see if Terminal Achievement message should be displayed.
 function terminalCheck() {
-  achievements.getItem('terminalAchievement').then(function(value) {
+  achievements.getItem('terminalAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
-        offset: {from: 'top', amount: 70},
+        offset: { from: 'top', amount: 70 },
         width: 300,
         delay: 10000,
         allow_dismiss: true
@@ -655,14 +654,14 @@ function terminalCheck() {
 
 //Used to see if Unlimited Power Achievement message should be displayed.
 function unlimitedPowerCheck() {
-  achievements.getItem('unlimitedPowerAchievement').then(function(value) {
+  achievements.getItem('unlimitedPowerAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Unlimited POWER!<br><br>Change to the super user account. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
-        offset: {from: 'top', amount: 70},
+        offset: { from: 'top', amount: 70 },
         width: 300,
         delay: 10000,
         allow_dismiss: true
@@ -675,14 +674,14 @@ function unlimitedPowerCheck() {
 
 //Used to see if Wisely Achievement message should be displayed.
 function wiselyCheck() {
-  achievements.getItem('wiselyAchievement').then(function(value) {
+  achievements.getItem('wiselyAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
-        offset: {from: 'top', amount: 70},
+        offset: { from: 'top', amount: 70 },
         width: 300,
         delay: 10000,
         allow_dismiss: true
@@ -695,16 +694,16 @@ function wiselyCheck() {
 
 //Used to see if Wisely Achievement message should be displayed.
 function purplerainCheck() {
-  achievements.getItem('purplerainAchievement').then(function(value) {
+  achievements.getItem('purplerainAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      settings.getItem('theme').then(function(value) {
+      settings.getItem('theme').then(function (value) {
         if (value == 'light') {
           $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
             type: 'info',
             align: 'right',
-            offset: {from: 'top', amount: 70},
+            offset: { from: 'top', amount: 70 },
             width: 300,
             delay: 10000,
             allow_dismiss: true
@@ -719,11 +718,11 @@ function purplerainCheck() {
 
 //Check if Achievements icon needs to be gold
 function goldCheck() {
-  var keys = ['eastereggAchievement','terminalAchievement','unlimitedPowerAchievement', 'wiselyAchievement', 'hallucinatingAchievement', 'purplerainAchievement'];
+  var keys = ['eastereggAchievement', 'terminalAchievement', 'unlimitedPowerAchievement', 'wiselyAchievement', 'hallucinatingAchievement', 'purplerainAchievement'];
 
-  achievements.getItems(keys).then(function(results) {
-    if (results.eastereggAchievement == 'true' && results.terminalAchievement == 'true' && results.unlimitedPowerAchievement == 'true' && results.wiselyAchievement == 'true' && results.hallucinatingAchievement == 'true' && results.purplerainAchievement == 'true')  {
-      $("#achievements-star, #achievements-star-mobile ").css('color','gold');
+  achievements.getItems(keys).then(function (results) {
+    if (results.eastereggAchievement == 'true' && results.terminalAchievement == 'true' && results.unlimitedPowerAchievement == 'true' && results.wiselyAchievement == 'true' && results.hallucinatingAchievement == 'true' && results.purplerainAchievement == 'true') {
+      $("#achievements-star, #achievements-star-mobile ").css('color', 'gold');
       console.log("Changed achievements icon color");
     }
   });
@@ -738,7 +737,7 @@ function clearLocalStorage() {
   $.bootstrapGrowl("All local storage databases have been removed!", {
     type: 'info',
     align: 'right',
-    offset: {from: 'top', amount: 70},
+    offset: { from: 'top', amount: 70 },
     width: 'auto',
     allow_dismiss: true
   });
@@ -750,14 +749,14 @@ function loadAchievementsMod() {
   $('#modal-achievements').modal();
 }
 function loadAdsMod() {
-  achievements.getItem('hallucinatingAchievement').then(function(value) {
+  achievements.getItem('hallucinatingAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
         type: 'info',
         align: 'right',
-        offset: {from: 'top', amount: 70},
+        offset: { from: 'top', amount: 70 },
         width: 300,
         delay: 10000,
         allow_dismiss: true
@@ -833,7 +832,7 @@ function loadClearLocalStorageMod() {
 function btn404() {
   if (btn404Counter % 2 === 0) {
     $("#btn-404-icon").attr("data-fa-transform", "rotate-180");
-  } 
+  }
   else {
     $("#btn-404-icon").attr("data-fa-transform", "rotate-360");
   }

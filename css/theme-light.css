@@ -1,13 +1,13 @@
 /* Proudly Coded by Travis Kipp */
 /* Created August 19, 2016 */
 /* InvisaMage's Website Light Theme */
-/* Only changes styles which need to be changed (will not work without styles.css)*/
+/* Overrides styles from styles.css*/
 
 /* Entire Body */
 body {
 	background-color: #d9d9d9;
 	text-align: center;
-	color: black;
+	color: #212529;
 }
 
 ::selection {
@@ -24,46 +24,60 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #c156ff;
+  color: #000;
 }
 
 .title {
-  	color: #c156ff;
-    text-decoration: none;
-    text-decoration-color: -moz-use-text-color;
-    text-decoration-line: none;
-    text-decoration-style: solid;
-    text-shadow: 0px 0px 1px;
+  color: #000;
 	font-size: 300%;
 	transition: .3s;
 }
 .title:hover {
-	color: #B23380;
+	color: gray;
 }
 
-/* Definition - Underline From Centre - Gray color */
-.definition {
-	color: #579600 !important;
-}
-.definition:hover {
-	color: #579600 !important;
-}
-.definition:before {
-	background: black;
-	z-index: 1;
-}
-
-#menu-news, #menu-fs, #menu-mc, #menu-txtlock, #menu-terms, #menu-privacy, #menu-info, #menu-tidynt {
+.menu-news, .menu-fs, .menu-mc, .menu-txtlock, .menu-terms, .menu-privacy, .menu-info, .menu-tidynt {
   background-color: rgba(230, 230, 230, 0.8);
 }
-#menu-news a, #menu-fs a, #menu-mc a, #menu-txtlock a, #menu-terms a, #menu-privacy a, #menu-info a, #menu-tidynt a {
+.menu-news a, .menu-fs a, .menu-mc a, .menu-txtlock a, .menu-terms a, .menu-privacy a, .menu-info a, .menu-tidynt a {
+  color: #0066ff;
+}
+.menu-news li a:hover, .menu-fs li a:hover, .menu-mc li a:hover, .menu-txtlock li a:hover, .menu-terms li a:hover, .menu-privacy li a:hover, .menu-info li a:hover, .menu-tidynt li a:hover {
   color: black;
 }
-#menu-news li a:hover, #menu-fs li a:hover, #menu-mc li a:hover, #menu-txtlock li a:hover, #menu-terms li a:hover, #menu-privacy li a:hover, #menu-info li a:hover, #menu-tidynt li a:hover {
-  color: #c156ff;
+.menu-news li:hover, .menu-fs li:hover, .menu-mc li:hover, .menu-txtlock li:hover, .menu-terms li:hover, .menu-privacy li:hover, .menu-info li:hover, .menu-tidynt li:hover {
+  background-color: #FFD42B;
 }
-#menu-news li:hover, #menu-fs li:hover, #menu-mc li:hover, #menu-txtlock li:hover, #menu-terms li:hover, #menu-privacy li:hover, #menu-info li:hover, #menu-tidynt li:hover {
-  background-color: #d2d9df;
+
+.menu-news li {
+	color: #000 !important;
+}
+
+/* News Pills */
+.nav-pills-news .nav-link.active, .show > .nav-pills .nav-link-news {
+	background-color: #e3e3e3;
+	border: 1px solid black;
+	color: #000;
+}
+.nav-pills-news .nav-link-news {
+	color: #0066ff;
+}
+.nav-pills-news .nav-link-news:hover {
+	background-color: #e3e3e3;
+	color: #000 !important;
+}
+
+/* Home Pills */
+.nav-pills-home .nav-link.active, .show > .nav-pills .nav-link-home {
+	background-color: #e3e3e3;
+	color: #000;
+}
+.nav-pills-home .nav-link-home {
+	color: #0066ff;
+}
+.nav-pills-home .nav-link-home:hover {
+	background-color: #e3e3e3;
+	color: #000 !important;
 }
 
 .panel-body, .panel-footer, .panel-header-top, .panel-header-top-2 {
@@ -78,19 +92,40 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0px;
 }
 
+/* Default Link */
 .link {
-  color: #0066ff;
+  color: #0066ff !important;
 }
 .link:hover {
-	color: #579600 !important;
+	background: #FFD42B;
+	color: black !important;
+	border-bottom: none;
+	box-shadow: none;
+	transition: background none;
 }
 .link:before {
 	z-index: 1;
-	background: #FF6600; /* Underline Color */
+	background: black; /* Underline Color */
 	height: 2px;
 }
 
+/* Definition */
+.definition {
+	color: black !important;
+	background: #FFD42B;
+	text-decoration-line: underline
+}
+.definition:hover {
+	color: black !important;
+	border-bottom: none;
+	box-shadow: none;
+	transition: background none;
+}
+
 /* News Tabs */
+.nav-tabs-news .nav-link-news {
+	color: #0066ff;
+}
 .nav-tabs-news {
   border-bottom: 1px solid black;
 }
@@ -99,11 +134,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news.active {
 	background-color: rgba(230, 230, 230, 0.8) !important;
-	color: #579600;
+	color: #000;
 	border-bottom-color: rgba(230, 230, 230, 0.8) !important;
 }
 .nav-tabs-news .nav-item-news.show .nav-link-news, .nav-tabs-news .nav-link-news:hover {
-	color: #579600;
+	color: #000;
 }
 .nav-tabs-news .nav-link-news:hover {
 	border-color: #343A40 #343A40 transparent #343A40;
@@ -124,16 +159,19 @@ h1, h2, h3, h4, h5, h6 {
 .nav-pills > li.active > a,
 .nav-pills > li.active > li:hover,
 .nav-pills > li.active > a:focus {
-  color: #0066ff;
+  color: #0066ff !important;
   background-color: rgba(230, 230, 230, 0.8);
   border: 1px solid black;
 }
 .nav-pills li a:hover {
-	color: #0066ff;
+	color: #0066ff !important;
   background-color: rgba(230, 230, 230, 0.8);
 }
 
 /* Home Tabs */
+.nav-tabs-home .nav-link-home {
+	color: #0066ff;
+}
 .nav-tabs-home {
   border-bottom: 1px solid black;
 }
@@ -142,11 +180,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-tabs-home .nav-item-home.show .nav-link-home, .nav-tabs-home .nav-link-home.active {
 	background-color: rgba(230, 230, 230, 0.9) !important;
-	color: #579600;
+	color: #000;
 	border-bottom-color: rgba(230, 230, 230, 0.9) !important;
 }
 .nav-tabs-home .nav-item-home.show .nav-link-home, .nav-tabs-home .nav-link-home:hover {
-	color: #579600;
+	color: #000;
 }
 .nav-tabs-home .nav-link-home:hover {
 	border-color: #343A40 #343A40 transparent #343A40;
@@ -156,25 +194,21 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: rgba(230, 230, 230, 0.9);
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-color: #e7e7e7;
-	color: #555;
-}
-.dropdown-menu > li > a {
-	color: #555;
-}
 .dropdown-menu {
-	background-color: #F8F8F8;
+	background-color: #fff;
+}
+.dropdown-item {
+	color: #000;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+	background-color: #d9d9d9;
+	color: #000;
 }
 
 footer {
 	background-color: #E9ECEF;
 }
 
-footer h4 {
-  color: #c156ff;
-}
 .modal-title, .modal-body {
 	color: black;
 }
@@ -191,13 +225,10 @@ footer h4 {
   outline: 0;
 }
 .modal-footer {
-  padding: 15px;
-  text-align: right;
   border-top: 1px solid #e5e5e5;
 	background-color: #F0F1F2;
 }
 .modal-header {
-  padding: 15px;
   border-bottom: 1px solid #e5e5e5;
 	background-color: #F0F1F2;
 }
@@ -211,7 +242,7 @@ footer h4 {
 }
 
 .text-success {
-  color: #3c763d;
+  color: #007829;
 }
 
 .text-danger {
@@ -222,20 +253,14 @@ footer h4 {
 .popover {
 	background-color: #ffffff;
 }
-.popover.top .arrow:after {
-  border-top-color: white;
-}
-.popover.right .arrow:after {
-  border-right-color: white;
-}
-.popover-title {
+.popover-header {
     color: black;
 		font-weight: bold;
     font-size: 15px;
 		background-color: #f7f7f7;
 		border-bottom-color: #ebebeb;
 }
-.popover-content {
+.popover-body {
     color: black;
     font-size: 14px;
 		background-color: #ffffff;
@@ -288,6 +313,11 @@ kbd {
 	background-color: #d2d9df;
 }
 */
+
+/* Override Typeahead dropdown Menu */
+.dropdown-menu .active .dropdown-item {
+	background-color: #d9d9d9 !important;
+}
 
 .jumbotron {
 	background-color: #f8f9fa;

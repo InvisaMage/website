@@ -1,4 +1,5 @@
 (function($) {
+    $.getScript('js/star_wars.js');
     //Change opacity
     var settings = localforage.createInstance({
       name: "settings"
@@ -27,7 +28,7 @@
         }
         this.addClass('tilda');
         options = options || {};
-        eval = eval || function(command, term) {
+        eval = eval || function(command, terminal) {
             term.echo("you don't set eval for tilda");
         };
         var settings = {
@@ -38,11 +39,16 @@
             completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert',
             'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history'],
             greetings: 'Welcome to the Terminal | Copyright (c) 2014-2018\nType \'help\' to view a list of commands.\nPress ~ to exit.',
-            keypress: function(e) {
-                if (e.which == 96) {
-                    return false;
-                }
-            }
+            keypress: function(e, terminal) {
+              if (e.which == 96) {
+                  return false;
+              }
+              if (e.which == 68 && e.which == 17) {
+                  stop = true;
+                  terminal.resume();
+                  return false;
+              }
+          }
         };
         if (options) {
             $.extend(settings, options);
@@ -91,6 +97,46 @@ jQuery(document).ready(function($) {
     users.toString();
     var usersList = users.join(", ");
 
+    //Star Wars Animation
+    var frames = [];
+    var LINES_PER_FRAME = 14;
+    var DELAY = 67;
+    //star_wars is array of lines from 'js/star_wars.js'
+    var lines = star_wars.length;
+    for (var i=0; i<lines; i+=LINES_PER_FRAME) {
+        frames.push(star_wars.slice(i, i+LINES_PER_FRAME));
+    }
+    var stop = false;
+
+
+    function play(terminal, delay) {
+      var i = 0;
+      var next_delay;
+      if (delay == undefined) {
+          delay = DELAY;
+      }
+      function display() {
+          if (i == frames.length) {
+              i = 0;
+          }
+          terminal.clear();
+          if (frames[i][0].match(/[0-9]+/)) {
+              next_delay = frames[i][0] * delay;
+          } else {
+              next_delay = delay;
+          }
+          terminal.echo(frames[i++].slice(1).join('\n')+'\n');
+          if (!stop) {
+              setTimeout(display, next_delay);
+          } else {
+              terminal.clear();
+              greetings(terminal);
+              i = 0;
+          }
+      }
+      display();
+    }
+
     function getSettings() {
       settings.iterate(function(value, key, iterationNumber) {terminal.echo(key + ' = ' + value);}).catch(function(err) {terminal.echo(err);});
     }
@@ -112,7 +158,7 @@ jQuery(document).ready(function($) {
       }
       else if (cmd.args == 'modal') {
         terminal.echo('   modal - Load a modal');
-        terminal.echo('   Usage: modal [ (-o | -c) ' + modalsList + ']');
+        terminal.echo('   Usage: modal [(-o | -c) <modal name>]');
         terminal.echo('   ');
         terminal.echo('   -o, --open');
         terminal.echo('      Opens modal');
@@ -653,6 +699,11 @@ jQuery(document).ready(function($) {
 
       }
     }
+    else if (cmd.name == 'starwars') {
+      terminal.pause();
+      stop = false;
+      play(terminal);
+    }
     //namePrompt
     else if (cmd.name == 'name') {
       $.when( $.ready,
@@ -773,7 +824,7 @@ jQuery(document).ready(function($) {
     }
     //Unknown command
     else {
-      terminal.echo('Unknown command');
+      terminal.echo("Unknown command\nType 'help' to view a list of commands.");
     }
   });
 });

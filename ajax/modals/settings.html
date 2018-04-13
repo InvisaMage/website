@@ -204,7 +204,7 @@
   $(function() {
     settings.getItem('theme').then(function(value) {
       if (value == 'light') {
-        $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
+        $('.btn.btn-dark').removeClass('btn-dark').addClass('btn-secondary');
         $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
       }
     });

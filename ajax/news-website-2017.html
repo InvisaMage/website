@@ -380,6 +380,15 @@
 
 <!--Reinitiate Scripts-->
 <script>
+    //Light Theme
+    $(function() {
+        settings.getItem('theme').then(function(value) {
+        if (value == 'light') {
+            $('.card.bg-dark').removeClass('bg-dark').addClass('bg-light');
+        }
+        });
+    });
+
     //If no touchscreen, show Tooltips
     $(function() {
         if (!('ontouchstart' in window)) {
