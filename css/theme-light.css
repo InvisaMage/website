@@ -314,6 +314,10 @@ kbd {
 }
 */
 
+#collapse-heading {
+	color: #0066ff;
+}
+
 /* Override Typeahead dropdown Menu */
 .dropdown-menu .active .dropdown-item {
 	background-color: #d9d9d9 !important;

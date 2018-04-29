@@ -206,8 +206,8 @@
  .cmd > div::-moz-selection,
  .cmd > div span::-moz-selection,
  .cmd .prompt span::-moz-selection {
-     background-color: #fff;
-     color: #22262a;
+     background-color: #000;
+     color: #fff;
  }
  /* this don't work in Chrome
  .terminal tr td::-moz-selection {
@@ -239,8 +239,8 @@
       * use rgba to fix transparent selection in chrome
       * http://stackoverflow.com/questions/7224445/css3-selection-behaves-differently-in-ff-chrome
       */
-     background-color: rgba(170, 170, 170, 0.99);
-     color: #22262a;
+     background-color: rgba(0, 0, 0, 0.99);
+     color: #fff;
  }
  .terminal .terminal-output div.error, .terminal .terminal-output div.error div {
      color: #DC3545;
@@ -451,7 +451,7 @@
  @supports (--css: variables) {
      .terminal, .cmd {
          color: var(--color, #fff);
-         background-color: var(--background, #22262a);
+         background-color: var(--background, none);
      }
      .terminal .font {
          width: calc(var(--size, 1) * 1em);
@@ -482,7 +482,7 @@
              -ms-animation: var(--animation, terminal-blink) 1s infinite steps(1, start);
                  animation: var(--animation, terminal-blink) 1s infinite steps(1, start);
          color: var(--color, #fff);
-         background-color: var(--background, #22262a);
+         background-color: var(--background, none);
      }
      .terminal h1::-moz-selection,
      .terminal h2::-moz-selection,
@@ -501,8 +501,8 @@
      .cmd > div::-moz-selection,
      .cmd > div span::-moz-selection,
      .cmd .prompt span::-moz-selection {
-         background-color: var(--color, #fff);
-         color: var(--background, #22262a);
+         background-color: var(--color, #000);
+         color: var(--background, #fff);
      }
      .terminal h1::selection,
      .terminal h2::selection,
@@ -521,8 +521,8 @@
      .cmd > div::selection,
      .cmd > div span::selection,
      .cmd .prompt span::selection {
-         background-color: var(--color, rgba(170, 170, 170, 0.99));
-         color: var(--background, #22262a);
+         background-color: var(--color, rgba(0, 0, 0, 0.99));
+         color: var(--background, #fff);
      }
      @-webkit-keyframes terminal-blink {
        0%, 100% {
@@ -537,7 +537,7 @@
  
      @-ms-keyframes terminal-blink {
        0%, 100% {
-           background-color: var(--background, #22262a);
+           background-color: var(--background, none);
            color: var(--color, #fff);
        }
        50% {
@@ -547,7 +547,7 @@
      }
      @-moz-keyframes terminal-blink {
        0%, 100% {
-           background-color: var(--background, #22262a);
+           background-color: var(--background, none);
            color: var(--color, #fff);
        }
        50% {
@@ -557,7 +557,7 @@
      }
      @keyframes terminal-blink {
        0%, 100% {
-           background-color: var(--background, #22262a);
+           background-color: var(--background, none);
            color: var(--color, #fff);
        }
        50% {
@@ -691,8 +691,8 @@
      .cmd > div::selection,
      .cmd > div span::selection,
      .cmd .prompt span::selection {
-         background-color: rgba(170, 170, 170, 0.99);
-         color: #22262a;
+         background-color: rgba(0, 0, 0, 0.99);
+         color: #fff;
      }
  }
  

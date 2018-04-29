@@ -256,7 +256,9 @@
 
   //Re enable tooltips.
   if(!('ontouchstart' in window)) {
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({
+      trigger: 'hover',
+    });
   }
 
   //Checks which inputs should be selected

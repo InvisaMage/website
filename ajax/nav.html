@@ -57,11 +57,11 @@
   <hr class="d-xl-none">
 
   <!--Search-->
-  <div class="d-inline">
+  <div class="d-none d-xl-inline">
     <div class="input-group mx-auto" style="max-width:15rem;">
-      <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search();" onclick="loadSearch();">
+      <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search(document.getElementById('search').value);" onfocus="loadSearch();">
       <span class="input-group-append">
-        <button class="btn btn-secondary" type="button" onclick="search();">
+        <button class="btn btn-secondary" type="button" onclick="search(document.getElementById('search').value)">
           <i class="fa fa-search" aria-hidden="true"></i>
         </button>
         <button class="btn btn-outline-info" type="button" onclick="loadSearchHelpMod();">
@@ -69,6 +69,18 @@
         </button>
       </span>
     </div><!-- /.input-group -->
+  </div>
+
+  <!--Search Mobile-->
+  <div class="nav justify-content-center d-xl-none">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-secondary" onclick="loadSearchMod(); loadSearch();">
+        <i class="fas fa-search"></i> Search
+      </button>
+      <button class="btn btn-outline-info" type="button" onclick="loadSearchHelpMod();">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </button>
+    </div>
   </div>
 
   <hr class="d-xl-none">

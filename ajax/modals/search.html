@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<!--Search Modal-->
+<div class="modal-dialog modal-sm" id="ajax-search">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Search</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div onkeydown="if (event.keyCode == 13) search(document.getElementById('search-mobile').value), $('#modal-search').modal('toggle');"
+                class="center-block">
+                <input class="form-control" id="search-mobile" autocomplete="off" placeholder="Type to search">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+                <i class="fa fa-times" aria-hidden="true"></i> Close
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="search(document.getElementById('search-mobile').value)">
+            Search
+                <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+        </div>
+        <!-- /.modal-footer-->
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-search -->
+
+<script>
+    $(function () {
+        settings.getItem('centeredModals').then(function (value) {
+            if (value == 'true') {
+                $('.modal-dialog').addClass('modal-dialog-centered');
+            }
+            console.log('centeredModals = ' + value);
+        });
+        $('#modal-search').on('shown.bs.modal', function () {
+            $('#search-mobile').focus();
+            $('#search-mobile').select();
+        });
+    });
+</script>

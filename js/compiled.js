@@ -20,6 +20,16 @@ var namePromptCounter = 0;
 var searchCounter = 0;
 var btn404Counter = 0;
 
+//Libraries
+var jqueryVer = '3.3.1';
+var bootstrapVer = '4.1.0';
+var fontawesomeVer = '5.0.10';
+var jqueryterminalVer = '1.14.0';
+var localforageVer = '1.7.1';
+var keypressVer = '2.1.5';
+var konamiVer = '1.6.0';
+var snowstormVer = '1.44.20131208';
+
 /* Simulate key press
  * https://stackoverflow.com/questions/22274728/simulate-a-keyboard-key-pressed-with-dispatchevent-of-keypress#22274892
  * http://jsfiddle.net/QpLpG/
@@ -188,6 +198,12 @@ function loadSnowstormNamePrompt() {
   }
 }
 
+//List of easter eggs
+var easter_egg = new Konami(function() {
+	loadEastereggsMod();
+	eastereggCheck();
+});
+
 //Shortcuts
 //Loads terminal modal on Shift + Space key combination
 var listener = new window.keypress.Listener();
@@ -217,7 +233,7 @@ listener.simple_combo("shift space", async function () {
       })
     ).then(function () {
       console.log("KeyCombo Terminal: Loaded assets");
-      $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open.", {
+      $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>~</kbd> key to open.", {
         type: 'success',
         align: 'right',
         delay: 2000,
@@ -407,7 +423,7 @@ async function onPageLoadTerm() {
         })
       ).then(function () {
         console.log("onPageLoadTerm: Loaded assets");
-        $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>`</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>", {
+        $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>~</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>", {
           type: 'success',
           align: 'right',
           delay: 4000,
@@ -427,9 +443,9 @@ async function onPageLoadTerm() {
           width: 300,
           allow_dismiss: true
         })
-      });
+      });;
     }
-    console.log('theme = ' + value);
+    console.log('OnPageLoadTerm = ' + value);
   });
 }
 
@@ -586,12 +602,12 @@ $(function () {
 
 //Light theme
 function themeLight() {
+  $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
   $('.card').removeClass('bg-dark').addClass('bg-light');
   //$('button').removeClass('btn-light').addClass('btn-secondary');
   $('table').removeClass('table-dark').addClass('table-light');
   $("nav").attr("class", "navbar navbar-expand-xl navbar-light bg-light fixed-top");
   //$("nav").attr("style", "background-color: #e3f2fd;");
-  $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
 }
 
 //Check if centered modals need to be applied
