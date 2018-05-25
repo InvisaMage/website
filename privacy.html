@@ -32,8 +32,9 @@
 			<div id="menu-privacy" class="menu menu-privacy d-none d-xl-inline">
 				<h4>Contents</h4>
 				<li><a href="#general"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> General</a></span></li>
-				<li><a href="#storage"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Local Stoarge</a></span></li>
+				<li><a href="#storage"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Local Storage</a></span></li>
 				<li><a href="#information"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Information</a></span></li>
+				<li><a href="#retention"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Retention</a></span></li>
 				<li><a href="#changes"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Changes</a></span></li>
 				<br>
 			</div>
@@ -49,6 +50,7 @@
 					<option value="#general">General</option>
 					<option value="#storage">Local Storage</option>
 					<option value="#information">Information</option>
+					<option value="#retention">Retention</option>
 					<option value="#changes">Changes</option>
 				</select>
 				<br>
@@ -75,7 +77,8 @@
 						The <a class="link" href="info.html#terminal-info">Terminal</a> function also uses it to save your input history.<br>
 						This information is stored on your computer for future use.<br>
 						It makes the site more functional and allows for the site to remember your preferences.<br>
-						If you wish to clear your Local Storage for this site you may do so in the <a class="link" href="info.html#stats-info">Stats</a> modal.
+						If you wish to clear your Local Storage for this site you may do so in the <a class="link" onclick="loadStatsMod();">Stats</a> modal.<br>
+						Click <a class="link" href="info.html#stats-info">here</a> to learn more about the Stats modal.
 					</p>
 				</div>
 			</div><!-- /local storage-->
@@ -88,17 +91,30 @@
 				<div class="card-body">
 					<p>
 						This website will not give any personal information to third party organizations.<br>
-						This website may use collected information to help improve this website (such as questionnaire).<br>
+						This website may use collected information, which the user willing provides, to help improve this website (such as questionnaires).<br>
 						No input from the <a class="link" href="info.html#nameprompt">namePrompt</a> or the <a class="link" href="info.html#search-info">Search</a> function is logged.<br>
 						<br>
 						<br>
 						This website keeps a log of requests.<br>
-						Your IP address, date requested, and the requested file is logged.<br>
-						This information is not public, however, the number of requests is public in the <a class="link" href="info.html#stats-info">Stats</a> modal.<br>
-						This information is not personally identifiable.
+						Your IP address, date requested, and the requested file is logged but it's not publicly accessible.<br>
+						This information is not public, however, the number of requests is public in the <a class="link" href="info.html#stats-info">Stats</a> modal.
 					</p>
 				</div>
 			</div><!-- /information-->
+
+			<br>
+
+			<!--Retention-->
+			<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="retention">
+				<h4 class="card-header">Retention</h4>
+				<div class="card-body">
+					<p>
+						The only information collected, as stated above, is IPs from the server log.<br>
+						This log is not set to be deleted after a specific period of time.<br>
+						If you <a class="link" onclick="loadContactMod();">contact</a> me and request a specific IP address to be removed (preferably your own), I shall do so in a reasonable amount of time.
+					</p>
+				</div>
+			</div><!-- /retention-->
 
 			<br>
 
@@ -107,18 +123,13 @@
 				<h4 class="card-header">Changes</h4>
 				<div class="card-body">
 					<p>
-						The Privacy Policy may be changed at any time without notice.<br>
-						Be sure to check back from time to time.
+						The Privacy Policy may be updated.<br>
+						A notice will be displayed in the "Important" section of the news page when changes occur.
 					</p>
 				</div>
 			</div><!-- /changes-->
 
 			<br>
-
-			<!--Accept Popover-->
-			<button id="info-accept" type="button" class="info btn btn-sm btn-outline-info">
-				<i class="fas fa-info-circle fa-lg"></i>
-			</button>
 		</div>
 
 		<!--Footer-->
@@ -134,6 +145,7 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/fontawesome-all.min.js"></script>
 		<script src="js/localforage.min.js"></script>
+		<script src="js/pnotify.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
@@ -141,18 +153,6 @@
 		<script>
 			$('.privacySection').addClass('animated slideInUp');
 			$('#menu-privacy').addClass('animated slideInLeft');
-
-			$(function () {
-				$('[data-toggle="popover"]').popover()
-
-				$('#info-accept').popover({ 
-					title: "Do you accept the Privacy Policy?",
-					content: "<button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>",
-					placement: "top",
-					html: true,
-					trigger: "focus"
-				});
-			});
 		</script>
 	</body>
 </html>

@@ -17,12 +17,12 @@
         <!--Unique Requests-->
         <tr>
           <td><h7 class="black">Requests</h7></td>
-          <th><h7 class="black" id="unique-requests"></h7>/ <h7 class="black" id="total-requests"></h7></th>
+          <th id="requests-column"><h7 class="black" id="unique-requests"></h7>/ <h7 class="black" id="total-requests"></h7></th>
         </tr>
         <!--Bootstrap Version-->
         <tr>
           <td><h7 class="black">Bootstrap</h7></td>
-          <th><h7 class="black">v4.1.0</h7></th>
+          <th><h7 class="black">v4.1.1</h7></th>
         </tr>
         <!--Font Awesome Version-->
         <tr>
@@ -235,7 +235,7 @@
        $("#unique-requests").html(data);
     },
     error:function(){
-       $("#unique-requests").html('null ');
+       $("#requests-column").html('<i class="fas fa-plug"></i> <i class="fas fa-exclamation-triangle"></i>');
     }
   });
 
@@ -246,7 +246,7 @@
        $("#total-requests").html(data);
     },
     error:function(){
-       $("#total-requests").html('null');
+       $("#requests-column").html('<i class="fas fa-plug"></i> <i class="fas fa-exclamation-triangle"></i>');
     }
   });
 </script>

@@ -62,7 +62,8 @@
 				<div class="card-body">
 					<p>
 						Use this website at your own risk.<br>
-						You may not exploit this website in any way.<br>
+						Please feel free to test this site for security vulnerabilities.<br>
+						Please allow me time and the required information to implement a fix before going public.<br>
 						I am not affiliated with external websites that are linked on this website.<br>
 						I do not support Internet Explorer.
 					</p>
@@ -120,18 +121,13 @@
 				<h4 class="card-header">Changes</h4>
 				<div class="card-body">
 					<p>
-						The Terms & Conditions may be changed at any time without notice.<br>
-						Be sure to check back from time to time.
+						The Terms & Conditions may be updated.<br>
+						A notice will be displayed in the "Important" section of the news page when changes occur.
 					</p>
 				</div>
 			</div><!-- /changes-->
 
 			<br>
-
-			<!--Accept Popover-->
-			<button id="info-accept" type="button" class="info btn btn-sm btn-outline-info">
-				<i class="fas fa-info-circle fa-lg"></i>
-			</button>
 		</div>
 		<!--/.End Content-->
 
@@ -146,6 +142,7 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/fontawesome-all.min.js"></script>
 		<script src="js/localforage.min.js"></script>
+		<script src="js/pnotify.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
 		<script src="js/compiled.js"></script>
@@ -153,18 +150,6 @@
 		<script>
 			$('.termsSection').addClass('animated slideInUp');
 			$('#menu-terms').addClass('animated slideInLeft');
-
-			$(function () {
-				$('[data-toggle="popover"]').popover()
-
-				$('#info-accept').popover({ 
-					title: "Do you accept the Terms and Conditions?",
-					content: "<button type='button' class='btn btn-success btn-md' data-dismiss='alert' onclick='loadYesMod();'>Yes <i class='fa fa-check' aria-hidden='true'></i></button> <button type='button' class='btn btn-danger btn-md' onclick='loadNoMod();'> No <i class='fa fa-times' aria-hidden='true'></i></button>",
-					placement: "top",
-					html: true,
-					trigger: "focus"
-				});
-			});
 		</script>
 	</body>
 </html>

@@ -40,13 +40,6 @@
                       Center modals
                     </label>
                   </div>
-                  <!--Silent Mode-->
-                  <div class="form-check">
-                    <label class="form-check-label" data-toggle="tooltip" data-html="true" data-placement="right" title="Hide informational messages.<br><br>This prevents the script from loading thus errors will be thrown in the console.<br>This may break things.">
-                      <input class="form-check-input" type="checkbox" name="silentMode" id="silent-mode-checkbox1" value="true">
-                      Silent mode
-                    </label>
-                  </div>
                   <hr>
                   <!--Background Color-->
                   <div class="form-group">
@@ -122,14 +115,14 @@
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="banners-homepage" id="home-banner-checkbox1" value="true">
-                  Events
+                  <input class="form-check-input" type="checkbox" name="banners-privacy" id="legal-banner-checkbox1" value="true">
+                  Legal
                 </label>
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="banners-tac" id="tac-banner-checkbox1" value="true">
-                  Terms and Privacy page
+                  <input class="form-check-input" type="checkbox" name="banners-homepage" id="home-banner-checkbox1" value="true">
+                  Events
                 </label>
               </div>
             </div>
@@ -232,26 +225,16 @@
     $('#default-settings').tooltip('hide');
     settings.clear();
 
-    setTimeout(enable, 1500);
-    $.bootstrapGrowl("Settings have been reset!", {
-      type: 'info',
-      align: 'right',
-      delay: 2000,
-      offset: {from: 'top', amount: 70},
-      width: 300,
-      allow_dismiss: true
-   })
-   $.bootstrapGrowl("<strong>Reloading page...</strong>", {
-     type: 'danger',
-     align: 'center',
-     offset: {from: 'top', amount: 70},
-     width: 'auto',
-     delay: 10000,
-     allow_dismiss: true
-   });
-   function enable(){
-     location.reload();
-   }
+    setTimeout(enable, 2000);
+    PNotify.notice({
+      text: 'Settings have been reset!'
+    });
+    PNotify.notice({
+      text: 'Reloading page...'
+    });
+    function enable(){
+      location.reload();
+    }
   }
 
   //Re enable tooltips.
@@ -282,14 +265,6 @@
     }).catch(function(err) {
       console.log(err);
     });
-    //Silent mode
-    settings.getItem('silentMode').then(function(value) {
-      if (value == 'true') {
-        $("#silent-mode-checkbox1").prop("checked", true);
-      }
-    }).catch(function(err) {
-      console.log(err);
-    });
     //Terminal Opacity
     settings.getItem('terminalOpacity').then(function(value) {
       $('#terminal-opacity').prop("value", value);
@@ -313,10 +288,10 @@
     }).catch(function(err) {
       console.log(err);
     });
-    //Banner - Terms and Conditions
-    settings.getItem('enableTacBanner').then(function(value) {
+    //Banner - Legal
+    settings.getItem('enableLegalBanner').then(function(value) {
       if (value == 'true') {
-        $("#tac-banner-checkbox1").prop("checked", true);
+        $("#legal-banner-checkbox1").prop("checked", true);
       }
     }).catch(function(err) {
       console.log(err);

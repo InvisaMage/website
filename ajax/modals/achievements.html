@@ -107,20 +107,19 @@
 
   //Reset Achievement progress
   function resetAchievements() {
-    achievements.setItem('eastereggAchievement', 'false');
-    achievements.setItem('terminalAchievement', 'false');
-    achievements.setItem('wiselyAchievement', 'false');
-    achievements.setItem('hallucinatingAchievement', 'false');
-    achievements.setItem('unlimitedPowerAchievement', 'false');
-    achievements.setItem('purplerainAchievement', 'false');
     $('#btn-reset-achievements').tooltip('hide');
-    $.bootstrapGrowl("Your achievement progress has been reset!", {
-      type: 'info',
-      align: 'right',
-      offset: {from: 'top', amount: 70},
-      width: 'auto',
-      allow_dismiss: true
+    achievements.clear();
+
+    setTimeout(enable, 2000);
+    PNotify.notice({
+      text: 'Achievement progress has been reset!'
     });
+    PNotify.notice({
+      text: 'Reloading page...'
+    });
+    function enable(){
+      location.reload();
+    }
   }
 
   //Check which Achievements have been completed.
@@ -152,7 +151,7 @@
     //Wisely
     achievements.getItem('wiselyAchievement').then(function(value) {
       if (value == 'true') {
-        $("#wisely-achievement-method").replaceWith("Agree to the Terms & Conditions or Privacy Policy.");
+        $("#wisely-achievement-method").replaceWith("Agree to the Terms & Conditions and Privacy Policy.");
         $("#wiselyAchievement").replaceWith("<h6 class='text-success' id='wiselyAchievement'>Yes</h6>");
       }
       console.log('wiselyAchievement = ' + value);

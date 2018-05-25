@@ -38,7 +38,7 @@
       enabled: false,
       completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert', 'requests',
         'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history', 'libraries'],
-      greetings: 'Website Terminal [Version 2018.4.28]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
+      greetings: 'Website Terminal [Version 2018.5.25]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
       keypress: function (e, terminal) {
         if (e.which == 96) {
           return false;
@@ -133,7 +133,9 @@ jQuery(document).ready(function ($) {
         terminal.echo('   go - Go to a file located on the server or an external website');
         terminal.echo('   Usage: go [local file | website]');
         terminal.echo('   ');
-        terminal.echo('   Examples: go [info.html | images/txtlock/txtlock1.png | https://google.com]');
+        terminal.echo('   Example: go info.html');
+        terminal.echo('   Example: go images/txtlock/txtlock1.png');
+        terminal.echo('   Example: go https://google.com');
       }
       else if (cmd.args == 'anchor') {
         terminal.echo('   anchor - Jump to an element\'s ID on the current page');
@@ -184,14 +186,13 @@ jQuery(document).ready(function ($) {
         terminal.echo('   Note: Database name is either Settings (-s) or Achievements (-a).');
       }
       else if (cmd.args == 'alert') {
-        terminal.echo('   alert - Display an alert on the page with the bootstrapGrowl plugin');
-        terminal.echo('   Usage: alert [<"message"> <type> <alignment> <delay>]');
+        terminal.echo('   alert - Display an alert on the page with the PNotify plugin');
+        terminal.echo('   Usage: alert [<"title"> <"message"> <type> <delay>]');
         terminal.echo('   ');
-        terminal.echo('   Type can be: null, info, danger, success');
-        terminal.echo('   Alignment can be: left, center, right');
+        terminal.echo('   Type can be: notice, info, success, error');
         terminal.echo('   Delay is integer in milliseconds');
         terminal.echo('   ');
-        terminal.echo('   Example: alert "Welcome to Windows XP!" info center 2000');
+        terminal.echo('   Example: alert "Welcome" "Welcome to Windows XP!" notice 4000');
       }
       else if (cmd.args == 'less') {
         terminal.echo('   less - View a file one line at a time');
@@ -261,7 +262,7 @@ jQuery(document).ready(function ($) {
         terminal.echo('   | users           -Display users on system');
         terminal.echo('   |');
         terminal.echo('   | anchor          -Jump to an element\'s ID on the current page');
-        terminal.echo('   | alert           -Display an alert on the page with the bootstrapGrowl plugin');
+        terminal.echo('   | alert           -Display an alert on the page with the PNotify plugin');
         terminal.echo('   | go              -Navigate to a file located on the server or an external website');
         terminal.echo('   | less            -View a file one line at a time');
         terminal.echo('   | media           -Control the audio playing on the page (Only works on homepage)');
@@ -363,9 +364,9 @@ jQuery(document).ready(function ($) {
            * https://stackoverflow.com/questions/7115022/how-do-i-enumerate-all-of-the-html-ids-in-a-document-with-javascript#7115033
            */
           var ids = document.querySelectorAll('[id]');
-          Array.prototype.forEach.call( ids, function( el, i ) {
-              // "el" is your element
-              terminal.echo( el.id ); // log the ID
+          Array.prototype.forEach.call(ids, function (el, i) {
+            // "el" is your element
+            terminal.echo(el.id); // log the ID
           });
         }
         else if (cmd.args[0] == '--go' || cmd.args[0] == '-g') {
@@ -641,13 +642,11 @@ jQuery(document).ready(function ($) {
         if (cmd.args[1] != undefined) {
           if (cmd.args[2] != undefined) {
             if (cmd.args[3] != undefined) {
-              $.bootstrapGrowl(cmd.args[0], {
-                type: cmd.args[1],
-                align: cmd.args[2],
-                delay: cmd.args[3],
-                offset: { from: 'top', amount: 70 },
-                width: 300,
-                allow_dismiss: true
+              PNotify.alert({
+                title: cmd.args[0],
+                text: cmd.args[1],
+                type: cmd.args[2],
+                delay: cmd.args[3]
               });
             }
             else {
@@ -655,15 +654,15 @@ jQuery(document).ready(function ($) {
             }
           }
           else {
-            terminal.error('Requires alignment argument');
+            terminal.error('Requires alert type');
           }
         }
         else {
-          terminal.error('Requires alert type');
+          terminal.error('Requires alert text');
         }
       }
       else {
-        terminal.error('Requires a message');
+        terminal.error('Requires a title');
       }
     }
     //users
@@ -734,17 +733,59 @@ jQuery(document).ready(function ($) {
         terminal.set_prompt('[[;#FFC157;]guest@server][[;#fff;]:][[;#66a3ff;]~ $] ');
       }
     }
+    //apt
+    else if (cmd.name == 'apt') {
+      if (cmd.args[0] != undefined) {
+        if (cmd.args[0] == 'update') {
+          terminal.pause();
+          terminal.echo('Updating...');
+          setTimeout(function(){
+            terminal.echo('Get: http://archive.raspberrypi.org/debian');
+          }, 500);
+          setTimeout(function(){
+            terminal.echo('Get: http://raspbian.raspberrypi.org/raspbian');
+          }, 1555);
+          setTimeout(function(){
+            terminal.echo('Fetched 184 kB in 2s (65.0 kB/s)');
+          }, 2521);
+          setTimeout(function(){
+            terminal.echo('Reading package lists...');
+          }, 3213);
+          setTimeout(function(){
+            terminal.echo('Done');
+          }, 3518);
+          setTimeout(function(){
+            terminal.echo('Building dependancy tree');
+          }, 4200);
+          setTimeout(function(){
+            terminal.echo('Reading state information...');
+          }, 4567);
+          setTimeout(function(){
+            terminal.echo('Done');
+          }, 5157);
+          setTimeout(function(){
+            terminal.echo('All packages are up to date.');
+            terminal.resume();
+          }, 5598);
+        }
+      } else {
+        terminal.error('Requires an argument');
+      }
+    }
     //Requests
     else if (cmd.name == 'requests') {
+      terminal.pause();
       $.ajax({
         url: "./ajax/unique-requests.txt",
         cache: false,
         success: function (data) {
           data = data.replace(/\s/g, '');
           terminal.echo('Unique requests: ' + data);
+          terminal.resume();
         },
         error: function () {
           terminal.error('Unable to get unique requests.');
+          terminal.resume();
         }
       });
 
@@ -754,9 +795,11 @@ jQuery(document).ready(function ($) {
         success: function (data) {
           data = data.replace(/\s/g, '');
           terminal.echo('Total requests: ' + data);
+          terminal.resume();
         },
         error: function () {
           terminal.error('Unable to get total requests.');
+          terminal.resume();
         }
       });
     }
@@ -806,6 +849,7 @@ jQuery(document).ready(function ($) {
       terminal.echo('localForage:     ' + localforageVer);
       terminal.echo('Keypress:        ' + keypressVer);
       terminal.echo('Konami-JS:       ' + konamiVer);
+      terminal.echo('PNotify:         ' + pnotifyVer);
       terminal.echo('Snowstorm:       ' + snowstormVer);
     }
     //Less test

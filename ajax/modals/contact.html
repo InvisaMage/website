@@ -269,31 +269,19 @@
 
   //Contact modal copy messages
   function emailMsg() {
-      $.bootstrapGrowl("E-mail address copied!", {
-        type: 'success',
-        align: 'right',
-        offset: {from: 'top', amount: 70},
-        width: 'auto',
-        allow_dismiss: true
-      });
+    PNotify.success({
+      text: 'E-mail address copied!'
+    });
   }
   function telegramMsg() {
-      $.bootstrapGrowl("Telegram URL copied!", {
-        type: 'success',
-        align: 'right',
-        offset: {from: 'top', amount: 70},
-        width: 'auto',
-        allow_dismiss: true
-      });
+    PNotify.success({
+      text: 'Telegram URL copied!'
+    });
   }
   function keybaseMsg() {
-      $.bootstrapGrowl("Keybase username copied!", {
-        type: 'success',
-        align: 'right',
-        offset: {from: 'top', amount: 70},
-        width: 'auto',
-        allow_dismiss: true
-      });
+    PNotify.success({
+      text: 'Keybase username copied!'
+    });
   }
 
   //Re enable tooltips.

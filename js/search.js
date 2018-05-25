@@ -87,50 +87,6 @@ function search(value) {
 		loadSettingsMod();
 	}
 
-	//Google
-	else if (sL == "google") {
-		window.open("https://www.google.com/");
-	}
-
-	//Google search
-	else if (sL.startsWith("google ")) {
-		var googleQuery = sL.substr(7);
-		window.open("https://www.google.com/search?q=" + googleQuery);
-	}
-
-	//Bing
-	else if (sL == "bing") {
-		window.open("https://www.bing.com/");
-	}
-
-	//Bing search
-	else if (sL.startsWith("bing ")) {
-		var bingQuery = sL.substr(5);
-		window.open("https://www.bing.com/search?q=" + bingQuery);
-	}
-
-	//DuckDuckGo
-	else if (sL == "duckduckgo" || sL == "duckgo" || sL == "duck") {
-		window.open("https://duckduckgo.com/");
-	}
-
-	//DuckDuckGo search
-	else if (sL.startsWith("duck ")) {
-		var duckQuery = sL.substr(5);
-		window.open("https://duckduckgo.com/?q=" + duckQuery);
-	}
-
-	//YouTube
-	else if (sL == "youtube" || sL == "yt") {
-		window.open("https://www.youtube.com/");
-	}
-
-	//YouTube search
-	else if (sL.startsWith("youtube ")) {
-		var ytQuery = sL.substr(8);
-		window.open("https://www.youtube.com/results?search_query=" + ytQuery);
-	}
-
 	//RuneScape
 	else if (sL == "runescape" || sL == "rs") {
 		window.location = ("rs-launch://www.runescape.com/jav_config.ws");
@@ -143,23 +99,15 @@ function search(value) {
 
 	//Blank
 	else if (sL === "" || sL == " ") {
-		$.bootstrapGrowl("There's nothing to search for!", {
-			type: 'danger',
-			align: 'right',
-			offset: { from: 'top', amount: 70 },
-			width: 'auto',
-			allow_dismiss: true
+		PNotify.error({
+			text: "There's nothing to search for!"
 		});
 	}
 
 	//If no other conditions are true, display message.
 	else {
-		$.bootstrapGrowl("No Results", {
-			type: 'danger',
-			align: 'right',
-			offset: { from: 'top', amount: 70 },
-			width: 'auto',
-			allow_dismiss: true
+		PNotify.error({
+			text: 'No Results'
 		});
 	}
 }

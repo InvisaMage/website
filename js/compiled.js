@@ -20,14 +20,28 @@ var namePromptCounter = 0;
 var searchCounter = 0;
 var btn404Counter = 0;
 
+//PNotify
+PNotify.defaults.styling = 'bootstrap4';
+PNotify.defaults.icons = 'fontawesome5';
+PNotify.defaults.delay = 4000;
+
+PNotify.modules.Animate.defaults.animate = true;
+PNotify.modules.Animate.defaults.inClass = 'fadeInUp';
+PNotify.modules.Animate.defaults. outClass = 'fadeOutRight';
+
+PNotify.defaultStack.firstpos1 = 75;
+PNotify.defaultStack.firstpos2 = 15;
+PNotify.defaultStack.spacing1 = 15;
+
 //Libraries
 var jqueryVer = '3.3.1';
-var bootstrapVer = '4.1.0';
+var bootstrapVer = '4.1.1';
 var fontawesomeVer = '5.0.10';
 var jqueryterminalVer = '1.14.0';
 var localforageVer = '1.7.1';
 var keypressVer = '2.1.5';
 var konamiVer = '1.6.0';
+var pnotifyVer = PNotify.VERSION;
 var snowstormVer = '1.44.20131208';
 
 /* Simulate key press
@@ -115,13 +129,10 @@ async function loadSearch() {
     }).catch(function () {
       //If fail, display message and offer to retry
       console.log("loadSearch: One or more assets failed to load");
-      $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br><br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadSearch();'>Retry</button>", {
-        type: 'danger',
-        align: 'right',
-        delay: 999999999,
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        allow_dismiss: true
+      PNotify.error({
+        text: "Unable to get assets!<br>Are you online? <br><br> <button type='button' class='btn btn-primary' onclick='loadSearch(); PNotify.closeAll();'>Retry <i class='fas fa-redo'></i></i></button>",
+        hide: false,
+        textTrusted: true
       });
     });
   }
@@ -146,15 +157,12 @@ async function loadNamePrompt() {
       namePromptCounter = 1;
     }).catch(function () {
       //If fail, display message and offer to retry
+      PNotify.error({
+        text: "Unable to get assets!<br>Are you online?<br><br> <button type='button' class='btn btn-primary' onclick='loadNamePrompt(); PNotify.closeAll();'>Retry <i class='fas fa-redo'></i></button>",
+        hide: false,
+        textTrusted: true
+      });
       console.log("loadNamePrompt: One or more assets failed to load");
-      $.bootstrapGrowl("Unable to get assets!<br>Are you online?<br><br> <button type='button' class='btn btn-primary' data-dismiss='alert' onclick='loadNamePrompt();'>Retry</button>", {
-        type: 'danger',
-        align: 'right',
-        delay: 999999999,
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        allow_dismiss: true
-      })
     });
   }
   else {
@@ -209,13 +217,9 @@ var easter_egg = new Konami(function() {
 var listener = new window.keypress.Listener();
 listener.simple_combo("shift space", async function () {
   //Inform user of progress
-  $.bootstrapGrowl("Loading assets...", {
-    type: 'info',
-    align: 'right',
-    delay: 1500,
-    offset: { from: 'top', amount: 70 },
-    width: 300,
-    allow_dismiss: true
+  PNotify.info({
+    text: 'Loading assets...',
+    delay: 2000
   });
   //Get scripts if not already loaded
   if (termCounter == 0) {
@@ -233,37 +237,26 @@ listener.simple_combo("shift space", async function () {
       })
     ).then(function () {
       console.log("KeyCombo Terminal: Loaded assets");
-      $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>~</kbd> key to open.", {
-        type: 'success',
-        align: 'right',
-        delay: 2000,
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        allow_dismiss: true
+      PNotify.success({
+        title: 'Terminal Ready',
+        text: "Press the <kbd>~</kbd> key to open.",
+        textTrusted: true,
+        delay: 2000
       });
       termCounter = 1;
     }).catch(function () {
       //If fail, display message and offer to retry
       console.log("KeyCombo Terminal: One or more assets failed to load");
-      $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
-        type: 'danger',
-        align: 'right',
-        delay: 999999999,
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        allow_dismiss: true
-      })
+      PNotify.error({
+        text: "Unable to get assets!\nAre you online?"
+      });
     });
   }
   //If assets have already been loaded
   else {
-    $.bootstrapGrowl("Terminal assets have already been loaded!", {
-      type: 'danger',
-      align: 'right',
-      delay: 1500,
-      offset: { from: 'top', amount: 70 },
-      width: 300,
-      allow_dismiss: true
+    PNotify.error({
+      text: "Terminal assets have already been loaded!",
+      delay: 2000
     });
     console.log('KeyCombo Terminal: Already loaded assets');
   }
@@ -311,12 +304,6 @@ function settingsCheck() {
   } else {
     settings.setItem('centeredModals', 'false');
   }
-  //Silent Mode
-  if ($('[name=silentMode]:checked').val() == 'true') {
-    settings.setItem('silentMode', 'true');
-  } else {
-    settings.setItem('silentMode', 'false');
-  }
   //Terminal Opacity
   settings.setItem('terminalOpacity', $('#terminal-opacity').val());
   //Banner - Events
@@ -331,11 +318,11 @@ function settingsCheck() {
   } else {
     settings.setItem('enableInfoBanner', 'false');
   }
-  //Banner - Terms and conditions
-  if ($('#tac-banner-checkbox1:checked').val() == 'true') {
-    settings.setItem('enableTacBanner', 'true');
+  //Banner - Legal
+  if ($('#legal-banner-checkbox1:checked').val() == 'true') {
+    settings.setItem('enableLegalBanner', 'true');
   } else {
-    settings.setItem('enableTacBanner', 'false');
+    settings.setItem('enableLegalBanner', 'false');
   }
   //News
   settings.setItem('defaultTab', $('[name=defaultTab]:checked').val());
@@ -363,21 +350,11 @@ function settingsCheck() {
   }
 
   setTimeout(enable, 1500);
-  $.bootstrapGrowl("Settings Saved!", {
-    type: 'success',
-    align: 'right',
-    offset: { from: 'top', amount: 70 },
-    width: 'auto',
-    delay: 10000,
-    allow_dismiss: true
+  PNotify.success({
+    text: 'Settings saved!'
   });
-  $.bootstrapGrowl("<strong>Reloading page...</strong>", {
-    type: 'danger',
-    align: 'center',
-    offset: { from: 'top', amount: 70 },
-    width: 'auto',
-    delay: 10000,
-    allow_dismiss: true
+  PNotify.notice({
+    text: 'Reloading page...'
   });
   function enable() {
     location.reload();
@@ -386,13 +363,8 @@ function settingsCheck() {
 
 //Settings modal cancel message
 function settingsCancelMsg() {
-  $.bootstrapGrowl("Changes have not been saved!", {
-    type: 'danger',
-    align: 'right',
-    offset: { from: 'top', amount: 70 },
-    width: 'auto',
-    delay: 2000,
-    allow_dismiss: true
+  PNotify.error({
+    text: 'Changes have not been saved!'
   });
 }
 
@@ -423,27 +395,20 @@ async function onPageLoadTerm() {
         })
       ).then(function () {
         console.log("onPageLoadTerm: Loaded assets");
-        $.bootstrapGrowl("Terminal assets have been loaded.<br><br>Press the <kbd>~</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>", {
-          type: 'success',
-          align: 'right',
-          delay: 4000,
-          offset: { from: 'top', amount: 70 },
-          width: 300,
-          allow_dismiss: true
+        PNotify.notice({
+          title: 'Terminal Ready',
+          text: "Press the <kbd>~</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>",
+          textTrusted: true,
+          delay: 3000
         });
         termCounter = 1;
       }).catch(function () {
         //If fail, display message and offer to retry
         console.log("onPageLoadTerm: One or more assets failed to load");
-        $.bootstrapGrowl("Unable to get assets!<br>Are you online?", {
-          type: 'danger',
-          align: 'right',
-          delay: 2000,
-          offset: { from: 'top', amount: 70 },
-          width: 300,
-          allow_dismiss: true
-        })
-      });;
+        PNotify.error({
+          text: "Unable to get assets!\nAre you online?"
+        });
+      });
     }
     console.log('OnPageLoadTerm = ' + value);
   });
@@ -469,21 +434,23 @@ async function onPageLoadTermToggle() {
 //Check which tab needs to be opened on News page.
 $(function () {
   settings.getItem('defaultTab').then(function (value) {
-    if (value == 'projects') {
-      $('#tabs li:eq(0) a').tab('show');
-      $('#pills li:eq(0) a').tab('show');
-    }
-    else if (value == 'important') {
-      $('#tabs li:eq(1) a').tab('show');
-      $('#pills li:eq(1) a').tab('show');
-    }
-    else if (value == 'website') {
-      $('#tabs li:eq(2) a').tab('show');
-      $('#pills li:eq(2) a').tab('show');
-    }
-    else if (value == 'bugs') {
-      $('#tabs li:eq(3) a').tab('show');
-      $('#pills li:eq(3) a').tab('show');
+    if ($("title").html() == "InvisaMage | News") {
+      if (value == 'projects') {
+        $('#tabs li:eq(0) a').tab('show');
+        $('#pills li:eq(0) a').tab('show');
+      }
+      else if (value == 'important') {
+        $('#tabs li:eq(1) a').tab('show');
+        $('#pills li:eq(1) a').tab('show');
+      }
+      else if (value == 'website') {
+        $('#tabs li:eq(2) a').tab('show');
+        $('#pills li:eq(2) a').tab('show');
+      }
+      else if (value == 'bugs') {
+        $('#tabs li:eq(3) a').tab('show');
+        $('#pills li:eq(3) a').tab('show');
+      }
     }
     console.log('defaultTab = ' + value);
   });
@@ -517,24 +484,12 @@ settings.getItem('enableInfoBanner').then(function (value) {
   console.log('enableInfoBanner = ' + value);
 });
 
-//Check if Cookie Banner needs to be shown on homepage
-settings.getItem('enableCookiesBanner').then(function (value) {
+//Check if Legal Banner needs to be shown on homepage
+settings.getItem('enableLegalBanner').then(function (value) {
   if (value == 'true') {
-    $('#ajax-cookies-banner').load('ajax/alerts/alert-cookies.html');
+    $('#ajax-legal-banner').load('ajax/alerts/alert-legal.html');
   }
-  console.log('enableCookiesBanner = ' + value);
-});
-
-//Check if Banners needs to be shown on Terms and Privacy page
-$(function () {
-  settings.getItem('enableTacBanner').then(function (value) {
-    if (value == 'true') {
-      if (($("title").html() == "InvisaMage | Terms") || ($("title").html() == "InvisaMage | Privacy")) {
-        $('#info-accept').focus()
-      }
-    }
-    console.log("enableTacBanner = " + value);
-  });
+  console.log('enableLegalBanner = ' + value);
 });
 
 //Check if Snowstorm needs to be loaded on page load
@@ -554,7 +509,7 @@ $(function () {
 });
 
 //Temporary workaround for settings bug
-//Forces to set banner cookies if they have not been set yet
+//Forces to set banner legal if they have not been set yet
 //Banner - Events
 $(function () {
   settings.getItem('enableEventsBanner').then(function (value) {
@@ -567,23 +522,22 @@ $(function () {
   //Banner - Info
   settings.getItem('enableInfoBanner').then(function (value) {
     if (value == null) {
-      settings.setItem('enableInfoBanner', 'true').then(function (value) {
+      settings.setItem('enableInfoBanner', 'false').then(function (value) {
         console.log(value);
       });
     }
   });
-  //Banner - Cookies
-  settings.getItem('enableCookiesBanner').then(function (value) {
+  //Banner - Legal
+  settings.getItem('enableLegalBanner').then(function (value) {
     if (value == null) {
-      settings.setItem('enableCookiesBanner', 'true').then(function (value) {
+      settings.setItem('enableLegalBanner', 'true').then(function (value) {
         console.log(value);
       });
     }
   });
-  //Banner - Terms and conditions
-  settings.getItem('enableTacBanner').then(function (value) {
+  settings.getItem('terminalOpacity').then(function (value) {
     if (value == null) {
-      settings.setItem('enableTacBanner', 'true').then(function (value) {
+      settings.setItem('terminalOpacity', 0.8).then(function (value) {
         console.log(value);
       });
     }
@@ -620,27 +574,17 @@ $(function () {
   });
 });
 
-//Check if Growl should be loaded
-settings.getItem('silentMode').then(function (value) {
-  if (value != 'true') {
-    $.getScript('js/growl.min.js')
-  }
-  console.log('silentMode = ' + value);
-});
-
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
   achievements.getItem('eastereggAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
-        type: 'info',
-        align: 'right',
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        delay: 10000,
-        allow_dismiss: true
+      PNotify.info({
+        title: 'Achievement Get',
+        text: "Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
+        textTrusted: true,
+        delay: 10000
       });
       achievements.setItem('eastereggAchievement', 'true');
     }
@@ -654,13 +598,11 @@ function terminalCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hacker?!<br><br>Use the Terminal for the first time. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
-        type: 'info',
-        align: 'right',
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        delay: 10000,
-        allow_dismiss: true
+      PNotify.info({
+        title: 'Achievement Get',
+        text: "Hacker?! <br><br> Use the Terminal for the first time. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
+        textTrusted: true,
+        delay: 10000
       });
       achievements.setItem('terminalAchievement', 'true');
     }
@@ -674,13 +616,11 @@ function unlimitedPowerCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Unlimited POWER!<br><br>Change to the super user account. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
-        type: 'info',
-        align: 'right',
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        delay: 10000,
-        allow_dismiss: true
+      PNotify.info({
+        title: 'Achievement Get',
+        text: "Unlimited POWER! <br><br> Change to the super user account. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
+        textTrusted: true,
+        delay: 10000
       });
       achievements.setItem('unlimitedPowerAchievement', 'true');
     }
@@ -694,13 +634,11 @@ function wiselyCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>You've Chosen Wisely<br><br>Agree to the <a href='terms.html'>Terms & Conditions</a> or <a href='privacy.html'>Privacy Policy</a>. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
-        type: 'info',
-        align: 'right',
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        delay: 10000,
-        allow_dismiss: true
+      PNotify.info({
+        title: 'Achievement Get',
+        text: "You've Chosen Wisely <br><br> Agree to the <a href='terms.html'>Terms & Conditions</a> and <a href='privacy.html'>Privacy Policy</a>. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
+        textTrusted: true,
+        delay: 10000
       });
       achievements.setItem('wiselyAchievement', 'true');
     }
@@ -716,13 +654,11 @@ function purplerainCheck() {
     } else {
       settings.getItem('theme').then(function (value) {
         if (value == 'light') {
-          $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Purple Rain<br><br>Enable the snowstorm with the 'light' theme enabled. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
-            type: 'info',
-            align: 'right',
-            offset: { from: 'top', amount: 70 },
-            width: 300,
-            delay: 10000,
-            allow_dismiss: true
+          PNotify.info({
+            title: 'Achievement Get',
+            text: "Purple Rain <br><br> Enable the snowstorm with the 'light' theme enabled. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
+            textTrusted: true,
+            delay: 10000
           });
           achievements.setItem('purplerainAchievement', 'true');
         }
@@ -750,12 +686,9 @@ function clearLocalStorage() {
   achievements.clear();
   localforage.clear();
   $('#btn-clear-localstorage').tooltip('hide');
-  $.bootstrapGrowl("All local storage databases have been removed!", {
-    type: 'info',
-    align: 'right',
-    offset: { from: 'top', amount: 70 },
-    width: 'auto',
-    allow_dismiss: true
+  PNotify.info({
+    title: 'Local Storage',
+    text: 'All databases have been removed!'
   });
 }
 
@@ -769,13 +702,11 @@ function loadAdsMod() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      $.bootstrapGrowl("<strong>Achievement Get!</strong><br>Hallucinating<br><br>Click Hide Ads in the footer. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>", {
-        type: 'info',
-        align: 'right',
-        offset: { from: 'top', amount: 70 },
-        width: 300,
-        delay: 10000,
-        allow_dismiss: true
+      PNotify.info({
+        title: 'Achievement Get',
+        text: "Hallucinating <br><br> Click Hide Ads in the footer. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
+        textTrusted: true,
+        delay: 10000
       });
       achievements.setItem('hallucinatingAchievement', 'true');
     }

@@ -303,31 +303,19 @@
 
   //Donate modal copy messages
   function bitcoinMsg() {
-      $.bootstrapGrowl("Bitcoin wallet address copied!", {
-        type: 'success',
-        align: 'right',
-        offset: {from: 'top', amount: 70},
-        width: 'auto',
-        allow_dismiss: true
-      });
+    PNotify.success({
+      text: 'Bitcoin wallet address copied!'
+    });
   }
   function dogecoinMsg() {
-      $.bootstrapGrowl("Dogecoin wallet address copied!", {
-        type: 'success',
-        align: 'right',
-        offset: {from: 'top', amount: 70},
-        width: 'auto',
-        allow_dismiss: true
-      });
+    PNotify.success({
+      text: 'Dogecoin wallet address copied!'
+    });
   }
   function litecoinMsg() {
-      $.bootstrapGrowl("Litecoin wallet address copied!", {
-        type: 'success',
-        align: 'right',
-        offset: {from: 'top', amount: 70},
-        width: 300,
-        allow_dismiss: true
-      });
+    PNotify.success({
+      text: 'Litecoin wallet address copied!'
+    });
   }
 
   //Re enable tooltips.

@@ -40,6 +40,13 @@ if (date.getMonth() == 8 && (date.getDate() == 28)) {
     "Happy Birthday Travis!";
     $('#event-banner').toggle();
 }
+//Veterans Day
+if (date.getMonth() == 9 && (date.getDate() == 11)) {
+  document.getElementById("event-banner-content").innerHTML =
+  "Veterans Day<br>" +
+  "Be sure to thank a Veteran.";
+  $('#event-banner').toggle();
+}
 //Halloween
 if (date.getMonth() == 9 && (date.getDate() == 31)) {
   	document.getElementById("event-banner-content").innerHTML =
