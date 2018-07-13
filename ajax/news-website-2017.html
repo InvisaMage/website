@@ -374,26 +374,24 @@
 
 <span id="news-website-2016">
     <button type="button" class="btn btn-md btn-primary" onclick="$('#news-website-2016').load('ajax/news-website-2016.html');">
-        <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i> Show more
+        <i class="fa fa-caret-down fa-lg"></i> Show more
     </button>
 </span>
 
-<!--Reinitiate Scripts-->
+<!--Reinitialize Scripts-->
 <script>
     //Light Theme
     $(function() {
         settings.getItem('theme').then(function(value) {
         if (value == 'light') {
-            $('.card.bg-dark').removeClass('bg-dark').addClass('bg-light');
+            $('.card.bg-dark').removeClass('bg-dark').addClass('border-dark');
         }
         });
     });
 
     //If no touchscreen, show Tooltips
     $(function() {
-        if (!('ontouchstart' in window)) {
-            $('[data-toggle="tooltip"]').tooltip();
-        }
+        enableTooltips();
         //Mobile Menu select
         $('#mobile-menu select').change(function() {
             window.location = $(this).val();

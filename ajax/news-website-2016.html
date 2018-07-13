@@ -547,7 +547,7 @@
 		<p>
 			Enhancements to the <a class="link" href="about.html#functions">namePrompt</a> function.<br>
 			Audio <a data-original-title="An intentional inside joke, hidden message, or feature in an interactive work." class="definition" data-toggle="tooltip" data-placement="top" title="">Easter egg</a> controls now have custom styling.<br>
-			To view built in browser controls, click this <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> button.
+			To view built in browser controls, click this <span class="glyphicon glyphicon-info-sign"></span> button.
 			<br>
 			<br>
 			Fixed a bug.<br>
@@ -592,26 +592,24 @@
 
 <span id="news-website-2015">
 	<button type="button" class="btn btn-md btn-primary" onclick="$('#news-website-2015').load('ajax/news-website-2015.html');">
-		<i class="fa fa-caret-down fa-lg" aria-hidden="true"></i> Show more
+		<i class="fa fa-caret-down fa-lg"></i> Show more
 	</button>
 </span>
 
-<!--Reinitiate Scripts-->
+<!--Reinitialize Scripts-->
 <script>
 	//Light Theme
     $(function() {
         settings.getItem('theme').then(function(value) {
         if (value == 'light') {
-            $('.card.bg-dark').removeClass('bg-dark').addClass('bg-light');
+            $('.card.bg-dark').removeClass('bg-dark').addClass('border-dark');
         }
         });
 	});
 	
 	//If no touchscreen, show Tooltips
 	$(function (){
-		if(!('ontouchstart' in window)) {
-		$('[data-toggle="tooltip"]').tooltip();
-		}
+		enableTooltips();
 		//Mobile Menu select
 		$('#mobile-menu select').change(function() {
 			window.location = $(this).val();

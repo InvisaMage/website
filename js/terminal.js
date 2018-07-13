@@ -38,7 +38,7 @@
       enabled: false,
       completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert', 'requests',
         'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history', 'libraries'],
-      greetings: 'Website Terminal [Version 2018.5.25]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
+      greetings: 'Website Terminal [Version 2018.7.4]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
       keypress: function (e, terminal) {
         if (e.which == 96) {
           return false;
@@ -451,7 +451,12 @@ jQuery(document).ready(function ($) {
     else if (cmd.name == 'reload') {
       var offset = cmd.args[0];
       if (cmd.args[0] != undefined) {
-        terminal.echo('Reloading page in ' + offset + ' seconds...');
+        if (cmd.args[0] == 1) {
+          terminal.echo('Reloading page in ' + offset + ' second...');
+        }
+        else {
+          terminal.echo('Reloading page in ' + offset + ' seconds...');
+        }
         setTimeout(reload, offset * 1000);
         function reload() {
           location.reload();

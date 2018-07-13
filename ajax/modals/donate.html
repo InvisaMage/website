@@ -5,7 +5,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <h4 class="modal-title">Donate</h4>
-      <button roll="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <button roll="button" class="close" data-dismiss="modal"><span>&times;</span></button>
     </div>
     <div class="modal-body">
       If you enjoy what I do, a donation would be highly appreciated.
@@ -18,11 +18,11 @@
           </div>
           <input id="copyTargetBitcoin" readonly type="text" class="form-control" value="3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr">
             <div class="input-group-append">
-              <a id="copyButtonBitcoin" roll="button" href="#" class="btn btn-light" onclick="bitcoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
-                <i class="far fa-copy" aria-hidden="true"></i>
+              <a id="copyButtonBitcoin" roll="button" href="#" class="btn btn-light" onclick="bitcoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy wallet address" data-container="body">
+                <i class="far fa-copy"></i>
               </a>
-              <a roll="button" class="btn btn-light" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
-                <i class="fa fa-link" aria-hidden="true"></i>
+              <a roll="button" class="btn btn-light" href="bitcoin://3NgqryCPStZJKDaTzTsA5zR1JMsadWa4Wr" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open cryptocurrency client" data-container="body">
+                <i class="fa fa-link"></i>
               </a>
             </div>
         </div>
@@ -34,11 +34,11 @@
           </div>
           <input id="copyTargetDogecoin" readonly type="text" class="form-control" value="A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg">
             <div class="input-group-append">
-              <a id="copyButtonDogecoin" roll="button" href="#" class="btn btn-light" onclick="dogecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
-                <i class="far fa-copy" aria-hidden="true"></i>
+              <a id="copyButtonDogecoin" roll="button" href="#" class="btn btn-light" onclick="dogecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy wallet address" data-container="body">
+                <i class="far fa-copy"></i>
               </a>
-              <a roll="button" class="btn btn-light" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
-                <i class="fa fa-link" aria-hidden="true"></i>
+              <a roll="button" class="btn btn-light" href="dogecoin://A6b8w7tNn7g3Y5PLfzk1VNdqfTredz7ypg" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open cryptocurrency client" data-container="body">
+                <i class="fa fa-link"></i>
               </a>
             </div>
         </div>
@@ -50,11 +50,11 @@
           </div>
           <input id="copyTargetLitecoin" readonly type="text" class="form-control" value="3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy">
             <div class="input-group-append">
-              <a id="copyButtonLitecoin" roll="button" class="btn btn-light" href="javascript:litecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy Wallet Address" data-container="body">
-                <i class="far fa-copy" aria-hidden="true"></i>
+              <a id="copyButtonLitecoin" roll="button" class="btn btn-light" href="javascript:litecoinMsg();" data-placement="top" data-toggle="tooltip" title="Copy wallet address" data-container="body">
+                <i class="far fa-copy"></i>
               </a>
-              <a roll="button" class="btn btn-light" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open Cryptocurrency Client" data-container="body">
-                <i class="fa fa-link" aria-hidden="true"></i>
+              <a roll="button" class="btn btn-light" href="litecoin://3LpaU5MHHkMsmziHPiCGtPCgjLZZTE2xyy" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Open cryptocurrency client" data-container="body">
+                <i class="fa fa-link"></i>
               </a>
             </div>
         </div>
@@ -62,7 +62,7 @@
     <!--Donate Help Collapsible Content-->
     <div class="collapse" id="modal-donate-collapse">
       <div class="card bg-secondary">
-        <h5 class="card-header">Help <button roll="button" class="close" onclick="$('#modal-donate-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <h5 class="card-header">Help <button roll="button" class="close" onclick="$('#modal-donate-collapse').collapse('toggle')"><span>&times;</span></button></h5>
         <div class="card-body">
           <h6>What payment methods are these?</h6>
           <p>
@@ -71,21 +71,15 @@
             They use cryptography for security, making them difficult to counterfeit.
           </p>
           <hr>
-          <h6>QR Codes</h6>
-          <p>
-            You must have a QR code scanner to use these.<br>
-            Preferably one built into your cryptocurrency client.
-          </p>
-          <hr>
           <h6>Note</h6>
-          You must have the correct cryptocurrency client to use this <i class="fa fa-link" aria-hidden="true"></i> button.
+          You must have the correct cryptocurrency client to use this <i class="fa fa-link"></i> button.
         </div>
       </div>
     </div>
     <!--Donate Donor List Collapsible Content-->
     <div class="collapse" id="modal-donors-collapse">
       <div class="card bg-secondary">
-        <h5 class="card-header">Known Donors <button roll="button" class="close" onclick="$('#modal-donors-collapse').collapse('toggle')" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <h5 class="card-header">Known Donors <button roll="button" class="close" onclick="$('#modal-donors-collapse').collapse('toggle')"><span>&times;</span></button></h5>
         <table class="table table-dark table-hover">
           <!--Header-->
           <thead>
@@ -107,13 +101,13 @@
     </div>
     <div class="modal-footer">
       <button roll="button" class="btn btn-outline-success mr-auto" onclick="$('#modal-donors-collapse').collapse('toggle')">
-        <i class="fa fa-list" aria-hidden="true"></i> Donors
+        <i class="fa fa-list"></i> Donors
       </button>
       <button roll="button" class="btn btn-outline-info" onclick="$('#modal-donate-collapse').collapse('toggle')">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-question-circle"></i>
       </button>
       <button roll="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <i class="fa fa-check" aria-hidden="true"></i>
+        <i class="fa fa-check"></i>
       </button>
     </div>
   </div>
@@ -125,7 +119,7 @@
       if (value == 'light') {
         $('table').removeClass('table-dark').addClass('table-light');
         $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
-        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('border-dark');
       }
     });
     settings.getItem('centeredModals').then(function(value) {
@@ -318,9 +312,5 @@
     });
   }
 
-  //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
+  enableTooltips();
 </script>

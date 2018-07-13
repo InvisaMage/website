@@ -5,7 +5,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <h4 class="modal-title">Shortcuts</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
     </div>
     <div class="modal-body">
       <table class="table table-dark table-hover">
@@ -33,8 +33,12 @@
           <th><kbd>Ctrl + Alt + F</kbd></th>
         </tr>
         <tr>
+          <td><h6 class="black">Show last message</h6></td>
+          <th><kbd>Ctrl + Alt + L</kbd></th>
+        </tr>
+        <tr>
           <td><h6 class="black">Load Terminal Assets</h6></td>
-          <th><kbd>Shift + Space</kbd></th>
+          <th><kbd>Alt + ~</kbd></th>
         </tr>
         <tr>
           <td><h6 class="black">Toggle Terminal</h6></td>
@@ -45,7 +49,7 @@
     <!--Shortcuts Help Collapsible Content-->
     <div class="collapse" id="modal-shortcuts-collapse">
       <div class="card text-white bg-secondary">
-        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-shortcuts-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-shortcuts-collapse').collapse('toggle');"><span>&times;</span></button></h5>
         <div class="card-body">
           <h6>What's this?</h6>
           <p class="card-text">
@@ -57,10 +61,10 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-shortcuts-collapse').collapse('toggle');">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-question-circle"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <i class="fa fa-check" aria-hidden="true"></i>
+        <i class="fa fa-check"></i>
       </button>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-content -->
@@ -71,7 +75,7 @@
     settings.getItem('theme').then(function(value) {
       if (value == 'light') {
         $('table').removeClass('table-dark').addClass('table-light');
-        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('border-dark');
       }
     });
     settings.getItem('centeredModals').then(function(value) {

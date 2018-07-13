@@ -5,8 +5,8 @@
   <div class="modal-content">
     <div class="modal-header">
        <h4 class="modal-title">Contact</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+      <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
       </button>
     </div>
     <div class="modal-body">
@@ -20,11 +20,11 @@
           </div>
           <input id="copyTargetEmail" readonly type="text" class="form-control" value="support@InvisaMage.com">
           <div class="input-group-append">
-            <a id="copyButtonEmail" roll="button" class="btn btn-light" href="javascript:emailMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
-              <i class="far fa-copy" aria-hidden="true"></i>
+            <a id="copyButtonEmail" roll="button" class="btn btn-light" href="javascript:emailMsg();" data-placement="top" data-toggle="tooltip" title="Copy text" data-container="body">
+              <i class="far fa-copy"></i>
             </a>
-            <a roll="button" class="btn btn-light" href="mailto:support@invisamage.com" data-placement="top" data-toggle="tooltip" title="Send E-mail" data-container="body">
-              <i class="far fa-envelope-open" aria-hidden="true"></i>
+            <a roll="button" class="btn btn-light" href="mailto:support@invisamage.com" data-placement="top" data-toggle="tooltip" title="Send e-mail" data-container="body">
+              <i class="far fa-envelope-open"></i>
             </a>
           </div>
         </div><!-- /input-group -->
@@ -36,11 +36,11 @@
           </div>
           <input id="copyTargetTelegram" readonly type="text" class="form-control" value="https://telegram.me/InvisaMage">
           <div class="input-group-append">
-            <a id="copyButtonTelegram" roll="button" class="btn btn-light" href="javascript:telegramMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
-              <i class="far fa-copy" aria-hidden="true"></i>
+            <a id="copyButtonTelegram" roll="button" class="btn btn-light" href="javascript:telegramMsg();" data-placement="top" data-toggle="tooltip" title="Copy text" data-container="body">
+              <i class="far fa-copy"></i>
             </a>
-            <a roll="button" class="btn btn-light" href="https://telegram.me/InvisaMage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Send Message" data-container="body">
-              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+            <a roll="button" class="btn btn-light" href="https://telegram.me/InvisaMage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="Send message" data-container="body">
+              <i class="fab fa-telegram-plane"></i>
             </a>
           </div>
         </div><!-- /input-group -->
@@ -52,11 +52,11 @@
           </div>
           <input id="copyTargetKeybase" readonly type="text" class="form-control" value="InvisaMage">
           <div class="input-group-append">
-            <a id="copyButtonKeybase" roll="button" class="btn btn-light" href="javascript:keybaseMsg();" data-placement="top" data-toggle="tooltip" title="Copy Text" data-container="body">
-              <i class="far fa-copy" aria-hidden="true"></i>
+            <a id="copyButtonKeybase" roll="button" class="btn btn-light" href="javascript:keybaseMsg();" data-placement="top" data-toggle="tooltip" title="Copy text" data-container="body">
+              <i class="far fa-copy"></i>
             </a>
-            <a roll="button" class="btn btn-light" href="https://keybase.io/invisamage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="View Profile" data-container="body">
-              <i class="far fa-user" aria-hidden="true"></i>
+            <a roll="button" class="btn btn-light" href="https://keybase.io/invisamage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="View profile" data-container="body">
+              <i class="far fa-user"></i>
             </a>
           </div>
         </div><!-- /input-group -->
@@ -64,7 +64,7 @@
     <!--Contact Help Collapsible Content-->
     <div class="collapse" id="modal-contact-collapse">
       <div class="card text-white bg-secondary">
-        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-contact-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-contact-collapse').collapse('toggle');"><span>&times;</span></button></h5>
         <div class="card-body">
           <h6>Explanation of contact methods</h6>
           <p class="card-text">
@@ -77,10 +77,10 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-contact-collapse').collapse('toggle')">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-question-circle"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <i class="fa fa-check" aria-hidden="true"></i>
+        <i class="fa fa-check"></i>
       </button>
     </div>
   </div>
@@ -91,7 +91,7 @@
     settings.getItem('theme').then(function(value) {
       if (value == 'light') {
         $('.btn.btn-light').removeClass('btn-light').addClass('btn-secondary');
-        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('border-dark');
       }
     });
     settings.getItem('centeredModals').then(function(value) {
@@ -284,9 +284,5 @@
     });
   }
 
-  //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
+  enableTooltips();
 </script>

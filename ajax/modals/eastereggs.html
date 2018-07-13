@@ -5,7 +5,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <h4 class="modal-title">List of Easter Eggs</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
     </div>
     <div class="modal-body">
       This is a list of Easter Eggs currently found in this website.
@@ -17,15 +17,15 @@
         <!--General-->
         <div class="card bg-secondary">
           <div class="card-header" role="tab" id="headingOne">
-            <button id="collapse-heading" class="btn btn-lg btn-block btn-outline-dark" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" type="button">
+            <button id="collapse-heading" class="btn btn-lg btn-block btn-outline-dark" data-toggle="collapse" href="#collapseOne" type="button">
               General
             </button>
           </div>
 
-          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse show" role="tabpanel" data-parent="#accordion">
             <div class="card-body">
               <ul class="text-left">
-                <li>Hovering over this - <i class="fa fa-chevron-up" aria-hidden="true"></i> - button in the navigation bar.</li>
+                <li>Hovering over this - <i class="fa fa-chevron-up"></i> - button in the navigation bar.</li>
                 <li>Inserting the <a class="link link-light" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a> anywhere in the site.</li>
                 <li>Declining the <a class="link link-light" href="terms.html">Terms</a> or <a class="link link-light" href="privacy.html">Privacy Policy</a>.</li>
                 <li>Clicking "Hide Ads" in the footer.</li>
@@ -37,11 +37,11 @@
         <!--Search-->
         <div class="card bg-secondary">
           <div class="card-header" role="tab" id="headingTwo">
-            <button id="collapse-heading" class="btn btn-lg btn-block btn-outline-dark" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" type="button" >
+            <button id="collapse-heading" class="btn btn-lg btn-block btn-outline-dark" data-toggle="collapse" href="#collapseTwo" type="button" >
               Search
             </button>
           </div>
-          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div id="collapseTwo" class="collapse" role="tabpanel" data-parent="#accordion">
             <div class="card-body">
               Inserting these queries into the <a class="link link-light" href="info.html#functions">Search</a> function will output special results.<br>
               <strong>Note:</strong> This does not include page results.
@@ -50,10 +50,6 @@
               <br>
 
               <ul class="text-left">
-                <li>Google (Goes to: <a class="link link-light" href="https://www.google.com/">https://www.google.com/</a>)</li>
-                <li>Bing (Goes to: <a class="link link-light" href="https://www.bing.com/">https://www.bing.com/</a>)</li>
-                <li>Duck (Goes to: <a class="link link-light" href="https://duckduckgo.com/">https://duckduckgo.com/</a>)</li>
-                <li>YouTube (Goes to: <a class="link link-light" href="https://www.youtube.com/">https://www.youtube.com/</a>)</li>
                 <li>Launches Cortana (Windows 10)</li>
                 <li>RuneScape (Launches RuneScape if it's installed.)</li>
               </ul>
@@ -63,11 +59,11 @@
         <!--namePrompt-->
         <div class="card bg-secondary">
           <div class="card-header" role="tab" id="headingThree">
-            <button id="collapse-heading" class="btn btn-lg btn-block btn-outline-dark" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" type="button">
+            <button id="collapse-heading" class="btn btn-lg btn-block btn-outline-dark" data-toggle="collapse" href="#collapseThree"type="button">
               namePrompt
             </button>
           </div>
-          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div id="collapseThree" class="collapse" role="tabpanel" data-parent="#accordion">
             <div class="card-body">
               Inputting any of these queries into the <a class="link link-light" href="info.html#functions">namePrompt</a> function will output a special result.<br>
               <ul class="text-left">
@@ -115,23 +111,23 @@
     <!--Easter Egg Help Collapsible Content-->
     <div class="collapse" id="modal-eastereggs-collapse">
       <div class="card text-white bg-secondary">
-        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-eastereggs-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-eastereggs-collapse').collapse('toggle');"><span>&times;</span></button></h5>
         <div class="card-body">
           <h6>How did I get here?</h6>
           <p class="card-text">
             You inserted the <a class="link link-light" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.<br>
             I doubt you got here by mistake.
           </p>
-          <img class="img-fluid center-block" src="./images/svg/konami.svg">
+          <h3 style="color:inherit">↑↑↓↓←→←→BA</h3>
         </div>
       </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-eastereggs-collapse').collapse('toggle')">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-question-circle"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <i class="fa fa-check" aria-hidden="true"></i>
+        <i class="fa fa-check"></i>
       </button>
     </div>
   </div><!-- /.modal-content -->
@@ -141,7 +137,7 @@
   $(function() {
     settings.getItem('theme').then(function(value) {
       if (value == 'light') {
-        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('border-dark');
       }
     });
     settings.getItem('centeredModals').then(function(value) {

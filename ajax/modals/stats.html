@@ -5,7 +5,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <h4 class="modal-title">Stats</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
     </div>
     <div class="modal-body">
       <table class="table table-dark table-hover">
@@ -22,7 +22,7 @@
         <!--Bootstrap Version-->
         <tr>
           <td><h7 class="black">Bootstrap</h7></td>
-          <th><h7 class="black">v4.1.1</h7></th>
+          <th><h7 class="black">v4.1.2</h7></th>
         </tr>
         <!--Font Awesome Version-->
         <tr>
@@ -50,16 +50,16 @@
           <th>
             <div class="btn-group btn-group-sm" role="group">
               <button type="button" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="Firefox v55+">
-                <i class="fab fa-firefox fa-lg" aria-hidden="true"></i>
+                <i class="fab fa-firefox fa-lg" ></i>
               </button>
               <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Chrome v60+">
-                <i class="fab fa-chrome fa-lg" aria-hidden="true"></i>
+                <i class="fab fa-chrome fa-lg"></i>
               </button>
               <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Mobile Safari v10.3+">
-                <i class="fab fa-safari fa-lg" aria-hidden="true"></i>
+                <i class="fab fa-safari fa-lg"></i>
               </button>
               <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Edge v15+">
-                <i class="fab fa-edge fa-lg" aria-hidden="true"></i>
+                <i class="fab fa-edge fa-lg" ></i>
               </button>
             </div>
           </th>
@@ -69,8 +69,11 @@
           <td><h7 class="black">Debug</h7></td>
           <th>
             <div class="btn-group" role="group">
-              <button id="btn-clear-localstorage" type="button" class="btn btn-danger" data-dismiss="modal" onclick="loadClearLocalStorageMod();" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Clear Local Storage" data-container="body">
-                <i class="fa fa-trash" aria-hidden="true"></i>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="lastMsg();" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Show last message" data-container="body">
+                <i class="fas fa-comment"></i>
+              </button>
+              <button id="btn-clear-localstorage" type="button" class="btn btn-danger" data-dismiss="modal" onclick="loadClearLocalStorageMod();" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Clear local storage" data-container="body">
+                <i class="fa fa-trash"></i>
               </button>
             </div>
           </th>
@@ -80,7 +83,7 @@
     <!--Stats Help Collapsible Content-->
     <div class="collapse" id="modal-stats-collapse">
       <div class="card text-white bg-secondary">
-        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-stats-collapse').collapse('toggle');" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+        <h5 class="card-header">Help <button type="button" class="close" onclick="$('#modal-stats-collapse').collapse('toggle');"><span>&times;</span></button></h5>
         <div class="card-body">
           <h6>What does this do?</h6>
           <p class="card-text">
@@ -109,10 +112,10 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-info" onclick="$('#modal-stats-collapse').collapse('toggle');">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-question-circle"></i>
       </button>
       <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
-        <i class="fa fa-check" aria-hidden="true"></i>
+        <i class="fa fa-check"></i>
       </button>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-content -->
@@ -124,7 +127,7 @@
     settings.getItem('theme').then(function(value) {
       if (value == 'light') {
         $('table').removeClass('table-dark').addClass('table-light');
-        $('.card.bg-secondary').removeClass('bg-secondary').addClass('bg-light');
+        $('.card.bg-secondary').removeClass('bg-secondary').addClass('border-dark');
       }
     });
     settings.getItem('centeredModals').then(function(value) {
@@ -222,11 +225,7 @@
     +'v'+majorVersion+''
   );
 
-  //Re enable tooltips.
-  if(!('ontouchstart' in window))
-  {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
+  enableTooltips();
 
   $.ajax({
     url:"./ajax/unique-requests.txt",

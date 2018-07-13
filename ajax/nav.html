@@ -9,10 +9,10 @@
     InvisaMage
   </a>
   <a id="up-chevron" class="navbar-brand" onclick="window.scrollTo(0, 0);" data-toggle="tooltip" data-placement="bottom" title="Beam me up" style="padding-top:8px;">
-    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    <i class="fa fa-chevron-up"></i>
   </a>
 </div>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default">
   <span class="navbar-toggler-icon"></span>
 </button>
 
@@ -21,8 +21,8 @@
     <li id="nav-home" class="nav-item"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
     <li id="nav-news" class="nav-item"><a class="nav-link" href="news.html">News</a></li>
     <li class="nav-item dropdown" id="nav-projects">
-      <a class="nav-link dropdown-toggle" id="dropdownNav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-      <div class="dropdown-menu" aria-labelledby="dropdownNav">
+      <a class="nav-link dropdown-toggle" id="dropdownNav" data-toggle="dropdown">Projects</a>
+      <div class="dropdown-menu">
         <a id="nav-txtLock" class="dropdown-item" href="txtlock.html">TxtLock</a>
         <a id="nav-tidynt" class="dropdown-item" href="tidynt.html">TidyNT</a>
         <div class="dropdown-divider"></div>
@@ -39,7 +39,7 @@
   <div class="nav justify-content-end d-none d-xl-flex">
     <li class="nav-item" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats (for nerds)">
       <a class="nav-link" onclick="loadStatsMod();">
-        <i class="fas fa-chart-bar fa-lg" aria-hidden="true"></i>
+        <i class="fas fa-chart-bar fa-lg"></i>
       </a>
     </li>
     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Achievements">
@@ -49,7 +49,7 @@
     </li>
     <li class="nav-item" id="settings-li" data-toggle="tooltip" data-placement="bottom" title="Settings">
       <a class="nav-link" onclick="loadSettingsMod();" id="settings-button">
-        <i id="settings-fa-spin" class="fa fa-cog fa-lg" aria-hidden="true"></i>
+        <i id="settings-fa-spin" class="fa fa-cog fa-lg"></i>
       </a>
     </li>
   </div><!-- /modal buttons -->
@@ -62,10 +62,10 @@
       <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search(document.getElementById('search').value);" onfocus="loadSearch();">
       <span class="input-group-append">
         <button class="btn btn-secondary" type="button" onclick="search(document.getElementById('search').value)">
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <i class="fa fa-search"></i>
         </button>
         <button class="btn btn-outline-info" type="button" onclick="loadSearchHelpMod();">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
+          <i class="fa fa-question-circle"></i>
         </button>
       </span>
     </div><!-- /.input-group -->
@@ -78,7 +78,7 @@
         <i class="fas fa-search"></i> Search
       </button>
       <button class="btn btn-outline-info" type="button" onclick="loadSearchHelpMod();">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-question-circle"></i>
       </button>
     </div>
   </div>
@@ -89,13 +89,13 @@
   <div class="nav justify-content-center d-xl-none">
     <div class="btn-group" role="group">
       <button onclick="loadStatsMod();" type="button" class="btn btn-md btn-secondary">
-        <i class="fas fa-chart-bar" aria-hidden="true"></i> Stats
+        <i class="fas fa-chart-bar"></i> Stats
       </button>
       <button onclick="loadAchievementsMod();" type="button" class="btn btn-md btn-secondary">
-        <i id="achievements-star-mobile" class="fa fa-trophy" aria-hidden="true"></i> Achievements
+        <i id="achievements-star-mobile" class="fa fa-trophy"></i> Achievements
       </button>
       <button onclick="loadSettingsMod();" type="button" class="btn btn-md btn-secondary">
-        <i class="fa fa-cog" aria-hidden="true"></i> Settings
+        <i class="fa fa-cog"></i> Settings
       </button>
     </div>
   </div>

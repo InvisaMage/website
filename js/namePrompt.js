@@ -603,9 +603,7 @@ function namePrompt(name) {
 		;}
 
 	//Activate Tooltips
-	if(!('ontouchstart' in window)) {
-		$('[data-toggle="tooltip"]').tooltip();
-	}
+	enableTooltips();
 	var volume = $("audio").prop("volume")-0.9; if(volume <0){ volume = 0; } $("audio").prop("volume",volume);
 }
 
@@ -617,4 +615,15 @@ function pause() {
 function play() {
   $('audio').trigger('play');
   $('#play-btn').replaceWith( "<a id='pause-btn' class='btn btn-success btn-md' role='button' onclick='pause();'> <i class='fa fa-pause' aria-hidden='true'></i> </a>" );
+}
+
+//Loads snowstorm assets and enables for namePrompt easter egg
+function loadSnowstormNamePrompt() {
+  setTimeout(enable, 500);
+  $.getScript('js/snowstorm.js');
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+  function enable() {
+    purplerainCheck();
+    snowStorm.toggleSnow();
+  }
 }

@@ -31,11 +31,12 @@
 			<!--Menu-->
 			<div id="menu-terms" class="menu menu-terms d-none d-xl-inline">
 				<h4>Contents</h4>
-				<li><a href="terms.html#general"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> General</a></li>
-				<li><a href="terms.html#logo"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Logo</a></li>
-				<li><a href="terms.html#warranty"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Warranties & Liability</a></li>
-				<li><a href="terms.html#copyright"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Copyright</a></li>
-				<li><a href="terms.html#changes"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Changes</a></li>
+				<li><a href="terms.html#general"><i class="fa fa-chevron-right"></i></span> General</a></li>
+				<li><a href="terms.html#security"><i class="fa fa-chevron-right"></i></span> Security</a></li>
+				<li><a href="terms.html#logo"><i class="fa fa-chevron-right"></i></span> Logo</a></li>
+				<li><a href="terms.html#warranty"><i class="fa fa-chevron-right"></i></span> Warranties & Liability</a></li>
+				<li><a href="terms.html#copyright"><i class="fa fa-chevron-right"></i></span> Copyright</a></li>
+				<li><a href="terms.html#changes"><i class="fa fa-chevron-right"></i></span> Changes</a></li>
 				<br>
 			</div>
 
@@ -48,6 +49,7 @@
 				<select class="form-control mx-auto" style="max-width: 10rem;">
 					<option selected value="#mobile-menu">Contents</option>
 					<option value="terms.html#general">General</option>
+					<option value="terms.html#security">Security</option>
 					<option value="terms.html#logo">Logo</option>
 					<option value="terms.html#warranty">Warranties & Liability</option>
 					<option value="terms.html#copyright">Copyright</option>
@@ -62,13 +64,27 @@
 				<div class="card-body">
 					<p>
 						Use this website at your own risk.<br>
-						Please feel free to test this site for security vulnerabilities.<br>
-						Please allow me time and the required information to implement a fix before going public.<br>
 						I am not affiliated with external websites that are linked on this website.<br>
 						I do not support Internet Explorer.
 					</p>
 				</div>
 			</div><!-- /general-->
+
+			<br>
+
+			<!--Security-->
+			<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="security">
+				<h4 class="card-header">Security</h4>
+				<div class="card-body">
+					<p>
+						This site is encrypted for  your protection.
+						<br>
+						<br>
+						Feel free to test this site for security vulnerabilities.<br>
+						Please allow me time and the required information to implement a fix before going public.
+					</p>
+				</div>
+			</div><!-- /security-->
 
 			<br>
 
@@ -134,8 +150,8 @@
 		<!--Footer-->
 		<footer id="footer"></footer>
 
-		<!--Modals-->
-		<span id="modals"></span>
+		<!--Ajax-->
+		<span id="ajax"></span>
 
 		<!--External Scripts-->
 		<script src="js/jquery.min.js"></script>
@@ -145,7 +161,7 @@
 		<script src="js/pnotify.min.js"></script>
 		<script src="js/konami.js"></script>
 		<script src="js/keypress.min.js"></script>
-		<script src="js/compiled.js"></script>
+		<script src="js/main.js"></script>
 
 		<script>
 			$('.termsSection').addClass('animated slideInUp');

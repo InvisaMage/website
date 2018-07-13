@@ -1,4 +1,4 @@
-//Compiled JavaScript functions utilized on multiple pages.
+//Main JavaScript functions utilized on multiple pages.
 
 //Set localForage databases
 var settings = localforage.createInstance({
@@ -11,7 +11,7 @@ var achievements = localforage.createInstance({
 //Loads navbar, modals, and footer on page load
 $('nav').load('ajax/nav.html');
 $('#footer').load('ajax/footer.html');
-$('#modals').load('ajax/modals.html');
+$('#ajax').load('ajax/ajax.html');
 
 var protocol = window.location.protocol;
 var windowHeight = window.innerHeight;
@@ -27,17 +27,24 @@ PNotify.defaults.delay = 4000;
 
 PNotify.modules.Animate.defaults.animate = true;
 PNotify.modules.Animate.defaults.inClass = 'fadeInUp';
-PNotify.modules.Animate.defaults. outClass = 'fadeOutRight';
+PNotify.modules.Animate.defaults.outClass = 'fadeOutRight';
 
 PNotify.defaultStack.firstpos1 = 75;
 PNotify.defaultStack.firstpos2 = 15;
 PNotify.defaultStack.spacing1 = 15;
 
+//PNotify Test
+if (('ontouchstart' in window)) {
+  PNotify.defaultStack.push = 'top';
+  PNotify.defaultStack.dir1 = 'up';
+  PNotify.defaultStack.dir2 = 'left';
+}
+
 //Libraries
 var jqueryVer = '3.3.1';
-var bootstrapVer = '4.1.1';
+var bootstrapVer = '4.1.2';
 var fontawesomeVer = '5.0.10';
-var jqueryterminalVer = '1.14.0';
+var jqueryterminalVer = '1.18.0';
 var localforageVer = '1.7.1';
 var keypressVer = '2.1.5';
 var konamiVer = '1.6.0';
@@ -59,11 +66,14 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-$(function () {
+function enableTooltips() {
   //If no touchscreen, show Tooltips
   if (!('ontouchstart' in window)) {
     $('[data-toggle="tooltip"]').tooltip();
   }
+}
+
+$(function () {
   //If touchscreen, disable gray background in tab-content
   if (('ontouchstart' in window)) {
     $('.tab-content').css('background-color', 'inherit');
@@ -129,10 +139,24 @@ async function loadSearch() {
     }).catch(function () {
       //If fail, display message and offer to retry
       console.log("loadSearch: One or more assets failed to load");
-      PNotify.error({
-        text: "Unable to get assets!<br>Are you online? <br><br> <button type='button' class='btn btn-primary' onclick='loadSearch(); PNotify.closeAll();'>Retry <i class='fas fa-redo'></i></i></button>",
+      var npNotice = PNotify.error({
+        title: 'Search',
+        text: "Unable to get assets!<br>Are you online?<br><br><small>Click to retry <i class='fas fa-redo fa-sm'></i></small>",
+        textTrusted: true,
         hide: false,
-        textTrusted: true
+        modules: {
+          Buttons: {
+            sticker: false
+          }
+        }
+      });
+      npNotice.refs.elem.style.cursor = 'pointer';
+      npNotice.on('click', function (e) {
+        if ($(e.target).is('.ui-pnotify-closer *, .ui-pnotify-sticker *')) {
+          return;
+        }
+        npNotice.close();
+        loadSearch();
       });
     });
   }
@@ -157,10 +181,24 @@ async function loadNamePrompt() {
       namePromptCounter = 1;
     }).catch(function () {
       //If fail, display message and offer to retry
-      PNotify.error({
-        text: "Unable to get assets!<br>Are you online?<br><br> <button type='button' class='btn btn-primary' onclick='loadNamePrompt(); PNotify.closeAll();'>Retry <i class='fas fa-redo'></i></button>",
+      var npNotice = PNotify.error({
+        title: 'namePrompt',
+        text: "Unable to get assets!<br>Are you online?<br><br><small>Click to retry <i class='fas fa-redo fa-sm'></i></small>",
+        textTrusted: true,
         hide: false,
-        textTrusted: true
+        modules: {
+          Buttons: {
+            sticker: false
+          }
+        }
+      });
+      npNotice.refs.elem.style.cursor = 'pointer';
+      npNotice.on('click', function (e) {
+        if ($(e.target).is('.ui-pnotify-closer *, .ui-pnotify-sticker *')) {
+          return;
+        }
+        npNotice.close();
+        loadNamePrompt();
       });
       console.log("loadNamePrompt: One or more assets failed to load");
     });
@@ -190,36 +228,28 @@ function loadSnowstorm() {
   $('#footer-snowstorm').tooltip('dispose');
   $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
   //Re enable tooltips.
-  if (!('ontouchstart' in window)) {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
-}
-
-//Loads snowstorm assets and enables for namePrompt easter egg
-function loadSnowstormNamePrompt() {
-  setTimeout(enable, 500);
-  $.getScript('js/snowstorm.js');
-  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
-  function enable() {
-    purplerainCheck();
-    snowStorm.toggleSnow();
-  }
+  enableTooltips();
 }
 
 //List of easter eggs
-var easter_egg = new Konami(function() {
-	loadEastereggsMod();
-	eastereggCheck();
+var easter_egg = new Konami(function () {
+  loadEastereggsMod();
+  eastereggCheck();
 });
 
+function lastMsg() {
+  PNotify.modules.History.showLast();
+}
+
 //Shortcuts
-//Loads terminal modal on Shift + Space key combination
+//Loads terminal modal on alt + ` key combination
 var listener = new window.keypress.Listener();
-listener.simple_combo("shift space", async function () {
+listener.simple_combo("alt `", async function () {
   //Inform user of progress
-  PNotify.info({
+  var tNotice = PNotify.info({
     text: 'Loading assets...',
-    delay: 2000
+    icon: 'fas fa-circle-notch fa-spin',
+    hide: false,
   });
   //Get scripts if not already loaded
   if (termCounter == 0) {
@@ -237,35 +267,38 @@ listener.simple_combo("shift space", async function () {
       })
     ).then(function () {
       console.log("KeyCombo Terminal: Loaded assets");
-      PNotify.success({
+      tNotice.update({
         title: 'Terminal Ready',
         text: "Press the <kbd>~</kbd> key to open.",
+        type: 'success',
+        icon: true,
         textTrusted: true,
-        delay: 2000
+        hide: true
       });
       termCounter = 1;
     }).catch(function () {
       //If fail, display message and offer to retry
-      console.log("KeyCombo Terminal: One or more assets failed to load");
-      PNotify.error({
-        text: "Unable to get assets!\nAre you online?"
+      tNotice.update({
+        title: "Terminal",
+        text: "Unable to get assets!\nAre you online?",
+        type: 'error',
+        icon: true,
+        hide: true
       });
+      console.log("KeyCombo Terminal: One or more assets failed to load");
     });
   }
   //If assets have already been loaded
   else {
-    PNotify.error({
+    tNotice.update({
       text: "Terminal assets have already been loaded!",
-      delay: 2000
+      type: 'error',
+      icon: true,
+      hide: true
     });
     console.log('KeyCombo Terminal: Already loaded assets');
   }
 });
-
-//Hides all modals
-function hideModals() {
-  $('#modal-personalize, #modal-achievements, #modal-hideads, #modal-contact, #modal-donate, #modal-stats, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-yes, #modal-no').modal('hide');
-}
 
 //Focus search box with Ctrl + Alt + F key press
 var listener = new window.keypress.Listener();
@@ -293,6 +326,31 @@ listener.simple_combo("ctrl alt a", function () {
   hideModals();
   loadAchievementsMod();
 });
+
+//Show last PNotify notice
+var listener = new window.keypress.Listener();
+listener.simple_combo("ctrl alt l", function () {
+  lastMsg();
+});
+
+//Show Shortcuts modal
+var listener = new window.keypress.Listener();
+listener.simple_combo("shift ?", function () {
+  hideModals();
+  loadShortcutsMod();
+});
+
+//Show Shortcuts modal
+var listener = new window.keypress.Listener();
+listener.simple_combo("shift ?", function () {
+  hideModals();
+  loadShortcutsMod();
+});
+
+//Hides all modals
+function hideModals() {
+  $('#modal-personalize, #modal-achievements, #modal-hide-ads, #modal-contact, #modal-donate, #modal-stats, #modal-eastereggs, #modal-settings, #modal-shortcuts, #modal-terminal, #modal-archive, #modal-search-help, #modal-yes, #modal-no').modal('hide');
+}
 
 //Settings modal logic (executed on save button click in Settings modal)
 function settingsCheck() {
@@ -394,18 +452,21 @@ async function onPageLoadTerm() {
           }
         })
       ).then(function () {
-        console.log("onPageLoadTerm: Loaded assets");
-        PNotify.notice({
-          title: 'Terminal Ready',
-          text: "Press the <kbd>~</kbd> key to open. <br><br> <button type='button' onclick='loadSettingsMod();' class='btn btn-outline-secondary'><i class='fas fa-cog'></i> Settings</button>",
-          textTrusted: true,
-          delay: 3000
+        settings.getItem('toggleTerminal').then(function (value) {
+          if (value == 'true') {
+            terminalNotice('Opened automatically.');
+          }
+          else {
+            terminalNotice('Press the <kbd>~</kbd> key to open.');
+          }
         });
+        console.log("onPageLoadTerm: Loaded assets");
         termCounter = 1;
       }).catch(function () {
         //If fail, display message and offer to retry
         console.log("onPageLoadTerm: One or more assets failed to load");
         PNotify.error({
+          title: "Terminal (Auto)",
           text: "Unable to get assets!\nAre you online?"
         });
       });
@@ -456,9 +517,9 @@ $(function () {
   });
 });
 
-//Check if Events Banner needs to be shown on Homepage
+//Events notification
 $(function () {
-  //Check date to know if events needs to be loaded
+  //Check date to see if events needs to be loaded
   var date = new Date();
   var dates = ['01', '44', '64', '828', '931', '1124', '1125'];
 
@@ -469,7 +530,11 @@ $(function () {
   settings.getItem('enableEventsBanner').then(function (value) {
     if (value == 'true') {
       if (dates.indexOf(mD) != -1) {
-        $('#ajax-event-banner').load('ajax/alerts/alert-events.html');
+        $.getScript('js/events.js')
+        console.log('event = yes');
+      }
+      else {
+        console.log('event = no');
       }
     }
     console.log('enableEventsBanner = ' + value);
@@ -479,7 +544,68 @@ $(function () {
 //Check if Info Banner needs to be shown on homepage
 settings.getItem('enableInfoBanner').then(function (value) {
   if (value == 'true') {
-    $('#ajax-info-banner').load('ajax/alerts/alert-info.html');
+    PNotify.notice({
+      title: 'Feedback',
+      text: 'Would you like to take a survey?',
+      icon: 'fas fa-question-circle',
+      hide: false,
+      modules: {
+        Confirm: {
+          confirm: true,
+          buttons: [{
+              text: 'Sure',
+              primary: true,
+              click: function(notice) {
+                notice.close();
+                settings.setItem('enableInfoBanner', 'false');
+                window.open('https://goo.gl/forms/xf5uzcw2jqkRSRf83', '_blank')
+                notice.update({
+                  title: 'Thank you',
+                  text: 'Your feedback is greatly appreciated.',
+                  icon: true,
+                  type: 'success',
+                  hide: false,
+                  modules: {
+                    Confirm: {
+                      confirm: false
+                    },
+                    Buttons: {
+                      closer: true
+                    }
+                  }
+                });
+              }
+            },
+            {
+              text: 'No thanks',
+              click: function(notice) {
+                settings.setItem('enableInfoBanner', 'false');
+                notice.update({
+                  title: 'Feedback Declined',
+                  text: 'This message will not be shown again unless configured in settings.',
+                  icon: true,
+                  type: 'info',
+                  hide: true,
+                  modules: {
+                    Confirm: {
+                      confirm: false
+                    },
+                    Buttons: {
+                      closer: true,
+                      sticker: true
+                    }
+                  }
+                });
+              }
+            }
+          ]
+        },
+        Buttons: {
+          closer: false,
+          sticker: false
+        }
+      }
+    });
   }
   console.log('enableInfoBanner = ' + value);
 });
@@ -499,6 +625,22 @@ $(function () {
       setTimeout(enable, 500);
       loadSnowstorm();
       function enable() {
+        var sNotice = PNotify.notice({
+          title: 'Snowstorm Started',
+          text: 'Enabled automatically.<br><br><small>Click to configure <i class="fa fa-cog fa-sm"></i></small>',
+          textTrusted: true,
+          delay: 3000
+        });
+        sNotice.refs.elem.style.cursor = 'pointer';
+        sNotice.on('click', function (e) {
+          if ($(e.target).is('.ui-pnotify-closer *, .ui-pnotify-sticker *')) {
+            return;
+          }
+          sNotice.close();
+          hideModals();
+          loadSettingsMod();
+        });
+
         snowStorm.toggleSnow();
         $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
       }
@@ -510,8 +652,8 @@ $(function () {
 
 //Temporary workaround for settings bug
 //Forces to set banner legal if they have not been set yet
-//Banner - Events
 $(function () {
+  //Banner - Events
   settings.getItem('enableEventsBanner').then(function (value) {
     if (value == null) {
       settings.setItem('enableEventsBanner', 'true').then(function (value) {
@@ -522,7 +664,7 @@ $(function () {
   //Banner - Info
   settings.getItem('enableInfoBanner').then(function (value) {
     if (value == null) {
-      settings.setItem('enableInfoBanner', 'false').then(function (value) {
+      settings.setItem('enableInfoBanner', 'true').then(function (value) {
         console.log(value);
       });
     }
@@ -535,6 +677,7 @@ $(function () {
       });
     }
   });
+  //Terminal opacity
   settings.getItem('terminalOpacity').then(function (value) {
     if (value == null) {
       settings.setItem('terminalOpacity', 0.8).then(function (value) {
@@ -557,11 +700,9 @@ $(function () {
 //Light theme
 function themeLight() {
   $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
-  $('.card').removeClass('bg-dark').addClass('bg-light');
-  //$('button').removeClass('btn-light').addClass('btn-secondary');
+  $('.card').removeClass('bg-dark').addClass('border-dark');
   $('table').removeClass('table-dark').addClass('table-light');
   $("nav").attr("class", "navbar navbar-expand-xl navbar-light bg-light fixed-top");
-  //$("nav").attr("style", "background-color: #e3f2fd;");
 }
 
 //Check if centered modals need to be applied
@@ -580,12 +721,7 @@ function eastereggCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      PNotify.info({
-        title: 'Achievement Get',
-        text: "Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A,<br>anywhere in the website. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
-        textTrusted: true,
-        delay: 10000
-      });
+      achievementNotice('Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A, anywhere in the website.')
       achievements.setItem('eastereggAchievement', 'true');
     }
     console.log('eastereggAchievement = ' + value);
@@ -598,12 +734,7 @@ function terminalCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      PNotify.info({
-        title: 'Achievement Get',
-        text: "Hacker?! <br><br> Use the Terminal for the first time. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
-        textTrusted: true,
-        delay: 10000
-      });
+      achievementNotice('Hacker?! <br><br> Use the Terminal for the first time.');
       achievements.setItem('terminalAchievement', 'true');
     }
     console.log('terminalAchievement = ' + value);
@@ -616,12 +747,7 @@ function unlimitedPowerCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      PNotify.info({
-        title: 'Achievement Get',
-        text: "Unlimited POWER! <br><br> Change to the super user account. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
-        textTrusted: true,
-        delay: 10000
-      });
+      achievementNotice('Unlimited POWER! <br><br> Change to the super user account.');
       achievements.setItem('unlimitedPowerAchievement', 'true');
     }
     console.log('unlimitedPowerAchievement = ' + value);
@@ -634,19 +760,14 @@ function wiselyCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      PNotify.info({
-        title: 'Achievement Get',
-        text: "You've Chosen Wisely <br><br> Agree to the <a href='terms.html'>Terms & Conditions</a> and <a href='privacy.html'>Privacy Policy</a>. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
-        textTrusted: true,
-        delay: 10000
-      });
+      achievementNotice("You've Chosen Wisely <br><br> Agree to the <span id='no-click'><a href='terms.html'>Terms & Conditions</a></span> and <span id='no-click'><a href='privacy.html'>Privacy Policy</a></span>.");
       achievements.setItem('wiselyAchievement', 'true');
     }
     console.log('wiselyAchievement = ' + value);
   });
 }
 
-//Used to see if Wisely Achievement message should be displayed.
+//Used to see if Purple Rain Achievement message should be displayed.
 function purplerainCheck() {
   achievements.getItem('purplerainAchievement').then(function (value) {
     if (value == 'true') {
@@ -654,17 +775,50 @@ function purplerainCheck() {
     } else {
       settings.getItem('theme').then(function (value) {
         if (value == 'light') {
-          PNotify.info({
-            title: 'Achievement Get',
-            text: "Purple Rain <br><br> Enable the snowstorm with the 'light' theme enabled. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
-            textTrusted: true,
-            delay: 10000
-          });
+          achievementNotice('Purple Rain <br><br> Enable the snowstorm with the "light" theme enabled.')
           achievements.setItem('purplerainAchievement', 'true');
         }
       });
     }
     console.log('purplerainAchievement = ' + value);
+  });
+}
+
+//Achievement notifications
+function achievementNotice(msg) {
+  var aNotice = PNotify.info({
+    title: 'Achievement Unlocked',
+    text: msg + '<br><br><small>Click to view progress <i class="fa fa-trophy fa-sm"></i></small>',
+    textTrusted: true,
+    delay: 10000
+  });
+  aNotice.refs.elem.style.cursor = 'pointer';
+  aNotice.on('click', function (e) {
+    if ($(e.target).is('.ui-pnotify-closer *, .ui-pnotify-sticker *, #no-click *')) {
+      return;
+    }
+    aNotice.close();
+    hideModals();
+    loadAchievementsMod();
+  });
+}
+
+//Terminal notifications
+function terminalNotice(msg) {
+  var tNotice = PNotify.notice({
+    title: 'Terminal Ready',
+    text: msg + '<br><br><small>Click to configure <i class="fa fa-cog fa-sm"></i></small>',
+    textTrusted: true,
+    delay: 3000
+  });
+  tNotice.refs.elem.style.cursor = 'pointer';
+  tNotice.on('click', function (e) {
+    if ($(e.target).is('.ui-pnotify-closer *, .ui-pnotify-sticker *')) {
+      return;
+    }
+    tNotice.close();
+    hideModals();
+    loadSettingsMod();
   });
 }
 
@@ -702,12 +856,7 @@ function loadAdsMod() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      PNotify.info({
-        title: 'Achievement Get',
-        text: "Hallucinating <br><br> Click Hide Ads in the footer. <br><br> <button type='button' onclick='loadAchievementsMod();' class='btn btn-outline-secondary'><i class='fa fa-trophy'></i> Achievements</button>",
-        textTrusted: true,
-        delay: 10000
-      });
+      achievementNotice('Hallucinating <br><br> Click Hide Ads in the footer.');
       achievements.setItem('hallucinatingAchievement', 'true');
     }
     $('#modal-hide-ads').load('ajax/modals/hide-ads.html');
@@ -779,9 +928,11 @@ function loadClearLocalStorageMod() {
 function btn404() {
   if (btn404Counter % 2 === 0) {
     $("#btn-404-icon").attr("data-fa-transform", "rotate-180");
+    $("#btn-404-text").text("Hide Recent Changes");
   }
   else {
     $("#btn-404-icon").attr("data-fa-transform", "rotate-360");
+    $("#btn-404-text").text("View Recent Changes");
   }
   btn404Counter++;
 }
@@ -797,4 +948,4 @@ $(function () {
 });
 */
 
-console.log('What are you doing in here? \nYes I know I need to fix a few errors.');
+console.log('What are you doing in here? \nYes I know I need to fix a few errors.\n\n');

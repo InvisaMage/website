@@ -1,9 +1,9 @@
 <!--Legal Alert-->
 <div id="legal-banner" class="alert alert-primary alert-dismissible animated bounceInUp" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
     <h4 class="alert-heading">Legal</h4>
     Use of this website is subject to the <a href="terms.html">Terms & Conditions</a>  and <a href="privacy.html">Privacy Policy</a>.
     <hr>
-    <button type="button" class="btn btn-outline-danger" data-dismiss="alert" onclick="settings.setItem('enableLegalBanner', 'true'); loadNoMod();">Decline</button>
-    <button type="button" class="btn btn-primary" data-dismiss="alert" onclick="settings.setItem('enableLegalBanner', 'false'); loadYesMod();">Accept</button>
+    <button type="button" class="btn btn-outline-danger" data-dismiss="alert" onclick="settings.setItem('enableLegalBanner', 'true'); loadNoMod();"><i class="fas fa-ban"></i> Decline</button>
+    <button type="button" class="btn btn-primary" data-dismiss="alert" onclick="settings.setItem('enableLegalBanner', 'false'); loadYesMod();">Accept <i class="fas fa-check"></i></button>
 </div>
