@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: absolute;
 	width: 200px;
 	background: rgb(52, 58, 64);
-	font-size: 16px;
+	font-size: 14px;
 	left: 0px;
 }
 .menu li {
@@ -393,7 +393,7 @@ kbd {
 	color: white;
 }
 .close:hover {
-	color: #D9534F;
+	color: #D9534F !important;
 }
 
 .jumbotron {

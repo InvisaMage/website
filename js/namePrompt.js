@@ -124,7 +124,8 @@ function namePrompt(name) {
 //Rudy
 		if (nL == "rudy") {
 			$("#name").html(
-			"Quit playing with the clock!"
+			"Quit playing with the clock!" +
+			"<audio autoplay preload='auto'><source src='./audio/clock.wav' type='audio/wav'></audio>"
 			)
 		;}
 //David - Audio
@@ -621,9 +622,9 @@ function play() {
 function loadSnowstormNamePrompt() {
   setTimeout(enable, 500);
   $.getScript('js/snowstorm.js');
-  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
   function enable() {
-    purplerainCheck();
+    vulcanicAshCheck();
     snowStorm.toggleSnow();
   }
 }

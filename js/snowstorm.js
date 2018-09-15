@@ -47,7 +47,7 @@ var snowStorm = (function(window, document) {
 
   settings.getItem('theme').then(function(value) {
     if (value == 'light') {
-      this.snowColor = '#6600ff';
+      this.snowColor = '#000';
     } else {
       this.snowColor = '#fff';
     }

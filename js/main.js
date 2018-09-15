@@ -33,7 +33,7 @@ PNotify.defaultStack.firstpos1 = 75;
 PNotify.defaultStack.firstpos2 = 15;
 PNotify.defaultStack.spacing1 = 15;
 
-//PNotify Test
+//PNotify defaults for mobile
 if (('ontouchstart' in window)) {
   PNotify.defaultStack.push = 'top';
   PNotify.defaultStack.dir1 = 'up';
@@ -42,7 +42,7 @@ if (('ontouchstart' in window)) {
 
 //Libraries
 var jqueryVer = '3.3.1';
-var bootstrapVer = '4.1.2';
+var bootstrapVer = '4.1.3';
 var fontawesomeVer = '5.0.10';
 var jqueryterminalVer = '1.18.0';
 var localforageVer = '1.7.1';
@@ -72,13 +72,6 @@ function enableTooltips() {
     $('[data-toggle="tooltip"]').tooltip();
   }
 }
-
-$(function () {
-  //If touchscreen, disable gray background in tab-content
-  if (('ontouchstart' in window)) {
-    $('.tab-content').css('background-color', 'inherit');
-  }
-});
 
 //Navbar current page highlight
 setTimeout(navEnable, 700);
@@ -214,6 +207,7 @@ $('#mobile-menu select').change(function () {
 });
 
 //Scroll to target in URL after page load
+/*
 $(function () {
   setTimeout(enable, 900);
   function enable() {
@@ -221,12 +215,13 @@ $(function () {
     $("html, body").animate({ scrollTop: test - 200 }, 1000);
   }
 });
+*/
 
 //Loads snowstorm assets and replaces footer text to enable snowstorm on next click
 function loadSnowstorm() {
   $.getScript('js/snowstorm.js');
   $('#footer-snowstorm').tooltip('dispose');
-  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
   //Re enable tooltips.
   enableTooltips();
 }
@@ -331,20 +326,6 @@ listener.simple_combo("ctrl alt a", function () {
 var listener = new window.keypress.Listener();
 listener.simple_combo("ctrl alt l", function () {
   lastMsg();
-});
-
-//Show Shortcuts modal
-var listener = new window.keypress.Listener();
-listener.simple_combo("shift ?", function () {
-  hideModals();
-  loadShortcutsMod();
-});
-
-//Show Shortcuts modal
-var listener = new window.keypress.Listener();
-listener.simple_combo("shift ?", function () {
-  hideModals();
-  loadShortcutsMod();
 });
 
 //Hides all modals
@@ -582,7 +563,8 @@ settings.getItem('enableInfoBanner').then(function (value) {
                 settings.setItem('enableInfoBanner', 'false');
                 notice.update({
                   title: 'Feedback Declined',
-                  text: 'This message will not be shown again unless configured in settings.',
+                  text: 'Sorry to hear that.<br><br>This message will not be shown again unless configured in settings.',
+                  textTrusted: true,
                   icon: true,
                   type: 'info',
                   hide: true,
@@ -642,9 +624,9 @@ $(function () {
         });
 
         snowStorm.toggleSnow();
-        $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+        $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
       }
-      purplerainCheck();
+      vulcanicAshCheck();
     }
     console.log('enableSnowstorm = ' + value);
   });
@@ -767,20 +749,20 @@ function wiselyCheck() {
   });
 }
 
-//Used to see if Purple Rain Achievement message should be displayed.
-function purplerainCheck() {
-  achievements.getItem('purplerainAchievement').then(function (value) {
+//Used to see if Vulcanic Ash Achievement message should be displayed.
+function vulcanicAshCheck() {
+  achievements.getItem('vulcanicAshAchievement').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       settings.getItem('theme').then(function (value) {
         if (value == 'light') {
-          achievementNotice('Purple Rain <br><br> Enable the snowstorm with the "light" theme enabled.')
-          achievements.setItem('purplerainAchievement', 'true');
+          achievementNotice('Vulcanic Ash <br><br> Enable the snowstorm with the "light" theme enabled.')
+          achievements.setItem('vulcanicAshAchievement', 'true');
         }
       });
     }
-    console.log('purplerainAchievement = ' + value);
+    console.log('vulcanicAshAchievement = ' + value);
   });
 }
 
@@ -824,10 +806,10 @@ function terminalNotice(msg) {
 
 //Check if Achievements icon needs to be gold
 function goldCheck() {
-  var keys = ['eastereggAchievement', 'terminalAchievement', 'unlimitedPowerAchievement', 'wiselyAchievement', 'hallucinatingAchievement', 'purplerainAchievement'];
+  var keys = ['eastereggAchievement', 'terminalAchievement', 'unlimitedPowerAchievement', 'wiselyAchievement', 'hallucinatingAchievement', 'vulcanicAshAchievement'];
 
   achievements.getItems(keys).then(function (results) {
-    if (results.eastereggAchievement == 'true' && results.terminalAchievement == 'true' && results.unlimitedPowerAchievement == 'true' && results.wiselyAchievement == 'true' && results.hallucinatingAchievement == 'true' && results.purplerainAchievement == 'true') {
+    if (results.eastereggAchievement == 'true' && results.terminalAchievement == 'true' && results.unlimitedPowerAchievement == 'true' && results.wiselyAchievement == 'true' && results.hallucinatingAchievement == 'true' && results.vulcanicAshAchievement == 'true') {
       $("#achievements-star, #achievements-star-mobile ").css('color', 'gold');
       console.log("Changed achievements icon color");
     }

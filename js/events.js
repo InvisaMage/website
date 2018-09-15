@@ -66,9 +66,9 @@ function showEvent(msg) {
 function loadSnowstormEvents() {
   setTimeout(enable, 500);
   $.getScript('js/snowstorm.js');
-  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); purplerainCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
   function enable() {
-    purplerainCheck();
+    vulcanicAshCheck();
     snowStorm.toggleSnow();
     $('#events-snow').hide();
   }

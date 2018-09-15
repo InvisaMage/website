@@ -327,7 +327,7 @@
 
 					<!--Projects Menu-->
 					<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
-						<h4>Date Jump</h4>
+						<h5>Date Jump</h5>
 						<li><a href="#4-13-18-projects"><i class="fa fa-chevron-right"></i> April 13, 2018</a></li>
 						<li><a href="#3-23-18-projects"><i class="fa fa-chevron-right"></i> March 23, 2018</a></li>
 						<li><a href="#11-30-17-projects"><i class="fa fa-chevron-right"></i> November 30, 2017</a></li>
@@ -476,7 +476,7 @@
 
 						<!--Important Menu-->
 						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
-							<h4>Date Jump</h4>
+							<h5>Date Jump</h5>
 							<li><a href="#5-25-18-important"><i class="fa fa-chevron-right"></i> May 25, 2018</a></li>
 							<li><a href="#10-7-17-important"><i class="fa fa-chevron-right"></i> October 7, 2017</a></li>
 							<li><a href="#11-23-16-important"><i class="fa fa-chevron-right"></i> November 23, 2016</a></li>
@@ -495,6 +495,9 @@
 					<div class="d-block d-xl-none" id="mobile-menu">
 						<select class="form-control mx-auto" style="max-width: 10rem;">
 							<option selected value="news.html#mobile-menu">Date Jump</option>
+							<optgroup label="September 2018">
+								<option value="news.html#9-14-18-website">14th</option>
+							</optgroup>
 							<optgroup label="July 2018">
 								<option value="news.html#7-13-18-website">13th</option>
 							</optgroup>
@@ -520,6 +523,24 @@
 						</select>
 						<br>
 					</div>
+
+					<!--September 14, 2018-->
+					<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="9-14-18-website">
+						<h4 class="card-header">September 14, 2018</h4>
+						<div class="card-body">
+							<p>
+								Content and Date Jump menu font size has been reduced.<br>
+								Renamed Purple Rain Achievement to Vulcanic Ash (achievement method is still the same).<br>
+								Fixed Toggle Terminal setting disable logic.<br>
+								Fixed Terminal background color bug.
+								<br>
+								<br>
+								Updated <a class="link" href="info.html#bootstrap">Bootstrap</a> to version 4.1.3.
+							</p>
+						</div>
+					</div><!-- /9-14-18-->
+
+					<br>
 
 					<!--July 13, 2018-->
 					<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="7-13-18-website">
@@ -688,7 +709,11 @@
 
 						<!--Website Menu-->
 						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
-							<h4>Date Jump</h4>
+							<h5>Date Jump</h5>
+							<li><a><i class="fa fa-chevron-down"></i> September 2018</a></li>
+							<div>
+								<li><a href="#9-14-18-website"><i class="fa fa-chevron-right"></i> 14th</a></li>
+							</div>
 							<li><a><i class="fa fa-chevron-down"></i> July 2018</a></li>
 							<div>
 								<li><a href="#7-13-18-website"><i class="fa fa-chevron-right"></i> 13th</a></li>
@@ -741,7 +766,6 @@
 								<p>
 									Found a problem? <a class="link" onclick="loadContactMod();">Contact</a> me.
 									<hr>
-									The background color for the <a class="link" href="info.html#terminal-info">Terminal</a> does not always apply.<br>
 									The navigation dropdown on mobile devices may shift over and clip content on small screens.
 								</p>
 							</div>
@@ -754,6 +778,7 @@
 						  <h4 class="card-header">Fixed</h4>
 						  <div class="card-body">
 								<p>
+									The background color for the <a class="link" href="info.html#terminal-info">Terminal</a> does not always apply.<br>
 									<a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers stack the homepage cards incorrectly.<br>
 									Modals have no animations due to a bootstrap <a class="link" href="https://github.com/twbs/bootstrap/issues/23604" target="_blank" rel="noopener noreferrer">bug</a>.<br>
 									I fixed this bug and then I liked the faster loading so now it's no longer a bug. It's a feature.
@@ -771,8 +796,7 @@
 									Tooltips are disabled on touchscreen devices.<br>
 									Modals and other <a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">ajax</a>ed content may take awhile to load depending on your connection.<br>
 									Some content blocking extensions block the <a class="link" onclick="loadAdsMod();" data-toggle="tooltip" data-placement="top" title="Hide ads.">Hide Ads</a> modal from loading.<br>
-									<br>
-									<br>
+									<hr>
 									<a class="definition" data-toggle="tooltip" data-placement="top" title="Asynchronous JavaScript and XML">Ajax</a>ed content does not work locally on <a class="definition" data-toggle="tooltip" data-placement="top" title="A web browser engine developed as part of the Chromium project by The Chromium Project with contributions from various organizations.">Blink</a> based browsers.<br>
 									A known workaround for this problem is to load the browser executable with a flag.<br>
 									<kbd>Win + R</kbd> > <kbd>path/to/.exe -allow-file-access-from-files</kbd> > <kbd>OK</kbd><br>
@@ -783,7 +807,7 @@
 
 						<!--Bugs Menu-->
 						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
-							<h4>Contents</h4>
+							<h5>Contents</h5>
 							<li><a href="#problems"><i class="fa fa-chevron-right"></i> Known Problems</a></li>
 							<li><a href="#fixed"><i class="fa fa-chevron-right"></i> Fixed</a></li>
 							<li><a href="#notes"><i class="fa fa-chevron-right"></i> Notes</a></li>

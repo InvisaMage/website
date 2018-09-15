@@ -12,7 +12,7 @@
         console.log("terminalOpacity = " + value);
       });
     }
-    if (value == 'dark') {
+    if (value == 'dark' || value == undefined) {
       settings.getItem('terminalOpacity').then(function (value) {
         $('.terminal').css("background-color", 'rgba(34,38,42,' + value + ')');
         console.log("terminalOpacity = " + value);
@@ -38,7 +38,7 @@
       enabled: false,
       completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert', 'requests',
         'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history', 'libraries'],
-      greetings: 'Website Terminal [Version 2018.7.4]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
+      greetings: 'Website Terminal [Version 2018.7.27]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
       keypress: function (e, terminal) {
         if (e.which == 96) {
           return false;
@@ -90,8 +90,7 @@ jQuery(document).ready(function ($) {
     var modals = ['achievements', 'archive', 'contact', 'donate', 'eastereggs', 'hide-ads', 'search', 'search-help', 'settings',
       'shortcuts', 'stats', 'no', 'yes'];
     modals.toString();
-    var modalsList = modals.join(", ").replaceAll(",", " |");
-    var modalsListComma = modals.join(", ");
+    var modalsList = modals.join(", ");
 
     var users = ['guest', 'root', 'pi'];
     users.toString();
@@ -291,7 +290,7 @@ jQuery(document).ready(function ($) {
         terminal.echo('Loading assets...');
       }
       else if (cmd.args == '--toggle' || cmd.args == '-t') {
-        snowStorm.toggleSnow(); purplerainCheck();
+        snowStorm.toggleSnow(); vulcanicAshCheck();
         terminal.echo('Toggling the snow...');
       }
       else if (cmd.args == '--freeze' || cmd.args == '-f') {
@@ -590,7 +589,7 @@ jQuery(document).ready(function ($) {
           }
         }
         if (cmd.args[0] == '-l' || cmd.args[0] == '--list') {
-          terminal.echo(modalsListComma);
+          terminal.echo(modalsList);
         }
       }
       else {
@@ -844,6 +843,10 @@ jQuery(document).ready(function ($) {
     //Display
     else if (cmd.name == 'display') {
       terminal.echo(screen.width + ' ⨯ ' + screen.height);
+    }
+    //ping
+    else if (cmd.name == 'ping') {
+      terminal.echo('Pong!');
     }
     //Libraries
     else if (cmd.name == 'libraries') {

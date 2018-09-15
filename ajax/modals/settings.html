@@ -193,6 +193,7 @@
 
 <script>
   var btnMoreCounter = 0;
+  var termAssetsCounter = 0;
 
   $(function() {
     settings.getItem('theme').then(function(value) {
@@ -327,8 +328,7 @@
         $("#terminal-checkbox1").prop("checked", true);
         $("#toggle-terminal").removeClass('disabled');
         $("#terminal-checkbox2").prop("disabled", false);
-      } else {
-
+        termAssetsCounter++;
       }
     }).catch(function(err) {
       console.log(err);
@@ -348,9 +348,20 @@
       console.log(err);
     });
 
-    $('#load-terminal').click(function() {
-      $("#toggle-terminal").removeClass('disabled');
-      $("#terminal-checkbox2").prop("disabled", false);
+    $('#terminal-checkbox1').click(function() {
+      console.log('Settings: Load terminal clicked');
+
+      if (termAssetsCounter % 2 === 0) {
+        $("#toggle-terminal").removeClass('disabled');
+        $("#terminal-checkbox2").prop("disabled", false);
+        console.log('Settings: Toggle Terminal enabled');
+      }
+      else {
+        $("#toggle-terminal").addClass('disabled');
+        $("#terminal-checkbox2").prop("disabled", true);
+        console.log('Settings: Toggle Terminal disabled');
+      }
+      termAssetsCounter++;
     });
 
     //Terminal Opacity

@@ -49,11 +49,11 @@
           <td><h6 class="text-danger" id="hallucinatingAchievement">No</h6></td>
           <td><h6 class="black" id="hallucinating-achievement-method">Unknown</h6></td>
         </tr>
-        <!--Purple Rain-->
-        <tr class="not-active" id="purplerainRow">
-          <td><h6 class="black">Purple Rain</h6></td>
-          <td><h6 class="text-danger" id="purplerainAchievement">No</h6></td>
-          <td><h6 class="black" id="purple-rain-achievement-method">Unknown</h6></td>
+        <!--Vulcanic Ash-->
+        <tr class="not-active" id="vulcanicAshRow">
+          <td><h6 class="black">Vulcanic Ash</h6></td>
+          <td><h6 class="text-danger" id="vulcanicAshAchievement">No</h6></td>
+          <td><h6 class="black" id="vulcanic-ash-achievement-method">Unknown</h6></td>
         </tr>
       </table>
     </div>
@@ -161,13 +161,13 @@
       }
       console.log('hallucinatingAchievement = ' + value);
     });
-    //Purple Rain
-    achievements.getItem('purplerainAchievement').then(function(value) {
+    //Vulcanic Ash
+    achievements.getItem('vulcanicAshAchievement').then(function(value) {
       if (value == 'true') {
-        $("#purple-rain-achievement-method").replaceWith("Enable the snowstorm with the 'light' theme enabled.");
-        $("#purplerainAchievement").replaceWith("<h6 class='text-success' id='purplerainAchievement'>Yes</h6>");
+        $("#vulcanic-ash-achievement-method").replaceWith("Enable the snowstorm with the 'light' theme enabled.");
+        $("#vulcanicAshAchievement").replaceWith("<h6 class='text-success' id='vulcanicAshAchievement'>Yes</h6>");
       }
-      console.log('purplerainAchievement = ' + value);
+      console.log('vulcanicAshAchievement = ' + value);
     });
   });
 </script>
