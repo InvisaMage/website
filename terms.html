@@ -29,7 +29,7 @@
 			<a class="title" href="terms.html">Terms & Conditions</a>
 
 			<!--Menu-->
-			<div id="menu-terms" class="menu menu-terms d-none d-xl-inline">
+			<div id="menu-terms" class="menu menu-terms d-none d-xl-inline sps sps--abv">
 				<h5>Contents</h5>
 				<li><a href="terms.html#general"><i class="fa fa-chevron-right"></i></span> General</a></li>
 				<li><a href="terms.html#security"><i class="fa fa-chevron-right"></i></span> Security</a></li>
@@ -166,6 +166,10 @@
 		<script>
 			$('.termsSection').addClass('animated slideInUp');
 			$('#menu-terms').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 100
+			});
 		</script>
 	</body>
 </html>

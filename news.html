@@ -29,9 +29,7 @@
 			<a class="title" href="news.html">News</a>
 
 			<p>
-				This page is information related to website changes and project updates.<br>
-				Most of this is an archive for my reference but some of you might be interested.<br>
-				Be sure to check the important section periodically.
+				Information related to website changes and project updates.
 			</p>
 
 			<!--Nav Tabs (Visible on Desktop)-->
@@ -326,7 +324,7 @@
 					</div><!-- /2-6-15-->
 
 					<!--Projects Menu-->
-					<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
+					<div id="menu-news" class="menu menu-news d-none d-xl-inline slide sps sps--abv">
 						<h5>Date Jump</h5>
 						<li><a href="#4-13-18-projects"><i class="fa fa-chevron-right"></i> April 13, 2018</a></li>
 						<li><a href="#3-23-18-projects"><i class="fa fa-chevron-right"></i> March 23, 2018</a></li>
@@ -475,7 +473,7 @@
 						</div><!-- /9-4-15-->
 
 						<!--Important Menu-->
-						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
+						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide sps sps--abv">
 							<h5>Date Jump</h5>
 							<li><a href="#5-25-18-important"><i class="fa fa-chevron-right"></i> May 25, 2018</a></li>
 							<li><a href="#10-7-17-important"><i class="fa fa-chevron-right"></i> October 7, 2017</a></li>
@@ -495,6 +493,9 @@
 					<div class="d-block d-xl-none" id="mobile-menu">
 						<select class="form-control mx-auto" style="max-width: 10rem;">
 							<option selected value="news.html#mobile-menu">Date Jump</option>
+							<optgroup label="October 2018">
+								<option value="news.html#10-12-18-website">12th</option>
+							</optgroup>
 							<optgroup label="September 2018">
 								<option value="news.html#9-14-18-website">14th</option>
 							</optgroup>
@@ -523,6 +524,28 @@
 						</select>
 						<br>
 					</div>
+
+					<!--October 12, 2018-->
+					<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="10-12-18-website">
+						<h4 class="card-header">October 12, 2018</h4>
+						<div class="card-body">
+							<p>
+								Content and Date Jump menus are now fixed when the page is scrolled far enough.<br>
+								Scrolling to anchors should no longer clip content.<br>
+								Removed achievement from items in the achievement local storage database (as it was redundant).<br>
+								This change will cause issues with achievement progress thus resetting progress is recommended.<br>
+								The legal banner is now an alert.
+								<br>
+								<br>
+								Minor improvements to the Terminal.<br>
+								Added bg command to fix background color of the Terminal not being applied.<br>
+								The close command now allows the animation to be played.
+
+							</p>
+						</div>
+					</div><!-- /10-12-18-->
+
+					<br>
 
 					<!--September 14, 2018-->
 					<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="9-14-18-website">
@@ -708,8 +731,12 @@
 					</span>
 
 						<!--Website Menu-->
-						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
+						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide sps sps--abv">
 							<h5>Date Jump</h5>
+							<li><a><i class="fa fa-chevron-down"></i> October 2018</a></li>
+							<div>
+								<li><a href="#10-12-18-website"><i class="fa fa-chevron-right"></i> 12th</a></li>
+							</div>
 							<li><a><i class="fa fa-chevron-down"></i> September 2018</a></li>
 							<div>
 								<li><a href="#9-14-18-website"><i class="fa fa-chevron-right"></i> 14th</a></li>
@@ -806,7 +833,7 @@
 						</div><!-- /notes-->
 
 						<!--Bugs Menu-->
-						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide">
+						<div id="menu-news" class="menu menu-news d-none d-xl-inline slide sps sps--abv">
 							<h5>Contents</h5>
 							<li><a href="#problems"><i class="fa fa-chevron-right"></i> Known Problems</a></li>
 							<li><a href="#fixed"><i class="fa fa-chevron-right"></i> Fixed</a></li>
@@ -845,6 +872,10 @@
 			}
 			$('.card').addClass('animated slideInUp');
 			$('.slide').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 165
+			});
 		</script>
 	</body>
 </html>

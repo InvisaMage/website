@@ -122,52 +122,52 @@
   //Check which Achievements have been completed.
   $(function() {
     //Easter Egg
-    achievements.getItem('eastereggAchievement').then(function(value) {
+    achievements.getItem('easteregg').then(function(value) {
       if (value == 'true') {
         $("#easteregg-achievement-method").replaceWith("Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A anywhere in the website.");
         $("#eastereggAchievement").replaceWith("<h6 class='text-success' id='eastereggAchievement'>Yes</h6>");
       }
-      console.log('eastereggAchievement = ' + value);
+      console.log('easteregg = ' + value);
     });
     //Terminal
-    achievements.getItem('terminalAchievement').then(function(value) {
+    achievements.getItem('terminal').then(function(value) {
       if (value == 'true') {
         $("#terminal-achievement-method").replaceWith("Use the Terminal for the first time.");
         $("#terminalAchievement").replaceWith("<h6 class='text-success' id='terminalAchievement'>Yes</h6>");
       }
-      console.log('terminalAchievement = ' + value);
+      console.log('terminal = ' + value);
     });
     //Unlimited Power
-    achievements.getItem('unlimitedPowerAchievement').then(function(value) {
+    achievements.getItem('unlimitedPower').then(function(value) {
       if (value == 'true') {
         $("#unlimited-power-achievement-method").replaceWith("Change to the super user account.");
         $("#unlimitedPowerAchievement").replaceWith("<h6 class='text-success' id='unlimitedPowerAchievement'>Yes</h6>");
       }
-      console.log('unlimitedPowerAchievement = ' + value);
+      console.log('unlimitedPower = ' + value);
     });
     //Wisely
-    achievements.getItem('wiselyAchievement').then(function(value) {
+    achievements.getItem('wisely').then(function(value) {
       if (value == 'true') {
         $("#wisely-achievement-method").replaceWith("Agree to the Terms & Conditions and Privacy Policy.");
         $("#wiselyAchievement").replaceWith("<h6 class='text-success' id='wiselyAchievement'>Yes</h6>");
       }
-      console.log('wiselyAchievement = ' + value);
+      console.log('wisely = ' + value);
     });
     //Hallucinating
-    achievements.getItem('hallucinatingAchievement').then(function(value) {
+    achievements.getItem('hallucinating').then(function(value) {
       if (value == 'true') {
-        $("#hallucinating-achievement-method").replaceWith("Click Hide Ads in the footer.");
+        $("#hallucinating-achievement-method").replaceWith("Click Hide ads in the footer.");
         $("#hallucinatingAchievement").replaceWith("<h6 class='text-success' id='hallucinatingAchievement'>Yes</h6>");
       }
-      console.log('hallucinatingAchievement = ' + value);
+      console.log('hallucinating = ' + value);
     });
     //Vulcanic Ash
-    achievements.getItem('vulcanicAshAchievement').then(function(value) {
+    achievements.getItem('vulcanicAsh').then(function(value) {
       if (value == 'true') {
         $("#vulcanic-ash-achievement-method").replaceWith("Enable the snowstorm with the 'light' theme enabled.");
         $("#vulcanicAshAchievement").replaceWith("<h6 class='text-success' id='vulcanicAshAchievement'>Yes</h6>");
       }
-      console.log('vulcanicAshAchievement = ' + value);
+      console.log('vulcanicAsh = ' + value);
     });
   });
 </script>

@@ -45,7 +45,7 @@
 		<div class="container">
 
 			<!--Menu-->
-			<div id="menu-fs" class="menu menu-fs d-none d-xl-inline slider">
+			<div id="menu-fs" class="menu menu-fs d-none d-xl-inline slider sps sps--abv">
 				<h5>Contents</h5>
 				<li><a href="fs.html#description"><i class="fa fa-chevron-right"></i></span> Description</a></li>
 				<li><a href="fs.html#images"><i class="fa fa-chevron-right"></i></span> Screenshots</a></li>
@@ -157,6 +157,10 @@
 
 		<script>
 			$('.slider').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 311
+			});
 		</script>
 	</body>
 </html>

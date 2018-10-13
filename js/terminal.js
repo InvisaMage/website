@@ -38,7 +38,7 @@
       enabled: false,
       completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert', 'requests',
         'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history', 'libraries'],
-      greetings: 'Website Terminal [Version 2018.7.27]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
+      greetings: 'Website Terminal [Version 2018.10.3]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
       keypress: function (e, terminal) {
         if (e.which == 96) {
           return false;
@@ -332,7 +332,8 @@ jQuery(document).ready(function ($) {
     }
     //Close
     else if (cmd.name == 'close') {
-      $('#terminal').hide();
+      //$('#terminal').hide();
+      simulateKeyPress("`", 'body');
       terminal.echo('Terminal hidden...');
     }
     //Go
@@ -387,10 +388,10 @@ jQuery(document).ready(function ($) {
     //Storage
     else if (cmd.name == 'storage') {
       if (cmd.args[0] == 'get') {
-        if (cmd.args[1] == '-s') {
+        if (cmd.args[1] == '--settings' || cmd.args[1] == '-s') {
           getSettings();
         }
-        else if (cmd.args[1] == '-a') {
+        else if (cmd.args[1] == '--achievements' || cmd.args[1] == '-a') {
           getAchievements();
         }
         else if (cmd.args[1] == '--all') {
@@ -402,11 +403,11 @@ jQuery(document).ready(function ($) {
         }
       }
       else if (cmd.args[0] == 'set') {
-        if (cmd.args[1] == '-s') {
+        if (cmd.args[1] == '--settings' || cmd.args[1] == '-s') {
           settings.setItem(cmd.args[2], cmd.args[3]);
           terminal.echo('Saving item named "' + cmd.args[2] + '" with a value of "' + cmd.args[3] + '" to the Settings database...');
         }
-        else if (cmd.args[1] == '-a') {
+        else if (cmd.args[1] == '--achievements' || cmd.args[1] == '-a') {
           achievements.setItem(cmd.args[2], cmd.args[3])
           terminal.echo('Saving item named "' + cmd.args[2] + '" with a value of "' + cmd.args[3] + '" to the Achievements database...');
         }
@@ -415,7 +416,7 @@ jQuery(document).ready(function ($) {
         }
       }
       else if (cmd.args[0] == 'remove') {
-        if (cmd.args[1] == '-s') {
+        if (cmd.args[1] == '--settings' || cmd.args[1] == '-s') {
           if (cmd.args[2] != undefined) {
             settings.removeItem(cmd.args[2]);
             terminal.echo('Removing item named "' + cmd.args[2] + '" from the Settings database...');
@@ -424,7 +425,7 @@ jQuery(document).ready(function ($) {
             terminal.error('Key value required');
           }
         }
-        else if (cmd.args[1] == '-a') {
+        else if (cmd.args[1] == '--achievements' || cmd.args[1] == '-a') {
           if (cmd.args[2] != undefined) {
             achievements.removeItem(cmd.args[2]);
             terminal.echo('Removing item named "' + cmd.args[2] + '" from the Achievements database...');
@@ -843,6 +844,28 @@ jQuery(document).ready(function ($) {
     //Display
     else if (cmd.name == 'display') {
       terminal.echo(screen.width + ' ⨯ ' + screen.height);
+    }
+    //Background fix
+    else if (cmd.name == 'bg') {
+      terminal.echo('Fixing screen...');
+      settings.getItem('theme').then(function (value) {
+        if (value == 'light') {
+          settings.getItem('terminalOpacity').then(function (value) {
+            $('.terminal').css("background-color", 'rgba(248,249,250,' + value + ')');
+            $('.terminal, .prompt, .cmd, .cursor, .blink').css("color", '#000');
+            $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
+            console.log("terminalOpacity = " + value);
+          });
+        }
+        if (value == 'dark' || value == undefined) {
+          settings.getItem('terminalOpacity').then(function (value) {
+            $('.terminal').css("background-color", 'rgba(34,38,42,' + value + ')');
+            console.log("terminalOpacity = " + value);
+          });
+        }
+        terminal.echo('Theme is ' + value);
+        terminal.echo('Done!');
+      });
     }
     //ping
     else if (cmd.name == 'ping') {

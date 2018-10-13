@@ -46,7 +46,7 @@
 		<div class="container">
 
 			<!--Menu-->
-			<div id="menu-txtlock" class="menu menu-txtlock d-none d-xl-inline">
+			<div id="menu-txtlock" class="menu menu-txtlock d-none d-xl-inline sps sps--abv">
 				<h5>Contents</h5>
 				<li><a href="txtlock.html#description"><i class="fa fa-chevron-right"></i></span> Description</a></li>
 				<li><a href="txtlock.html#images"><i class="fa fa-chevron-right"></i></span> Screenshots</a></li>
@@ -129,6 +129,10 @@
 
 		<script>
 			$('#menu-txtlock').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 311
+			});
 		</script>
 	</body>
 </html>

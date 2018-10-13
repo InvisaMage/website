@@ -29,7 +29,7 @@
 			<a class="title" href="privacy.html">Privacy Policy</a>
 
 			<!--Menu-->
-			<div id="menu-privacy" class="menu menu-privacy d-none d-xl-inline">
+			<div id="menu-privacy" class="menu menu-privacy d-none d-xl-inline sps sps--abv">
 				<h5>Contents</h5>
 				<li><a href="#general"><i class="fa fa-chevron-right"></i></span> General</a></span></li>
 				<li><a href="#storage"><i class="fa fa-chevron-right"></i></span> Local Storage</a></span></li>
@@ -153,6 +153,10 @@
 		<script>
 			$('.privacySection').addClass('animated slideInUp');
 			$('#menu-privacy').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 100
+			});
 		</script>
 	</body>
 </html>

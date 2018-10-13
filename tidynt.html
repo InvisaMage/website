@@ -48,7 +48,7 @@
 		<div class="container">
 
 			<!--Menu-->
-			<div id="menu-tidynt" class="menu menu-tidynt d-none d-xl-inline">
+			<div id="menu-tidynt" class="menu menu-tidynt d-none d-xl-inline sps sps--abv">
 				<h5>Contents</h5>
 				<li><a href="tidynt.html#description"><i class="fa fa-chevron-right"></i></span> Description</a></li>
 				<li><a href="tidynt.html#images"><i class="fa fa-chevron-right"></i></span> Screenshots</a></li>
@@ -89,11 +89,11 @@
 					  </div>
 			    </div>
 			  </div>
-			  <a class="carousel-control-prev" onclick="$('#carousel-tidynt').carousel('prev')" tyle="button" data-slide="prev">
+			  <a class="carousel-control-prev" onclick="$('#carousel-tidynt').carousel('prev')" type="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon"></span>
 			    <span class="sr-only">Previous</span>
 			  </a>
-			  <a class="carousel-control-next" onclick="$('#carousel-tidynt').carousel('next')" tyle="button" data-slide="next">
+			  <a class="carousel-control-next" onclick="$('#carousel-tidynt').carousel('next')" type="button" data-slide="next">
 			    <span class="carousel-control-next-icon"></span>
 			    <span class="sr-only">Next</span>
 			  </a>
@@ -122,6 +122,10 @@
 
 		<script>
 			$('#menu-tidynt').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 311
+			});
 		</script>
 	</body>
 </html>

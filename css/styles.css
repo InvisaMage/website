@@ -150,31 +150,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Special Menu Styles */
 .menu-news {
-	top: 275px;
+	top: 231px;
 }
 .menu-news li {
 	color: #FFC157;
 }
 .menu-mc {
-	top: 340px;
+	top: 334px;
 }
 .menu-fs {
-	top: 380px;
+	top: 372px;
 }
 .menu-txtlock {
-	top: 380px;
+	top: 372px;
 }
 .menu-tidynt {
-	top: 380px;
+	top: 372px;
 }
 .menu-terms {
-	top: 162px;
+	top: 165px;
 }
 .menu-privacy {
-	top: 162px;
+	top: 165px;
 }
 .menu-info {
-	top: 162px;
+	top: 165px;
 }
 
 /* New Footer Properties */
@@ -484,3 +484,13 @@ kbd {
 .ui-pnotify-text{
 	text-align: left;
 }
+
+/* Affix */
+.menu.sps {
+	position: absolute;
+  }
+  
+.menu.sps--blw {
+	position: fixed;
+	top: 64px;
+  }

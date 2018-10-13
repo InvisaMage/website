@@ -221,7 +221,7 @@ $(function () {
 function loadSnowstorm() {
   $.getScript('js/snowstorm.js');
   $('#footer-snowstorm').tooltip('dispose');
-  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle snow</a>");
   //Re enable tooltips.
   enableTooltips();
 }
@@ -595,7 +595,38 @@ settings.getItem('enableInfoBanner').then(function (value) {
 //Check if Legal Banner needs to be shown on homepage
 settings.getItem('enableLegalBanner').then(function (value) {
   if (value == 'true') {
-    $('#ajax-legal-banner').load('ajax/alerts/alert-legal.html');
+    PNotify.info({
+      title: 'Legal',
+      text: 'Use of this website is subject to the <a href="terms.html">Terms & Conditions</a>  and <a href="privacy.html">Privacy Policy</a>.',
+      textTrusted: true,
+      hide: false,
+      modules: {
+        Confirm: {
+          confirm: true,
+          buttons: [{
+              text: 'Accept',
+              primary: true,
+              click: function(notice) {
+                notice.close();
+                settings.setItem('enableLegalBanner', 'false');
+                loadYesMod();
+              }
+            },
+            {
+              text: 'Decline',
+              click: function(notice) {
+                settings.setItem('enableLegalBanner', 'true');
+                loadNoMod();
+              }
+            }
+          ]
+        },
+        Buttons: {
+          closer: false,
+          sticker: false
+        }
+      }
+    });
   }
   console.log('enableLegalBanner = ' + value);
 });
@@ -624,7 +655,7 @@ $(function () {
         });
 
         snowStorm.toggleSnow();
-        $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle Snow</a>");
+        $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle snow</a>");
       }
       vulcanicAshCheck();
     }
@@ -699,12 +730,12 @@ $(function () {
 
 //Used to see if Easteregg modal Achievement message should be displayed.
 function eastereggCheck() {
-  achievements.getItem('eastereggAchievement').then(function (value) {
+  achievements.getItem('easteregg').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       achievementNotice('Konami Code<br><br>Insert Up, Up, Down, Down, Left, Right, Left, Right, B, A, anywhere in the website.')
-      achievements.setItem('eastereggAchievement', 'true');
+      achievements.setItem('easteregg', 'true');
     }
     console.log('eastereggAchievement = ' + value);
   });
@@ -712,12 +743,12 @@ function eastereggCheck() {
 
 //Used to see if Terminal Achievement message should be displayed.
 function terminalCheck() {
-  achievements.getItem('terminalAchievement').then(function (value) {
+  achievements.getItem('terminal').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       achievementNotice('Hacker?! <br><br> Use the Terminal for the first time.');
-      achievements.setItem('terminalAchievement', 'true');
+      achievements.setItem('terminal', 'true');
     }
     console.log('terminalAchievement = ' + value);
   });
@@ -725,12 +756,12 @@ function terminalCheck() {
 
 //Used to see if Unlimited Power Achievement message should be displayed.
 function unlimitedPowerCheck() {
-  achievements.getItem('unlimitedPowerAchievement').then(function (value) {
+  achievements.getItem('unlimitedPower').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       achievementNotice('Unlimited POWER! <br><br> Change to the super user account.');
-      achievements.setItem('unlimitedPowerAchievement', 'true');
+      achievements.setItem('unlimitedPower', 'true');
     }
     console.log('unlimitedPowerAchievement = ' + value);
   });
@@ -738,12 +769,12 @@ function unlimitedPowerCheck() {
 
 //Used to see if Wisely Achievement message should be displayed.
 function wiselyCheck() {
-  achievements.getItem('wiselyAchievement').then(function (value) {
+  achievements.getItem('wisely').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       achievementNotice("You've Chosen Wisely <br><br> Agree to the <span id='no-click'><a href='terms.html'>Terms & Conditions</a></span> and <span id='no-click'><a href='privacy.html'>Privacy Policy</a></span>.");
-      achievements.setItem('wiselyAchievement', 'true');
+      achievements.setItem('wisely', 'true');
     }
     console.log('wiselyAchievement = ' + value);
   });
@@ -751,14 +782,14 @@ function wiselyCheck() {
 
 //Used to see if Vulcanic Ash Achievement message should be displayed.
 function vulcanicAshCheck() {
-  achievements.getItem('vulcanicAshAchievement').then(function (value) {
+  achievements.getItem('vulcanicAsh').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
       settings.getItem('theme').then(function (value) {
         if (value == 'light') {
           achievementNotice('Vulcanic Ash <br><br> Enable the snowstorm with the "light" theme enabled.')
-          achievements.setItem('vulcanicAshAchievement', 'true');
+          achievements.setItem('vulcanicAsh', 'true');
         }
       });
     }
@@ -806,10 +837,10 @@ function terminalNotice(msg) {
 
 //Check if Achievements icon needs to be gold
 function goldCheck() {
-  var keys = ['eastereggAchievement', 'terminalAchievement', 'unlimitedPowerAchievement', 'wiselyAchievement', 'hallucinatingAchievement', 'vulcanicAshAchievement'];
+  var keys = ['easteregg', 'terminal', 'unlimitedPower', 'wisely', 'hallucinating', 'vulcanicAsh'];
 
   achievements.getItems(keys).then(function (results) {
-    if (results.eastereggAchievement == 'true' && results.terminalAchievement == 'true' && results.unlimitedPowerAchievement == 'true' && results.wiselyAchievement == 'true' && results.hallucinatingAchievement == 'true' && results.vulcanicAshAchievement == 'true') {
+    if (results.easteregg == 'true' && results.terminal == 'true' && results.unlimitedPower == 'true' && results.wisely == 'true' && results.hallucinating == 'true' && results.vulcanicAsh == 'true') {
       $("#achievements-star, #achievements-star-mobile ").css('color', 'gold');
       console.log("Changed achievements icon color");
     }
@@ -834,12 +865,12 @@ function loadAchievementsMod() {
   $('#modal-achievements').modal();
 }
 function loadAdsMod() {
-  achievements.getItem('hallucinatingAchievement').then(function (value) {
+  achievements.getItem('hallucinating').then(function (value) {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      achievementNotice('Hallucinating <br><br> Click Hide Ads in the footer.');
-      achievements.setItem('hallucinatingAchievement', 'true');
+      achievementNotice('Hallucinating <br><br> Click "Hide ads" in the footer.');
+      achievements.setItem('hallucinating', 'true');
     }
     $('#modal-hide-ads').load('ajax/modals/hide-ads.html');
     $('#modal-hide-ads').modal();
@@ -919,15 +950,21 @@ function btn404() {
   btn404Counter++;
 }
 
-/*Settings cog spin 
-$(function () {
-  $("#settings-button").hover(function () {
-    $("#settings-fa-spin").addClass("fa-spin");
-  },
-  function () {
-      $("#settings-fa-spin").removeClass("fa-spin");
-  });
-});
-*/
+
+/* Anchor offset
+ * https://jsfiddle.net/ianclark001/rkocah23/
+ */
+(function(document,history,location){var HISTORY_SUPPORT=!!(history&&history.pushState);var anchorScrolls={ANCHOR_REGEX:/^#[^ ]+$/,OFFSET_HEIGHT_PX:64,init:function(){this.scrollToCurrent();$(window).on('hashchange',$.proxy(this,'scrollToCurrent'));$('body').on('click','a',$.proxy(this,'delegateAnchors'))},getFixedOffset:function(){return this.OFFSET_HEIGHT_PX},scrollIfAnchor:function(href,pushToHistory){var match,anchorOffset;if(!this.ANCHOR_REGEX.test(href)){return false}match=document.getElementById(href.slice(1));if(match){anchorOffset=$(match).offset().top-this.getFixedOffset();$('html, body').animate({scrollTop:anchorOffset});if(HISTORY_SUPPORT&&pushToHistory){history.pushState({},document.title,location.pathname+href)}}return!!match},scrollToCurrent:function(e){if(this.scrollIfAnchor(window.location.hash)&&e){e.preventDefault()}},delegateAnchors:function(e){var elem=e.target;if(this.scrollIfAnchor(elem.getAttribute('href'),true)){e.preventDefault()}}};$(document).ready($.proxy(anchorScrolls,'init'))})(window.document,window.history,window.location);
+
+/**
+ * @license
+ * ========================================================================
+ * ScrollPos-Styler v0.7.1
+ * https://github.com/acch/scrollpos-styler
+ * ========================================================================
+ * Copyright 2015 Achim Christ
+ * Licensed under MIT (https://github.com/acch/scrollpos-styler/blob/master/LICENSE)
+ * ======================================================================== */
+var ScrollPosStyler=function(t,r){"use strict";var o=0,a=!1,i=1,n="sps",c=t.getElementsByClassName(n),f="sps--abv",m="sps--blw",u="data-sps-offset";function l(s){var e=[];o=r.pageYOffset;for(var t=0;c[t];++t){var a=c[t],n=a.getAttribute(u)||i,l=a.classList.contains(f);(s||l)&&n<o?e.push({element:a,addClass:m,removeClass:f}):(s||!l)&&o<=n&&e.push({element:a,addClass:f,removeClass:m})}return e}function v(s){for(var e=0;s[e];++e){var t=s[e];t.element.classList.add(t.addClass),t.element.classList.remove(t.removeClass)}a=!1}var s={init:function(s){a=!0,s&&(s.spsClass&&(n=s.spsClass,c=t.getElementsByClassName(n)),i=s.scrollOffsetY||i,f=s.classAbove||f,m=s.classBelow||m,u=s.offsetTag||u);var e=l(!0);0<e.length?r.requestAnimationFrame(function(){v(e)}):a=!1}};return t.addEventListener("DOMContentLoaded",function(){r.setTimeout(s.init,1)}),r.addEventListener("scroll",function(){if(!a){var s=l(!1);0<s.length&&(a=!0,r.requestAnimationFrame(function(){v(s)}))}}),s}(document,window);
 
 console.log('What are you doing in here? \nYes I know I need to fix a few errors.\n\n');
