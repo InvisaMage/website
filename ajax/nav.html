@@ -58,8 +58,8 @@
 
   <!--Search-->
   <div class="d-none d-xl-inline">
-    <div class="input-group mx-auto" style="max-width:15rem;">
-      <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search(document.getElementById('search').value);" onfocus="loadSearch();">
+    <div class="input-group mx-auto" id="search-div" style="max-width:15rem;">
+      <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search(document.getElementById('search').value);" onfocus="searchAnimation(); loadSearch();" onblur="searchAnimationOut();">
       <span class="input-group-append">
         <button class="btn btn-secondary" type="button" onclick="search(document.getElementById('search').value)">
           <i class="fa fa-search"></i>

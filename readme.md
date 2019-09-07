@@ -17,7 +17,7 @@ Note: You can also view the live version of the site [here](https://invisamage.c
 ### Who do I talk to? ###
 
 * Owner: InvisaMage
-* Contact: [support@InvisaMage.com](mailto:support@InvisaMage.com)
+* Contact: [support [ AT ] InvisaMage.com](mailto:support [ AT ] InvisaMage.com)
 
 ### License ###
 

@@ -20,7 +20,7 @@
 	</head>
 
 	<body id="top">
-		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeIn" style="background-color: #22262a;">Enable JavaScript and/or update browser</nav>
+		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeInDown" style="background-color: #22262a;">Enable JavaScript and/or update browser</nav>
 
 		<div class="jumbotron jumbotron-fluid text-left">
 			<div class="container">
@@ -117,7 +117,7 @@
 
 				// you can change these to your own message!
 				document.querySelector('.server-online').innerHTML = status.online ? 'Online' : 'Offline';
-				name = document.querySelector('.server-name').innerHTML = status.server.name.substring(7);
+				name = document.querySelector('.server-name').innerHTML = status.server.name.substring(6);
 				players = document.querySelector('.server-players').innerHTML = status.players.now;
 				if (players == 1) {
 					$(".players").replaceWith("There is 1 person online.");

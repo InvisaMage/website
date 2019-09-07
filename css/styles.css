@@ -5,6 +5,7 @@
 html {
 	position: relative;
 	min-height: 100%;
+	scrollbar-color: #464748 #22262a;
 }
 
 /* Entire Body */
@@ -15,7 +16,7 @@ body {
 	padding: 0;
 	margin: 0;
 	margin-bottom: 577px;
-  padding-top: 55px;
+	padding-top: 55px;
 }
 
 /* Make the bottom margin smaller on bigger displays */
@@ -119,10 +120,11 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid black;
 	border-width: 2px 0;
 	position: absolute;
-	width: 200px;
+	width: 175px;
 	background: rgb(52, 58, 64);
 	font-size: 14px;
 	left: 0px;
+	z-index: 1;
 }
 .menu li {
 	list-style: none;
@@ -310,6 +312,29 @@ th {
  *
  *
  */
+ .card-header {
+	color: #FFC157;
+}
+
+.custom-control-label {
+	cursor: pointer;
+}
+
+
+.custom-control-input:checked ~ .custom-control-label::before {
+	border-color: #000;
+	background-color: #000;
+}
+.custom-range::-webkit-slider-thumb {
+	background-color: #000 !important;
+}
+.custom-range::-moz-range-thumb {
+	background-color: #000 !important;
+}
+.custom-range::-ms-thumb {
+	background-color: #000 !important;
+}
+
 .btn {
 	cursor: pointer;
 }
@@ -459,8 +484,8 @@ kbd {
 }
 
 /* Disabled class */
-.form-check.disabled .form-check-label {
-  color: #cccccc;
+.custom-control-input:disabled ~ .custom-control-label {
+  color: #cccccc !important;
 }
 
 /* Override Typeahead dropdown Menu */
@@ -476,6 +501,9 @@ kbd {
 }
 
 /* PNotify Overrides */
+body > .ui-pnotify {
+	z-index: 1060 !important;
+}
 .ui-pnotify-title {
 	color: inherit;
 	text-align: left;
@@ -494,3 +522,8 @@ kbd {
 	position: fixed;
 	top: 64px;
   }
+
+/* Search Bar Animation */
+#search-div {
+	transition: 1s;
+}

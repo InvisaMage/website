@@ -23,7 +23,7 @@ function namePrompt(name) {
 //Default
 	if (nL !== null) {
 		$("#name").html(
-		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 19 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
+		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 20 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
 		"I hope you enjoy your stay."
 		)
 	;}
@@ -36,11 +36,11 @@ function namePrompt(name) {
 			card +
 				"<h5 class='card-header'>Links</h5>" +
 				"<div class='card-body'>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='The search engine that does not track you.' target='_blank' rel='noopener noreferrer' href='https://duckduckgo.com/'>DuckDuckGo</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A publicly accessible and editable wiki for information related to Minecraft.' target='_blank' rel='noopener noreferrer' href='http://minecraft.gamepedia.com/Minecraft_Wiki'>Minecraft Wiki</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A web-based Git repository hosting service.' target='_blank' rel='noopener noreferrer' href='https://github.com/'>GitHub</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' rel='noopener noreferrer' href='https://ide.c9.io'>Cloud9</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' rel='noopener noreferrer' href='https://web.telegram.org/'>Telegram Web</a>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='The search engine that does not track you.' target='_blank' rel='noopener noreferrer' href='https://duckduckgo.com/'>DuckDuckGo</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='A publicly accessible and editable wiki for information related to Minecraft.' target='_blank' rel='noopener noreferrer' href='http://minecraft.gamepedia.com/Minecraft_Wiki'>Minecraft Wiki</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='A web-based Git repository hosting service.' target='_blank' rel='noopener noreferrer' href='https://github.com/'>GitHub</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Online IDE' target='_blank' rel='noopener noreferrer' href='https://ide.c9.io'>Cloud9</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Telegram Web Client' target='_blank' rel='noopener noreferrer' href='https://web.telegram.org/'>Telegram Web</a>" +
 				"</div>"+
 			"</div>"
 			)
@@ -470,9 +470,9 @@ function namePrompt(name) {
 			card +
 				"<h5 class='card-header'>Mirth</h5>" +
 				"<div class='card-body'>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank' rel='noopener noreferrer' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank' rel='noopener noreferrer' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='AI' target='_blank' rel='noopener noreferrer' href='http://www.cleverbot.com/'>Cleverbot</a>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Funny Windows Web Emulator' target='_blank' rel='noopener noreferrer' href='http://www.windows93.net/'>WINDOWS93.net</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Restart old Operating Systems' target='_blank' rel='noopener noreferrer' href='http://www.therestartpage.com/'>The Restart Page</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='AI' target='_blank' rel='noopener noreferrer' href='http://www.cleverbot.com/'>Cleverbot</a>" +
 				"</div>" +
 			"</div>"
 			)
@@ -484,12 +484,12 @@ function namePrompt(name) {
 			card +
 				"<h5 class='card-header'>Browsers</h5>" +
 				"<div class='card-body'>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' rel='noopener noreferrer' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' rel='noopener noreferrer' href='https://www.chromium.org/'>Chromium</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the companies Windows 10 operating systems.' target='_blank' rel='noopener noreferrer' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' rel='noopener noreferrer' href='https://www.apple.com/safari/'>Safari</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' rel='noopener noreferrer' href='https://www.opera.com/'>Opera</a>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='A fast, simple, and secure web browser, built for the modern web.' target='_blank' rel='noopener noreferrer' href='https://www.google.com/chrome/browser'>Google Chrome</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='The open-source web browser project from which Google Chrome draws its source code.' target='_blank' rel='noopener noreferrer' href='https://www.chromium.org/'>Chromium</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Microsoft and included in the companies Windows 10 operating systems.' target='_blank' rel='noopener noreferrer' href='http://www.browserfordoing.com/en-us/'>Microsoft Edge</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='A web browser developed by Apple based on the WebKit engine. Only available on Apple products.' target='_blank' rel='noopener noreferrer' href='https://www.apple.com/safari/'>Safari</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='A super fast, safe and secure way to surf the web, from Mac, PC or mobile.' target='_blank' rel='noopener noreferrer' href='https://www.opera.com/'>Opera</a>" +
 				"</div>" +
 			"</div>"
 			)
@@ -501,19 +501,21 @@ function namePrompt(name) {
 			card +
 				"<h5 class='card-header'>Software</h5>" +
 				"<div class='card-body'>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Free Open source Internet Browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Cross Platform Messaging Application' target='_blank' rel='noopener noreferrer' href='https://telegram.org/'>Telegram</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Office Suite' target='_blank' rel='noopener noreferrer' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Text Editor' target='_blank' rel='noopener noreferrer' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Free Antivirus' target='_blank' rel='noopener noreferrer' href='http://www.avast.com/en-us/index'>Avast</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Password Manager' target='_blank' rel='noopener noreferrer' href='http://keepass.info/'>KeePass</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Software Downloader' target='_blank' rel='noopener noreferrer' href='https://ninite.com/'>Ninite</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Virtual Machine Software' target='_blank' rel='noopener noreferrer' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Desktop Customization Tool' target='_blank' rel='noopener noreferrer' href='http://rainmeter.net/'>Rainmeter</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Portable Applications for USB Storage Devices' target='_blank' rel='noopener noreferrer' href='http://portableapps.com/'>PortableApps</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Image Editor' target='_blank' rel='noopener noreferrer' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='3D Rendering' target='_blank' rel='noopener noreferrer' href='http://www.blender.org/'>Blender</a><br>" +
-					"<a  class='link link-light' data-toggle='tooltip' data-placement='top' title='Audio Editor' target='_blank' rel='noopener noreferrer' href='http://audacity.sourceforge.net/'>Audacity</a>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Free open source internet browser by Mozilla' target='_blank' rel='noopener noreferrer' href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Cross platform messaging application' target='_blank' rel='noopener noreferrer' href='https://telegram.org/'>Telegram</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Office suite' target='_blank' rel='noopener noreferrer' href='http://www.libreoffice.org/'>LibreOffice</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Text editor' target='_blank' rel='noopener noreferrer' href='http://notepad-plus-plus.org/'>Notepad++</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Password manager' target='_blank' rel='noopener noreferrer' href='https://keepassxc.org/'>KeePassXC</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Software downloader' target='_blank' rel='noopener noreferrer' href='https://ninite.com/'>Ninite</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Virtual machine software' target='_blank' rel='noopener noreferrer' href='https://www.virtualbox.org/'>Oracle Virtual Box</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Desktop customization tool' target='_blank' rel='noopener noreferrer' href='http://rainmeter.net/'>Rainmeter</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Desktop customization tool' target='_blank' rel='noopener noreferrer' href='https://github.com/TranslucentTB/TranslucentTB'>TranslucentTB</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Screenshot utility' target='_blank' rel='noopener noreferrer' href='https://getgreenshot.org/'>Greenshot</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Windows search utility' target='_blank' rel='noopener noreferrer' href='https://www.voidtools.com/support/everything/'>Everything</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Portable applications for USB storage devices' target='_blank' rel='noopener noreferrer' href='http://portableapps.com/'>PortableApps</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Image editor' target='_blank' rel='noopener noreferrer' href='http://www.getpaint.net/'>Paint.NET</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='3D rendering' target='_blank' rel='noopener noreferrer' href='http://www.blender.org/'>Blender</a><br>" +
+					"<a class='link link-light' data-toggle='tooltip' data-placement='top' title='Audio editor' target='_blank' rel='noopener noreferrer' href='http://audacity.sourceforge.net/'>Audacity</a>" +
 				"</div>"+
 			"</div>"
 			)
@@ -525,14 +527,13 @@ function namePrompt(name) {
 				"<h5 class='card-header'>Computer Specs</h5>" +
 				"<div class='card-body'>" +
 					"Windows 10 Pro 64-bit<br>" +
-					"Dell Optiplex 3010 Motherboard<br>" +
-					"Intel Core i5-3470 CPU<br>" +
-					"2x4GB Corsair Vengeance DDR3 RAM<br>" +
-					"HIS Radeon R9 290 4GB GPU<br>" +
-					"Seagate Barracuda 500GB HDD<br>" +
-					"Thermaltake Versa N21 Chassis<br>" +
+					"ASUS Prime X470-Pro AM4<br>" +
+					"AMD Ryzen 7 2700X<br>" +
+					"G.Skill Trident Z (2x16 GB) DDR4-3200<br>" +
+					"ASUS Radeon RX VEGA 64 8 GB STRIX<br>" +
+					"Corsair Obsidian 500D Mid Tower<br>" +
 					"Corsair Strafe RGB Keyboard<br>" +
-					"Etekcity Blue LED Mouse" +
+					"Logitech G403" +
 				"</div>"+
 			"</div>"
 			)
@@ -558,13 +559,13 @@ function namePrompt(name) {
 //Reset
 		if (nL == "reset" || nL == "clear" || nL == "cls") {
 			$("#name").html(
-			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 19 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
+			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 20 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
 			)
 		;}
 //No name - Audio
 		if (nL === "" || nL == " " || nL == "undefined") {
 			$("#name").html(
-			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 19 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
+			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A 20 year old human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
 			btnGroup +
 			  "<button class='btn btn-secondary btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>What's Your Name</button>" +
 				pauseBtn +

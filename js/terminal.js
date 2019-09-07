@@ -27,7 +27,7 @@
     }
     this.addClass('tilda');
     options = options || {};
-    eval = eval || function (command, terminal) {
+    eval == eval || function (command, terminal) {
       term.echo("you don't set eval for tilda");
     };
     var settings = {
@@ -38,7 +38,7 @@
       enabled: false,
       completion: ['help', 'reload', 'close', 'date', 'time', 'reset', 'modal', 'media', 'name', 'go', 'anchor', 'support', 'alert', 'requests',
         'snowstorm', 'echo', 'less', 'clear', 'credits', 'search', 'storage', 'ip', 'agent', 'display', 'su', 'users', 'history', 'libraries'],
-      greetings: 'Website Terminal [Version 2018.10.3]\nCopyright (c) 2014 - 2018 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
+      greetings: 'Website Terminal [Version 2018.12.19]\nCopyright (c) 2014 - 2019 InvisaMage. All rights reserved.\nPress ~ to exit.\n',
       keypress: function (e, terminal) {
         if (e.which == 96) {
           return false;
@@ -992,4 +992,10 @@ jQuery(document).ready(function ($) {
       terminal.echo("Type 'help' to view a list of commands.");
     }
   });
+});
+
+/* Terminal Save Test */
+$("#terminal").keydown(function() {
+  settings.setItem('terminalContent', $('.terminal-output').html());
+  console.info("Saved changes");
 });

@@ -4,9 +4,12 @@
 /* Overrides styles from styles.css*/
 
 /* Entire Body */
+html {
+	scrollbar-color: unset;
+}
+
 body {
 	background-color: #d9d9d9;
-	text-align: center;
 	color: #212529;
 }
 
@@ -29,11 +32,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .title {
   color: #000;
-	font-size: 300%;
-	transition: .3s;
 }
 .title:hover {
 	color: gray;
+}
+
+.card-header {
+	color: #000;
 }
 
 .menu-news, .menu-fs, .menu-mc, .menu-txtlock, .menu-terms, .menu-privacy, .menu-info, .menu-tidynt {

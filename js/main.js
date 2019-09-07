@@ -41,13 +41,13 @@ if (('ontouchstart' in window)) {
 }
 
 //Libraries
-var jqueryVer = '3.3.1';
-var bootstrapVer = '4.1.3';
+var jqueryVer = '3.4.1';
+var bootstrapVer = '4.3.1';
 var fontawesomeVer = '5.0.10';
 var jqueryterminalVer = '1.18.0';
 var localforageVer = '1.7.1';
 var keypressVer = '2.1.5';
-var konamiVer = '1.6.0';
+var konamiVer = '1.6.2';
 var pnotifyVer = PNotify.VERSION;
 var snowstormVer = '1.44.20131208';
 
@@ -443,6 +443,11 @@ async function onPageLoadTerm() {
         });
         console.log("onPageLoadTerm: Loaded assets");
         termCounter = 1;
+        //Restore terminal output history
+        settings.getItem('terminalContent').then(function (value) {
+          $('.terminal-output').html(value);
+          console.info('Restored terminal');
+        });
       }).catch(function () {
         //If fail, display message and offer to retry
         console.log("onPageLoadTerm: One or more assets failed to load");
@@ -594,7 +599,7 @@ settings.getItem('enableInfoBanner').then(function (value) {
 
 //Check if Legal Banner needs to be shown on homepage
 settings.getItem('enableLegalBanner').then(function (value) {
-  if (value == 'true') {
+  if (value == 'true' || value == null) {
     PNotify.info({
       title: 'Legal',
       text: 'Use of this website is subject to the <a href="terms.html">Terms & Conditions</a>  and <a href="privacy.html">Privacy Policy</a>.',
@@ -677,7 +682,7 @@ $(function () {
   //Banner - Info
   settings.getItem('enableInfoBanner').then(function (value) {
     if (value == null) {
-      settings.setItem('enableInfoBanner', 'true').then(function (value) {
+      settings.setItem('enableInfoBanner', 'false').then(function (value) {
         console.log(value);
       });
     }
@@ -715,7 +720,7 @@ function themeLight() {
   $('html').append('<link rel="stylesheet" type="text/css" href="./css/theme-light.css">');
   $('.card').removeClass('bg-dark').addClass('border-dark');
   $('table').removeClass('table-dark').addClass('table-light');
-  $("nav").attr("class", "navbar navbar-expand-xl navbar-light bg-light fixed-top");
+  $("nav").attr("class", "navbar navbar-expand-xl navbar-light bg-light fixed-top animated fadeInDown");
 }
 
 //Check if centered modals need to be applied
@@ -950,6 +955,13 @@ function btn404() {
   btn404Counter++;
 }
 
+/* Search Bar Animation */
+function searchAnimation() {
+  $('#search-div').css("max-width", "30rem");
+}
+function searchAnimationOut() {
+  $('#search-div').css("max-width", "15rem");
+}
 
 /* Anchor offset
  * https://jsfiddle.net/ianclark001/rkocah23/

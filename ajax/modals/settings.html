@@ -18,47 +18,41 @@
             <div class="card-body">
               <p class="card-text">Customize the appearance of the site.</p>
               <!--Dark/Light Radios-->
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="themeStyle" id="theme-radio1" value="dark" checked>
-                  Dark
-                </label>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="theme-radio1" name="themeStyle" class="custom-control-input" value="dark" checked>
+                <label class="custom-control-label" for="theme-radio1">Dark</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label" data-toggle="tooltip" data-html="true" data-placement="right" title="This theme <b>does not</b> get much attention. Some elements might look unpolished.">
-                  <input class="form-check-input" type="radio" name="themeStyle" id="theme-radio2" value="light">
-                  Light
-                </label>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="theme-radio2" name="themeStyle" class="custom-control-input" value="light">
+                <label class="custom-control-label" for="theme-radio2" data-toggle="tooltip" data-html="true" data-placement="right" title="This theme <b>does not</b> get much attention. Some elements might look unpolished.">Light</label>
               </div><!--./Dark/Light Radios-->
               <hr>
               <!--Hidden-->
               <div class="collapse mx-auto" id="collapse-more">
                 <!--Centered Modals-->
-                <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="centerModals" id="modal-centered-checkbox1" value="true">
-                      Center modals
-                    </label>
-                  </div>
-                  <hr>
-                  <!--Background Color-->
-                  <div class="form-group">
-                    <label for="bg-color-hex">Background color</label>
-                    <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
-                  </div>
-                  <!--Terminal Opacity-->
-                  <hr>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col">
-                        <label for="terminal-opacity">Terminal Opacity</label>
-                        <input id="terminal-opacity" type="range" class="form-control form-control-sm" name="terminalOpacity"  min="0" max="1" step="0.1" value="0.8" style="max-width:200px;">
-                      </div>
-                      <div class="col">
-                        <label id="terminal-opacity-value"></label>
-                      </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" name="centerModals" id="modal-centered-checkbox1" value="true">
+                  <label class="custom-control-label" for="modal-centered-checkbox1">Center modals</label>
+                </div>
+                <hr>
+                <!--Background Color-->
+                <div class="form-group">
+                  <label for="bg-color-hex">Background color</label>
+                  <input id="bg-color-hex" type="text" class="form-control form-control-sm" name="backgroundColor" placeholder="Hex value (blank for default)" style="max-width:200px;">
+                </div>
+                <!--Terminal Opacity-->
+                <hr>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col">
+                      <label for="terminal-opacity">Terminal Opacity</label>
+                      <input id="terminal-opacity" type="range" class="custom-range"name="terminalOpacity"  min="0" max="1" step="0.1" value="0.8" style="max-width:200px;" >
+                    </div>
+                    <div class="col">
+                      <label id="terminal-opacity-value"></label>
                     </div>
                   </div>
+                </div>
               </div>
               <!--More Button-->
               <button id="more-options-btn" type="button" class="btn btn-dark btn-sm btn-block" onclick="$('#collapse-more').collapse('toggle'); showOptions();">
@@ -71,29 +65,21 @@
             <h5 class="card-header">News page</h5>
             <div class="card-body">
               <p class="card-text">Select the default tab.</p>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="defaultTab" id="news-radio1" value="projects" checked>
-                  Projects
-                </label>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="defaultTab" id="news-radio1" value="projects" checked>
+                <label class="custom-control-label" for="news-radio1">Projects</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="defaultTab" id="news-radio2" value="important">
-                  Important
-                </label>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="defaultTab" id="news-radio2" value="important">
+                <label class="custom-control-label" for="news-radio2">Important</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="defaultTab" id="news-radio3" value="website">
-                  Website
-                </label>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="defaultTab" id="news-radio3" value="website">
+                <label class="custom-control-label" for="news-radio3">Website</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="defaultTab" id="news-radio4" value="bugs">
-                  Bugs
-                </label>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="defaultTab" id="news-radio4" value="bugs">
+                <label class="custom-control-label" for="news-radio4">Bugs</label>
               </div>
             </div>
           </div>
@@ -107,23 +93,17 @@
             <h5 class="card-header">Alerts</h5>
             <div class="card-body">
               <p class="card-text">Select the type of alerts you want to see.</p>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="banners-info" id="info-banner-checkbox1" value="true">
-                  Information
-                </label>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="banners-info" id="info-banner-checkbox1" value="true">
+                <label class="custom-control-label" for="info-banner-checkbox1">Information</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="banners-privacy" id="legal-banner-checkbox1" value="true">
-                  Legal
-                </label>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="banners-privacy" id="legal-banner-checkbox1" value="true">
+                <label class="custom-control-label" for="legal-banner-checkbox1">Legal</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="banners-homepage" id="home-banner-checkbox1" value="true">
-                  Events
-                </label>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="banners-homepage" id="home-banner-checkbox1" value="true">
+                <label class="custom-control-label" for="home-banner-checkbox1">Events</label>
               </div>
             </div>
           </div>
@@ -133,23 +113,17 @@
             <h5 class="card-header">On page load...</h5>
             <div class="card-body">
               <p class="card-text">What happens when the page loads.</p>
-              <div class="form-check">
-                <label class="form-check-label" id="load-terminal">
-                  <input class="form-check-input" type="checkbox" name="loadTerminal" id="terminal-checkbox1" value="true">
-                  Load Terminal assets
-                </label>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="loadTerminal" id="terminal-checkbox1" value="true">
+                <label class="custom-control-label" for="terminal-checkbox1">Load Terminal assets</label>
               </div>
-              <div class="form-check disabled" id="toggle-terminal">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="toggle-terminal" id="terminal-checkbox2" value="true" disabled>
-                  Toggle Terminal
-                </label>
+              <div class="custom-control custom-checkbox disabled">
+                <input type="checkbox" class="custom-control-input" name="toggle-terminal" id="terminal-checkbox2" value="true" disabled>
+                <label class="custom-control-label" for="terminal-checkbox2">Toggle Terminal</label>
               </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="toggle-snowstorm" id="snowstorm-checkbox1" value="true">
-                  Enable snowstorm
-                </label>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="toggle-snowstorm" id="snowstorm-checkbox1" value="true">
+                <label class="custom-control-label" for="snowstorm-checkbox1">Enable snowstorm</label>
               </div>
             </div>
           </div>
