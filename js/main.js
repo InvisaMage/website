@@ -42,7 +42,7 @@ if (('ontouchstart' in window)) {
 
 //Libraries
 var jqueryVer = '3.4.1';
-var bootstrapVer = '4.3.1';
+var bootstrapVer = '4.4.1';
 var fontawesomeVer = '5.0.10';
 var jqueryterminalVer = '1.18.0';
 var localforageVer = '1.7.1';

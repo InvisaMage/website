@@ -36,3 +36,19 @@ Website: https://invisamage.com
       Displays information about the application the first time the app is run
       Replaces FirstRunActivity (user still sets their password)
       Allows the user to enable or mute sounds
+
+----------[v1.1.4 (build 30)]----------
+
+1) Added LibrariesActivity
+      Shows a list of 3rd party libraries being used in the application
+2) Changed icon
+3) Changed color pallet
+4) Theme is now dynamic (Based on LineageOS Setting)
+      https://wiki.lineageos.org/sdk/api/styles.html
+      Changelog background now changes based on theme
+
+----------[v1.2.0 (build 32)]----------
+
+1) Updated to Android API 29 (Q)
+2) Added warning to SetupScreen Activity
+3) Theme is now dynamic based on System setting
