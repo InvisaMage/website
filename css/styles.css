@@ -527,3 +527,9 @@ body > .ui-pnotify {
 #search-div {
 	transition: 1s;
 }
+
+/* Pre Changelog Class */
+.changelog-pre {
+	text-align: left;
+	color: white;
+}

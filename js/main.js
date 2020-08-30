@@ -41,8 +41,8 @@ if (('ontouchstart' in window)) {
 }
 
 //Libraries
-var jqueryVer = '3.4.1';
-var bootstrapVer = '4.4.1';
+var jqueryVer = '3.5.1';
+var bootstrapVer = '4.5.0';
 var fontawesomeVer = '5.0.10';
 var jqueryterminalVer = '1.18.0';
 var localforageVer = '1.7.1';
@@ -89,6 +89,10 @@ function navEnable() {
     }
     else if ($("title").html() == "InvisaMage | Floating Survival") {
       $('#nav-fs').addClass('active');
+      $("#nav-projects").addClass("active animated bounceIn");
+    }
+    else if ($("title").html() == "InvisaMage | Paper Tray") {
+      $('#nav-papertray').addClass('active');
       $("#nav-projects").addClass("active animated bounceIn");
     }
     else if ($("title").html() == "InvisaMage | TxtLock") {
@@ -297,7 +301,7 @@ listener.simple_combo("alt `", async function () {
 
 //Focus search box with Ctrl + Alt + F key press
 var listener = new window.keypress.Listener();
-listener.simple_combo("ctrl alt f", function () {
+listener.simple_combo("/", function () {
   $('input').focus();
 });
 
@@ -599,7 +603,8 @@ settings.getItem('enableInfoBanner').then(function (value) {
 
 //Check if Legal Banner needs to be shown on homepage
 settings.getItem('enableLegalBanner').then(function (value) {
-  if (value == 'true' || value == null) {
+  if (value == 'true') {
+  //if (value == 'true' || value == null) {
     PNotify.info({
       title: 'Legal',
       text: 'Use of this website is subject to the <a href="terms.html">Terms & Conditions</a>  and <a href="privacy.html">Privacy Policy</a>.',
@@ -690,7 +695,7 @@ $(function () {
   //Banner - Legal
   settings.getItem('enableLegalBanner').then(function (value) {
     if (value == null) {
-      settings.setItem('enableLegalBanner', 'true').then(function (value) {
+      settings.setItem('enableLegalBanner', 'false').then(function (value) {
         console.log(value);
       });
     }
@@ -941,6 +946,24 @@ function loadClearLocalStorageMod() {
   $('#modal-clear-local-storage').load('ajax/modals/dialog/clear-local-storage.html');
   $('#modal-clear-local-storage').modal();
 }
+function loadTxtlockLogMod() {
+  $('#modal-txtlock-log').load('ajax/modals/txtlock-log.html');
+  $('#modal-txtlock-log').modal();
+}
+function loadTidyntLogMod() {
+  $('#modal-tidynt-log').load('ajax/modals/tidynt-log.html');
+  $('#modal-tidynt-log').modal();
+}
+function loadFsLogMod() {
+  $('#modal-fs-log').load('ajax/modals/fs-log.html');
+  $('#modal-fs-log').modal();
+  $('#modal-fs-log-txt').load('ajax/modals/fs-changelog.txt');
+}
+function loadPtLogMod() {
+  $('#modal-pt-log').load('ajax/modals/pt-log.html');
+  $('#modal-pt-log').modal();
+  $('#modal-pt-log-txt').load('ajax/modals/pt-changelog.txt');
+}
 
 /* 404 Button */
 function btn404() {
@@ -960,7 +983,7 @@ function searchAnimation() {
   $('#search-div').css("max-width", "30rem");
 }
 function searchAnimationOut() {
-  $('#search-div').css("max-width", "15rem");
+  $('#search-div').css("max-width", "15.5rem");
 }
 
 /* Anchor offset

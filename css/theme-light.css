@@ -347,3 +347,8 @@ kbd {
 			color: var(--background, #000);
 	}
 }
+
+/* Pre Changelog Class */
+.changelog-pre {
+	color: black !important;
+}

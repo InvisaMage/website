@@ -23,6 +23,7 @@
     <li class="nav-item dropdown" id="nav-projects">
       <a class="nav-link dropdown-toggle" id="dropdownNav" data-toggle="dropdown">Projects</a>
       <div class="dropdown-menu">
+        <!--<a id="nav-papertray" class="dropdown-item" href="papertray.html">Paper Tray</a>-->
         <a id="nav-txtLock" class="dropdown-item" href="txtlock.html">TxtLock</a>
         <a id="nav-tidynt" class="dropdown-item" href="tidynt.html">TidyNT</a>
         <div class="dropdown-divider"></div>
@@ -31,14 +32,14 @@
       </div>
     </li>
     <li class="nav-item"><a class="nav-link" onclick="loadContactMod();">Contact</a></li>
-    <li class="nav-item"><a class="nav-link" onclick="loadDonateMod();">Donate</a></li>
+    <li class="nav-item"><a class="nav-link" onclick="loadDonateMod();">Donors</a></li>
     <li class="nav-item" id='nav-info'><a class="nav-link" href="info.html">Information</a></li>
   </ul>
 
    <!--Modal Buttons-->
   <div class="nav justify-content-end d-none d-xl-flex">
-    <li class="nav-item" id="stats-button" data-toggle="tooltip" data-placement="bottom" title="Stats (for nerds)">
-      <a class="nav-link" onclick="loadStatsMod();">
+    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Stats (for nerds)">
+      <a class="nav-link" onclick="loadStatsMod();" id="stats-button">
         <i class="fas fa-chart-bar fa-lg"></i>
       </a>
     </li>
@@ -58,8 +59,8 @@
 
   <!--Search-->
   <div class="d-none d-xl-inline">
-    <div class="input-group mx-auto" id="search-div" style="max-width:15rem;">
-      <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder="Search" onkeydown="if (event.keyCode == 13) search(document.getElementById('search').value);" onfocus="searchAnimation(); loadSearch();" onblur="searchAnimationOut();">
+    <div class="input-group mx-auto" id="search-div" style="max-width:15.5rem;">
+      <input type="text" class="form-control" id="search" name="search" autocomplete="off" placeholder='Search ("/" to focus)' onkeydown="if (event.keyCode == 13) search(document.getElementById('search').value);" onfocus="searchAnimation(); loadSearch();" onblur="searchAnimationOut();">
       <span class="input-group-append">
         <button class="btn btn-secondary" type="button" onclick="search(document.getElementById('search').value)">
           <i class="fa fa-search"></i>

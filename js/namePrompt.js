@@ -23,7 +23,7 @@ function namePrompt(name) {
 //Default
 	if (nL !== null) {
 		$("#name").html(
-		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
+		"Hello " + name + " and welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A  who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br>" +
 		"I hope you enjoy your stay."
 		)
 	;}
@@ -550,22 +550,16 @@ function namePrompt(name) {
 			"<code>document.write(&quot;Hello World!&quot;);</code>"
 			)
 		;}
-//Curses - Audio
-		if (nL == "fuck" || nL == "bitch" || nL == "shit" || nL == "cunt" || nL == "fucker" || nL == "damn" || nL == "bastard" || nL == "cock" || nL == "dick" || nL == "hoe" || nL == "jackass" || nL == "nigger" || nL == "nigga") {
-			$("#name").html(
-			"Hey, that's not nice!<br><audio autoplay preload='auto'><source src='./audio/beep.mp3' type='audio/mpeg'></audio>"
-			)
-		;}
 //Reset
 		if (nL == "reset" || nL == "clear" || nL == "cls") {
 			$("#name").html(
-			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A human male who likes web technologies and assorted games.'>InvisaMage</a>'s website."
+			"Welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='The owner of this site is a privacy and security advocate who enjoys web technologies and TaeKwon-Do.'>InvisaMage</a>'s website."
 			)
 		;}
 //No name - Audio
 		if (nL === "" || nL == " " || nL == "undefined") {
 			$("#name").html(
-			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='A human male who likes web technologies and assorted games.'>InvisaMage</a>'s website.<br><br>" +
+			"Your name goes in that box but, welcome to <a class='definition' data-toggle='tooltip' data-placement='top' title='The owner of this site is a privacy and security advocate who enjoys web technologies and TaeKwon-Do.'>InvisaMage</a>'s website.<br><br>" +
 			btnGroup +
 			  "<button class='btn btn-secondary btn-md' role='button' onclick='$(`#collapse-info`).collapse(`toggle`)' data-toggle='tooltip' title='Click for details' data-container='body'>What's Your Name</button>" +
 				pauseBtn +

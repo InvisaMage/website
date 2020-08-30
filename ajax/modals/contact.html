@@ -10,7 +10,7 @@
       </button>
     </div>
     <div class="modal-body">
-      Questions, Comments, Suggestions, <a class="link" href="fs.html">Floating Survival</a> problems?
+      Questions, comments, or suggestions?
       <br>
       <br>
         <!--E-mail-->
@@ -44,22 +44,6 @@
             </a>
           </div>
         </div><!-- /input-group -->
-        <br>
-        <!--Keybase-->
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">Keybase</div>
-          </div>
-          <input id="copyTargetKeybase" readonly type="text" class="form-control" value="InvisaMage">
-          <div class="input-group-append">
-            <a id="copyButtonKeybase" roll="button" class="btn btn-light" href="javascript:keybaseMsg();" data-placement="top" data-toggle="tooltip" title="Copy text" data-container="body">
-              <i class="far fa-copy"></i>
-            </a>
-            <a roll="button" class="btn btn-light" href="https://keybase.io/invisamage" target="_blank" rel="noopener noreferrer" data-placement="top" data-toggle="tooltip" title="View profile" data-container="body">
-              <i class="far fa-user"></i>
-            </a>
-          </div>
-        </div><!-- /input-group -->
     </div>
     <!--Contact Help Collapsible Content-->
     <div class="collapse" id="modal-contact-collapse">
@@ -70,7 +54,6 @@
           <p class="card-text">
             <strong>E-mail</strong> - A method of exchanging digital messages from an author to one or more recipients.<br>
             <strong>Telegram</strong> - A cloud-based mobile and desktop messaging app with a focus on security and speed.<br>
-            <strong>Keybase</strong> - Public key crypto for everyone, publicly auditable proofs of identity.
           </p>
         </div>
       </div>
@@ -212,11 +195,6 @@
       return succeed;
   }
 
-//Keybase Copy Function
-      document.getElementById("copyButtonKeybase").addEventListener("click", function() {
-      copyToClipboard(document.getElementById("copyTargetKeybase"));
-  });
-
   function copyToClipboard(elem) {
   	  // create hidden text element, if it doesn't already exist
       var targetId = "_hiddenCopyText_";
@@ -276,11 +254,6 @@
   function telegramMsg() {
     PNotify.success({
       text: 'Telegram URL copied!'
-    });
-  }
-  function keybaseMsg() {
-    PNotify.success({
-      text: 'Keybase username copied!'
     });
   }
 
