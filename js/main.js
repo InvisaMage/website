@@ -13,6 +13,14 @@ $('nav').load('ajax/nav.html');
 $('#footer').load('ajax/footer.html');
 $('#ajax').load('ajax/ajax.html');
 
+/* document.ready - $() in jQuery
+ * https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
+ */
+var ready = (callback) => {
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
+};
+
 var protocol = window.location.protocol;
 var windowHeight = window.innerHeight;
 var termCounter = 0;
@@ -42,7 +50,7 @@ if (('ontouchstart' in window)) {
 
 //Libraries
 var jqueryVer = '3.5.1';
-var bootstrapVer = '4.5.0';
+var bootstrapVer = '4.5.3';
 var fontawesomeVer = '5.0.10';
 var jqueryterminalVer = '1.18.0';
 var localforageVer = '1.7.1';
@@ -76,41 +84,39 @@ function enableTooltips() {
 //Navbar current page highlight
 setTimeout(navEnable, 700);
 function navEnable() {
-  $(function () {
-    if ($("title").html() == "InvisaMage | Home") {
-      $('#nav-home').addClass('active animated bounceIn');
+  let title = document.querySelector("title").innerText;
+  
+  ready(() => {
+		if ( title == "InvisaMage | Home") {
+      document.querySelector("#nav-home").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | News") {
-      $('#nav-news').addClass('active animated bounceIn');
+    else if (title == "InvisaMage | News") {
+      document.querySelector("#nav-news").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | Valkyrie Realms") {
-      $('#nav-mc').addClass('active');
-      $("#nav-projects").addClass("active animated bounceIn");
+    else if (title == "InvisaMage | Valkyrie Realms") {
+      document.querySelector("#nav-mc").classList.add("active");
+      document.querySelector("#nav-projects").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | Floating Survival") {
-      $('#nav-fs').addClass('active');
-      $("#nav-projects").addClass("active animated bounceIn");
+    else if (title == "InvisaMage | Floating Survival") {
+      document.querySelector("#nav-fs").classList.add("active");
+      document.querySelector("#nav-projects").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | Paper Tray") {
-      $('#nav-papertray').addClass('active');
-      $("#nav-projects").addClass("active animated bounceIn");
+    else if (title == "InvisaMage | Papertray") {
+      document.querySelector("#nav-papertray").classList.add("active");
+      document.querySelector("#nav-projects").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | TxtLock") {
-      $('#nav-txtLock').addClass('active');
-      $("#nav-projects").addClass("active animated bounceIn");
+    else if (title == "InvisaMage | TxtLock") {
+      document.querySelector("#nav-txtlock").classList.add("active");
+      document.querySelector("#nav-projects").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | TidyNT") {
-      $('#nav-tidynt').addClass('active');
-      $("#nav-projects").addClass("active animated bounceIn");
+    else if (title == "InvisaMage | TidyNT") {
+      document.querySelector("#nav-tidynt").classList.add("active");
+      document.querySelector("#nav-projects").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | Computers") {
-      $('#nav-computers').addClass('active animated bounceIn');
-      $("#nav-resources").addClass("active");
+    else if (title == "InvisaMage | Site Information") {
+      document.querySelector("#nav-info").classList.add("active");
     }
-    else if ($("title").html() == "InvisaMage | Site Information") {
-      $('#nav-info').addClass('active animated bounceIn');
-    }
-  });
+	});
 }
 
 //Autofocus Personalize Message Modal
@@ -212,7 +218,7 @@ $('#mobile-menu select').change(function () {
 
 //Scroll to target in URL after page load
 /*
-$(function () {
+ready(() => {
   setTimeout(enable, 900);
   function enable() {
     var test = $('*:target').offset().top;
@@ -302,7 +308,7 @@ listener.simple_combo("alt `", async function () {
 //Focus search box with Ctrl + Alt + F key press
 var listener = new window.keypress.Listener();
 listener.simple_combo("/", function () {
-  $('input').focus();
+  document.querySelector("input").focus();
 });
 
 //Settings
@@ -412,7 +418,7 @@ function settingsCancelMsg() {
 }
 
 //Set background color
-$(function () {
+ready(() => {
   settings.getItem('backgroundColor').then(function (value) {
     $('body').css("background-color", value);
     console.log("backgroundColor = " + value);
@@ -466,7 +472,7 @@ async function onPageLoadTerm() {
 }
 
 //Load when page loads - done so async works
-$(function () {
+ready(() => {
   onPageLoadTerm();
   onPageLoadTermToggle();
 });
@@ -483,9 +489,9 @@ async function onPageLoadTermToggle() {
 }
 
 //Check which tab needs to be opened on News page.
-$(function () {
+ready(() => {
   settings.getItem('defaultTab').then(function (value) {
-    if ($("title").html() == "InvisaMage | News") {
+    if (document.querySelector("title").innerText == "InvisaMage | News") {
       if (value == 'projects') {
         $('#tabs li:eq(0) a').tab('show');
         $('#pills li:eq(0) a').tab('show');
@@ -508,8 +514,8 @@ $(function () {
 });
 
 //Events notification
-$(function () {
-  //Check date to see if events needs to be loaded
+ready(() => {
+//Check date to see if events needs to be loaded
   var date = new Date();
   var dates = ['01', '44', '64', '828', '931', '1124', '1125'];
 
@@ -642,7 +648,7 @@ settings.getItem('enableLegalBanner').then(function (value) {
 });
 
 //Check if Snowstorm needs to be loaded on page load
-$(function () {
+ready(() => {
   settings.getItem('enableSnowstorm').then(function (value) {
     if (value == 'true') {
       setTimeout(enable, 500);
@@ -675,7 +681,7 @@ $(function () {
 
 //Temporary workaround for settings bug
 //Forces to set banner legal if they have not been set yet
-$(function () {
+ready(() => {
   //Banner - Events
   settings.getItem('enableEventsBanner').then(function (value) {
     if (value == null) {
@@ -711,7 +717,7 @@ $(function () {
 });
 
 //Check which theme to apply
-$(function () {
+ready(() => {
   settings.getItem('theme').then(function (value) {
     if (value == 'light') {
       themeLight();
@@ -729,7 +735,7 @@ function themeLight() {
 }
 
 //Check if centered modals need to be applied
-$(function () {
+ready(() => {
   settings.getItem('centeredModals').then(function (value) {
     if (value == 'true') {
       $('.modal-dialog').addClass('modal-dialog-centered');
@@ -957,12 +963,10 @@ function loadTidyntLogMod() {
 function loadFsLogMod() {
   $('#modal-fs-log').load('ajax/modals/fs-log.html');
   $('#modal-fs-log').modal();
-  $('#modal-fs-log-txt').load('ajax/modals/fs-changelog.txt');
 }
 function loadPtLogMod() {
   $('#modal-pt-log').load('ajax/modals/pt-log.html');
   $('#modal-pt-log').modal();
-  $('#modal-pt-log-txt').load('ajax/modals/pt-changelog.txt');
 }
 
 /* 404 Button */

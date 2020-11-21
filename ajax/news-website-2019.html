@@ -109,7 +109,7 @@
 <!--Reinitialize Scripts-->
 <script>
     //Light Theme
-    $(function () {
+    ready(() => {
         settings.getItem('theme').then(function (value) {
             if (value == 'light') {
                 $('.card.bg-dark').removeClass('bg-dark').addClass('border-dark');
@@ -118,7 +118,7 @@
     });
 
     //If no touchscreen, show Tooltips
-    $(function () {
+    ready(() => {
         enableTooltips();
         //Mobile Menu select
         $('#mobile-menu select').change(function () {

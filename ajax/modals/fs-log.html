@@ -19,7 +19,7 @@
 </div><!-- /.modal-fs-log- -->
 
 <script>
-  fload("#modal-fs-log-txt", "ajax/fs-changelog.txt");
+  $('#modal-pt-fs-txt').load('ajax/fs-changelog.txt');
   $(function() {
     settings.getItem('centeredModals').then(function(value) {
     if (value == 'true') {

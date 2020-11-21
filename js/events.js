@@ -63,13 +63,12 @@ function showEvent(msg) {
   });
 }
 
-function loadSnowstormEvents() {
-  setTimeout(enable, 500);
-  $.getScript('js/snowstorm.js');
-  $('#footer-snowstorm').replaceWith("<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle snow</a>");
-  function enable() {
-    vulcanicAshCheck();
-    snowStorm.toggleSnow();
-    $('#events-snow').hide();
-  }
+function loadSnowstormNamePrompt() {
+	setTimeout(enable, 500);
+	$.getScript('js/snowstorm.js');
+	document.querySelector("#footer-snowstorm"),outerHTML = "<a class='link' id='footer-snowstorm' onclick='snowStorm.toggleSnow(); vulcanicAshCheck();' data-toggle='tooltip' data-placement='top' title='Toggle the snowstorm!'>Toggle snow</a>";
+		function enable() {
+			vulcanicAshCheck();
+			snowStorm.toggleSnow();
+		}
 }

@@ -23,15 +23,12 @@
             Search
                 <i class="fa fa-check"></i>
             </button>
-        </div>
-        <!-- /.modal-footer-->
-    </div>
-    <!-- /.modal-content -->
-</div>
-<!-- /.modal-search -->
+        </div><!-- /.modal-footer-->
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-search -->
 
 <script>
-    $(function () {
+    ready(() => {
         settings.getItem('centeredModals').then(function (value) {
             if (value == 'true') {
                 $('.modal-dialog').addClass('modal-dialog-centered');

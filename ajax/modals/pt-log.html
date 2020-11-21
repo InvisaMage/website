@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!--PT Log Modal-->
+<div class="modal-dialog modal-xl" id="ajax-pt-log">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Papertray Changelog</h4>
+      <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+    </div>
+    <div class="modal-body">
+      <pre class="changelog-pre" id="modal-pt-log-txt"></pre>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal"> Done
+        <i class="fa fa-check"></i>
+      </button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-pt-log- -->
+
+<script>
+  $('#modal-pt-log-txt').load('ajax/pt-changelog.txt');
+  $(function() {
+    settings.getItem('centeredModals').then(function(value) {
+    if (value == 'true') {
+      $('.modal-dialog').addClass('modal-dialog-centered');
+    }
+    console.log('centeredModals = ' + value);
+    });
+  });
+</script>

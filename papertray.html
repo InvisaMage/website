@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--Proudly coded by Travis Kipp-->
+<!--Created July 7, 2020-->
+<!--Papertray-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="A Java application which locks text behind a password.">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#66a3ff">
+		<link rel="icon" href="images/favicon.ico" type="image/.ico"/>
+		<title>InvisaMage | Papertray</title>
+		<!--Stylesheets-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/fa-svg-with-js.css" rel="stylesheet">
+		<link href="css/animate.min.css" rel="stylesheet">
+	</head>
+
+	<body id="top">
+		<nav class="navbar navbar-expand-xl navbar-dark fixed-top animated fadeInDown" style="background-color: #22262a;">Enable JavaScript and/or update browser</nav>
+
+		<div class="jumbotron jumbotron-fluid text-left">
+			<div class="container">
+				<img class="img-fluid float-left" src="images/papertray/logo.png" height="128" width="128">
+				<h1 class="display-4">Papertray</h1>
+				<p class="lead">A collection of scripts written in <a class="definition" data-toggle="tooltip" data-placement="top" title="GNU Bash or simply Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell.">Bash</a>
+                    that manage <a class="definition" data-toggle="tooltip" data-placement="top" title="The next generation of Minecraft server, compatible with Spigot plugins and offering uncompromising performance.">PaperMC</a> servers.</p>
+
+				<div class="btn-group" role="group">
+					<button class="btn btn-secondary btn-md" roll="button">
+						v0.0.1
+					</button>
+					
+					<a class="btn btn-info btn-md" roll="button" target="_blank" rel="noopener noreferrer" onclick="loadPtLogMod();">
+						<i class="fa fa-list"></i> Changelog
+					</a>
+					
+					<a class="btn btn-secondary btn-md" roll="button" target="_blank" rel="noopener noreferrer" href="https://github.com/InvisaMage/papertray">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!--Begin Content-->
+		<div class="container">
+
+			<!--Menu-->
+			<div id="menu-papertray" class="menu menu-papertray d-none d-xl-inline sps sps--abv">
+				<h5>Contents</h5>
+				<li><a href="papertray.html#description"><i class="fa fa-chevron-right"></i></span> Description</a></li>
+				<li><a href="papertray.html#images"><i class="fa fa-chevron-right"></i></span> Demo</a></li>
+				<br>
+			</div>
+
+			<!--Description-->
+			<div class="card bg-dark mx-auto" style="max-width: 47rem;" id="description">
+				<h4 class="card-header">Description</h4>
+				<div class="card-body">
+					<p>
+						I found myself manually navigating to the PaperMC website to check for and download new builds.<br>
+						Any repetitive task should be automated so I made Papertray and some other utility scripts.<br>
+						Papertray can <strong>Backup</strong>, <strong>Trim</strong>, <strong>Update</strong>, and <strong>Start</strong> your PaperMC server.<br>
+						This was made public in the hopes it's useful to others.<br>
+						Feel free to use this as a template and modify to suit your needs.
+					</p>
+				</div>
+			</div><!--/#description-->
+
+			<br>
+
+			<!--Demo-->
+			<h4 id="images">Demo</h4>
+			<a href="https://github.com/InvisaMage/papertray">
+				<img class="img-fluid" src="images/papertray/screenshot.gif" style="max-width: 47rem;">
+			</a>
+
+			<br>
+			<br>
+		</div>
+
+		<!--Footer-->
+		<footer id="footer"></footer>
+
+		<!--/.End Content-->
+
+		<!--Ajax-->
+		<span id="ajax"></span>
+
+		<!--External Scripts-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/fontawesome-all.min.js"></script>
+		<script src="js/localforage.min.js"></script>
+		<script src="js/pnotify.min.js"></script>
+		<script src="js/konami.js"></script>
+		<script src="js/keypress.min.js"></script>
+		<script src="js/main.js"></script>
+
+		<script>
+			$('#menu-papertray').addClass('animated slideInLeft');
+
+			ScrollPosStyler.init({ 
+				scrollOffsetY: 311
+			});
+		</script>
+	</body>
+</html>

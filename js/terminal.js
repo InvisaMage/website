@@ -603,7 +603,7 @@ jQuery(document).ready(function ($) {
     }
     //IP
     else if (cmd.name == 'ip') {
-      $(function () {
+      ready(() => {
         $.getJSON("https://api.ipify.org?format=jsonp&callback=?", function (json) {
         })
           .done(function (json) {
