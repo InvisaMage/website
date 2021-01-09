@@ -613,7 +613,7 @@ settings.getItem('enableLegalBanner').then(function (value) {
   //if (value == 'true' || value == null) {
     PNotify.info({
       title: 'Legal',
-      text: 'Use of this website is subject to the <a href="terms.html">Terms & Conditions</a>  and <a href="privacy.html">Privacy Policy</a>.',
+      text: 'Use of this website is subject to the <a href="terms">Terms & Conditions</a>  and <a href="privacy">Privacy Policy</a>.',
       textTrusted: true,
       hide: false,
       modules: {
@@ -789,7 +789,7 @@ function wiselyCheck() {
     if (value == 'true') {
       console.log('Achievement message not displayed as user has already gotten it.');
     } else {
-      achievementNotice("You've Chosen Wisely <br><br> Agree to the <span id='no-click'><a href='terms.html'>Terms & Conditions</a></span> and <span id='no-click'><a href='privacy.html'>Privacy Policy</a></span>.");
+      achievementNotice("You've Chosen Wisely <br><br> Agree to the <span id='no-click'><a href='terms'>Terms & Conditions</a></span> and <span id='no-click'><a href='privacy'>Privacy Policy</a></span>.");
       achievements.setItem('wisely', 'true');
     }
     console.log('wiselyAchievement = ' + value);

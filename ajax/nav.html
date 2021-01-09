@@ -2,10 +2,14 @@
 
 <!--The Navigation Bar for every page-->
 <div class="d-flex justify-content-start">
-  <a class="navbar-brand" href="index.html">
-    <img class="rounded" alt="Brand" src="images/imlogo.png" width="36" height="36"></img>
+  <a class="navbar-brand" href="/">
+    <picture>
+      <source type="image/webp" srcset="images/imlogo.webp">
+      <source type="image/jpeg" srcset="images/imlogo.png">
+        <img class="rounded" alt="Brand" src="images/imlogo.png" width="36" height="36"></img>
+    </picture>
   </a>
-  <a id="nav-name" class="navbar-brand" href="index.html" style="padding-top:8px;">
+  <a id="nav-name" class="navbar-brand" href="/" style="padding-top:8px;">
     InvisaMage
   </a>
   <a id="up-chevron" class="navbar-brand" onclick="window.scrollTo(0, 0);" data-toggle="tooltip" data-placement="bottom" title="Beam me up" style="padding-top:8px;">
@@ -18,22 +22,22 @@
 
 <div class="collapse navbar-collapse navbar-toggleable-xl" id="navbar-default">
   <ul class="navbar-nav mr-auto">
-    <li id="nav-home" class="nav-item"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
-    <li id="nav-news" class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+    <li id="nav-home" class="nav-item"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+    <li id="nav-news" class="nav-item"><a class="nav-link" href="news">News</a></li>
     <li class="nav-item dropdown" id="nav-projects">
       <a class="nav-link dropdown-toggle" id="dropdownNav" data-toggle="dropdown">Projects</a>
       <div class="dropdown-menu">
-        <a id="nav-papertray" class="dropdown-item" href="papertray.html">Papertray</a>
-        <a id="nav-txtlock" class="dropdown-item" href="txtlock.html">TxtLock</a>
-        <a id="nav-tidynt" class="dropdown-item" href="tidynt.html">TidyNT</a>
+        <a id="nav-papertray" class="dropdown-item" href="papertray">Papertray</a>
+        <a id="nav-txtlock" class="dropdown-item" href="txtlock">TxtLock</a>
+        <a id="nav-tidynt" class="dropdown-item" href="tidynt">TidyNT</a>
         <div class="dropdown-divider"></div>
-        <a id="nav-mc" class="dropdown-item" href="mc.html">Valkyrie Realms</a>
-        <a id="nav-fs" class="dropdown-item" href="fs.html">Floating Survival</a>
+        <a id="nav-mc" class="dropdown-item" href="mc">Valkyrie Realms</a>
+        <a id="nav-fs" class="dropdown-item" href="fs">Floating Survival</a>
       </div>
     </li>
     <li class="nav-item"><a class="nav-link" onclick="loadContactMod();">Contact</a></li>
     <li class="nav-item"><a class="nav-link" onclick="loadDonateMod();">Donors</a></li>
-    <li class="nav-item" id='nav-info'><a class="nav-link" href="info.html">Information</a></li>
+    <li class="nav-item" id='nav-info'><a class="nav-link" href="info">Information</a></li>
   </ul>
 
    <!--Modal Buttons-->

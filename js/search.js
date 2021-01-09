@@ -5,31 +5,31 @@ function search(value) {
 
 	//Homepage
 	if (sL == "home") {
-		window.location = "index.html";
+		window.location = "/";
 	}
 
 	//News page
 	else if (sL == "news") {
-		window.location = "news.html";
+		window.location = "news";
 	}
 
 	//Valkyrie Realms page
 	else if (sL == "valkyrie realms" || sL == "vr") {
-		window.location = "mc.html";
+		window.location = "mc";
 	}
 	//Floating Survival page
 	else if (sL == "floating survival" || sL == "fs") {
-		window.location = "fs.html";
+		window.location = "fs";
 	}
 
 	//TxtLock page
 	else if (sL == "txtlock") {
-		window.location = "txtlock.html";
+		window.location = "txtlock";
 	}
 
 	//TidyNT page
 	else if (sL == "tidynt") {
-		window.location = "tidynt.html";
+		window.location = "tidynt";
 	}
 
 	//Contact Modal
@@ -49,17 +49,17 @@ function search(value) {
 
 	//Info page
 	else if (sL == "info" || sL == "creation" || sL == "libraries" || sL == "functions" || sL == "design" || sL == "information") {
-		window.location = "info.html";
+		window.location = "info";
 	}
 
 	//Terms page
 	else if (sL == "terms" || sL == "copyright" || sL == "legal" || sL == "warranties" || sL == "liability") {
-		window.location = "terms.html";
+		window.location = "terms";
 	}
 
 	//Privacy page
 	else if (sL == "privacy" || sL == "local storage") {
-		window.location = "privacy.html";
+		window.location = "privacy";
 	}
 
 	//Archive modal
@@ -69,12 +69,12 @@ function search(value) {
 
 	//404 Error page
 	else if (sL == "404" || sL == "404 error" || sL == "error") {
-		window.location = "404.html";
+		window.location = "404";
 	}
 
 	//Terminal modal
 	else if (sL == "terminal" || sL == "commands" || sL == "cmd") {
-		window.location = "info.html#terminal-info";
+		window.location = "info#terminal-info";
 	}
 
 	//Achievements modal

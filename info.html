@@ -26,7 +26,7 @@
 		<div class="container">
 
 			<!--Page Title-->
-			<a class="title" href="info.html">Site Information</a>
+			<a class="title" href="info">Site Information</a>
 
 			<!--Menu-->
 			<div id="menu-info" class="menu menu-info d-none d-xl-inline sps sps--abv">
@@ -132,7 +132,11 @@
 						<!--InvisaMage's Logo-->
 						<br>
 						<br>
-						<img class="img-fluid center-block rounded" src="./images/imlogo.png" alt="InvisaMage's Logo" height="256" width="256">
+						<picture>
+							<source type="image/webp" srcset="images/imlogo.webp">
+							<source type="image/jpeg" srcset="images/imlogo.png">
+							<img class="img-fluid center-block rounded" src="./images/imlogo.png" alt="InvisaMage's Logo" height="256" width="256">
+						</picture>
 					</p>
 				</div>
 			</div><!-- /creation-->
@@ -178,7 +182,7 @@
 					<h5 id="localforage-info">localForage</h5>
 					<p>
 						"Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API."<br>
-						This makes storage and retrieval of <a class="link" href="info.html#settings-info">Settings</a> and <a class="link" href="info.html#achievements-info">Achievement</a> data a breeze.<br>
+						This makes storage and retrieval of <a class="link" href="info#settings-info">Settings</a> and <a class="link" href="info#achievements-info">Achievement</a> data a breeze.<br>
 						Check it out <a class="link" target="_blank" rel="noopener noreferrer" href="https://localforage.github.io/localForage/">here</a>.
 					</p>
 					<hr>
@@ -212,8 +216,8 @@
 					<hr>
 					<h5 id="nameprompt">namePrompt</h5>
 					<p>
-						The namePrompt function is located on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
-						The purpose of this function is to display a more personal message on the <a class="link" title="Homepage" href="index.html">Homepage</a>.<br>
+						The namePrompt function is located on the <a class="link" title="Homepage" href="/">Homepage</a>.<br>
+						The purpose of this function is to display a more personal message on the <a class="link" title="Homepage" href="/">Homepage</a>.<br>
 						This message welcomes the user to the website.<br>
 						There are also a number of <a class="definition" data-toggle="tooltip" data-placement="top" title="An intentional inside joke, hidden message, or feature in an interactive work.">Easter eggs</a>.<br>
 						For example, type the name "Spock" or "Siri" into the message box.<br>
@@ -225,7 +229,7 @@
 						The Search function can be accessed at any time on the navigation bar.<br>
 						To use this function, type what are you are looking for click this icon <span class="fa fa-search"></span> or press enter.<br>
 						If the function can identify your term, you will be redirected to the appropriate page.<br>
-						For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="index.html">Homepage</a>.
+						For example, type the word "home" and you will be redirected to the <a class="link" title="Homepage" href="/">Homepage</a>.
 					</p>
 					<hr>
 					<h5 id="terminal-info">Terminal</h5>
